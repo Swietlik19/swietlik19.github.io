@@ -18,6 +18,8 @@ n.isPlainObject(e)?s===!1&&t.removeAttr("style"):s!==!0&&t.removeClass(e),n.isFu
 
 
 
+
+/* Реализовала, используя решение на сайте re-mote.ru */
 $(window).scroll(function() {
   if ($(this).scrollTop() > 5) {
     $('.header').addClass('header--scrolled');
@@ -30,7 +32,6 @@ $(window).scroll(function() {
 
 
 $('.picture').fancybox();
-
 
 $('.slider').slick({
   slidesToShow: 1,

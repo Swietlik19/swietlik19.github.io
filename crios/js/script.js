@@ -44,7 +44,7 @@ $(document).ready(function() {
     imagesSrc.push(images[i].src);
   }
 
-  /*getBgImages();
+  getBgImages();
   function getBgImages() {
     var allBg = $('section, header, main, footer, div').each(function() {
         var url = '';
@@ -66,7 +66,7 @@ $(document).ready(function() {
           }
         }
     });
-  }*/
+  }
 
   /* Считаем процент загрузки */
   for (var i = 0; i < imagesCount; i++) {

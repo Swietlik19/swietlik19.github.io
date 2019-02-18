@@ -3,14 +3,6 @@
 /* вариант прелоадера (с кругляшками) */
 $(document).ready(function() {
 
-
-  $(window).on('load',function() {
-    setTimeout(function() {
-      $('.preloader').addClass('preloader--faded');
-    },1000);
-    $('body').css('backgroundColor','#fff');
-  });
-
   $('.loader').append('<span class="percentage">0%</span>');
   /* Процент в preloader считаем по прогрузившимся изображениям */
   var images              = document.images,
@@ -76,9 +68,16 @@ $(document).ready(function() {
     imageClone.src     = imagesSrc[i];
   }
 
+
+
   function imageLoaded() {
     imagesCountLoaded++;
-    $('.percentage')[0].innerHTML = ( ((100 / imagesCount) * imagesCountLoaded) << 0) + '%';
+    var percent = ( ((100 / imagesCount) * imagesCountLoaded) << 0) + '%'
+    $('.percentage')[0].innerHTML = percent;
+    if (percent == '100%') {
+      $('.preloader').addClass('preloader--faded');
+      $('body').css('backgroundColor','#fff');
+    }
   }
 
 });

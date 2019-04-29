@@ -144,6 +144,10 @@
         var tab = $(this).attr("href");
         $(".scr_faq .tab-content").not(tab).css("display", "none");
         $(tab).fadeIn();
+
+        if (document.body.clientWidth <= 760) {
+            $('html, body').animate({scrollTop: $(tab).offset().top - $('.header').innerHeight() - 10 +'px'},700);
+        }
     });
 
 	

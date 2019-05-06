@@ -5,7 +5,8 @@
       mobile: false
     }
   )
-  // wow.init();
+  wow.init();
+
   svg4everybody();
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -251,90 +252,79 @@
   //   }, 'xml');
   // });
 
-  /* Табы "услуги" */
-  //  $(".scr_services-tabs .tabs__nav a").click(function(event) {
-  //     event.preventDefault();
-  //     $(this).parent().addClass("current");
-  //     $(this).parent().siblings().removeClass("current");
-  //     var tab = $(this).attr("href");
-  //     $(".scr_services-tabs .tabs__item").not(tab).slideUp();
-  //     $(tab).slideDown();
-  // });
+  // function mapActivate(xID) {
+  //   if (document.querySelector("#" + xID + "") !== null) {
 
+  //     /* Карта */
+  //     var myMap;
 
-  function mapActivate(xID) {
-    if (document.querySelector("#" + xID + "") !== null) {
+  //     // Дождёмся загрузки API и готовности DOM.
+  //     ymaps.ready(init);
 
-      /* Карта */
-      var myMap;
+  //     function init () {
+  //         // Создание экземпляра карты и его привязка к контейнеру с
+  //         // заданным id ("map").
+  //         myMap = new ymaps.Map(xID, {
+  //             // При инициализации карты обязательно нужно указать
+  //             // её центр и коэффициент масштабирования.
+  //             center: [44.604014, 33.505597],
+  //             zoom: 16
+  //         }, {
+  //             searchControlProvider: 'yandex#search'
+  //         });
 
-      // Дождёмся загрузки API и готовности DOM.
-      ymaps.ready(init);
+  //         // Создаём макет содержимого.
+  //           MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+  //               '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+  //           ),
 
-      function init () {
-          // Создание экземпляра карты и его привязка к контейнеру с
-          // заданным id ("map").
-          myMap = new ymaps.Map(xID, {
-              // При инициализации карты обязательно нужно указать
-              // её центр и коэффициент масштабирования.
-              center: [44.604014, 33.505597],
-              zoom: 16
-          }, {
-              searchControlProvider: 'yandex#search'
-          });
+  //           myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+  //               hintContent: 'ул. Пожарова 20/2',
+  //               balloonContent: 'ТехноТерм'
+  //           }, {
+  //               // Опции.
+  //               // Необходимо указать данный тип макета.
+  //               iconLayout: 'default#image',
+  //               // Своё изображение иконки метки.
+  //               iconImageHref: 'img/favicon/fav192.png',
+  //               // Размеры метки.
+  //               iconImageSize: [50, 50],
+  //               // Смещение левого верхнего угла иконки относительно
+  //               // её "ножки" (точки привязки).
+  //               iconImageOffset: [-15, -66]
+  //           }),
 
-          // Создаём макет содержимого.
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            ),
+  //           myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+  //               hintContent: '',
+  //               balloonContent: '',
+  //               iconContent: ''
+  //           }, {
+  //               // Опции.
+  //               // Необходимо указать данный тип макета.
+  //               iconLayout: 'default#imageWithContent',
+  //               // Своё изображение иконки метки.
+  //               // iconImageHref: 'images/ball.png',
+  //               // Размеры метки.
+  //               iconImageSize: [48, 48],
+  //               // Смещение левого верхнего угла иконки относительно
+  //               // её "ножки" (точки привязки).
+  //               iconImageOffset: [-24, -24],
+  //               // Смещение слоя с содержимым относительно слоя с картинкой.
+  //               iconContentOffset: [15, 15],
+  //               // Макет содержимого.
+  //               iconContentLayout: MyIconContentLayout
+  //           });
 
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'ул. Пожарова 20/2',
-                balloonContent: 'ТехноТерм'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                iconImageHref: 'img/favicon/fav192.png',
-                // Размеры метки.
-                iconImageSize: [50, 50],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-15, -66]
-            }),
+  //       myMap.geoObjects
+  //           .add(myPlacemark)
+  //           .add(myPlacemarkWithContent);
 
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-                hintContent: '',
-                balloonContent: '',
-                iconContent: ''
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#imageWithContent',
-                // Своё изображение иконки метки.
-                // iconImageHref: 'images/ball.png',
-                // Размеры метки.
-                iconImageSize: [48, 48],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-24, -24],
-                // Смещение слоя с содержимым относительно слоя с картинкой.
-                iconContentOffset: [15, 15],
-                // Макет содержимого.
-                iconContentLayout: MyIconContentLayout
-            });
+  //       myMap.behaviors.disable('scrollZoom');
 
-        myMap.geoObjects
-            .add(myPlacemark)
-            .add(myPlacemarkWithContent);
+  //     }
+  //   }
+  // }
 
-        myMap.behaviors.disable('scrollZoom');
-
-      }
-    }
-  }
-
-  mapActivate('screen_map');
+  // mapActivate('screen_map');
 
 })(jQuery);

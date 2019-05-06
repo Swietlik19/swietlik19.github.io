@@ -1,0 +1,115 @@
+.videos {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 100px;
+
+  .desc {
+    margin-left: 198px;
+  }
+
+  &__item {
+    display: block;
+    height: 318px;
+    margin-top: 75px;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 5px;
+    overflow: hidden;
+    &:hover {
+      box-shadow: 0 0 30px rgba($accent--dark,0.4);
+      transform: scale(1.01);
+    }
+  }
+
+  &__text {
+    position: relative;
+    height: 100%;
+    padding-left: 31px;
+    padding-bottom: 14px;
+    padding-right: 26px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(#000,0.9), transparent 50%);
+    transition: 0.3s;
+    z-index: 1;
+    h3 {
+      font-size: 18px;
+      line-height: 1.2;
+      color: #ffffff;
+      font-weight: 400;
+      transition: 0.2s;
+      margin-right: 15px;
+    }
+  }
+  &__watch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    i {
+      position: relative;
+      display: block;
+      width: 35px;
+      height: 35px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      margin-right: 15px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-left: 8px solid $accent--inv;
+        border-bottom: 6px solid transparent;
+        transform: translate(-50%,-50%);
+      }
+    }
+    span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 900px) {
+    &__text {
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-end;
+      h3 {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+  } /* max-width 900px */
+
+  @media screen and (max-width: 700px) {
+    &__item {
+      height: 250px;
+    }
+  } /* max-width 700px */
+
+  @media screen and (max-width: 576px) {
+    &__item {
+      margin-top: 30px;
+    }
+  } /* max-width 700px */
+
+
+  @media screen and (max-width: 500px) {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    .desc {
+      margin-left: 30px;
+    }
+  }
+
+} /* videos */

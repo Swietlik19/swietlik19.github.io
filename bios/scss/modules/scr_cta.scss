@@ -1,0 +1,131 @@
+.cta {
+  position: relative;
+  padding-top: 42px;
+  overflow: hidden;
+  &__wrap {
+    background: $accent url('../img/bg-cta.png') no-repeat center center;
+    background-size: cover;
+  }
+  &__content {
+    display: flex;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 390px;
+    margin-right: 34px;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #f3f3f3;
+    text-align: right;
+    b {
+      font-weight: 900;
+    }
+    strong {
+      display: block;
+      font-size: 150px;
+      font-weight: 900;
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+  }
+  .form {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: -402px;
+      display: block;
+      width: 446px;
+      height: 515px;
+      background: transparent url('../img/bg-cta-girl.png') bottom left;
+      background-size: 446px 515px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+      text-align: center;
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 1170px) {
+    padding-top: 0;
+    &__content {
+      flex-direction: column;
+      padding-top: 40px;
+    }
+    &__text {
+      width: 100%;
+      text-align: center;
+      display: block;
+      br {
+        display: none;
+      }
+      strong, b {
+        display: inline;
+      }
+      strong {
+        font-size: 70px;
+      }
+    }
+    .form {
+      margin-top: 50px;
+      margin-left: 150px;
+    }
+  } /* max-width 1170px */
+
+  @media screen and (max-width: 992px) {
+    .form {
+      margin-left: 0;
+    }
+  } /* max-width 992px */
+
+  @media screen and (max-width: 760px) {
+    &__wrap {
+      padding-bottom: 20px;
+    }
+    &__text {
+      font-size: 26px;
+      strong {
+        font-size: 36px;
+      }
+    }
+    .form {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      &::after {
+        background: none;
+        content: none;
+      }
+    }
+  } /* max-width 992px */
+
+  @media screen and (max-width: 576px) {
+    &__wrap {
+      padding-bottom: 40px;
+    }
+  } /* max-width 576px */
+
+  @media screen and (max-width: 500px) {
+    &__text {
+      font-size: 20px;
+      strong {
+        font-size: 28px;
+      }
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 400px) {
+    .form {
+      margin-left: -15px;
+    }
+  }
+
+} /* cta */

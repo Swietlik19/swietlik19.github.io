@@ -1,0 +1,33 @@
+$b: #253574;
+$b2: #191e32;
+$r: #e30613;
+$r2: #d7121f;
+
+$accent: $b;
+$accent--dark: $b2;
+$accent--inv: $r;
+
+$color: $accent--dark;
+
+$font: 'SFUIDisplay', sans-serif;
+
+/* Миксин замены цвета placeholder у input.
+Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px); */
+@mixin placeholder($color,$size) {
+  &::-webkit-input-placeholder {color:$color;font-size:$size;}
+  &::-moz-placeholder          {color:$color;font-size:$size;}
+  &:-ms-input-placeholder      {color:$color;font-size:$size;}
+}
+
+/* Анимации */
+@keyframes scrollBtnArrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,13 +1,22 @@
 (function($){
 
+  /* Инициализация wow */
   wow = new WOW(
     {
       mobile: false
     }
   )
-  wow.init();
 
+  wow.init();
+  /* Инициализация красивых select'ов */
+  $('select').niceSelect();
+  /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    $(".tabs__item").hide();
+    $(".tabs__nav li").removeClass("current");
+  }
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
@@ -18,6 +27,7 @@
     });
   });
 
+  /* Плавный скролл "вверх" */
   $('a[href^="#page_wr"]').click(function(){
     var _href = $(this).attr('href');
     $('html, body').animate({scrollTop: '0px'});
@@ -34,11 +44,22 @@
 
   $(".tabs__nav a").click(function(event) {
     event.preventDefault();
-    $(this).parent().addClass("current");
     $(this).parent().siblings().removeClass("current");
-    var tab = $(this).attr("href");
-    $(".tabs__item").not(tab).hide();
-    $(tab).fadeIn();
+
+    if ($(this).parent().hasClass('current')) {
+      $(this).parent().removeClass("current");
+      $(".tabs__item").fadeOut();
+      $('.tabs').removeClass('visible');
+    } else {
+      $(this).parent().addClass("current");
+      var tab = $(this).attr("href");
+      $(".tabs__item").not(tab).hide();
+      $(tab).fadeIn();
+      $('.tabs').addClass('visible');
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        $('html, body').animate({scrollTop: $(tab).offset().top - 80 +'px'});
+      }
+    }
   });
 
   $(".services__nav a").click(function(event) {
@@ -83,6 +104,18 @@
       } else {
         $(".menu").toggleClass("fixed", (fromTop > 682));
       }
+      if (!($(".container--tabs").hasClass("fixed")) && fromTop > 682) {
+        $(".tabs__item").hide();
+        $(".tabs").removeClass('visible');
+        $(".tabs__nav li").removeClass("current");
+      }
+      if (!(window.matchMedia('(max-width: 500px)').matches)) {
+        $(".container--tabs").toggleClass("fixed", (fromTop > 682));
+      }
+      if (fromTop <= 682 && !($(".tabs__nav li").hasClass('current')) && !(window.matchMedia('(max-width: 768px)').matches)) {
+        $(".tabs__nav li:nth-of-type(2)").addClass("current");
+        $("#tab-1").show();
+      }
     });
   });
 
@@ -101,6 +134,11 @@
 
   imgCover($('.reviews__img img'));
 
+  /* Открытие поля search для мобильной версии */
+  $('.search-form .open').click(function() {
+    $(this).toggleClass('close');
+    $(this).siblings('.search-wrap').toggleClass('active');
+  });
 
   /* Открытие / закрытие модалок (кроме карты) */
   // $('a.open-modal').click(function(event){
@@ -199,7 +237,8 @@
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          adaptiveHeight: true
+          adaptiveHeight: true,
+          autoplay: false
         }
       }
     ]

@@ -25,7 +25,6 @@ body {
   &.disabled {
     overflow: hidden;
     max-height: 100vh;
-    padding-right: 17px;
   }
 }
 
@@ -101,6 +100,7 @@ input[type="submit"] {
   transition: 0.5s;
   border-radius: 23.5px;
   text-transform: uppercase;
+  text-align: center;
 
   &.btn--red {
     padding-left: 50px;
@@ -297,12 +297,6 @@ input[type="submit"] {
       transform: translateY(8px);
     }
   }
-  &:not(.active):hover {
-    opacity: 1;
-    .burger__wrap {
-      transform: skewY(-20deg);
-    }
-  }
 
   &.active {
     transform: rotate(-45deg);
@@ -404,7 +398,47 @@ input[type="submit"] {
   }
 }
 
+/* Переопределение nice-select */
+.nice-select {
+  float: none;
+  height: 49px;
+  line-height: 49px;
+  color: #191e32;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid hsla(206,3%,55%,.2);
+  border-radius: 3px;
+  transition: .3s;
+  .option[data-value=""] {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  .option.selected {
+    font-weight: 600;
+  }
+  .list {
+    width: 100%;
+  }
+  &:focus {
+    border-color: $accent;
+    &::after {
+      border-color: $accent;
+    }
+  }
+  .list {
+    box-shadow: 0 0 10px rgba($accent,0.4);
+  }
+  &::after {
+    width: 9px;
+    height: 9px;
+  }
+}
+
 /* Переопределени datepicker */
+.datepickers-container {
+  z-index: 400;
+}
+
 .datepicker {
   &--day-name {
     color: $accent--inv;
@@ -487,12 +521,9 @@ input[type="submit"] {
   }
 } /* max-width 576px */
 
-
-
 @media screen and (max-width: 500px) {
   .title2 {
     font-size: 30px;
-
   }
 
   .desc {
@@ -502,4 +533,10 @@ input[type="submit"] {
       font-size: 16px;
     }
   }
-}
+} /* max-width 500px */
+
+@media screen and (max-width: 400px) {
+  .nice-select {
+    font-size: 14px;
+  }
+} /* max-width 400px */

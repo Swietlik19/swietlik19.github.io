@@ -433,11 +433,19 @@ input[type="submit"] {
     width: 9px;
     height: 9px;
   }
+  .current {
+    color: #8a8e91;
+    font-size: 14px;
+    &.active {
+      color: $accent--dark;
+      font-size: 16px;
+    }
+  }
 }
 
 /* Переопределени datepicker */
 .datepickers-container {
-  z-index: 400;
+  z-index: 1100;
 }
 
 .datepicker {
@@ -512,7 +520,26 @@ input[type="submit"] {
 } /* max-width 700px */
 
 @media screen and (max-width: 650px) {
-
+  .nav-wrap {
+    max-width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slider1 .slick-dots {
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    li {
+      margin-bottom: 3px;
+      &:not(:last-of-type) {
+        margin-right: 5px;
+      }
+      button {
+        width: 7px;
+        height: 7px;
+      }
+    }
+  }
 } /* max-width 650px */
 
 

@@ -1,17 +1,18 @@
 (function($){
 
   /* Инициализация wow */
-  wow = new WOW(
-    {
-      mobile: false
-    }
-  )
+  wow = new WOW({mobile: false})
 
   wow.init();
   /* Инициализация красивых select'ов */
   $('select').niceSelect();
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
+  // инициализация fancybox
+  $(".fancybox").fancybox({
+    padding: 0,
+    scrolling: 'auto',
+  });
 
   if (window.matchMedia('(max-width: 768px)').matches) {
     $(".tabs__item").hide();
@@ -79,8 +80,12 @@
     $(this).parent().addClass("current");
     $(this).parent().siblings().removeClass("current");
     var tab = $(this).attr("href");
+    var link = "#link-" + tab.replace("#", "");
     $(".articles__tab").not(tab).removeClass("current");
+    ;
+    $(".scr_articles .link__wrap .link").not(link).removeClass("current");
     $(tab).addClass("current");
+    $(link).addClass("current");
   });
 
   $(window).resize(function(){
@@ -135,42 +140,51 @@
   imgCover($('.reviews__img img'));
 
   /* Открытие поля search для мобильной версии */
-  $('.search-form .open').click(function() {
-    $(this).toggleClass('close');
+  $('.search-form .open-search').click(function(event) {
+    event.preventDefault();
+    $(this).toggleClass('close-search');
     $(this).siblings('.search-wrap').toggleClass('active');
   });
 
+  $('.nice-select .option').click(function() {
+    if ($(this).attr('data-value') != "") {
+      $(this).parent().siblings('.current').addClass('active');
+    } else {
+      $(this).parent().siblings('.current').removeClass('active');
+    }
+  });
+
   /* Открытие / закрытие модалок (кроме карты) */
-  // $('a.open-modal').click(function(event){
-  //   event.preventDefault();
-  //   var _href = $(this).attr('href');
-  //   $(_href).show();
-  //   $(_href + ' .modal__content').fadeIn();
-  //   $('.page_wr').addClass('blur-it');
-  // });
+  $('a.open-modal').click(function(event){
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(_href).show();
+    $(_href + ' .modal__content').fadeIn();
+    $('.page_wr').addClass('blur-it');
+  });
 
-  // function closeModal() {
-  //   $('.modal').fadeOut();
-  //   $('.modal__content').fadeOut();
-  //   $('.page_wr').removeClass('blur-it');
-  // }
+  function closeModal() {
+    $('.modal').fadeOut();
+    $('.modal__content').fadeOut();
+    $('.page_wr').removeClass('blur-it');
+  }
 
-  // $(document).mouseup(function (e) {
-  //   var container = $(".modal .modal__content");
-  //   if (container.has(e.target).length === 0){
-  //     closeModal();
-  //   }
-  // });
+  $(document).mouseup(function (e) {
+    var container = $(".modal .modal__content");
+    if (container.has(e.target).length === 0){
+      closeModal();
+    }
+  });
 
-  // $('.modal .close').click(function(){
-  //   closeModal();
-  // });
+  $('.modal .close').click(function(){
+    closeModal();
+  });
 
-  // $(document).keydown(function(eventObject){
-  //   if( eventObject.which == 27 ){
-  //     closeModal();
-  //   }
-  // });
+  $(document).keydown(function(eventObject){
+    if( eventObject.which == 27 ){
+      closeModal();
+    }
+  });
 
   // маска поля tel
   $(".wpcf7-tel").mask("+7 (999) 999-99-99");

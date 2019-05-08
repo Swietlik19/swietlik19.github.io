@@ -1,0 +1,105 @@
+.appointment {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+  &__content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 409px;
+    max-height: 100vh;
+    padding: 2px;
+    box-shadow: 0px 0px 18px 0px #cbcbcb;
+    transform: translate(-50%,-50%);
+    overflow: auto;
+  }
+  .form {
+    width: 100%;
+    z-index: 0;
+    margin-bottom: 0;
+    input[type="submit"] {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  .close {
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 23px;
+      height: 2px;
+      background-color: $accent;
+      transition: 0.5s;
+    }
+    &::before {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+    &:hover {
+      &::before,
+      &::after {
+        background-color: $accent;
+      }
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 560px) {
+    &__content {
+      width: 90%;
+    }
+    .form {
+      padding: 25px 40px 18px;
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 500px) {
+    &__content {
+      top: 20px;
+      transform: translate(-50%,0);
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 440px) {
+    &__content {
+      width: 95%;
+    }
+    .form {
+      padding: 25px 25px 18px;
+    }
+  } /* max-width 440px */
+
+  @media screen and (max-width: 400px) {
+    &__content {
+      width: 100%;
+    }
+    .form {
+      margin-left: 0;
+      padding: 20px 20px 30px;
+    }
+  }
+
+} /* appointment */

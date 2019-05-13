@@ -6,24 +6,12 @@
   background-size: auto 100%;
 
   .container--tabs {
-    position: absolute;
     top: 57px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 400;
+
+    .tabs__title {
+      display: block;
+    }
     &.fixed {
-      position: fixed;
-      top: 50px;
-      bottom: auto;
-      .tabs {
-        opacity: 0.7;
-        &.visible {
-          opacity: 1;
-        }
-      }
-      .tabs__nav {
-        height: 60px;
-      }
       .tabs__title {
         display: none;
       }
@@ -32,9 +20,6 @@
 
   .tabs {
     width: 33.3333333333%;
-    position: absolute;
-    top: 0;
-    right: 15px;
   }
 
   .title1 {
@@ -67,36 +52,10 @@
   }
 
   .tabs__nav {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    width: 100%;
     height: 88px;
     li {
-      width: calc((100% + 6px) / 3);
-      background: #253574;
       a {
-        position: relative;
-        font-size: 12px;
-        line-height: 1.2;
-        text-transform: uppercase;
-        color: #ffffff;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: #253574;
-        transition: 0.3s;
-        z-index: 1;
         .icon {
-          fill: #fff;
-          width: 28px;
-          height: 28px;
           margin-bottom: 9px;
         }
         span {
@@ -105,29 +64,19 @@
           text-align: center;
         }
       }
-      &.current {
-        background: #4c5b97;
-        a {
-          background: #4c5b97;
-        }
-      }
-      &:not(.current) {
-        a:hover {
-          height: calc(100% + 3px);
-          transform: translateY(-3px);
-        }
-      }
     }
   }
 
   .tabs__items {
-    width: 100%;
-    background: #fff;
     border: 3.0px solid #4c5b97;
   }
 
-  .tabs__item:not(#tab-1) {
-    display: none;
+  .tabs__item {
+    border: none;
+  }
+
+  #tab-1 {
+    display: block;
   }
 
   .scroll {
@@ -245,6 +194,16 @@
     }
     .scroll {
       bottom: 85px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .container--tabs {
+      .tabs {
+        &.visible {
+          opacity: 1;
+        }
+      }
     }
   }
 

@@ -45,6 +45,10 @@ img {
   background-color: #f5f5f5;
 }
 
+.tar {
+  text-align: right;
+}
+
 .title1 {
   font-size: 48px;
   line-height: 1.2;
@@ -55,7 +59,8 @@ img {
   }
 }
 
-.title2 {
+.title2,
+.title1--big {
   font-size: 90px;
   line-height: 1.2;
   font-weight: 900;
@@ -434,6 +439,8 @@ input[type="submit"] {
     height: 9px;
   }
   .current {
+    display: block;
+    overflow: hidden;
     color: #8a8e91;
     font-size: 14px;
     &.active {
@@ -545,7 +552,9 @@ input[type="submit"] {
 
 @media screen and (max-width: 576px) {
   .title1 {
-    font-size: 30px;
+    &:not(.title1--big) {
+      font-size: 30px;
+    }
   }
 } /* max-width 576px */
 
@@ -555,10 +564,17 @@ input[type="submit"] {
   }
 
   .desc {
-    margin-top: 5px;
-    font-size: 18px;
-    small {
-      font-size: 16px;
+    &:not(.desc1) {
+      margin-top: 5px;
+      font-size: 18px;
+      small {
+        font-size: 16px;
+      }
+    }
+    &.desc1 {
+      br {
+        display: none;
+      }
     }
   }
 } /* max-width 500px */

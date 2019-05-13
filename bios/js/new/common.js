@@ -100,7 +100,7 @@
     $('.services__nav').slideToggle();
   });
 
-  // фиксированная шапка
+  // фиксированные шапка и табы
   $(document).ready(function() {
     $(window).on("scroll", function() {
       var fromTop = $(document).scrollTop();
@@ -117,7 +117,7 @@
       if (!(window.matchMedia('(max-width: 500px)').matches)) {
         $(".container--tabs").toggleClass("fixed", (fromTop > 682));
       }
-      if (fromTop <= 682 && !($(".tabs__nav li").hasClass('current')) && !(window.matchMedia('(max-width: 768px)').matches)) {
+      if ($('body').hasClass('main-page') && fromTop <= 682 && !($(".tabs__nav li").hasClass('current')) && !(window.matchMedia('(max-width: 768px)').matches)) {
         $(".tabs__nav li:nth-of-type(2)").addClass("current");
         $("#tab-1").show();
       }

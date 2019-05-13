@@ -1,0 +1,142 @@
+.suppliers {
+  position: relative;
+  padding-top: 61px;
+  padding-bottom: 72px;
+  overflow: hidden;
+  &__list {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    margin-left: -14px;
+    width: calc(100% + 28px);
+  }
+  &__slide {
+    width: 100%;
+    height: 164px;
+    margin: 0 14px;
+    outline: none;
+  }
+  &__item__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 134px;
+
+    box-shadow: 0px 0px 18px 0px #cbcbcb;
+    background-color: #ffffff;
+    border-radius: 6px;
+    img {
+      width: auto;
+      max-width: 62%;
+      opacity: 0.7;
+      transition: 0.7s;
+    }
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+  .slick-arrow {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #fff;
+    z-index: 100;
+    transition: 0.5s;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-bottom: 3px solid #435269;
+      border-left: 3px solid #435269;
+      transition: 0.5s;
+    }
+    &:hover {
+      background: rgba(#fff,0.7);
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 0 10px rgba($accent,0.3);
+      &::before {
+        border-color: $accent;
+      }
+    }
+  }
+  .slick-prev {
+    left: -50px;
+    &::before {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+  }
+  .slick-next {
+    right: -50px;
+    &::before {
+      transform: translate(-50%,-50%) rotate(-135deg);
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 1320px) {
+    &__list {
+      margin-left: 0;
+      width: 100%;
+    }
+  } /* max-width 1320px */
+
+  @media screen and (max-width: 1270px) {
+    &__list {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  } /* max-width 1270px */
+
+  @media screen and (max-width: 1200px) {
+    &__list {
+      width: 90%;
+    }
+  } /* max-width 1200px */
+
+
+  @media screen and (max-width: 740px) {
+    &__list {
+      width: 85%;
+    }
+  } /* max-width 740px */
+
+  @media screen and (max-width: 460px) {
+    &__list {
+      width: 75%;
+    }
+    .slick-arrow {
+      width: 38px;
+      height: 38px;
+    }
+    .slick-prev {
+      left: -40px;
+    }
+    .slick-next {
+      right: -40px;
+    }
+  } /* max-width 460px */
+
+} /* suppliers */

@@ -1,0 +1,43 @@
+$r: #d21414;
+
+$gradient: linear-gradient(180.0deg, #d51414 0%, #a10d0d 100%);
+
+$accent: $r;
+$color: #333;
+
+$font: 'Roboto', sans-serif;
+
+/* Миксин замены цвета placeholder у input.
+Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000); */
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {color:$color;}
+  &::-moz-placeholder          {color:$color;}
+  &:-ms-input-placeholder      {color:$color;}
+}
+
+@keyframes btn-hover {
+  from {
+    background-color: rgba(#fff, 0.3);
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(10);
+    }
+  to {
+    background-color: rgba(#fff, 0);
+  }
+}
+
+@keyframes pzv-phone-animation {
+  0%,50%,100% {
+    transform:rotate(0deg);
+  }
+
+  10%,30% {
+    transform:rotate(-25deg);
+  }
+
+  20%,40% {
+    transform:rotate(25deg);
+  }
+}

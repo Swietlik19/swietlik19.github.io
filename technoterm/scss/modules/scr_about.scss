@@ -1,0 +1,131 @@
+.about {
+  position: relative;
+  padding-top: 53px;
+
+  &__header {
+    position: relative;
+    margin-bottom: 30px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+  &__header-img {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    display: block;
+    width: calc(100% - 30px);
+    height: 100%;
+  }
+
+  .grey {
+    padding-top: 42px;
+    padding-left: 69px;
+    padding-right: 50px;
+    padding-bottom: 18px;
+  }
+
+  .two-cols {
+    column-count: 2;
+    column-gap: 30px;
+  }
+
+  h1 {
+    margin-bottom: 19px;
+  }
+
+  h2 {
+    max-width: 480px;
+    margin-bottom: 68px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 15px;
+    &.alignleft {
+      float: left;
+      margin-right: 20px;
+    }
+    &.alignright {
+      float: right;
+      margin-left: 20px;
+    }
+    &.aligncenter {
+      margin: 0 auto;
+    }
+  }
+
+  .article {
+    font-size: 14px;
+    line-height: 24px;
+    p {
+      margin-bottom: 28px;
+    }
+    a {
+      color: #666;
+      transition: 0.5s;
+      word-break: break-word;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  /* media */
+
+  @media screen and (max-width: 840px) {
+    .two-cols {
+      column-count: 1;
+      column-gap: 0;
+    }
+  } /* max-width 840px */
+
+  @media screen and (max-width: 768px) {
+    &__header {
+      padding-top: 150px;
+    }
+  } /* max-width 768px */
+
+  @media screen and (max-width: 576px) {
+    &__header {
+      padding-top: 250px;
+      background-position: top center !important;
+      background-size: 100% auto !important;
+    }
+    &__header-img {
+      background-position: top center !important;
+      background-size: 100% auto !important;
+    }
+  } /* max-width 576px */
+
+  @media screen and (max-width: 560px) {
+    .grey {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  } /* max-width 560px */
+
+  @media screen and (max-width: 440px) {
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    &__header {
+      padding-bottom: 0;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    .grey {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+} /* about */

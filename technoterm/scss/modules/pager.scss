@@ -1,0 +1,92 @@
+@keyframes hoverAnimation{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+.pager {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  span, a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    i {
+      font-size: 18px;
+      font-weight: 700;
+      color: #435269;
+    }
+  }
+  span.current {
+    color: #a7a9ac;
+  }
+  a {
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    &.prev {
+      margin-right: 10px;
+    }
+    &.next {
+      margin-left: 10px;
+    }
+
+    &::before{
+      background: rgba($accent,.2);
+      border-radius: 50%;
+      content: "";
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%,-50%);
+      transition: all 0.5s linear;
+      width: 0;
+      height: 0;
+    }
+    &:hover {
+      color: $accent;
+      .fa {
+        color: $accent;
+      }
+      &::before{
+        animation: hoverAnimation 0.6s linear forwards;
+        height: 50px;
+        width: 50px;
+      }
+    }
+  }
+
+
+  /* media */
+  @media screen and (max-width: 1000px) {
+
+  } /* max-width 1000px */
+
+  @media screen and (max-width: 600px) {
+
+  } /* max-width 600px */
+
+  @media screen and (max-width: 500px) {
+
+  } /* max-width 500px */
+
+  @media screen and (max-width: 400px) {
+
+  }
+
+} /* pager */

@@ -63,7 +63,7 @@
     }
   });
 
-  $(".services__nav a").click(function(event) {
+  $(".services__nav--tabs a").click(function(event) {
     event.preventDefault();
     $(this).parent().addClass("current");
     $(this).parent().siblings().removeClass("current");

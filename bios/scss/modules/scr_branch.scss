@@ -1,0 +1,213 @@
+.branch {
+  position: relative;
+  
+  h2 {
+    height: 68px;
+    line-height: 68px;
+    padding-left: 68px;
+    background-color: $accent;
+
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .article {
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      &.first {
+        font-size: 18px;
+        line-height: 1.2;
+        strong {
+          font-weight: 600;
+        }
+      }
+    }
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 25px;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 600;
+      color: $accent;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      padding-left: 18px;
+      li {
+        font-size: 16px;
+        line-height: 24px;
+        &:not(:last-of-type) {
+          margin-bottom: 27px;
+        }
+      }
+    }
+    .table__wrap {
+      width: 100%;
+      margin-top: 40px;
+      overflow: auto;      
+    }
+    table {
+      width: 100%;
+      border: 1px solid #cccccc;
+      border-bottom: none;
+      border-collapse: collapse;
+      thead tr {
+        height: 70px;
+      }
+      tbody tr {
+        height: 60px;
+        &:nth-of-type(2n + 1) {
+          background: #f5f5f5;
+        }
+      }
+      th {
+        padding: 0 30px;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 600;
+        color: $accent;
+        text-align: left;  
+        vertical-align: middle;      
+      }
+      td {
+        padding: 0 30px;
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: 500;
+        &:last-of-type {
+          text-align: right;
+        }
+      }
+      .btn {
+        padding: 0 33px;
+        height: 47px;
+        line-height: 47px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__general {
+    margin-bottom: 45px;
+    .container {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 15px;
+        display: block;
+        width: -webkit-calc(100% - 30px);
+        width: calc(100% - 30px);
+        height: 100%;
+        background-color: #f5f5f5;
+        z-index: -1;
+      }
+    }
+    .left {
+      padding-left: 67px;
+      padding-top: 44px;
+      padding-bottom: 46px;
+    }
+    .right {
+      padding-top: 40px;
+      padding-right: 62px;
+      padding-bottom: 44px;
+    }       
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 26px;  
+      }      
+      &.first {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+
+  /* media */
+  @media screen and (max-width: 1024px) {
+
+  } /* max-width 1024px */
+
+  @media screen and (max-width: 992px) {
+
+  } /* max-width 992px */
+
+  @media screen and (max-width: 840px) {
+    &__general {
+      .left {
+        padding-left: 30px;
+      }
+      .right {
+        padding-right: 30px;
+      }
+    }
+  } /* max-width 840px */
+
+  @media screen and (max-width: 768px) {
+    &__general {
+      .left {
+        padding: 20px;
+        padding-top: 30px;
+      }
+      .right {
+        padding: 20px;
+        padding-bottom: 30px;
+      }
+    }    
+  } /* max-width 768px */
+
+  @media screen and (max-width: 500px) {
+    h2 {
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    &__general {
+      margin-bottom: 20px;
+      p {
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .article {
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+        &.first {
+          font-size: 16px;
+        }
+      }
+      ul {
+        li {
+          font-size: 14px;
+          &:not(:last-of-type) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+      table {
+        td {
+          padding: 0 20px;
+          font-size: 14px;
+        }
+        th {
+          padding: 0 20px;
+          font-size: 15px;
+        }
+      }
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 450px) {
+
+  }
+
+} /* branch */

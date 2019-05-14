@@ -1,0 +1,71 @@
+.certificates {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 20px;
+
+  .title1 {
+    margin-top: 18px;
+  }
+
+  &__items {
+    margin-top: 55px;
+  }
+  
+  &__wrap {
+    padding-bottom: 30px;
+  }
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-height: 480px;
+    margin-bottom: 12px;
+
+    background: #fff;
+    border: 20px solid transparent;
+    border-image-source: url('../img/img-border.png');
+    border-image-width: 12px;
+    border-image-slice: 12;
+    img {
+      display: block;
+      max-height: 480px;
+    }
+  }
+
+  &__text {
+    p {
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 600;
+      color: $accent;
+      text-align: center;
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 550px) {
+    .title1 {
+      margin-top: 50px;
+      font-size: 28px;
+    }
+  } /* max-width 550px */
+
+  @media screen and (max-width: 450px) {
+    &__wrap {
+      &:nth-of-type(2n + 1) {
+        padding-right: 3px;
+      }
+      &:nth-of-type(2n) {
+        padding-left: 3px;
+      }
+    }
+    &__text p {
+      font-size: 13px;
+    }
+  }
+
+} /* certificates */

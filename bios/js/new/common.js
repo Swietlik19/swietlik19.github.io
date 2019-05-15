@@ -332,6 +332,12 @@
     $(this).parent('.text-input--required').removeClass('onfocus');
   });
 
+  /* "Открыть" на странице "вопрос-ответ" */
+  $('.questions .questions__item .top').click(function() {
+    $(this).siblings('.hidden').slideToggle();
+    $(this).find('.open').toggleClass('active');
+  });
+
 
 
   /* Делаем картинку лого инлайновой */

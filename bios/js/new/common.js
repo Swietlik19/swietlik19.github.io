@@ -138,6 +138,11 @@
   }
 
   imgCover($('.reviews__img img'));
+  imgCover($('.doctor__img img'));
+
+  $(window).resize(function(){
+    imgCover($('.doctor__img img'));
+  });
 
   /* Открытие поля search для мобильной версии */
   $('.search-form .open-search').click(function(event) {
@@ -184,6 +189,10 @@
     if( eventObject.which == 27 ){
       closeModal();
     }
+  });
+
+  $('.menu-open').click(function(){
+    $(this).siblings('.menu2__list').slideToggle();
   });
 
   // маска поля tel
@@ -257,6 +266,36 @@
       }
     ]
   });
+
+  $('#doctor__slider').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 630,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    });
 
   // Выравнивание высоты слайдов
   // bp - брейкпоинт. Когда становится один слайд, не нужна одинаковая высота

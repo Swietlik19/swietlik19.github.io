@@ -68,7 +68,7 @@
           }
         }
       }
-    }
+    }       
   }
 
   .text-input--icon {
@@ -98,9 +98,24 @@
       transition: 0.7s;
     }
 
-    &.spec {
-      .current {
-        padding-left: 43px;
+    .current {
+      padding-left: 43px;
+    }
+
+    &.text-input--required {
+      &::before {
+        content: '*';
+        position: absolute;
+        top: 12px;
+        left: 54px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $r;
+      }
+    } 
+    &.onfocus {
+      &::before {
+        content: none;
       }
     }
   }
@@ -248,3 +263,61 @@
   }
 
 } /* form */
+
+.reviews__form {
+  .form {
+    width: 100%;
+    padding: 29px 70px;
+    &__title {
+      margin: 0;
+      margin-bottom: 21px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $accent;
+    }
+    input[type="submit"] {
+      margin: 0 auto;
+      margin-top: 16px;
+      width: 87.10691823899371%;
+    }
+    .accept {
+      margin-top: 22px;
+    }
+  }
+  .your-message textarea {
+    height: 130px;
+  }
+
+  @media screen and (max-width: 1070px) {
+    .form {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  } /* max-width 1070px */
+
+  @media screen and (max-width: 768px) {    
+    .form {
+      margin-bottom: 20px;
+    }
+  } /* max-width 768px */
+
+  @media screen and (max-width: 400px) {    
+    .form {
+      &__title {
+        font-size: 18px;
+      }
+      &--border {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        padding: {
+          top: 20px;
+          left: 20px;
+          right: 20px;
+          bottom: 30px;
+        }
+      }
+    }
+  }
+} /* reviews__form form */

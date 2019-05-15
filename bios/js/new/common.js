@@ -273,7 +273,6 @@
   setPositionSlick('#specialists__slider','450px');
   setPositionSlick('#reviews__slider .reviews__slides','620px');
 
-
   /* На мобильном меню в футере открывается по клику на h3 */
   $('.footer__menu').click(function(){
     var elem = $(this);
@@ -286,6 +285,15 @@
       elem.find('.footer__menu-list').slideToggle();
     }
   });
+
+  $('.text-input--required input, .text-input--required textarea').focus(function(){
+    $(this).parent('.text-input--required').addClass('onfocus');
+  });
+  $('.text-input--required input, .text-input--required textarea').blur(function(){
+    $(this).parent('.text-input--required').removeClass('onfocus');
+  });
+
+
 
   /* Делаем картинку лого инлайновой */
   // $('a.logo img').each(function(){

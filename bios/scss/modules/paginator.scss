@@ -1,0 +1,83 @@
+.paginator {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    &.current {
+      .page-numbers {
+        color: #4c5b97;   
+      }
+    }
+    a.page-numbers {
+      &:hover {
+        color: $r;
+      }
+    }
+  }
+  .page-numbers {
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 8px;
+    background: transparent;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: $accent;  
+    text-decoration: none;   
+    transition: 0.3s;     
+  }
+  a.prev, a.next {
+    font-size: 0;
+    box-shadow: 0px 0px 30px 0px rgba(#000,0.1);
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: #ffffff url('../img/icon-arrow.svg') no-repeat center center;
+    background-size: 14px 13px;
+    border-radius: 50%;
+    transition: 0.7s;
+    cursor: pointer;
+    z-index: 100;
+    text-decoration: none;
+    &:hover {
+      box-shadow: 0px 0px 15px 0px rgba($accent,0.3);
+      transform: scale(1.05);
+    }
+  }
+  a.prev {
+    left: -30px;
+    transform: rotate(180deg);
+    &:hover {
+      transform: scale(1.05) rotate(180deg);
+    }
+  }
+  a.next {
+    right: -30px;
+  }
+  
+  /* media */
+
+  @media screen and (max-width: 500px) {    
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    .page-numbers {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      margin: 0 2px;
+      font-size: 14px;   
+    }
+    a.prev, a.next {
+      width: 25px;
+      height: 25px;
+      background-size: 12px 11px;
+    }
+  } /* max-width 500px */
+}

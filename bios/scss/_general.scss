@@ -498,6 +498,16 @@ input[type="submit"] {
   }
 }
 
+/* Переопределение стилей yandex map */
+.ymaps-2-1-73-controls-pane {
+  display: none;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    -webkit-filter: grayscale(30%) url(/img/filter.svg#filter);
+          filter: grayscale(30%) url(/img/filter.svg#filter);
+}
+
 /* Переопределение стилей fancybox */
 .fancybox-overlay {
   background-color: rgba(#000,0.5);
@@ -702,6 +712,13 @@ input[type="submit"] {
   }
   .title2--secondary {
     font-size: 26px;
+  }
+  .secondary-page {
+    .desc {
+      &:not(.desc1) {
+        margin-top: -15px;
+      }
+    }
   }
 } /* max-width 500px */
 

@@ -50,6 +50,34 @@
   	flex-direction: column;
   	justify-content: flex-end;
   }
+  .df2 {    
+    flex-direction: column;
+    .left {
+      width: 100%;
+      margin-right: 0;
+      display: flex;
+      justify-content: space-between;
+      .form__item {
+        width: calc((100% - 68px) / 3);
+      }
+      .text-input {
+        margin-bottom: 20px;
+      }
+    }
+    .bottom {
+      display: flex;
+    }
+    .center {
+      width: 65.63706563706564%;
+      margin-right: 34px;
+    }
+    .right {
+      width: 246px;
+    }
+    .accept label {
+      text-align: left;
+    }    
+  }
   /* media */
   @media screen and (max-width: 992px) {
 		.form {
@@ -62,6 +90,20 @@
 			width: 30%;
 		}
   } /* max-width 992px */
+
+  @media screen and (max-width: 860px) {
+    .df2 {    
+      .left {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .form__item {
+          width: 280px;
+          margin-right: 20px;
+        }
+      }
+
+    }
+  } /* max-width 860px */
 
    @media screen and (max-width: 840px) {
    	.df {
@@ -80,6 +122,16 @@
 		}
   } /* max-width 840px */
 
+  @media screen and (max-width: 660px) {
+    .df2 {
+      .bottom {
+        flex-direction: column;
+      }
+      .center {
+        width: 100%;
+      }
+    }
+  } /* max-width 660px */
 
   @media screen and (max-width: 600px) {
 		.df {
@@ -102,6 +154,11 @@
 				font-size: 18px;
 			}
 		}
+    .df2 {
+      .center {
+        margin-top: 0;
+      }
+    }
   } /* max-width 600px */
 
   @media screen and (max-width: 400px) {
@@ -116,6 +173,46 @@
 				margin-right: 0;
 			}
 		}
+    .df2 {
+      .left {
+        .form__item {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+      .center {
+        width: 100%;
+      }
+      .accept {
+        br {
+          display: none;
+        }
+      }
+      .right {
+        width: 100%;
+      }      
+    }
   }
 
 } /* order */
+
+.order2 {
+  padding-bottom: 35px;
+  .form {
+    padding: {
+      left: 50px;
+      top: 32px;
+      right: 55px;
+      bottom: 41px;
+    }
+    @media screen and (max-width: 800px) {
+      padding: {
+        left: 20px;
+        top: 30px;
+        right: 25px;
+        bottom: 30px;
+      }
+    } /* max-width 800px */
+  }
+}
+

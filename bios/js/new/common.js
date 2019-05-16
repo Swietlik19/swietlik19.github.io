@@ -4,8 +4,22 @@
   wow = new WOW({mobile: false})
 
   wow.init();
-  /* Инициализация красивых select'ов */
+  /* Инициализация красивых select'ов */  
   $('select').niceSelect();
+
+  var sel = $('select');
+  sel.each(function() {
+    var selected = $(this).val(); // cache selected value, before reordering
+    var opts_list = $(this).find('option');
+    opts_list.sort(function(a, b) { 
+      return $(a).val() > $(b).val() ? 1 : -1; }
+    );
+    $(this).html('').append(opts_list);
+    $(this).val(selected); // set cached selected value
+  });  
+
+  $('select').niceSelect('update');
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
   // инициализация fancybox
@@ -358,79 +372,80 @@
   //   }, 'xml');
   // });
 
-  // function mapActivate(xID) {
-  //   if (document.querySelector("#" + xID + "") !== null) {
+  function mapActivate(xID) {
+    if (document.querySelector("#" + xID + "") !== null) {
 
-  //     /* Карта */
-  //     var myMap;
+      /* Карта */
+      var myMap;
 
-  //     // Дождёмся загрузки API и готовности DOM.
-  //     ymaps.ready(init);
+      // Дождёмся загрузки API и готовности DOM.
+      ymaps.ready(init);
 
-  //     function init () {
-  //         // Создание экземпляра карты и его привязка к контейнеру с
-  //         // заданным id ("map").
-  //         myMap = new ymaps.Map(xID, {
-  //             // При инициализации карты обязательно нужно указать
-  //             // её центр и коэффициент масштабирования.
-  //             center: [44.604014, 33.505597],
-  //             zoom: 16
-  //         }, {
-  //             searchControlProvider: 'yandex#search'
-  //         });
+      function init () {
+          // Создание экземпляра карты и его привязка к контейнеру с
+          // заданным id ("map").
+          myMap = new ymaps.Map(xID, {
+              // При инициализации карты обязательно нужно указать
+              // её центр и коэффициент масштабирования.
+              center: [50.290168, 57.141027],
+              zoom: 16
+          }, {
+              searchControlProvider: 'yandex#search'
+          });
 
-  //         // Создаём макет содержимого.
-  //           MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-  //               '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-  //           ),
+          // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
 
-  //           myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-  //               hintContent: 'ул. Пожарова 20/2',
-  //               balloonContent: 'ТехноТерм'
-  //           }, {
-  //               // Опции.
-  //               // Необходимо указать данный тип макета.
-  //               iconLayout: 'default#image',
-  //               // Своё изображение иконки метки.
-  //               iconImageHref: 'img/favicon/fav192.png',
-  //               // Размеры метки.
-  //               iconImageSize: [50, 50],
-  //               // Смещение левого верхнего угла иконки относительно
-  //               // её "ножки" (точки привязки).
-  //               iconImageOffset: [-15, -66]
-  //           }),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'пр. Сакинбай Батыра, 26 Р',
+                balloonContent: 'Биос'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'img/pin.svg',
+                // Размеры метки.
+                iconImageSize: [43, 60],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-15, -66]
+            }),
 
-  //           myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-  //               hintContent: '',
-  //               balloonContent: '',
-  //               iconContent: ''
-  //           }, {
-  //               // Опции.
-  //               // Необходимо указать данный тип макета.
-  //               iconLayout: 'default#imageWithContent',
-  //               // Своё изображение иконки метки.
-  //               // iconImageHref: 'images/ball.png',
-  //               // Размеры метки.
-  //               iconImageSize: [48, 48],
-  //               // Смещение левого верхнего угла иконки относительно
-  //               // её "ножки" (точки привязки).
-  //               iconImageOffset: [-24, -24],
-  //               // Смещение слоя с содержимым относительно слоя с картинкой.
-  //               iconContentOffset: [15, 15],
-  //               // Макет содержимого.
-  //               iconContentLayout: MyIconContentLayout
-  //           });
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+                hintContent: '',
+                balloonContent: '',
+                iconContent: ''
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                // iconImageHref: 'images/ball.png',
+                // Размеры метки.
+                iconImageSize: [48, 48],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -24],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
+            });
 
-  //       myMap.geoObjects
-  //           .add(myPlacemark)
-  //           .add(myPlacemarkWithContent);
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
 
-  //       myMap.behaviors.disable('scrollZoom');
+        myMap.behaviors.disable('scrollZoom');
 
-  //     }
-  //   }
-  // }
+      }
+    }
+  }
 
-  // mapActivate('screen_map');
+  /* добавить переменные с данными */
+  mapActivate('screen_map_inner');
 
 })(jQuery);

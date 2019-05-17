@@ -396,6 +396,20 @@
     $(this).parents('label').find('span').text(fileName);
   });
 
+  $('.serv .show-more').click(function() {
+    $(this).toggleClass('active');
+    $(this).parents('.serv__item').find('.serv__hidden').slideToggle();
+
+    $(this).parents('.serv__item').siblings('.serv__item').find('.serv__hidden').slideUp();
+    $(this).parents('.serv__item').siblings('.serv__item').find('.show-more').removeClass('active');
+  });
+
+  $('.serv__nav #serv-filter').change(function() {   
+    var tab = $(this).val();
+    $(".serv__list").not(tab).hide();
+    $(tab).fadeIn();
+  });
+
   /* Делаем картинку лого инлайновой */
   // $('a.logo img').each(function(){
   //   var $img = $(this);

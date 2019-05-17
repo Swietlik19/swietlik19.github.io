@@ -7,18 +7,32 @@
   /* Инициализация красивых select'ов */  
   $('select').niceSelect();
 
-  var sel = $('select');
-  sel.each(function() {
-    var selected = $(this).val(); // cache selected value, before reordering
-    var opts_list = $(this).find('option');
-    opts_list.sort(function(a, b) { 
-      return $(a).val() > $(b).val() ? 1 : -1; }
-    );
-    $(this).html('').append(opts_list);
-    $(this).val(selected); // set cached selected value
-  });  
+  // var sel = $('select');
+  // sel.each(function(i,el) {
+  //   var selected = $(el).val(); // cache selected value, before reordering
+  //   var opts_list = $(el).find('option');
+  //   console.log('селект № ' + i);
+  //   console.log(opts_list);
+  //   opts_list.sort(function(a, b) { 
+  //     return a.value > b.value ? 1 : -1; }
+  //   );
+  //   console.log(opts_list);
+  //   $(el).html('').append(opts_list);
+  //   $(el).val(selected); // set cached selected value
+  // });  
 
-  $('select').niceSelect('update');
+  // sel = $('.filter--tabs');
+  // sel.each(function() {
+  //   var selected = $(this).val(); // cache selected value, before reordering
+  //   var opts_list = $(this).find('option');
+  //   opts_list.sort(function(a, b) { 
+  //     return $(a).text() > $(b).text() ? 1 : -1; }
+  //   );
+  //   $(this).html('').append(opts_list);
+  //   $(this).val(selected); // set cached selected value
+  // }); 
+
+  // $('select').niceSelect('update');
 
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
@@ -347,16 +361,39 @@
   });
 
   /* "Открыть" на странице "вопрос-ответ" */
-  $('.questions .questions__item .top').click(function() {
+  $('.questions .questions__item .top').click(function() {    
     $(this).siblings('.hidden').slideToggle();
     $(this).find('.open').toggleClass('active');
+
+    $(this).parents('.questions__item').siblings('.questions__item').find('.hidden').slideUp();
+    $(this).parents('.questions__item').siblings('.questions__item').find('.open').removeClass('active');
+    
   });
 
   /* "Открыть" на странице "мед. оборудование" */
   $('.equipment .show-more').click(function() {
     $(this).toggleClass('active');
     $(this).parents('.equipment__item').next('.equipment__more').toggleClass('active'); 
-    // $(this).parents('.equipment__item').next('.equipment__more').find('.hidden').slideToggle(); 
+
+    $(this).parents('.equipment__item').siblings('.equipment__item').next('.equipment__more').removeClass('active'); 
+    $(this).parents('.equipment__item').siblings('.equipment__item').find('.show-more').removeClass('active');
+  });
+
+  $('.equipment__more').each(function(i){
+    if (i % 2 != 0) {
+      $(this).addClass('grey-bg');
+    }
+  });
+  $('.equipment__item').each(function(i){
+    if (i % 2 != 0) {
+      $(this).addClass('grey-bg');
+    }
+  });
+
+  $('.your-resume input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).parents('label').find('span').text(fileName);
   });
 
   /* Делаем картинку лого инлайновой */

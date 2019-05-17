@@ -7408,6 +7408,36 @@ input[type="submit"] {
   .nice-select.open .list {
     max-height: 10000px; }
 
+.nice-select.filter--tabs {
+  color: #4c5b97;
+  font-size: 16px;
+  border: 1.0px solid #4c5b97; }
+  .nice-select.filter--tabs .option.selected {
+    font-weight: 600; }
+  .nice-select.filter--tabs::after {
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #253574;
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0); }
+  .nice-select.filter--tabs .current {
+    color: #4c5b97;
+    font-size: 18px; }
+    .nice-select.filter--tabs .current.active {
+      color: #4c5b97;
+      font-size: 18px; }
+  .nice-select.filter--tabs.open::after {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%; }
+
 /* Переопределени datepicker */
 .datepickers-container {
   z-index: 1100; }
@@ -7628,6 +7658,56 @@ input[type="submit"] {
         margin: 0 1px; }
 
 /* breadcrumbs */
+.list1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #cccccc;
+  /* media */
+  /* max-width 500px */ }
+  .list1__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%; }
+    .list1__header .list1__col {
+      padding-top: 24px;
+      padding-bottom: 27px;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 600;
+      color: #253574; }
+      .list1__header .list1__col--1 {
+        padding-left: 44px; }
+  .list1__top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%; }
+  .list1__col {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 10px; }
+    .list1__col--1 {
+      width: 34.21052631578947%; }
+    .list1__col--2 {
+      width: 31.57894736842105%; }
+    .list1__col--3 {
+      width: 16.84210526315789%; }
+  .list1__top .list1__col:last-of-type {
+    padding-right: 30px; }
+
+/* list1 */
 .menu2 {
   position: relative;
   /* media */
@@ -7990,7 +8070,7 @@ input[type="submit"] {
       padding-bottom: 30px; } }
 
 /* reviews__form form */
-.appointment {
+.modal {
   display: none;
   position: fixed;
   top: 0;
@@ -8003,7 +8083,7 @@ input[type="submit"] {
   /* max-width 500px */
   /* max-width 500px */
   /* max-width 440px */ }
-  .appointment__content {
+  .modal__content {
     display: none;
     position: absolute;
     top: 50%;
@@ -8017,15 +8097,15 @@ input[type="submit"] {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     overflow: auto; }
-  .appointment .form {
+  .modal .form {
     width: 100%;
     z-index: 0;
     margin-bottom: 0; }
-    .appointment .form input[type="submit"] {
+    .modal .form input[type="submit"] {
       width: 100%;
       padding-left: 10px;
       padding-right: 10px; }
-  .appointment .close {
+  .modal .close {
     position: absolute;
     background: none;
     border: none;
@@ -8037,7 +8117,7 @@ input[type="submit"] {
     right: 0;
     z-index: 10;
     cursor: pointer; }
-    .appointment .close::before, .appointment .close::after {
+    .modal .close::before, .modal .close::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -8048,36 +8128,91 @@ input[type="submit"] {
       -webkit-transition: 0.5s;
       -o-transition: 0.5s;
       transition: 0.5s; }
-    .appointment .close::before {
+    .modal .close::before {
       -webkit-transform: translate(-50%, -50%) rotate(45deg);
           -ms-transform: translate(-50%, -50%) rotate(45deg);
               transform: translate(-50%, -50%) rotate(45deg); }
-    .appointment .close::after {
+    .modal .close::after {
       -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           -ms-transform: translate(-50%, -50%) rotate(-45deg);
               transform: translate(-50%, -50%) rotate(-45deg); }
-    .appointment .close:hover::before, .appointment .close:hover::after {
+    .modal .close:hover::before, .modal .close:hover::after {
       background-color: #253574; }
+  .modal .your-resume {
+    position: relative; }
+    .modal .your-resume input[type="file"] {
+      display: none; }
+    .modal .your-resume label {
+      position: relative;
+      display: block;
+      min-width: 100px;
+      height: 50px;
+      line-height: 50px;
+      border: 1.0px solid #4c5b97;
+      -webkit-border-radius: 3.0px;
+              border-radius: 3.0px;
+      font-size: 16px;
+      color: #4c5b97;
+      text-align: center;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+      z-index: 1;
+      cursor: pointer; }
+      .modal .your-resume label::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #4c5b97;
+        -webkit-transform: scaleY(0);
+            -ms-transform: scaleY(0);
+                transform: scaleY(0);
+        -webkit-transition: opacity .3s,-webkit-transform .3s .5s;
+        transition: opacity .3s,-webkit-transform .3s .5s;
+        -o-transition: opacity .3s,transform .3s .5s;
+        transition: opacity .3s,transform .3s .5s;
+        transition: opacity .3s,transform .3s .5s,-webkit-transform .3s .5s;
+        opacity: 0; }
+      .modal .your-resume label:hover {
+        color: #fff;
+        background: #4c5b97; }
+        .modal .your-resume label:hover::before {
+          -webkit-transform: scaleY(1);
+              -ms-transform: scaleY(1);
+                  transform: scaleY(1);
+          opacity: 1;
+          -webkit-transition: -webkit-transform .2s ease-in-out .1s;
+          transition: -webkit-transform .2s ease-in-out .1s;
+          -o-transition: transform .2s ease-in-out .1s;
+          transition: transform .2s ease-in-out .1s;
+          transition: transform .2s ease-in-out .1s, -webkit-transform .2s ease-in-out .1s; }
+      .modal .your-resume label:focus {
+        border-color: #191e32; }
   @media screen and (max-width: 560px) {
-    .appointment__content {
+    .modal__content {
       width: 90%; }
-    .appointment .form {
+    .modal .form {
       padding: 25px 40px 18px; } }
   @media screen and (max-width: 500px) {
-    .appointment__content {
+    .modal__content {
       top: 20px;
       -webkit-transform: translate(-50%, 0);
           -ms-transform: translate(-50%, 0);
               transform: translate(-50%, 0); } }
   @media screen and (max-width: 440px) {
-    .appointment__content {
+    .modal__content {
       width: 95%; }
-    .appointment .form {
+    .modal .form {
       padding: 25px 25px 18px; } }
   @media screen and (max-width: 400px) {
-    .appointment__content {
+    .modal__content {
       width: 100%; }
-    .appointment .form {
+    .modal .form {
       margin-left: 0;
       padding: 20px 20px 30px; } }
 
@@ -12075,6 +12210,14 @@ input[type="submit"] {
     line-height: 24px; }
     .contacts__text strong {
       font-weight: 600; }
+    .contacts__text a {
+      text-decoration: none;
+      color: inherit;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .contacts__text a:hover {
+        color: #e30613; }
   .contacts .socials__link {
     width: 39px;
     height: 39px;
@@ -12258,8 +12401,6 @@ input[type="submit"] {
     padding-top: 29px;
     padding-bottom: 28px;
     padding-right: 120px; }
-  .equipment .thidden {
-    display: none; }
   .equipment__more {
     display: none; }
     .equipment__more .hidden {
@@ -12384,6 +12525,23 @@ input[type="submit"] {
         padding-left: 40px; } }
 
 /* equipment */
+.serv {
+  position: relative;
+  /* media */
+  /* max-width 992px */
+  /* max-width 576px */
+  /* max-width 500px */ }
+  .serv .title1 {
+    padding-top: 32px; }
+  .serv .desc {
+    padding-left: 97px; }
+  .serv__nav {
+    margin-top: 40px; }
+  .serv .paginator {
+    padding-top: 37px;
+    padding-bottom: 48px; }
+
+/* serv */
 .footer {
   position: relative;
   background: #131c43;

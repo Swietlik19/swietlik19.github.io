@@ -352,7 +352,12 @@
     $(this).find('.open').toggleClass('active');
   });
 
-
+  /* "Открыть" на странице "мед. оборудование" */
+  $('.equipment .show-more').click(function() {
+    $(this).toggleClass('active');
+    $(this).parents('.equipment__item').next('.equipment__more').toggleClass('active'); 
+    // $(this).parents('.equipment__item').next('.equipment__more').find('.hidden').slideToggle(); 
+  });
 
   /* Делаем картинку лого инлайновой */
   // $('a.logo img').each(function(){

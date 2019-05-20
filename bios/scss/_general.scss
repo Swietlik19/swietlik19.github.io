@@ -145,10 +145,12 @@ input[type="submit"] {
     font-weight: 600;
     color: #ffffff;
     border: 1px solid #fff;
-    &:hover {
-      color: $accent--inv;
-      border-color: $accent--inv;
-      background: #fff;
+    &:not([disabled]) {
+      &:hover {
+        color: $accent--inv;
+        border-color: $accent--inv;
+        background: #fff;
+      }
     }
   }
   &.btn--transparent {
@@ -245,6 +247,13 @@ input[type="submit"] {
         transition: transform 0.2s ease-in-out 0.1s;
       }
     }
+  }
+}
+
+input[type="submit"] {
+  &[disabled] {
+    cursor: no-drop;
+    background: #5e5e5e;
   }
 }
 

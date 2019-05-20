@@ -103,6 +103,18 @@
     }
   });
 
+  $(".branch__nav--tabs a").click(function(event) {
+    event.preventDefault();
+    $(this).parent().addClass("current");
+    $(this).parent().siblings().removeClass("current");
+    var tab = $(this).attr("href");
+    $(".branch__tab").not(tab).hide();
+    $(tab).fadeIn();
+    if (document.body.clientWidth <= 500) {
+      $('html, body').animate({scrollTop: $(tab).offset().top - 20 +'px'});
+    }
+  });
+
   $(".articles__nav a").click(function(event) {
     event.preventDefault();
     $(this).parent().addClass("current");
@@ -204,7 +216,7 @@
 
   $(document).mouseup(function (e) {
     var container = $(".modal .modal__content");
-    if (container.has(e.target).length === 0){
+    if (container.has(e.target).length === 0 && $(e.target).parents('.datepicker').length == 0){
       closeModal();
     }
   });
@@ -439,7 +451,9 @@
   //   }, 'xml');
   // });
 
-  function mapActivate(xID) {
+  
+
+  function mapActivate(xID,coords) {
     if (document.querySelector("#" + xID + "") !== null) {
 
       /* Карта */
@@ -454,7 +468,7 @@
           myMap = new ymaps.Map(xID, {
               // При инициализации карты обязательно нужно указать
               // её центр и коэффициент масштабирования.
-              center: [50.290168, 57.141027],
+              center: coords,
               zoom: 16
           }, {
               searchControlProvider: 'yandex#search'
@@ -466,7 +480,7 @@
             ),
 
             myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'пр. Сакинбай Батыра, 26 Р',
+                hintContent: '',
                 balloonContent: 'Биос'
             }, {
                 // Опции.
@@ -512,7 +526,7 @@
     }
   }
 
-  /* добавить переменные с данными */
-  mapActivate('screen_map_inner');
+  /* ID контейнера карты, координаты */
+  mapActivate('screen_map_inner',[50.290168, 57.141027]);
 
 })(jQuery);

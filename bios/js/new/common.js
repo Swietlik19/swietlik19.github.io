@@ -396,18 +396,29 @@
     $(this).parents('label').find('span').text(fileName);
   });
 
-  $('.serv .show-more').click(function() {
+  $('.list1 .show-more').click(function() {
     $(this).toggleClass('active');
-    $(this).parents('.serv__item').find('.serv__hidden').slideToggle();
+    $(this).parents('.list1__item').find('.list1__hidden').slideToggle();
 
-    $(this).parents('.serv__item').siblings('.serv__item').find('.serv__hidden').slideUp();
-    $(this).parents('.serv__item').siblings('.serv__item').find('.show-more').removeClass('active');
+    $(this).parents('.list1__item').siblings('.list1__item').find('.list1__hidden').slideUp();
+    $(this).parents('.list1__item').siblings('.list1__item').find('.show-more').removeClass('active');
   });
 
   $('.serv__nav #serv-filter').change(function() {   
     var tab = $(this).val();
     $(".serv__list").not(tab).hide();
     $(tab).fadeIn();
+  });
+
+  /* При смене первого select в "анализы и диагностика" меняется набор значений во втором select */
+  $('.analyses #analyses-filter').change(function() {
+    var second = $('.analyses #analyses-filter2');
+    second.find('option[data-my="default"]').prop('selected',true);
+    second.find('option').prop('disabled',true);
+    second.find('option[data-my="default"]').prop('disabled',false);
+    second.find('option[data-my="' + $(this).val() + '"]').prop('disabled',false);
+
+    $('.analyses #analyses-filter2').niceSelect('update');
   });
 
   /* Делаем картинку лого инлайновой */

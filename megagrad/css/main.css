@@ -6671,8 +6671,6 @@ input[type="submit"][disabled] {
   /* max-width 992px */
   /* max-width 880px */
   /* max-width 680px */
-  /* max-width 576px */
-  /* max-width 500px */
   /* max-width 450px */ }
   .main-menu__wrap {
     position: static; }
@@ -6688,7 +6686,6 @@ input[type="submit"][disabled] {
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
-      padding-left: 30px;
       width: 100%;
       height: 66px;
       z-index: 400;
@@ -6702,6 +6699,12 @@ input[type="submit"][disabled] {
                 box-shadow: 0px 3px 20px -20px rgba(125, 109, 173, 0.15); }
       .main-menu__wrap.fixed:hover {
         opacity: 1; }
+      .main-menu__wrap.fixed .main-menu__container {
+        width: 100%;
+        max-width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0 auto; }
   .main-menu .df {
     width: 100%;
     padding-top: 48px;
@@ -6841,6 +6844,7 @@ input[type="submit"][disabled] {
       padding-top: 10px;
       padding-bottom: 10px; }
     .main-menu h4 {
+      position: relative;
       margin-bottom: 10px;
       padding-top: 5px;
       padding-bottom: 5px;
@@ -6848,8 +6852,33 @@ input[type="submit"][disabled] {
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s; }
+      .main-menu h4::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+                transform-origin: center;
+        border-top: 2px solid #534b72;
+        border-right: 2px solid #534b72;
+        -webkit-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+                transform: rotate(135deg); }
+      .main-menu h4.active::before {
+        -webkit-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+                transform: rotate(315deg); }
       .main-menu h4:hover {
-        color: #eb6402; } }
+        color: #eb6402; }
+        .main-menu h4:hover::before {
+          border-color: #eb6402; } }
   @media screen and (max-width: 450px) {
     .main-menu h4 {
       padding-top: 2px;

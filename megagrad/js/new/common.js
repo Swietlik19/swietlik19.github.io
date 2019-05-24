@@ -37,9 +37,24 @@
 
   $('.burger').click(function() {
     $(this).toggleClass('active');
-    $('.menu').toggleClass('active');
-    // $('body').toggleClass('disabled');
+    $('.main-menu').slideToggle();
   });
+  
+  function closeMainMenu() {
+    $('.burger').removeClass('active');
+    $('.main-menu').slideUp();
+  }
+
+  $('.page_wr').click(function() {
+    closeMainMenu();
+  });
+
+  $(document).keydown(function(eventObject){
+    if( eventObject.which == 27 ){
+      closeMainMenu();
+    }
+  });
+
 
   /* Открытие / закрытие модалок (кроме карты) */
   $('a.open-modal').click(function(event){
@@ -207,32 +222,40 @@
 
   $(window).resize(function() {
     makeCircle();
-    if (window.matchMedia('(min-width: 768.01px)').matches) {
+    if (window.matchMedia('(min-width: 681px)').matches) {
       $('.footer-menu .footer-menu__links').slideDown();
+      $('.main-menu .main-menu__links').slideDown();
     } else {
       $('.footer-menu .footer-menu__links:not(".footer-menu__links--strong")').slideUp();
+      $('.main-menu .main-menu__links:not(".main-menu__links--strong")').slideUp();
     }
   });
 
-  /* Раскрытие меню в футере на мобильных устройствах */
+  /* Раскрытие меню в футере и хедере на мобильных устройствах */
 
-  function footerMenu() {
-    
-    $('.footer-menu h4').click(function(e) {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        $(this).toggleClass('active');        
-        $(this).siblings('.footer-menu__links').slideToggle();
-        $(this).parents('.footer-menu').find('.footer-menu__item').each(function(i, el) {
-          if ( $(el).has(e.target).length === 0 && !($(el).hasClass('footer-menu__item--strong')) ) {
-            $(el).find('.footer-menu__links').slideUp();
-          }
-        });
-      }
+  function openSubMenu() {
+    $.each(['footer-menu','main-menu'],function(xi,xe) {
+      $('.' + xe + ' h4').click(function(e) {
+        if (window.matchMedia('(max-width: 680px)').matches) {
+          $(this).toggleClass('active');        
+          $(this).siblings('.' + xe + '__links').slideToggle();
+          $(this).parents('.' + xe).find('.' + xe + '__item').each(function(i, el) {
+            if ( $(el).has(e.target).length === 0 && !($(el).hasClass(xe + '__item--strong')) ) {
+              $(el).find('.' + xe + '__links').slideUp();
+            }
+          });
+        }
+      });
     });
-
   }
 
-  footerMenu();
+  openSubMenu();
+
+  // фиксированные шапка
+  $(window).on("scroll", function() {
+    var fromTop = $(document).scrollTop();
+    $(".main-menu__wrap").toggleClass("fixed", (fromTop > 682));
+  });
 
 
 })(jQuery);

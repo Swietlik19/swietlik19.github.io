@@ -7,33 +7,6 @@
   /* Инициализация красивых select'ов */  
   $('select').niceSelect();
 
-  // var sel = $('select');
-  // sel.each(function(i,el) {
-  //   var selected = $(el).val(); // cache selected value, before reordering
-  //   var opts_list = $(el).find('option');
-  //   console.log('селект № ' + i);
-  //   console.log(opts_list);
-  //   opts_list.sort(function(a, b) { 
-  //     return a.value > b.value ? 1 : -1; }
-  //   );
-  //   console.log(opts_list);
-  //   $(el).html('').append(opts_list);
-  //   $(el).val(selected); // set cached selected value
-  // });  
-
-  // sel = $('.filter--tabs');
-  // sel.each(function() {
-  //   var selected = $(this).val(); // cache selected value, before reordering
-  //   var opts_list = $(this).find('option');
-  //   opts_list.sort(function(a, b) { 
-  //     return $(a).text() > $(b).text() ? 1 : -1; }
-  //   );
-  //   $(this).html('').append(opts_list);
-  //   $(this).val(selected); // set cached selected value
-  // }); 
-
-  // $('select').niceSelect('update');
-
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
   // инициализация fancybox
@@ -69,7 +42,32 @@
     $('body').toggleClass('disabled');
   });
 
-  $('.date input').datepicker();
+  /* По наведению появляется подменю */
+  $('.menu__item--with-sub').hover(
+    function(){
+      if ($(this).find('.menu__sub').css('position') == 'absolute') {
+        $(this).siblings('.menu__item--with-sub').removeClass('hover');    
+        $(this).addClass('hover');
+      }
+    },
+    function(){      
+      if ($(this).find('.menu__sub').css('position') == 'absolute') {
+        $(this).removeClass('hover');
+      }
+    }
+  );
+
+  $('.menu__item--with-sub .menu__link').click(function(event) {
+    event.preventDefault();
+    if ($(this).parents('.menu__item--with-sub').find('.menu__sub').css('position') == 'static') {
+      $(this).parents('.menu__item--with-sub').siblings('.menu__item--with-sub').removeClass('hover');   
+      $(this).parents('.menu__item--with-sub').toggleClass('hover');
+    }
+  });
+
+  $('.date input').datepicker({
+    timepicker: true
+  });
 
   $(".tabs__nav a").click(function(event) {
     event.preventDefault();
@@ -205,13 +203,14 @@
     var _href = $(this).attr('href');
     $(_href).show();
     $(_href + ' .modal__content').fadeIn();
-    $('.page_wr').addClass('blur-it');
+    $('body').addClass('disabled');
   });
 
   function closeModal() {
     $('.modal').fadeOut();
     $('.modal__content').fadeOut();
     $('.page_wr').removeClass('blur-it');
+    $('body').removeClass('disabled');
   }
 
   $(document).mouseup(function (e) {
@@ -432,27 +431,7 @@
 
     $('.analyses #analyses-filter2').niceSelect('update');
   });
-
-  /* Делаем картинку лого инлайновой */
-  // $('a.logo img').each(function(){
-  //   var $img = $(this);
-  //   var imgClass = $img.attr('class');
-  //   var imgURL = $img.attr('src');
-  //   $.get(imgURL, function(data) {
-  //     var $svg = $(data).find('svg');
-  //     if(typeof imgClass !== 'undefined') {
-  //       $svg = $svg.attr('class', imgClass+' replaced-svg');
-  //     }
-  //     $svg = $svg.removeAttr('xmlns:a');
-  //     if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-  //       $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-  //     }
-  //     $img.replaceWith($svg);
-  //   }, 'xml');
-  // });
-
-  
-
+ 
   function mapActivate(xID,coords) {
     if (document.querySelector("#" + xID + "") !== null) {
 

@@ -248,6 +248,7 @@
           $(this).parents('.' + xe).find('.' + xe + '__item').each(function(i, el) {
             if ( $(el).has(e.target).length === 0 && !($(el).hasClass(xe + '__item--strong')) ) {
               $(el).find('.' + xe + '__links').slideUp();
+              $(el).find('h4').removeClass('active');
             }
           });
         }

@@ -1,11 +1,15 @@
-mixin footer()
+mixin footer(logotype)
   section.footer.footer(id="footer")
     .footer__top
       .container
         .df
           .footer__info
-            .logo
-              img(src="img/svg/logo1.svg" alt="лого")
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo1.svg" alt="лого")
+            else 
+              #{logotype}.logo
+                img(src="img/svg/logo1.svg" alt="лого")
             p.logo-text Ировой центр для&nbsp;детей от&nbsp;1,5&nbsp;года до&nbsp;14&nbsp;лет
 
             p.address г. Симферополь, Евпаторийское шоссе,&nbsp;8

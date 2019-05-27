@@ -264,5 +264,13 @@
     $(".nav").toggleClass("fixed", (fromTop > 682));   
   });
 
+  /* "Открыть" на странице "вопрос-ответ" */
+  $('.questions .questions__item .top').click(function() {    
+    $(this).siblings('.hidden').slideToggle();
+    $(this).find('.open').toggleClass('active');
+
+    $(this).parents('.questions__item').siblings('.questions__item').find('.hidden').slideUp();
+    $(this).parents('.questions__item').siblings('.questions__item').find('.open').removeClass('active');    
+  });
 
 })(jQuery);

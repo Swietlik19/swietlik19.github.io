@@ -12,11 +12,7 @@
   // инициализация fancybox
   $(".fancybox").fancybox({
     padding: 0,
-    scrolling: 'auto',
-    // autoResize: true,
-    // autoSize: true,
-    // fitToView: true,
-    // autoCenter: true
+    scrolling: 'auto'
   });
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -38,6 +34,16 @@
   $('.burger').click(function() {
     $(this).toggleClass('active');
     $('.main-menu').slideToggle();
+    if (window.matchMedia('(max-width: 880px)').matches) {
+      $('.menu').toggleClass('active');
+    }
+  });
+
+  $(window).resize(function() {
+    makeCircle();
+    if (window.matchMedia('(max-width: 880px)').matches && !($('.burger').hasClass('active')) ) {
+      $('.menu').removeClass('active');
+    }
   });
   
   function closeMainMenu() {
@@ -254,7 +260,7 @@
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
-    $(".main-menu__wrap").toggleClass("fixed", (fromTop > 682));
+    $(".nav").toggleClass("fixed", (fromTop > 682));   
   });
 
 

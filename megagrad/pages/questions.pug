@@ -23,34 +23,21 @@ html(lang='ru')
     link(rel='stylesheet', href='css/main.min.css')
 
     include blocks/header.pug
-    include blocks/nav.pug
-
-    include blocks/scr1.pug
-    include blocks/scr_lead.pug
-    include blocks/scr_individual.pug
-    include blocks/scr_group.pug
-    include blocks/scr_bday.pug
-    include blocks/scr_partners.pug
-    include blocks/scr_follow.pug
-    
+    include blocks/nav.pug    
     include blocks/footer.pug
     include blocks/socials.pug
     include blocks/main-menu.pug
 
-  body.main-page
+    include blocks/scr_questions.pug
+
+  body.secondary-page.questions-page
     
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr
-      +scr1
-      // тут будет второй экран
 
-      +scr_lead
-      +scr_individual
-      +scr_group
-      +scr_bday
-      +scr_partners
-      +scr_follow
+      +scr_questions
+
 
     +footer
 

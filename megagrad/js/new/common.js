@@ -10,7 +10,7 @@
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('img[data-object-fit]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit]'), {watchMQ: true});
 
   // инициализация fancybox
   $(".fancybox").fancybox({
@@ -70,16 +70,18 @@
     event.preventDefault();
     var _href = $(this).attr('href');
     $(_href).show();
-    $(_href + ' .modal__content').fadeIn();
+    $(_href + ' .modal__content').addClass('visible');
     $('.page_wr').addClass('blur-it');
     $('.footer').addClass('blur-it');
+    $('.header').addClass('blur-it');
   });
 
   function closeModal() {
     $('.modal').fadeOut();
-    $('.modal__content').fadeOut();
+    $('.modal__content').removeClass('visible');
     $('.page_wr').removeClass('blur-it');
     $('.footer').removeClass('blur-it');
+    $('.header').removeClass('blur-it');
   }
 
   $(document).mouseup(function (e) {

@@ -1,0 +1,136 @@
+.modal {
+  position: relative; 
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 803px;
+    max-height: 100vh;
+    padding: 0 10px;
+    transform: translate(-50%,-50%);
+    overflow: auto;
+    opacity: 0;
+    transition: 0.7s;
+    &.visible {
+      opacity: 1;
+    }
+  }
+  .form {
+    width: 652px;
+    z-index: 0;
+    margin-bottom: 0;
+    &::before {
+      content: '';
+      position: absolute;
+
+      display: block;
+      width: 798px;
+      height: 660px;
+    }
+    input[type="submit"],
+    .btn--grad__wrap,
+    .submit__wrap {
+      width: 231px;
+      height: 60px;
+    }
+    &__one-col {
+      width: 310px;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__desc {
+      text-align: center;
+    }
+    .accept {
+      padding-left: 27px;
+      &::before {
+        left: 0;
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .close {
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    
+    width: 59px;
+    height: 59px;
+    background-image: linear-gradient(0.0deg, #ec1c23 0%, #f37021 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    &::before,&::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      display: block;
+      width: 15px;
+      height: 4px;
+      background-color: #ffffff;
+      border-radius: 1.5px;
+    }
+    &::before {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  } 
+
+  /* media */
+  @media screen and (max-width: 560px) {
+    &__content {
+      width: 90%;
+    }
+    .form {
+      padding: 25px 40px 18px;
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 500px) {
+    &__content {
+      top: 20px;
+      transform: translate(-50%,0);
+    }
+  } /* max-width 500px */
+
+  @media screen and (max-width: 440px) {
+    &__content {
+      width: 95%;
+    }
+    .form {
+      padding: 25px 25px 18px;
+    }
+  } /* max-width 440px */
+
+  @media screen and (max-width: 400px) {
+    &__content {
+      width: 100%;
+    }
+    .form {
+      margin-left: 0;
+      padding: 20px 20px 30px;
+    }
+  }
+
+} /* modal */

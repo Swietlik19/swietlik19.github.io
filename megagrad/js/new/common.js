@@ -9,6 +9,9 @@
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
+  /* полифил для object-fit */
+  objectFitImages($('img[data-object-fit]'), {watchMQ: true});
+
   // инициализация fancybox
   $(".fancybox").fancybox({
     padding: 0,

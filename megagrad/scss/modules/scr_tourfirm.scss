@@ -1,0 +1,281 @@
+.tourfirm {
+  position: relative; 
+  padding-bottom: 140px;
+
+  &__title {
+    margin-top: 66px;
+    margin-bottom: 60px;
+  }
+  &__desc {
+    margin-bottom: 55px;
+    padding-left: 67px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .img__wrap {
+    position: relative;
+    width: 100%;    
+    &::after {
+      content: '';
+      position: absolute;
+    }
+    img {
+      width: 100%;      
+      border-radius: 6px;
+    }
+  }
+  blockquote {
+    position: relative;
+    display: block;
+    padding-top: 47px;
+    padding-left: 70px;
+    padding-bottom: 59px;
+    padding-right: 32px;
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: block;
+      width: calc(100% + 30px);
+      height: 100%;
+      background-color: #fcf9fe;
+      z-index: -1;
+      border-radius: 6px;
+    }
+  }
+
+  .article {
+    h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+    p {
+      margin-bottom: 35px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+  }
+
+  .type1 {
+    .right {      
+      padding-top: 59px;
+    }
+    .img__wrap {
+      padding-left: 67px;
+      &::after {
+        top: -14px;
+        left: 0;
+
+        display: block;
+        width: 529px;
+        height: 652px;
+        background: transparent url('../img/tourfirm/bg-tourfirm-1.png') no-repeat center center;
+        background-size: contain;
+        z-index: -1;
+      }
+      img {
+        height: 507px;
+      }
+    }
+  }
+
+  .type2 {
+    padding-top: 70px;
+    .left {
+      padding-right: 67px;
+    }
+    .right {
+      padding-top: 20px;
+      padding-right: 67px;
+    }
+    .img__wrap {
+      &::after {
+        top: -38px;
+        left: -42px;
+
+        display: block;
+        width: 683px;
+        height: 444px;
+        background: transparent url('../img/tourfirm/bg-tourfirm-2.png') no-repeat center center;
+        background-size: contain;
+        z-index: -1;
+      }
+      img {
+        height: 361px;
+      }
+    }
+  }
+
+  /* media */
+
+  @media screen and (max-width: 1120px) {    
+    .type2 {
+      .img__wrap {
+        &::after {
+          left: -120px;
+        }
+      }      
+    }
+  } /* max-width 1120px */
+
+  @media screen and (max-width: 1024px) {    
+    .type1 {
+      .img__wrap {
+        padding-left: 0px;
+        &::after {
+          left: -20px;
+        }
+      }      
+    }
+  } /* max-width 1024px */
+
+  @media screen and (max-width: 992px) {    
+    .type2 {
+      .left {
+        padding-right: 0;
+      }
+      .right {
+        padding-right: 0;
+      }
+      .img__wrap {
+        &::after {
+          width: calc(100% + 40px);
+          height: calc(100% + 60px);
+          left: -30px;
+        }
+      }      
+    }
+  } /* max-width 992px */
+
+  @media screen and (max-width: 900px) {    
+    &__title {      
+      margin-top: 36px;
+      margin-bottom: 30px;
+    }
+    &__desc {
+      margin-bottom: 40px;
+      padding-left: 30px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    blockquote {
+      padding-top: 40px;
+      padding-left: 40px;
+      padding-bottom: 50px;
+      padding-right: 26px;
+    }
+  } /* max-width 900px */
+
+  @media screen and (max-width: 768px) {    
+    &__title {      
+      margin-top: 30px;
+      margin-bottom: 26px;
+    }
+    &__desc {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    blockquote {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      padding-right: 20px;
+      p {
+        font-size: 16px;
+      }
+    }
+    .type1 {
+      .img__wrap {
+        margin-top: 70px;
+        img {
+          height: 300px;
+        }
+        &::after {          
+          width: 346px;
+          height: 412px;
+        }
+      }
+    }
+  } /* max-width 768px */
+
+  @media screen and (max-width: 600px) {
+    .type1 {
+      .img__wrap {
+        margin-top: 0;
+        img {
+          height: 300px;
+        }
+        &::after {          
+          width: 346px;
+          height: 412px;
+        }
+      }
+    }
+  } /* max-width 600px */
+
+  @media screen and (max-width: 576px) {
+    .type2 {
+      .right {
+        padding-top: 50px;
+      }
+      .img {
+        order: 2;        
+      }
+      .img__wrap {
+        img {
+          height: 300px;
+        }
+      }
+    }
+  } /* max-width 576px */
+
+  @media screen and (max-width: 400px) {    
+    padding-bottom: 90px;
+    &__title {      
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-left: 15px;
+    }
+    &__desc {
+      margin-bottom: 20px;
+      padding-left: 15px;
+
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    blockquote {
+      padding-top: 20px;
+      padding-bottom: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+      p {
+        font-size: 14px;
+      }
+    }
+    .type1 {
+      .right {
+        padding-top: 29px;
+      }
+    }
+    .article {
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+    }
+  } /* max-width 400px */
+
+} /* tourfirm */

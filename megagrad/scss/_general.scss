@@ -413,6 +413,66 @@ input[type="submit"] {
   }
 }
 
+.slider2 {
+  position: relative;
+
+  &__slide {  
+    outline: none;
+  }
+  .slick-arrow {
+    background: none;
+    border: none;
+    outline: none;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 43px;
+    height: 43px;
+    box-shadow: 0px 3px 20px 0px rgba(125,109,173,0.15);    
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 0;
+    z-index: 100;
+    transition: 0.3s;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;      
+
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-bottom: 3px solid $accent;
+      border-right: 3px solid $accent;
+      transition: 0.3s;
+    }
+    &:hover {
+      background-color: $accent--dark;
+      &::before {
+        border-color: #fff;
+      }
+    }
+  }
+  .slick-prev {
+    left: -40px;
+    &::before {
+      left: 55%;
+      transform: translate(-50%,-50%) rotate(135deg);
+    }
+  }
+  .slick-next {
+    right: -40px;
+    &::before {
+      left: 45%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+}
+
 /* Переопределение стилей fancybox */
 .fancybox-lock {
   max-width: 100%;

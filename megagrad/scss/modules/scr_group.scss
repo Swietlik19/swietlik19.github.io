@@ -10,9 +10,8 @@
   }
   &__wrap {
     margin-top: 45px;
-    padding-top: 68px;
-    &::before {
-      content: '';
+    padding-top: 58px;
+    .bg-img {
       position: absolute;
       top: 0;
       left: -65px;
@@ -20,8 +19,6 @@
       display: block;
       width: 792px;
       height: 610px;
-      background: transparent url('../img/bg-group.jpg') no-repeat center center;
-      background-size: contain;
       z-index: -1;
     }
   }
@@ -29,13 +26,20 @@
     margin-top: 0;
   }
 
+  #group__tab-0 {
+    .group__wrap {
+      padding-top: 17px;
+    }
+  }
+
   &__strong {
     font-size: 40px;
+    line-height: 1.3;
     font-weight: 700;
     color: $accent;
     &--title {
-      padding-right: 97px;
-      text-align: right;
+      margin-left: auto;
+      width: 485px;      
     }
   }
 
@@ -152,11 +156,42 @@
     margin-top: 10px;
     text-align: center;
   }
+    
+  &__nav {
+    &-item {
+      display: block;
+      box-shadow: 0px 3px 20px 0px rgba(125,109,173,0.15);
+      height: 85px;
+      line-height: 85px;
+      text-align: center;
+      background-color: #f36f20;
+
+      font-size: 30px;
+      color: #ffffff;
+      transition: 0.3s;
+      text-decoration: none;      
+      &.current {
+        background-color: #ffffff;
+        color: #f36f20;
+        cursor: default;
+      }
+      &:hover {
+        background-color: #ffffff;
+        color: #f36f20;
+      }
+    }
+  }
+
+  &__tab {
+    &:not(#group__tab-0) {
+      display: none;
+    }
+  }
 
   /* media */
   @media screen and (max-width: 1110px) {    
     &__wrap {
-      &::before {
+      .bg-img {
         width: 550px;
         height: 400px;
       }
@@ -167,7 +202,7 @@
   padding-top: 0;    
     &__wrap {
       padding-top: 0;
-      &::before {
+      .bg-img {
         opacity: 0.7;
         top: 50%;
         transform: translateY(-50%);
@@ -215,8 +250,7 @@
       }
     }
     &__wrap {
-      &::before {
-        content: none;
+      .bg-img {        
         display: none;
         background: none;
       }
@@ -272,6 +306,14 @@
     }
     &__btn {
       text-align: left;
+    }
+    &__nav {
+      &-item {
+        height: 68px;
+        line-height: 68px;
+
+        font-size: 24px;
+      }
     }
   } /* max-width 640px */
 

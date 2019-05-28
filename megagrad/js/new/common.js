@@ -209,23 +209,25 @@
   /* Список в "груповых посещениях" вокруг родителя */
 
   function makeCircle() {
-    if (document.querySelector('#group__features') !== null) {
-      var circleParent = $('#group__features');
+    if (document.querySelector('.group__features') !== null) {
+      var circleParent = $('.group__features');
 
-      var items = $('#group__features .group__features-item');
-             
-      var length = items.length;
-      var arc = 2.79253 * (1 / length);
-      var radius = (circleParent.width()) / 2;
-             
-      for (var i = 0; i < length; i++) {
-        var angle = i * arc - 1;
-        var x = radius * Math.cos(angle);
-        var y = radius * Math.sin(angle);
-        
-        $(items[i]).css('left','calc(50% + ' + x + 'px - 10px)');
-        $(items[i]).css('top','calc(50% + ' + y + 'px - 10px)');
-      }      
+      circleParent.each(function(xi,el) {
+        var items = $(el).find('.group__features-item');
+               
+        var length = items.length;
+        var arc = 2.79253 * (1 / length);
+        var radius = ($(el).width()) / 2;
+               
+        for (var i = 0; i < length; i++) {
+          var angle = i * arc - 1;
+          var x = radius * Math.cos(angle);
+          var y = radius * Math.sin(angle);
+          
+          $(items[i]).css('left','calc(50% + ' + x + 'px - 10px)');
+          $(items[i]).css('top','calc(50% + ' + y + 'px - 10px)');
+        }  
+      });            
     }
   }  
 
@@ -276,6 +278,19 @@
 
     $(this).parents('.questions__item').siblings('.questions__item').find('.hidden').slideUp();
     $(this).parents('.questions__item').siblings('.questions__item').find('.open').removeClass('active');    
+  });
+
+  $(".group__nav-item").click(function(event) {
+    event.preventDefault();
+    $(this).parent().siblings().find('.group__nav-item').removeClass("current");
+
+    if ( !($(this).hasClass('current')) ) {
+      $(this).addClass("current");
+      var tab = $(this).attr("href");
+      $(".group__tab").not(tab).hide();
+      $(tab).fadeIn();     
+    }
+
   });
 
 })(jQuery);

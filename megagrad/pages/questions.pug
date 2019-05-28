@@ -21,12 +21,15 @@ html(lang='ru')
 
     link(rel='stylesheet', href='libs/animate.css')
     link(rel='stylesheet', href='css/main.min.css')
+    
+    include blocks/scripts.pug
 
     include blocks/header.pug
     include blocks/nav.pug    
     include blocks/footer.pug
     include blocks/socials.pug
     include blocks/main-menu.pug
+    include blocks/modal-call.pug
 
     include blocks/scr_questions.pug
     include blocks/scr_form.pug
@@ -43,13 +46,6 @@ html(lang='ru')
 
     +footer("a")
 
-    script(src='js/libs/jquery.min.js')
-    script(src='js/libs/wow.min.js')
-    script(src='js/libs/jquery.maskedinput.min.js')
-    script(src='js/libs/slick.min.js')
-    script(src='js/libs/svg4everybody.min.js')
-    script(src='libs/fancybox/jquery.fancybox.pack.js')
-    script(src='libs/fancybox/helpers/jquery.fancybox-buttons.js')
-    script(src='js/new/common.js')
-    script(src='js/slider.js')
-
+    +modal-call
+    
+    +scripts

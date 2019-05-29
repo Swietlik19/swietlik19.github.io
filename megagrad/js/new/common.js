@@ -293,4 +293,40 @@
 
   });
 
+  $(".count-range").ionRangeSlider({
+    min: 3,
+    max: 20,
+    from: 10,
+    step: 1,
+    grid: true,
+    grid_snap: true
+  });
+
+  function changeGridNum() {
+    if (document.querySelector(".count-range") !== null) {
+      var my_range = $(".count-range").data("ionRangeSlider");
+      if (window.matchMedia('(max-width: 600px)').matches) {      
+        my_range.update({
+          grid_snap: false,
+          grid_num: 8
+        });
+      } else {
+        my_range.update({
+          grid_snap: true
+        });
+      }
+    }
+  }
+  
+  changeGridNum();  
+
+  $(window).resize(function() {
+    changeGridNum();
+  });
+
+  $('.age-text').on('input change paste', function() {
+    $(this).val(this.value.replace(/[^0-9]/, '')); // запрещаем ввод любых символов, кроме цифр    
+  });
+
+
 })(jQuery);

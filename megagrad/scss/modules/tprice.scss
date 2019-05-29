@@ -1,0 +1,134 @@
+.tprice {
+  position: relative; 
+  
+  &__title {
+    padding-top: 13px;
+    padding-bottom: 11px;
+
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    &--red {
+      background-color: rgba(223,30,37,0.8);
+    }
+  }
+  &__table {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    box-shadow: 0px 3px 20px 0px rgba(125,109,173,0.15);
+    background-color: #ffffff;
+  }
+  &__row {
+    display: flex;
+    height: 43px;
+    border-bottom: 1px solid rgba(125,110,174,0.4);
+    &:last-of-type {
+      border-bottom: none;
+    }
+    &--big {
+      height: 68px;
+    }
+  }
+  &__cell {
+    display: flex;
+    align-items: center;    
+
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $color2;
+    &--th {
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #6e6e6e;
+    }
+    &:first-of-type {
+      padding-left: 29px;
+    }
+    &--centered {
+      justify-content: center;
+    }
+    .circle-btn,
+    .wpcf7-checkbox {
+      width: 100%;
+      display: block;
+    }
+    label {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-left: 114px;
+      padding-right: 52px;
+      text-align: left;
+      .circle {
+        position: absolute;
+        top: 50%;
+        right: 23px;
+        transform: translateY(-50%);
+      }
+    }
+    &:not(:last-of-type) {
+      border-right: 1px solid rgba(125,110,174,0.4);
+    }
+  }
+  &--two-cols {
+    .tprice__cell {
+      width: 50%;
+    }
+  } 
+
+  /* media */
+  @media screen and (max-width: 1110px) {    
+    &__cell {
+      label {
+        padding-left: 15px;
+      }
+    }
+  } /* max-width 1110px */
+
+  @media screen and (max-width: 992px) {    
+
+  } /* max-width 992px */
+
+  @media screen and (max-width: 768px) {    
+
+  } /* max-width 768px */
+
+  @media screen and (max-width: 700px) {
+    &__cell {
+      font-size: 14px;
+      &--th {
+        font-size: 14px;
+      }
+      &:first-of-type {
+        padding-left: 15px;
+      }
+    }
+  } /* max-width 700px */
+
+  @media screen and (max-width: 576px) {
+
+  } /* max-width 576px */
+
+  @media screen and (max-width: 500px) {
+    &__row {
+      flex-direction: column;
+      height: auto;
+      padding-top: 15px;
+      padding-bottom: 15px;      
+    }
+    .tprice__cell {
+      width: 100%;
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+        border-right: none;
+      }
+    }
+  } /* max-width 500px */
+
+} /* tprice */

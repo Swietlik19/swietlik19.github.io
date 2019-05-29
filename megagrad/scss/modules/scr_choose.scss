@@ -21,6 +21,9 @@
     box-shadow: 0px 3px 20px 0px rgba(125,109,173,0.15);    
     background-color: #ffffff;
     border-radius: 6.0px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-between;  
   }
   &__img {    
     display: block;
@@ -39,6 +42,7 @@
     }
   }
   &__bottom {
+    flex-grow: 1;
     padding-top: 12px;
     padding-left: 11px;
     padding-right: 15px;
@@ -102,10 +106,39 @@
   }
   
   &__list {
+    position: relative;
     width: calc(100% + 30px);
     margin-left: -15px;
   }
 
+  .circle-btn {
+    text-align: right; 
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+    label {      
+      padding-right: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $color2;
+      .circle {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+      }
+      &:hover {
+        color: #f36f20;
+      }
+    }
+  }
+
+  .slider1__dots {
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+  }
+    
   /* media */
 
   @media screen and (max-width: 700px) {    
@@ -136,6 +169,16 @@
     .title--lined {
       margin-bottom: 22px;
     }
+    .slider1__dots {
+      bottom: -20px;
+    }
   } /* max-width 400px */
 
 } /* choose */
+
+.bday-page {
+  .choose {
+    padding-bottom: 0;
+  } /* choose */
+
+} /* bday-page */

@@ -134,22 +134,73 @@
     arrows: true,
     responsive: [
       {
+        breakpoint: 1270,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider .slider1__dots'),
+        }
+      }
+      ,{
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider .slider1__dots'),
         }
       }
       ,{
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider .slider1__dots'),
         }
       }
     ]
   });
 
-  function equalHeight() {
-    var slides = $('#choose__slider .slick-slide');
+  $('#choose__slider--not-infinite .slider2__slides').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1270,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider--not-infinite .slider1__dots'),
+        }
+      }
+      ,{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider--not-infinite .slider1__dots'),
+        }
+      }
+      ,{
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#choose__slider--not-infinite .slider1__dots'),
+        }
+      }
+    ]
+  });  
+
+  function equalHeight(sliderID) {
+    var slides = $(sliderID + ' .slick-slide');
     var stHeight = 0;
     slides.each(function(i, el) {
       if ($(el).height() > stHeight) {
@@ -157,11 +208,12 @@
       }
     });
 
-    $('#choose__slider .slick-slide').css('minHeight',stHeight + 'px' );
-    $('#choose__slider .choose__item').css('minHeight',stHeight + 'px' );
+    $(sliderID + ' .slick-slide').css('minHeight',stHeight + 'px' );
+    $(sliderID + ' .choose__item').css('minHeight',stHeight + 'px' );
   }
 
-  equalHeight();
+  equalHeight('#choose__slider');
+  equalHeight('#choose__slider--not-infinite');
 
   $(window).resize(function() {
     equalHeight();

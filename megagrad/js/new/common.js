@@ -28,7 +28,8 @@
   });
 
   /* Плавный скролл "вверх" */
-  $('a[href^="#page_wr"]').click(function(){
+  $('a[href^="#page_wr"]').click(function(event){
+    event.preventDefault;
     var _href = $(this).attr('href');
     $('html, body').animate({scrollTop: '0px'});
     return false;

@@ -1,17 +1,36 @@
 .tprice {
   position: relative; 
   
+  &:not(:last-of-type) {
+    margin-bottom: 32px;
+  }
   &__title {
     padding-top: 13px;
     padding-bottom: 11px;
+    padding-left: 15px;
+    padding-right: 15px;
 
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
     color: #ffffff;
     text-align: center;
+    background-color: rgba(125,110,174,0.8);
     &--red {
       background-color: rgba(223,30,37,0.8);
+    }
+    &--violet {
+      background-color: rgba(125,110,174,0.8);
+    }
+    &--green {
+      background-color: rgba(215,228,95,0.8);
+      color: $color2;
+    }
+    &--orange {
+      background-color: rgba(243,111,32,0.8);
+    }
+    &--blue {
+      background-color: rgba(32,156,214,0.8);
     }
   }
   &__table {
@@ -32,6 +51,12 @@
     &--big {
       height: 68px;
     }
+    &--heading {
+      .tprice__cell {
+        font-size: 14px;
+        color: #534b72;
+      }
+    }
   }
   &__cell {
     display: flex;
@@ -41,6 +66,9 @@
     line-height: 1.2;
     font-weight: 500;
     color: $color2;
+    &--big {
+      font-size: 18px;
+    }
     &--th {
       font-size: 16px;
       line-height: 1.2;
@@ -52,6 +80,12 @@
     }
     &--centered {
       justify-content: center;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &--padding {
+      padding-left: 125px;
     }
     .circle-btn,
     .wpcf7-checkbox {
@@ -81,6 +115,16 @@
       width: 50%;
     }
   } 
+  &--four-cols {
+    .tprice__cell {
+      &:nth-of-type(1) {
+        width: 41.67497507477567%;
+      }
+      &:nth-of-type(n + 2) {
+        width: 19.44167497507478%;
+      }
+     }
+  }
 
   /* media */
   @media screen and (max-width: 1110px) {    
@@ -91,13 +135,21 @@
     }
   } /* max-width 1110px */
 
-  @media screen and (max-width: 992px) {    
+  @media screen and (max-width: 1024px) {    
+    &__cell {
+      &--padding {
+        padding-left: 80px;
+      }
+    }
+  } /* max-width 1024px */
 
-  } /* max-width 992px */
-
-  @media screen and (max-width: 768px) {    
-
-  } /* max-width 768px */
+  @media screen and (max-width: 880px) {    
+    &__cell {
+      &--padding {
+        padding-left: 20px;
+      }
+    }
+  } /* max-width 880px */
 
   @media screen and (max-width: 700px) {
     &__cell {
@@ -109,24 +161,56 @@
         padding-left: 15px;
       }
     }
+    &__row {
+      &--heading {
+        .tprice__cell {
+          font-size: 13px;
+        }
+      }
+    }
+    &--four-cols {
+      max-width: 100%;
+      width: 700px;
+      overflow-x: auto;
+      .tprice__cell {
+        flex-shrink: 0;
+        &:first-of-type {
+          width: 28%;          
+        }
+        &:nth-of-type(n + 2) {
+          width: 24%;
+        }
+      }
+      .tprice__table,
+      .tprice__title,
+      .tprice__row {
+        width: 700px;
+      }
+      .tprice__title {
+        text-align: left;
+      }
+    }
   } /* max-width 700px */
 
-  @media screen and (max-width: 576px) {
-
-  } /* max-width 576px */
-
   @media screen and (max-width: 500px) {
-    &__row {
-      flex-direction: column;
-      height: auto;
-      padding-top: 15px;
-      padding-bottom: 15px;      
+    &__title {
+      font-size: 16px;
     }
-    .tprice__cell {
-      width: 100%;
-      &:not(:last-of-type) {
-        margin-bottom: 15px;
-        border-right: none;
+    &.tprice--two-cols {
+      &:not(.tprice--two-cols-transposed) {
+        .tprice__row {
+          flex-direction: column;
+          height: auto;
+          padding-top: 15px;
+          padding-bottom: 15px;      
+        }
+        .tprice__cell {
+          width: 100%;
+          &:not(:last-of-type) {
+            margin-bottom: 15px;
+            border-right: none;
+          }
+        }
       }
     }
   } /* max-width 500px */

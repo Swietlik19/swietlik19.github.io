@@ -32,25 +32,26 @@ html(lang='ru')
     include blocks/modal-call.pug
     include blocks/modal-buy.pug
 
-    include blocks/scr_choose-bday.pug
-    include blocks/scr_bday-about.pug
-    include blocks/scr_program.pug
-    include blocks/scr_steps.pug
-    include blocks/scr_form2-bday.pug
+    include blocks/scr_tourfirm-indiv.pug
+    include blocks/scr_individual-indiv.pug
+    include blocks/scr_parents.pug
+    
 
-
-  body.secondary-page.bday-page
+  body.secondary-page.indiv-page
     
     +header("a")
 
     #page_wr.page_wr
+    
+        +scr_tourfirm-indiv1
+        .wrap
+            +scr_tourfirm-indiv2
+            +scr_individual-indiv            
 
-      +scr_bday-about
-      +scr_program
-      +scr_steps
-      +scr_form2-bday
+        // здесь будет второй экран
 
-
+        +scr_parents
+      
 
     +footer("a")
 

@@ -28,7 +28,7 @@
       line-height: 33px;
       text-align: center;
       box-shadow: 0 10px 10px -3px rgba(#f46c70,0.8);
-
+      
       &::before {
         content: '';
         position: absolute;
@@ -61,6 +61,9 @@
         font-size: 16px;
         color: #fff;
         animation: pulseItPhone 3s infinite;
+      }
+      &.mobile {
+        display: none;
       }
     }
   }
@@ -160,5 +163,18 @@
       }
     }
   } /* max-width 600px */
+
+  @media screen and (max-width: 500px) {
+    .phones {
+      .phone {
+        &.mobile {
+          display: block;
+        }
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+  } /* max-width 500px */
 
 } /* header */

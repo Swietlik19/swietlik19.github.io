@@ -329,5 +329,91 @@
     $(this).val(this.value.replace(/[^0-9]/, '')); // запрещаем ввод любых символов, кроме цифр    
   });
 
+  /* Всплывающие подсказки для интерактивной карты */
+  function tooltipCoords(popup,link,type) {
+    if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      var myPath = $(link).find('.part')[0];
+      var w = myPath.getBoundingClientRect().width;
+      var h = myPath.getBoundingClientRect().height;
+
+      if (type == 'initial') {
+        var top = $(link).offset().top + (h - 44 - 10) / 2 - 10;
+        if ( $(popup).hasClass('tooltips__item--reversed') ) {          
+          var left = $(link).offset().left + w - $(popup).outerWidth() - w / 2;  
+        } else {        
+          var left = $(link).offset().left + (w - 44) / 2;      
+        }
+      }
+      if (type == 'hover') {
+        var top = $(link).offset().top - 90;    
+        if ( $(popup).hasClass('tooltips__item--reversed') ) {        
+          var left = $(link).offset().left + w - $(popup).outerWidth() - w / 4;  
+        } else {
+          var left = $(link).offset().left + w / 4;    
+        }      
+      }
+      $(popup).offset({top:top, left:left}); 
+    }
+  }
+
+  function firstCoords() {
+    $('.part-wrap').each(function(i,el) {
+      var popup = $('.tooltips__item' + $(el).attr("href"));
+      tooltipCoords(popup,el,'initial');
+    });    
+  }
+
+  firstCoords();
+  $(window).resize(function() {
+    firstCoords();
+  }); 
+
+  $('.part-wrap').mouseenter(function(){
+    if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      var popup = $('.tooltips__item' + $(this).attr("href"));
+      $(this).addClass('active');
+      $(popup).addClass('active'); 
+
+      tooltipCoords(popup,this,'hover');
+    }
+  });
+
+  $('.part-wrap').mouseleave(function(){
+    if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      $('.tooltips__item').removeClass('active');
+      $('.part-wrap').removeClass('active');
+      var popup = $('.tooltips__item' + $(this).attr("href"));
+
+      tooltipCoords(popup,this,'initial');
+    }
+  });
+
+  $('.tooltips__item').mouseenter(function(){
+    if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      var link = $('.part-wrap[href="#' + $(this).attr('id') + '"]');
+      $(this).addClass('active');
+      $(link).addClass('active');  
+
+      tooltipCoords(this,link,'hover');
+    }
+  });
+
+  $('.tooltips__item').mouseleave(function(){
+    if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      $('.tooltips__item').removeClass('active');
+      $('.part-wrap').removeClass('active');
+      var link = $('.part-wrap[href="#' + $(this).attr('id') + '"]');
+
+      tooltipCoords(this,link,'initial');
+    }
+  });
+   
+  // $('.scr2 .map').dblclick(function() {
+  //   $(this).css({
+  //     'width':'calc(100% + 100px)',
+  //     'margin-left':'-50px'
+  //   });
+  //   tooltipCoords();
+  // });
 
 })(jQuery);

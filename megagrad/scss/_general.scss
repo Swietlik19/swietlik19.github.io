@@ -201,6 +201,14 @@ blockquote,
   }
 }
 
+.grey {
+  strong {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+}
+
 .btn,
 input[type="submit"],
 .submit__wrap {
@@ -461,6 +469,107 @@ input[type="submit"] {
   }
 }
 
+.video {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 383px;
+  text-decoration: none;
+  border-radius: 6px;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#fb5847,#ea473e);
+    opacity: 0;
+    transform: scale(0);
+    transition: .3s ease-in-out;
+    z-index: 0;
+  }
+  &__wrap {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -35px;
+      top: -62px;
+
+      display: block;
+      width: 625px;
+      height: 493px;
+      background: transparent url('../img/bg-video.png') no-repeat center center;
+      background-size: contain;
+      z-index: -1;
+    }
+  }    
+  .play {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;    
+    background-image: linear-gradient(180.0deg, #fb5847 0%, #ea473e 100%);    
+    border: 3.0px solid #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: 30px;
+      height: 30px;
+      box-shadow: 0 9px 15px 0 rgba(#ea473e,.81);
+      z-index: -1;
+    }
+    i {
+      display: block;
+      width: 17px;
+      height: 20px;
+      background: transparent url('../img/svg/icon-play.svg') no-repeat center center;
+      background-size: contain;      
+    }    
+  }
+  .text {
+    position: absolute;
+    left: 21px;
+    bottom: 16px;
+    
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  &:hover {
+    &::after {
+      transform: scale(1);
+      opacity: .1;
+    }
+  }
+}
+
+.scr_map_inner {
+  width: 100%;
+  height: 551px;  
+}
+
+/* Переопределение стилей yandex map */
+.ymaps-2-1-73-controls-pane {
+  display: none;
+}
+
 /* Переопределение стилей slick */
 .slider1 {
   position: relative;
@@ -513,7 +622,7 @@ input[type="submit"] {
 
           display: block;
           width: 10px;
-          height: 9px;
+          height: 10px;
           background-color: #999999;
           border-radius: 50%;
           font-size: 0;
@@ -613,14 +722,18 @@ input[type="submit"] {
   background: url(../libs/fancybox/fancybox_loading.gif) center center no-repeat;
 }
 
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+.fancybox-close {
   background: none;
   top: 5px;
   right: 5px;
 
   display: block;
-  width: 30px;
-  height: 30px;  
+  width: 50px;
+  height: 50px; 
+  background: $accent--dark;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: 0.3s;
   &::before,
   &::after {
     content: '';
@@ -629,7 +742,7 @@ input[type="submit"] {
     top: 50%;
 
     display: block;
-    width: 100%;
+    width: 80%;
     height: 2px;
     background: rgba(#fff,0.7);
     transition: 0.3s;
@@ -641,10 +754,36 @@ input[type="submit"] {
     transform: translate(-50%,-50%) rotate(-45deg);
   }
   &:hover {
+    opacity: 1;
     &::before,
     &::after {
       background: #fff;
     }
+  }
+}
+
+.fancybox-nav {
+    background: transparent url(../libs/fancybox/blank.gif);
+}
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: none;
+}
+
+.fancybox-next, .fancybox-prev {
+  width: 25%;
+  transition: 0.3s;
+}
+
+.fancybox-prev {
+  &:hover {
+    background: linear-gradient(90deg, rgba(#000,0.2) 0%, rgba(#000,0) 100%);    
+  }
+}
+
+.fancybox-next {
+  &:hover {
+    background: linear-gradient(270deg, rgba(#000,0.2) 0%, rgba(#000,0) 100%);    
   }
 }
 
@@ -771,6 +910,9 @@ input[type="submit"] {
     padding-top: 30px;
     padding-bottom: 40px;
     font-size: 16px;
+    strong {
+      font-size: 26px;
+    }
     &.grey--big {
       font-size: 18px;
       p {
@@ -846,6 +988,18 @@ input[type="submit"] {
       padding-top: 35px;
     }
   }
+
+  .scr_map_inner {
+    height: 400px;  
+  }
+
+  .fancybox {
+    &-close {
+      width: 37px;
+      height: 37px;
+    }
+  }
+
 } /* max-width 500px */
 
 @media screen and (max-width: 400px) {

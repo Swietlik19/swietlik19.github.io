@@ -20,12 +20,20 @@
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
-    $('.inner-link[href^="#"]').click(function(){
+    $('.inner-link[href^="#"]').click(function(){      
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top+'px'});
+      if ( $(this).parents('.menu').length == 0 ) {
+        $('html, body').animate({scrollTop: $(_href).offset().top+'px'});
+      } else {
+        $('html, body').animate({scrollTop: $(_href).offset().top - 80 +'px'});
+      }
+      $('.menu').removeClass('active');
+      $('.main-menu').slideUp();
+      $('.burger').removeClass('active');
       return false;
     });
   });
+  
 
   /* Плавный скролл "вверх" */
   $('a[href^="#page_wr"]').click(function(event){
@@ -130,82 +138,6 @@
     "margin": 0,
     "autoSize": false
   });
-
-  function mapActivate(xID,coords) {
-    if (document.querySelector("#" + xID + "") !== null) {
-
-      /* Карта */
-      var myMap;
-
-      // Дождёмся загрузки API и готовности DOM.
-      ymaps.ready(init);
-
-      function init () {
-          // Создание экземпляра карты и его привязка к контейнеру с
-          // заданным id ("map").
-          myMap = new ymaps.Map(xID, {
-              // При инициализации карты обязательно нужно указать
-              // её центр и коэффициент масштабирования.
-              center: coords,
-              zoom: 16
-          }, {
-              searchControlProvider: 'yandex#search'
-          });
-
-          // Создаём макет содержимого.
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            ),
-
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: '',
-                balloonContent: 'MEGA Град'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                iconImageHref: 'img/pin.svg',
-                // Размеры метки.
-                iconImageSize: [43, 60],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-15, -66]
-            }),
-
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-                hintContent: '',
-                balloonContent: '',
-                iconContent: ''
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#imageWithContent',
-                // Своё изображение иконки метки.
-                // iconImageHref: 'images/ball.png',
-                // Размеры метки.
-                iconImageSize: [48, 48],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-24, -24],
-                // Смещение слоя с содержимым относительно слоя с картинкой.
-                iconContentOffset: [15, 15],
-                // Макет содержимого.
-                iconContentLayout: MyIconContentLayout
-            });
-
-        myMap.geoObjects
-            .add(myPlacemark)
-            .add(myPlacemarkWithContent);
-
-        myMap.behaviors.disable('scrollZoom');
-
-      }
-    }
-  }
-
-  /* ID контейнера карты, координаты */
-  mapActivate('screen_map_inner',[50.290168, 57.141027]);
 
   /* Список в "груповых посещениях" вокруг родителя */
 
@@ -345,7 +277,8 @@
         }
       }
       if (type == 'hover') {
-        var top = $(link).offset().top - 90;    
+        // var top = $(link).offset().top - 90;    
+        var top = $(link).offset().top + h / 2 - $(popup).outerHeight() - 70;  
         if ( $(popup).hasClass('tooltips__item--reversed') ) {        
           var left = $(link).offset().left + w - $(popup).outerWidth() - w / 4;  
         } else {
@@ -407,13 +340,58 @@
       tooltipCoords(this,link,'initial');
     }
   });
-   
-  // $('.scr2 .map').dblclick(function() {
-  //   $(this).css({
-  //     'width':'calc(100% + 100px)',
-  //     'margin-left':'-50px'
-  //   });
-  //   tooltipCoords();
-  // });
+
+  $('.part-wrap').click(function(event){
+    event.preventDefault();
+  });
+
+  if ($('#screen_map_inner').length > 0) {
+
+    var myMap;
+
+    // Дождёмся загрузки API и готовности DOM.
+    ymaps.ready(init);
+
+    function init () {
+        // Создание экземпляра карты и его привязка к контейнеру с
+        // заданным id ("map").
+        myMap = new ymaps.Map('screen_map_inner', {
+            // При инициализации карты обязательно нужно указать
+            // её центр и коэффициент масштабирования.
+            center: [44.971128, 34.076988], 
+            zoom: 15
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        // Создаём макет содержимого.
+          MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+              '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+          ),
+
+          myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+              hintContent: 'MEGANOM До 21:00',
+              balloonContent: 'MEGA Град'
+          }, {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: 'default#image',
+              // Своё изображение иконки метки.
+              iconImageHref: 'img/svg/pin.svg',
+              // Размеры метки.
+              iconImageSize: [39, 62],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-20, -46]
+          });
+
+      myMap.geoObjects
+          .add(myPlacemark);
+
+      myMap.behaviors.disable('scrollZoom');
+
+    }
+
+  }
 
 })(jQuery);

@@ -223,7 +223,19 @@
       $(".group__tab").not(tab).hide();
       $(tab).fadeIn();     
     }
+  });
 
+  $(".buy__link").click(function(event) {
+    event.preventDefault();
+    $(this).parent().siblings().find('.buy__link').removeClass("current");
+
+    if ( !($(this).hasClass('current')) ) {
+      $(this).addClass("current");
+      var tab = $(this).attr("href");
+      $(".steps__section--tab").not(tab).hide();
+      $(tab).fadeIn();   
+      $('html, body').animate({scrollTop: $(tab).offset().top - 80 +'px'});  
+    }
   });
 
   $(".count-range").ionRangeSlider({
@@ -389,9 +401,30 @@
           .add(myPlacemark);
 
       myMap.behaviors.disable('scrollZoom');
-
     }
-
   }
+
+  /* Замена input(type="number") */
+  (function quantityProducts() {
+    if ($(".quantity-num").length > 0) {
+      var $quantityArrowMinus = $(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(".quantity-arrow-plus");      
+   
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+   
+      function quantityMinus() {
+        var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
+        if ($quantityNum.val() >= 1) {          
+          $quantityNum.val(+$quantityNum.val() - 1);
+        }
+      }
+   
+      function quantityPlus() {
+        var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
+        $quantityNum.val(+$quantityNum.val() + 1);
+      }
+    }
+  })();
 
 })(jQuery);

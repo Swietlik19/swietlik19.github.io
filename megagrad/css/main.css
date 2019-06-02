@@ -11081,13 +11081,21 @@ input[type="submit"][disabled] {
 .steps {
   position: relative;
   padding-bottom: 150px;
+  /* Отменяем дефолтную стилизацию стрелок input(type="number") */
+  /* Для Chrome */
+  /* Для Firefox */
   /* media */
+  /* max-width 1170px */
+  /* max-width 1024px */
   /* max-width 992px */
   /* max-width 850px */
-  /* max-width 768px */
+  /* max-width 780px */
+  /* max-width 750px */
   /* max-width 650px */
   /* max-width 600px */
-  /* max-width 500px */ }
+  /* max-width 550px */
+  /* max-width 500px */
+  /* max-width 400px */ }
   .steps__form {
     padding-bottom: 8px;
     background-color: #fcf9fe;
@@ -11106,7 +11114,7 @@ input[type="submit"][disabled] {
         padding-right: 68px; }
   .steps__title {
     margin-bottom: 50px; }
-    .steps__title h3 {
+    .steps__title h3, .steps__title h2 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -11114,13 +11122,24 @@ input[type="submit"][disabled] {
       font-size: 40px;
       font-weight: 300;
       color: #324969; }
-      .steps__title h3 span {
+      .steps__title h3 span, .steps__title h2 span {
         white-space: nowrap; }
     .steps__title .title--lined {
+      display: block;
       margin-left: 56px;
       font-size: 24px;
       font-weight: 300;
       color: #6e6e6e; }
+    .steps__title small {
+      display: block;
+      margin-left: 56px;
+      margin-top: 20px;
+      padding-left: 32px;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #6e6e6e; }
+    .steps__title .right {
+      display: block; }
   .steps__age label {
     font-size: 18px; }
   .steps__age label.text {
@@ -11173,6 +11192,291 @@ input[type="submit"][disabled] {
   .steps .btn--grad__wrap,
   .steps .submit__wrap--grad {
     width: 217px; }
+  .steps .buy__nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: 152px; }
+    .steps .buy__nav li {
+      margin-bottom: 60px; }
+      .steps .buy__nav li:nth-of-type(1) .circle {
+        -webkit-box-shadow: 0 7px 13px -2px rgba(183, 159, 197, 0.8);
+                box-shadow: 0 7px 13px -2px rgba(183, 159, 197, 0.8);
+        border: 5.0px solid #ad90bc; }
+        .steps .buy__nav li:nth-of-type(1) .circle::before {
+          background-color: #7d6eae; }
+      .steps .buy__nav li:nth-of-type(2) .circle {
+        -webkit-box-shadow: 0 7px 13px -2px rgba(219, 231, 117, 0.81);
+                box-shadow: 0 7px 13px -2px rgba(219, 231, 117, 0.81);
+        border: 5.0px solid #d7e45f; }
+        .steps .buy__nav li:nth-of-type(2) .circle::before {
+          background-color: #d7e45f; }
+    .steps .buy__nav .buy__link {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-decoration: none; }
+      .steps .buy__nav .buy__link .text {
+        font-size: 18px;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        color: #6e6e6e; }
+      .steps .buy__nav .buy__link .circle {
+        -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+                flex-shrink: 0;
+        position: relative;
+        margin-right: 35px; }
+        .steps .buy__nav .buy__link .circle::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          display: block;
+          width: 12px;
+          height: 12px;
+          -webkit-border-radius: 50%;
+                  border-radius: 50%;
+          background-color: #f36f20;
+          opacity: 0;
+          -webkit-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.3s; }
+      .steps .buy__nav .buy__link.current .text {
+        color: #324969; }
+      .steps .buy__nav .buy__link.current .circle::before {
+        opacity: 1; }
+      .steps .buy__nav .buy__link:hover .text {
+        color: #324969; }
+  .steps .buy-options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 30px; }
+    .steps .buy-options__item {
+      width: -webkit-calc((100% - 40px) / 3);
+      width: calc((100% - 40px) / 3);
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 28px;
+      -webkit-box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.15);
+              box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.15);
+      background-color: #ffffff;
+      -webkit-border-radius: 6.0px;
+              border-radius: 6.0px; }
+      .steps .buy-options__item .top {
+        padding-top: 30px;
+        padding-bottom: 30px; }
+      .steps .buy-options__item h3, .steps .buy-options__item h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #eb6402;
+        text-align: center; }
+    .steps .buy-options__price {
+      display: block;
+      font-size: 40px;
+      font-weight: 400;
+      color: #324969;
+      text-align: center; }
+    .steps .buy-options--one-item .buy-options__item {
+      padding-top: 23px;
+      padding-bottom: 23px;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding-right: 72px;
+      padding-left: 44px; }
+    .steps .buy-options--one-item .top {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 33.74875373878365%; }
+      .steps .buy-options--one-item .top h3, .steps .buy-options--one-item .top h2 {
+        margin-bottom: 14px;
+        text-align: left; }
+      .steps .buy-options--one-item .top p {
+        font-size: 18px;
+        line-height: 1.2;
+        color: #324969; }
+    .steps .buy-options--one-item .buy-options__price {
+      width: 33.74875373878365%;
+      text-align: right; }
+    .steps .buy-options--one-item .count__wrap {
+      width: 32.5024925224327%;
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid rgba(125, 110, 174, 0.3);
+      border-right: 1px solid rgba(125, 110, 174, 0.3); }
+      .steps .buy-options--one-item .count__wrap .quantity-arrow-minus {
+        left: 40px; }
+      .steps .buy-options--one-item .count__wrap .quantity-arrow-plus {
+        right: 40px; }
+    .steps .buy-options--two-item .buy-options__item {
+      padding-left: 36px;
+      padding-right: 36px;
+      width: -webkit-calc((100% - 30px) / 2);
+      width: calc((100% - 30px) / 2); }
+    .steps .buy-options--two-item .steps__bottom {
+      margin-top: 22px; }
+  .steps .count__wrap {
+    border-bottom: 1px solid rgba(125, 110, 174, 0.3);
+    border-top: 1px solid rgba(125, 110, 174, 0.3); }
+    .steps .count__wrap input {
+      display: block;
+      height: 87px;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 30px;
+      font-weight: 400;
+      color: #324969;
+      text-align: center; }
+    .steps .count__wrap .quantity-block {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+    .steps .count__wrap .quantity-arrow {
+      background: none;
+      border: none;
+      outline: none;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      display: block;
+      font-size: 0;
+      -webkit-box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.15);
+              box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.15);
+      width: 43px;
+      height: 43px;
+      background-color: #ffffff;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      cursor: pointer;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .steps .count__wrap .quantity-arrow::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid #eb6402;
+        border-right: 3px solid #eb6402; }
+      .steps .count__wrap .quantity-arrow-minus {
+        left: 14px; }
+        .steps .count__wrap .quantity-arrow-minus::before {
+          -webkit-transform: translate(-50%, -50%) rotate(45deg);
+              -ms-transform: translate(-50%, -50%) rotate(45deg);
+                  transform: translate(-50%, -50%) rotate(45deg); }
+      .steps .count__wrap .quantity-arrow-plus {
+        right: 14px; }
+        .steps .count__wrap .quantity-arrow-plus::before {
+          -webkit-transform: translate(-50%, -25%) rotate(-135deg);
+              -ms-transform: translate(-50%, -25%) rotate(-135deg);
+                  transform: translate(-50%, -25%) rotate(-135deg); }
+      .steps .count__wrap .quantity-arrow:hover {
+        -webkit-box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.3);
+                box-shadow: 0px 3px 20px 0px rgba(125, 109, 173, 0.3); }
+    .steps .count__wrap .quantity-num {
+      width: 100%; }
+  .steps .time__wrap {
+    margin-top: 19px;
+    margin-bottom: 30px; }
+    .steps .time__wrap p {
+      padding-left: 15px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 36px;
+      color: #324969; }
+    .steps .time__wrap label span {
+      font-size: 18px;
+      line-height: 36px; }
+    .steps .time__wrap .circle-btn {
+      margin-bottom: 5px; }
+      .steps .time__wrap .circle-btn label {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .steps .time__wrap .circle-btn label .circle {
+          margin-right: 11px;
+          -webkit-box-shadow: 2px 4px 8px 0px rgba(183, 159, 197, 0.8);
+                  box-shadow: 2px 4px 8px 0px rgba(183, 159, 197, 0.8);
+          border: 2.0px solid #ad90bc; }
+          .steps .time__wrap .circle-btn label .circle::before {
+            width: 9px;
+            height: 9px;
+            background-color: #ad90bc; }
+  .steps__section--tab:not(#buy-tab-0) {
+    display: none; }
+  .steps input[type=number]::-webkit-inner-spin-button,
+  .steps input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; }
+  .steps input[type=number] {
+    -moz-appearance: textfield; }
+  @media screen and (max-width: 1170px) {
+    .steps .buy-options__item h3 {
+      font-size: 22px; }
+    .steps .buy-options__price {
+      font-size: 32px; }
+    .steps .buy-options--two-item .top {
+      padding-bottom: 10px; }
+    .steps .buy-options--two-item .steps__bottom {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .steps .buy-options--two-item .steps__bottom .steps__total {
+        margin-bottom: 20px; } }
+  @media screen and (max-width: 1024px) {
+    .steps .buy-options--one-item .buy-options__price {
+      width: 23.748754%; }
+    .steps .buy-options--one-item .count__wrap {
+      width: 42.502493%; } }
+  @media screen and (max-width: 992px) {
+    .steps .buy-options {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      .steps .buy-options__item {
+        width: -webkit-calc(50% - 10px);
+        width: calc(50% - 10px);
+        margin-bottom: 20px; } }
   @media screen and (max-width: 850px) {
     .steps__section {
       padding-left: 35px;
@@ -11185,18 +11489,54 @@ input[type="submit"][disabled] {
           padding-right: 35px; }
     .steps__title {
       margin-bottom: 40px; }
-      .steps__title h3 {
+      .steps__title h3, .steps__title h2 {
         font-size: 36px; }
-        .steps__title h3 span {
+        .steps__title h3 span, .steps__title h2 span {
           white-space: nowrap; }
       .steps__title .title--lined {
         margin-left: 46px;
-        font-size: 20px; } }
+        font-size: 20px; }
+      .steps__title small {
+        padding-left: 22px; } }
+  @media screen and (max-width: 780px) {
+    .steps .buy-options--one-item .buy-options__item {
+      padding-left: 20px;
+      padding-right: 20px;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+    .steps .buy-options--one-item .top {
+      width: 50%;
+      margin-bottom: 30px; }
+    .steps .buy-options--one-item .buy-options__price {
+      width: 50%;
+      text-align: left; }
+    .steps .buy-options--one-item .count__wrap {
+      border-right: none;
+      width: -webkit-calc(50% - 10px);
+      width: calc(50% - 10px); }
+      .steps .buy-options--one-item .count__wrap .quantity-arrow-minus {
+        left: 20px; }
+      .steps .buy-options--one-item .count__wrap .quantity-arrow-plus {
+        right: 20px; }
+    .steps .buy-options--two-item .buy-options__item h3 {
+      font-size: 18px; }
+    .steps .buy-options--two-item .buy-options__item .steps__bottom {
+      margin-top: 0; }
+    .steps .buy-options--two-item .buy-options__item .steps__total b {
+      font-weight: 400;
+      font-size: 28px; } }
+  @media screen and (max-width: 750px) {
+    .steps .buy-options--two-item .buy-options__item {
+      width: 100%;
+      margin-bottom: 20px; } }
   @media screen and (max-width: 650px) {
     .steps__total {
       font-size: 20px; }
       .steps__total b {
-        font-size: 32px; } }
+        font-size: 32px; }
+    .steps .buy__nav {
+      padding-left: 52px; } }
   @media screen and (max-width: 600px) {
     .steps__section {
       padding-left: 25px;
@@ -11209,13 +11549,15 @@ input[type="submit"][disabled] {
           padding-right: 25px; }
     .steps__title {
       margin-bottom: 36px; }
-      .steps__title h3 {
+      .steps__title h3, .steps__title h2 {
         font-size: 32px; }
-        .steps__title h3 span {
+        .steps__title h3 span, .steps__title h2 span {
           white-space: nowrap; }
       .steps__title .title--lined {
         margin-left: 40px;
         font-size: 18px; }
+      .steps__title small {
+        padding-left: 15px; }
     .steps__age label {
       font-size: 16px; }
     .steps__age label.text input {
@@ -11232,6 +11574,23 @@ input[type="submit"][disabled] {
               flex-direction: column; }
     .steps__total {
       margin-bottom: 20px; } }
+  @media screen and (max-width: 550px) {
+    .steps .buy-options__item {
+      width: 100%; }
+    .steps .buy-options--one-item .top {
+      width: 100%;
+      text-align: center; }
+      .steps .buy-options--one-item .top h3 {
+        text-align: center; }
+      .steps .buy-options--one-item .top br {
+        display: none; }
+    .steps .buy-options--one-item .buy-options__price {
+      width: 100%;
+      text-align: center; }
+    .steps .buy-options--one-item .count__wrap {
+      width: 100%;
+      border-left: none;
+      margin-bottom: 20px; } }
   @media screen and (max-width: 500px) {
     .steps {
       padding-bottom: 100px; }
@@ -11246,23 +11605,64 @@ input[type="submit"][disabled] {
             padding-right: 10px; }
       .steps__title {
         margin-bottom: 30px; }
-        .steps__title h3 {
+        .steps__title h3, .steps__title h2 {
           font-size: 24px; }
-          .steps__title h3 span {
+          .steps__title h3 span, .steps__title h2 span {
             white-space: nowrap; }
         .steps__title .title--lined {
           margin-left: 20px;
           padding-left: 20px;
           font-size: 14px; }
+        .steps__title small {
+          padding-left: 0;
+          margin-left: 40px; }
       .steps__age label {
         font-size: 14px; }
       .steps__age label.text {
         margin-bottom: 20px; }
         .steps__age label.text input {
           width: 80px;
-          font-size: 24px; } }
+          font-size: 24px; }
+      .steps .buy__nav {
+        padding-left: 0; }
+        .steps .buy__nav .buy__link .text {
+          font-size: 14px; }
+        .steps .buy__nav li {
+          margin-bottom: 20px; } }
+  @media screen and (max-width: 400px) {
+    .steps__title small {
+      margin-left: 0; }
+    .steps .buy-options--one-item .buy-options__item {
+      padding-left: 10px;
+      padding-right: 10px; } }
 
 /* steps */
+.buy-page {
+  /* steps */ }
+  .buy-page .steps {
+    padding-bottom: 66px;
+    /* max-width 1024px */
+    /* max-width 650px */ }
+    .buy-page .steps__form {
+      padding-bottom: 20px; }
+    .buy-page .steps__section {
+      padding-bottom: 24px; }
+    .buy-page .steps .title {
+      margin-bottom: 70px; }
+    @media screen and (max-width: 1024px) {
+      .buy-page .steps__section {
+        padding-left: 30px;
+        padding-right: 30px; } }
+    @media screen and (max-width: 650px) {
+      .buy-page .steps {
+        padding-bottom: 36px; }
+        .buy-page .steps__section {
+          padding-left: 15px;
+          padding-right: 15px; }
+        .buy-page .steps .title {
+          margin-bottom: 30px; } }
+
+/* buy-page */
 .prices {
   position: relative;
   padding-bottom: 85px;
@@ -12240,13 +12640,24 @@ a.contacts__item {
     .rules .title {
       margin-bottom: 30px; } }
   @media screen and (max-width: 500px) {
+    .rules__top .grey {
+      padding-bottom: 27px; }
+      .rules__top .grey p {
+        font-size: 13px; }
+      .rules__top .grey .strong {
+        margin-bottom: 22px;
+        font-size: 21px; }
     .rules .article p {
-      font-size: 14px; }
+      font-size: 13px; }
     .rules .article h2 {
       margin-top: 28px;
       margin-bottom: 21px;
       font-size: 19px;
-      line-height: 25px; } }
+      line-height: 25px; }
+    .rules .article ul li {
+      font-size: 13px; }
+    .rules .article ul.big-margins li {
+      margin-bottom: 10px; } }
   @media screen and (max-width: 450px) {
     .rules__top .grey {
       margin-bottom: 30px; }

@@ -312,7 +312,9 @@
   //   firstCoords();
   // });
 
-  setTimeout(firstCoords(),500);
+  $(window).load(function() {
+    firstCoords();
+  });
  
   $(window).resize(function() {
     firstCoords();

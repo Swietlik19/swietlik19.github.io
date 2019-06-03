@@ -190,7 +190,9 @@
   }
 
   /* media */
-  @media screen and (max-width: 880px) {    
+  @media screen and (max-width: 880px) {  
+    display: flex;
+    flex-direction: column;
     h2 {
       position: static;
       margin-bottom: 20px;
@@ -202,6 +204,7 @@
       display: none;
     }
     .map__wrap {
+      order: 10;
       height: auto;
     }
     .map {
@@ -232,7 +235,8 @@
     }
     .features {
       position: static;
-      margin-top: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
       &__list {
         align-items: flex-start;
         justify-content: center;
@@ -305,6 +309,9 @@
         }
       }
     }
+    .tooltips__item .text p {
+      word-break: break-all;
+    }
   } /* max-width 550px */
 
   @media screen and (max-width: 400px) {
@@ -314,7 +321,8 @@
       }
     }
     .features {
-      position: static;
+      margin-top: 10px;
+      margin-bottom: 10px;
       &__list {
         flex-direction: column;
         align-items: flex-start;

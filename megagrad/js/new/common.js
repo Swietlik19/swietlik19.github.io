@@ -308,8 +308,8 @@
     });    
   }
 
-  var embed = $(".svg-map")[0];
-  embed.addEventListener('load', function() {
+
+  $(".svg-map").load("image/svg+xml",function(){
     firstCoords();
   });
   

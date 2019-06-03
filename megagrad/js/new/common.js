@@ -308,7 +308,8 @@
     });    
   }
 
-  $(".svg-map").load(function(){
+  var embed = $(".svg-map")[0];
+  embed.addEventListener('load', function() {
     firstCoords();
   });
   

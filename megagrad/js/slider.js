@@ -199,6 +199,33 @@
     ]
   });  
 
+  $('#calendar-slider .calendar__slides').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    swipe: false,
+    appendArrows: $('.calendar__nav')
+  });  
+
+  function calendarMonths() {
+    var currSlide = '#calendar-slider .slick-current ';
+    var previous = $(currSlide + '.previous-month').text();
+    var current = $(currSlide + '.current-month').text();
+    var next = $(currSlide + '.next-month').text();
+    $('.title--lined .month').text(current);
+    $('#calendar-slider .slick-prev').text(previous);
+    $('#calendar-slider .slick-next').text(next);
+  }
+
+  $('#calendar-slider .calendar__slides').on('setPosition', function() {
+    calendarMonths();
+  }); 
+
+  $('#calendar-slider .calendar__slides').on('afterChange', function(event, slick, currentSlide) {
+    calendarMonths();
+  }); 
+
   function equalHeight(sliderID) {
     var slides = $(sliderID + ' .slick-slide');
     var stHeight = 0;

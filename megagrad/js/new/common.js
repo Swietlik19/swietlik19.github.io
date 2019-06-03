@@ -309,9 +309,14 @@
   }
 
 
-  $(".svg-map").load("image/svg+xml",function(){
+  // $(".svg-map").load("image/svg+xml",function(){
+  //   firstCoords();
+  // });
+  
+  var svgholder = document.querySelector(".svg-map");
+  svgholder.onload = function() {
     firstCoords();
-  });
+  }
   
 
   $(window).resize(function() {

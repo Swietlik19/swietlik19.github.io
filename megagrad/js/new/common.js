@@ -308,10 +308,11 @@
     });    
   }
 
+  // $(".svg-map").load("image/svg+xml",function(){
+  //   firstCoords();
+  // });
 
-  $(".svg-map").load("image/svg+xml",function(){
-    firstCoords();
-  });
+  setTimeout(firstCoords(),500);
  
   $(window).resize(function() {
     firstCoords();

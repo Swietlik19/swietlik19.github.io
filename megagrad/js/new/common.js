@@ -308,7 +308,11 @@
     });    
   }
 
-  firstCoords();
+  $(".svg-map").load(function(){
+    firstCoords();
+  });
+  
+
   $(window).resize(function() {
     firstCoords();
   }); 

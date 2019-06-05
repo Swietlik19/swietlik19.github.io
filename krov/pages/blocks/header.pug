@@ -1,0 +1,62 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else 
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+          p.logo__title Завод кровельных 
+            br
+            | материалов в Крыму
+            
+        .header__info
+          p.header__text Крым, с. Трудовое, ул. Ореховая 6
+          a.link.header__text(href="mailto:krym-krovlya.rf@mail.ru", rel="nofollow") krym-krovlya.rf@mail.ru
+        // /.header__info  
+
+        .phones            
+          ul.phones__list
+            li.phones__item
+              h4.phones__title.header__text Симферополь 
+              .phones__links
+                a.link.phones__link(href='+79787088004', rel='nofollow') +7 (978) 
+                  strong 70 88 004
+            
+            li.phones__item
+              h4.phones__title.header__text Феодосия 
+              .phones__links
+                a.link.phones__link(href='+79880332888', rel='nofollow') +7 (988) 
+                  strong 033 2 888
+            
+        // /.phones  
+      // /.container  
+    // /.header__top  
+
+    nav.header__nav
+      .container
+        .main-menu
+          button.burger__wrap#header-burger
+            //- span.text Меню
+            span.burger            
+              span.line
+          ul.menu
+            li.menu-item
+              a(href="#") Продукция  
+            li.menu-item
+              a(href="#") О компании         
+            li.menu-item
+              a(href="#") Услуги  
+            li.menu-item
+              a(href="#") Сотрудничество  
+            li.menu-item
+              a(href="#") Оплата и доставка      
+            li.menu-item
+              a(href="#") Новости  
+            li.menu-item
+              a(href="#") Контакты  
+      // /.container  
+    // /.header__nav  

@@ -1,0 +1,59 @@
+mixin modal-buy()
+  section.modal.modal-buy(id="modal-buy")
+    .buy__content.modal__content
+      button.close
+      .form.form--border.wpcf7.form--two
+        form.wpcf7-form
+          p.form__title Оплатить билет
+            br
+            small  5000 р.
+
+          .form__two-col            
+            p.form__desc После нажатия на&nbsp;кнопку «Оплатить» вы будете перенаправлены на&nbsp;страницу оплаты. 
+              |  После оплаты отправим электронное подтверждение на&nbsp;указанный e-mail
+
+            .df
+              .left
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                    span.icon__wrap
+                      svg.icon(width='18', height='18')
+                        use(xlink:href='img/svg/sprite.svg#iconFormUser')
+                .form__item
+                  span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+                    span.icon__wrap
+                      svg.icon(width='14', height='17')
+                        use(xlink:href='img/svg/sprite.svg#iconFormPhone') 
+              .right
+                .form__item
+                  span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-mail.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email', name='email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+                    span.icon__wrap
+                      svg.icon(width='17', height='12')
+                        use(xlink:href='img/svg/sprite.svg#iconFormMail')
+                .form__item
+                  span.wpcf7-form-control-wrap.accept
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                          span.wpcf7-list-item-label Согласие на обработку персональных данных          
+                .form__item
+                  span.wpcf7-form-control-wrap.accept.get-info
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='get-info', value='Получать информацию об акциях и скидках', checked='checked')
+                          span.wpcf7-list-item-label Получать информацию об акциях и скидках
+
+          .form__item.form__item--submit.btn--grad__wrap
+            .submit__wrap.submit__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit(type='submit', value='Оплатить')
+              span
+      // /. form
+    // /. call__content
+
+        
+  // /. modal-buy

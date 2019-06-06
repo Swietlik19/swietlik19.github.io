@@ -1,0 +1,215 @@
+.reviews 
+  position: relative
+  background: #f5f5f5
+  padding-top: 55px
+  padding-bottom: 78px
+  &__slider
+    &-wrap
+      width: 750px
+      margin: 0 auto
+    .slick-list
+      overflow: visible
+    .slick-arrow
+      background: none
+      outline: none
+      border: none
+
+      position: absolute
+      top: calc(50% - 20px)
+
+      display: block
+      width: 40px
+      height: 40px
+      background-image: linear-gradient(0.0deg, #ffbd09 0%, #ffe799 100%)
+      border-radius: 50%
+      font-size: 0
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.1s
+      z-index: 10
+      cursor: pointer
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%        
+        
+        display: block
+        width: 10px
+        height: 10px
+        border-bottom: 2px solid #5e4948
+        border-left: 2px solid #5e4948
+      &:hover
+        transform: scale(1.1)
+        box-shadow: 0 0 10px rgba($accent,0.4)
+
+    .slick-prev
+      left: 17px
+      &::before
+        transform: translate(-50%,-50%) rotate(45deg)
+
+    .slick-next
+      right: 17px
+      &::before
+        transform: translate(-50%,-50%) rotate(-135deg)
+
+  &__slide
+    position: relative
+    width: 100%
+    height: 346px
+    margin: 0 30px
+    padding: 9px
+    background: #f5f5f5 url('../img/bg-form.png') repeat center center    
+    outline: none
+    box-shadow: 5px 9px 30px 0px rgba(67,41,39,0.33)
+    z-index: 1
+    transition: 0.3s
+    &:not(.slick-current)
+      opacity: 0.6
+
+  &__wrap
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    display: block
+    width: calc(100% - 18px)
+    height: calc(100% - 18px)
+    z-index: -1
+    svg
+      width: 100%
+      height: 100%
+      filter: drop-shadow(2px 4px 20px rgba(67,41,39,0.2))
+
+  &__dots    
+    margin-top: 69px
+    margin-bottom: 55px
+    .slick-dots
+      margin: 0
+      padding: 0
+      list-style: none
+
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      li
+        margin-right: 31px        
+        &:last-of-type
+          margin-right: 0
+        button
+          background: none
+          border: none
+          outline: none
+
+          display: block
+          width: 15px
+          height: 15px
+          background-color: #cccccc
+          font-size: 0
+          transition: 0.3s
+          border-radius: 50%
+          cursor: pointer
+        &:hover
+          button
+            background-color: $accent
+        &.slick-active
+          button
+            background: #8b0a0e
+
+  .btn__wrap    
+    .btn
+      margin: 0 auto
+      font-size: 18px
+  
+  &__content
+    padding-left: 58px
+    padding-right: 58px
+    padding-top: 31px
+    padding-bottom: 10px
+    max-height: 328px
+    overflow: auto
+    &-top
+      margin-bottom: 16px
+      padding-left: 4px
+    time, .town
+      display: inline-block
+      font-family: $font2
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 400
+      color: $accent
+      
+    .article
+      h2
+        padding-left: 4px
+        margin-bottom: 38px
+        font-size: 18px
+        line-height: 1.2
+        font-weight: 700
+
+      p
+        font-size: 14px
+        line-height: 24px
+        color: #666666
+        text-indent: 23px
+        &:not(:last-of-type)
+          margin-bottom: 10px
+
+  /* media */
+  @media screen and (max-width: 780px) 
+    &__slider
+      &-wrap
+        width: 100%    
+
+    &__wrap
+      display: none
+    
+    &__content
+      padding-left: 30px
+      padding-right: 30px
+      padding-top: 31px
+      padding-bottom: 30px
+      overflow: auto
+      background: #fff
+      box-shadow: 2px 4px 20px 0px rgba(67,41,39,0.2)
+    
+    &__slide
+      height: auto
+  // max-width 780px 
+
+  @media screen and (max-width: 500px) 
+    &__slide
+      margin: 0 10px
+    &__dots
+      margin-top: 29px
+      margin-bottom: 25px
+      .slick-dots
+        li
+          &:not(:last-of-type)
+            margin-right: 5px
+          button
+            width: 7px
+            height: 7px
+  // max-width 500px 
+
+  @media screen and (max-width: 400px) 
+    padding-top: 35px
+    padding-bottom: 58px
+    &__slider
+      &-wrap
+        width: calc(100% + 30px)
+        margin-left: -15px
+    &__slide
+      margin: 0 5px
+    &__content
+      padding: 21px 20px 30px
+      .article
+        h2
+          margin-bottom: 18px
+          font-size: 17px
+        p
+          font-size: 13px
+          line-height: 20px
+
+  // max-width 400px 
+
+/* reviews */

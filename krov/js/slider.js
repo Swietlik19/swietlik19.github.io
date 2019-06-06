@@ -37,6 +37,34 @@
     ]
   });
 
+  $('#reviews__slider .reviews__slides').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    dots: true,
+    appendDots: $('#reviews__slider .reviews__dots'),
+    responsive: [
+      {
+        breakpoint: 780,
+        settings: {      
+          arrows: false
+        }
+      }
+    ]
+  });
+
+  $('#reviews__slider .reviews__slides').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('#reviews__slider .slick-arrow').css('opacity','0');
+  });
+
+  $('#reviews__slider .reviews__slides').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    $('#reviews__slider .slick-arrow').css('opacity','1');
+  });
+
+
   // function equalHeight(sliderID) {
   //   var slides = $(sliderID + ' .slick-slide');
   //   var stHeight = 0;

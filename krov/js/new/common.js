@@ -120,21 +120,6 @@
     }
   });
 
-  /* Анимация кнопок с градиентом */
-  // $('.btn--grad,.submit__wrap--grad')
-  //   .on('mouseenter', function(e) {
-  //     var parentOffset = $(this).offset(),
-  //         relX = e.pageX - parentOffset.left,
-  //         relY = e.pageY - parentOffset.top;
-  //     $(this).find('span').css({top:relY, left:relX})
-  //   })
-  //   .on('mouseout', function(e) {
-  //     var parentOffset = $(this).offset(),
-  //         relX = e.pageX - parentOffset.left,
-  //         relY = e.pageY - parentOffset.top;
-  //     $(this).find('span').css({top:relY, left:relX})
-  //   });
-
   // маска поля tel
   $(".wpcf7-tel").mask("+7 (999) 999-99-99");
 
@@ -195,6 +180,44 @@
     $('.scr1__menu-wrap .decor-line').css('opacity','0');
   });
 
+  function showSubMenu() {
+    $(this).parents('.menu').children('li').each(function(i, el) {
+      if ( $(el).has(e.target).length === 0 ) {
+        $(el).find('.sub-menu').slideUp();
+      }
+    });    
+  }
+
+  $('.header .menu > li > a').hover(function(e) {     
+    if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
+      showSubMenu();
+      $(this).siblings('.sub-menu').slideDown();
+      $(this).parents('.menu-item-has-children').addClass('active')
+    } 
+  });
+
+  $('.page_wr').hover(function() {
+    if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
+      $('.header .menu > .menu-item-has-children .sub-menu').slideUp();
+      $('.header .menu > .menu-item-has-children').removeClass('active');
+    }    
+  });
+
+
+  $('.header .menu > li > a').click(function(e) {     
+    if (window.matchMedia('(max-width: 992px)').matches) {
+      showSubMenu();
+      $(this).siblings('.sub-menu').slideToggle();
+      $(this).parents('.menu-item-has-children').toggleClass('active')
+    } 
+  });
+
+  $('.page_wr').click(function() {
+    if (window.matchMedia('(max-width: 992px)').matches) {
+      $('.header .menu > .menu-item-has-children .sub-menu').slideUp();
+      $('.header .menu > .menu-item-has-children').removeClass('active');
+    }    
+  });
 
 
   // if ($('#screen_map_inner').length > 0) {

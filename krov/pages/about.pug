@@ -24,28 +24,29 @@ html(lang='ru')
     
     include blocks/scripts.pug  
     include blocks/header.pug
-    include blocks/paginator.pug
 
-    include blocks/nav--services.pug
-    
-    include blocks/scr_lead.pug
-    include blocks/scr_services.pug
+    include blocks/scr_about.pug
+    include blocks/scr_cta.pug
+
+    include blocks/nav--about.pug
     
     include blocks/footer.pug
     include blocks/socials.pug
+    include blocks/modal.pug
 
-  body.secondary-page.services-page
+  body.secondary-page.about-page
     
     +header("a")
 
-    #page_wr.page_wr     
+    #page_wr.page_wr  
       .container
-        h1.title Наши услуги 
-      +scr_services        
-      +scr_lead--services
-      
+        h1.title О компании
+    
+      +scr_about
+      +scr_cta
     +footer("a")
-
+    
+    +modal__reviews
 
     +scripts
 

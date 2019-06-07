@@ -24,24 +24,29 @@ html(lang='ru')
     
     include blocks/scripts.pug  
     include blocks/header.pug
-    include blocks/paginator.pug
 
-    include blocks/nav--news.pug
+    include blocks/scr_pay.pug
+    include blocks/scr_cta.pug
 
-    include blocks/scr_news-news.pug
+    include blocks/nav--pay.pug
     
     include blocks/footer.pug
     include blocks/socials.pug
+    include blocks/modal.pug
 
   body.secondary-page.news-page
     
     +header("a")
 
-    #page_wr.page_wr      
-      +scr_news-news
-
+    #page_wr.page_wr  
+      .container
+        h1.title Оплата и доставка
+    
+      +scr_pay
+      +scr_cta
     +footer("a")
-
+    
+    +modal__reviews
 
     +scripts
 

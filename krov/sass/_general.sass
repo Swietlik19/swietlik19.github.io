@@ -62,6 +62,11 @@ img
   font-weight: 500
   color: $accent
 
+.title2
+  padding-top: 50px
+  font-size: 24px
+  line-height: 1.2
+  font-weight: 700
 
 .desc 
   
@@ -365,7 +370,7 @@ input[type="submit"]
   display: block
   width: 50px
   height: 50px 
-  // background: $accent--dark
+  background: $accent
   border-radius: 50%
   opacity: 0.5
   transition: 0.3s
@@ -386,7 +391,8 @@ input[type="submit"]
   &::after     
     transform: translate(-50%,-50%) rotate(-45deg)  
   &:hover 
-    opacity: 1
+    opacity: 0.8
+    box-shadow: 0 0 10px rgba($accent,0.3)
     &::before,
     &::after 
       background: #fff
@@ -407,12 +413,12 @@ input[type="submit"]
 
 .fancybox-prev 
   &:hover 
-    background: linear-gradient(90deg, rgba(#000,0.2) 0%, rgba(#000,0) 100%)    
+    background: linear-gradient(90deg, rgba($accent,0.2) 0%, rgba(#000,0) 100%)    
   
 
 .fancybox-next 
   &:hover 
-    background: linear-gradient(270deg, rgba(#000,0.2) 0%, rgba(#000,0) 100%)
+    background: linear-gradient(270deg, rgba($accent,0.2) 0%, rgba(#000,0) 100%)
   
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -484,6 +490,9 @@ only screen and (min-device-pixel-ratio: 1.5)
 // max-width 500px 
 
 @media screen and (max-width: 400px) 
+  .title2
+    padding-top: 30px
+    font-size: 22px
   .features-news__wrap
     padding: 30px 0
   .btn,

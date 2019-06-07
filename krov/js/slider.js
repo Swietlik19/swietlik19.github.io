@@ -64,6 +64,43 @@
     $('#reviews__slider .slick-arrow').css('opacity','1');
   });
 
+  $('#certs__slider .certs__slides').slick({    
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,    
+    responsive: [
+      {
+        breakpoint: 1230,
+        settings: {      
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .certs__dots')
+        }
+      },
+      {
+        breakpoint: 1020,
+        settings: {      
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .certs__dots'),
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {      
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .certs__dots'),
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
 
   // function equalHeight(sliderID) {
   //   var slides = $(sliderID + ' .slick-slide');

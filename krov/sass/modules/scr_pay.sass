@@ -1,0 +1,129 @@
+.pay 
+  position: relative
+  background: #f5f5f5
+  padding-bottom: 68px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    
+    display: flex
+    justify-content: space-around
+    margin-top: 54px
+    margin-bottom: 48px
+
+  &__item--main
+    transition: 0.5s
+    .pay__icon
+      margin-bottom: 25px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 107px
+      height: 107px
+      box-shadow: 2px 4px 15px 0px rgba(67,41,39,0.2)      
+      background-color: #ffffff    
+      border-radius: 50%
+      .icon
+        width: 50px
+        height: 50px
+
+    h3 
+      font-size: 18px
+      line-height: 24px
+      font-weight: 500
+      color: $accent
+      text-align: center
+    &:hover
+      transform: translateY(-4px)
+
+  &__item--arrow
+    display: block
+    margin-top: 40px
+    margin-right: 17px
+    width: 25px
+    height: 25px
+    border-right: 2px solid #8b0a0e
+    border-bottom: 2px solid #8b0a0e
+    transform: rotate(-45deg)
+
+  &__bottom
+    .left
+      padding-top: 89px
+      padding-bottom: 84px
+      p
+        font-size: 24px
+        line-height: 34px
+        font-weight: 500
+        color: $accent
+    .pay__bg 
+      position: absolute
+      top: 0
+      left: -75px
+
+      display: block
+      width: 767px
+      height: 309px
+      background: transparent url('../img/bg-pay.png') no-repeat center center
+      background-size: contain
+      &__wrap
+        position: relative
+
+  /* media */
+  @media screen and (max-width: 950px) 
+    &__list
+      flex-wrap: wrap
+      justify-content: center
+    &__item--arrow
+      display: none
+    &__item--main
+      margin-right: 15px
+      margin-bottom: 20px
+  // max-width 950px 
+
+  @media screen and (max-width: 900px) 
+    &__bottom
+      .left p 
+        font-size: 19px
+        line-height: 27px
+  // max-width 900px 
+
+  @media screen and (max-width: 576px) 
+    padding-bottom: 38px
+    &__bottom
+      .left
+        padding: 0
+        p
+          font-size: 16px
+          line-height: 25px
+    &__bg-wrap
+      display: none
+  // max-width 576px 
+
+  @media screen and (max-width: 400px) 
+    &__item--main
+      width: calc(50% - 10px)
+      margin-right: 0
+      margin-left: 5px
+      margin-right: 5px
+      display: flex
+      flex-direction: column
+      align-items: center
+      .pay__icon
+        width: 87px
+        height: 87px
+        .icon
+          width: 40px
+          height: 40px
+      h3
+        font-size: 16px
+        line-height: 21px
+
+    &__list
+      margin-top: 20px
+      margin-bottom: 15px
+      justify-content: space-between
+    
+  // max-width 400px 
+
+/* pay */

@@ -91,7 +91,8 @@
   $('a.open-modal').click(function(event){
     event.preventDefault();
     var _href = $(this).attr('href');
-    $(_href).show();
+    // $(_href).show();
+    $(_href).addClass('active');
     $(_href + ' .modal__content').addClass('visible');
     $('.page_wr').addClass('blur-it');
     $('.footer').addClass('blur-it');
@@ -99,7 +100,8 @@
   });
 
   function closeModal() {
-    $('.modal').fadeOut();
+    // $('.modal').fadeOut();
+    $('.modal').removeClass('active');
     $('.modal__content').removeClass('visible');
     $('.page_wr').removeClass('blur-it');
     $('.footer').removeClass('blur-it');
@@ -265,74 +267,59 @@
     }
   });
 
-  // if ($('#screen_map_inner').length > 0) {
+  createMap('map1',[44.999956, 34.203777]);
+  createMap('map2',[44.948237, 34.100318]);
+  createMap('map3',[45.031999, 35.381342]);
 
-  //   var myMap;
+  function createMap(xID,coords) {
 
-  //   // Дождёмся загрузки API и готовности DOM.
-  //   ymaps.ready(init);
+    if ($("#" + xID + "").length > 0) {
 
-  //   function init () {
-  //       // Создание экземпляра карты и его привязка к контейнеру с
-  //       // заданным id ("map").
-  //       myMap = new ymaps.Map('screen_map_inner', {
-  //           // При инициализации карты обязательно нужно указать
-  //           // её центр и коэффициент масштабирования.
-  //           center: [44.971128, 34.076988], 
-  //           zoom: 15
-  //       }, {
-  //           searchControlProvider: 'yandex#search'
-  //       });
+      var myMap;
 
-  //       // Создаём макет содержимого.
-  //         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-  //             '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-  //         ),
+      // Дождёмся загрузки API и готовности DOM.
+      ymaps.ready(init);
 
-  //         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-  //             hintContent: 'адрес',
-  //             balloonContent: 'Кровельный мир'
-  //         }, {
-  //             // Опции.
-  //             // Необходимо указать данный тип макета.
-  //             iconLayout: 'default#image',
-  //             // Своё изображение иконки метки.
-  //             iconImageHref: 'img/svg/pin.svg',
-  //             // Размеры метки.
-  //             iconImageSize: [39, 62],
-  //             // Смещение левого верхнего угла иконки относительно
-  //             // её "ножки" (точки привязки).
-  //             iconImageOffset: [-20, -46]
-  //         });
+      function init () {
+          // Создание экземпляра карты и его привязка к контейнеру с
+          // заданным id ("map").
+          myMap = new ymaps.Map(xID + '-map', {
+              // При инициализации карты обязательно нужно указать
+              // её центр и коэффициент масштабирования.
+              center: coords, 
+              zoom: 15
+          }, {
+              searchControlProvider: 'yandex#search'
+          });
 
-  //     myMap.geoObjects
-  //         .add(myPlacemark);
+          // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
 
-  //     myMap.behaviors.disable('scrollZoom');
-  //   }
-  // }
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'адрес',
+                balloonContent: 'Кровельный мир'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                // iconImageHref: 'img/svg/pin.svg',
+                // Размеры метки.
+                // iconImageSize: [39, 62],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                // iconImageOffset: [-20, -46]
+            });
 
-  // /* Замена input(type="number") */
-  // (function quantityProducts() {
-  //   if ($(".quantity-num").length > 0) {
-  //     var $quantityArrowMinus = $(".quantity-arrow-minus");
-  //     var $quantityArrowPlus = $(".quantity-arrow-plus");      
-   
-  //     $quantityArrowMinus.click(quantityMinus);
-  //     $quantityArrowPlus.click(quantityPlus);
-   
-  //     function quantityMinus() {
-  //       var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
-  //       if ($quantityNum.val() >= 1) {          
-  //         $quantityNum.val(+$quantityNum.val() - 1);
-  //       }
-  //     }
-   
-  //     function quantityPlus() {
-  //       var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
-  //       $quantityNum.val(+$quantityNum.val() + 1);
-  //     }
-  //   }
-  // })();
+        myMap.geoObjects
+            .add(myPlacemark);
+
+        myMap.behaviors.disable('scrollZoom');
+      }
+    }
+
+  }
 
 })(jQuery);

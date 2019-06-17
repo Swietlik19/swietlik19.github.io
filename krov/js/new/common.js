@@ -61,7 +61,7 @@
   });
 
   $(window).resize(function() {
-    $('.scr_prod-item #scr1-burger').removeClass('active');
+    $('.prod-item-page #scr1-burger').removeClass('active');
     if ( !(window.matchMedia('(max-width: 830px)').matches) ) {
       $('.scr_prod-item .scr1__menu-wrap').slideDown();      
     } else {
@@ -70,7 +70,7 @@
   });
   
   $(window).resize(function() {
-    $('.scr_production #scr1-burger').removeClass('active');
+    $('.production-page #scr1-burger').removeClass('active');
     if ( !(window.matchMedia('(max-width: 900px)').matches) ) {
       $('.scr_production .scr1__menu-wrap').slideDown();      
     } else {
@@ -79,7 +79,7 @@
   });
   
   $(window).resize(function() {
-    $('.scr_1 #scr1-burger').removeClass('active');
+    $('.main-page #scr1-burger').removeClass('active');
     if ( !(window.matchMedia('(max-width: 700px)').matches) ) {
       $('.scr_1 .scr1__menu-wrap').slideDown();      
     } else {

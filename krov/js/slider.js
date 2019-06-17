@@ -48,7 +48,7 @@
     appendDots: $('#reviews__slider .reviews__dots'),
     responsive: [
       {
-        breakpoint: 780,
+        breakpoint: 781,
         settings: {      
           arrows: false
         }

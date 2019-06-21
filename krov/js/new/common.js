@@ -21,15 +21,10 @@
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
     $('.inner-link[href^="#"]').click(function(){      
+      event.preventDefault();
       var _href = $(this).attr('href');
-      if ( $(this).parents('.menu').length == 0 ) {
-        $('html, body').animate({scrollTop: $(_href).offset().top+'px'});
-      } else {
-        $('html, body').animate({scrollTop: $(_href).offset().top - 80 +'px'});
-      }
-      $('.menu').removeClass('active');
-      $('.main-menu').slideUp();
-      $('.burger').removeClass('active');
+      $('html, body').animate({scrollTop: $(_href).offset().top - 60 +'px'});
+
       return false;
     });
   });
@@ -60,6 +55,11 @@
     $('.scr1__menu-wrap').slideToggle();
   });
 
+  $('#catalog-burger').click(function() {
+    $(this).toggleClass('active');
+    $('.scr1__menu-wrap').slideToggle();
+  });
+
   $(window).resize(function() {
     $('.prod-item-page #scr1-burger').removeClass('active');
     if ( !(window.matchMedia('(max-width: 830px)').matches) ) {
@@ -84,6 +84,13 @@
       $('.scr_1 .scr1__menu-wrap').slideDown();      
     } else {
       $('.scr_1 .scr1__menu-wrap').slideUp();
+    }
+  });
+  
+  $(window).resize(function() {
+    if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
+      $('#catalog-burger').removeClass('active');
+      $('.catalog .scr1__menu-wrap').slideUp();
     }
   });
   
@@ -267,11 +274,10 @@
     }
   });
 
-  createMap('map1',[44.999956, 34.203777]);
-  createMap('map2',[44.948237, 34.100318]);
-  createMap('map3',[45.031999, 35.381342]);
 
-  function createMap(xID,coords) {
+  createMap('inner-map',[44.999956, 34.203777],[[44.999956, 34.203777], [45.001851, 34.200268]]);
+
+  function createMap(xID,coords,pointer) {
 
     if ($("#" + xID + "").length > 0) {
 
@@ -283,7 +289,7 @@
       function init () {
           // Создание экземпляра карты и его привязка к контейнеру с
           // заданным id ("map").
-          myMap = new ymaps.Map(xID + '-map', {
+          myMap = new ymaps.Map(xID , {
               // При инициализации карты обязательно нужно указать
               // её центр и коэффициент масштабирования.
               center: coords, 
@@ -292,29 +298,10 @@
               searchControlProvider: 'yandex#search'
           });
 
-          // Создаём макет содержимого.
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-            ),
-
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                hintContent: 'адрес',
-                balloonContent: 'Кровельный мир'
-            }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
-                iconLayout: 'default#image',
-                // Своё изображение иконки метки.
-                // iconImageHref: 'img/svg/pin.svg',
-                // Размеры метки.
-                // iconImageSize: [39, 62],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                // iconImageOffset: [-20, -46]
-            });
-
-        myMap.geoObjects
-            .add(myPlacemark);
+          for(var i = 0; i < pointer.length; ++i) {    
+            var myPlacemark = new ymaps.Placemark(pointer[i]);
+            myMap.geoObjects.add(myPlacemark);
+          }
 
         myMap.behaviors.disable('scrollZoom');
       }

@@ -6331,6 +6331,10 @@ input[type="submit"][disabled] {
   display: none; }
 
 /* Переопределение стилей slick */
+.slick-slide {
+  -webkit-backface-visibility: hidden;
+  outline: none; }
+
 .slider1 {
   position: relative; }
   .slider1 .slick-arrow {
@@ -6413,14 +6417,16 @@ input[type="submit"][disabled] {
           height: 10px;
           background-color: #999999;
           border-radius: 50%;
-          font-size: 0; }
-        .slider1__dots .slick-dots li.slick-active button {
-          background-color: #432928;
+          font-size: 0;
           -webkit-transition: 0.3s;
           -o-transition: 0.3s;
           transition: 0.3s; }
+        .slider1__dots .slick-dots li.slick-active button {
+          background-color: #432928; }
         .slider1__dots .slick-dots li:not(.slick-active) button {
           cursor: pointer; }
+          .slider1__dots .slick-dots li:not(.slick-active) button:hover {
+            background: #e99c02; }
 
 /* Переопределение стилей fancybox */
 .fancybox-lock {
@@ -7649,18 +7655,26 @@ input[type="submit"][disabled] {
 /* main-page */
 .scr1 {
   position: relative;
-  background: #91b7d3 url("../img/bg-scr1.jpg") no-repeat center center;
-  background-size: cover;
   /* media */ }
-  .scr1 .df {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
+  .scr1__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .scr1__slider .slick-list, .scr1__slider .slick-track {
+      height: 100%; }
+  .scr1__slides {
+    width: 100%;
+    height: 100%; }
+  .scr1__slide {
+    width: 100%;
+    height: 100%; }
   .scr1__right {
     padding-left: 83px;
     padding-top: 88px;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    margin-left: 263px; }
   .scr1 .title1 {
     margin-bottom: 57px;
     font-size: 44px;
@@ -7678,13 +7692,25 @@ input[type="submit"][disabled] {
     font-weight: 400;
     color: #ffffff;
     text-shadow: 0px 0px 21px rgba(67, 41, 39, 0.27); }
+  .scr1 .slick-dots__wrap {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%; }
+  .scr1__dots {
+    position: relative;
+    margin-left: 450px; }
+    .scr1__dots .slick-dots li button {
+      width: 15px;
+      height: 15px; }
   .scr1__menu-wrap {
     -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
             flex-shrink: 0;
     position: relative;
     width: 263px;
-    overflow: hidden; }
+    overflow: hidden;
+    z-index: 10; }
     .scr1__menu-wrap .decor-line {
       position: absolute;
       top: 0;
@@ -7790,14 +7816,18 @@ input[type="submit"][disabled] {
         display: none; }
       .scr1__right {
         width: 100%;
-        padding-bottom: 50px;
-        background: transparent url("../img/bg-scr1.jpg") no-repeat center center;
-        background-size: cover; } }
+        height: 100%;
+        margin-left: 0;
+        padding-bottom: 50px; }
+      .scr1__slider {
+        position: relative; }
+      .scr1__slide .container {
+        height: 100%; } }
   @media screen and (max-width: 600px) {
-    .scr1__right {
+    .scr1__slide {
       position: relative;
       z-index: 1; }
-      .scr1__right::before {
+      .scr1__slide::before {
         content: '';
         position: absolute;
         top: 0;
@@ -7809,27 +7839,31 @@ input[type="submit"][disabled] {
         z-index: -1; }
     .scr1 .title1 {
       margin-bottom: 30px;
-      font-size: 26px; }
-    .scr1 .desc1 {
-      font-size: 23px;
-      margin-bottom: 20px; } }
-  @media screen and (max-width: 600px) {
-    .scr1__right {
-      padding-left: 15px;
-      padding-right: 15px;
-      background-image: url("../img/bg-scr1--mobile.jpg"); }
-    .scr1 .title1 {
+      font-size: 26px;
       font-size: 24px; }
       .scr1 .title1 br {
         display: none; }
     .scr1 .desc1 {
-      font-size: 20px; }
+      margin-bottom: 10px;
+      font-size: 18px; }
       .scr1 .desc1 br {
-        display: none; } }
+        display: none; }
+    .scr1 .slick-dots__wrap {
+      bottom: 10px;
+      left: 30px; }
+    .scr1__dots {
+      margin-left: 0; }
+      .scr1__dots .slick-dots li {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px; }
+        .scr1__dots .slick-dots li button {
+          width: 10px;
+          height: 10px; } }
   @media screen and (max-width: 400px) {
     .scr1__right {
       padding-top: 40px;
-      padding-bottom: 40px; } }
+      padding-left: 0; } }
   @media screen and (max-width: 350px) {
     .scr1 .desc1 {
       font-size: 17px; }

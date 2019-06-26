@@ -10,7 +10,7 @@
   svg4everybody();
 
 
-  lazyload($('.lazy'));
+  // lazyload($('.lazy'));
   
   /* полифил для object-fit */
   objectFitImages($('[data-object-fit],[data-object-fit2]'), {watchMQ: true});

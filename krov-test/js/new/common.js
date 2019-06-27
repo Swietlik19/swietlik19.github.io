@@ -172,9 +172,10 @@
 
       $('.main-page #scr1-burger').removeClass('active');
       if ( !(window.matchMedia('(max-width: 700px)').matches) ) {
-        $('.scr_1 .scr1__menu-wrap').slideDown();      
+        $('.scr1 .scr1__menu-wrap').slideDown();   
+        $(".scr1__menu-wrap").removeClass("fixed");   
       } else {
-        $('.scr_1 .scr1__menu-wrap').slideUp();
+        $('.scr1 .scr1__menu-wrap').slideUp();
       }
 
       if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
@@ -193,6 +194,9 @@
     var fromTop = $(document).scrollTop();
     $(".header__nav").toggleClass("fixed", (fromTop > 682));   
     $(".header").toggleClass("margined", (fromTop > 682));   
+    if ( window.matchMedia('(max-width: 700px)').matches ) {
+      $(".scr1__menu-wrap").toggleClass("fixed", (fromTop > 682));
+    }
   });
 
   $('.scr1__menu-wrap .menu > li > a').hover(function() {
@@ -274,9 +278,9 @@
   });
 
 
-  createMap('inner-map',[44.999956, 34.203777],[[44.999956, 34.203777], [45.001851, 34.200268]]);
+  createMap('inner-map',[44.999956, 34.203777],[[44.999956, 34.203777], [45.001851, 34.200268]],['с. Трудовое, ул. Ореховая, 6','Феодосия']);
 
-  function createMap(xID,coords,pointer) {
+  function createMap(xID,coords,pointer,address) {
 
     if ($("#" + xID + "").length > 0) {
 
@@ -292,20 +296,21 @@
               // При инициализации карты обязательно нужно указать
               // её центр и коэффициент масштабирования.
               center: coords, 
-              zoom: 15
+              zoom: 10
           }, {
               searchControlProvider: 'yandex#search'
           });
 
           for(var i = 0; i < pointer.length; ++i) {    
-            var myPlacemark = new ymaps.Placemark(pointer[i]);
+            var myPlacemark = new ymaps.Placemark(pointer[i],
+              {hintContent: address[i],
+              balloonContent: address[i]});
             myMap.geoObjects.add(myPlacemark);
           }
 
         myMap.behaviors.disable('scrollZoom');
       }
     }
-
   }
 
 })(jQuery);

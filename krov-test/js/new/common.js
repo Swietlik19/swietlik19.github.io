@@ -183,11 +183,16 @@
     });
   }
 
-  $(window).resize(function() {
-    if ( !(window.matchMedia('(max-width: 900px)').matches) ) {
-      $('.footer-menu .menu').slideDown();
-    } else {
-      $('.footer-menu .menu:not(".menu--strong")').slideUp();      
+  var screenWidth = $(window).width();
+  $(window).resize(function(){
+    if ($(window).width() != screenWidth) {
+      if ( !(window.matchMedia('(max-width: 900px)').matches) ) {
+        $('.footer-menu .menu').slideDown();
+         $('.footer-menu .h4').removeClass('active');
+      } else {
+        $('.footer-menu .menu:not(".menu--strong")').slideUp();      
+      }
+      screenWidth = $(window).width();
     }
   });
 

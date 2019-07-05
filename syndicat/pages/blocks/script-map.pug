@@ -1,0 +1,38 @@
+mixin script-map()
+  script.
+    createMap('map',[44.999956, 34.203777]);
+
+    function createMap(xID,coords) {
+
+      if ($("#" + xID + "").length > 0) {
+
+        var myMap;
+
+        // Дождёмся загрузки API и готовности DOM.
+        ymaps.ready(init);
+
+        function init () {
+            myMap = new ymaps.Map(xID, {
+                center: coords,
+                zoom: 15
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+              ),
+
+              myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                  hintContent: 'адрес',
+                  balloonContent: 'Кровельный мир'
+              });
+
+          myMap.geoObjects
+              .add(myPlacemark);
+
+          myMap.behaviors.disable('scrollZoom');
+        }
+      }
+    }

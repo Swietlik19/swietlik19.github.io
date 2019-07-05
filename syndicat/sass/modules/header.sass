@@ -1,0 +1,250 @@
+.header
+  position: relative
+
+  .logo
+    display: block
+    text-decoration: none
+    width: 232px
+    height: 61px
+    margin-bottom: 8px
+    &__wrap
+      width: 232px
+      margin: 0 auto
+    &__text
+      font-size: 13px
+      font-weight: 400
+      text-transform: uppercase
+      color: $accent
+      white-space: nowrap
+
+  &__nav
+    background-color: $accent
+    .df
+      height: 47px
+      display: flex
+      justify-content: space-between
+      align-items: center
+  .bar
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 170px
+    &__item
+      button
+        background: none
+        outline: none
+        border: none
+        cursor: pointer
+      a
+        text-decoration: none
+      button,a
+        display: flex
+        align-items: center
+        font-size: 12px
+        line-height: 20px
+        color: #ffffff
+        transition: 0.3s
+        &.button-wish
+          .icon
+            width: 17px
+            height: 15px
+        &.button-diagram
+          .icon
+            width: 14px
+            height: 19px
+            transform: rotateY(180deg)
+        &.button-user
+          .icon
+            width: 16px
+            height: 16px
+            margin-right: 15px
+          span
+            margin-bottom: -3px
+        .icon
+          fill: #fff
+          width: 25px
+          height: 25px
+
+        &:hover
+          color: lighten($accent2,15%)
+          .icon
+            fill: lighten($accent2,15%)
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+  .main-menu
+    .menu
+      & > li
+        position: relative
+        margin-right: 22px
+        & > a
+          position: relative
+          font-size: 12px
+          line-height: 1.2
+          color: #ffffff
+          text-decoration: none
+          transition: 0.3s
+          &::after
+            content: ''
+            position: absolute
+            bottom: -1px
+
+            display: block
+            width: 100%
+            height: 1px
+            background-color: #fff
+            transition: 0.3s
+            transform: scale(0)
+            opacity: 0
+
+          &:hover
+            color: lighten($accent2,15%)
+            &::after
+              background-color: lighten($accent2,15%)
+              transform: scale(1)
+              opacity: 1
+
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &__middle
+    height: 160px
+    padding-bottom: 16px
+
+  &__main
+    padding: 10px 0
+
+  &__phones
+    padding-top: 24px
+    color: $accent
+    .link
+      display: block
+      margin-bottom: 4px
+      font-size: 16px
+      line-height: 1.2
+      text-transform: uppercase
+      color: $accent
+      &:hover
+        color: lighten($accent,20%)
+      strong
+        font-weight: 700
+        font-size: 20px
+    .text
+      display: block
+      font-size: 12px
+
+  &__search
+    padding-top: 24px
+    .search-wrap
+      margin-left: auto
+
+  &__second-menu
+    display: table
+    width: 100%
+    padding-top: 7px
+    .menu
+      display: table-row
+      & > li
+        display: table-cell
+        position: relative
+        padding: 2px 10px
+        text-align: center
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+
+          display: block
+          width: 1px
+          height: 100%
+          background-color: rgba(74,47,90,0.5)
+        &::before
+          left: 0
+        &::after
+          right: 0
+        &:nth-of-type(n + 2)
+          &::before
+            content: none
+
+        & > a
+          position: relative
+          display: inline-block
+
+          font-size: 16px
+          font-weight: 700
+          text-transform: uppercase
+          text-decoration: none
+          transition: 0.3s
+          &:hover
+            color: lighten($accent,20%)
+
+        &.menu-item-has-children
+          & > a
+            &::after
+              content: ''
+              position: absolute
+              top: calc(50% - 6px)
+              right: -14px
+
+              display: block
+              width: 6px
+              height: 6px
+              border-bottom: 2px solid $accent
+              border-left: 2px solid $accent
+
+              transform-origin: center
+              transform: rotate(-45deg)
+    .sub-menu
+      display: none
+  &__bottom
+    padding-top: 12px
+    padding-bottom: 10px
+
+  .menu-letters
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__title
+      font-size: 14px
+      color: $accent
+
+    .menu
+      & > li
+        &:first-of-type
+          & > a
+            padding: 5px 6px
+        &:last-of-type
+          & > a
+            padding-right: 0
+        & > a
+          display: block
+          padding: 5px 12px
+          font-size: 16px
+          font-weight: 400
+          text-transform: uppercase
+          text-decoration: none
+          transition: 0.3s
+          &:hover
+            color: $accent2
+            transform: translateY(-2px)
+
+    .sub-menu
+      display: none
+
+  /* media */
+  // @media screen and (max-width: 950px)
+
+  // max-width 950px
+
+/* .header */

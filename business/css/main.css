@@ -229,6 +229,86 @@
     /*The size of the normal image, half the size of the hi-res image*/ } }
 
 /* Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px) */
+/* Переопределение стилей fancybox */
+.fancybox-lock {
+  max-width: 100%;
+  overflow: hidden !important; }
+
+.fancybox-overlay {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: url(../libs/fancybox/fancybox_loading.gif) center center no-repeat; }
+
+.fancybox-close {
+  background: none;
+  top: 5px;
+  right: 5px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: #1da4a4;
+  border-radius: 50%;
+  opacity: 0.5;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .fancybox-close::before, .fancybox-close::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .fancybox-close::before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+        -ms-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg); }
+  .fancybox-close::after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+        -ms-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg); }
+  .fancybox-close:hover {
+    opacity: 1; }
+    .fancybox-close:hover::before, .fancybox-close:hover::after {
+      background: #fff; }
+
+.fancybox-nav {
+  background: transparent url(../libs/fancybox/blank.gif); }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: none; }
+
+.fancybox-next, .fancybox-prev {
+  width: 25%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+.fancybox-prev:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(29, 164, 164, 0.2)), to(rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(left, rgba(29, 164, 164, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgba(29, 164, 164, 0.2) 0%, rgba(0, 0, 0, 0) 100%); }
+
+.fancybox-next:hover {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(29, 164, 164, 0.2)), to(rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(right, rgba(29, 164, 164, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(270deg, rgba(29, 164, 164, 0.2) 0%, rgba(0, 0, 0, 0) 100%); }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background: none; }
+  #fancybox-loading div {
+    background-image: url(../libs/fancybox/fancybox_loading@2x.gif); } }
+
 .form {
   position: relative;
   z-index: 30;
@@ -523,6 +603,7 @@
   padding-top: 42px;
   -webkit-box-shadow: 13px 23px 38px 0px rgba(29, 163, 163, 0.1);
           box-shadow: 13px 23px 38px 0px rgba(29, 163, 163, 0.1);
+  z-index: 5;
   /* media */ }
   .about__nav {
     padding: 0;

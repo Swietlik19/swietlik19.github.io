@@ -1,0 +1,273 @@
+.header
+  position: relative
+  z-index: 10
+
+  &.margined
+    padding-top: 60px
+  &__nav-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 60px
+
+  &__nav,
+  &__mobile
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+
+      width: 100%
+      z-index: 100
+      background: #fff
+      box-shadow: 0 5px 8px rgba($shadow-c, 0.1)
+
+  &__mobile
+    display: none
+  &__mobile-wrap
+    display: flex
+    align-items: center
+    height: 60px
+
+  .logo
+    display: block
+    text-decoration: none
+    width: 195px
+    height: 42px
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+  .main-menu
+    .menu
+      & > li
+        position: relative
+        padding: 0 12px
+        & > a
+          position: relative
+          font-size: 14px
+          line-height: 1.714285714285714 /* 24px / 14px */
+          text-decoration: none
+          transition: 0.3s
+          &::before
+            content: ''
+            position: absolute
+            bottom: -2px
+            left: 0
+
+            display: block
+            width: 100%
+            height: 1px
+            background-color: #f9fbfb
+            transform: scale(0)
+            opacity: 0
+            transition: 0.5s
+            border-radius: 6px
+          &:hover
+            color: $accent2
+            &::before
+              background-color: $accent2
+              transform: scale(1)
+              opacity: 1
+          &:active
+            color: darken($accent2,10%)
+
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &__phones
+    display: flex
+    align-items: center
+    &-icon
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 21px
+      height: 21px
+      margin-right: 13px
+      border-radius: 50%
+      border: 2px solid $accent2
+      background: #fff
+      transition: 0.5s
+      text-decoration: none
+      &.mobile
+        display: none
+        margin-right: 0
+      .fa
+        display: block
+        margin-top: 2px
+        color: $accent2
+        font-size: 14px
+      &:hover
+        transform: translateY(-4px)
+        &::before
+          content: none
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 100%
+        height: 100%
+        transform: scale(0.9)
+        background: rgba(255, 255, 255, 0.1)
+        border-radius: 50%
+        animation: ani-call 3s linear infinite both
+        z-index: -1
+
+    &-link
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24px / 18px */
+      font-weight: 700
+      color: $accent
+      text-decoration: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+      &:active
+        color: darken($accent2,10%)
+
+  &__bottom
+    background-color: $accent
+
+  .second-menu
+    .menu
+      & > li
+        flex-basis: 100%
+        border-left: 1px solid rgba(255,255,255,0.3)
+        &:last-of-type
+          border-right: 1px solid rgba(255,255,255,0.3)
+        & > a
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 66px
+          padding: 0 5px
+          background-color: $accent
+
+          font-size: 14px
+          line-height: 1.2
+          font-weight: 500
+          color: #ffffff
+          text-align: center
+          text-decoration: none
+          transition: 0.3s
+          &:hover
+            background-color: $accent2
+          &:active
+            background-color: darken($accent2,10%)
+          &.active
+            background-color: $accent2
+  /* media */
+  @media screen and (max-width: 992px)
+    // z-index: 1
+    &__mobile
+      display: block
+      box-shadow: 3px 4px 15px rgba($shadow-c,0.1)
+      .header__phones
+        margin-left: auto
+    .burger
+      margin-right: 20px
+    &__wrap
+      position: absolute
+      top: 100%
+      left: 0
+
+      width: 350px
+      max-width: 100%
+      padding-bottom: 20px
+      min-height: calc(100vh - 60px)
+      max-height: calc(100vh - 60px)
+      overflow: auto
+
+      border: 1px solid rgba($accent,0.1)
+      background: #fff
+      box-shadow: 5px 5px 5px rgba($shadow-c,0.1)
+
+      transform: translateX(-150%)
+      transition: 0.5s
+      &.active
+        transform: translateX(0)
+      .logo__wrap
+        display: none
+      .header__phones
+        display: none
+    &__nav
+      border-bottom: 1px solid $body-c
+      &-wrap
+        display: block
+        height: auto
+    .menu
+      display: block
+    .main-menu
+      .menu
+        & > li
+          padding: 0
+          & > a
+            display: block
+            padding: 4px 10px 4px 0
+            font-size: 16
+            border-bottom: 1px solid rgba($body-c,0.1)
+            &::before
+              content: none
+    &__bottom
+      background-color: #fff
+    .second-menu
+      padding-top: 5px
+      .menu
+        & > li
+          width: 100%
+          & > a
+            display: block
+            height: auto
+            padding: 10px 10px 10px 0
+            background: none
+            border-bottom: 1px solid rgba($body-c,0.1)
+
+            color: $body-c
+            font-size: 16px
+            text-align: left
+            br
+              display: none
+            &:hover
+              color: $accent2
+              background: none
+  // max-width 992px
+
+  @media screen and (max-width: 500px)
+    &__phones
+      .mobile
+        display: flex
+      .desktop
+        display: none
+      &-link
+        display: none
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    .logo
+      width: 155px
+      height: 32px
+    .burger
+      margin-right: 10px
+    &__mobile-wrap
+      height: 50px
+    &__wrap
+      min-height: calc(100vh - 50px)
+      max-height: calc(100vh - 50px)
+      padding-bottom: 0
+  // max-width 400px
+
+/* .header */

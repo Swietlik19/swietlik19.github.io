@@ -269,7 +269,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   });
 
   /* Табы "О компании" */
-  $('.about__nav .about__link').click(function() {
+  $('.about__nav .about__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.about__link').removeClass('active');
@@ -282,7 +282,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   });
 
   /* Табы features */
-  $('.features__nav .features__link').click(function() {
+  $('.features__nav .features__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.features__link').removeClass('active');

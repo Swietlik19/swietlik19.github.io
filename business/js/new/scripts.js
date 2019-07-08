@@ -81,7 +81,7 @@
   });
 
   /* Табы "О компании" */
-  $('.about__nav .about__link').click(function() {
+  $('.about__nav .about__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.about__link').removeClass('active');
@@ -94,7 +94,7 @@
   });
 
   /* Табы features */
-  $('.features__nav .features__link').click(function() {
+  $('.features__nav .features__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.features__link').removeClass('active');

@@ -1,6 +1,8 @@
 .header
   position: relative
-
+  z-index: 60
+  .burger__wr
+    display: none
   .logo
     display: block
     text-decoration: none
@@ -10,6 +12,8 @@
     &__wrap
       width: 232px
       margin: 0 auto
+      &--fixed
+        display: none
     &__text
       font-size: 13px
       font-weight: 400
@@ -19,6 +23,8 @@
 
   &__nav
     background-color: $accent
+    .container
+      position: relative
     .df
       height: 47px
       display: flex
@@ -29,48 +35,96 @@
     align-items: center
     justify-content: space-between
     width: 170px
-    &__item
-      button
-        background: none
-        outline: none
-        border: none
-        cursor: pointer
-      a
-        text-decoration: none
-      button,a
-        display: flex
-        align-items: center
-        font-size: 12px
-        line-height: 20px
-        color: #ffffff
-        transition: 0.3s
-        &.button-wish
-          .icon
-            width: 17px
-            height: 15px
-        &.button-diagram
-          .icon
-            width: 14px
-            height: 19px
-            transform: rotateY(180deg)
-        &.button-user
-          .icon
-            width: 16px
-            height: 16px
-            margin-right: 15px
-          span
-            margin-bottom: -3px
+    &--fixed
+      display: none
+
+    button
+      background: none
+      outline: none
+      border: none
+      cursor: pointer
+    a
+      text-decoration: none
+    button,a
+      display: flex
+      align-items: center
+      font-size: 12px
+      line-height: 20px
+      color: #ffffff
+      transition: 0.3s
+      &.button-wish
         .icon
-          fill: #fff
-          width: 25px
-          height: 25px
+          width: 17px
+          height: 15px
+      &.button-diagram
+        .icon
+          width: 14px
+          height: 19px
+          transform: rotateY(180deg)
+      &.button-user
+        .icon
+          width: 16px
+          height: 16px
+          margin-right: 15px
+        span
+          margin-bottom: -3px
+      .icon
+        fill: #fff
+        width: 25px
+        height: 25px
 
+      &:hover
+        color: lighten($accent2,15%)
+        .icon
+          fill: lighten($accent2,15%)
+    &__item--cart
+      position: absolute
+      bottom: -281px
+      right: 0
+
+      z-index: 70
+      &.fixed
+        position: fixed
+        top: 80px
+        right: 15px
+        opacity: 0.7
+        transition: 0.3s
         &:hover
-          color: lighten($accent2,15%)
-          .icon
-            fill: lighten($accent2,15%)
+          opacity: 1
+      .count
+        position: absolute
+        top: 19px
+        right: 16px
 
-  .menu
+        display: block
+        width: 25px
+        height: 25px
+
+        font-size: 14px
+        line-height: 26px
+        color: #ffffff
+        text-align: center
+
+        background-color: $accent2
+        border-radius: 50%
+      .icon
+        width: 23px
+        height: 22px
+      a,button
+        display: block
+        width: 75px
+        height: 75px
+        padding-top: 32px
+        padding-left: 17px
+
+        background-color: $accent
+        border-radius: 50%
+        box-shadow: 0px 5px 15px 0px rgba(73,47,89,0.4)
+        &:hover
+          box-shadow: 0px 5px 15px 0px rgba(73,47,89,0.5)
+
+  &__nav .menu,
+  &__bottom .menu
     padding: 0
     margin: 0
     list-style: none
@@ -118,6 +172,7 @@
     list-style: none
 
   &__middle
+    position: relative
     height: 160px
     padding-bottom: 16px
 
@@ -127,6 +182,8 @@
   &__phones
     padding-top: 24px
     color: $accent
+    &--fixed
+      display: none
     .link
       display: block
       margin-bottom: 4px
@@ -154,29 +211,15 @@
     padding-top: 7px
     .menu
       display: table-row
-      & > li
+      & > li,
+      .slick-list .slick-track > li
         display: table-cell
-        position: relative
         padding: 2px 10px
         text-align: center
-        &::before,
-        &::after
-          content: ''
-          position: absolute
-          top: 0
-
-          display: block
-          width: 1px
-          height: 100%
-          background-color: rgba(74,47,90,0.5)
-        &::before
-          left: 0
-        &::after
-          right: 0
+        border-right: 1px solid rgba(74,47,90,0.5)
+        border-left: 1px solid rgba(74,47,90,0.5)
         &:nth-of-type(n + 2)
-          &::before
-            content: none
-
+          border-left: none
         & > a
           position: relative
           display: inline-block
@@ -186,8 +229,20 @@
           text-transform: uppercase
           text-decoration: none
           transition: 0.3s
+          .icon__wrap
+            display: none
+          .icon
+            fill: transparent
+            stroke: #a47a9c
+            stroke-width: 2
+            stroke-linecap: round
+            stroke-linejoin: round
+            stroke-miterlimit: 10
           &:hover
             color: lighten($accent,20%)
+            .icon
+              stroke: $accent
+              fill: transparent
 
         &.menu-item-has-children
           & > a
@@ -205,11 +260,106 @@
 
               transform-origin: center
               transform: rotate(-45deg)
-    .sub-menu
+              transition: 0.3s
+          &.active
+            & > a
+              &::after
+                transform: rotate(135deg)
+                top: calc(50% - 4px)
+    .sub-menu__wrap
+      position: absolute
+      top: 100%
+      left: 0
+      z-index: 100
+      background-color: #fff
+      box-shadow: 0px 12px 13px 0px rgba(239,205,205,0.6)
+
+      width: 100%
+      padding-bottom: 32px
+      padding-top: 25px
       display: none
+      .container
+        display: flex
+        justify-content: space-between
+    .sub-menu__img
+      padding-top: 16px
+    .sub-menu
+      text-align: left
+      margin-right: 15px
+      & > li
+        margin-bottom: 32px
+        & > a
+          display: block
+          text-decoration: none
+
+          font-size: 18px
+          line-height: 1.2
+          font-weight: 400
+          transition: 0.3s
+          &:hover
+            color: $accent2
+          strong
+            font-weight: 700
+      &--strong
+        & > li
+          margin-bottom: 24px
+
   &__bottom
     padding-top: 12px
     padding-bottom: 10px
+
+  &__middle-menu
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+
+      background: #fff
+      z-index: 100
+      width: 100%
+      padding: 9px 15px
+      display: flex
+      align-items: center
+      box-shadow: 0 5px 10px rgba($accent,0.1)
+      transition: 0.3s
+      &:hover
+        box-shadow: 0 5px 10px rgba($accent,0.2)
+      .header__second-menu
+        padding-top: 0
+
+        flex-grow: 1
+        width: auto
+        flex-basis: auto
+      .menu
+        & > li
+          padding-top: 0
+          padding-bottom: 0
+          padding-left: 20px
+          padding-right: 20px
+          & > a
+            font-size: 14px
+      .logo__wrap--fixed
+        flex-shrink: 0
+        display: block
+        margin-right: 24px
+      .logo--fixed
+        width: 29px
+        height: 49px
+      .bar--fixed
+        flex-shrink: 0
+        display: flex
+        width: 95px
+        margin-left: 25px
+        margin-right: 25px
+        .icon
+          fill: $accent
+      .header__phones--fixed
+        flex-shrink: 0
+        display: block
+        padding-top: 0
+        .link
+          margin-bottom: 0
+          font-weight: 700
 
   .menu-letters
     display: flex
@@ -221,13 +371,33 @@
 
     .menu
       & > li
+        position: relative
+        &:nth-child(n + 8)
+          .sub-menu__wrap
+            left: 50%
+            transform: translateX(-50%)
+        &:nth-child(n + 20)
+          .sub-menu__wrap
+            left: auto
+            right: -20px
+            transform: translateX(0)
         &:first-of-type
           & > a
             padding: 5px 6px
+            &::before
+              left: calc(50% - 25px)
+              width: 50px
         &:last-of-type
           & > a
             padding-right: 0
+            &::before
+              left: calc(50% - 20px)
+              width: 50px
+          .sub-menu__wrap
+            right: 20px
+
         & > a
+          position: relative
           display: block
           padding: 5px 12px
           font-size: 16px
@@ -235,16 +405,358 @@
           text-transform: uppercase
           text-decoration: none
           transition: 0.3s
+          z-index: 1
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 15px)
+            left: calc(50% - 15px)
+
+            display: block
+            width: 30px
+            height: 30px
+            background-color: transparent
+            transition: 0.3s
+            transform: scale(0)
+            border-radius: 50%
+            z-index: -1
           &:hover
-            color: $accent2
-            transform: translateY(-2px)
+            color: #fff
+            &::before
+              background-color: rgba($accent2,0.3)
+              transform: scale(1)
+        &.active
+          & > a
+            color: #fff
+            &::before
+              background-color: rgba($accent2,0.3)
+              transform: scale(1)
+      &-item--all
+        .sub-menu__wrap
+          display: flex
+          justify-content: space-between
+          .sub-menu
+            margin-right: 15px
+            &:last-of-type
+              margin-right: 0
 
     .sub-menu
-      display: none
+      min-width: 130px
+      &:last-of-type
+        margin-right: 0
+      & > li
+        margin-bottom: 8px
+        &:last-of-type
+          margin-bottom: 0
+        & > a
+          text-decoration: none
+          transition: 0.3s
+          display: block
+          line-height: 1.2
+          &:hover
+            color: $accent2
+    .sub-menu__wrap
+      position: absolute
+      top: calc(100% + 5px)
+      left: -20px
+      background: #fff
+      z-index: 50
+      border-radius: 6px
+      max-height: 0
+      overflow: hidden
+      &.active
+        max-height: 2000px
+        padding: 20px
+        box-shadow: 0 5px 10px rgba($accent,0.1)
 
   /* media */
-  // @media screen and (max-width: 950px)
+  @media screen and (max-width: 1200px)
+    &__middle-menu
+      &.fixed
+        .bar--fixed
+          display: none
+        .header__phones--fixed
+          margin-left: 15px
+  // max-width 1200px
 
-  // max-width 950px
+  @media screen and (max-width: 1170px)
+    .menu-letters
+      &__title
+        display: none
+    &__middle-menu
+      &.fixed
+        .header__phones--fixed
+          display: none
+  // max-width 1170px
+
+  @media screen and (max-width: 1050px)
+    .menu-letters .menu > li > a
+      padding: 5px 11px
+      font-size: 14px
+  // max-width 1050px
+
+  @media screen and (max-width: 992px)
+    .menu-letters .menu > li > a
+      padding: 5px 10px
+    &__second-menu .menu > li > a,
+    &__second-menu .menu .slick-list .slick-track > li > a
+      font-size: 14px
+  // max-width 992px
+
+  @media screen and (max-width: 900px)
+    display: flex
+    flex-direction: column
+    &__middle
+      height: auto
+    &__bottom
+      display: none
+    &__nav
+      order: 10
+      height: 43px
+      background-color: #ffffff
+      border-top: 1px solid rgba(#834894, 0.5)
+      .container
+        position: static
+      .df
+        height: auto
+    &__main
+      padding: 14px 0
+      height: 88px
+      box-shadow: 0px 7px 15px 0px #f7f7f7
+      &.fixed
+        position: fixed
+        top: 0
+        left: 0
+
+        width: 100%
+        z-index: 100
+        background: #fff
+        height: 60px
+        padding: 5px 0
+        .logo
+          height: 39px
+          width: 128px
+          margin-bottom: 0
+    &__phones
+      display: none
+    .burger__wr
+      display: flex
+    .logo
+      width: 158px
+      height: 41px
+      margin-left: auto
+      margin-right: auto
+      &__wrap
+        width: 158px
+      &__text
+        font-size: 8.8px
+        text-align: center
+    &__search
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      height: 100%
+      padding-top: 0
+      .form
+        width: auto
+        .open-search
+          display: block
+        .search-wrap
+          display: none
+          position: absolute
+          top: calc(100% + 40px)
+          right: 0
+          z-index: 100
+          .text-input
+            input
+              background: #fff
+
+    .main-menu
+      position: absolute
+      top: 88px
+      left: -110%
+      width: 350px
+      max-height: calc(100vh - 88px)
+
+      overflow: hidden
+      z-index: 100
+      background-color: #fff
+      border-bottom-right-radius: 6px
+      box-shadow: 3px 5px 5px rgba($accent, 0.1)
+      border-top: 1px solid rgba($accent, 0.1)
+      transition: 0.7s
+      &.fixed
+        position: fixed
+        top: 60px
+      &.active
+        left: 0
+      .menu
+        flex-direction: column
+        align-items: flex-start
+        & > li
+          width: 100%
+          margin-right: 0
+          & > a
+            display: block
+            width: 100%
+            padding: 12px 15px
+
+            font-size: 16px
+            color: $accent
+            text-transform: uppercase
+            border-bottom: 1px solid rgba($accent, 0.1)
+            &::after
+              content: none
+            &:hover
+              color: #fff
+              background-color: rgba($accent, 0.8)
+    .bar
+      width: auto
+      margin-left: auto
+      margin-right: auto
+      button,a
+        height: 43px
+        padding-left: 41px
+        padding-right: 41px
+        border-right: 1px solid #f7f7f7
+        .icon
+          fill: #999999
+          flex-shrink: 0
+        .text
+          display: none
+      .bar__item
+        &:first-of-type
+          button,a
+            padding-left: 30px
+            padding-right: 30px
+        &:last-of-type
+          button,a
+            border-right: none
+        .button-user
+          .icon
+            margin-right: 0
+        &--cart
+          position: relative
+          bottom: auto
+          right: auto
+
+          .button-cart
+            display: flex
+            align-items: center
+            width: auto
+            background: none
+            box-shadow: none
+            border-radius: 0
+            padding: 0 30px
+
+            .icon
+              width: 17px
+              height: 17px
+              fill: $accent
+            &:hover
+              background: none
+              box-shadow: none
+              .icon
+                fill: $accent2
+            .count
+              width: 21px
+              height: 21px
+              top: calc(50% - 18px)
+              right: calc(50% - 25px)
+              font-size: 12px
+              line-height: 22px
+              padding-left: 1px
+
+    &__second-menu
+      display: block
+      padding-top: 19px
+      .slick-list
+        overflow: visible
+      .menu
+        display: block
+        & > li,
+        .slick-list .slick-track > li
+          display: block
+          width: auto
+          border: none
+          vertical-align: top
+          &.menu-item-has-children
+            & > a
+              &::after
+                content: none
+          & > a
+            width: 70px
+
+            font-size: 12px
+            line-height: 1.2
+            font-weight: 400
+            color: #a47a9c
+            text-align: center
+            text-transform: none
+            .icon__wrap
+              display: flex
+              align-items: center
+              justify-content: center
+              width: 70px
+              height: 70px
+              margin-bottom: 4px
+
+              background-color: #ffffff
+              border: 1.0px solid #a47a9c
+              border-radius: 50%
+              transition: 0.3s
+            .icon
+              width: 25px
+              height: 25px
+            &:hover
+              .icon__wrap
+                border-color: $accent
+                border-width: 2px
+              color: $accent
+          &.active
+            & > a
+              .icon__wrap
+                border-color: $accent
+                border-width: 2px
+              color: $accent
+        .sub-menu
+          &--strong
+            display: none
+          &__wrap
+            position: static
+            width: 100vw
+            padding-top: 15px
+            padding-bottom: 11px
+            box-shadow: none
+
+            .container
+              display: block
+          &__img
+            display: none
+          li
+            margin-bottom: 0
+            & > a
+              padding-top: 12px
+              padding-bottom: 14px
+              font-size: 14px
+            border-bottom: 1px solid #eeeded
+          &:first-of-type
+            border-top: 1px solid #eeeded
+
+  // max-width 900px
+
+  @media screen and (max-width: 400px)
+    .bar
+      width: 100%
+      .bar__item
+        width: 25%
+        &--cart
+          .button-cart
+            padding: 0
+      button,a
+        width: 100%
+        padding: 0 10px
+        justify-content: center
+  // max-width 400px
 
 /* .header */

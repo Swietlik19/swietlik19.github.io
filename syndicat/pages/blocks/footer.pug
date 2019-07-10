@@ -1,12 +1,21 @@
-mixin footer()
+mixin footer(logotype)
   footer.footer(id="footer")
     a.to-top(href="#page_wr")
       i.fa.fa-angle-up
     .footer__top
+      .footer__logo
+        .container
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
       .container
         .row
-          .col-md-10
-            ul.footer__menu
+          .col-xl-10.col-md-9
+            ul.footer__menu.footer-menu
               li.footer-menu__item
                 h4 Syndicat
                 ul.menu
@@ -80,7 +89,7 @@ mixin footer()
                     a(href="#")
                       span Мои заказы
 
-          .col-md-2
+          .col-md-3.col-lg-2
             .footer__contacts
               h4 Контакты
 

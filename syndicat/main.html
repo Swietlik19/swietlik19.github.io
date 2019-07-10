@@ -10,7 +10,7 @@
     <!-- Template Basic Images Start-->
     <!-- Template Basic Images End-->
     <!-- Custom Browsers Color Start-->
-    <meta name="theme-color" content="#f17ab2">
+    <meta name="theme-color" content="#f8c2dc">
     <!-- Custom Browsers Color End-->
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
@@ -49,7 +49,11 @@
               <div class="bar__item"><a class="button-user" href="#">
                   <svg class="icon">
                     <use xlink:href="img/svg/sprite.svg#icon-user"></use>
-                  </svg><span>Войти</span></a></div>
+                  </svg><span class="text">Войти</span></a></div>
+              <div class="bar__item bar__item--cart"><a class="button-cart" href="#">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                  </svg><span class="count">10</span></a></div>
             </div>
           </div>
         </div>
@@ -60,16 +64,19 @@
         <div class="header__main">
           <div class="container">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 col-2">
+                <div class="burger__wr">
+                  <button class="burger__wrap" id="header-burger"><span class="burger"><span class="line"></span></span></button>
+                </div>
                 <div class="header__phones"><a class="link" href="tel:+79787876767">+7 (978)<strong> 787-67-67</strong></a><span class="text">Whatsapp / Viber</span></div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 col-8">
                 <div class="logo__wrap">
                   <div class="logo"><img src="img/logo.png" alt="лого"></div>
                   <p class="logo__text">Магазин корейской косметики</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 col-2">
                 <div class="header__search">
                   <div class="form form--search">
                     <form class="wpcf7-form">
@@ -98,42 +105,123 @@
         </div>
         <!-- /.header__main-->
         <div class="container">
-          <div class="header__second-menu">
-            <ul class="menu">
-              <li class="menu-item menu-item-has-children"><a href="#">Уход за волосами</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Бальзами</a></li>
-                  <li class="menu-item"><a href="#">Маски</a></li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children"><a href="#">Уход за лицом</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Крема</a></li>
-                  <li class="menu-item"><a href="#">Маски</a></li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children"><a href="#">Уход за телом</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Крема</a></li>
-                  <li class="menu-item"><a href="#">Скрабы</a></li>
-                  <li class="menu-item"><a href="#">Лосьоны</a></li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children"><a href="#">Макияж</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Тени</a></li>
-                  <li class="menu-item"><a href="#">Тушь</a></li>
-                  <li class="menu-item"><a href="#">Губная помада</a></li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children"><a href="#">Аксессуары</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Браслеты</a></li>
-                  <li class="menu-item"><a href="#">Колье</a></li>
-                </ul>
-              </li>
-              <li class="menu-item"><a href="#">Акции</a></li>
-            </ul>
+          <div class="header__middle-menu">
+            <div class="logo__wrap--fixed">
+              <div class="logo--fixed"><img src="img/logo--fixed.png" alt="лого"></div>
+            </div>
+            <div class="header__second-menu">
+              <ul class="menu">
+                <li class="menu-item menu-item-has-children"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-1"></use>
+                      </svg>
+                    </div><span>Уход за волосами</span>
+                  </a>
+                  <div class="sub-menu__wrap">
+                    <div class="container">
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#"><strong>Шаг 1:</strong> Очищение</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 2:</strong> Пилинги и скрабы</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 3:</strong>Тонеры / Мисты</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 4:</strong> Эссенция, сыворотка, ампула</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 5:</strong> Уход для зоны вокруг глаз</a></li>
+                      </ul>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#"><strong>Шаг 6:</strong> Лосьон, эмульсия</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 7:</strong> Кремы</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 8:</strong> Маски</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 9:</strong> Защита от солнца</a></li>
+                      </ul>
+                      <div class="sub-menu__img"><img src="img-temp/img-sub-menu-1.jpg" alt="Уход за лицом"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item menu-item-has-children"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-2"></use>
+                      </svg>
+                    </div><span>Уход за лицом</span>
+                  </a>
+                  <div class="sub-menu__wrap">
+                    <div class="container">
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#"><strong>Шаг 1:</strong> Очищение</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 2:</strong> Пилинги и скрабы</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 3:</strong>Тонеры / Мисты</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 4:</strong> Эссенция, сыворотка, ампула</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 5:</strong> Уход для зоны вокруг глаз</a></li>
+                      </ul>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#"><strong>Шаг 6:</strong> Лосьон, эмульсия</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 7:</strong> Кремы</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 8:</strong> Маски</a></li>
+                        <li class="menu-item"><a href="#"><strong>Шаг 9:</strong> Защита от солнца</a></li>
+                      </ul>
+                      <ul class="sub-menu sub-menu--strong">
+                        <li class="menu-item"><a href="#"><strong>Наборы</strong></a></li>
+                        <li class="menu-item"><a href="#"><strong>Мини – версии</strong></a></li>
+                        <li class="menu-item"><a href="#"><strong>Космецевтика</strong></a></li>
+                        <li class="menu-item"><a href="#"><strong>Аксессуары</strong></a></li>
+                        <li class="menu-item"><a href="#"><strong>Для него</strong></a></li>
+                        <li class="menu-item"><a href="#"><strong>Дети</strong></a></li>
+                      </ul>
+                      <div class="sub-menu__img"><img src="img-temp/img-sub-menu-1.jpg" alt="Уход за лицом"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu-item menu-item-has-children"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-3"></use>
+                      </svg>
+                    </div><span>Уход за телом</span>
+                  </a></li>
+                <li class="menu-item menu-item-has-children"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-4"></use>
+                      </svg>
+                    </div><span>Макияж</span>
+                  </a></li>
+                <li class="menu-item menu-item-has-children"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-5"></use>
+                      </svg>
+                    </div><span>Аксессуары</span>
+                  </a></li>
+                <li class="menu-item"><a href="#">
+                    <div class="icon__wrap">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-menu-6"></use>
+                      </svg>
+                    </div><span>Акции</span>
+                  </a></li>
+              </ul>
+            </div>
+            <div class="header__bar bar bar--fixed">
+              <div class="bar__item">
+                <button class="button-diagram">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-diagram"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="bar__item">
+                <button class="button-wish">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="bar__item"><a class="button-user" href="#">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-user"></use>
+                  </svg></a></div>
+            </div>
+            <div class="header__phones header__phones--fixed"><a class="link" href="tel:+79787876767">+7 (978) 787-67-67</a></div>
           </div>
           <!-- /.header__second-menu-->
         </div>
@@ -144,173 +232,233 @@
         <div class="container">
           <div class="header__menu-letters menu-letters"><span class="menu-letters__title">Выберите бренд:</span>
             <ul class="menu">
-              <li class="menu-item menu-item-has-children"><a href="#">Все</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Big Brand Big Brand Big Brand</a></li>
-                </ul>
+              <li class="menu-item menu-item-has-children menu-item--all"><a href="#">Все</a>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Big Brand Big Brand Big Brand</a></li>
+                  </ul>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Big Brand Big Brand Big Brand</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">A</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">B</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">C</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">D</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">E</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">F</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">G</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">H</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">I</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">J</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">K</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">L</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">M</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">N</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">O</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">P</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">Q</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">R</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">S</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">T</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">U</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">V</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">W</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">X</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">Y</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">Z</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">Brand1</a></li>
-                  <li class="menu-item"><a href="#">Brand2</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Brand1</a></li>
+                    <li class="menu-item"><a href="#">Brand2</a></li>
+                  </ul>
+                </div>
               </li>
               <li class="menu-item menu-item-has-children"><a href="#">0 - 9</a>
-                <ul class="sub-menu">
-                  <li class="menu-item"><a href="#">1Brand</a></li>
-                  <li class="menu-item"><a href="#">2Brand</a></li>
-                </ul>
+                <div class="sub-menu__wrap">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">1Brand</a></li>
+                    <li class="menu-item"><a href="#">2Brand</a></li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -326,14 +474,14 @@
           <div class="slider1__slides scr1__slides">
             <div class="slider1__slide scr1__slide">
               <picture>
-                <source srcset="img/img-scr1-1.jpg" media="(min-width: 1170px)" src="img/img-scr1-1.jpg">
-                <source srcset="img/img-scr1-1--medium.jpg" media="(min-width: 600px)" src="img/img-scr1-1--medium.jpg"><img srcset="img/img-scr1-1.jpg" alt="Персональная скидка" src="img/img-scr1-1.jpg">
+                <source srcset="img/img-scr1-1.jpg" media="(min-width: 1170px)">
+                <source srcset="img/img-scr1-1--medium.jpg" media="(min-width: 600px)"><img srcset="img/img-scr1-1.jpg" alt="Персональная скидка" src="img/img-scr1-1.jpg">
               </picture>
             </div>
             <div class="slider1__slide scr1__slide">
               <picture>
-                <source srcset="img/img-scr1-1.jpg" media="(min-width: 1170px)" src="img/img-scr1-1.jpg">
-                <source srcset="img/img-scr1-1--medium.jpg" media="(min-width: 600px)" src="img/img-scr1-1--medium.jpg"><img srcset="img/img-scr1-1.jpg" alt="Персональная скидка" src="img/img-scr1-1.jpg">
+                <source srcset="img/img-scr1-1.jpg" media="(min-width: 1170px)">
+                <source srcset="img/img-scr1-1--medium.jpg" media="(min-width: 600px)"><img srcset="img/img-scr1-1.jpg" alt="Персональная скидка" src="img/img-scr1-1.jpg">
               </picture>
             </div>
           </div>
@@ -723,8 +871,7 @@
         <div class="container">
           <h2 class="title">Отзывы в Инстаграм</h2>
           <ul class="insta__blocks">
-            <li class="insta__block insta__block--two">
-              <div class="insta__item insta__item--small">
+            <li class="insta__block insta__block--two"><a class="insta__item insta__item--small" href="#insta__img-1">
                 <div class="insta__front js_insta__front">
                   <div class="insta__img">
                     <noscript><img src="img-temp/scr_insta/img-insta-1.jpg" alt="Инста 1" width="640" height="447" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-1.jpg" alt="" width="640" height="447" data-object-fit-cover>
@@ -736,15 +883,7 @@
                     <div class="author-name">@sinitsynaaa</div>
                   </div>
                 </div>
-                <div class="insta__back">
-                  <div class="insta__review">
-                    <div class="article">
-                      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Текста щеке снова дороге которой бросил собрал, себя скатился большого, речью океана большой злых буквенных ipsum проектах, что своего жизни.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="insta__item insta__item--small">
+              </a><a class="insta__item insta__item--small" href="#insta__img-2">
                 <div class="insta__front js_insta__front">
                   <div class="insta__img">
                     <noscript><img src="img-temp/scr_insta/img-insta-2.jpg" alt="Инста 2" width="640" height="447" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-2.jpg" alt="" width="640" height="447" data-object-fit-cover>
@@ -756,24 +895,24 @@
                     <div class="author-name">@coach.shine</div>
                   </div>
                 </div>
-                <div class="insta__back">
-                  <div class="insta__review">
-                    <div class="article">
-                      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+              </a></li>
             <li class="insta__block insta__block--one">
               <div class="insta__item insta__item--big">
-                <div class="insta__img">
-                  <noscript><img src="img-temp/scr_insta/img-insta-center.jpg" alt="Инста центр" width="359" height="640" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-center.jpg" alt="" width="359" height="640" data-object-fit-cover>
+                <div class="insta__img active" id="insta__img-1">
+                  <noscript><img src="img-temp/scr_insta/img-insta-center.jpg" alt="Инста центр" width="359" height="640" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-center.jpg" alt="" width="359" height="640" data-object-fit-contain>
+                </div>
+                <div class="insta__img" id="insta__img-2">
+                  <noscript><img src="img-temp/scr_insta/img-insta-center.jpg" alt="Инста центр" width="359" height="640" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-center.jpg" alt="" width="359" height="640" data-object-fit-contain>
+                </div>
+                <div class="insta__img" id="insta__img-3">
+                  <noscript><img src="img-temp/scr_insta/img-insta-center.jpg" alt="Инста центр" width="359" height="640" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-center.jpg" alt="" width="359" height="640" data-object-fit-contain>
+                </div>
+                <div class="insta__img" id="insta__img-4">
+                  <noscript><img src="img-temp/scr_insta/img-insta-center.jpg" alt="Инста центр" width="359" height="640" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-center.jpg" alt="" width="359" height="640" data-object-fit-contain>
                 </div>
               </div>
             </li>
-            <li class="insta__block insta__block--two">
-              <div class="insta__item insta__item--small">
+            <li class="insta__block insta__block--two"><a class="insta__item insta__item--small" href="#insta__img-3">
                 <div class="insta__front js_insta__front">
                   <div class="insta__img">
                     <noscript><img src="img-temp/scr_insta/img-insta-3.jpg" alt="Инста 1" width="640" height="447" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-3.jpg" alt="" width="640" height="447" data-object-fit-cover>
@@ -785,15 +924,7 @@
                     <div class="author-name">@sinitsynaaa</div>
                   </div>
                 </div>
-                <div class="insta__back">
-                  <div class="insta__review">
-                    <div class="article">
-                      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Текста щеке снова дороге которой бросил собрал, себя скатился большого, речью океана большой злых буквенных ipsum проектах, что своего жизни.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="insta__item insta__item--small">
+              </a><a class="insta__item insta__item--small" href="#insta__img-4">
                 <div class="insta__front js_insta__front">
                   <div class="insta__img">
                     <noscript><img src="img-temp/scr_insta/img-insta-4.jpg" alt="Инста 2" width="640" height="447" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_insta/img-insta-4.jpg" alt="" width="640" height="447" data-object-fit-cover>
@@ -805,15 +936,7 @@
                     <div class="author-name">@coach.shine</div>
                   </div>
                 </div>
-                <div class="insta__back">
-                  <div class="insta__review">
-                    <div class="article">
-                      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+              </a></li>
             <li class="insta__block insta__block--text"><i class="fa fa-instagram"></i>
               <p class="strong">Оставьте<br> ваш отзыв</p><span class="at">@sindycat</span>
               <p class="desc">Поделитесь своими<br> впечатлениями<br> от нашей продукции</p>
@@ -829,69 +952,122 @@
         <div class="container">
           <h2 class="title">Beauty - блог</h2>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="blog__block blog__block--two"><a class="blog__item blog__item--small blog__item--with-img" href="#">
-                  <div class="img-bg">
-                    <noscript><img src="img-temp/scr_blog/img-blog-1.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1.jpg" alt="" width="359" height="240" data-object-fit-cover>
-                  </div>
-                  <div class="blog__content">
-                    <div class="blog__title">
-                      <h3>Cовременный<br> эффективный<br> лифтинг<br> с Ottie Bio<br> Tension Serum</h3>
+        <div class="blog__wrap--desktop">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="blog__block blog__block--two"><a class="blog__item blog__item--small blog__item--with-img" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-1.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1.jpg" alt="" width="359" height="240" data-object-fit-cover>
                     </div>
-                    <div class="blog__img">
-                      <noscript><img src="img-temp/scr_blog/img-blog-1-2.png" alt="Блог 1" width="156" height="193" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1-2.png" alt="" width="156" height="193" data-object-fit-contain>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3>Cовременный<br> эффективный<br> лифтинг<br> с Ottie Bio<br> Tension Serum</h3>
+                      </div>
+                      <div class="blog__img">
+                        <noscript><img src="img-temp/scr_blog/img-blog-1-2.png" alt="Блог 1" width="156" height="193" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1-2.png" alt="" width="156" height="193" data-object-fit-contain>
+                      </div>
                     </div>
-                  </div>
-                </a><a class="blog__item blog__item--small" href="#">
-                  <div class="img-bg">
-                    <noscript><img src="img-temp/scr_blog/img-blog-2.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-2.jpg" alt="" width="359" height="240" data-object-fit-cover>
-                  </div>
-                  <div class="blog__content">
-                    <div class="blog__title">
-                      <h3>Массаж от морщин<br> и мешков<br> под глазами</h3>
+                  </a><a class="blog__item blog__item--small" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-2.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-2.jpg" alt="" width="359" height="240" data-object-fit-cover>
                     </div>
-                  </div>
-                </a></div>
-            </div>
-            <div class="col-md-4">
-              <div class="blog__block blog__block--one">
-                <div class="blog__item blog__item--big">
-                  <div class="img-bg">
-                    <noscript><img src="img/img-blog-center.jpg" alt="Блог центр" width="358" height="516" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/img-blog-center.jpg" alt="" width="358" height="516" data-object-fit-cover>
-                  </div>
-                  <div class="blog__content">
-                    <div class="blog__title">
-                      <h3>Определи<br> свой тип кожи</h3>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3>Массаж от морщин<br> и мешков<br> под глазами</h3>
+                      </div>
                     </div>
-                    <div class="btns__wrap">
-                      <div class="btn__wrap"><a class="btn" href="#">Пройти тест</a></div>
+                  </a></div>
+              </div>
+              <div class="col-md-4">
+                <div class="blog__block blog__block--one">
+                  <div class="blog__item blog__item--big">
+                    <div class="img-bg">
+                      <noscript><img src="img/img-blog-center.jpg" alt="Блог центр" width="358" height="516" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/img-blog-center.jpg" alt="" width="358" height="516" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3>Определи<br> свой тип кожи</h3>
+                      </div>
+                      <div class="btns__wrap">
+                        <div class="btn__wrap"><a class="btn" href="#">Пройти тест</a></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="blog__block blog__block--two"><a class="blog__item blog__item--small blog__item--right-bottom" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-4.jpg" alt="Блог 4" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-4.jpg" alt="" width="359" height="240" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3><strong>То, что нужно:</strong><br> собери свой идеальный<br> бьюти-бокс</h3>
+                      </div>
+                    </div>
+                  </a><a class="blog__item blog__item--small blog__item--right-top" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-5.jpg" alt="Блог 5" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-5.jpg" alt="" width="359" height="240" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3><strong>Индивидуальный подход:</strong><br> собери свой<br> базовый уход<br> с SINDYCAT</h3>
+                      </div>
+                    </div>
+                  </a></div>
+              </div>
             </div>
-            <div class="col-md-4">
-              <div class="blog__block blog__block--two"><a class="blog__item blog__item--small blog__item--right-bottom" href="#">
-                  <div class="img-bg">
-                    <noscript><img src="img-temp/scr_blog/img-blog-4.jpg" alt="Блог 4" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-4.jpg" alt="" width="359" height="240" data-object-fit-cover>
-                  </div>
-                  <div class="blog__content">
-                    <div class="blog__title">
-                      <h3><strong>То, что нужно:</strong><br> собери свой идеальный<br> бьюти-бокс</h3>
+          </div>
+        </div>
+        <div class="blog__wrap--mobile">
+          <div class="container">
+            <div class="slider1 blog__slider" id="blog__slider">
+              <div class="slider1__slides blog__slides">
+                <div class="slider1__slide blog__slide"><a class="blog__item blog__item--small blog__item--with-img" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-1.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1.jpg" alt="" width="359" height="240" data-object-fit-cover>
                     </div>
-                  </div>
-                </a><a class="blog__item blog__item--small blog__item--right-top" href="#">
-                  <div class="img-bg">
-                    <noscript><img src="img-temp/scr_blog/img-blog-5.jpg" alt="Блог 5" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-5.jpg" alt="" width="359" height="240" data-object-fit-cover>
-                  </div>
-                  <div class="blog__content">
-                    <div class="blog__title">
-                      <h3><strong>Индивидуальный подход:</strong><br> собери свой<br> базовый уход<br> с SINDYCAT</h3>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3>Cовременный<br> эффективный<br> лифтинг<br> с Ottie Bio<br> Tension Serum</h3>
+                      </div>
+                      <div class="blog__img">
+                        <noscript><img src="img-temp/scr_blog/img-blog-1-2.png" alt="Блог 1" width="156" height="193" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-1-2.png" alt="" width="156" height="193" data-object-fit-contain>
+                      </div>
                     </div>
-                  </div>
-                </a></div>
+                  </a></div>
+                <div class="slider1__slide blog__slide"><a class="blog__item blog__item--small" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-2.jpg" alt="Блог 1" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-2.jpg" alt="" width="359" height="240" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3>Массаж от морщин<br> и мешков<br> под глазами</h3>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="slider1__slide blog__slide"><a class="blog__item blog__item--small blog__item--right-bottom" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-4.jpg" alt="Блог 4" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-4.jpg" alt="" width="359" height="240" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3><strong>То, что нужно:</strong><br> собери свой идеальный<br> бьюти-бокс</h3>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="slider1__slide blog__slide"><a class="blog__item blog__item--small blog__item--right-top" href="#">
+                    <div class="img-bg">
+                      <noscript><img src="img-temp/scr_blog/img-blog-5.jpg" alt="Блог 5" width="359" height="240" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/scr_blog/img-blog-5.jpg" alt="" width="359" height="240" data-object-fit-cover>
+                    </div>
+                    <div class="blog__content">
+                      <div class="blog__title">
+                        <h3><strong>Индивидуальный подход:</strong><br> собери свой<br> базовый уход<br> с SINDYCAT</h3>
+                      </div>
+                    </div>
+                  </a></div>
+              </div>
             </div>
           </div>
         </div>
@@ -943,10 +1119,17 @@
     </div>
     <footer class="footer" id="footer"><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
       <div class="footer__top">
+        <div class="footer__logo">
+          <div class="container">
+            <div class="logo__wrap">
+              <div class="logo"><img src="img/logo.png" alt="лого"></div>
+            </div>
+          </div>
+        </div>
         <div class="container">
           <div class="row">
-            <div class="col-md-10">
-              <ul class="footer__menu">
+            <div class="col-xl-10 col-md-9">
+              <ul class="footer__menu footer-menu">
                 <li class="footer-menu__item">
                   <h4>Syndicat</h4>
                   <ul class="menu">
@@ -988,7 +1171,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-lg-2">
               <div class="footer__contacts">
                 <h4>Контакты</h4>
                 <div class="footer__contacts-content"><a class="link strong" href="tel:+79787876767" rel="nofollow">+7 (978) 787-67-67</a><a class="link" href="mailto:feyatova@gmail.com">feyatova@gmail.com</a>

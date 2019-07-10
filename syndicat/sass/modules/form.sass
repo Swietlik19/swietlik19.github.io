@@ -76,14 +76,6 @@
         font-size: 16px
         border-radius: 25.0px
 
-  &--search
-    .open-search
-      position: relative
-      background: none
-      border: none
-      outline: none
-      display: none
-
   .search-wrap
     position: relative
     width: 249px
@@ -95,48 +87,65 @@
         line-height: 38px
         background: none
 
-    button
+  .search-wrap button,
+  .open-search
+    position: absolute
+    top: 0
+    right: 0
+
+    background: none
+    border: none
+    outline: none
+    cursor: pointer
+
+    display: block
+    width: 38px
+    height: 38px
+    line-height: 42px
+    background-image: $grad
+    transition: 0.2s
+    border-radius: 50%
+    overflow: hidden
+    &::before
+      content: ''
       position: absolute
-      top: 0
-      right: 0
-
-      background: none
-      border: none
-      outline: none
-      cursor: pointer
-
-      display: block
-      width: 38px
-      height: 38px
-      line-height: 42px
-      background-image: $grad
-      transition: 0.2s
-      border-radius: 50%
-      overflow: hidden
+      top: -30px
+      left: -100%
+      width: 20px
+      height: calc(100% + 100px)
+      background-color: rgba(#fff,0.2)
+      transform: rotate(35deg)
+      transition: 0.5s ease
+      z-index: 100
+    .icon
+      width: 15px
+      height: 15px
+      fill: #ffffff
+    &:hover
+      box-shadow: 0 0 15px 0 rgba($accent2,0.3)
       &::before
-        content: ''
-        position: absolute
-        top: -30px
-        left: -100%
-        width: 20px
-        height: calc(100% + 100px)
-        background-color: rgba(#fff,0.2)
-        transform: rotate(35deg)
-        transition: 0.5s ease
-        z-index: 100
-      .icon
-        width: 15px
-        height: 15px
-        fill: #ffffff
-      &:hover
-        box-shadow: 0 0 15px 0 rgba($accent2,0.3)
-        &::before
-          left: 100%
+        left: 100%
+
+  &--search
+    .open-search
+      position: relative
+      display: none
 
   /* media */
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 992px)
+    &__item--subscribe
+      width: 100%
+  //   max-width 992px
 
-  //   max-width 1170px
+  @media screen and (max-width: 375px)
+    &--subscribe
+      input[type=submit]
+        padding-left: 25px
+        padding-right: 25px
+      .text-input
+        input
+          padding-right: 157px
+  // max-width 375px
 
  /* form */

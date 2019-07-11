@@ -260,7 +260,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
 
   setTimeout(function() {
     $('.main-page .scr1').addClass('active');
-  }, 3000);
+  }, 5000);
 
   /* инициализация fancybox */
   $(".fancybox").fancybox({
@@ -366,6 +366,16 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
       $(this).parent().siblings('.menu-item-has-children').removeClass('active');
       $(this).parent().siblings('.menu-item-has-children').find('.sub-menu__wrap').fadeOut('fast');
       $(this).siblings('.sub-menu__wrap').offset({left:0})
+    }
+  });
+
+  $('.main-menu .menu > .menu-item-has-children > a').click(function(event) {
+    event.preventDefault();
+    if ( window.matchMedia('(max-width: 900px)').matches ) {
+      $(this).parent().toggleClass('active');
+      $(this).siblings('.sub-menu').toggleClass('active');
+      $(this).parent().siblings('.menu-item-has-children').removeClass('active');
+      $(this).parent().siblings('.menu-item-has-children').find('.sub-menu').removeClass('active');
     }
   });
 

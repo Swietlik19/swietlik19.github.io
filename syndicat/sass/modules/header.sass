@@ -140,6 +140,8 @@
       & > li
         position: relative
         margin-right: 22px
+        &.menu-item--mobile
+          display: none
         & > a
           position: relative
           font-size: 12px
@@ -573,18 +575,20 @@
       top: 88px
       left: -110%
       width: 350px
+      max-width: 100%
       max-height: calc(100vh - 88px)
 
-      overflow: hidden
       z-index: 100
       background-color: #fff
       border-bottom-right-radius: 6px
       box-shadow: 3px 5px 5px rgba($accent, 0.1)
       border-top: 1px solid rgba($accent, 0.1)
       transition: 0.7s
+      overflow: auto
       &.fixed
         position: fixed
         top: 60px
+        max-height: calc(100vh - 60px)
       &.active
         left: 0
       .menu
@@ -593,6 +597,33 @@
         & > li
           width: 100%
           margin-right: 0
+          &.menu-item--mobile
+            display: block
+          &.menu-item-has-children
+            & > a
+              position: relative
+              display: block
+              &::before
+                content: ''
+                position: absolute
+                top: calc(50% - 5px)
+                right: 15px
+
+                display: block
+                width: 9px
+                height: 9px
+                border-bottom: 1px solid rgba($accent,0.9)
+                border-left: 1px solid rgba($accent,0.9)
+                transform: rotate(-45deg)
+                transform-origin: center
+                transition: 0.3s
+            &.active
+              & > a
+                &::before
+                  top: calc(50% - 2px)
+                  transform: rotate(135deg)
+                  border-color: #fff
+
           & > a
             display: block
             width: 100%
@@ -607,6 +638,26 @@
             &:hover
               color: #fff
               background-color: rgba($accent, 0.8)
+      .sub-menu
+        max-height: 0
+        overflow: hidden
+        opacity: 0
+        transition: 0.2s
+        &.active
+          max-height: 5000px
+          opacity: 1
+          transition: 1.4s
+        & > li
+          margin-bottom: 3px
+          & > a
+            display: block
+            padding: 3px 25px
+            color: $accent
+            text-decoration: none
+            transition: 0.3s
+            &:hover
+              color: $accent2
+
     .bar
       width: 100%
       height: 43px

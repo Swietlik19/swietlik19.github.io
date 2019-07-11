@@ -5,6 +5,7 @@
 //= ../libs/slick.min.js
 //= ../libs/svg4everybody.min.js
 //= ../libs/ofi.min.js
+//= ../libs/picturefill.min.js
 //= ../../libs/fancybox/jquery.fancybox.pack.js
 //= ../../libs/fancybox/helpers/jquery.fancybox-buttons.js
 //= scripts.js

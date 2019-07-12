@@ -1,5 +1,5 @@
-.paginator 
-  position: relative 
+.paginator
+  position: relative
   margin: 0
   padding: 0
   list-style: none
@@ -7,15 +7,70 @@
   display: flex
   align-items: center
   justify-content: center
+  flex-wrap: wrap
   .page-numbers
-    position: relative
-    display: block
-    transition: 0.3s
+    display: flex
+    align-items: center
+    justify-content: center
 
-      
+    padding: 17px
+    font-weight: 500
+    font-size: 16px
+
+  .page-numbers, .prev, .next
+    position: relative
+    text-decoration: none
+    line-height: 1.2
+    color: #999999
+    transition: 0.3s
+    &:hover
+      color: $accent2
+
+  .prev, .next
+    display: block
+    font-size: 13px
+    .icon
+      position: absolute
+      top: calc(50% - 5px)
+      width: 16px
+      height: 11px
+  .prev
+    margin-right: 30px
+    .icon
+      transform: rotate(180deg)
+      left: -30px
+    &:hover
+      .icon
+        left: -25px
+  .next
+    margin-left: 30px
+    .icon
+      right: -30px
+    &:hover
+      .icon
+        right: -25px
+
+  li
+    &.current
+      .page-numbers
+        color: $accent2
+
   /* media */
-  // @media screen and (max-width: 400px) 
-    
-  // max-width 400px 
+  @media screen and (max-width: 500px)
+    .prev, .next
+      margin: 0
+      font-size: 0
+      width: 16px
+      height: 11px
+    .prev
+      .icon
+        left: -10px
+    .next
+      .icon
+        right: -10px
+    .page-numbers
+      padding: 10px
+
+  // max-width 500px
 
  /* paginator */

@@ -401,6 +401,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
     if ($(window).width() != screenWidth) {
 
     }
+    screenWidth = $(window).width();
   });
 
 })(jQuery);

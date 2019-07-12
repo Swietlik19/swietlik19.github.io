@@ -1,6 +1,6 @@
 .header
   position: relative
-  z-index: 10
+  z-index: 50
 
   &.margined
     padding-top: 60px
@@ -50,6 +50,13 @@
       & > li
         position: relative
         padding: 0 12px
+        &.current
+          & > a
+            cursor: text
+            pointer-events: none
+            color: darken($accent, 10%)
+            &::before
+              content: none
         & > a
           position: relative
           font-size: 14px

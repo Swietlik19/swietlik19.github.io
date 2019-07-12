@@ -24,34 +24,32 @@ html(lang='ru')
     include blocks/styles.pug
     include blocks/header.pug
 
-    include blocks/nav.pug
-    include blocks/scr1.pug
-    include blocks/scr_about.pug
-    include blocks/scr_features.pug
-    include blocks/scr_questions.pug
-    include blocks/scr_news.pug
-    include blocks/scr_lead.pug
+    include blocks/paginator.pug
+
+    include blocks/nav--reviews.pug
+    include blocks/scr_reviews.pug
+    include blocks/scr_message.pug
 
     include blocks/footer.pug
 
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.main-page
+  body.secondary-page.reviews-page
 
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr
+      .bg-circles
+        .container
+          h1.title Отзывы
 
-      +scr1
-      +scr_about
-      +scr_features
-      +scr_questions
-      +scr_news
-      +scr_lead
+        +scr_reviews
+
+      +scr_message('Оставить отзыв')
 
 
-    +footer("div")
+    +footer("a")
 
     +styles-bottom
     +scripts

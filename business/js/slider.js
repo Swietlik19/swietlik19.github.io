@@ -1,6 +1,7 @@
 (function($){
 
-  var screenWidth = $(window).width();
+  var screenWidthSlider = $(window).width();
+  var newsSlickPB = 576;
 
   // $('#partners__slider .slider1__slides').slick({
   //   infinite: true,
@@ -38,26 +39,6 @@
   //     }
   //   ]
   // });
-
-  $('#news__slider .news__slides').slick({
-    responsive: [
-      {
-        breakpoint: 4000,
-        settings: "unslick"
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          infinite: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          appendDots: $('#news__slider .news__dots')
-        }
-      }
-    ]
-  });
 
   $('#licenses__slider .licenses__slides').slick({
     infinite: true,
@@ -124,6 +105,21 @@
     ]
   });
 
+  function newsSlider() {
+    $('#news__slider .news__slides').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      appendDots: $('#news__slider .news__dots')
+    });
+  }
+
+  if (window.matchMedia('(max-width: ' + newsSlickPB + 'px)').matches) {
+    newsSlider();
+  }
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');
@@ -141,24 +137,23 @@
   });
 
   $(window).resize(function() {
-    if ($(window).width() != screenWidth) {
+    var currScreeWidth = $(window).width();
+
+    if (currScreeWidth != screenWidthSlider) {
 
       equalHeight('#news__slider');
       equalHeight('#reviews__slider');
 
-      if (window.matchMedia('(max-width: 576px)').matches) {
-        $('#news__slider .news__slides').slick({
-          infinite: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          appendDots: $('#news__slider .news__dots')
-        });
-      } else {
-        $('#news__slider .news__slides').slick('unslick');
+      if ( !(currScreeWidth > newsSlickPB && screenWidthSlider > newsSlickPB || currScreeWidth <= newsSlickPB && screenWidthSlider <= newsSlickPB) ) {
+        if (window.matchMedia('(max-width: ' + newsSlickPB + 'px)').matches) {
+          newsSlider();
+        } else {
+          $('#news__slider .news__slides').slick('unslick');
+        }
       }
+
     }
+    screenWidthSlider = $(window).width();
   });
 
 })(jQuery);

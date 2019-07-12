@@ -213,6 +213,7 @@
     if ($(window).width() != screenWidth) {
 
     }
+    screenWidth = $(window).width();
   });
 
 })(jQuery);

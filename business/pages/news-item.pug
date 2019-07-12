@@ -24,34 +24,27 @@ html(lang='ru')
     include blocks/styles.pug
     include blocks/header.pug
 
+    include blocks/breadcrumbs.pug
+
     include blocks/nav.pug
-    include blocks/scr1.pug
-    include blocks/scr_about.pug
-    include blocks/scr_features.pug
-    include blocks/scr_questions.pug
-    include blocks/scr_news.pug
-    include blocks/scr_lead.pug
+    include blocks/scr_news-item.pug
 
     include blocks/footer.pug
 
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.main-page
+  body.secondary-page.news-item-page
 
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr
+      .bg-circles
 
-      +scr1
-      +scr_about
-      +scr_features
-      +scr_questions
-      +scr_news
-      +scr_lead
+        +scr_news-item
 
 
-    +footer("div")
+    +footer("a")
 
     +styles-bottom
     +scripts

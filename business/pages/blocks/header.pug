@@ -18,7 +18,7 @@ mixin header(logotype)
 
           // Дублируется
           .header__phones
-            a.header__phones-icon.desktop.open-modal(href='#')
+            a.header__phones-icon.desktop.open-modal(href='#modal__call')
               i.fa.fa-phone
             a.header__phones-icon.mobile(href='tel:+79634720041', rel='nofollow')
               i.fa.fa-phone
@@ -31,6 +31,65 @@ mixin header(logotype)
           .second-menu
             ul.menu
               li.menu-item
+                a(href="#") Центр
+                  br
+                  |  бухгалтерского учета
+              li.menu-item
+                a(href="#") Центр финансов
+              li.menu-item
+                a(href="#") Центр налогового
+                  br
+                  |  планирования
+              li.menu-item
+                a(href="#") Центр внедрения
+                  br
+                  |  программных продуктов
+              li.menu-item
+                a(href="#") Центр обучения
+                  br
+                  |  для руководителей
+              li.menu-item
+                a(href="#") Создание эффективной
+                  br
+                  |  финансовой службы
+
+      // /.container
+    // /.header__top
+
+
+mixin header--center(logotype)
+  header.header(id="header")
+    .header__mobile
+      .container
+        .header__mobile-wrap
+          button.burger__wrap#header-burger
+            span.burger
+              span.line
+
+          // Дублируется
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+
+          // Дублируется
+          .header__phones
+            a.header__phones-icon.desktop.open-modal(href='#modal__call')
+              i.fa.fa-phone
+            a.header__phones-icon.mobile(href='tel:+79634720041', rel='nofollow')
+              i.fa.fa-phone
+            a.header__phones-link(href='tel:+79634720041', rel='nofollow') +7 963 472 00 41
+
+    .header__wrap
+      +header__nav(logotype)
+      .header__bottom
+        .container
+          .second-menu
+            ul.menu
+              li.menu-item.current
                 a(href="#") Центр
                   br
                   |  бухгалтерского учета

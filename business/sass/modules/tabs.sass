@@ -1,0 +1,59 @@
+.tabs
+  position: relative
+
+  &__nav
+    flex-shrink: 0
+    position: relative
+    padding: 0
+    margin: 0
+    list-style: none
+
+    width: 360px
+    z-index: 2
+
+  &__link
+    display: block
+    padding: 33px 15px 29px
+
+    font-size: 15px
+    line-height: 1.2
+    font-weight: 500
+    color: #fff
+    background: $accent
+    border-bottom: 1px solid rgba(#fff,0.3)
+    box-shadow: 5px 9px 15px 0px rgba($shadow-c,0.1)
+    text-decoration: none
+    transition: 0.6s
+    &.active
+      color: $title-c
+      background: #fff
+      cursor: default
+    &:not(.active):hover
+      transform: translateX(-10px)
+
+  /* media */
+  @media screen and (max-width: 992px)
+    &__link
+      padding: 30px 15px 26px
+      font-size: 14px
+  // max-width 992px
+
+  @media screen and (max-width: 800px)
+    &__nav
+      width: 50%
+  // max-width 800px
+
+  @media screen and (max-width: 680px)
+    &__nav
+      width: 100%
+    &__link
+      padding: 15px
+  // max-width 600px
+
+  @media screen and (max-width: 400px)
+    &__link
+      font-size: 13px
+      padding: 12px
+  // max-width 400px
+
+/* tabs */

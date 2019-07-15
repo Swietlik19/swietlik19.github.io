@@ -5826,10 +5826,6 @@ img {
 a {
   color: #7b7c7e; }
 
-.blur-it {
-  -webkit-filter: blur(4px);
-          filter: blur(4px); }
-
 .accent {
   color: #1da4a4; }
 
@@ -5861,7 +5857,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", sans-serif; }
 
 .article p {
-  margin-bottom: 27px; }
+  margin-bottom: 25px; }
 
 .article strong {
   font-weight: 500; }
@@ -5944,7 +5940,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 65px 0; }
 
 .desc {
+  margin-bottom: 60px;
+  font-size: 30px;
+  line-height: 1.2;
   color: #666666; }
+  .desc strong {
+    font-weight: 300; }
 
 .icon {
   max-width: 100%;
@@ -6009,17 +6010,53 @@ input[type="submit"] {
   -o-transition: 0.5s;
   transition: 0.5s;
   -webkit-appearance: none;
+  display: block;
   width: 100%;
-  height: 57px;
+  height: 57px; }
+
+.btn--green,
+input[type="submit"] {
   font-size: 14px;
   line-height: 1.2;
   font-weight: 500;
   color: #ffffff; }
 
-.btn,
+.btn--download {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 43px;
+  padding-right: 24px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #69b547;
+  background-color: #ffffff;
+  border: 1px solid #69b547;
+  border-radius: 6.0px; }
+  .btn--download:hover {
+    background-color: #69b547;
+    -webkit-box-shadow: 0 10px 30px 5px rgba(29, 164, 164, 0.2);
+            box-shadow: 0 10px 30px 5px rgba(29, 164, 164, 0.2);
+    color: #fff; }
+    .btn--download:hover .icon {
+      fill: #fff; }
+  .btn--download .icon {
+    width: 21px;
+    height: 26px; }
+
+.btn--green,
 .submit__wrap {
   position: relative;
-  display: block;
   width: 100%;
   overflow: hidden;
   -webkit-box-shadow: 7px 13px 20px 0px rgba(105, 181, 71, 0.4);
@@ -6032,7 +6069,7 @@ input[type="submit"] {
   -o-transition: transform 0.7s, box-shadow 0.9s;
   transition: transform 0.7s, box-shadow 0.9s;
   transition: transform 0.7s, box-shadow 0.9s, -webkit-transform 0.7s, -webkit-box-shadow 0.9s; }
-  .btn::before,
+  .btn--green::before,
   .submit__wrap::before {
     content: '';
     position: absolute;
@@ -6050,14 +6087,14 @@ input[type="submit"] {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-  .btn:hover,
+  .btn--green:hover,
   .submit__wrap:hover {
     -webkit-transform: translateY(3px);
         -ms-transform: translateY(3px);
             transform: translateY(3px);
     -webkit-box-shadow: 0px 0px 10px 0px rgba(105, 181, 71, 0.4);
             box-shadow: 0px 0px 10px 0px rgba(105, 181, 71, 0.4); }
-    .btn:hover::before,
+    .btn--green:hover::before,
     .submit__wrap:hover::before {
       left: -webkit-calc(100% + 50px);
       left: calc(100% + 50px); }
@@ -6281,7 +6318,10 @@ input[type="submit"][disabled] {
     margin-bottom: 18px; }
   .inner-map {
     height: 250px;
-    background-image: url("../img/bg-map--mobile.jpg"); } }
+    background-image: url("../img/bg-map--mobile.jpg"); }
+  .desc {
+    margin-bottom: 30px;
+    font-size: 24px; } }
 
 @media screen and (max-width: 500px) {
   .title {
@@ -6289,7 +6329,12 @@ input[type="submit"][disabled] {
     .title br {
       display: none; }
   .secondary-page h1.title {
-    font-size: 22px; } }
+    font-size: 22px; }
+  .desc {
+    margin-bottom: 20px;
+    font-size: 20px; }
+    .desc br {
+      display: none; } }
 
 @media screen and (max-width: 400px) {
   .btn,
@@ -6509,6 +6554,8 @@ input[type="submit"][disabled] {
         -ms-flex-preferred-size: auto;
             flex-basis: auto;
     border-left: 1px solid rgba(255, 255, 255, 0.3); }
+    .header .second-menu .menu > li.current > a {
+      background-color: #69b547; }
     .header .second-menu .menu > li:last-of-type {
       border-right: 1px solid rgba(255, 255, 255, 0.3); }
     .header .second-menu .menu > li > a {

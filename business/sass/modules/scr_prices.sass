@@ -1,0 +1,77 @@
+.prices
+  position: relative
+  padding-top: 55px
+  padding-bottom: 62px
+  &__wrap
+    display: flex
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+
+    flex-grow: 1
+  &__nav
+    margin-right: 53px
+  &__tab
+    &:not(#prices-tab-0)
+      display: none
+
+  table
+    width: 100%
+    border-collapse: collapse
+    th,td
+      height: 78px
+      &:first-of-type
+        padding-left: 33px
+        padding-right: 20px
+      &:last-of-type
+        padding-left: 20px
+        padding-right: 10px
+    thead
+      background-color: rgba(29,164,164,0.14)
+      tr
+        border-bottom: none
+    th
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 500
+      color: $title-c
+    tr
+      border-bottom: 1px solid rgba(29,164,164,0.3)
+      &:nth-of-type(2n)
+        background-color: rgba($accent, 0.05)
+    td
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 400
+      color: $title-c
+      &.price
+        font-weight: 700
+
+  /* media */
+  @media screen and (max-width: 768px)
+    &__nav
+      margin-right: 30px
+    table
+     th,td
+      &:first-of-type
+        padding-left: 15px
+        padding-right: 10px
+      &:last-of-type
+        padding-left: 10px
+  // max-width 768px
+
+  @media screen and (max-width: 680px)
+    &__wrap
+      flex-direction: column
+    &__tabs
+      padding-top: 30px
+      width: 100%
+  // max-width 680px
+
+  @media screen and (max-width: 500px)
+    padding-top: 30px
+    padding-bottom: 20px
+  // max-width 500px
+
+/* prices */

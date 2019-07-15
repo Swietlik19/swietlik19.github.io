@@ -73,9 +73,6 @@ img
 a
   color: $body-c
 
-.blur-it
-  filter: blur(4px)
-
 .accent
   color: $accent
 
@@ -110,7 +107,7 @@ h1,h2,h3,h4,h5,h6
 
 .article
   p
-    margin-bottom: 27px
+    margin-bottom: 25px
   strong
     font-weight: 500
   a
@@ -183,7 +180,12 @@ h1,h2,h3,h4,h5,h6
     padding: 65px 0
 
 .desc
+  margin-bottom: 60px
+  font-size: 30px
+  line-height: 1.2
   color: #666666
+  strong
+    font-weight: 300
 
 .icon
   max-width: 100%
@@ -246,18 +248,45 @@ input[type="submit"]
   transition: 0.5s
   -webkit-appearance: none
 
+  display: block
   width: 100%
   height: 57px
 
+.btn--green,
+input[type="submit"]
   font-size: 14px
   line-height: 1.2
   font-weight: 500
   color: #ffffff
 
-.btn,
+.btn--download
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-left: 43px
+  padding-right: 24px
+
+  font-size: 14px
+  line-height: 1.2
+  font-weight: 500
+  color: $accent2
+
+  background-color: #ffffff
+  border: 1.0px solid $accent2
+  border-radius: 6.0px
+  &:hover
+    background-color: $accent2
+    box-shadow: 0 10px 30px 5px rgba($accent, 0.2)
+    color: #fff
+    .icon
+      fill: #fff
+  .icon
+    width: 21px
+    height: 26px
+
+.btn--green,
 .submit__wrap
   position: relative
-  display: block
   width: 100%
   overflow: hidden
   box-shadow: 7px 13px 20px 0px rgba($accent2,0.4)
@@ -510,6 +539,9 @@ input[type="submit"]
   .inner-map
     height: 250px
     background-image: url('../img/bg-map--mobile.jpg')
+  .desc
+    margin-bottom: 30px
+    font-size: 24px
 // max-width 768px
 
 // @media screen and (max-width: 576px)
@@ -524,6 +556,11 @@ input[type="submit"]
   .secondary-page
     h1.title
       font-size: 22px
+  .desc
+    margin-bottom: 20px
+    font-size: 20px
+    br
+      display: none
 // max-width 500px
 
 @media screen and (max-width: 400px)

@@ -39,7 +39,7 @@
   $('#header-burger').click(function() {
     $(this).toggleClass('active');
     $('.header__wrap').toggleClass('active');
-    $('body').toggleClass('disabled');
+    $('body').toggleClass('disabled--burger');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -73,6 +73,7 @@
       closeModal();
       $('.header .burger__wrap').removeClass('active');
       $('.header__wrap').removeClass('active');
+      $('body').removeClass('disabled--burger');
     }
   });
 
@@ -115,7 +116,7 @@
   $('.page_wr').click(function() {
     $('.header .burger__wrap').removeClass('active');
     $('.header__wrap').removeClass('active');
-    $('body').removeClass('disabled');
+    $('body').removeClass('disabled--burger');
   });
 
   // маска поля tel

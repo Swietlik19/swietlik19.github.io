@@ -5720,6 +5720,13 @@ html {
   font-weight: 500;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-MediumItalic.woff2") format("woff2"), url("../fonts/Ubuntu-MediumItalic.woff") format("woff"), url("../fonts/Ubuntu-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+
 /* Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px) */
 @-webkit-keyframes ani-call {
   0% {
@@ -5801,7 +5808,16 @@ img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  font-family: 'object-fit: cover object-position: center';
+  font-family: 'object-fit: cover; object-position: center;';
+  width: 100%;
+  height: 100%; }
+
+[data-object-fit-cover-top] {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  font-family: 'object-fit: cover; object-position: top;';
   width: 100%;
   height: 100%; }
 
@@ -5810,7 +5826,7 @@ img {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
-  font-family: 'object-fit: contain object-position: center';
+  font-family: 'object-fit: contain; object-position: center;';
   width: 100%;
   height: 100%; }
 
@@ -5819,7 +5835,7 @@ img {
      object-fit: contain;
   -o-object-position: center bottom;
      object-position: center bottom;
-  font-family: 'object-fit: contain object-position: center bottom';
+  font-family: 'object-fit: contain; object-position: center bottom;';
   width: 100%;
   height: 100%; }
 
@@ -5831,6 +5847,9 @@ a {
 
 .grey-bg {
   background-color: #f9fbfb; }
+
+.blue-bg {
+  background-color: #0e6b68; }
 
 .bg-circles {
   position: relative;
@@ -5935,7 +5954,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   color: #666666; }
 
-.secondary-page h1.title {
+.secondary-page h1.title,
+.secondary-page h2.title {
   margin: 0;
   padding: 65px 0; }
 
@@ -6308,7 +6328,8 @@ input[type="submit"][disabled] {
     font-size: 14px; } }
 
 @media screen and (max-width: 768px) {
-  .secondary-page h1.title {
+  .secondary-page h1.title,
+  .secondary-page h2.title {
     padding: 30px 0 20px;
     font-size: 28px; }
   .article p {
@@ -6328,7 +6349,8 @@ input[type="submit"][disabled] {
     font-size: 30px; }
     .title br {
       display: none; }
-  .secondary-page h1.title {
+  .secondary-page h1.title,
+  .secondary-page h2.title {
     font-size: 22px; }
   .desc {
     margin-bottom: 20px;

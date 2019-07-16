@@ -115,23 +115,22 @@
 
   function secondMenuSlider() {
     $('.header__second-menu .menu').slick({
-      centerMode: true,
-      centerPadding: '16px',
       infinite: true,
       slidesToShow: 6,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       arrows: false,
+      variableWidth: true,
       responsive: [
         {
           breakpoint: 550,
           settings: {
-            slidesToShow: 4
+            slidesToShow: 5
           }
         },
         {
           breakpoint: 400,
           settings: {
-            slidesToShow: 3
+            slidesToShow: 4
           }
         }
       ]

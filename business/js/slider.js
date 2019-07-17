@@ -82,23 +82,51 @@
 
   function profiSlider() {
     $('#profi__slider .profi__slides').slick({
+      centerMode: true,
       infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-      appendDots: $('#profi__slider .profi__dots'),
+      slidesToShow: 4,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 5000,
       responsive: [
+      {
+        breakpoint: 1270,
+        settings: {
+          arrows: false,
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          dots: true,
+          appendDots: $('#profi__slider .profi__dots'),
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: $('#profi__slider .profi__dots'),
+        }
+      },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#profi__slider .profi__dots'),
         }
       },
       {
-        breakpoint: 420,
+        breakpoint: 500,
         settings: {
+          centerMode: false,
           slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#profi__slider .profi__dots'),
         }
       }
     ]
@@ -109,9 +137,8 @@
     newsSlider();
   }
 
-  if (window.matchMedia('(max-width: ' + profiSlickPB + 'px)').matches) {
-    profiSlider();
-  }
+  profiSlider();
+
 
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
@@ -141,14 +168,6 @@
           newsSlider();
         } else {
           $('#news__slider .news__slides').slick('unslick');
-        }
-      }
-
-      if ( !(currScreeWidth > profiSlickPB && screenWidthSlider > profiSlickPB || currScreeWidth <= profiSlickPB && screenWidthSlider <= profiSlickPB) ) {
-        if (window.matchMedia('(max-width: ' + profiSlickPB + 'px)').matches) {
-          profiSlider();
-        } else {
-          $('#profi__slider .profi__slides').slick('unslick');
         }
       }
 

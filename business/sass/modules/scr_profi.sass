@@ -21,9 +21,31 @@
     color: #ffffff
 
   &__slider
+    position: relative
     width: calc(100% + 30px)
     margin-left: -15px
     margin-top: 50px
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+
+      display: block
+      width: 100px
+      height: 100%
+      z-index: 3
+    &::before
+      left: 0
+      background-image: linear-gradient(90deg, rgba(#fff,0.5) 0%, transparent 100%)
+    &::after
+      right: 0
+      background-image: linear-gradient(270deg, rgba(#fff,0.5) 0%, transparent 100%)
+
+    .slick-list
+      width: 100%
+    .slick-track
+      width: 100%
   &__slides
     display: flex
     justify-content: space-between
@@ -53,6 +75,18 @@
       line-height: 1.2
 
   /* media */
+  @media screen and (max-width: 1270px)
+    &__dots
+      margin-top: 20px
+  // max-width 1270px
+
+  @media screen and (max-width: 1070px)
+     &__slider
+      &::before,
+      &::after
+        width: 70px
+  // max-width 1070px
+
   @media screen and (max-width: 992px)
     .mission
       .left
@@ -73,6 +107,10 @@
 
   @media screen and (max-width: 768px)
     padding-bottom: 30px
+    &__slider
+      &::before,
+      &::after
+        width: 50px
   // max-width 768px
 
   @media screen and (max-width: 620px)
@@ -83,6 +121,10 @@
       .right
         width: 100%
         margin-top: 20px
+    &__slider
+      &::before,
+      &::after
+        content: none
 
   // max-width 620px
 

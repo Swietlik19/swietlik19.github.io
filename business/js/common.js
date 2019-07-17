@@ -279,7 +279,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   });
 
   /* Табы с бирюзовой менюшкой */
-  $('.tabs__link').click(function(event) {
+  $('.js-tabs__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.tabs__link').removeClass('active');

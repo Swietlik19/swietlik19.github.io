@@ -91,7 +91,7 @@
   });
 
   /* Табы с бирюзовой менюшкой */
-  $('.tabs__link').click(function(event) {
+  $('.js-tabs__link').click(function(event) {
     event.preventDefault();
     $(this).toggleClass('active');
     $(this).parent().siblings().find('.tabs__link').removeClass('active');

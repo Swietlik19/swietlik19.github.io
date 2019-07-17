@@ -6220,53 +6220,6 @@ input[type="submit"][disabled] {
     color: rgba(255, 255, 255, 0.5);
     text-align: center; }
 
-/* Переопределение стилей fancybox */
-.fancybox-lock {
-  max-width: 100%;
-  overflow: hidden !important; }
-
-.fancybox-overlay {
-  background: none;
-  background-color: rgba(0, 0, 0, 0.5); }
-
-#fancybox-loading div {
-  width: 44px;
-  height: 44px;
-  background: url(../libs/fancybox/fancybox_loading.gif) center center no-repeat; }
-
-.fancybox-close {
-  background: none;
-  top: 5px;
-  right: 5px; }
-
-.fancybox-nav {
-  background: transparent url(../libs/fancybox/blank.gif); }
-
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-  background-image: none; }
-
-.fancybox-next, .fancybox-prev {
-  width: 25%;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
-
-.fancybox-prev:hover {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(74, 47, 90, 0.2)), to(rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(left, rgba(74, 47, 90, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(90deg, rgba(74, 47, 90, 0.2) 0%, rgba(0, 0, 0, 0) 100%); }
-
-.fancybox-next:hover {
-  background: -webkit-gradient(linear, right top, left top, from(rgba(74, 47, 90, 0.2)), to(rgba(0, 0, 0, 0)));
-  background: -o-linear-gradient(right, rgba(74, 47, 90, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
-  background: linear-gradient(270deg, rgba(74, 47, 90, 0.2) 0%, rgba(0, 0, 0, 0) 100%); }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-    background: none; }
-  #fancybox-loading div {
-    background-image: url(../libs/fancybox/fancybox_loading@2x.gif); } }
-
 /* Переопределение bootstrap */
 @media (min-width: 1200px) {
   .container {
@@ -7294,6 +7247,7 @@ input[type="submit"][disabled] {
   .scr1__slider {
     height: 440px; }
   .scr1 .scr1__slide {
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -7305,6 +7259,16 @@ input[type="submit"][disabled] {
     .scr1 .scr1__slide picture, .scr1 .scr1__slide img {
       width: 100%;
       min-width: 1920px; }
+    .scr1 .scr1__slide .btn__cont {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      z-index: 5;
+      width: 100%; }
+    .scr1 .scr1__slide .btn__wrap {
+      margin-left: 100px; }
+    .scr1 .scr1__slide .btn {
+      padding: 12px 30px; }
   .scr1__arrows {
     position: absolute;
     left: 0;

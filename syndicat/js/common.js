@@ -498,7 +498,15 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   // Табы articles__tab
   makeTabs('.articles__nav', '.articles__link', '.articles__tab');
 
+  // Вопрос-ответ
+  $('.questions .top').click(function() {
+    $(this).find('.open').toggleClass('active');
+    $(this).siblings().slideToggle();
+    $(this).parent().siblings().find('.open').removeClass('active');
+    $(this).parent().siblings().find('.hidden').slideUp();
+  });
 
+  // Всё, что срабатывает при изменении размеров экрана
   $(window).resize(function() {
 
     if ($(window).width() != screenWidth) {

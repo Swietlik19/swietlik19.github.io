@@ -18,6 +18,51 @@
     speed: 700
   });
 
+  if ( !(window.matchMedia('(max-width: 650px)').matches) ) {
+    $('#insta__slider .insta__slides').slick({
+      infinite: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      rows: 2,
+      arrows: true,
+      swipe: false
+    });
+  }
+
+  if (window.matchMedia('(max-width: 650px)').matches) {
+    $('#insta__slider .insta__slides').slick({
+      infinite: true,
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true,
+      rows: 1,
+      dots: true,
+      appendDots: $('#insta__slider .insta__dots'),
+      swipe: true,
+      arrows: false
+    });
+  }
+
+
+  var firstInit = true
+
+  $('#insta__slider .insta__slides').on('setPosition', function(){
+    if (firstInit)  {
+      $(this).slick('slickNext');
+      firstInit = false;
+    }
+  });
+
+  $('#insta__slider .insta__slides').on('beforeChange', function(){
+    if ( !(firstInit) ) {
+      $('.insta__block--one').addClass('disabled');
+    }
+  });
+
+
   $('#scr1__slider .scr1__slides').on('afterChange', function(event, slick, currentSlide){
     var currentNum = currentSlide + 1;
     $('#scr1__slider .slider1__num').text('' + currentNum + '');

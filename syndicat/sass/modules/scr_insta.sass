@@ -31,10 +31,46 @@
     &--two
       width: 23.07017543859649%
     &--one
+      position: relative
       width: 310px
       margin-left: 30px
       margin-right: 30px
       box-shadow: 0px 5px 15px 0px rgba(217,201,211,0.5)
+      .close
+        background: $accent
+        outline: none
+        border: none
+
+        position: absolute
+        top: 0
+        right: -10px
+
+        display: block
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        opacity: 0.3
+        transition: opacity 0.3s
+        cursor: pointer
+        z-index: 10
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          left: calc(50% - 12px)
+
+          display: block
+          width: 24px
+          height: 2px
+          background: #fff
+        &::before
+          transform: rotate(-45deg)
+        &::after
+          transform: rotate(45deg)
+        &:hover
+          opacity: 0.8
+
       .insta__img
         position: absolute
         top: 0
@@ -146,3 +182,107 @@
   // max-width 768px
 
 /* insta */
+
+.insta-page
+  .insta
+    .container
+      padding-top: 0
+      padding-bottom: 41px
+    &__blocks
+      display: block
+    &__slider
+      .slick-arrow
+        top: calc(50% - 22px)
+      .slick-prev
+        left: -10px
+      .slick-next
+        right: -10px
+    &__item
+      width: 100%
+      max-width: 264px
+      margin-bottom: 0
+    &__wrap
+      position: relative
+      width: calc(100% + 150px)
+      margin-left: -75px
+
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+
+        display: block
+        width: 150px
+        height: 100%
+        z-index: 10
+      &::before
+        left: 0
+        background-image: linear-gradient(90deg, #fff 0%, transparent 100%)
+      &::after
+        right: 0
+        background-image: linear-gradient(270deg, #fff 0%, transparent 100%)
+    &__block
+      &--one
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 10
+        box-shadow: none
+        background: none
+        margin: 0
+        padding-top: 12px
+        max-height: 2000px
+        transition: opacity 0.5s, max-height 0s 0.5s
+        .insta__item
+          width: 310px
+          max-width: 310px
+          img
+            box-shadow: 0px 5px 15px 0px rgba(217,201,211,0.5)
+        &.disabled
+          opacity: 0
+          max-height: 0
+          overflow: hidden
+          .close
+            height: 0
+    .wrap
+      padding: 12px 15px
+    .btns__wrap
+      width: 258px
+      margin: 0 auto
+      margin-top: 35px
+
+    @media screen and (max-width: 1350px)
+      &__wrap
+        width: 100%
+        margin-left: 0
+    // max-width 1350px
+
+    @media screen and (max-width: 768px)
+      display: block
+      img
+        display: block
+      &__wrap
+        &::before,
+        &::after
+          content: none
+    // max-width 768px
+
+    @media screen and (max-width: 650px)
+      padding-bottom: 0
+      &__wrap
+        display: flex
+        flex-direction: column
+      &__block
+        &--one
+          position: static
+          padding-top: 40px
+          order: 3
+          margin: 0 auto
+          transform: translateX(0)
+          .close
+            display: none
+    // max-width 650px
+
+  /* insta-page insta */

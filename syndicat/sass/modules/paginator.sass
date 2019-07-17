@@ -1,5 +1,5 @@
-.paginator 
-  position: relative 
+.paginator
+  position: relative
   margin: 0
   padding: 0
   list-style: none
@@ -7,15 +7,78 @@
   display: flex
   align-items: center
   justify-content: center
+  flex-wrap: wrap
+  margin-top: 40px
   .page-numbers
     position: relative
     display: block
+    padding: 5px
     transition: 0.3s
 
-      
+    font-size: 14px
+    line-height: 20px
+    color: #0d001a
+    text-decoration: none
+  & > li
+    margin: 0 5px
+  .current
+    .page-numbers
+      color: $accent
+      text-decoration: underline
+  li:not(.current)
+    .page-numbers
+      &:hover
+        color: $accent2
+        transform: translateY(-2px)
+
+  .prev,
+  .next
+    position: relative
+    display: block
+    width: 14px
+    height: 14px
+    transition: 0.3s
+    &:hover
+      transform: translateY(-2px)
+      &::before
+        border-color: $accent2
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 5px)
+      left: calc(50% - 5px)
+
+      display: block
+      width: 9px
+      height: 9px
+      border-bottom: 2px solid $accent
+      border-left: 2px solid $accent
+      transition: 0.3s
+  .prev
+    margin-right: 60px
+    &::before
+      transform: rotate(45deg)
+  .next
+    margin-left: 60px
+    &::before
+      transform: rotate(-135deg)
+
+
   /* media */
-  // @media screen and (max-width: 400px) 
-    
-  // max-width 400px 
+  @media screen and (max-width: 992px)
+    margin-top: 10px
+  // max-width 992px
+
+  @media screen and (max-width: 600px)
+    .prev
+      margin-right: 10px
+    .next
+      margin-left: 10px
+  // max-width 600px
+
+  @media screen and (max-width: 400px)
+    & > li
+      margin: 0
+  // max-width 400px
 
  /* paginator */

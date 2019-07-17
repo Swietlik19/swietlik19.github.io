@@ -232,6 +232,19 @@
           text-transform: uppercase
           text-decoration: none
           transition: 0.3s
+          &::before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: -2px
+
+            display: block
+            width: 100%
+            height: 1px
+            background-color: $accent
+            transform: scale(0)
+            opacity: 0
+            transition: 0.3s
           .icon__wrap
             display: none
           .icon
@@ -244,7 +257,10 @@
             &--action
               stroke-width: 1
           &:hover
-            color: lighten($accent,20%)
+            color: #a47a9c
+            &::before
+              opacity: 1
+              transform: scale(1)
             .icon
               stroke: $accent
               fill: transparent
@@ -268,6 +284,10 @@
               transition: 0.3s
           &.active
             & > a
+              color: #a47a9c
+              &::before
+                opacity: 1
+                transform: scale(1)
               &::after
                 transform: rotate(135deg)
                 top: calc(50% - 4px)
@@ -696,6 +716,7 @@
           position: relative
           bottom: auto
           right: auto
+          display: block
 
           .button-cart
             display: flex
@@ -750,6 +771,8 @@
             color: #a47a9c
             text-align: center
             text-transform: none
+            &::before
+              content: none
             .icon__wrap
               display: flex
               align-items: center
@@ -817,3 +840,7 @@
   // max-width 400px
 
 /* .header */
+
+.secondary-page
+  .bar__item--cart
+    display: none

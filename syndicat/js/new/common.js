@@ -8,4 +8,5 @@
 //= ../libs/picturefill.min.js
 //= ../../libs/fancybox/jquery.fancybox.pack.js
 //= ../../libs/fancybox/helpers/jquery.fancybox-buttons.js
+//= ../../libs/nice-select/jquery.nice-select.min.js
 //= scripts.js

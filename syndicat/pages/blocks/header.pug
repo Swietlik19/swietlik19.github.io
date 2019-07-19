@@ -467,3 +467,236 @@ mixin header(logotype)
                     a(href="#") 2Brand
       // /.container
     // /.header__bottom
+
+mixin header--products(logotype)
+  header.header(id="header")
+    +nav
+
+    .header__middle
+      .header__main
+        .container
+          .row
+            .col-md-4.col-2
+              .burger__wr
+                button.burger__wrap#header-burger
+                  span.burger
+                    span.line
+              .header__phones
+                a.link(href="tel:+79787876767") +7 (978)
+                  strong  787-67-67
+                span.text Whatsapp / Viber
+
+            .col-md-4.col-8
+              .logo__wrap
+                if logotype == "a"
+                  #{logotype}.logo(href="index.html")
+                    img(src="img/logo.png" alt="лого")
+                else
+                  #{logotype}.logo
+                    img(src="img/logo.png" alt="лого")
+                p.logo__text Магазин корейской косметики
+
+            .col-md-4.col-2
+              .header__search
+
+                .form.form--search
+                  form.wpcf7-form
+                    button.open-search(type='button')
+                      svg.icon
+                        use(xlink:href='img/svg/sprite.svg#icon-search')
+                    .search-wrap
+                      .text-input
+                        input(type='search', placeholder='Поиск по товарам')
+                      button(type='submit')
+                        svg.icon
+                          use(xlink:href='img/svg/sprite.svg#icon-search')
+        // /.container
+      // /.header__main
+
+      .container
+        .header__middle-menu
+          .logo__wrap--fixed
+            if logotype == "a"
+              #{logotype}.logo--fixed(href="index.html")
+                noscript
+                  img(src="img/logo--fixed.png" alt="лого")
+                img.lazy(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/logo--fixed.png" alt="лого")
+            else
+              #{logotype}.logo--fixed
+                noscript
+                  img(src="img/logo--fixed.png" alt="лого")
+                img.lazy(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/logo--fixed.png" alt="лого")
+          .header__second-menu
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#")
+                  .icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-1")
+                  span Уход за волосами
+                .sub-menu__wrap
+                  .container
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 1:
+                          |  Очищение
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 2:
+                          |  Пилинги и скрабы
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 3:
+                          | Тонеры / Мисты
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 4:
+                          |  Эссенция, сыворотка, ампула
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 5:
+                          |  Уход для зоны вокруг глаз
+
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 6:
+                          |  Лосьон, эмульсия
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 7:
+                          |  Кремы
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 8:
+                          |  Маски
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 9:
+                          |  Защита от солнца
+
+                    .sub-menu__img
+                      noscript
+                        img(src="img-temp/img-sub-menu-1.jpg", alt="Уход за лицом")
+                      img.lazy(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/img-sub-menu-1.jpg" alt="Уход за лицом")
+
+              li.menu-item.menu-item-has-children
+                a(href="#")
+                  .icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-2")
+                  span Уход за лицом
+                .sub-menu__wrap
+                  .container
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 1:
+                          |  Очищение
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 2:
+                          |  Пилинги и скрабы
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 3:
+                          | Тонеры / Мисты
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 4:
+                          |  Эссенция, сыворотка, ампула
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 5:
+                          |  Уход для зоны вокруг глаз
+
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 6:
+                          |  Лосьон, эмульсия
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 7:
+                          |  Кремы
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 8:
+                          |  Маски
+                      li.menu-item
+                        a(href="#")
+                          strong Шаг 9:
+                          |  Защита от солнца
+
+                    ul.sub-menu.sub-menu--strong
+                      li.menu-item
+                        a(href="#")
+                          strong Наборы
+                      li.menu-item
+                        a(href="#")
+                          strong Мини – версии
+                      li.menu-item
+                        a(href="#")
+                          strong Космецевтика
+                      li.menu-item
+                        a(href="#")
+                          strong Аксессуары
+                      li.menu-item
+                        a(href="#")
+                          strong Для него
+                      li.menu-item
+                        a(href="#")
+                          strong Дети
+
+                    .sub-menu__img
+                      noscript
+                        img(src="img-temp/img-sub-menu-1.jpg", alt="Уход за лицом")
+                      img.lazy(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/img-sub-menu-1.jpg" alt="Уход за лицом")
+
+              li.menu-item.menu-item-has-children
+                a(href="#")
+                  .icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-3")
+                  span Уход за телом
+
+              li.menu-item.menu-item-has-children
+                a(href="#")
+                  .icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-4")
+                  span Макияж
+
+              li.menu-item.menu-item-has-children
+                a(href="#")
+                  .icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-5")
+                  span Аксессуары
+
+              li.menu-item
+                a(href="#")
+                  .icon__wrap
+                    svg.icon.icon--action
+                      use(xlink:href="img/svg/sprite.svg#icon-menu-6")
+                  span Акции
+
+          .header__bar.bar.bar--fixed
+            .bar__item
+              button.button-diagram
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#icon-diagram")
+            .bar__item
+              button.button-wish
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#icon-heart")
+            .bar__item
+              a.button-user(href="#")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#icon-user")
+          .header__phones.header__phones--fixed
+            a.link(href="tel:+79787876767") +7 (978) 787-67-67
+        // /.header__second-menu
+      // /.container
+    // /.header__middle

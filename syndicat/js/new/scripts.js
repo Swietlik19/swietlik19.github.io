@@ -6,6 +6,8 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  $('.select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -186,7 +188,7 @@
     "autoSize": false
   });
 
-  $('.products .marks button').click(function() {
+  $('.marks button').click(function() {
     event.preventDefault();
     $(this).toggleClass('active');
   });
@@ -253,13 +255,61 @@
   // Табы articles__tab
   makeTabs('.articles__nav', '.articles__link', '.articles__tab');
 
-  // Вопрос-ответ
-  $('.questions .top').click(function() {
-    $(this).find('.open').toggleClass('active');
-    $(this).siblings().slideToggle();
-    $(this).parent().siblings().find('.open').removeClass('active');
-    $(this).parent().siblings().find('.hidden').slideUp();
+
+  // Секции по типу "Вопрос - ответ"
+  function toggleHidden(xParent,hideOther) {
+    $(xParent + ' .top').click(function() {
+      $(this).find('.open').toggleClass('active');
+      $(this).siblings().slideToggle();
+      if (hideOther) {
+        $(this).parent().siblings().find('.open').removeClass('active');
+        $(this).parent().siblings().find('.hidden').slideUp();
+      }
+    });
+  }
+
+  toggleHidden('.questions',true);
+  toggleHidden('.filter',false);
+
+  $('.prod-item__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 50 +'px'});
+    }
   });
+
+
+  $('.filter__menu').click(function() {
+    $(this).siblings('.form--filter').slideToggle();
+  });
+
+  /* Замена input(type="number") */
+  (function quantityProducts() {
+    if ($(".quantity-num").length > 0) {
+      var $quantityArrowMinus = $(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(".quantity-arrow-plus");
+
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+
+      function quantityMinus() {
+        var $quantityNum = $(this).parents('.quantity').find(".quantity-num");
+        if ($quantityNum.val() >= 1) {
+          $quantityNum.val(+$quantityNum.val() - 1);
+        }
+      }
+
+      function quantityPlus() {
+        var $quantityNum = $(this).parents('.quantity').find(".quantity-num");
+        $quantityNum.val(+$quantityNum.val() + 1);
+      }
+    }
+  })();
 
   // Всё, что срабатывает при изменении размеров экрана
   $(window).resize(function() {

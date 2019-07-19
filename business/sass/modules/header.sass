@@ -50,7 +50,7 @@
       & > li
         position: relative
         padding: 0 12px
-        &.current
+        &.current-menu-item
           & > a
             cursor: text
             pointer-events: none
@@ -90,6 +90,7 @@
     margin: 0
     padding: 0
     list-style: none
+  .header__link-wrap
 
   &__phones
     display: flex
@@ -135,6 +136,7 @@
         z-index: -1
 
     &-link
+      display: block
       font-size: 18px
       line-height: 1.333333333333333 /* 24px / 18px */
       font-weight: 700
@@ -258,6 +260,11 @@
               background: none
   // max-width 992px
 
+  @media screen and (max-width: 768px)
+    .logo
+      width: 225px
+  // max-width 768px
+
   @media screen and (max-width: 500px)
     &__phones
       .mobile
@@ -270,8 +277,8 @@
 
   @media screen and (max-width: 400px)
     .logo
-      width: 155px
-      height: 32px
+      width: 185px
+      height: 36px
     .burger
       margin-right: 10px
     &__mobile-wrap

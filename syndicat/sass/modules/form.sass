@@ -93,9 +93,49 @@
       input
         padding-left: 24px
 
+  &__radio
+    input
+      display: none
+    label
+      display: flex
+      align-items: center
+      cursor: pointer
+      .text
+        transition: 0.3s
+      .circle
+        position: relative
+        display: block
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        margin-right: 10px
+        border: 2px solid $accent
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 3px)
+
+          display: block
+          width: 6px
+          height: 6px
+          background-color: $accent
+          border-radius: 50%
+          transition: 0.4s
+          transform: scale(0)
+      input:checked + .circle
+        &::before
+          transform: scale(1)
+      &:hover
+        .text
+          color: $accent
+
   .accept
     display: block
     margin-top: -15px
+    a
+      transition: 0.3s
+
     label
       display: block
       width: 100%

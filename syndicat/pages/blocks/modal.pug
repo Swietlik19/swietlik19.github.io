@@ -1,5 +1,5 @@
 mixin modal__login()
-  section.modal.modal__login(id="modal-login")
+  section.modal.modal__login.login(id="modal-login")
     .modal-login__content.modal__content
       button.close
 
@@ -19,15 +19,16 @@ mixin modal__login()
                 span.text Войти через
                 +socials--modal
 
+
               .form__item
-                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
-                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваша почта')
                   span.icon__wrap
                     img.icon(src="img/icon-form-email.png" alt="Иконка-конверт" data-object-fit-contain)
 
               .form__item
                 span.wpcf7-form-control-wrap.your-password.text-input.text-input--icon
-                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Пароль')
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-pass(type='password', name='your-pass', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Пароль')
                   span.icon__wrap
                     svg.icon
                       use(xlink:href="img/svg/sprite.svg#icon-form-pass")
@@ -38,6 +39,90 @@ mixin modal__login()
                     input.wpcf7-form-control.wpcf7-submit(type='submit', value='Войти')
 
               a.login__forget(href="#") Забыли пароль
+
+            .login__tab#login-tabs-1
+              p.login__title Основные данные
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+                  span.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-user")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-surname.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-surname(type='text', name='your-surname', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Фамилия')
+                  span.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-user")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваша почта')
+                  span.icon__wrap
+                    img.icon(src="img/icon-form-email.png" alt="Иконка-конверт" data-object-fit-contain)
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+                  span.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-tel")
+
+              p.login__title Ваш пароль
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-password.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-pass(type='password', name='your-pass', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Пароль')
+                  span.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-pass")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-password.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-pass(type='password', name='your-pass', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Подтвердить')
+                  span.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-pass")
+
+              .subscribe-to-news
+                p.login__title Подписка на новости
+
+                .subscribe-to-news__wrap
+                  span.wpcf7-form-control-wrap.subscribe-to-news__radio.form__radio
+                    span.wpcf7-form-control.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input#subscribe1(type='radio', name='subscribe-to-news', value='Да', tabindex='0')
+                          span.circle
+                          span.text Да
+
+                  span.wpcf7-form-control-wrap.subscribe-to-news__radio.form__radio
+                    span.wpcf7-form-control.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input#subscribe2(type='radio', name='subscribe-to-news', value='Нет', tabindex='0')
+                          span.circle
+                          span.text Нет
+
+
+
+
+              .form__item
+                span.wpcf7-form-control-wrap.accept
+                  span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='checkbox', name='accept', value='Мною прочитаны и я даю согласие с документом условия соглашения', checked='checked')
+                        span.wpcf7-list-item-label Мною прочитаны и я даю согласие с документом
+                          a(href="#")  условия соглашения
+                          i.accept__icon
+
+              .form__item
+                .submit__wrap
+                  .btn__wrap
+                    input.wpcf7-form-control.wpcf7-submit(type='submit', value='Зарегистрироваться')
 
       // /. form
     // /. login__content

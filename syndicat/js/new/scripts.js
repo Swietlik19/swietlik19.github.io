@@ -232,7 +232,7 @@
   });
 
   // Табы
-  function makeTabs(xNavParent,xNavLink,xTab) {
+  function makeTabs(xNavParent,xNavLink,xTab,xScroll) {
     $(xNavParent + ' ' + xNavLink).click(function(event) {
       event.preventDefault();
       $(this).addClass('active');
@@ -240,15 +240,15 @@
       var _href = $(this).attr('href');
       $(xTab + ':not(' + _href + ')').removeClass('active');
       $(_href).addClass('active');
-      if (window.matchMedia('(max-width: 750px)').matches) {
+      if (window.matchMedia('(max-width: 750px)').matches && xScroll) {
         $('html, body').animate({scrollTop: $(xNavParent).offset().top - 20 +'px'});
       }
     });
   }
 
   // Табы articles__tab
-  makeTabs('.articles__nav', '.articles__link', '.articles__tab');
-  makeTabs('.login__nav', '.login__nav-link', '.login__tab');
+  makeTabs('.articles__nav', '.articles__link', '.articles__tab', true);
+  makeTabs('.login__nav', '.login__nav-link', '.login__tab', false);
 
 
   // Секции по типу "Вопрос - ответ"

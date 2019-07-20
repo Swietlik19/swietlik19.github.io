@@ -1,0 +1,51 @@
+mixin scr_ask()
+  section.scr_ask.ask(id="scr_ask")
+    .container
+      .ask__form
+        .form.wpcf7.form--horizontal
+          form.wpcf7-form
+            p.form__title Задать свой вопрос
+            p.form__desc Заполните форму  и мы в ближайшее время свяжемся с Вами
+
+            .form__cols
+              .form__col
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                    span.icon__wrap
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#icon-form-user")
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваша почта')
+                    span.icon__wrap
+                      img.icon(src="img/icon-form-email.png" alt="Иконка-конверт" data-object-fit-contain)
+
+              .form__col
+                .form__item
+                  span.wpcf7-form-control-wrap.your-question.textarea-input.text-input.text-input--icon
+                    label(for="question-ta")
+                      span.icon__wrap
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#icon-form-message")
+                      span.text Сообщение
+                    textarea#question-ta.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='')
+
+              .form__col.form__col--small
+                .form__item
+                  span.wpcf7-form-control-wrap.accept
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                          span.wpcf7-list-item-label Согласие на обработку персональных данных
+                            i.accept__icon
+
+                .form__item
+                  .submit__wrap
+                    .btn__wrap
+                      input.wpcf7-form-control.wpcf7-submit(type='submit', value='Отправить')
+
+
+  // /.scr_ask

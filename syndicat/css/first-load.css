@@ -6302,6 +6302,57 @@ input[type="submit"][disabled] {
       display: block;
       fill: #f17ab2; }
 
+.payment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .payment__title {
+    margin-top: 12px;
+    margin-right: 35px;
+    font-size: 14px;
+    line-height: 1.714285714285714;
+    opacity: 0.5; }
+  .payment__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .payment__item {
+    margin-right: 43px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .payment__item--df .icon {
+      margin-right: 15px;
+      width: 31px;
+      height: 42px;
+      fill: rgba(173, 166, 172, 0.5); }
+    .payment__item--df span {
+      font-family: 'GothamPro',sans-serif;
+      font-size: 12px;
+      line-height: 1.2;
+      color: #ada6ac; }
+    .payment__item img {
+      width: auto;
+      max-width: 100%; }
+
 /* Переопределение стилей yandex map */
 [class$='-controls-pane'] {
   display: none; }
@@ -6527,6 +6578,16 @@ input[type="submit"][disabled] {
   .container {
     max-width: 100%; } }
 
+@media screen and (max-width: 992px) {
+  .payment__title {
+    display: none; }
+  .payment__list {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .payment__item {
+    margin-bottom: 20px; } }
+
 @media screen and (max-width: 768px) {
   .secondary-page h1.title {
     padding-top: 10px;
@@ -6580,7 +6641,20 @@ input[type="submit"][disabled] {
   .price__wrap .price--last {
     font-size: 14px; }
   .price__wrap .price--current {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .payment__list {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .payment__item {
+    margin-right: 10px;
+    width: -webkit-calc(50% - 10px);
+    width: calc(50% - 10px); }
+    .payment__item:nth-of-type(2n) {
+      margin-right: 0; }
+    .payment__item:last-of-type {
+      width: 100%; } }
 
 .header {
   position: relative;
@@ -6751,6 +6825,12 @@ input[type="submit"][disabled] {
     margin-right: 22px; }
     .header .main-menu .menu > li.menu-item--mobile {
       display: none; }
+    .header .main-menu .menu > li.current-menu-item > a {
+      cursor: text;
+      color: #ccacc2;
+      pointer-events: none; }
+      .header .main-menu .menu > li.current-menu-item > a::after {
+        content: default; }
     .header .main-menu .menu > li > a {
       position: relative;
       font-size: 12px;

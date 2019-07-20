@@ -390,6 +390,15 @@
       background: rgba(74, 47, 90, 0.7); }
       .socials__link:hover .fa {
         color: #fff; }
+  .socials--modal .socials__link {
+    border: 1.0px solid #a47a9c;
+    background: none; }
+    .socials--modal .socials__link .fa {
+      color: #a47a9c; }
+    .socials--modal .socials__link:hover {
+      background: #a47a9c; }
+      .socials--modal .socials__link:hover .fa {
+        color: #fff; }
 
 /* socials */
 .form {
@@ -1116,6 +1125,209 @@
         width: 100%; } }
 
 /* filter */
+.login {
+  position: relative;
+  /* media */ }
+  .login__nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .login__nav-item {
+      margin-right: 27px; }
+      .login__nav-item:last-of-type {
+        margin-right: 0; }
+    .login__nav-link {
+      position: relative;
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-decoration: none;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .login__nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #54414f;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+        opacity: 0; }
+      .login__nav-link:not(.active):hover {
+        color: #f17ab2; }
+      .login__nav-link.active {
+        color: #54414f;
+        cursor: text; }
+        .login__nav-link.active::after {
+          -webkit-transform: scale(1);
+              -ms-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1; }
+  .login__via {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .login__via .text {
+      margin-right: 16px;
+      line-height: 1.2; }
+  .login__forget {
+    display: block;
+    text-decoration: underline;
+    color: #0d001a;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    text-align: center; }
+    .login__forget:hover {
+      color: #f17ab2; }
+  .login__tab {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .login__tab.active {
+      max-height: 10000px;
+      opacity: 1;
+      overflow: visible; }
+  @media screen and (max-width: 500px) {
+    .login__nav {
+      margin-bottom: 15px; }
+      .login__nav-link {
+        font-size: 20px; }
+    .login__via {
+      margin-bottom: 24px; } }
+
+/* login */
+.modal {
+  position: relative;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1000;
+  opacity: 0;
+  overflow: hidden;
+  /* media */ }
+  .modal.active {
+    display: block;
+    opacity: 1;
+    min-height: 100vh; }
+  .modal__content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 420px;
+    opacity: 0;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s; }
+    .modal__content.visible {
+      opacity: 1; }
+  .modal .form {
+    padding: 44px 55px 38px;
+    max-height: 100vh;
+    overflow: auto;
+    width: 100%;
+    z-index: 0; }
+  .modal .login__nav {
+    margin-bottom: 33px; }
+  .modal .login__via {
+    margin-bottom: 38px; }
+  .modal .btn__wrap {
+    width: auto; }
+    .modal .btn__wrap input {
+      width: auto;
+      padding-left: 68px;
+      padding-right: 68px; }
+  .modal .submit__wrap {
+    margin-top: 40px;
+    margin-bottom: 34px; }
+  .modal .close {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 300;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .modal .close::before, .modal .close::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 14px;
+      height: 3px;
+      background-color: #4a2f5a;
+      border-radius: 1.5px;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+    .modal .close::before {
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          -ms-transform: translate(-50%, -50%) rotate(45deg);
+              transform: translate(-50%, -50%) rotate(45deg); }
+    .modal .close::after {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          -ms-transform: translate(-50%, -50%) rotate(-45deg);
+              transform: translate(-50%, -50%) rotate(-45deg); }
+    .modal .close:hover::before, .modal .close:hover::after {
+      background-color: #f17ab2; }
+  @media screen and (max-width: 500px) {
+    .modal__content {
+      width: 100%; }
+    .modal .form {
+      padding: 34px 25px 18px; }
+    .modal .submit__wrap {
+      margin-top: 20px;
+      margin-bottom: 14px; } }
+
+/* modal */
 .products {
   position: relative;
   padding-top: 32px;

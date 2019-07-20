@@ -493,17 +493,11 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
     var _href = $(this).attr('href');
     $(_href).addClass('active');
     $(_href + ' .modal__content').addClass('visible');
-    $('.page_wr').addClass('blur-it');
-    $('.footer').addClass('blur-it');
-    $('.header').addClass('blur-it');
   });
 
   function closeModal() {
     $('.modal').removeClass('active');
     $('.modal__content').removeClass('visible');
-    $('.page_wr').removeClass('blur-it');
-    $('.footer').removeClass('blur-it');
-    $('.header').removeClass('blur-it');
   }
 
   function closeBanner() {
@@ -676,7 +670,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   function makeTabs(xNavParent,xNavLink,xTab) {
     $(xNavParent + ' ' + xNavLink).click(function(event) {
       event.preventDefault();
-      $(this).toggleClass('active');
+      $(this).addClass('active');
       $(this).parent().siblings().find(xNavLink).removeClass('active');
       var _href = $(this).attr('href');
       $(xTab + ':not(' + _href + ')').removeClass('active');
@@ -689,6 +683,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
 
   // Табы articles__tab
   makeTabs('.articles__nav', '.articles__link', '.articles__tab');
+  makeTabs('.login__nav', '.login__nav-link', '.login__tab');
 
 
   // Секции по типу "Вопрос - ответ"

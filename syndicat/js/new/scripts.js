@@ -12,7 +12,7 @@
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain],[data-object-fit-contain-bottom]'), {watchMQ: true});
 
 
   setTimeout(function() {

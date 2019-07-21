@@ -447,7 +447,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain],[data-object-fit-contain-bottom]'), {watchMQ: true});
 
 
   setTimeout(function() {

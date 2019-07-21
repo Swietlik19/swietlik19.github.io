@@ -22,11 +22,11 @@ html(lang='ru')
     include blocks/scripts.pug
     include blocks/styles.pug
     include blocks/header.pug
-    include blocks/nav.pug
-    include blocks/paginator.pug
+    include blocks/nav--bonus.pug
     include blocks/breadcrumbs.pug
 
-    include blocks/scr_articles.pug
+    include blocks/scr_bonus.pug
+    include blocks/scr_ask.pug
     include blocks/scr_cta.pug
 
     include blocks/footer.pug
@@ -35,13 +35,14 @@ html(lang='ru')
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.secondary-page.blog-page
+  body.secondary-page.bonus-page
 
     +header("a")
 
     #page_wr.page_wr
 
-      +scr_articles
+      +scr_bonus
+      +scr_ask
       +scr_cta
 
     +footer("a")

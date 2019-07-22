@@ -278,6 +278,13 @@
     }
   });
 
+  $('.lk__nav-link').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $('.lk__tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
 
   $('.filter__menu').click(function() {
     $(this).siblings('.form--filter').slideToggle();

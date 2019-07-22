@@ -1,0 +1,105 @@
+mixin scr_lk()
+  section.scr_lk.lk.grey-bg(id="scr_lk")
+    .container
+      .lk__wrap
+        aside.lk__menu.lk-menu
+          ul.lk-menu__list
+            li.lk-menu__item
+              a.lk-menu__link.active(href="#")
+                span Личный кабинет
+            li.lk-menu__item
+              a.lk-menu__link(href="#")
+                span Мои заказы
+            li.lk-menu__item
+              a.lk-menu__link(href="#")
+                span Понравилось
+            li.lk-menu__item
+              a.lk-menu__link(href="#")
+                span Моя программа лояльности
+            li.lk-menu__item
+              a.lk-menu__link(href="#")
+                span Сравнения
+            li.lk-menu__item
+              a.lk-menu__link(href="#")
+                span Выйти
+
+        ul.lk__tabs
+          li.lk__tab.lk__tab--main#lk-tab-0
+            h2 Моя учетная запись
+
+            ul.lk__nav
+              li.lk__nav-item
+                a.lk__nav-link(href="#lk-tab-1") Основные данные
+              li.lk__nav-item
+                a.lk__nav-link(href="#lk-tab-2") Изменить свой пароль
+
+            .login__via
+              span.text Привяжите аккаунты соцсетей
+              +socials--modal
+
+          li.lk__tab#lk-tab-1
+            h2 Основные данные
+
+            .form.form--lk
+              .alert.alert-success(style="display:none;")
+                i.fa.fa-check-circle
+                |  Ваши основные данные успешно изменены!
+              .alert.alert-error(style="display:none;")
+                i.fa.fa-check-circle
+                |  Ошибка!
+
+
+              form.form-horizontal(action='#', method='post', enctype='multipart/form-data')
+                .form-group.required.has-error
+                  .col-sm-10
+                    input#input-firstname.form-control(type='text', name='firstname', value='', placeholder='Ваше имя')
+                    .text-danger(style="display:none;") Имя должно быть от 1 до 32 символов!
+                .form-group.required.has-error
+                  .col-sm-10
+                    input#input-lastname.form-control(type='text', name='lastname', value='', placeholder='Ваша фамилия')
+                    .text-danger(style="display:none;") Фамилия должна быть от 1 до 32 символов!
+                .form-group.required
+                  .col-sm-10
+                    input#input-email.form-control(type='email', name='email', value='', placeholder='E-Mail')
+                .form-group.required
+                  .col-sm-10
+                    input#input-telephone.form-control(type='tel', name='telephone', value='', placeholder='Телефон')
+
+                .btn__wrap
+                  input.btn(type='submit', value='Продолжить')
+
+          li.lk__tab#lk-tab-2
+            h2 Изменить пароль
+
+            .form.form--lk
+              .alert.alert-success(style="display:none;")
+                i.fa.fa-check-circle
+                |  Пароль успешно изменён!
+              .alert.alert-error(style="display:none;")
+                i.fa.fa-check-circle
+                |  Ошибка!
+
+
+              form.form-horizontal(action='#', method='post', enctype='multipart/form-data')
+                .form-group.required.has-error
+                  .col-sm-10
+                    input#input-password.form-control(type='password', name='password', value='', placeholder='Пароль')
+                    .text-danger(style="display:none;") Пароль должен быть от 4 до 20 символов!
+
+                .form-group.required.has-error
+                  .col-sm-10
+                    input#input-confirm.form-control(type='password', name='confirm', value='', placeholder='Подтвердить')
+                    .text-danger(style="display:none;") Пароли не совпадают!
+
+                .btn__wrap
+                  input.btn(type='submit', value='Продолжить')
+
+
+
+
+
+
+
+
+
+  // /.scr_lk

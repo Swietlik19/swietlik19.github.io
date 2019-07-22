@@ -713,6 +713,13 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
     }
   });
 
+  $('.lk__nav-link').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $('.lk__tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
 
   $('.filter__menu').click(function() {
     $(this).siblings('.form--filter').slideToggle();

@@ -20,7 +20,7 @@
   display: block
   width: 50px
   height: 50px
-  background: $accent
+  background: $accent !important
   border-radius: 50%
   opacity: 0.5
   transition: 0.3s
@@ -75,14 +75,27 @@ only screen and (min-device-pixel-ratio: 1.5)
   #fancybox-loading div
     background-image: url(../libs/fancybox/fancybox_loading@2x.gif)
 
+.msg
+  position: relative
+  display: block
+  margin-right: 14px
+  text-decoration: none
+  transition: 0.5s
+  &:hover
+    transform: scale(1.1)
+  &--wa
+    width: 17px
+    height: 18px
+  &--vi
+    width: 17px
+    height: 19px
+    .msg__icon
+      fill: #834894
+  &__icon
+    position: absolute
+    top: 0
+    left: 0
 
-.inner-map
-  height: 500px
-  background: #fff url('../img/bg-map.jpg') no-repeat center center
-  background-size: cover
-
-@media screen and (max-width: 768px)
-  .inner-map
-    height: 250px
-    background-image: url('../img/bg-map--mobile.jpg')
-// max-width 768px
+    display: block
+    width: 100%
+    height: 100%

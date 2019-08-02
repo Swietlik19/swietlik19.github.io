@@ -2,14 +2,9 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
+      createMap('inner-map',[55.154162, 61.388872]);
 
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        createMap('inner-map',[45.047756, 39.027290],[45.047756, 39.027290]);
-      } else {
-        createMap('inner-map',[45.047938, 39.023856],[45.047756, 39.027290]);
-      }
-
-      function createMap(xID,coords,pinCoords) {
+      function createMap(xID,coords) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -31,20 +26,20 @@ mixin script-map()
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
 
-                myPlacemark = new ymaps.Placemark(pinCoords, {
-                    hintContent: '',
-                    balloonContent: 'Кира'
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    hintContent: 'адрес',
+                    balloonContent: 'Бизнес - аналитик'
                 }, {
                   // Опции.
                   // Необходимо указать данный тип макета.
                   iconLayout: 'default#image',
                   // Своё изображение иконки метки.
-                  iconImageHref: 'img/pin.png',
+                  iconImageHref: 'img/svg/pin.svg',
                   // Размеры метки.
-                  iconImageSize: [52, 68],
+                  iconImageSize: [41, 51],
                   // Смещение левого верхнего угла иконки относительно
                   // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -90]
+                  iconImageOffset: [-15, -60]
                 });
 
             myMap.geoObjects

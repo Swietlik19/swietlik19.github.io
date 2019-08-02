@@ -1,176 +1,153 @@
-input,textarea
-  font-family: $form-font
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-textarea
-  background: none
-  border: none
-  outline: none
-  transition: 0.3s
-  resize: none
-
-  padding: 10px 0
-  font-size: 16px
-  line-height: 1.333333333333333 /* 24px / 18px */
-  font-weight: 400
-  letter-spacing: 0.1em
-  color: $accent2
-
-  @include placeholder($accent2, 18px)
-
-  &:focus
-    @include placeholder(#fff, 18px)
-
-textarea
-  // height: 136px
-
 .form
   position: relative
   z-index: 30
   width: 100%
+  padding: 32px 39px 20px 32px
+  box-shadow: 5px 9px 30px 0px rgba($shadow-c,0.2)
+  background-color: #ffffff
+  border-radius: 6.0px
 
-  .decor-wrap
-    padding: 42px 28px 40px
-  &__content
-    padding: 0 21px
   &__title
-    margin-bottom: 42px
+    margin-bottom: 40px
     font-size: 30px
-    font-weight: 400
-    letter-spacing: 0.1em
-    line-height: 1.1
-    color: $accent2
+    line-height: 1.2
+    font-weight: 500
+    color: $accent
     text-align: center
-  .btn__wrap
-    width: 100%
-    margin-top: 16px
 
-  label
-    .label__text
-      display: block
-      margin-bottom: 13px
-      font-size: 13px
-      line-height: 1.846153846153846 /* 24px / 13px */
-      letter-spacing: 0.1em
+  input,textarea
+    font-family: $form-font
 
   .text-input
-    position: relative
     display: block
     width: 100%
-    margin-bottom: 36px
-    &::after
-      content: ''
-      position: absolute
-      bottom: -2px
-      left: -4px
 
-      width: calc(100% + 10px)
-      height: 1px
-      background-color: $accent
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 100%
+      margin-bottom: 16px
+      padding-left: 17px
+      background-color: #ffffff
+      border: 1.0px solid #d1e0eb
+      border-radius: 6.0px
+
+      font-size: 16px
+      line-height: 1.5
+      color: #666666
+
+      @include placeholder(#666666, 14px)
+
+      &:hover,
+      &:focus
+        border-color: rgba($accent2, 0.6)
+      &:focus
+        @include placeholder(#fff, 14px)
+
+    input
+      height: 50px
+
+    textarea
+      height: 116px
+      padding: 15px 19px 10px
+      background-color: #ffffff
+      border: 1.0px solid #d1e0eb
+      border-radius: 6.0px
+
+  .submit__wrap
+    margin-top: 10px
+    margin-bottom: 25px
 
   .accept
     label
       display: block
-      margin-top: 35px
       width: 100%
+      padding-left: 10px
       cursor: pointer
       transition: 0.3s
-      text-align: center
 
       font-size: 13px
-      line-height: 1.692307692307692 /* 22px / 13px */
+      line-height: 1.3
       font-weight: 300
       color: $accent
-
-      &:hover
-        color: $accent2
-        & > span
-          .accept__icon
-            &::before
-              background-color: $accent2
 
       & > span
         position: relative
         display: inline-block
-        padding-left: 21px
+      &:hover
+        color: $accent2
+        .accept__icon
+          &::before
+            background-color: $accent2
 
-      .accept__icon
+    &__icon
+      position: absolute
+      top: 50%
+      left: -21px
+      transform: translateY(-50%)
+
+      display: block
+      width: 16px
+      height: 16px
+      background-color: #ffffff
+      border: 1.0px solid #999999
+      border-radius: 50%
+      transition: 0.3s
+
+      &::before
+        content: ''
         position: absolute
-        top: calc(50% - 8px)
-        left: 0
+        top: calc(50% - 3px)
+        left: calc(50% - 3px)
 
         display: block
-        width: 16px
-        height: 16px
-        border: 1.0px solid rgba(48,26,12,0.43)
+        width: 6px
+        height: 6px
+        background-color: $accent
         border-radius: 50%
-        &::before
-          content: ''
-          position: absolute
-          top: calc(50% - 3px)
-          left: calc(50% - 3px)
-
-          display: block
-          width: 6px
-          height: 6px
-          background-color: $accent
-          border-radius: 50%
-          transform: scale(0)
-          transition: 0.3s
+        transition: 0.3s
+        transform: scale(0)
 
     input
       display: none
 
     input:checked + span
-      .accept__icon
+      i
         &::before
           transform: scale(1)
 
-
   /* media */
 
-  @media screen and (max-width: 768px)
-    &__title
-      margin-bottom: 32px
-      font-size: 26px
-    .decor-wrap
-      padding-left: 20px
-      padding-right: 20px
-    .accept
-      label
-        margin-top: 20px
-        & > span
-          font-size: 12px
-          line-height: 1.2
+  @media screen and (max-width: 576px)
+    width: 360px
+    max-width: 100%
+    margin-left: auto
+    margin-right: auto
+  //   max-width 576px
 
-  //   max-width 768px
+  @media screen and (max-width: 500px)
+    &__title
+      margin-bottom: 20px
+      font-size: 26px
+  //   max-width 500px
 
   @media screen and (max-width: 400px)
-    &__content
-      padding: 0 10px
-    &__title
-      margin-bottom: 22px
-      font-size: 22px
-    label
-      .label__text
-        margin-bottom: 4px
+    padding: 22px 17px 20px 17px
+    .accept
+      label
         font-size: 12px
+      &__icon
+        width: 14px
+        height: 14px
     .text-input
-      margin-bottom: 29px
-      &::after
-        width: calc(100% + 10px)
+      input
+        height: 47px
+      textarea
+        height: 75px
   //   max-width 400px
 
  /* form */
-
-@media screen and (max-width: 768px)
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="password"],
-  textarea
-    @include placeholder($accent2, 14px)
-  //   max-width 768px

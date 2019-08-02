@@ -1,77 +1,95 @@
 .lead
   position: relative
-  padding-top: 46px
-  z-index: 2
+  padding-bottom: 44px
   .bg-img
     position: absolute
-    top: -72px
-    left: 0
-
-    display: block
-    width: 100%
-    height: 905px
-    background: transparent url("../img/bg-lead.png") no-repeat center center
-    background-size: cover
+    top: 34px
+    left: 307px
+    width: 443px
+    height: 409px
     z-index: -1
 
-  .title
-    margin-bottom: 32px
-    font-size: 36px
+  &__content
+    position: relative
+    padding-top: 100px
+    z-index: 1
+  &__title
+    margin-bottom: 54px
+    font-size: 30px
     line-height: 1.2
+    font-weight: 500
+    color: $accent
+    strong
+      font-weight: 700
+      text-transform: uppercase
+  &__desc
+    color: #666666
   &__form
-    width: 100%
-    max-width: 391px
-
-  &__wrap
-    padding-top: 38px
-
-  .form
-    &__title
-      margin-bottom: 35px
-    label
-      .label__text
-        margin-bottom: 0
-    .text-input
-      margin-bottom: 20px
-      &::after
-        width: calc(100% + 23px)
-        height: 1px
-    .accept
-      label
-        margin-top: 30px
+    position: relative
+    z-index: 2
+    padding-top: 44px
 
   /* media */
-
   @media screen and (max-width: 768px)
-    .bg-img
-      height: 823px
-      background-image: url("../img/bg-lead--mobile.png")
-    .title
+    &__title
+      margin-bottom: 24px
       font-size: 24px
-      text-align: center
-    &__form
-      margin-left: auto
-      margin-right: auto
+    &__desc
+      font-size: 14px
   // max-width 768px
 
-  @media screen and (max-width: 500px)
-    .title
-      font-size: 20px
+  @media screen and (max-width: 576px)
+    &__content
+      padding-top: 40px
     .bg-img
-      height: 803px
-      top: -42px
-  // max-width 500px
+      left: 45%
+    &__title
+      width: 80%
+    &__desc
+      width: 80%
+  // max-width 576px
 
   @media screen and (max-width: 400px)
+    .bg-img
+      left: 0
+      top: 104px
+      opacity: 0.2
+    &__title
+      width: 100%
+      margin-bottom: 20px
+      font-size: 22px
+    &__desc
+      width: 100%
     &__form
-      width: calc(100% + 30px)
-      margin-left: -15px
-    .title
-      font-size: 18px
-    .form
-      .text-input
-        &::after
-          width: calc(100% + 10px)
-  // max-width 400px
+      padding-top: 24px
+  // max-width 576px
+
+  // @media screen and (max-width: 500px)
+
+  // max-width 500px
 
 /* lead */
+
+.prices-page,
+.center-page
+  z-index: 1
+  .lead
+    .container
+      position: relative
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: -40px
+        left: -288px
+
+        display: block
+        width: 899px
+        height: 454px
+
+        background: transparent url('../img/svg/bg-features.svg') no-repeat center center
+        background-size: contain
+        opacity: 0.3
+        z-index: -1
+
+/* prices-page lead, center-page lead */

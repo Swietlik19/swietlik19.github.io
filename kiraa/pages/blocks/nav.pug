@@ -1,0 +1,37 @@
+mixin header__nav(logotype)
+  nav.header__nav
+    .container
+      .header__nav-wrap
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .main-menu
+          ul.menu
+            li.menu-item
+              a(href="#") О компании
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Цены
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Новости
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__phones
+          a.header__phones-icon.desktop.open-modal(href='#modal__call')
+            i.fa.fa-phone
+          .header__link-wrap
+            a.header__phones-link(href='tel:+79634720041', rel='nofollow') +7 963 472 00 41
+            a.header__phones-link(href='tel:+79634720042', rel='nofollow') +7 963 472 00 41
+        // /.header__phones
+      // /.header__nav-wrap
+    // /.container
+  // /.header__nav

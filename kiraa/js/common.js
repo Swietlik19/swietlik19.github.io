@@ -211,7 +211,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   $(function(){
     $('.inner-link[href^="#"]').click(function(){
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 80 +'px'});
       return false;
     });
   });
@@ -225,11 +225,9 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   });
 
   $('#header-burger').click(function() {
-    $('.header__hidden').addClass('active');
-  });
-
-  $('#header-burger--toClose').click(function() {
-    $('.header__hidden').removeClass('active');
+    $(this).toggleClass('active');
+    $('.header__wrap').toggleClass('active');
+    $('body').toggleClass('disabled--burger');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -238,17 +236,13 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
     var _href = $(this).attr('href');
     $(_href).addClass('active');
     $(_href + ' .modal__content').addClass('visible');
-    $('.page_wr').addClass('blur-it');
-    $('.footer').addClass('blur-it');
-    $('.header').addClass('blur-it');
+    $('body').addClass('disabled');
   });
 
   function closeModal() {
     $('.modal').removeClass('active');
     $('.modal__content').removeClass('visible');
-    $('.page_wr').removeClass('blur-it');
-    $('.footer').removeClass('blur-it');
-    $('.header').removeClass('blur-it');
+    $('body').removeClass('disabled');
   }
 
   $(document).mouseup(function (e) {
@@ -265,7 +259,52 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   $(document).keydown(function(eventObject){
     if( eventObject.which == 27 ){
       closeModal();
+      $('.header .burger__wrap').removeClass('active');
+      $('.header__wrap').removeClass('active');
+      $('body').removeClass('disabled--burger');
     }
+  });
+
+  /* Табы "О компании" */
+  $('.about__nav .about__link').click(function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+    $(this).parent().siblings().find('.about__link').removeClass('active');
+    var _href = $(this).attr('href');
+    $('.about__tab:not(' + _href + ')').removeClass('active');
+    $(_href).addClass('active');
+    if (window.matchMedia('(max-width: 750px)').matches) {
+      $('html, body').animate({scrollTop: $('.about__nav').offset().top - 20 +'px'});
+    }
+  });
+
+  /* Табы с бирюзовой менюшкой */
+  $('.js-tabs__link').click(function(event) {
+    event.preventDefault();
+    $(this).addClass('active');
+    $(this).parent().siblings().find('.tabs__link').removeClass('active');
+    var _href = $(this).attr('href');
+    $('.tabs__tab:not(' + _href + ')').slideUp();
+    $(_href).slideDown();
+    if (window.matchMedia('(max-width: 750px)').matches) {
+      $('html, body').animate({scrollTop: $('.tabs').offset().top - 40 +'px'});
+    }
+  });
+
+  $('.questions .top').click(function() {
+    $(this).find('.open').toggleClass('active');
+    $(this).siblings().slideToggle();
+    $(this).parent().siblings().find('.open').removeClass('active');
+    $(this).parent().siblings().find('.hidden').slideUp();
+    if (window.matchMedia('(max-width: 576px)').matches) {
+      $('html, body').animate({scrollTop: $('.questions__wrap').offset().top - 20 +'px'});
+    }
+  });
+
+  $('.page_wr').click(function() {
+    $('.header .burger__wrap').removeClass('active');
+    $('.header__wrap').removeClass('active');
+    $('body').removeClass('disabled--burger');
   });
 
   // маска поля tel
@@ -283,24 +322,24 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   });
 
   /* Раскрытие меню в футере на мобильных устройствах */
-  // function openSubMenu() {
-  //   $.each(['footer-menu'],function(xi,xe) {
-  //     $('.' + xe + ' h4').click(function(e) {
-  //       if (window.matchMedia('(max-width: 900px)').matches) {
-  //         $(this).toggleClass('active');
-  //         $(this).siblings('.menu').slideToggle();
-  //         $(this).parents('.' + xe).find('.' + xe + '__item').each(function(i, el) {
-  //           if ( $(el).has(e.target).length === 0 && !($(el).hasClass(xe + '__item--strong')) ) {
-  //             $(el).find('.menu').slideUp();
-  //             $(el).find('h4').removeClass('active');
-  //           }
-  //         });
-  //       }
-  //     });
-  //   });
-  // }
+  function openSubMenu() {
+    $.each(['footer-menu'],function(xi,xe) {
+      $('.' + xe + ' h4').click(function(e) {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          $(this).toggleClass('active');
+          $(this).siblings('.menu').slideToggle();
+          $(this).parents('.menu-df').find('.' + xe + '__item').each(function(i, el) {
+            if ( $(el).has(e.target).length === 0 && !($(el).hasClass(xe + '__item--single')) ) {
+              $(el).find('.menu').slideUp();
+              $(el).find('h4').removeClass('active');
+            }
+          });
+        }
+      });
+    });
+  }
 
-  // openSubMenu();
+  openSubMenu();
 
   // $('.page_wr, .footer').hover(function() {
   //   if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
@@ -319,7 +358,12 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
-    $(".header").toggleClass("fixed", (fromTop > 682));
+    $(".header").toggleClass("margined", (fromTop > 682));
+    if ( window.matchMedia('(max-width: 992px)').matches ) {
+      $(".header__mobile").toggleClass("fixed", (fromTop > 682));
+    } else {
+      $(".header__nav").toggleClass("fixed", (fromTop > 682));
+    }
   });
 
   // $('.header .menu > li > a').hover(function(e) {

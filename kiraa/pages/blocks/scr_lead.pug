@@ -1,45 +1,39 @@
 mixin scr_lead()
-  section.scr_lead.lead(id="scr_lead")
-    .bg-img
-
+  section.scr_lead.lead.grey-bg(id="scr_lead")
     .container
-      p.title.title--type2 Как не ошибиться, выбирая шторы?
-        br
-        strong  Получите 10 рекомендаций
-
-      .lead__form
-        .form.wpcf7
-            .lead__wrap.decor-wrap.decor-wrap--2
-              svg.outer
-                use(xlink:href="img/svg/sprite.svg#bg-cta-1")
-              svg.inner
-                use(xlink:href="img/svg/sprite.svg#bg-cta-2")
-
-              p.form__title Заполните форму
-
+      .row
+        .col-md-6.col-lg-5.col-sm-5
+          .lead__content
+            .bg-img
+              noscript
+                img.lazy(src="img/svg/img-lead.svg" alt="" width="443" height="409")
+              img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/svg/img-lead.svg" alt="" width="443" height="409")
+            p.lead__title Заполните форму и получите консультацию
+              strong  бесплатно
+            p.lead__desc Мы ответим на ваши вопросы, произведем
+              br
+              |  расчет стоимости услуг и подготовим
+              br
+              |  индивидуальное коммерческое предложение
+        .col-lg-4.offset-lg-3.col-md-5.offset-md-1.col-sm-7
+          .lead__form
+            .form.wpcf7
               form.wpcf7-form
-                .form__content
-                  .form__item
-                    span.wpcf7-form-control-wrap.your-name.text-input
-                      label
-                        span.label__text Введите Ваше имя
-                        input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
-
-                  .form__item
-                    span.wpcf7-form-control-wrap.your-tel.text-input
-                      label
-                        span.label__text Введите телефон
-                        input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (978) ___-__-__')
-
-                  .form__item
-                    span.wpcf7-form-control-wrap.your-email.text-input
-                      label
-                        span.label__text Введите e-mail
-                        input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='e-mail@mail')
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
 
                 .form__item
-                  .btn__wrap.btn__wrap--grad
-                    input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='получить рекомендации')
+                  span.wpcf7-form-control-wrap.your-tel.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-email.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш e-mail')
+
+                .form__item
+                  .submit__wrap
+                    input.wpcf7-form-control.wpcf7-submit(type='submit', value='Получить консультацию')
 
                 .form__item
                   span.wpcf7-form-control-wrap.accept
@@ -49,6 +43,4 @@ mixin scr_lead()
                           input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
                           span.wpcf7-list-item-label Согласие на обработку персональных данных
                             i.accept__icon
-
-
   // /.scr_lead

@@ -1,36 +1,39 @@
 .header
-  position: absolute
-  top: 0
-  left: 0
+  position: relative
+  z-index: 50
 
-  width: 100%
-  z-index: 100
+  &.margined
+    padding-top: 60px
+  &__nav-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 60px
+
+  &__nav,
+  &__mobile
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+
+      width: 100%
+      z-index: 100
+      background: #fff
+      box-shadow: 0 5px 8px rgba($shadow-c, 0.1)
+
+  &__mobile
+    display: none
+  &__mobile-wrap
+    display: flex
+    align-items: center
+    height: 60px
+
   .logo
     display: block
     text-decoration: none
-    display: block
-    width: 221px
-    height: 120px
-    .icon
-      fill: #301a0c
-  &.fixed
-    position: fixed
-    z-index: 150
-    background: linear-gradient(180.0deg, #fff 0%, rgba(#fff,0.9) 100%)
-    box-shadow: 0 10px 15px rgba($accent,0.1)
-    transition: 0.3s
-    .header__df
-      padding-top: 2px
-
-    .header__text
-      display: none
-    .header-phones
-      &__links
-        display: none
-      &__btns
-        margin-right: 0
-    .logo
-      display: none
+    width: 245px
+    height: 48px
 
   .menu
     padding: 0
@@ -38,187 +41,252 @@
     list-style: none
 
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     align-items: center
     height: 100%
 
-
-    & > li
-      margin: 0 10px
-      & > a
+  .main-menu
+    .menu
+      & > li
         position: relative
-
-        display: block
-        font-size: 17px
-        font-weight: 500
-        text-transform: uppercase
-        text-decoration: none
-        letter-spacing: 0.1em
-        color: $accent2
-        .decor
-          position: absolute
-          bottom: -5px
-          left: 0
-
-          display: block
-          width: 100%
-          height: 1px
-          background-color: #23bcde
-          opacity: 0
+        padding: 0 12px
+        &.current-menu-item
+          & > a
+            cursor: text
+            pointer-events: none
+            color: darken($accent, 10%)
+            &::before
+              content: none
+        & > a
+          position: relative
+          font-size: 14px
+          line-height: 1.714285714285714 /* 24px / 14px */
+          text-decoration: none
           transition: 0.3s
-          &::before,
-          &::after
+          &::before
             content: ''
             position: absolute
-            top: calc(50% - 4px)
+            bottom: -2px
+            left: 0
 
             display: block
-            width: 27px
-            height: 7px
-            background: transparent url('../img/svg/decor-menu--left.svg') no-repeat center center
-            background-size: contain
-          &::before
-            left: -12px
-          &::after
-            right: -12px
-            background-image: url('../img/svg/decor-menu--right.svg')
+            width: 100%
+            height: 1px
+            background-color: #f9fbfb
+            transform: scale(0)
+            opacity: 0
+            transition: 0.5s
+            border-radius: 6px
+          &:hover
+            color: $accent2
+            &::before
+              background-color: $accent2
+              transform: scale(1)
+              opacity: 1
+          &:active
+            color: darken($accent2,10%)
 
-        &:hover
-          .decor
-            opacity: 1
-  & > .container
-    position: relative
-  &__df
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+  .header__link-wrap
+
+  &__phones
     display: flex
-    justify-content: space-between
-    padding: 10px 0
-  &__hidden
-    position: absolute
-    top: 0
-    left: 0
-
-    width: 100%
-    height: 80px
-    padding-left: 15px
-    padding-right: 15px
-    box-shadow: 0px 10px 15px 0px rgba(11,109,131,0.2)
-    background-color: #ffffff
-    border-bottom-left-radius: 8.0px
-    border-bottom-right-radius: 8.0px
-    z-index: 50
-    max-height: 0
-    overflow: hidden
-    transition: 0.5s
-    &.active
-      max-height: 1000px
-      transition: 1.5s
-
-    .header__df
-      width: 100%
-    .header__left
-      width: auto
-      .burger
-        margin-right: 0
-    .header-phones
-      width: auto
-      &__btns
-        margin-right: 0
-  &__menu
-    padding-top: 10px
-    width: 100%
-    flex-grow: 1
-    margin: 0 10px
-  &__text
-    font-size: 14px
-    letter-spacing: 0.1em
-    color: #fbfffe
-
-  &__left
-    display: flex
-    width: 360px // 31.57894736842105%
-    padding-top: 8px
-    padding-left: 9px
-    .burger
-      margin-right: 33px
-
-  &-phones
-    display: flex
-    justify-content: flex-end
-    width: 360px // 31.57894736842105%
-    padding-top: 8px
-    .mobile
-      display: none
-    &__btns
-      margin-right: 26px
-    &__link
-      a
-        display: block
-        margin-bottom: 3px
-        font-size: 14px
-        font-weight: 500
-        letter-spacing: 0.1em
-        color: #fbfffe
-        text-decoration: none
-        transition: 0.3s
-        strong
-          font-size: 18px
-        &:hover
-          color: $accent
-    &__msgs
+    align-items: center
+    &-icon
+      position: relative
       display: flex
-      justify-content: flex-end
+      align-items: center
+      justify-content: center
+      width: 21px
+      height: 21px
+      margin-right: 13px
+      border-radius: 50%
+      border: 2px solid $accent2
+      background: #fff
+      transition: 0.5s
+      text-decoration: none
+      &.mobile
+        display: none
+        margin-right: 0
+      .fa
+        display: block
+        margin-top: 2px
+        color: $accent2
+        font-size: 14px
+      &:hover
+        transform: translateY(-4px)
+        &::before
+          content: none
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
 
-  .msg
-    position: relative
-    display: block
-    margin-right: 35px
-    font-size: 14px
-    font-weight: 500
-    letter-spacing: 0.1em
-    color: $accent
-    &::after
-      content: '/'
-      position: absolute
-      top: 0
-      right: -20px
-    &:last-of-type
-      margin-right: 0
-      &::after
-        content: none
+        display: block
+        width: 100%
+        height: 100%
+        transform: scale(0.9)
+        background: rgba(255, 255, 255, 0.1)
+        border-radius: 50%
+        animation: ani-call 3s linear infinite both
+        z-index: -1
 
+    &-link
+      display: block
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24px / 18px */
+      font-weight: 700
+      color: $accent
+      text-decoration: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+      &:active
+        color: darken($accent2,10%)
+
+  &__bottom
+    background-color: $accent
+
+  .second-menu
+    .menu
+      & > li
+        flex-grow: 1
+        flex-basis: auto
+        border-left: 1px solid rgba(255,255,255,0.3)
+        &.current
+          & > a
+            background-color: $accent2
+        &:last-of-type
+          border-right: 1px solid rgba(255,255,255,0.3)
+        & > a
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 100%
+          height: 66px
+          padding: 0 5px
+          background-color: $accent
+
+          font-size: 14px
+          line-height: 1.2
+          font-weight: 500
+          color: #ffffff
+          text-align: center
+          text-decoration: none
+          transition: 0.3s
+          &:hover
+            background-color: $accent2
+          &:active
+            background-color: darken($accent2,10%)
+          &.active
+            background-color: $accent2
   /* media */
-  @media screen and (max-width: 1170px)
-    &__text
-      color: $accent2
-  // max-width 1170px
-
   @media screen and (max-width: 992px)
-    &__left
-      width: auto
-      .burger
-        margin-right: 0
-    &__text
-      display: none
-    &-phones
-      width: auto
-      .mobile
-        display: flex
-        margin-bottom: 20px
-      .desktop
-        display: none
-      &__link
-        display: none
-      .msg
-        display: none
-      &__btns
-        margin-right: 0
+    // z-index: 1
+    &__mobile
+      display: block
+      box-shadow: 3px 4px 15px rgba($shadow-c,0.1)
+      .header__phones
+        margin-left: auto
+    .burger
+      margin-right: 20px
+    &__wrap
+      position: absolute
+      top: 100%
+      left: 0
 
+      width: 350px
+      max-width: 100%
+      padding-bottom: 20px
+      min-height: calc(100vh - 60px)
+      max-height: calc(100vh - 60px)
+      overflow: auto
+
+      border: 1px solid rgba($accent,0.1)
+      background: #fff
+      box-shadow: 5px 5px 5px rgba($shadow-c,0.1)
+
+      transform: translateX(-150%)
+      transition: 0.5s
+      &.active
+        transform: translateX(0)
+      .logo__wrap
+        display: none
+      .header__phones
+        display: none
+    &__nav
+      border-bottom: 1px solid $body-c
+      &-wrap
+        display: block
+        height: auto
+    .menu
+      display: block
+    .main-menu
+      .menu
+        & > li
+          padding: 0
+          & > a
+            display: block
+            padding: 4px 10px 4px 0
+            font-size: 16
+            border-bottom: 1px solid rgba($body-c,0.1)
+            &::before
+              content: none
+    &__bottom
+      background-color: #fff
+    .second-menu
+      padding-top: 5px
+      .menu
+        & > li
+          width: 100%
+          & > a
+            display: block
+            height: auto
+            padding: 10px 10px 10px 0
+            background: none
+            border-bottom: 1px solid rgba($body-c,0.1)
+
+            color: $body-c
+            font-size: 16px
+            text-align: left
+            br
+              display: none
+            &:hover
+              color: $accent2
+              background: none
   // max-width 992px
 
   @media screen and (max-width: 768px)
     .logo
-      width: 161px
-      height: 90px
+      width: 225px
   // max-width 768px
+
+  @media screen and (max-width: 500px)
+    &__phones
+      .mobile
+        display: flex
+      .desktop
+        display: none
+      &-link
+        display: none
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    .logo
+      width: 185px
+      height: 36px
+    .burger
+      margin-right: 10px
+    &__mobile-wrap
+      height: 50px
+    &__wrap
+      min-height: calc(100vh - 50px)
+      max-height: calc(100vh - 50px)
+      padding-bottom: 0
+  // max-width 400px
 
 /* .header */

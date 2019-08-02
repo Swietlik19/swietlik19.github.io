@@ -1,0 +1,176 @@
+input,textarea
+  font-family: $form-font
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea
+  background: none
+  border: none
+  outline: none
+  transition: 0.3s
+  resize: none
+
+  padding: 10px 0
+  font-size: 16px
+  line-height: 1.333333333333333 /* 24px / 18px */
+  font-weight: 400
+  letter-spacing: 0.1em
+  color: $accent2
+
+  @include placeholder($accent2, 18px)
+
+  &:focus
+    @include placeholder(#fff, 18px)
+
+textarea
+  // height: 136px
+
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  .decor-wrap
+    padding: 42px 28px 40px
+  &__content
+    padding: 0 21px
+  &__title
+    margin-bottom: 42px
+    font-size: 30px
+    font-weight: 400
+    letter-spacing: 0.1em
+    line-height: 1.1
+    color: $accent2
+    text-align: center
+  .btn__wrap
+    width: 100%
+    margin-top: 16px
+
+  label
+    .label__text
+      display: block
+      margin-bottom: 13px
+      font-size: 13px
+      line-height: 1.846153846153846 /* 24px / 13px */
+      letter-spacing: 0.1em
+
+  .text-input
+    position: relative
+    display: block
+    width: 100%
+    margin-bottom: 36px
+    &::after
+      content: ''
+      position: absolute
+      bottom: -2px
+      left: -4px
+
+      width: calc(100% + 10px)
+      height: 1px
+      background-color: $accent
+
+  .accept
+    label
+      display: block
+      margin-top: 35px
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.692307692307692 /* 22px / 13px */
+      font-weight: 300
+      color: $accent
+
+      &:hover
+        color: $accent2
+        & > span
+          .accept__icon
+            &::before
+              background-color: $accent2
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 21px
+
+      .accept__icon
+        position: absolute
+        top: calc(50% - 8px)
+        left: 0
+
+        display: block
+        width: 16px
+        height: 16px
+        border: 1.0px solid rgba(48,26,12,0.43)
+        border-radius: 50%
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 3px)
+
+          display: block
+          width: 6px
+          height: 6px
+          background-color: $accent
+          border-radius: 50%
+          transform: scale(0)
+          transition: 0.3s
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          transform: scale(1)
+
+
+  /* media */
+
+  @media screen and (max-width: 768px)
+    &__title
+      margin-bottom: 32px
+      font-size: 26px
+    .decor-wrap
+      padding-left: 20px
+      padding-right: 20px
+    .accept
+      label
+        margin-top: 20px
+        & > span
+          font-size: 12px
+          line-height: 1.2
+
+  //   max-width 768px
+
+  @media screen and (max-width: 400px)
+    &__content
+      padding: 0 10px
+    &__title
+      margin-bottom: 22px
+      font-size: 22px
+    label
+      .label__text
+        margin-bottom: 4px
+        font-size: 12px
+    .text-input
+      margin-bottom: 29px
+      &::after
+        width: calc(100% + 10px)
+  //   max-width 400px
+
+ /* form */
+
+@media screen and (max-width: 768px)
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea
+    @include placeholder($accent2, 14px)
+  //   max-width 768px

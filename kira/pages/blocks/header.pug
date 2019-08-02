@@ -1,0 +1,75 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__df.header__df--visible
+        .header__left
+          button.btn.btn--circle.burger#header-burger
+            span.burger__wrap
+              span.line
+          p.header__text г. Краснодар, ЖК Панорама
+            br
+            |  ул. Восточно-Кругликовская,
+            br
+            |  дом, 22, этаж 2
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+          else
+            #{logotype}.logo
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+
+        .header__phones.header-phones
+          .header-phones__btns
+            a.btn.btn--circle.btn--circle2.open-modal.desktop(href="#")
+              .fa.fa-phone
+            a.btn.btn--circle.btn--circle2.mobile(href="tel:+79181247924" rel="nofollow")
+              .fa.fa-phone
+
+          .header-phones__links
+            .header-phones__link
+              a(href="tel:+79181247924" rel="nofollow") +7 918
+                strong  124-79-24
+            .header-phones__msgs
+              a.msg.msg--wa(href="https://api.whatsapp.com/send?phone=79634720041")
+                span.text WhatsApp
+              a.msg.msg--vi(href="viber://chat?number=79634720041")
+                span.text Viber
+
+      .header__hidden
+        .header__df
+          .header__left
+            button.btn.btn--circle.burger#header-burger--toClose.active
+              span.burger__wrap
+                span.line
+          .header__menu
+            ul.menu
+              li.menu-item
+                a.inner-link(href="#scr_features") О нас
+                  span.decor
+              li.menu-item
+                a.inner-link(href="#scr_products") услуги
+                  span.decor
+              li.menu-item
+                a.inner-link(href="#scr_tariff") тарифы
+                  span.decor
+              li.menu-item
+                a.inner-link(href="#scr_orders") портфолио
+                  span.decor
+              li.menu-item
+                a.inner-link(href="#scr_steps") как мы работаем
+                  span.decor
+              li.menu-item
+                a.inner-link(href="#scr_map") контакты
+                  span.decor
+          .header__phones.header-phones
+            .header-phones__btns
+              a.btn.btn--circle.btn--circle2.open-modal.desktop(href="#")
+                .fa.fa-phone
+              a.btn.btn--circle.btn--circle2.mobile(href="tel:+79181247924" rel="nofollow")
+                .fa.fa-phone
+
+    // /.container

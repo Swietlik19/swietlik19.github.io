@@ -1,0 +1,138 @@
+.contacts
+  position: relative
+  &--desktop
+    position: absolute
+    bottom: 50px
+    left: 0
+
+  width: 100%
+  z-index: 100
+  &--mobile
+    display: none
+  &__content
+    position: relative
+    width: 100%
+  &__wrap
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 100
+    width: 374px
+    padding: 38px 36px 41px
+  .logo
+    width: 179px
+    height: 97px
+    margin: 0 auto
+    margin-bottom: 22px
+
+  .msg
+    position: relative
+    display: block
+    margin-bottom: 7px
+    text-decoration: none
+    transition: 0.5s
+    &:hover
+      transform: scale(1.1)
+    &__wrap
+      display: flex
+      align-items: center
+      justify-content: center
+    &--wa
+      width: 17px
+      height: 17px
+    &--vi
+      width: 17px
+      height: 18px
+      margin-right: 16px
+      .msg__icon
+        fill: #834894
+    &--insta
+      width: 17px
+      height: 17px
+    img
+      display: block
+    &__icon
+      position: absolute
+      top: 0
+      left: 0
+
+      display: block
+      width: 100%
+      height: 100%
+
+  &__item
+    margin-bottom: 25px
+    font-size: 14px
+    line-height: 1.714285714285714 /* 24px / 14px */
+    font-weight: 400
+    letter-spacing: 0.1em
+    text-align: center
+    color: $accent2
+    &--top
+      margin-bottom: 18px
+    &:last-of-type
+      margin-bottom: 0
+
+  &__link
+    text-decoration: none
+    letter-spacing: 0.1em
+    line-height: 1.2
+    color: $accent2
+    transition: 0.3s
+    strong
+      font-size: 16px
+      font-weight: 500
+    &:hover
+      color: $accent
+
+  /* media */
+  @media screen and (max-width: 768px)
+    &--desktop
+      display: none
+    &--mobile
+      display: block
+      padding-bottom: 20px
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 85px
+        left: 0
+
+        display: block
+        width: 100%
+        height: calc(100% - 85px)
+        background-color: #f8f7f9
+        z-index: -1
+      .contacts__wrap
+        position: relative
+        margin-left: auto
+        margin-right: auto
+        margin-top: -85px
+    .logo
+      width: 159px
+      height: 87px
+    &__wrap
+      padding: 28px 36px 31px
+    &__item
+      margin-bottom: 15px
+      font-size: 13px
+      line-height: 1.6
+    &__link
+      strong
+        font-size: 14px
+
+  // max-width 768px
+
+  @media screen and (max-width: 400px)
+    &--mobile
+      .contacts__wrap
+        width: calc(100% + 30px)
+        margin-left: -15px
+        padding: 20px 16px
+    .logo
+      width: 139px
+      height: 67px
+  // max-width 400px
+
+/* contacts */

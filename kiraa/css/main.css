@@ -565,6 +565,170 @@ textarea {
     transition: 0.5s;
     font-family: "Roboto", sans-serif; } }
 
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  opacity: 0;
+  overflow: hidden;
+  /* media */ }
+  .modal.active {
+    display: block;
+    opacity: 1;
+    min-height: 100vh; }
+  .modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 581px;
+    opacity: 0;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s; }
+    .modal__content::before, .modal__content::after {
+      content: '';
+      position: absolute;
+      top: -24px;
+      display: block;
+      width: 200px;
+      height: 745px;
+      background: transparent url("../img/decor-modal.png") no-repeat center center;
+      background-size: contain;
+      z-index: -1; }
+    .modal__content::before {
+      left: -73px; }
+    .modal__content::after {
+      right: -85px; }
+    .modal__content.visible {
+      opacity: 1; }
+  .modal__wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    padding: 24px 0;
+    background: #f3f3f3 url("../img/bg-cta.png") repeat center center;
+    background-size: 112px 108px;
+    border-radius: 10px; }
+  .modal__inner {
+    width: 392px;
+    max-width: 100%; }
+  .modal .form {
+    max-height: 100vh;
+    overflow: auto;
+    width: -webkit-calc(100% + 100px);
+    width: calc(100% + 100px);
+    margin-left: -50px;
+    padding: 50px;
+    z-index: 0; }
+    .modal .form__title {
+      margin-bottom: 22px; }
+    .modal .form label .label__text {
+      margin-bottom: 3px; }
+    .modal .form .btn__wrap {
+      margin-top: 3px; }
+    .modal .form .btn__wrap--grad input[type=submit] {
+      padding-top: 27px;
+      padding-bottom: 26px; }
+    .modal .form--tariff .decor-wrap {
+      padding-top: 28px;
+      padding-bottom: 45px; }
+    .modal .form--tariff .btn__wrap {
+      max-width: 280px; }
+    .modal .form--tariff .btns__wrap {
+      margin-top: 24px;
+      text-align: center; }
+  .modal .decor-wrap {
+    padding-bottom: 32px; }
+  .modal .close {
+    position: absolute;
+    top: 16px;
+    right: 18px; }
+    .modal .close::before, .modal .close::after {
+      content: '';
+      position: absolute;
+      top: -webkit-calc(50% - 1px);
+      top: calc(50% - 1px);
+      left: -webkit-calc(50% - 8px);
+      left: calc(50% - 8px);
+      display: block;
+      width: 16px;
+      height: 2px;
+      background-color: #301a0c;
+      border-radius: 1.5px;
+      opacity: 1;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+    .modal .close:hover {
+      -webkit-transform: translateY(-5px);
+          -ms-transform: translateY(-5px);
+              transform: translateY(-5px); }
+    .modal .close::before {
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .modal .close::after {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+  .modal table {
+    border-collapse: collapse;
+    width: 100%; }
+    .modal table th, .modal table td {
+      text-align: left; }
+    .modal table th {
+      overflow: hidden;
+      font-size: 13px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      padding-right: 10px; }
+      .modal table th span {
+        position: relative;
+        display: inline-block; }
+        .modal table th span::after {
+          content: '...................................................';
+          position: absolute;
+          left: 100%;
+          bottom: 0; }
+    .modal table td {
+      padding: 5px 0;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: #301a0c; }
+  .modal .tariff__price {
+    margin-top: 17px;
+    font-size: 24px; }
+  .modal .tariff__content {
+    padding-top: 35px; }
+  @media screen and (max-width: 768px) {
+    .modal .close {
+      top: 26px;
+      z-index: 100; } }
+  @media screen and (max-width: 560px) {
+    .modal__content {
+      width: 100%; }
+    .modal table td {
+      font-size: 15px; } }
+
+/* modal */
 .scr1 {
   position: relative;
   min-height: 820px;

@@ -1,0 +1,92 @@
+.insta
+  position: relative
+  min-height: 633px
+  padding-top: 30px
+  padding-bottom: 90px
+  background: transparent url('../img/bg-insta.png') no-repeat center bottom
+  background-size: cover
+  z-index: 2
+
+  .title
+    margin-bottom: 10px
+    text-align: center
+
+  &__slider
+    width: calc(100% + 16px)
+    margin-left: -8px
+    margin-bottom: 120px
+    .slick-arrow
+      top: calc(50% - 32px)
+    .slick-prev
+      left: -40px
+    .slick-next
+      right: -40px
+
+  &__slide
+    &-wrap
+      padding: 20px 8px
+    &--big
+      .insta__img
+        width: 369px
+        height: 368px
+
+  &__img
+    display: block
+    width: 178px
+    height: 177px
+    text-decoration: none
+    margin-bottom: 14px
+    outline: none
+    transition: 0.3s
+    &:hover
+      transform: translateY(-5px)
+      box-shadow: 0 8px 20px 0 rgba(#000,.2)
+    &:last-of-type
+      margin-bottom: 0
+
+  &__feat
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    text-align: center
+    margin-top: 30px
+    &-item
+      width: 33.3%
+      padding: 0 15px
+
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24px / 18px */
+      font-weight: 700
+      letter-spacing: 0.1em
+      color: #ffffff
+
+  /* media */
+
+  @media screen and (max-width: 576px)
+    background-image: url('../img/bg-insta--mobile.png')
+    &__feat
+      flex-direction: column
+      align-items: center
+      &-item
+        width: 100%
+        font-size: 16px
+        padding: 0 5px
+        margin-bottom: 15px
+    &__slider
+      margin-bottom: 30px
+    &__slide
+      &--big
+        .insta__img
+          width: 100%
+          height: 300px
+
+    &__img
+      width: 143px
+      height: 143px
+
+  // max-width 576px
+
+/* insta */

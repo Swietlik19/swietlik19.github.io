@@ -210,6 +210,7 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
     $('.inner-link[href^="#"]').click(function(){
+      $('.header__hidden').removeClass('active');
       var _href = $(this).attr('href');
       $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
       return false;
@@ -238,9 +239,6 @@ b=20===a[0].offsetTop||15===a[0].offsetTop;a.remove();return b}());f.extend(b.de
     var _href = $(this).attr('href');
     $(_href).addClass('active');
     $(_href + ' .modal__content').addClass('visible');
-    $('.page_wr').addClass('blur-it');
-    $('.footer').addClass('blur-it');
-    $('.header').addClass('blur-it');
   });
 
   function closeModal() {

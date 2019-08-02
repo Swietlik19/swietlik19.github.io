@@ -1,0 +1,255 @@
+.header
+  position: absolute
+  top: 0
+  left: 0
+
+  width: 100%
+  z-index: 100
+  .logo
+    display: block
+    text-decoration: none
+    display: block
+    width: 221px
+    height: 120px
+    .icon
+      fill: #301a0c
+  &.fixed
+    position: fixed
+    z-index: 150
+    background: linear-gradient(180.0deg, #fff 0%, rgba(#fff,0.9) 100%)
+    box-shadow: 0 10px 15px rgba($accent,0.1)
+    transition: 0.3s
+    .header__df
+      padding-top: 2px
+    .header__hidden
+      height: 60px
+    .header__text
+      display: none
+    .header-phones
+      &__links
+        display: none
+      &__btns
+        margin-right: 0
+    .logo
+      display: none
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-around
+    align-items: center
+    height: 100%
+    & > li
+      margin: 0 10px
+      & > a
+        position: relative
+
+        display: block
+        font-size: 17px
+        font-weight: 500
+        text-transform: uppercase
+        text-decoration: none
+        letter-spacing: 0.1em
+        color: $accent2
+        .decor
+          position: absolute
+          bottom: -5px
+          left: 0
+
+          display: block
+          width: 100%
+          height: 1px
+          background-color: #23bcde
+          opacity: 0
+          transition: 0.3s
+          &::before,
+          &::after
+            content: ''
+            position: absolute
+            top: calc(50% - 4px)
+
+            display: block
+            width: 27px
+            height: 7px
+            background: transparent url('../img/svg/decor-menu--left.svg') no-repeat center center
+            background-size: contain
+          &::before
+            left: -12px
+          &::after
+            right: -12px
+            background-image: url('../img/svg/decor-menu--right.svg')
+
+        &:hover
+          .decor
+            opacity: 1
+  & > .container
+    position: relative
+  &__df
+    display: flex
+    justify-content: space-between
+    padding: 10px 0
+  &__hidden
+    position: absolute
+    top: 0
+    left: 0
+
+    width: 100%
+    height: 80px
+    padding-left: 15px
+    padding-right: 15px
+    box-shadow: 0px 10px 15px 0px rgba(11,109,131,0.2)
+    background-color: #ffffff
+    border-bottom-left-radius: 8.0px
+    border-bottom-right-radius: 8.0px
+    z-index: 50
+    max-height: 0
+    overflow: hidden
+    transition: max-height 0.5s
+    &.active
+      max-height: 1000px
+      transition: max-height 1.5s
+
+    .header__df
+      width: 100%
+    .header__left
+      width: auto
+      .burger
+        margin-right: 0
+    .header-phones
+      width: auto
+      &__btns
+        margin-right: 0
+  &__menu
+    padding-top: 10px
+    width: 100%
+    flex-grow: 1
+    margin: 0 10px
+  &__text
+    font-size: 14px
+    letter-spacing: 0.1em
+    color: #fbfffe
+
+  &__left
+    display: flex
+    width: 360px // 31.57894736842105%
+    padding-top: 8px
+    padding-left: 9px
+    .burger
+      margin-right: 33px
+
+  &-phones
+    display: flex
+    justify-content: flex-end
+    width: 360px // 31.57894736842105%
+    padding-top: 8px
+    .mobile
+      display: none
+    &__btns
+      margin-right: 26px
+    &__link
+      a
+        display: block
+        margin-bottom: 3px
+        font-size: 14px
+        font-weight: 500
+        letter-spacing: 0.1em
+        color: #fbfffe
+        text-decoration: none
+        transition: 0.3s
+        strong
+          font-size: 18px
+        &:hover
+          color: $accent
+    &__msgs
+      display: flex
+      justify-content: flex-end
+
+  .msg
+    position: relative
+    display: block
+    margin-right: 35px
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: 0.1em
+    color: $accent
+    &::after
+      content: '/'
+      position: absolute
+      top: 0
+      right: -20px
+    &:last-of-type
+      margin-right: 0
+      &::after
+        content: none
+
+  /* media */
+  @media screen and (max-width: 1170px)
+    &__text
+      color: $accent2
+  // max-width 1170px
+
+  @media screen and (max-width: 992px)
+    &__left
+      width: auto
+      .burger
+        margin-right: 0
+    &__text
+      display: none
+    &-phones
+      width: auto
+      .mobile
+        display: flex
+      .desktop
+        display: none
+      &__link
+        display: none
+      .msg
+        display: none
+      &__btns
+        margin-right: 0
+    .menu
+      & > li
+        & > a
+          font-size: 12px
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    .logo
+      width: 161px
+      height: 90px
+    &__hidden
+      height: auto !important
+      .header__df
+        flex-wrap: wrap
+        padding-bottom: 0
+
+    &__menu
+      order: 10
+    .menu
+      width: calc(100% + 30px)
+      margin-left: -15px
+      flex-direction: column
+      max-height: calc(100vh - 50px)
+      overflow: auto
+      & > li
+        width: 100%
+        & > a
+          padding: 10px
+          border-bottom: 1px solid rgba($accent2, 0.2)
+          text-align: center
+          .decor
+            display: none
+          &:hover
+            background-color: $accent
+            color: #fff
+        &:last-of-type
+          & > a
+            border-bottom: none
+
+  // max-width 768px
+
+/* .header */

@@ -99,8 +99,47 @@ mixin modal__tariff()
 
                 .btns__wrap
                   .btn__wrap.btn__wrap--grad
-                    button.btn(type="submit") Хочу также
+                    a.btn.open-another-modal(href="#modal__count") Хочу также
 
       // /. form
     // /. modal-tariff__content
   // /. modal__tariff
+
+mixin modal__callback()
+  section.modal.modal__callback(id="modal__callback")
+    .modal-callback__content.modal__content
+      button.btn.btn--circle.close
+      .modal__wrap
+        .modal__inner
+          .form.form--callback
+            .decor-wrap.decor-wrap--2
+              svg.outer
+                use(xlink:href="img/svg/sprite.svg#bg-cta-1")
+              svg.inner(fill="rgba(15,195,212,.35)" style="fill:rgba(15,195,212,.35);")
+                use(xlink:href="img/svg/sprite.svg#bg-cta-2")
+
+              p.form__title Заказать
+                  br
+                  |  обратный звонок
+
+              form.wpcf7-form
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input
+                    label
+                      span.label__text Введите Ваше имя
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-tel.text-input
+                    label
+                      span.label__text Введите телефон
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (978) ___-__-__')
+
+                .form__item
+                  .btn__wrap.btn__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='отправить')
+
+      // /. form
+    // /. modal-callback__content
+  // /. modal__callback

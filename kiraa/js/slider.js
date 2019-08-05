@@ -7,8 +7,6 @@
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 2,
-    autoplay: true,
-    autoplaySpeed: 5000,
     appendArrows: $('#products__slider .slider1__arrows'),
     responsive: [
       {
@@ -61,8 +59,6 @@
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
     dots: true,
     appendDots: $('#orders__slider .slider1__dots'),
     responsive: [
@@ -81,8 +77,6 @@
     slidesToShow: 5,
     slidesToScroll: 1,
     variableWidth: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1270,

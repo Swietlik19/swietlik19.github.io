@@ -1,0 +1,182 @@
+.sandwich-page
+  .form
+    position: relative
+    z-index: 30
+    width: 100%
+    padding: 8px
+    box-shadow: 0px 3px 18px 0px rgba(31,63,105,0.34)
+    background-color: #ffffff
+    border-radius: 8.0px
+
+    &__title
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 300
+      color: #000000
+      text-align: center
+      strong
+        font-weight: 700
+        font-size: 20px
+        text-transform: uppercase
+    &__desc
+      font-size: 16px
+      line-height: 24px
+      font-weight: 300
+      color: #000000
+      text-align: center
+    form
+      display: block
+      padding: 22px
+      padding-bottom: 25px
+      box-shadow: 0px 0px 8px 0px rgba(31,63,105,0.2)
+      border-radius: 8.0px
+
+    input,textarea
+      font-family: Museo, Arial, Helvetica, sans-serif;
+
+    label
+      .label__text
+        display: block
+        margin-bottom: 3px
+        font-size: 14px
+        line-height: 24px
+        font-weight: 100
+        color: #000000
+
+    .text-input
+      display: block
+      width: 100%
+      margin-bottom: 15px
+
+      input,textarea
+        background: none
+        border: none
+        outline: none
+        transition: 0.3s
+        resize: none
+        margin: 0
+        padding: 0
+
+        background-color: rgba(31,63,105,0.1)
+        border-radius: 8.0px
+        border: none
+        box-shadow: none
+
+        display: block
+        width: 100%
+        font-size: 16px
+        line-height: 1.3
+        font-weight: 100
+        color: #666666
+
+        @include placeholder(#666666, 13px)
+
+        &:focus
+          @include placeholder(transparent, 13px)
+          box-shadow: none
+      input
+        height: 46px
+      &--icon
+        position: relative
+        input
+          padding-left: 43px
+        .input-icon
+          position: absolute
+          top: calc(50% - 10px)
+          left: 10px
+
+          display: block
+          width: 20px
+          height: 20px
+          fill: #1f3f69
+          svg
+            width: 100%
+            height: 100%
+
+    .accept
+      label
+        display: block
+        width: 100%
+        cursor: pointer
+        transition: 0.3s
+        text-align: center
+
+        & > span
+          position: relative
+          display: inline-block
+          transition: 0.3s
+
+          display: block
+          padding-left: 25px
+          font-size: 12px
+          line-height: 1.2
+          font-weight: 100
+          color: #333333
+          text-align: left
+        .accept__icon
+          position: absolute
+          top: 0
+          left: 0
+
+          display: block
+          width: 17px
+          height: 17px
+          border: 1.0px solid #cccccc
+          border-radius: 50%
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 3px)
+            left: calc(50% - 3px)
+
+            display: block
+            width: 6px
+            height: 3px
+            border-bottom: 1px solid rgba(255,0,0,0.7)
+            border-left: 1px solid rgba(255,0,0,0.7)
+            transform: rotate(-45deg)
+            opacity: 0
+            transition: 0.3s
+
+        &:hover
+          & > span
+            color: #ff0000
+
+
+      input
+        display: none
+
+      input:checked + span
+        .accept__icon
+          &::before
+            opacity: 1
+
+
+    input[type="submit"]
+      width: 100%
+      margin-top: 10px
+      margin-bottom: 29px
+      padding-top: 15px
+      padding-bottom: 15px
+      font-size: 16px
+
+    /* media */
+
+    @media screen and (max-width: 576px)
+      &__title
+        margin-bottom: 10px
+        font-size: 16px
+        strong
+          font-size: 18px
+
+      input[type="submit"]
+        margin-top: 5px
+        margin-bottom: 19px
+
+      .text-input
+        margin-bottom: 10px
+        input
+          height: 40px
+    // max-width 576px
+
+  /* form */

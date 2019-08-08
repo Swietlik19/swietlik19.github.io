@@ -18,6 +18,45 @@
   // маска поля tel
   $(".wpcf7-tel").mask("+7 (999) 999-99-99");
 
+  /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
+  $(function(){
+    $('.inner-link[href^="#"]').click(function(){
+      var _href = $(this).attr('href');
+      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      return false;
+    });
+  });
+
+  /* Открытие / закрытие модалок (кроме карты) */
+  $('a.open-modal').click(function(event){
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(_href).addClass('active');
+    $(_href + ' .modal__content').addClass('visible');
+  });
+
+  function closeModal() {
+    $('.modal').removeClass('active');
+    $('.modal__content').removeClass('visible');
+  }
+
+  $(document).mouseup(function (e) {
+    var container = $(".modal .modal__content");
+    if (container.has(e.target).length === 0){
+      closeModal();
+    }
+  });
+
+  $('.modal .close').click(function(){
+    closeModal();
+  });
+
+  $(document).keydown(function(eventObject){
+    if( eventObject.which == 27 ){
+      closeModal();
+    }
+  });
+
   $('.popular__nav a').click(function(event) {
     event.preventDefault();
     $(this).parent().addClass('active');

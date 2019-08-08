@@ -582,6 +582,91 @@
         .sandwich-page .form .text-input input {
           height: 40px; } }
 
+.modal {
+  position: relative;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  opacity: 0;
+  overflow: hidden;
+  /* media */ }
+  .modal.active {
+    display: block;
+    opacity: 1;
+    min-height: 100vh; }
+  .modal__content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 350px;
+    max-width: 100%;
+    opacity: 0;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s; }
+    .modal__content.visible {
+      opacity: 1; }
+  .modal .form {
+    max-height: 100vh;
+    overflow: auto;
+    width: 100%;
+    z-index: 0; }
+  .modal .close {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 300;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .modal .close::before, .modal .close::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: #f90;
+      border-radius: 1.5px;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+    .modal .close::before {
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          -ms-transform: translate(-50%, -50%) rotate(45deg);
+              transform: translate(-50%, -50%) rotate(45deg); }
+    .modal .close::after {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          -ms-transform: translate(-50%, -50%) rotate(-45deg);
+              transform: translate(-50%, -50%) rotate(-45deg); }
+    .modal .close:hover::before, .modal .close:hover::after {
+      background-color: #e99c02; }
+
+/* modal */
 .sandwich-page {
   /* scr1 */ }
   .sandwich-page .scr1 {

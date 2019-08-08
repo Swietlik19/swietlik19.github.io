@@ -1,0 +1,154 @@
+.popular
+  position: relative
+  padding-top: 55px
+  padding-bottom: 58px
+  &__df
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+
+    margin-top: 60px
+    margin-bottom: 13px
+  .link
+    margin-top: 15px
+    margin-bottom: 15px
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    &-item
+      min-width: 329px
+      max-width: 100%
+      margin-right: 31px
+      margin-top: 10px
+      margin-bottom: 10px
+      .btn
+        display: block
+        padding: 14px
+        border: 1.0px solid #000000
+        border-radius: 8.0px
+
+        font-size: 16px
+        line-height: 1.2
+        font-weight: 700
+        text-transform: uppercase
+        text-decoration: none
+        color: #000000
+        transition: 0.3s
+        &:hover
+          background-color: #ff0000
+          border-color: #ff0000
+          color: #fff
+      &.active
+        .btn
+          background-color: #ff0000
+          border-color: #ff0000
+          color: #fff
+
+  &__tab
+    max-height: 0
+    opacity: 0
+    transition: opacity 0.5s
+    overflow: hidden
+    &.active
+      display: block
+      max-height: 10000px
+      opacity: 1
+
+  table
+    width: 100%
+    border-collapse: collapse
+    border-left: 1px solid #cccccc
+    border-right: 1px solid #cccccc
+    border-top: 3px solid #cccccc
+    td
+      vertical-align: middle
+      text-align: center
+      border-right: 1px solid #cccccc
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      color: #000000
+      &:last-of-type
+        border-right: none
+    tbody td
+      padding-top: 13px
+      padding-bottom: 12px
+      &:first-of-type
+        font-size: 18px
+        line-height: 1.333333333333333
+        font-weight: 900
+        font-family: 'Museo Cyrl-900', sans-serif
+    tr
+      border-bottom: 3px solid #cccccc
+      &:nth-of-type(2n)
+        background-color: rgba(242,242,242,0.5)
+    thead
+      td
+        background-color: rgba(31,63,105,0.3)
+        padding: 13px 10px 10px
+        .small
+          display: block
+          margin-top: 3px
+          font-size: 14px
+          text-transform: none
+    .top
+      display: block
+      padding-bottom: 10px
+      border-bottom: 1px solid #ccc
+    .bottom
+      display: block
+      padding-top: 10px
+  /* media */
+
+  @media screen and (max-width: 768px)
+    &__nav
+      &-item
+        min-width: 0
+        margin-right: 10px
+        .btn
+          font-size: 14px
+
+  // max-width 768px
+
+  @media screen and (max-width: 650px)
+    &__table
+      overflow: auto
+      max-width: 100%
+    table
+      th,td
+        font-size: 13px
+      td
+        &:first-of-type
+          font-size: 16px
+  // max-width 650px
+
+  @media screen and (max-width: 576px)
+    padding-top: 15px
+    padding-bottom: 28px
+    &__df
+      flex-direction: column
+      align-items: flex-start
+      margin-top: 20px
+    &__nav
+      width: 100%
+      flex-direction: column
+      &-item
+        width: 100%
+        margin: 0
+        margin-bottom: 8px
+  // max-width 576px
+
+  @media screen and (max-width: 500px)
+    table
+      td
+        &:first-of-type
+          font-size: 14px
+  // max-width 500px
+
+/* popular */

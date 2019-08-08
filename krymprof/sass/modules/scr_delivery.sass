@@ -1,0 +1,121 @@
+.delivery
+  position: relative
+  padding-top: 63px
+  padding-bottom: 44px
+  &__slider
+    margin-top: 82px
+  &__slides
+    display: flex
+  &__slide
+    width: calc( (100% - 60px) / 3)
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+  &__item
+    position: relative
+    padding: 54px 20px 50px 30px
+    box-shadow: 0px 0px 25px 0px rgba(111,115,123,0.3)
+    border-radius: 6.0px
+    height: 100%
+    ul
+      margin: 0
+      padding: 0
+      li
+        font-size: 14px
+        line-height: 30px
+        color: #000000
+    &:hover
+      .delivery__icon
+        transform: rotateY(180deg)
+  .title--underlined
+    &::after
+      left: 0
+  &__icon
+    position: absolute
+    top: -35px
+    left: 30px
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    width: 70px
+    height: 70px
+    background-color: #fff
+    border-radius: 50%
+    z-index: 1
+    transition: 0.8s
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 22px)
+      left: calc(50% - 22px)
+
+      display: block
+      width: 45px
+      height: 45px
+      background-color: #1f3f69
+      border-radius: 50%
+      z-index: 1
+    .icon
+      position: relative
+      width: 30px
+      height: 30px
+      fill: #fff
+      z-index: 2
+
+
+  /* media */
+
+  @media screen and (max-width: 992px)
+    &__slide
+      width: calc( (100% - 40px) / 3)
+      margin-right: 20px
+    &__item
+      ul
+        li
+          line-height: 1.4
+          font-size: 13px
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__item
+      padding: 44px 10px 30px 25px
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    padding-top: 24px
+    padding-bottom: 20px
+    &__slider
+      margin-top: 42px
+
+  // max-width 576px
+
+  @media screen and (max-width: 630px)
+    &__slider
+      width: calc(100% + 20px)
+      margin-left: -10px
+      margin-top: 0
+    &__slide
+      margin: 0
+      padding: 30px 10px 15px
+    &__item
+      h3
+        font-size: 16px
+
+  // max-width 630px
+
+  @media screen and (max-width: 400px)
+    &__item
+      ul
+        li
+          font-size: 12px
+    &__slide
+      padding-left: 5px
+      padding-right: 5px
+
+  // max-width 400px
+
+/* delivery */

@@ -873,7 +873,7 @@
     height: 70px;
     background-color: #f2f2f2;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 10;
     -webkit-transition: 0.8s;
     -o-transition: 0.8s;
     transition: 0.8s; }
@@ -889,11 +889,12 @@
       height: 45px;
       background-color: #1f3f69;
       border-radius: 50%;
-      z-index: -1; }
+      z-index: 1; }
     .advantages__icon .icon {
       width: 30px;
       height: 30px;
-      fill: #fff; }
+      fill: #fff;
+      z-index: 2; }
   @media screen and (max-width: 768px) {
     .advantages .title--underlined {
       margin-bottom: 20px;
@@ -937,7 +938,11 @@
         padding: 10px;
         padding-top: 30px;
         margin-right: 0;
-        margin-bottom: 0; } }
+        margin-bottom: 0; }
+      .advantages__item:hover .advantages__icon {
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none; } }
   @media screen and (max-width: 400px) {
     .advantages .title--underlined {
       font-size: 12px; }
@@ -1176,7 +1181,8 @@
                 flex-direction: column; }
         .popular__nav-item {
           width: 100%;
-          margin: 0; } }
+          margin: 0;
+          margin-bottom: 8px; } }
   @media screen and (max-width: 500px) {
     .popular table td:first-of-type {
       font-size: 14px; } }
@@ -1694,11 +1700,13 @@
       height: 45px;
       background-color: #1f3f69;
       border-radius: 50%;
-      z-index: -1; }
+      z-index: 1; }
     .delivery__icon .icon {
+      position: relative;
       width: 30px;
       height: 30px;
-      fill: #fff; }
+      fill: #fff;
+      z-index: 2; }
   @media screen and (max-width: 992px) {
     .delivery__slide {
       width: -webkit-calc( (100% - 40px) / 3);
@@ -1709,7 +1717,7 @@
       font-size: 13px; } }
   @media screen and (max-width: 768px) {
     .delivery__item {
-      padding: 44px 10px 30px 20px; } }
+      padding: 44px 10px 30px 25px; } }
   @media screen and (max-width: 576px) {
     .delivery {
       padding-top: 24px;

@@ -1,0 +1,665 @@
+@keyframes video
+  0%
+    box-shadow: 0 0 15px rgba(#007da0,0.44)
+  70%
+    box-shadow: 0 0 60px rgba(#007da0,0.9)
+  100%
+    box-shadow: 0 0 15px rgba(#007da0,0.44)
+
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 320px
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.2
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain-bottom]
+  object-fit: contain
+  object-position: bottom left
+  font-family: 'object-fit: contain; object-position: bottom left;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.yellow
+  color: $accent2
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+.title
+  font-size: 48px
+  line-height: 1.041666666666667 /* 50px / 48px5050 */
+  font-weight: 300
+  color: #6f6f6e
+  text-align: center
+  strong
+    font-weight: 700
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  font-size: 13px
+  line-height: 1.2
+  font-weight: 400
+  text-transform: uppercase
+  color: #007da0
+  transition: 0.3s
+  &:hover
+    color: $accent2
+
+.btn__wrap
+  position: relative
+  display: inline-block
+  transition: 0.3s
+  &--yellow
+    box-shadow: 2px 4px 15px 0px rgba(87,51,0,0.2)
+    background-image: linear-gradient(180.0deg, #ffd016 0%, #dc870d 100%)
+    background-color: #b76c00
+    border-radius: 35.0px
+    &::before
+      content: ''
+      position: absolute
+      bottom: -10px
+      left: 1px
+
+      display: block
+      box-shadow: 2px 4px 30px 0px rgba(220,134,12,0.88)
+      width: calc(100% - 2px)
+      height: 70px
+      background-color: #b76c00
+      border-radius: 35.0px
+      z-index: -1
+      transition: 0.3s
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: -20px
+      transform: translateX(-50%)
+
+      display: block
+      width: 90%
+      height: 5px
+      background-color: rgba(0,0,0,0.25)
+      box-shadow: 0 0 13px 16px rgba(0,0,0,0.25)
+      border-radius: 20%
+      z-index: -2
+    .btn
+      padding: 22px 48px
+      text-shadow: 0px 1px 1px rgba(3,2,0,0.4)
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 700
+      color: #ffffff
+    &:hover
+      background: rgba(220,134,12,0.88)
+      &::before
+        box-shadow: 2px 4px 40px 0px rgba(220,134,12,0.88)
+  &--simple
+    box-shadow: 2px 4px 18px 0px rgba(207,145,0,0.44)
+    background-image: linear-gradient(180.0deg, #ffd016 0%, #dc870d 100%)
+    border-radius: 23.5px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 1px
+      left: 1px
+
+      display: none
+      width: calc(100% - 2px)
+      height: calc(100% - 2px)
+      background-color: #fff
+      border-radius: 23.5px
+      z-index: -1
+      transition: 0.3s
+
+    .btn
+      padding: 14px 32px
+      text-shadow: 0px 1px 1px rgba(3,2,0,0.4)
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 700
+      color: #ffffff
+    input[type="submit"]
+      padding: 16px 52px
+      font-size: 18px
+    &:hover
+      &::before
+        display: block
+      .btn
+        color: #dc870d
+        text-shadow: none
+  &--radius
+    border-radius: 26px
+    &::before
+      border-radius: 26px
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+  display: block
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.btn
+  &--circled
+    display: flex
+    align-items: center
+    justify-content: center
+
+    width: 46px
+    height: 46px
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 23px)
+      left: calc(50% - 23px)
+
+      display: block
+      width: 46px
+      height: 46px
+      background: transparent url('../img/svg/circle-menu.svg') no-repeat center center
+      background-size: contain
+      transition: 0.9s
+    &:hover
+      &::before
+        transform: rotate(360deg)
+
+.menu-arrow
+  position: absolute
+  right: -30px
+  top: 1px
+  background: none
+  outline: none
+  border: none
+
+  display: none
+  width: 25px
+  height: 25px
+  cursor: pointer
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 8px)
+    left: calc(50% - 5px)
+
+    display: block
+    width: 10px
+    height: 10px
+    border-bottom: 2px solid $accent
+    border-left: 2px solid $accent
+    transform: rotate(-45deg)
+    transition: 0.3s
+  &.active
+    &::before
+      top: calc(50% - 5px)
+      transform: rotate(135deg)
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+    width: 29px
+    height: 35px
+    margin-right: 23px
+  &__text
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    color: $accent
+
+  &.circled
+    .burger__wrap
+      margin-right: 0
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 23px)
+      left: calc(50% - 23px)
+
+      display: block
+      width: 46px
+      height: 46px
+      background: transparent url('../img/svg/circle-menu.svg') no-repeat center center
+      background-size: contain
+      transition: 0.9s
+    &:hover
+      &::before
+        transform: rotate(360deg)
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+        &,
+        &:before,
+        &:after
+          width: 16px
+  &:not(.active):hover
+    .burger__wrap
+      .line
+        &,
+        &:before,
+        &:after
+          background-color: darken($accent,10%)
+    .burger__text
+      color: darken($accent,10%)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 29px
+      height: 2px
+      background-color: #007da0
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-8px)
+    &::after
+      transform: translateY(8px)
+
+.video
+  position: absolute
+  bottom: 142px
+  right: 0
+
+  display: block
+  width: 107px
+  height: 107px
+  text-decoration: none
+  &__text
+    position: absolute
+    bottom: 15px
+    left: calc(-16px - 100%)
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 300
+    color: #ffffff
+    width: 130px
+    .svg-text
+      position: absolute
+      left: 0
+      bottom: -12px
+
+      display: block
+      width: 100%
+      height: 35px
+    strong
+      font-weight: 700
+  .outer
+    width: 100%
+    height: 100%
+
+    transition: 1.3s
+  &__inner
+    position: absolute
+    top: calc(50% - 37px)
+    left: calc(50% - 37px)
+
+    width: 74px
+    height: 74px
+    border-radius: 50%
+    box-shadow: 0 0 15px rgba(#007da0,0.44)
+    animation: video 3s linear infinite both
+    .inner
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      display: block
+      width: 143px
+      height: 143px
+  &__play
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    width: 0
+    height: 0
+    border-top: 6px solid transparent
+    border-left: 10px solid #fff
+    border-bottom: 6px solid transparent
+  &:hover
+    .outer
+      transform: rotate(360deg)
+
+.bg-pixels
+  position: relative
+  z-index: 1
+
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+
+    display: block
+    width: 100%
+    height: 100%
+    background: transparent url('../img/svg/bg.svg') no-repeat top left
+    background-size: auto 805px
+    z-index: -2
+    opacity: 0.3
+
+  &::before
+    left: 0
+  &::after
+    right: 0
+    transform: rotateY(180deg)
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane']
+  display: none
+
+/* Переопределение стилей slick */
+.slick-slide
+  -webkit-backface-visibility: hidden
+  outline: none
+
+.slider1
+  .slick-arrow
+    background: none
+    border: none
+    outline: none
+
+    position: absolute
+    top: calc(50% - 60px)
+    z-index: 100
+    cursor: pointer
+    font-size: 0
+    transition: 0.3s
+
+    display: block
+    box-shadow: 5px 9px 20px 0px rgba(177,177,177,0.4)
+    width: 60px
+    height: 60px
+    background-color: #ffffff
+    border-radius: 50%
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 5px)
+
+      display: block
+      width: 11px
+      height: 11px
+      border-bottom: 3px solid $accent
+      border-left: 3px solid $accent
+    &:hover
+      box-shadow: 5px 3px 60px 0px rgba(177,177,177,0.7)
+
+  .slick-prev
+    left: 24px
+    &::before
+      left: calc(50% - 4px)
+      transform: rotate(45deg)
+
+  .slick-next
+    right: 24px
+    &::before
+      right: calc(50% - 4px)
+      transform: rotate(-135deg)
+
+.slick-dots
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  font-size: 0
+  li
+    margin-right: 13px
+    &:last-of-type
+      margin-right: 0
+    button
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 10px
+      height: 10px
+      background-color: $accent
+      border-radius: 50%
+      transition: 0.3s
+
+    &.slick-active
+      button
+        background-color: $accent2
+
+    &:not(.slick-active)
+      button
+        cursor: pointer
+
+.slider1
+  position: relative
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+@media screen and (max-width: 1070px)
+  .burger
+    &__text
+      display: none
+    &__wrap
+      margin-right: 0
+// max-width 1070px
+
+// @media screen and (max-width: 992px)
+
+// max-width 992px
+
+// @media screen and (max-width: 900px)
+
+// max-width 900px
+
+@media screen and (max-width: 768px)
+  .title
+    font-size: 38px
+
+// max-width 768px
+
+@media screen and (max-width: 576px)
+  .title
+    font-size: 28px
+  .btn__wrap
+    &--yellow
+      &::before
+        height: 59px
+        bottom: -7px
+      .btn
+        padding: 18px 38px
+        font-size: 16px
+  .video
+    width: 87px
+    height: 87px
+    &__text
+      width: 106px
+      font-size: 12px
+    &__inner
+      top: calc(50% - 27px)
+      left: calc(50% - 27px)
+      width: 54px
+      height: 54px
+      .inner
+        width: 123px
+        height: 123px
+    .svg-text
+      height: 29px
+      bottom: -8px
+
+// max-width 576px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .title
+    font-size: 22px
+    br
+      display: none
+  .btn
+    &--circled
+      width: 36px
+      height: 36px
+      &::before
+        width: 36px
+        height: 36px
+        left: calc(50% - 18px)
+        top: calc(50% - 18px)
+  .burger
+    &.circled
+      &::before
+          width: 36px
+          height: 36px
+          left: calc(50% - 18px)
+          top: calc(50% - 18px)
+    &__wrap
+      width: 20px
+    .line
+      &,
+      &::before,
+      &::after
+        width: 20px
+
+  .btn__wrap
+    &--yellow
+      &::before
+        height: 59px
+        bottom: -7px
+      .btn
+        padding: 18px 25px
+        font-size: 14px
+  .slick-dots
+    li
+      margin-right: 5px
+      button
+        width: 5px
+        height: 5px
+
+// max-width 400px

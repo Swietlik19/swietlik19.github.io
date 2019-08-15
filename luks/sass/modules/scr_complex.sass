@@ -1,0 +1,156 @@
+.complex
+  position: relative
+  padding-top: 30px
+  padding-bottom: 39px
+  background: #f7f7f7 url('../img/bg-complex.jpg') no-repeat top center
+  background-size: cover
+  z-index: 1
+  overflow: hidden
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 30px
+    margin-bottom: 59px
+    &-item
+      margin-right: 2px
+      &:last-of-type
+        margin-right: 0
+      a
+        display: block
+        min-width: 165px
+        padding: 18px 20px
+        box-shadow: 3px 6px 9px 0px rgba(171,171,175,0.3)
+        background-color: #fefefe
+        font-size: 16px
+        line-height: 1.2
+        font-weight: 400
+        color: $accent
+        text-align: center
+        text-decoration: none
+        transition: 0.3s
+        &:hover
+          background-color: $accent
+          color: #fff
+      &.active
+        a
+          background-color: $accent
+          color: #fff
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    transition: 0.3s
+    &:not(#complex_tab_0)
+      display: none
+  &__df
+    display: flex
+    justify-content: space-between
+  &__btn
+    display: flex
+    width: calc(50% - 15px)
+    padding-top: 395px
+    padding-right: 62px
+    padding-bottom: 20px
+    .btn__wrap
+      margin-top: auto
+      margin-left: auto
+  &__content
+    position: relative
+    width: calc(50% - 15px)
+
+  &__feat
+    margin: 0
+    padding: 0
+    list-style: none
+
+    padding-left: 136px
+    &-item
+      position: relative
+      margin-bottom: 50px
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: -81px
+
+        display: block
+        box-shadow: 5px 9px 20px 0px rgba(177,177,177,0.4)
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background: #fff url('../img/tick.png') no-repeat center center
+        background-size: 33px 23px
+      .accent
+        font-weight: 700
+
+
+  /* media */
+  @media screen and (max-width: 1170px)
+    &__feat
+      padding-left: 76px
+      &-item
+        br
+          display: none
+
+  // max-width 1170px
+
+  @media screen and (max-width: 992px)
+    &__feat
+      padding-left: 56px
+      &-item
+        margin-bottom: 20px
+        font-size: 14px
+        &::before
+          width: 40px
+          height: 40px
+          background-size: 24px 17px
+          left: -55px
+    &__btn
+      padding-top: 265px
+      padding-right: 0
+      .btn__wrap
+        margin-left: auto
+        margin-right: auto
+      .btn
+        padding-left: 30px
+        padding-right: 30px
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    background-image: url('../img/bg-complex--mobile.jpg')
+    background-position: top right
+    &__nav
+      margin-bottom: 40px
+    &__df
+      flex-direction: column
+    &__content
+      width: 100%
+    &__btn
+      padding-top: 40px
+      width: 100%
+      order: 2
+
+  // max-width 768px
+
+  @media screen and (max-width: 650px)
+    &__nav
+      flex-direction: column
+      &-item
+        width: 100%
+        margin: 2px 0
+        a
+          padding-top: 12px
+          padding-bottom: 12px
+
+  // max-width 650px
+
+/* complex */

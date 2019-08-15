@@ -1,0 +1,145 @@
+.features
+  position: relative
+  padding-top: 48px
+  padding-bottom: 49px
+
+  &__wrap
+    position: relative
+    margin-top: 46px
+    z-index: 1
+
+  &__bg
+    position: absolute
+    top: 0
+    left: 170px
+
+    width: 744px
+    height: 382px
+    z-index: -1
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+
+    flex-wrap: wrap
+    justify-content: space-between
+    padding-top: 90px
+  &__item
+    transition: 0.3s
+    &:first-of-type
+      width: 49%
+      padding-left: 83px
+      margin-bottom: 95px
+    &:nth-of-type(2)
+      width: 49%
+      display: flex
+      justify-content: flex-end
+    &:nth-of-type(3)
+      margin-right: 194px
+      margin-left: auto
+      padding-left: 75px
+    &:nth-of-type(4)
+      margin-right: auto
+    &:hover
+      transform: translateY(-5px)
+      .features__num
+        &::before
+          transform: rotate(360deg)
+
+  &__num
+    position: relative
+    display: inline-block
+    margin-bottom: 17px
+    font-family: 'BebasNeueBook', sans-serif
+    font-size: 100px
+    line-height: 1.1
+    font-weight: 400
+    color: #6f6f6e
+    &::before
+      content: ''
+      position: absolute
+      top: -21px
+      left: calc(50% - 72px)
+
+      display: block
+      width: 145px
+      height: 145px
+      background: transparent url('../img/svg/circle-feat.svg') no-repeat center center
+      background-size: contain
+      transition: 0.9s
+  &__text
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 400
+    .accent
+      font-weight: 700
+
+  /* media */
+  @media screen and (max-width: 1170px)
+    &__bg
+      left: 130px
+      width: 674px
+      height: 282px
+    &__item
+      &:first-of-type
+        margin-bottom: 45px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 992px)
+    &__bg
+      display: none
+    &__list
+      padding-top: 10px
+    &__item
+      width: calc(25% - 10px) !important
+      padding-left: 15px !important
+      margin: 0 !important
+      &:nth-of-type(2)
+        display: block
+    &__num
+      margin-bottom: 11px
+      font-size: 70px
+      &::before
+        top: -10px
+        left: calc(50% - 52px)
+        width: 105px
+        height: 105px
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__item
+      width: calc(50% - 10px) !important
+      margin-bottom: 30px !important
+
+  // max-width 768px
+
+  @media screen and (max-width: 500px)
+    padding: 25px 0
+    &__wrap
+      margin-top: 26px
+    &__num
+      margin-bottom: 7px
+      font-size: 50px
+      &::before
+        top: -6px
+        left: calc(50% - 33px)
+        width: 65px
+        height: 65px
+    &__text
+      font-size: 14px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__item
+      padding-left: 0 !important
+    &__text
+      br
+        display: none
+
+  // max-width 400px
+
+/* features */

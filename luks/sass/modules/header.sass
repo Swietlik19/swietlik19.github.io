@@ -1,0 +1,331 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+
+  width: 100%
+  height: 98px
+  background-color: #ffffff
+  z-index: 50
+  transition: 0.5s
+  &.fixed
+    height: 68px
+    box-shadow: 0 0 30px rgba($accent, 0.1)
+    .logo
+      width: 67px
+      height: 45px
+
+  &__wrap
+    .burger
+      margin-right: 47px
+
+  &__text
+    font-size: 13px
+    line-height: 1.2
+    font-weight: 400
+    color: #b1b1b1
+    strong
+      font-weight: 700
+
+  .container
+    height: 100%
+  .row
+    height: 100%
+  &__wrap
+    height: 100%
+    display: flex
+    align-items: center
+
+    &--last
+      justify-content: flex-end
+
+  .logo
+    display: block
+    width: 117px
+    height: 85px
+    text-decoration: none
+    transition: 0.3s
+    &__wrap
+      margin: 0 auto
+
+  &__address
+    margin-right: 42px
+  &__phones
+    &-link
+      display: block
+      font-size: 19px
+      line-height: 1.2
+      font-weight: 400
+      color: #6f6f6e
+      text-decoration: none
+      transition: 0.3s
+      strong
+        font-weight: 700
+      &:hover
+        color: $accent
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    &.menu--first
+      display: flex
+      justify-content: space-between
+      width: calc(50% - 15px)
+      padding-right: 30px
+      padding-left: 25px
+      margin-right: 30px
+      & > li
+        margin-right: 15px
+        &:last-of-type
+          margin-right: 0
+    &.menu--last
+      margin-right: 15px
+
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-left: 2px
+    & > li
+      & > a
+        position: relative
+        display: inline-block
+        margin-bottom: 19px
+        text-decoration: none
+        font-size: 14px
+        line-height: 1.428571428571429 /* 20 / 14 */
+        font-weight: 400
+        color: #666666
+        transition: 0.3s
+        &::after
+          content: ''
+          position: absolute
+          bottom: -2px
+          left: 0
+
+          display: block
+          width: 100%
+          height: 1px
+          background-color: #666
+          transform: scale(0)
+          transition: 0.3s
+        &:hover
+          color: $accent
+          &::after
+            background-color: $accent
+            transform: scale(1)
+
+  .main-menu
+    display: flex
+    width: 100%
+    .menu
+      & > li
+        position: relative
+        & > a
+          position: relative
+          display: block
+          margin-bottom: 22px
+          font-family: 'BebasNeueRegular'
+          font-size: 24px
+          line-height: 1.2
+          font-weight: 400
+          color: $accent
+          text-transform: uppercase
+          text-decoration: none
+          transition: 0.3s
+          &:hover
+            color: $accent2
+
+  &__nav
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    background: #f7f7f7 url('../img/bg.jpg') no-repeat top center
+    background-size: cover
+    z-index: 150
+    padding-top: 25px
+    padding-bottom: 20px
+    transform: translateY(-100%)
+    transition: 0.5s
+    max-height: 100vh
+    overflow: auto
+    &::before,
+    &::after
+      background-size: auto 200%
+    &.active
+      transform: translateY(0)
+      transition: 0.9s
+    &-top
+      display: flex
+      justify-content: space-between
+      margin-bottom: 38px
+    &-bottom
+      display: flex
+      justify-content: space-between
+    &-right
+      display: flex
+      justify-content: space-between
+      width: calc(50% - 15px)
+  .nav-phones
+    display: flex
+    align-items: center
+    &__btn
+      margin-right: 11px
+      .fa
+        font-size: 16px
+        color: $accent
+    &__link
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 400
+      color: $accent
+      text-decoration: none
+      transition: 0.3s
+      strong
+        font-weight: 700
+      &:hover
+        color: $accent2
+  .nav-links
+    padding-right: 19px
+    &__link
+      display: flex
+      align-items: center
+      text-decoration: none
+      margin-bottom: 48px
+      &:last-of-type
+        margin-bottom: 0
+      &:hover
+        .nav-links__text
+          color: $accent
+
+    &__icon
+      width: 25px
+      height: 25px
+      margin-right: 17px
+    &__text
+      position: relative
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 700
+      color: #666666
+      transition: 0.3s
+      &::after
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+
+        display: block
+        width: 100%
+        height: 1px
+        background-color: $accent
+  .mobile
+    display: none
+
+
+  /* media */
+  @media screen and (max-width: 1070px)
+    &__nav
+      background-image: url('../img/bg--mobile.jpg')
+    &__address
+      display: none
+    &__wrap
+      .burger
+        margin-right: 15px
+  // max-width 1070px
+
+  @media screen and (max-width: 992px)
+    &__nav
+      .sub-menu
+        display: none
+      &-right
+        width: 70%
+    .menu-arrow
+      display: block
+    .menu
+      &.menu--first
+        width: 30%
+        flex-direction: column
+        justify-content: flex-start
+    .main-menu
+      .menu
+        & > li
+          margin-right: 0
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    height: 68px
+    .mobile
+      display: block
+    .desktop
+      display: none
+    .logo__wrap
+      margin-left: auto
+    .logo
+      width: 67px
+      height: 45px
+    .menu
+      &.menu--first
+        width: 170px
+        padding: 0
+
+    &__nav
+      background-position: center right
+      .main-menu
+        flex-direction: column
+      &-right
+        width: 100%
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    &__text
+      font-size: 11px
+    &__nav
+      padding-top: 15px
+      &-top
+        margin-bottom: 18px
+      &-right
+        flex-direction: column
+    .nav-links
+      &__link
+        margin-bottom: 10px
+      &__text
+        font-size: 14px
+    .main-menu
+      .menu
+        & > li
+          & > a
+            margin-bottom: 12px
+            font-size: 18px
+      .sub-menu
+        padding-bottom: 15px
+        & > li
+          & > a
+            margin-bottom: 6px
+
+  // max-width 576px
+
+  @media screen and (max-width: 450px)
+    .logo,
+    &.fixed .logo
+      width: 49px
+      height: 32px
+
+  // max-width 450px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      .burger
+        margin-right: 10px
+      &__text
+        font-size: 10px
+        br
+          display: none
+
+  // max-width 400px
+
+/* .header */

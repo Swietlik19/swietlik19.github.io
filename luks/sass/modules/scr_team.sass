@@ -1,0 +1,252 @@
+.team
+  position: relative
+  padding-top: 38px
+  padding-bottom: 32px
+
+  &__wrap
+    position: relative
+    margin-top: 42px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    flex-wrap: wrap
+    width: calc(100% + 68px)
+    margin-left: -7px
+  &__item
+    width: calc( (100% - 25px) / 6 )
+    margin-right: 5px
+    &:nth-of-type(6),
+    &:nth-of-type(17)
+      margin-right: 0
+    &:nth-of-type(n + 7)
+      margin-top: -53px
+    &:nth-of-type(7)
+      margin-left: 101px
+    &--with-img
+      opacity: 0.5
+      transition: 0.3s
+      cursor: pointer
+      &:hover
+        opacity: 1
+    svg
+      display: block
+      max-width: 100%
+      width: 100%
+      height: auto
+
+  &__big
+    position: absolute
+    left: 37.98245614035088%
+    bottom: 30px
+    width: 335px
+    z-index: 40
+    .with-cite
+      position: relative
+      height: 488px
+      .outer
+        width: 100%
+        height: auto
+    .without-cite
+      height: 389px
+
+
+  svg.inner
+    position: absolute
+    bottom: -14px
+    left: 0
+    width: 100%
+    height: 389px
+    z-index: -1
+    filter: drop-shadow(0 10px 15px rgb(171, 172, 176))
+
+  &__name
+    position: absolute
+    bottom: -46px
+    right: 0
+
+    display: block
+    width: 170px
+    height: 200px
+    padding-top: 33px
+    text-align: center
+    z-index: 1
+    &-bg
+      position: absolute
+      top: calc(50% - 50px)
+      left: 0
+
+      display: block
+      width: 100%
+      height: 100px
+      background: $accent
+      z-index: -1
+      &:before,
+      &:after
+        content: ""
+        width: 0
+        height: 0
+        position: absolute
+        left: 0
+        border-left: 85px solid transparent
+        border-right: 85px solid transparent
+
+      &:before
+        top: -50px
+        border-bottom: 50px solid $accent
+
+      &:after
+        bottom: -50px
+        border-top: 50px solid $accent
+
+  &__title
+    margin-bottom: 12px
+    font-family: 'BebasNeueRegular'
+    font-size: 30px
+    line-height: 1.2
+    font-weight: 400
+    color: #ffffff
+  &__occ
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 300
+    color: #ffffff
+
+  .team__item
+    .team__info
+      display: none
+
+  &__big
+    display: none
+  .with-cite
+    display: none
+  .without-cite
+    display: none
+
+  &__cite
+    position: relative
+    display: none
+    width: 617px
+    max-width: 100%
+    margin-top: 37px
+    margin-right: 140px
+    margin-left: auto
+    &::before
+      content: '“'
+      position: absolute
+      top: -80px
+      left: -2px
+
+      font-family: $font
+      font-size: 146.7px
+      line-height: 1.2
+      font-weight: 700
+      color: $accent
+
+
+  /* media */
+  @media screen and (max-width: 1300px)
+    &__list
+      width: 100%
+      margin-left: 0
+  // max-width 1300px
+
+  @media screen and (max-width: 1070px)
+    &__cite
+      &::before
+        top: -50px
+        font-size: 100px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 992px)
+    &__big
+      bottom: -30px
+      width: 265px
+      .with-cite
+        height: 412px
+        .inner
+          height: 349px
+          bottom: 12px
+    &__name
+      bottom: -16px
+      width: 136px
+      height: 151px
+      &-bg
+        height: 80px
+        &::before,
+        &::after
+          border-width: 68px
+        &::before
+          top: -30px
+          border-bottom-width: 30px
+
+        &::after
+          bottom: -30px
+          border-top-width: 30px
+
+    &__title
+      margin-bottom: 9px
+      font-size: 17px
+    &__occ
+      font-size: 14px
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__wrap
+      &.active
+        min-height: 280px
+    &__title
+      margin-bottom: 5px
+      font-size: 15px
+    &__occ
+      font-size: 13px
+    &__big
+      left: 50%
+      transform: translateX(-50%)
+      width: 180px
+      .with-cite
+        height: 320px
+        .inner
+          height: 219px
+          bottom: 52px
+        .team__name
+          bottom: 30px
+
+    &__name
+      bottom: 52px
+      width: 100px
+      height: 130px
+      &-bg
+        height: 60px
+        top: calc(50% - 30px)
+        &::before,
+        &::after
+          border-width: 50px
+        &::before
+          top: -30px
+          border-bottom-width: 30px
+
+        &::after
+          bottom: -30px
+          border-top-width: 30px
+
+  // max-width 768px
+
+  @media screen and (max-width: 500px)
+    &__cite
+      font-size: 14px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    padding-bottom: 20px
+    &__wrap
+      &.active
+        min-height: 260px
+
+  // max-width 400px
+
+/* team */

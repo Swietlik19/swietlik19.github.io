@@ -55,8 +55,15 @@
   });
 
   function closeModal() {
-    $('.modal').removeClass('active');
-    $('.modal__content').removeClass('visible');
+    var activeCount = $('.modal.active').length;
+    if ( activeCount > 1 ) {
+
+      $($('.modal.active')[activeCount - 1]).removeClass('active');
+      $('.modal__callback2 .modal__content').removeClass('visible');
+    } else {
+      $('.modal').removeClass('active');
+      $('.modal__content').removeClass('visible');
+    }
   }
 
   $(document).mouseup(function (e) {

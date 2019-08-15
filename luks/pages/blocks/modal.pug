@@ -95,7 +95,6 @@ mixin modal__price()
     // /. modal__content
   // /. modal__price
 
-
 mixin modal__project()
   section.modal.modal__project(id="modal__project")
     .modal-project__content.modal__content.bg-pixels
@@ -173,7 +172,140 @@ mixin modal__project()
 
             .btns__wrap
               .btn__wrap.btn__wrap--simple
-                a.btn(href="#") Записаться на экскурсию
+                a.btn.open-modal(href="#modal__callback2") Записаться на экскурсию
 
     // /. modal__content
   // /. modal__project
+
+mixin modal__order()
+  section.modal.modal__order(id="modal__order")
+    .modal__content
+      button.close
+
+      .form.wpcf7
+        form.wpcf7-form
+          p.form__title Заполните форму
+            br
+            small  и получите индивидуальный
+              br
+              |  просчет ремонта
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-user")
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-phone")
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--simple.btn__wrap--radius
+              input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Заказать просчёт')
+
+          .form__item
+            span.wpcf7-form-control-wrap.accept
+              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                span.wpcf7-list-item
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
+                      i.accept__icon
+
+      // /. form
+    // /. modal__content
+  // /. modal
+
+mixin modal__get()
+  section.modal.modal__get(id="modal__get")
+    .modal__content
+      button.close
+
+      .form.wpcf7
+        form.wpcf7-form
+          p.form__title заполните форму
+            br
+            small  и получите индивидуальный
+              br
+              |  дизайн-проект
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-user")
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-phone")
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--simple.btn__wrap--radius
+              input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Получить дизайн-проект')
+
+          .form__item
+            span.wpcf7-form-control-wrap.accept
+              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                span.wpcf7-list-item
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
+                      i.accept__icon
+
+      // /. form
+    // /. modal__content
+  // /. modal
+
+mixin modal__callback2()
+  section.modal.modal__callback2(id="modal__callback2")
+    .modal-callback__content.modal__content
+      button.close
+
+      .form.wpcf7
+        form.wpcf7-form
+          p.form__title Заполните форму
+            br
+            small  и наш специалист
+              br
+              |  перезвонит Вам
+
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-user")
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+              i.input-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#form-phone")
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--simple.btn__wrap--radius
+              input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Перезвоните мне')
+
+          .form__item
+            span.wpcf7-form-control-wrap.accept
+              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                span.wpcf7-list-item
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
+                      i.accept__icon
+
+      // /. form
+    // /. modal__content
+  // /. modal__callback

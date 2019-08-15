@@ -76,7 +76,7 @@
 
   $(document).mouseup(function (e) {
     var container = $(".team__wrap");
-    if (container.has(e.target).length === 0){
+    if (container.has(e.target).length === 0 && $(".scr_team").has(e.target).length > 0 ){
       $('.team__big').hide();
       $('.without-cite').hide();
       $('.with-cite').hide();

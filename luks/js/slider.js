@@ -104,6 +104,38 @@
     ]
   });
 
+  $('#team__slider .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 4,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: '#team__slider .slider1__dots',
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: '#team__slider .slider1__dots',
+        }
+      }
+    ]
+  });
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');

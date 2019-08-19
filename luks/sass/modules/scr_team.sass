@@ -38,6 +38,7 @@
       height: auto
 
   &__big
+    flex-shrink: 0
     position: absolute
     left: 37.98245614035088%
     bottom: 30px
@@ -114,14 +115,10 @@
     font-weight: 300
     color: #ffffff
 
-  .team__item
+  &__item
     .team__info
       display: none
 
-  &__big
-    // display: none
-  .with-cite
-    // display: none
   .without-cite
     display: none
 
@@ -144,7 +141,14 @@
       line-height: 1.2
       font-weight: 700
       color: $accent
-
+  &__df
+    display: flex
+  &__event
+    margin-bottom: 30px
+  &__year
+    margin-bottom: 5px
+    font-family: $font2
+    font-size: 48px
 
   /* media */
   @media screen and (max-width: 1300px)
@@ -284,3 +288,118 @@
   // max-width 400px
 
 /* team */
+
+
+.team
+  &--team-page
+    padding-top: 0
+    padding-bottom: 48px
+    .nav--about
+      margin-top: 0
+    .team__big
+      position: static
+      margin-right: 120px
+      padding-top: 30px
+    .title
+      margin-bottom: 36px
+      text-align: left
+    .team__slider
+      max-width: 1077px
+      margin-top: 30px
+      margin-left: auto
+      margin-right: auto
+      .slick-arrow
+        top: 90px
+      .slick-prev
+        left: -96px
+      .slick-next
+        right: -96px
+    .team__slide
+      padding: 10px 35px
+    .team__img
+      svg
+        width: 100%
+        height: auto
+        margin-bottom: 10px
+    .team__person
+      .team__title
+        color: $accent
+      .team__occ
+        color: $accent
+      .team__info
+        display: block
+        margin-right: -30px
+
+    @media screen and (max-width: 1300px)
+      .team__slider
+        .slick-prev
+          left: -56px
+        .slick-next
+          right: -56px
+
+    // max-width 1300px
+
+    @media screen and (max-width: 1200px)
+      .team__slider
+        .slick-prev
+          left: -10px
+        .slick-next
+          right: -10px
+
+    // max-width 1200px
+
+    @media screen and (max-width: 992px)
+      .team__big
+        margin-right: 30px
+      .team__event
+        margin-bottom: 15px
+      .team__year
+        font-size: 38px
+      .team__text
+        font-size: 14px
+      .title
+        margin-bottom: 26px
+
+    // max-width 992px
+
+    @media screen and (max-width: 768px)
+      .team__big
+        transform: translateX(0)
+      .team__year
+        font-size: 27px
+      .team__slide
+        padding-left: 10px
+        padding-right: 10px
+      .team__person
+        .team__title
+          font-size: 17px
+        .team__occ
+          font-size: 14px
+      .team__dots
+        margin-top: 20px
+
+    // max-width 768px
+
+    @media screen and (max-width: 500px)
+      .team__df
+        flex-direction: column
+      .team__wrap
+        margin-top: 0
+      .nav--about
+        margin-bottom: 10px
+      .team__slider
+        margin-top: 10px
+      .team__slide
+        padding-left: 5px
+        padding-right: 5px
+      .team__dots
+        margin-top: 10px
+      .team__person
+        .team__title
+          font-size: 16px
+        .team__occ
+          font-size: 13px
+
+    // max-width 500px
+
+  /* team */

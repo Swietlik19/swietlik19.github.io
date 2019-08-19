@@ -77,11 +77,11 @@
   $(document).mouseup(function (e) {
     var container = $(".team__wrap");
     if (container.has(e.target).length === 0 && $(".scr_team").has(e.target).length > 0 ){
-      $('.team__big').hide();
-      $('.without-cite').hide();
-      $('.with-cite').hide();
-      $('.team__wrap').removeClass('active');
-      $('.team__cite').hide();
+      $('#scr_team .team__big').hide();
+      $('#scr_team .without-cite').hide();
+      $('#scr_team .with-cite').hide();
+      $('#scr_team .team__wrap').removeClass('active');
+      $('#scr_team .team__cite').hide();
     }
   });
 
@@ -155,17 +155,19 @@
   makeTabs('complex');
 
   $('.projects__nav-item a').click(function(event) {
-    event.preventDefault();
-    $(this).parent().siblings().removeClass("active");
+    if ( ! $(this).parent().hasClass('without-tabs') ) {
+      event.preventDefault();
+      $(this).parent().siblings().removeClass("active");
 
-    if ( !($(this).parent().hasClass('active')) ) {
-      $(this).parent().addClass('active');
-      var tab = $(this).attr('href');
-      $('.projects__tab').not(tab).removeClass('active');
-      $(tab).addClass('active');
+      if ( !($(this).parent().hasClass('active')) ) {
+        $(this).parent().addClass('active');
+        var tab = $(this).attr('href');
+        $('.projects__tab').not(tab).removeClass('active');
+        $(tab).addClass('active');
 
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        $('html, body').animate({scrollTop: $('.projects__nav').offset().top - 40 +'px'});
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          $('html, body').animate({scrollTop: $('.projects__nav').offset().top - 40 +'px'});
+        }
       }
     }
   });
@@ -221,7 +223,7 @@
 
   sotyDistance();
 
-  $('.team__item--with-img').click(function() {
+  $('#scr_team .team__item--with-img').click(function() {
     $('.team__big').show();
     $('.team__name .team__name-wrap').empty();
     $(this).find('.team__info').clone().appendTo('.team__name .team__name-wrap');

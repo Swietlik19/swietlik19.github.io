@@ -41,6 +41,8 @@ body
 
 .page_wr
   flex-grow: 1
+  &--secondary
+    padding-top: 97px
 
 img
   width: 100%
@@ -100,6 +102,31 @@ h1,h2,h3,h4,h5,h6
   text-align: center
   strong
     font-weight: 700
+
+.title2
+  margin: 0
+  padding: 25px 0 27px
+  font-size: 36px
+  line-height: 1.2
+  font-weight: 300
+  color: #6f6f6e
+  text-align: center
+
+.text-circled
+  position: relative
+  padding-left: 30px
+  &::before
+    content: ''
+    position: absolute
+    top: 4px
+    left: 8px
+
+    display: block
+    width: 8px
+    height: 8px
+    background-color: $accent
+    border-radius: 50%
+    box-shadow: 0 0 0 6px rgba(0,125,160,0.1)
 
 .icon
   max-width: 100%
@@ -434,6 +461,13 @@ input[type="submit"]
     .outer
       transform: rotate(360deg)
 
+.secondary__wrap
+  background-color: #ffffff
+  box-shadow: 0 30px 30px -35px  rgba(0,0,0,0.15)
+
+.bg-grey
+  background-color: #f7f7f7
+
 .bg-pixels
   position: relative
   z-index: 1
@@ -549,6 +583,41 @@ input[type="submit"]
 .slider1
   position: relative
 
+.nav-links
+  padding-right: 19px
+  &__link
+    display: flex
+    align-items: center
+    text-decoration: none
+    margin-bottom: 48px
+    &:last-of-type
+      margin-bottom: 0
+    &:hover
+      .nav-links__text
+        color: $accent
+
+  &__icon
+    width: 25px
+    height: 25px
+    margin-right: 17px
+  &__text
+    position: relative
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 700
+    color: #666666
+    transition: 0.3s
+    &::after
+      content: ''
+      position: absolute
+      bottom: -2px
+      left: 0
+
+      display: block
+      width: 100%
+      height: 1px
+      background-color: $accent
+
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
   .container
@@ -578,8 +647,14 @@ input[type="submit"]
 // max-width 900px
 
 @media screen and (max-width: 768px)
+  .page_wr
+    &--secondary
+      padding-top: 67px
   .title
     font-size: 38px
+  .title2
+    padding: 15px 0 15px
+    font-size: 25px
 
 // max-width 768px
 
@@ -612,9 +687,27 @@ input[type="submit"]
       height: 29px
       bottom: -8px
 
+  .secondary__wrap
+    width: calc(100% + 30px)
+    margin-left: -15px
+
+  .nav-links
+    &__link
+      margin-bottom: 10px
+    &__text
+      font-size: 14px
+  .text-circled
+    &::before
+      width: 6px
+      height: 6px
+      box-shadow: 0 0 0 5px rgba(0, 125, 160, 0.1)
+
 // max-width 576px
 
-// @media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+  .title2
+    padding: 10px 0 11px
+    font-size: 24px
 
 // max-width 500px
 

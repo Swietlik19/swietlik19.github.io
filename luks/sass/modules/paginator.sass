@@ -9,25 +9,67 @@
   justify-content: center
   flex-wrap: wrap
   .page-numbers
-    display: flex
+    padding: 0 16px
+    font-size: 16px
+    font-weight: 400
+    text-decoration: none
+    color: $accent
 
   .page-numbers, .prev, .next
     position: relative
     text-decoration: none
     line-height: 1.2
     transition: 0.3s
-
-  .page-numbers, .prev, .next
     display: block
+  .prev, .next
+    position: relative
+    &:hover
+      color: $accent
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 6px)
+
+      display: block
+      width: 11px
+      height: 11px
+      border-bottom: 3px solid $accent
+      border-left: 3px solid $accent
+  .prev
+    margin-right: 30px
+    &::before
+      left: -25px
+      transform: rotate(45deg)
+  .next
+    margin-left: 30px
+    &::before
+      right: -25px
+      transform: rotate(-135deg)
 
   li
     &.current
       .page-numbers
+        text-decoration: underline
+        font-weight: 700
+
+    &:not(.current)
+      &:hover
+        .page-numbers
+          color: $accent2
 
 
   /* media */
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 576px)
+    .page-numbers
+      padding: 0 3px
+      font-size: 13px
+    .prev, .next
+      font-size: 13px
+    .prev
+      margin-right: 10px
+    .next
+      margin-left: 10px
 
-  // max-width 400px
+  // max-width 576px
 
  /* paginator */

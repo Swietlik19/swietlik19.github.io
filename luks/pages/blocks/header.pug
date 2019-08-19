@@ -44,3 +44,50 @@ mixin header(logotype)
 
       // /.container
     // /.header__top
+
+mixin header-secondary(logotype)
+  header.header.header--secondary(id="header")
+    +header__nav
+
+    .container
+      .row
+        .col-7.col-md-5
+          .header__wrap
+            button.burger#header-burger
+              span.burger__wrap
+                span.line
+              span.burger__text Меню
+
+            p.header__text Проектирование и реконструкция
+              br
+              |  коммерческой недвижимости
+        .col-3.col-md-2
+          .header__wrap
+            .logo__wrap
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/logo.jpg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/logo.jpg" alt="лого")
+        .col-2.col-sm-2.col-md-5
+          .header__wrap.header__wrap--last
+            .header__address
+              p.header__text
+                strong г. Севастополь,
+                |  ул. Курганная, 6 , оф. 14
+              p.header__text
+                strong г. Симферополь,
+                |  ул. Маяковского, 14
+
+            .header__phones
+              .mobile
+                a.btn.btn--circled(href="tel:88007070536" rel="nofollow")
+                  i.fa.fa-phone
+              .desktop
+                a.header__phones-link(href="tel:88007070536" rel="nofollow") 8 800
+                  strong  707 05 36
+                a.link.open-modal(href="#modal__callback") обратный звонок
+
+      // /.container
+    // /.header__top

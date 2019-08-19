@@ -2,9 +2,10 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+      createMap('inner-map1',[44.572867, 33.508849],'ул. Курганная, 6 , оф. 14');
+      createMap('inner-map2',[44.949271, 34.088738],'ул. Маяковского, 14');
 
-      function createMap(xID,coords) {
+      function createMap(xID,coords,xAddress) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -28,7 +29,7 @@ mixin script-map()
 
                 myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                     hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
+                    balloonContent: xAddress
                 }, {
                   // Опции.
                   // Необходимо указать данный тип макета.

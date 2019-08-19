@@ -22,17 +22,12 @@ html(lang='ru')
     include blocks/scripts.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/breadcrumbs.pug
 
     include blocks/nav.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_features.pug
-    include blocks/scr_complex.pug
-    include blocks/scr_projects.pug
-    include blocks/scr_tariffs.pug
-    include blocks/scr_team.pug
-    include blocks/scr_reviews.pug
-    include blocks/scr_steps.pug
+    include blocks/scr_post.pug
+
 
     include blocks/footer.pug
     include blocks/modal.pug
@@ -41,21 +36,15 @@ html(lang='ru')
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.main-page
+  body
 
-    +header("div")
+    +header-secondary("a")
 
-    #page_wr.page_wr
-      +scr1
-      +scr_features
-      +scr_complex
-      +scr_projects
-      +scr_tariffs
-      +scr_team
-      +scr_reviews
-      +scr_steps
+    #page_wr.page_wr.page_wr--secondary
 
-    +footer("div")
+      +scr_post
+
+    +footer("a")
     +modal__callback
     +modal__price
     +modal__project

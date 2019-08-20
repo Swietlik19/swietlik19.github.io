@@ -1,6 +1,145 @@
-mixin scr_tarrif()
-  section.scr_tarrif.tarrif(id="scr_tarrif")
+mixin scr_tariff()
+  section.scr_tariff.tariff.bg-grey.bg-pixels(id="scr_tariff")
     .container
+      h1.title2 Тарифы
+
+      ul.projects__nav.nav--about
+        li.projects__nav-item.without-tabs.active
+          a(href="#") Start
+        li.projects__nav-item.without-tabs
+          a(href="#") Business
+        li.projects__nav-item.without-tabs
+          a(href="#") Premium
+
+      .secondary__wrap
+        .tariff__top
+          .tariff__info
+            h2.tariff__title Start
+
+            p.tariff__desc Тариф «Start» - капитальный ремонт, в который входит  монтаж инженерных сетей (электрики и сантехники), выравнивание всех стен и отделочные работы. Значимая экономия получается за счет использования недорогих, но&nbsp;качественных отделочных материалов. Выполняется только необходимый перечень работ, без сложных технических решений.
+
+          .tariff__img
+            noscript
+              img.lazy(src="img-temp/img-tariff.jpg" alt="" width="800" height="472")
+            img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/img-tariff.jpg" alt="" width="800" height="472")
+
+        .tariff__main
+          h3.title Что
+            strong  входит в стоимость
+            |  стартового ремонта?
+
+          ul.projects__nav.nav--tariff
+            li.projects__nav-item.active
+              a(href="#tariff_tab_0") Работы
+            li.projects__nav-item
+              a(href="#tariff_tab_1") Материалы
+
+          ul.tariff__tabs
+            li.projects__tab.tariff__tab.active#tariff_tab_0
+              .tariff__wrap
+                ul
+                  li Полная замена всей электропроводки
+                  li Полная замена всей сантехники
+                  li Демонтажные и монтажные работы (в т.ч. перенос не несущих перегородок)
+                  li Устройство пола (цементно-песчаная армированная стяжка)
+                  li Выравнивание стен и потолков под уровень с «маяками»
+                  li Монтаж одноуровневых конструкций из гипсокартона (одноуровневые потолки, короба и т.п.)
+                  li Гидроизоляция ванны и санузла
+                  li Полы с подогревом
+                  li Замена радиаторов
+                  li Покраска потолков или монтаж одноуровневых потолков из гипсокартона
+                  li Оклейка обоями стен
+                  li Укладка керамической плитки или керамогранита
+                  li Укладка ламината или паркетной доски
+                  li Монтаж напольного и потолочного плинтусов
+                  li Установка карнизов для штор и занавесок
+                  li Выравнивание и покраска оконных откосов
+                  li Подъем всех материалов на этаж
+                  li Уборка ремонтируемого помещения
+                  li Вынос и погрузка строительного мусора
+                  li Заказ контейнера для мусора и т.п.
+            li.projects__tab.tariff__tab#tariff_tab_1
+              .tariff__wrap
+                ul
+                  li Полная замена всей электропроводки
+                  li Полная замена всей сантехники
+                  li Демонтажные и монтажные работы (в т.ч. перенос не несущих перегородок)
+                  li Устройство пола (цементно-песчаная армированная стяжка)
+                  li Выравнивание стен и потолков под уровень с «маяками»
+                  li Монтаж одноуровневых конструкций из гипсокартона (одноуровневые потолки, короба и т.п.)
+                  li Гидроизоляция ванны и санузла
+                  li Полы с подогревом
+                  li Замена радиаторов
+                  li Покраска потолков или монтаж одноуровневых потолков из гипсокартона
+
+        .tariff__bottom
+          .tariff__table
+            table
+              tbody
+                tr
+                  th Работы:
+                  td
+                    b.tariffs__price от
+                      span.big.accent  1 900
+                      |  ₽/м
+                      sup 2
+                tr
+                  th Черновые материалы:
+                  td
+                    b.tariffs__price от
+                      span.big.accent  2 470
+                      |  ₽/м
+                      sup 2
+                tr
+                  th Чистовые материалы:
+                  td индивидуально
+
+          .tariff__disclaimer
+            p Площадь помещения рассчитывается по полу.
+            p Оплата за работы производится по факту принятия каждого этапа заказчиком. Предоплата только за используемые материалы.
+            p Стоимость, представленная на сайте, является ориентировочной и зависит от сложности дизайн-проекта, работ, планировки помещения и логистики
+            p Минимальная стоимость заказа ремонтных работ: 250 000 рублей.
+
+        .tariff__btns
+          .btn__wrap.btn__wrap--simple
+            a.btn(href="#") Скачать шаблон договора
+
+      .form.form--horizontal.wpcf7
+        form.wpcf7-form
+          p.form__title получить консультацию специалиста
+
+          .form__df
+            .form__left
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#form-user")
+
+            .form__right
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#form-phone")
+
+          .form__bottom
+            .form__item.form__item--submit
+              .btn__wrap.btn__wrap--simple.btn__wrap--radius
+                input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Отправить заявку')
+
+            .form__item
+              span.wpcf7-form-control-wrap.accept
+                span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                  span.wpcf7-list-item
+                    label
+                      input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                      span.wpcf7-list-item-label Согласие на обработку персональных данных
+                        i.accept__icon
+
+        // /. form
 
 
-  // /.scr_tarrif
+  // /.scr_tariff

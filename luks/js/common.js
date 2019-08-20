@@ -166,8 +166,9 @@
         $(tab).addClass('active');
 
         if (window.matchMedia('(max-width: 768px)').matches) {
-          $('html, body').animate({scrollTop: $('.projects__nav').offset().top - 40 +'px'});
+          $('html, body').animate({scrollTop: $(this).parents('.projects__nav').offset().top - 80 +'px'});
         }
+        lazyLoad();
       }
     }
   });
@@ -242,6 +243,21 @@
       $('.without-cite').find('pattern').find('image').attr('xlink:href',xImg);
     }
   });
+
+
+  // Секции по типу "Вопрос - ответ"
+  function toggleHidden(xParent,hideOther) {
+    $(xParent + ' .top').click(function() {
+      $(this).find('.open').toggleClass('active');
+      $(this).siblings().slideToggle();
+      if (hideOther) {
+        $(this).parent().siblings().find('.open').removeClass('active');
+        $(this).parent().siblings().find('.hidden').slideUp();
+      }
+    });
+  }
+
+  toggleHidden('.faq',true);
 
   /* Resize */
   $(window).resize(function(){

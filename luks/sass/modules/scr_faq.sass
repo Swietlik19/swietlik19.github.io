@@ -1,0 +1,142 @@
+.faq
+  position: relative
+
+  &__wrap
+    padding-top: 42px
+    padding-bottom: 63px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    padding: 0 67px
+  &__item
+    margin-bottom: 31px
+    box-shadow: 0 30px 30px -35px  rgba(0,0,0,0.15)
+    background-color: #ffffff
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 34px 19px 31px 49px
+
+    .hidden
+      display: none
+      padding: 0 30px 38px 49px
+      margin-top: -10px
+
+    h2
+      margin-right: 15px
+      font-size: 16px
+      line-height: 1.5
+      font-weight: 700
+      color: $accent
+      transition: 0.3s
+    p
+      margin-bottom: 0
+      line-height: 1.5
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      list-style: none
+
+      display: block
+      width: 20px
+      height: 20px
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: calc(50% - 1px)
+        left: 0
+
+        display: block
+        width: 13px
+        height: 3px
+        background-color: $accent
+        border-radius: 1.5px
+        transform-origin: center
+        transition: 0.3s
+      &::before
+        transform: rotate(270deg)
+      &.active
+        &::before
+          transform: rotate(0)
+
+  .form--horizontal
+    max-width: 750px
+    margin-left: auto
+    margin-right: auto
+    margin-top: 64px
+    padding-left: 65px
+    padding-right: 65px
+  .nav--about
+    margin-top: 0
+    margin-bottom: 0
+
+  /* media */
+
+  @media screen and (max-width: 992px)
+    .form--horizontal
+      padding-left: 47px
+      padding-right: 47px
+    &__list
+      padding-left: 0
+      padding-right: 0
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    .form--horizontal
+      margin-top: 40px
+    &__wrap
+      padding-top: 32px
+      padding-bottom: 40px
+    &__item
+      margin-bottom: 20px
+      .top
+        padding: 24px 19px 21px 29px
+      h2
+        font-size: 14px
+        line-height: 1.4
+      .hidden
+        margin-top: 0
+        padding: 0 30px 26px 29px
+        font-size: 14px
+        line-height: 1.4
+
+  // max-width 768px
+
+  @media screen and (max-width: 500px)
+    &__item
+      .top
+        padding: 18px 5px 15px 15px
+      h2
+        font-size: 13px
+        line-height: 1.3
+      .hidden
+        padding: 0 20px 20px 15px
+        font-size: 13px
+        line-height: 1.3
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    .form--horizontal
+      padding-left: 27px
+      padding-right: 27px
+
+  // max-width 400px
+
+/* faq */

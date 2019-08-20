@@ -33,3 +33,91 @@ mixin scr_steps()
           p.steps__text Убираем помещение после окончания ремонта
 
   // /.scr_steps
+
+mixin scr_steps2()
+  section.scr_steps.steps.steps--steps-page(id="scr_steps")
+    .bg-img
+
+    .container
+      h1.title2 О компании
+
+      ul.projects__nav.nav--about
+        li.projects__nav-item.without-tabs
+          a(href="#") О нас
+        li.projects__nav-item.without-tabs
+          a(href="#") Команда
+        li.projects__nav-item.without-tabs.active
+          a(href="#") Этапы работы
+        li.projects__nav-item.without-tabs
+          a(href="#") Отзывы
+        li.projects__nav-item.without-tabs
+          a(href="#") Вопрос/Ответ
+
+      h2.title Один из главных приоритетов нашей работы:
+        strong.accent  комфортные условия для Клиента
+
+      .steps__circle
+        .steps__item
+          .steps__num 01
+          p.steps__text Оставьте заявку на беспланый выезд специалиста
+        .steps__item
+          .steps__num 02
+          p.steps__text Составяем смету и разработаем дизайн-проект с учетом нюансов и всех пожеланий
+        .steps__item
+          .steps__num 03
+          p.steps__text Заключаем договор, где зафиксируем сроки и все детали
+        .steps__item
+          .steps__num 04
+          p.steps__text Закупаем материалы по специальной дилерской
+            br
+            |  стоимости и доставляем на объект
+        .steps__item
+          .steps__num 05
+          p.steps__text Предоставляем полные финансовые и видео отчеты
+        .steps__item
+          .steps__num 06
+          p.steps__text Завершаем работу точно в срок
+        .steps__item
+          .steps__num 07
+          p.steps__text Убираем помещение после окончания ремонта
+
+      .form.form--horizontal.wpcf7
+        form.wpcf7-form
+          p.form__title оставить заявку
+            br
+            |  на бесплатный выезд специалиста
+
+          .form__df
+            .form__left
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#form-user")
+
+            .form__right
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#form-phone")
+
+          .form__bottom
+            .form__item.form__item--submit
+              .btn__wrap.btn__wrap--simple.btn__wrap--radius
+                input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Отправить заявку')
+
+            .form__item
+              span.wpcf7-form-control-wrap.accept
+                span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                  span.wpcf7-list-item
+                    label
+                      input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                      span.wpcf7-list-item-label Согласие на обработку персональных данных
+                        i.accept__icon
+
+        // /. form
+
+  // /.scr_steps

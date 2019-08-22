@@ -136,6 +136,14 @@
     ]
   });
 
+  $('#design__slider .slider1__slides').slick({
+    swipe: false,
+    infinite: true,
+    slidesToShow: 1,
+    dots: true,
+    appendDots: $('#design__slider .slider1__dots')
+  });
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');

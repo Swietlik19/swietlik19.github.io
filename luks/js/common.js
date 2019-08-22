@@ -19,6 +19,9 @@
     scrolling: 'auto'
   });
 
+  /* инициализация twentytwenty */
+  $(".design__container").twentytwenty();
+
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
     $('.inner-link[href^="#"]').click(function(){

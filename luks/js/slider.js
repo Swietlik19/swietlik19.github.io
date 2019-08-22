@@ -144,9 +144,61 @@
     appendDots: $('#design__slider .slider1__dots')
   });
 
+
+  $('#partners__slider .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 5,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots')
+        }
+      }
+    ]
+  });
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');
+    var slickTrackHeight = $(slickTrack).outerHeight();
+    $(sliderID).find('.slick-slide').css('height', slickTrackHeight + 'px');
+  }
+
+  function equalHeight2(sliderID) {
+    $(sliderID).find('.slick-slide').height('auto');
+    var slickTrack = $('.partners__slider');
     var slickTrackHeight = $(slickTrack).outerHeight();
     $(sliderID).find('.slick-slide').css('height', slickTrackHeight + 'px');
   }
@@ -155,12 +207,17 @@
     equalHeight('#tariffs__slider');
   });
 
+  $('#partners__slider .slider1__slides').on('setPosition', function(){
+    equalHeight2('#partners__slider');
+  });
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
       equalHeight('#tariffs__slider');
+      equalHeight2('#partners__slider');
     }
 
     screenWidth = $(window).width();

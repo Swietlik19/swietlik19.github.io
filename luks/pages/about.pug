@@ -1,0 +1,59 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#dc870d')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/paginator.pug
+
+    include blocks/nav.pug
+
+    include blocks/scr_about.pug
+    include blocks/scr_partners.pug
+
+
+
+    include blocks/footer.pug
+    include blocks/modal.pug
+    include blocks/socials.pug
+
+    //- ToDo: Перенести first-load.css в inline!!!
+    +styles-top
+
+  body
+
+    +header-secondary("a")
+
+    #page_wr.page_wr.page_wr--secondary
+
+      +scr_about
+      +scr_partners
+
+    +footer("a")
+    +modal__callback
+    +modal__price
+    +modal__project
+    +modal__order
+    +modal__get
+    +modal__callback2
+
+    +styles-bottom
+    +scripts

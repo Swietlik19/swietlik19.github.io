@@ -1,0 +1,582 @@
+@keyframes pulse_white
+  0%
+    box-shadow: 0 0 0 0 rgba(#0f8e9d,.5)
+  100%
+    box-shadow: 0 0 0 15px transparent
+@keyframes pulse_white-small
+  0%
+    box-shadow: 0 0 0 0 rgba(#0f8e9d,.5)
+  100%
+    box-shadow: 0 0 0 8px transparent
+
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 320px
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+  outline: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+.title
+  font-size: 36px
+  line-height: 1.2
+  font-weight: 400
+  color: #666666
+  strong
+    font-weight: 700
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  transition: 0.5s
+
+.link
+  flex-shrink: 0
+  position: relative
+  display: block
+  max-width: 162px
+  transition: 0.5s
+  text-decoration: none
+  &__icon
+    position: absolute
+    top: calc(50% - 54px)
+    right: calc(100% - 5px)
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 107px
+    height: 107px
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+
+      display: block
+      width: 100%
+      height: 100%
+      border: 20.0px solid rgba(#0f8e9d,0.05)
+      border-radius: 50%
+    img
+      display: block
+      max-width: 100%
+      width: 48px
+      height: 48px
+      transition: 0.3s
+  &__text
+    display: block
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 500
+    color: #333333
+    strong
+      font-weight: 700
+      text-decoration: underline
+  &:hover
+    transform: translateY(-10px)
+    .link__icon
+      img
+        transform: rotateY(180deg)
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e !important
+
+.btn__wrap
+  position: relative
+  display: inline-block
+  transition: 0.2s
+  &--pink
+    &::before
+      content: ''
+      position: absolute
+      bottom: -7px
+      left: 0
+      box-shadow: 5px 9px 15px 0px rgba(95,32,100,0.4)
+      width: 100%
+      height: 100%
+      background-color: #743878
+      border-radius: 35.0px
+    &:hover
+      .btn--pink
+        transform: translateY(3px)
+      input[type="submit"][disabled]
+        transform: none
+  &--green
+    &::before
+      content: ''
+      position: absolute
+      bottom: -7px
+      left: 0
+      box-shadow: 5px 9px 15px 0px rgba(7,103,147,0.34)
+      width: 100%
+      height: 100%
+      background-color: #076793
+      border-radius: 27.3px
+    &:hover
+      .btn--green
+        transform: translateY(3px)
+      input[type="submit"][disabled]
+        transform: none
+
+.btn--circle
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 33px
+  height: 33px
+  background-image: linear-gradient(180.0deg, #057bb2 0%, #1faf79 100%)
+  box-shadow: 0 12px 10px -10px rgba($accent,0.7)
+  border-radius: 50%
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 2px
+    left: 2px
+
+    display: block
+    width: calc(100% - 4px)
+    height: calc(100% - 4px)
+    background-image: $grad
+    border-radius: 50%
+    z-index: -1
+  .fa
+    display: block
+    color: #fff
+    font-size: 16px
+
+
+input[type="submit"].btn--pink,
+.btn--pink
+  width: 248px
+  padding: 20px 25px 18px
+  background-image: $grad2
+  border-radius: 35.0px
+  font-family: $font
+  font-size: 14px
+  line-height: 1.2
+  font-weight: 700
+  white-space: normal
+  color: #ffffff
+
+input[type="submit"].btn--green,
+.btn--green
+  padding: 20px 33px 18px
+  background-image: $grad
+  border-radius: 26.5px
+  font-family: $font
+  font-size: 14px
+  line-height: 1.2
+  font-weight: 700
+  white-space: normal
+  color: #ffffff
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+    width: 35px
+    height: 35px
+    background-image: $grad
+    border-radius: 10px
+  &:hover
+    .burger__wrap
+      box-shadow: 0px 0px 20px 0px rgba(31,175,121,0.3)
+
+  &.active
+    .burger__wrap
+      transform: rotate(90deg)
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #fff
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+.wrap1
+  position: relative
+  background-color: #ffffff
+  border-radius: 6.0px
+  box-shadow: 5px 9px 10px 0px rgba(5,123,177,0.05)
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    box-shadow: 5px 9px 10px 0px rgba(5,123,177,0.05)
+    background-color: #ffffff
+    border-radius: 6.0px
+    transition: 0.3s
+  &::before
+    bottom: -14px
+    left: 14px
+    display: block
+    width: calc(100% - 28px)
+    height: calc(100% - 28px)
+    z-index: -1
+  &::after
+    bottom: -28px
+    left: 28px
+    display: block
+    width: calc(100% - 56px)
+    height: calc(100% - 56px)
+    z-index: -2
+  &__wrap
+    position: absolute
+    left: 14px
+    top: 17px
+
+    width: calc(100% - 28px)
+    height: calc(100% - 34px)
+    border: 1.0px solid #dff1e9
+    border-radius: 6.0px
+    z-index: 1
+
+.section__top
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .title
+    max-width: 75%
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane']
+  display: none
+
+/* Переопределение стилей slick */
+.slick-slide
+  -webkit-backface-visibility: hidden
+  outline: none
+
+.slick-arrow
+  background: none
+  border: none
+  outline: none
+
+  position: relative
+  z-index: 100
+  cursor: pointer
+  font-size: 0
+  transition: 0.3s
+
+  display: block
+  width: 45px
+  height: 45px
+  border: 3.0px solid rgba(#0f8e9d,0.05)
+  border-radius: 50%
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 4px)
+    left: calc(50% - 3px)
+
+    display: block
+    width: 7px
+    height: 7px
+    border-bottom: 2px solid $accent
+    border-left: 2px solid $accent
+  &:hover
+    border-color: rgba(#0f8e9d,0.2)
+
+.slick-prev
+  margin-right: 7px
+  &::before
+    transform: rotate(45deg)
+
+.slick-next
+  &::before
+    transform: rotate(-135deg)
+
+
+.slick-dots
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  font-size: 0
+  li
+    button
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+
+    &.slick-active
+      button
+
+    &:not(.slick-active)
+      button
+        cursor: pointer
+
+.slider1
+  position: relative
+  &__nav
+    display: flex
+    justify-content: center
+    align-items: center
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1024px)
+
+// max-width 1024px
+
+@media screen and (max-width: 992px)
+  .link
+    font-size: 13px
+  .title
+    font-size: 29px
+  .section__top
+    .title
+      margin-right: 110px
+
+// max-width 992px
+
+// @media screen and (max-width: 900px)
+
+// max-width 900px
+
+@media screen and (max-width: 768px)
+  .title
+    font-size: 25px
+    br
+      display: none
+  .link
+    &__icon
+      top: calc(50% - 44px)
+      right: calc(100% - 20px)
+      width: 87px
+      height: 87px
+      &::before
+        border: 14px solid rgba(15, 142, 157, 0.05)
+      img
+        width: 33px
+        height: 33px
+  .section__top
+    .title
+      max-width: 85%
+      margin-right: 80px
+
+// max-width 768px
+
+// @media screen and (max-width: 650px)
+
+// max-width 650px
+
+@media screen and (max-width: 576px)
+  .title
+    font-size: 20px
+  .wrap1
+    &::before
+      bottom: -10px
+      left: 10px
+      width: calc(100% - 20px)
+      height: calc(100% - 20px)
+    &::after
+      bottom: -20px
+      left: 20px
+      width: calc(100% - 40px)
+      height: calc(100% - 40px)
+    &__wrap
+      left: 7px
+      top: 8px
+      width: calc(100% - 14px)
+      height: calc(100% - 16px)
+  input[type="submit"].btn--pink,
+  .btn--pink
+    width: 218px
+    padding: 10px 15px 10px
+    font-size: 12px
+
+// max-width 576px
+
+@media screen and (max-width: 500px)
+  .title
+    font-size: 17px
+  .section__top
+    .title
+      max-width: 90%
+      margin-right: 70px
+  .link
+    &__text
+      font-size: 12px
+    &__icon
+      top: calc(50% - 37px)
+      width: 74px
+      height: 74px
+      img
+        width: 25px
+        height: 25px
+
+// max-width 450px
+
+@media screen and (max-width: 400px)
+  .section__top
+    flex-direction: column
+    align-items: flex-start
+    .title
+      width: 100%
+      margin-right: 0
+  .link
+    margin-left: auto
+    margin-top: 30px
+
+// max-width 400px

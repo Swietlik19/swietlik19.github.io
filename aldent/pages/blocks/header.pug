@@ -1,0 +1,36 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__wrap
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+          +header__nav
+
+          .header__info
+            .header__phones
+              a.btn.btn--circle.open-modal.desktop(href="#")
+                i.fa.fa-phone
+              a.btn.btn--circle.mobile(href="tel:+79780241220")
+                i.fa.fa-phone
+
+            .header__content
+              a.header__link(href="tel:+79780241220") +7 (978) 024-12-20
+
+              .header__item
+                p ПН-ПТ: 9:00-20:00,
+                  br
+                  |  СБ до 14:00, ВС - выходной
+
+              .header__item
+                p г. Симферополь,
+                  br
+                  |  ул. Железнодорожная, 1 В
+
+      // /.container
+    // /.header__top

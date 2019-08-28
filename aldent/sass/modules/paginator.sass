@@ -10,6 +10,11 @@
   flex-wrap: wrap
   .page-numbers
     display: flex
+    padding: 0 11px
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 500
+    color: $accent
 
   .page-numbers, .prev, .next
     position: relative
@@ -20,14 +25,35 @@
   .page-numbers, .prev, .next
     display: block
 
+  .prev
+    margin-right: 18px
+
+  .next
+    margin-left: 18px
+
   li
     &.current
       .page-numbers
+        color: $accent2
+    &:not(.current)
+      &:hover
+        .page-numbers
+          color: $accent2
 
 
   /* media */
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 500px)
+    .page-numbers
+      padding: 0 8px
+      font-size: 16px
+    .prev
+      margin-right: 9px
+    .next
+      margin-left: 9px
+    .slick-arrow
+      width: 35px
+      height: 35px
 
-  // max-width 400px
+  // max-width 500px
 
  /* paginator */

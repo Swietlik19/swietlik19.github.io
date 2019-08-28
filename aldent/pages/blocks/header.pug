@@ -14,7 +14,7 @@ mixin header(logotype)
 
           .header__info
             .header__phones
-              a.btn.btn--circle.open-modal.desktop(href="#")
+              a.btn.btn--circle.open-modal.desktop(href="#modal__callback")
                 i.fa.fa-phone
               a.btn.btn--circle.mobile(href="tel:+79780241220")
                 i.fa.fa-phone
@@ -31,6 +31,38 @@ mixin header(logotype)
                 p г. Симферополь,
                   br
                   |  ул. Железнодорожная, 1 В
+
+      // /.container
+    // /.header__top
+
+
+mixin header--second(logotype)
+  header.header.header--second(id="header")
+    .header__top
+      .container
+        .header__content
+          .header__item
+            p г. Симферополь, ул. Железнодорожная, 1 В
+          .header__item
+            p ПН-ПТ: 9:00-20:00, СБ до 14:00, ВС - выходной
+
+      .container
+        .header__wrap
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+          +header__nav--second
+
+          .header__info.header__info--mobile
+            .header__phones
+              a.btn.btn--circle.btn--circle-pink.open-modal.desktop(href="#modal__callback")
+                i.fa.fa-phone
+              a.btn.btn--circle.btn--circle-pink.mobile(href="tel:+79780241220")
+                i.fa.fa-phone
 
       // /.container
     // /.header__top

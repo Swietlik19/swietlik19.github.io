@@ -20,6 +20,7 @@ html(lang='ru')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
+    include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
     include blocks/socials.pug
@@ -27,12 +28,8 @@ html(lang='ru')
 
     include blocks/nav.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_features.pug
-    include blocks/scr_services.pug
-    include blocks/scr_reviews.pug
-    include blocks/scr_blog.pug
-    include blocks/scr_lead.pug
+    include blocks/scr_contacts.pug
+
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -40,22 +37,21 @@ html(lang='ru')
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.main-page
+  body
 
-    +header("div")
+    +header--second("a")
 
     #page_wr.page_wr
+      .container
+        h1.title.title--second Контакты
 
-      +scr1
-      +scr_features
-      +scr_services
-      +scr_reviews
-      +scr_blog
-      +scr_lead
+      +scr_contacts
 
-    +footer("div")
+
+    +footer("a")
 
     +modal__callback
 
     +styles-bottom
     +scripts
+    +script-map

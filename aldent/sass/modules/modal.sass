@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 390px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -34,7 +34,22 @@
     max-height: 100vh
     overflow: auto
     width: 100%
-    z-index: 0
+    padding-top: 38px
+    z-index: 2
+    &__title
+      margin-bottom: 29px
+    .accept
+      label
+        color: #666
+      &__icon
+        &::before
+          top: calc(50% - 2px)
+    .form__item--submit
+      margin-top: 0
+      input[type="submit"].btn--pink, .btn--pink
+        width: auto
+        padding-left: 70px
+        padding-right: 70px
 
   .close
     background: none
@@ -46,8 +61,8 @@
     transition: 0.3s
 
     position: absolute
-    top: 9px
-    right: 9px
+    top: 18px
+    right: 17px
 
     display: block
     width: 30px
@@ -59,9 +74,9 @@
       left: 50%
 
       display: block
-      width: 20px
+      width: 14px
       height: 3px
-      background-color: $accent
+      background-color: #139693
       border-radius: 1.5px
       transition: 0.3s
 
@@ -73,15 +88,16 @@
 
     &:hover
       &::before,&::after
-        background-color: #e99c02
+        background-color: $accent
 
   /* media */
-  // @media screen and (max-width: 600px)
 
-  // max-width 600px
-
-  // @media screen and (max-width: 560px)
-
-  // max-width 560px
+  @media screen and (max-width: 576px)
+    .form
+      .form__item--submit
+        margin-top: 0
+        input[type="submit"].btn--pink, .btn--pink
+          padding: 15px 50px
+  // max-width 576px
 
  /* modal */

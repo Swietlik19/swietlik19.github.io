@@ -93,7 +93,7 @@
     "autoSize": false
   });
 
-  $('.services__nav-item a').click(function(event) {
+  $('.services__nav-item:not(.without-tabs) a').click(function(event) {
     if ( ! $(this).parent().hasClass('without-tabs') ) {
       event.preventDefault();
       $(this).parent().siblings().removeClass("active");

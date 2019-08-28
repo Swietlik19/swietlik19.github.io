@@ -46,6 +46,47 @@
     ]
   });
 
+  $('#about__slider .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    appendArrows: $('#about__slider .slider1__nav'),
+    responsive: [
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+
+  $('#certs__slider .slider1__slides').slick({
+    infinite: true,
+    centerMode: true,
+    variableWidth: true,
+    slidesToShow: 3,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    appendArrows: $('#certs__slider .slider1__nav'),
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          centerMode: false,
+          variableWidth: false,
+          slidesToShow: 2,
+        }
+      }
+    ]
+  });
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');
@@ -61,6 +102,10 @@
     equalHeight('#blog__slider');
   });
 
+  $('#certs__slider .slider1__slides').on('setPosition', function(){
+    equalHeight('#certs__slider');
+  });
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
@@ -68,6 +113,7 @@
     if (currScreeWidth != screenWidth) {
       equalHeight('#reviews__slider');
       equalHeight('#blog__slider');
+      equalHeight('#certs__slider');
     }
 
     screenWidth = $(window).width();

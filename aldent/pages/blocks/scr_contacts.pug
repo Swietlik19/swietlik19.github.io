@@ -10,28 +10,65 @@ mixin scr_contacts()
             .contacts__item
               p.contacts__text ПН-ПТ: 9:00-20:00, СБ 9:00-14:00, ВС - выходной
 
-            .contacts__item
+            .contacts__item.contacts__item--phone
               .msg__wrap
                 a.contacts__link(href="tel:+79780241220")
                   strong +7 (978) 024-12-20
-                a.msg.msg--vi(href="viber://chat?number=79780241220")
-                  svg.msg__icon
-                    use(xlink:href="img/svg/sprite.svg#icon-viber")
                 a.msg.msg--wa(href="https://api.whatsapp.com/send?phone=79780241220")
                   svg.msg__icon
                     use(xlink:href="img/svg/sprite.svg#icon-wa")
+                a.msg.msg--vi(href="viber://chat?number=79780241220")
+                  svg.msg__icon
+                    use(xlink:href="img/svg/sprite.svg#icon-viber")
 
             .contacts__item.contacts__item--icon
-              //- span.msg
-              //-   img(src="img/icon-envelope.png" alt="")
+              .msg.msg--envelope
+                img(src="img/icon-envelope.png" alt="иконка" )
 
               a.contacts__link(href="mailto:test@aldentix.ru" rel="nofollow") test@aldentix.ru
 
             .contacts__item.contacts__item--icon
               .msg.msg--insta
-                img(src="img/svg/orig/icon-insta.svg" alt="")
+                img(src="img/svg/orig/icon-insta.svg" alt="иконка")
 
               a.contacts__link(href="#" rel="nofollow") aldentiks
+
+          .contacts__form
+            .wrap1
+              .wrap1__wrap
+              .form.wpcf7.form--general
+                form.wpcf7-form
+                  p.form__title Заполните форму и мы свяжемся с Вами
+                    br
+                    |  для уточнения даты и запишем вас на прием
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      span.icon__wrap
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-user")
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                      span.icon__wrap
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-phone")
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+                  .form__item.form__item--submit
+                    .btn__wrap.btn__wrap--green
+                      input.wpcf7-form-control.wpcf7-submit.btn--green(type='submit', value='Записаться на консультацию')
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.accept
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        span.wpcf7-list-item
+                          label
+                            input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                            span.wpcf7-list-item-label Согласие на обработку персональных данных
+                              i.accept__icon
+
+        .contacts__map#contacts__map
 
 
   // /.scr_contacts

@@ -7,6 +7,9 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  /* Инициализация красивых select'ов */
+  $('select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -179,10 +182,27 @@
   //   }
   // });
 
+
+  function equalHeightReviews(reviewsWrap) {
+    if ( !(window.matchMedia('(max-width: 576px)').matches) ) {
+      maxHeight = 0;
+      $(reviewsWrap).find('.reviews__cont').height('auto');
+      $(reviewsWrap).find('.reviews__cont').each(function(xi,xel) {
+        var reviewsContHeight = $(xel).outerHeight();
+        if ( reviewsContHeight > maxHeight ) {
+          maxHeight = reviewsContHeight;
+        }
+      });
+      $(reviewsWrap).find('.reviews__cont').css('height', maxHeight + 'px');
+    }
+  }
+
+  equalHeightReviews('.reviews--page');
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {
-
+      equalHeightReviews('.reviews--page');
     }
     screenWidth = $(window).width();
   });

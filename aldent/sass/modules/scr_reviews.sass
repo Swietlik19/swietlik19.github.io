@@ -16,6 +16,10 @@
     background-image: linear-gradient(180.0deg, #fff 0%, rgba(#fff,0) 100%)
     z-index: -1
 
+
+  .title--top
+    max-width: 50%
+    padding-right: 15px
   &__wrap
     position: absolute
     top: 17px
@@ -126,3 +130,69 @@
   // max-width 576px
 
 /* reviews */
+
+
+.reviews--page
+  padding-bottom: 0
+  .reviews__slider
+    width: 100%
+    margin-left: 0
+    margin-top: 60px
+  .reviews__slides
+    display: flex
+    flex-wrap: wrap
+  .reviews__slide
+    width: calc(50% - 15px)
+    padding: 0
+    margin-right: 30px
+    &:nth-of-type(2n)
+      margin-right: 0
+      .reviews__cont,
+      .form
+        margin-top: -134px
+  .reviews__cont
+    padding-bottom: 49px
+
+  @media screen and (max-width: 992px)
+    .reviews__form
+      width: 100% !important
+      max-width: 540px
+      margin-bottom: 20px
+    .reviews__slide:nth-of-type(2n)
+      .form
+        margin-top: 0
+
+  // max-width 992px
+
+  @media screen and (max-width: 576px)
+    .title--top
+      max-width: 100%
+    .reviews__slider
+      margin-top: 40px
+    .reviews__slide
+      width: calc(50% - 5px)
+      margin-right: 10px
+      &:nth-of-type(2n)
+        .reviews__cont,
+        .form
+          margin-top: 0
+    .reviews__cont,
+      height: 100%
+      padding-bottom: 39px
+
+  // max-width 576px
+
+  @media screen and (max-width: 500px)
+    .reviews__slide
+      width: 100%
+      margin-right: 0
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    .reviews__form
+      .form
+        width: calc(100% + 30px) !important
+        margin-left: -15px
+
+  // max-width 500px

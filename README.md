@@ -10,3 +10,4 @@ https://swietlik19.github.io/luks/ <br>
 https://swietlik19.github.io/kiraa/ <br>
 https://swietlik19.github.io/syndicat/<br>
 https://swietlik19.github.io/business/ <br>
+https://swietlik19.github.io/megagrad/ <br>

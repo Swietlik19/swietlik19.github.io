@@ -7,6 +7,6 @@ https://swietlik19.github.io/crios/ <br>
 
 https://swietlik19.github.io/bios/ <br>
 https://swietlik19.github.io/luks/ <br>
-https://swietlik19.github.io/kira/ <br>
+https://swietlik19.github.io/kiraa/ <br>
 https://swietlik19.github.io/syndicat/<br>
 https://swietlik19.github.io/business/ <br>

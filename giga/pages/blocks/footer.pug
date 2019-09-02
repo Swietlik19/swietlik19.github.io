@@ -1,0 +1,111 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .logo__wrap.logo__wrap--mobile
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo--mobile.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo--mobile.svg" alt="лого")
+
+      .footer__top
+        .footer__info
+          .logo__wrap.logo__wrap--desktop
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo-footer.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo-footer.svg" alt="лого")
+
+          .footer__phone.footer__phone--desktop
+            a.footer__phone-link(href="tel:88001234567") 8 800 123 45 67
+
+          .footer__address
+            .footer__item
+              p.footer__text Работаем без выходных
+                br
+                |  Пн.–Вс.: с 9:00 до 18:00
+
+            .footer__item
+              a.footer__text(href="mailto:test@gigatronik.ru") test@gigatronik.ru
+
+          .footer__contacts
+            .footer__phone.footer__phone--mobile
+              a.footer__phone-link(href="tel:88001234567") 8 800 123 45 67
+            +socials
+
+        .footer__menu
+          ul.menu
+            li.menu-item.menu-item-has-children
+              a(href="#") Каталог
+              button.menu-arrow
+              ul.sub-menu
+                li.menu-item
+                  a(href="#") Мобильные телефоны, планшеты
+                li.menu-item
+                  a(href="#") Мобильные аксессуары
+                li.menu-item
+                  a(href="#") ТВ, фото, аудио, видео
+                li.menu-item
+                  a(href="#") Компьютеры, электроника
+                li.menu-item
+                  a(href="#") Бытовая техника
+                li.menu-item
+                  a(href="#") Климатическая техника
+                li.menu-item
+                  a(href="#") Офисная техника
+                li.menu-item
+                  a(href="#") Все для автомобиля
+                li.menu-item
+                  a(href="#") Акции
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Информация
+              button.menu-arrow
+              ul.sub-menu
+                li.menu-item
+                  a(href="#") Доставка и оплата
+                li.menu-item
+                  a(href="#") Гарантия на товар
+                li.menu-item
+                  a(href="#") Условия возврата
+                li.menu-item
+                  a(href="#") Вопрос / Ответ
+                li.menu-item
+                  a(href="#") Блог
+                li.menu-item
+                  a(href="#") Контакты
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Личный кабинет
+              button.menu-arrow
+              ul.sub-menu
+                li.menu-item
+                  a(href="#") Вход/регистрация
+                li.menu-item
+                  a(href="#") Понравилось
+                li.menu-item
+                  a(href="#") Корзина
+
+      // /.container
+    // /.footer__top
+
+    .footer__bottom
+      .container
+        .row
+          .col-xl-3.col-lg-4.col-sm-7
+            .copyright
+              p.text г. Симферополь © Copyright  2019&nbsp;г.
+          .col-xl-4.offset-xl-1.col-lg-4.col-sm-5
+            a.made(href="https://sheer82.ru/")
+              span.text Сделано в
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

@@ -1,0 +1,146 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+
+      // @include placeholder(#999999, 18px)
+
+      &:focus
+        // @include placeholder(#fff, 18px)
+
+    textarea
+      // height: 136px
+
+  .accept
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      & > span
+        position: relative
+        display: inline-block
+        transition: 0.3s
+
+    input
+      display: none
+
+    input:checked + span
+
+  &--search
+    input[type="search"]
+      display: block
+      width: 100%
+      height: 47px
+      padding-left: 34px
+      padding-right: 60px
+      background-color: #ffffff
+      border: 1.0px solid #cccccc
+      border-radius: 3.0px
+      font-size: 16px
+      font-weight: 400
+      letter-spacing: 0.03em
+      transition: 0.3s
+      @include placeholder2(#333, 13px)
+      &:hover
+        border-color: $accent2
+
+    .search-wrap
+      position: relative
+      button
+        background: none
+        border: none
+        outline: none
+
+        position: absolute
+        top: 0
+        right: 0
+
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 47px
+        height: 47px
+        background-color: $accent2
+        cursor: pointer
+        transition: 0.3s
+        &:hover
+          background-color: $accent
+        .icon
+          display: block
+          width: 17px
+          height: 17px
+          fill: #fff
+
+  .form__item
+    &--subscribe
+      position: relative
+      .btn__wrap
+        position: absolute
+        top: 0
+        right: 0
+        .btn
+          padding: 14px 47px
+      .text-input
+        width: 100%
+        input
+          width: calc(100% - 180px)
+          height: 47px
+          padding-left: 21px
+          padding-right: 60px
+          background-color: #ffffff
+          border-radius: 3.0px
+          border: 1.0px solid transparent
+
+          font-size: 16px
+          font-weight: 400
+          letter-spacing: 0.03em
+          color: #666666
+          @include placeholder2(#666666, 13px)
+          &:hover
+            border-color: $accent
+
+  /* media */
+
+  @media screen and (max-width: 800px)
+    &--search
+      .text-input
+        input
+          width: 100%
+          height: 31px
+          background-color: #f5f5f5
+          border-radius: 6.0px
+          @include placeholder2(transparent, 13px)
+      .search-wrap
+        button
+          left: 11px
+          right: auto
+          top: calc(50% - 8px)
+          width: auto
+          height: auto
+          background: none
+          .icon
+            width: 15px
+            height: 15px
+            fill: #999
+
+  //   max-width 800px
+
+ /* form */

@@ -1,0 +1,176 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__df
+        .logo__wrap.logo__wrap--desktop
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        aside.catalog-nav
+          button.catalog-nav__top
+            span.burger
+              span.burger__wrap
+                span.line
+
+            span.catalog-nav__title Каталог товаров
+
+          .catalog-nav__list
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Мобильные телефоны, планшеты
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#responsive")
+              ul.catalog-nav__sub
+                li.catalog-nav__sub-item
+                  a(href="#") Телефоны
+                li.catalog-nav__sub-item
+                  a(href="#") Смартфоны
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Мобильные аксессуары
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#usb-cable")
+              ul.catalog-nav__sub
+                li.catalog-nav__sub-item
+                  a(href="#") Чехлы
+                li.catalog-nav__sub-item
+                  a(href="#") Наклейки
+                li.catalog-nav__sub-item
+                  a(href="#") Зарядное устройство
+                li.catalog-nav__sub-item
+                  a(href="#") Наушники
+                li.catalog-nav__sub-item
+                  a(href="#") Гарнитура
+                li.catalog-nav__sub-item
+                  a(href="#") Ремешок
+                li.catalog-nav__sub-item
+                  a(href="#") Наклейки
+                li.catalog-nav__sub-item
+                  a(href="#") Зарядное устройство
+                li.catalog-nav__sub-item
+                  a(href="#") Наушники
+                li.catalog-nav__sub-item
+                  a(href="#") Гарнитура
+                li.catalog-nav__sub-item
+                  a(href="#") Ремешок
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") ТВ, фото, аудио, видео
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#camera")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Компьютеры, электроника
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#laptop")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Бытовая техника
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#vacuum-cleaner")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Климатическая техника
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#air-conditioner")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Офисная техника
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#printer")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Все для автомобиля
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#drive")
+            .catalog-nav__item
+              .catalog-nav__wrap
+                a(href="#") Акции
+                  span.catalog-nav__open
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#badge")
+
+
+        .header__right
+          .header__top
+            button.burger#header-burger
+              span.burger__wrap
+                span.line
+
+            .logo__wrap.logo__wrap--mobile
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/svg/logo--mobile.svg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/svg/logo--mobile.svg" alt="лого")
+
+            .header__menu
+
+              .header__menu-wrap
+                button.burger.active#header-burger--mobile
+                  span.burger__wrap
+                    span.line
+                ul.menu
+                  li.menu-item
+                    a(href="#") Оплата и доставка
+                  li.menu-item
+                    a(href="#") Условия возврата
+                  li.menu-item
+                    a(href="#") Блог
+                  li.menu-item
+                    a(href="#") Контакты
+
+            .header__phones
+              a.btn.btn--circle.mobile(href="tel:+79781234567")
+                i.fa.fa-phone
+              a.header__phones-link(href="tel:+79781234567") +7 (978)
+                strong  123-45-67
+
+          .header__bottom
+            .header__search
+              .form.form--search
+                form.wpcf7-form
+                  .search-wrap
+                    .text-input
+                      input(type='search', placeholder='Искать на Gigatronik')
+                    button(type='submit')
+                      svg.icon
+                        use(xlink:href='img/svg/sprite.svg#icon-search')
+
+            .bar
+              .bar__item
+                a.bar__link(href="#")
+                  .bar__icon
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#icon-heart')
+                  span.bar__text Избранное
+              .bar__item
+                a.bar__link(href="#")
+                  .bar__icon
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#icon-user')
+                  span.bar__text Войти
+              .bar__item.bar__item--cart
+                a.bar__link(href="#")
+                  .bar__icon
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#icon-cart')
+                    span.bar__count 0
+                  span.bar__text Корзина
+
+
+      // /.container
+    // /.header__top

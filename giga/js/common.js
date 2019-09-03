@@ -161,13 +161,13 @@
   });
 
   $('.header .catalog-nav .catalog-nav__top').hover(function() {
-    $('.header .catalog-nav .catalog-nav__list').slideDown();
+    $('.header .catalog-nav .catalog-nav__list').show();
   });
 
   $('body').mousemove(function(e){
     var container = $('.header .catalog-nav');
     if (container.has(e.target).length === 0) {
-      $('.header .catalog-nav .catalog-nav__list').slideUp();
+      $('.header .catalog-nav .catalog-nav__list').slideUp('fast');
     }
   });
 

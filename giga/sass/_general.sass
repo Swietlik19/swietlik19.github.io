@@ -86,7 +86,7 @@ h1,h2,h3,h4,h5,h6
 
 .article
   p
-    margin-bottom: 15px
+    margin-bottom: 28px
   a
     text-decoration: none
     transition: 0.3s
@@ -95,15 +95,19 @@ h1,h2,h3,h4,h5,h6
 
   img
     width: auto
-    max-width: 100%
+    max-width: 70%
+    margin-left: auto
+    margin-right: auto
     height: auto
     display: block
     &.alignleft
       float: left
-      margin: 0 20px 10px 0
+      margin: 0 30px 30px 0
+      max-width: 50%
     &.alignright
       float: right
-      margin: 0 0 10px 20px
+      margin: 0 0 30px 30px
+      max-width: 50%
     &.aligncenter
       margin: 0 auto
   ul,
@@ -114,6 +118,50 @@ h1,h2,h3,h4,h5,h6
   ul li,
   ol li
     transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+  blockquote
+    position: relative
+    display: flex
+    flex-direction: column
+    margin-bottom: 50px
+    padding-left: 14px
+    font-weight: 500
+    font-style: italic
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: -3px
+
+      display: block
+      width: 3px
+      height: 100%
+      background-color: #4267b2
+    p
+      &:last-of-type
+        margin-bottom: 0
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
 
 .title
   font-size: 30px
@@ -415,13 +463,32 @@ input[type="submit"].btn--green,
 
 // max-width 1024px
 
-// @media screen and (max-width: 992px)
+@media screen and (max-width: 992px)
+  .article
+    p
+      margin-bottom: 15px
+      font-size: 14px
+    img
+      max-width: 80%
+      &.alignleft
+        margin: 0 20px 20px 0
+      &.alignright
+        margin: 0 0 20px 20px
+
+    h2
+      margin-top: 30px
+      margin-bottom: 15px
+      font-size: 16px
+    h3
+      margin-top: 20px
+      margin-bottom: 10px
+      font-size: 15px
+
+    blockquote
+      margin-bottom: 20px
+      padding-left: 14px
 
 // max-width 992px
-
-// @media screen and (max-width: 900px)
-
-// max-width 900px
 
 @media screen and (max-width: 800px)
   .page_top
@@ -430,11 +497,43 @@ input[type="submit"].btn--green,
 
 // max-width 800px
 
-// @media screen and (max-width: 650px)
+@media screen and (max-width: 768px)
+  .title
+    font-size: 27px
 
-// max-width 650px
+// max-width 768px
 
 @media screen and (max-width: 576px)
+  .article
+    p
+      margin-bottom: 12px
+    img
+      max-width: 100%
+      &.alignleft
+        margin-right: auto
+        margin-left: auto
+        max-width: 100%
+      &.alignright
+        margin-right: auto
+        margin-left: auto
+        max-width: 100%
+
+    h2
+      margin-top: 20px
+      margin-bottom: 10px
+      font-size: 15px
+    h3
+      margin-top: 15px
+      margin-bottom: 8px
+      font-size: 14px
+    h3
+      margin-top: 13px
+      margin-bottom: 7px
+      font-size: 13px
+    blockquote
+      margin-bottom: 15px
+      padding-left: 14px
+
   .title
     font-size: 18px
     font-weight: 500
@@ -444,10 +543,6 @@ input[type="submit"].btn--green,
 
 // max-width 576px
 
-// @media screen and (max-width: 500px)
-
-// max-width 500px
-
 @media screen and (max-width: 400px)
   .slider1
     .slick-dots
@@ -456,5 +551,9 @@ input[type="submit"].btn--green,
         button
           width: 4px
           height: 4px
+  .article
+    p
+      font-size: 13px
+      margin-bottom: 10px
 
 // max-width 400px

@@ -71,6 +71,9 @@
     & > li
       position: relative
       padding: 0 15px
+      &.current_page_item
+        & > a
+          color: $accent
       & > a
         position: relative
         display: block
@@ -92,13 +95,14 @@
           opacity: 0
           transform: scale(0)
           transition: 0.3s
-        &:hover
-          color: $accent2
-          &::after
-            background-color: $accent2
-            opacity: 1
-            transform: scale(1)
-
+      &:not(.current_page_item)
+        a
+          &:hover
+            color: $accent2
+            &::after
+              background-color: $accent2
+              opacity: 1
+              transform: scale(1)
 
   &__phones
     margin-left: 10px

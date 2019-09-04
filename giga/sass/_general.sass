@@ -81,6 +81,9 @@ a
 .accent
   color: $accent
 
+.blue
+  color: $accent2
+
 h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
@@ -118,22 +121,41 @@ h1,h2,h3,h4,h5,h6
   ul li,
   ol li
     transform: translateX(1.5em)
+    margin-bottom: 26px
+    &:last-of-type
+      margin-bottom: 0
+
+  ul
+    list-style: none
+    li
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 7px
+        left: -22px
+
+        width: 7px
+        height: 7px
+        background-color: $accent3
+        border-radius: 50%
 
   h2,h3,h4
+    color: #333333
     line-height: 1.2
     font-weight: 500
   h2
-    margin-top: 35px
-    margin-bottom: 20px
-    font-size: 18px
+    margin-top: 32px
+    margin-bottom: 24px
+    font-size: 24px
   h3
-    margin-top: 25px
-    margin-bottom: 15px
-    font-size: 16px
+    margin-top: 30px
+    margin-bottom: 20px
+    font-size: 20px
   h4
     margin-top: 20px
-    margin-bottom: 10px
-    font-size: 14px
+    margin-bottom: 15px
+    font-size: 18px
 
   blockquote
     position: relative
@@ -476,17 +498,27 @@ input[type="submit"].btn--green,
         margin: 0 0 20px 20px
 
     h2
-      margin-top: 30px
-      margin-bottom: 15px
-      font-size: 16px
+      margin-top: 25px
+      margin-bottom: 20px
+      font-size: 20px
     h3
       margin-top: 20px
       margin-bottom: 10px
-      font-size: 15px
+      font-size: 18px
+    h4
+      margin-top: 15px
+      margin-bottom: 10px
+      font-size: 16px
 
     blockquote
       margin-bottom: 20px
       padding-left: 14px
+
+    ul
+      li
+        margin-bottom: 16px
+        font-size: 14px
+        line-height: 1.4
 
 // max-width 992px
 
@@ -519,9 +551,9 @@ input[type="submit"].btn--green,
         max-width: 100%
 
     h2
-      margin-top: 20px
+      margin-top: 15px
       margin-bottom: 10px
-      font-size: 15px
+      font-size: 18px
     h3
       margin-top: 15px
       margin-bottom: 8px

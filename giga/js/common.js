@@ -185,6 +185,23 @@
 
   toggleHidden('.faq',true);
 
+  // Табы
+  function makeTabs(xNavParent,xNavLink,xTab,xScroll) {
+    $(xNavParent + ' ' + xNavLink).click(function(event) {
+      event.preventDefault();
+      $(this).addClass('active');
+      $(this).parent().siblings().find(xNavLink).removeClass('active');
+      var _href = $(this).attr('href');
+      $(xTab + ':not(' + _href + ')').removeClass('active');
+      $(_href).addClass('active');
+      if (window.matchMedia('(max-width: 750px)').matches && xScroll) {
+        $('html, body').animate({scrollTop: $(xNavParent).offset().top - 20 +'px'});
+      }
+    });
+  }
+
+  makeTabs('.login__nav', '.login__nav-link', '.login__tab', false);
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {

@@ -22,13 +22,8 @@ html(lang='ru')
     include blocks/scripts.pug
     include blocks/styles.pug
     include blocks/header.pug
-    include blocks/modal.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_prod.pug
-    include blocks/scr_popular.pug
-    include blocks/scr_lead.pug
-    include blocks/scr_blog.pug
+    include blocks/scr_pay.pug
     include blocks/scr_cta.pug
 
     include blocks/footer.pug
@@ -37,28 +32,22 @@ html(lang='ru')
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-  body.main-page
+  body
 
     .overlay
 
     .page_top
-      +header("div")
-      +scr1
-
+      +header--second("a")
 
     #page_wr.page_wr
-      +scr_prod
-      +scr_popular
-      +scr_prod--action
-      +scr_lead
-      +scr_blog
+
+      +scr_pay
       +scr_cta
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
-    +footer("div")
-    +modal__login
+    +footer("a")
 
     +styles-bottom
     +scripts

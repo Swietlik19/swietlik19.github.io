@@ -6,10 +6,11 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(255,255,255,0.7)
   z-index: 1000
   opacity: 0
   overflow: hidden
+
   &.active
     display: block
     opacity: 1
@@ -22,8 +23,8 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
-    max-width: 100%
+    width: 422px
+    max-width: 90%
     opacity: 0
     transition: 0.7s
 
@@ -35,6 +36,15 @@
     overflow: auto
     width: 100%
     z-index: 0
+
+  .login
+    &__nav
+      margin-bottom: 53px
+    &__via
+      margin-bottom: 30px
+    &__inputs
+      padding: 0 14px
+
 
   .close
     background: none
@@ -52,14 +62,15 @@
     display: block
     width: 30px
     height: 30px
-    &::before,&::after
+    &::before,
+    &::after
       content: ''
       position: absolute
       top: 50%
       left: 50%
 
       display: block
-      width: 20px
+      width: 14px
       height: 3px
       background-color: $accent
       border-radius: 1.5px
@@ -73,15 +84,24 @@
 
     &:hover
       &::before,&::after
-        background-color: #e99c02
+        background-color: $accent2
 
   /* media */
-  // @media screen and (max-width: 600px)
 
-  // max-width 600px
+  @media screen and (max-width: 576px)
+    .login__nav
+      margin-bottom: 33px
+    .login__via
+      margin-bottom: 15px
 
-  // @media screen and (max-width: 560px)
+  // max-width 576px
 
-  // max-width 560px
+  @media screen and (max-width: 500px)
+    &__content
+      max-width: 100%
+    .form
+      padding: 34px 25px 18px
+
+  // max-width 500px
 
  /* modal */

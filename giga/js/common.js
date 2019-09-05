@@ -7,6 +7,8 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  $('.select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -164,6 +166,10 @@
     $('.header .catalog-nav .catalog-nav__list').show();
   });
 
+  $('.prod--page .catalog-nav__top').click(function() {
+    $('.prod--page .catalog-nav__list').slideToggle();
+  });
+
   $('body').mousemove(function(e){
     var container = $('.header .catalog-nav');
     if (container.has(e.target).length === 0) {
@@ -202,10 +208,60 @@
 
   makeTabs('.login__nav', '.login__nav-link', '.login__tab', false);
 
+  /* Замена input(type="number") */
+  (function quantityProducts() {
+    if ($(".quantity-num").length > 0) {
+      var $quantityArrowMinus = $(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(".quantity-arrow-plus");
+
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+
+      function quantityMinus() {
+        var $quantityNum = $(this).parents('.quantity').find(".quantity-num");
+        if ($quantityNum.val() >= 1) {
+          $quantityNum.val(+$quantityNum.val() - 1);
+        }
+      }
+
+      function quantityPlus() {
+        var $quantityNum = $(this).parents('.quantity').find(".quantity-num");
+        $quantityNum.val(+$quantityNum.val() + 1);
+      }
+    }
+  })();
+
+  $('.prod-item__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.prod-item__more').click(function() {
+    $(this).toggleClass('active');
+    $(this).parents('.prod-item__tab').toggleClass('opened');
+  });
+
+  function hideMore() {
+    $('.prod-item__tab').each(function(xi,xel) {
+      if ($(xel).outerHeight() + 5 <= $(xel).css('max-height').replace('px','')) {
+        $(xel).find('.prod-item__more').hide();
+      }
+    })
+  }
+
+  hideMore();
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {
-
+      hideMore();
     }
     screenWidth = $(window).width();
   });

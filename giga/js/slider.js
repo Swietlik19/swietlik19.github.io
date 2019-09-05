@@ -13,6 +13,16 @@
     appendDots: $('#scr1__slider .scr1__dots'),
   });
 
+  $('#prod-item__slider .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dots: true,
+    appendDots: $('#prod-item__slider .slider1__dots'),
+  });
+
   $.each(['#prod__slider','#prod__slider2'], function(xi,xel) {
     $(xel + ' .slider1__slides').slick({
       infinite: true,

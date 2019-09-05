@@ -220,10 +220,12 @@
         margin-right: auto !important
         &::before
           content: none
+        &:hover
+          color: $accent
     &__content
       h2,h3
         font-size: 12px
-        line-height: 1.66666666 /* 20 / 12 */
+        line-height: 1.46 /* 20 / 12 */
 
   // max-width 576px
 
@@ -238,3 +240,144 @@
   // max-width 500px
 
 /* prod */
+
+.prod--page
+  .prod__df
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .prod__wrap
+    display: flex
+  .prod__filter
+    flex-shrink: 0
+    width: 31.57894736842105%
+    margin-right: 30px
+  .prod__catalog
+    flex-grow: 1
+  .catalog-nav
+    margin-bottom: 11px
+    .catalog-nav__list
+      display: none
+    .catalog-nav__top
+      cursor: pointer
+
+  .filter
+    &__menu
+      background: none
+      border: none
+      outline: none
+
+      display: none
+  .prod__list
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    flex-wrap: wrap
+    margin-top: 21px
+    & > li
+      width: calc((100% - 32px) / 3)
+      margin-right: 16px
+      padding-bottom: 21px
+      &:nth-of-type(3n)
+        margin-right: 0
+  .prod__item
+    height: 100%
+  .prod__bottom
+    padding-left: 8px
+    padding-right: 8px
+  .paginator
+    justify-content: center
+  .breadcrumbs
+    margin-top: -32px
+    padding-bottom: 0
+
+  .title
+    margin-top: 5px
+    margin-bottom: 5px
+    margin-right: 15px
+    font-size: 24px
+    line-height: 1.2
+    font-weight: 400
+    color: #333333
+
+  @media screen and (max-width: 1200px)
+    .prod__list
+      & > li
+        width: calc((100% - 30px) / 2)
+        margin-right: 30px
+        &:nth-of-type(3n)
+          margin-right: 30px
+        &:nth-of-type(2n)
+          margin-right: 0
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    .title
+      font-size: 20px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 800px)
+    .title
+      font-size: 18px
+
+    .prod__wrap
+      flex-direction: column
+      padding-top: 20px
+
+    .prod__filter
+      width: 100%
+
+    .prod__list
+      width: 100%
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+        padding-bottom: 15px
+        &:nth-of-type(2n)
+          margin-right: 10px
+        &:nth-of-type(3n)
+          margin-right: 0
+
+  // max-width 800px
+
+  @media screen and (max-width: 740px)
+    .prod__list
+      & > li
+        width: calc((100% - 20px) / 2)
+        margin-right: 20px
+        &:nth-of-type(3n)
+          margin-right: 20px
+        &:nth-of-type(2n)
+          margin-right: 0
+
+  // max-width 740px
+
+  @media screen and (max-width: 500px)
+    padding-top: 10px
+    .prod__df
+      flex-direction: column
+      align-items: flex-start
+    .title
+      margin-right: 0
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    .prod__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        &:nth-of-type(3n)
+          margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+    .prod__btns
+      .btn--primary
+        font-size: 12px
+
+  // max-width 500px
+

@@ -293,10 +293,26 @@ input[type="submit"].btn--green,
   letter-spacing: 0.03em
   color: #ffffff
   text-align: center
-  border: 1px solid #21c352
+  border: 1px solid $accent
   &:hover
     background-color: #fff
-    color: #21c352
+    color: $accent
+
+input[type="submit"].btn--blue,
+.btn--blue
+  display: inline-block
+  padding: 13px 35px
+  background-color: #00a6e4
+  border-radius: 21.5px
+  font-size: 14px
+  line-height: 1.2
+  letter-spacing: 0.03em
+  color: #ffffff
+  text-align: center
+  border: 1px solid #00a6e4
+  &:hover
+    background-color: #fff
+    color: #00a6e4
 
 .burger
   flex-shrink: 0
@@ -422,12 +438,12 @@ input[type="submit"].btn--green,
   position: relative
   .slick-dots
     li
-      margin-right: 10px
+      margin-right: 22px
       &:last-of-type
         margin-right: 0
       button
-        width: 8px
-        height: 8px
+        width: 10px
+        height: 10px
         background-color: $accent2
         border-radius: 50%
         transition: 0.3s
@@ -469,6 +485,62 @@ input[type="submit"].btn--green,
   &:hover
     opacity: 1
 
+/* Переопределение nice-select */
+.nice-select
+  float: none
+  width: 241px
+  height: 34px
+  padding-left: 14px
+  display: flex
+  align-items: center
+  background-color: #ffffff
+  border: 1.0px solid #cccccc
+  border-radius: 3.0px
+
+  font-size: 13px
+  line-height: 1.2
+  letter-spacing: 0.03em
+  color: #666666
+
+  transition: .3s
+  .option[data-value=""]
+    font-size: 14px
+    color: #666666
+    opacity: 0.7
+
+  .list
+    width: 100%
+    z-index: 100
+    max-height: 0
+    left: auto
+    right: 0
+
+  &:focus
+    border-color: $accent2
+
+  .list
+    box-shadow: 0 0 10px rgba($accent2,0.4)
+
+  &::after
+    width: 6px
+    height: 6px
+    border-color: #999999
+
+  .current
+    display: block
+    overflow: hidden
+    color: #666
+    font-size: 14px
+    &.active
+      color: $accent
+      font-size: 16px
+
+  &.open
+    .list
+      width: auto
+      max-width: 320px
+      max-height: 10000px
+
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
   .container
@@ -481,9 +553,11 @@ input[type="submit"].btn--green,
 
 // max-width 1200px
 
-// @media screen and (max-width: 1024px)
+@media screen and (max-width: 1070px)
+  .nice-select
+    width: 200px
 
-// max-width 1024px
+// max-width 1070px
 
 @media screen and (max-width: 992px)
   .article

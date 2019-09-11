@@ -1,0 +1,241 @@
+.scr1
+  position: relative
+  padding-top: 103px
+  &__slider
+    width: 100%
+    height: 100%
+    z-index: 10
+  &__slides
+    width: 100%
+    height: 100%
+  &__slide
+    position: relative
+    z-index: 1
+    background-color: #05121c
+    padding-top: 105px
+    padding-bottom: 310px
+
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+
+    width: 100%
+    height: 100%
+    opacity: 0.4
+  &__title
+    max-width: 49%
+    font-size: 55px
+    line-height: 1.2
+    font-weight: 600
+    color: #ffffff
+
+  .video
+    position: absolute
+    display: flex
+    align-items: flex-end
+    text-decoration: none
+    &:hover
+      .video__play
+        background-color: #04528a
+        background-image: $grad2
+    &__wrap
+      position: absolute
+      left: 0
+      bottom: 156px
+      width: 100%
+
+    &__text
+      position: relative
+      width: 145px
+      font-size: 14px
+      line-height: 1.285714285714286 /* 18 / 14 */
+      font-weight: 700
+      font-style: italic
+      color: #ffffff
+      svg
+        position: absolute
+        left: 0
+        bottom: -12px
+        display: block
+        width: 100%
+        height: 35px
+    &__play
+      position: relative
+      width: 58px
+      height: 58px
+      margin-bottom: -3px
+      margin-left: -5px
+      background-color: $accent2
+      background-image: $grad
+      border-radius: 50%
+      transition: 0.3s
+      &::before
+        content: ''
+        position: absolute
+        top: calc(50% - 8px)
+        left: calc(50% - 6px)
+
+        display: block
+        width: 0
+        height: 0
+        border-top: 8px solid transparent
+        border-left: 13px solid #ffffff
+        border-bottom: 8px solid transparent
+
+  &__slider-wrap
+    position: absolute
+    left: 0
+    top: 103px
+    width: 100%
+    height: calc(100% - 103px)
+    .container
+      height: 100%
+  .scr1__slider-inner
+    position: relative
+    width: 100%
+    height: 100%
+  &__slider2
+    position: absolute
+    top: 0
+    right: 0
+
+    width: 402px
+    height: 100%
+    padding-top: 102px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      left: 42px
+      top: 0
+
+      display: block
+      width: 1px
+      height: 100%
+      background-color: #fff
+  &__slide2
+    padding-bottom: 70px
+    cursor: pointer
+    &.slick-current
+      .scr1__num
+        color: $accent2
+        &::after
+          opacity: 1
+  &__item
+    display: flex
+    align-items: center
+  &__num
+    flex-shrink: 0
+    position: relative
+    display: block
+    width: 43px
+    margin-right: 19px
+    font-size: 24px
+    font-weight: 600
+    color: rgba(#ffffff,0.6)
+    &::after
+      content: ''
+      position: absolute
+      top: calc(50% - 30px)
+      right: 0
+
+      width: 3px
+      height: 59px
+      background-color: $accent2
+      opacity: 0
+      transition: 0.3s
+  &__text
+    font-size: 18px
+    line-height: 1.555555555555556 /* 28 / 18 */
+    color: #ffffff
+  &__slide-wrap
+    position: relative
+
+  /* media */
+
+  @media screen and (max-width: 1070px)
+    padding-top: 83px
+    &__title
+      font-size: 42px
+    &__slider2
+      padding-top: 52px
+    &__slide2
+      padding-bottom: 50px
+    &__text
+      font-size: 16px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 992px)
+    &__slider2
+      max-width: 49%
+    &__slide2
+      padding-bottom: 15px
+    &__text
+      font-size: 14px
+    &__slide
+      padding-top: 75px
+      padding-bottom: 150px
+    .video
+      &__wrap
+        bottom: 96px
+    &__title
+      font-size: 32px
+      br
+        display: none
+    &__num
+      font-size: 21px
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__slider-wrap
+      height: auto
+      bottom: 0
+      left: 0
+      right: auto
+      top: auto
+    &__slider2
+      position: static
+      height: auto
+      &::before
+        content: none
+    &__text
+      display: none
+    &__num
+      width: auto
+      margin-right: 0
+      &::after
+        content: none
+    .video
+      right: 50px
+      bottom: -20px
+      &__play
+        width: 53px
+        height: 53px
+      &__text
+        width: 110px
+        font-size: 12px
+    &__title
+      font-size: 30px
+      max-width: 100%
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    .video
+      right: 15px
+
+  // max-width 576px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 24px
+    &__slide
+      padding-top: 55px
+
+  // max-width 500px
+
+/* scr1 */

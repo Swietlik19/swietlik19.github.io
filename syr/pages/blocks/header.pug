@@ -1,0 +1,35 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__df
+
+        button.burger#header-burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Продукция
+            li.menu-item
+              a(href="#") Партнерство
+            li.menu-item
+              a(href="#") Новости
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__btns
+          a.btn(href="#") Начать карьеру
+
+      // /.container
+    // /.header__top

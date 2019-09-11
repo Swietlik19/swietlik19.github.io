@@ -1,0 +1,87 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    a.to-top(href="#page_wr")
+      i.fa.fa-angle-up
+
+    .container
+      .footer__top
+        .footer__info
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                svg
+                  use(xlink:href="img/svg/sprite.svg#logo--footer")
+            else
+              #{logotype}.logo
+                svg
+                  use(xlink:href="img/svg/sprite.svg#logo--footer")
+
+            p.logo__text Дистрибьютор сыра и масла
+
+          .footer__item
+            a.footer__link(href="tel:+73652547361") +7 (3652) 54-73-61
+            a.footer__link(href="tel:+73652547367") +7 (3652) 54-73-67 (начать карьеру)
+
+          .footer__item
+            p.footer__text г. Симферополь, Севастопольская. 31/А
+            a.footer__mail(href="mailto:ksk@ksk-crimea.ru") ksk@ksk-crimea.ru
+
+          +socials
+
+        .footer__menu
+          .footer__col
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#") О компании
+                button.menu-arrow
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") История миссия и ценности
+                  li.menu-item
+                    a(href="#") Документация
+                  li.menu-item
+                    a(href="#") Команда
+
+          .footer__col
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#") Сотрудничество
+                button.menu-arrow
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Поставщикам
+                  li.menu-item
+                    a(href="#") Покупателям
+                  li.menu-item
+                    a(href="#") Документация
+
+          .footer__col
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#") Продукция
+                button.menu-arrow
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Собственная торговая марка
+                  li.menu-item
+                    a(href="#") Бренды
+              li.menu-item
+                a(href="#") Начать карьеру
+
+      // /.container
+    // /.footer__top
+
+    .footer__bottom
+      .container
+        .footer__bottom-wrap
+          .copyright
+            p.text Copyright © 2019  Симферополь
+            a(href="#") Политика конфиденциальности
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в Sheer
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

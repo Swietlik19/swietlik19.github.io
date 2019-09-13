@@ -143,11 +143,20 @@ h1,h2,h3,h4,h5,h6
     background-color: #e63c23
     border-radius: 2.0px
 
+.title2
+  font-size: 24px
+  line-height: 1.2
+  font-weight: 600
+  color: #666666
+  text-align: center
+
 .desc
   padding-left: 12px
   font-size: 24px
   line-height: 1.2
   font-weight: 600
+  &--second
+    padding-left: 0
 
 .icon
   max-width: 100%
@@ -267,7 +276,10 @@ input[type="submit"]
       height: 100%
       transition: 1.3s
     &:not(.colored__item--img)
-      padding: 88px 50px 30px 59px
+      padding: 20px 50px 40px 59px
+      display: flex
+      flex-direction: column
+      justify-content: center
     &:nth-of-type(6n)
       background-color: #9fc53c
     &:nth-of-type(6n + 2)
@@ -305,17 +317,39 @@ input[type="submit"]
   outline: none
 
   position: absolute
+  top: calc(50% - 10px)
+
   z-index: 100
   cursor: pointer
   font-size: 0
   transition: 0.3s
 
   display: block
+  width: 20px
+  height: 20px
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 5px)
+    left: calc(50% - 5px)
+
+    display: block
+    width: 10px
+    height: 10px
+    border-bottom: 3px solid #033a62
+    border-left: 3px solid #033a62
+
 
 .slick-prev
+  left: -10px
+  &::before
+    transform: rotate(45deg)
 
 
 .slick-next
+  right: -10px
+  &::before
+    transform: rotate(-135deg)
 
 
 .slick-dots
@@ -459,7 +493,9 @@ input[type="submit"]
 @media screen and (max-width: 400px)
   .title
     padding-left: 16px
-    font-size: 24px
+    font-size: 21px
+    br
+      display: none
     &::before
       top: calc(50% - 20px)
       width: 3px

@@ -1,54 +1,162 @@
-.form 
+.form
   position: relative
   z-index: 30
   width: 100%
+  padding: 25px 25px 20px
+  background-color: #04538b
+  z-index: 1
 
-  input,textarea 
+  &__title
+    margin-bottom: 34px
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 600
+    color: #ffffff
+    text-align: center
+
+  input,textarea
     font-family: $form-font
-  
-  .text-input 
+
+  &__item
+    padding: 0 15px
+    &--submit
+      margin-top: 28px
+      text-align: center
+
+  .text-input
     display: block
     width: 100%
+    margin-bottom: 21px
 
-    input,textarea 
+    &--icon
+      position: relative
+      .input-icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 50px
+        height: 50px
+        border-right: 1px solid rgba(32,46,49,0.2)
+        .icon
+          display: block
+          width: 15px
+          height: 16px
+          fill: #999999
+          transition: 0.3s
+
+    input,textarea
       background: none
       border: none
       outline: none
       transition: 0.3s
       resize: none
+      width: 100%
+      background-color: #ffffff
+      border-radius: 6.0px
+      padding-left: 69px
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 400
+      color: #999999
+      border: 1px solid transparent
+      &:hover
+        border-color: $accent2
+        & + .input-icon
+          .icon
+            fill: $accent2
 
+    input
+      height: 50px
+      @include placeholder(#999999, 13px)
 
-      // @include placeholder(#999999, 18px)
-
-      &:focus 
-        // @include placeholder(#fff, 18px)
+      &:focus
+        @include placeholder(#fff, 13px)
 
     textarea
       // height: 136px
-                  
-  .accept     
-    label 
+
+  .accept
+    display: block
+    margin-top: 27px
+    label
       display: block
       width: 100%
       cursor: pointer
       transition: 0.3s
       text-align: center
 
-      & > span 
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 400
+      color: rgba(#999999, 0.7)
+
+      & > span
         position: relative
         display: inline-block
-        transition: 0.3s
+        padding-left: 30px
+        .accept__icon
+          position: absolute
+          top: 0
+          left: 7px
 
-    input 
+          width: 15px
+          height: 15px
+          border: 1.0px solid rgba(153,153,153,0.7)
+
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 4px)
+            left: calc(50% - 4px)
+
+            display: block
+            width: 8px
+            height: 5px
+            border-bottom: 1px solid $accent2
+            border-left: 1px solid $accent2
+            transform: rotate(-45deg)
+            opacity: 0
+            transition: 0.3s
+      &:hover
+        color: $accent2
+
+    input
       display: none
-    
-    input:checked + span 
- 
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+  input[type="submit"]
+    padding: 18px 46px
 
   /* media */
 
-  // @media screen and (max-width: 1170px) 
+  @media screen and (max-width: 768px)
+    &__title
+      margin-bottom: 27px
+      font-size: 14px
 
-  //   max-width 1170px     
-  
+  //   max-width 768px
+
+  @media screen and (max-width: 500px)
+    &__title
+      br
+        display: none
+    &__item
+      padding: 0
+
+  //   max-width 500px
+
+  @media screen and (max-width: 400px)
+    width: calc(100% + 30px)
+    margin-left: -15px
+
+  //   max-width 400px
+
  /* form */

@@ -16,12 +16,18 @@ html(lang='ru')
     // Template Basic Images End
 
     // Custom Browsers Color Start
-    meta(name='theme-color', content='#432928')
+    meta(name='theme-color', content='#04528a')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/socials.pug
+
+    include blocks/scr_clients.pug
+    include blocks/scr_mission.pug
+    include blocks/scr_partners.pug
+    include blocks/scr_lead.pug
 
 
     include blocks/footer.pug
@@ -30,45 +36,18 @@ html(lang='ru')
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
-    style.
-      .mmenu__list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-top: 140px;
-        margin-bottom: 40px;
-      }
-      .mmenu__item {
-        padding: 10px 0;
-      }
-      .mmenu__link {
-        text-decoration: none;
-        color: #04528a;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 24px;
-      }
-      .mmenu__link:hover {
-        color: #e63c23;
-      }
-
   body.main-page
 
-    +header("div")
+    .page-top
+      +header--second("a")
 
     #page_wr.page_wr
+      +scr_clients
+      +scr_mission--clients
+      +scr_partners
+      +scr_lead
 
-      section.mmenu
-        .container
-          ul.mmenu__list
-            li.mmenu__item
-              a.mmenu__link(href='main.html') Главная
-            li.mmenu__item
-              a.mmenu__link(href='clients.html') Покупателям
-
-
-    +footer("div")
+    +footer("a")
 
     +styles-bottom
     +scripts

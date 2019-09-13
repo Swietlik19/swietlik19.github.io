@@ -31,6 +31,42 @@
     ]
   });
 
+  $('#partners__slider .slider1__slides').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots'),
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots'),
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#partners__slider .slider1__dots'),
+        }
+      }
+    ]
+  });
+
 
   $('#story__slider2 .story__slides2').slick({
     slidesToShow: 1,

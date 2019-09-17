@@ -1,0 +1,71 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+        .header__menu
+          .header__menu-top
+            .logo__wrap
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/svg/logo.svg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/svg/logo.svg" alt="лого")
+            button.burger.active#header__menu-burger
+              span.burger__wrap
+                span.line
+          ul.menu
+            li.menu-item
+              a(href="#") О компании
+            li.menu-item
+              a(href="#") Условия займа
+            li.menu-item
+              a(href="#") Инвесторам
+            li.menu-item
+              a(href="#") Вопрос-ответ
+            li.menu-item
+              a(href="#") Журнал
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__phones
+          .header__phone
+            a.btn--circle.mobile(href="tel:88004000202")
+              i.fa.fa-phone
+            a.header__link.desktop(href="tel:88004000202") 8 800 400 02 02
+            p.header__text Звонок бесплатный
+
+        .header__btns
+          a.open-modal.btn.btn--light(href="#") Взять займ
+
+      // /.header__top
+    // /.container
+
+    .header__bottom
+      .container
+        .header__second-menu
+          .menu
+            .menu-item
+              a(href="#") Займ под залог ПТС
+            .menu-item
+              a(href="#") Займ под залог Авто
+            .menu-item
+              a(href="#") Займ под залог недвижимости
+            .menu-item
+              a(href="#") Займ под залог мото/спецтехники
+            .menu-item
+              a(href="#") Рефинансирование
+
+      // /.header__bottom
+    // /.container

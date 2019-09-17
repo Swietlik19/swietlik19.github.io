@@ -1,0 +1,451 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 320px
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.grey-bg
+  background-color: #f9f9f9
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.title
+  font-size: 30px
+  line-height: 1.4 /* 55 / 30 */
+  font-weight: 600
+  color: #001800
+  text-align: center
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+  display: inline-block
+  height: 48px
+  line-height: 44px
+  padding: 0 30px
+  border-radius: 3.0px
+  border: 2px solid transparent
+  font-weight: 600
+  color: #ffffff
+  white-space: nowrap
+  &:hover
+    background-color: #fff
+
+.btn
+  &--circle
+    position: relative
+
+    border: none
+    outline: none
+    background: none
+
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 25px
+    height: 25px
+    padding: 0
+    background-color: $accentl
+    border: 1px solid $accentl
+    border-radius: 50%
+    text-decoration: none
+    transition: 0.3s
+    .fa
+      display: block
+      font-size: 14px
+      color: #fff
+      transition: 0.3s
+    &:hover
+      background-color: #fff
+      .fa
+        color: $accentl
+
+.btn--grey
+  height: 40px
+  line-height: 36px
+  background-color: #f9f9f9
+  border-radius: 3.0px
+  font-size: 14px
+  font-weight: 400
+  color: #3b9e3e
+  text-align: center
+  &:hover
+    background-color: $accentl
+    color: #f9f9f9
+    background-color: $accentl
+
+.btn--light
+  background-color: $accentl
+  border-color: $accentl
+  &:hover
+    color: $accentl
+
+.btn--green
+  background-color: $accent
+  border-color: $accent
+  &:hover
+    color: $accent
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+    &:hover
+      .burger__wrap
+        transform: scale(1.1)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #001800
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+.to-top
+  position: fixed
+  right: 30px
+  bottom: 60px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 40px
+  background: #fff
+  box-shadow: 0px 0px 10px 0px rgba(#999999,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  .fa
+    color: $accent
+    transition: 0.5s
+    font-size: 20px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    .fa
+      color: $accent
+
+  &.fixed
+    opacity: 1
+    height: 40px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane']
+  display: none
+
+/* Переопределение стилей slick */
+.slick-slide
+  -webkit-backface-visibility: hidden
+  outline: none
+
+.slick-arrow
+  background: none
+  border: none
+  outline: none
+
+  position: absolute
+  top: calc(50% - 7px)
+  z-index: 100
+  cursor: pointer
+  font-size: 0
+  transition: 0.3s
+
+  display: block
+  width: 13px
+  height: 13px
+  border-bottom: 2px solid #666
+  border-left: 2px solid #666
+  &:hover
+    border-color: $accentl
+
+.slick-prev
+  left: -7px
+  transform: rotate(45deg)
+
+.slick-next
+  right: -7px
+  transform: rotate(-135deg)
+
+.slick-dots
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  font-size: 0
+  li
+    button
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 10px
+      height: 10px
+      margin: 0 5px
+      background-color: #666
+      transition: 0.3s
+      border-radius: 50%
+
+    &.slick-active
+      button
+        background-color: $accent
+
+    &:not(.slick-active)
+      button
+        cursor: pointer
+
+.slider1
+  position: relative
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1220px)
+  .slick-prev
+    left: -3px
+
+  .slick-next
+    right: -3px
+
+// max-width 1220px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+// @media screen and (max-width: 991px)
+
+// max-width 991px
+
+// @media screen and (max-width: 900px)
+
+// max-width 900px
+
+// @media screen and (max-width: 800px)
+
+// max-width 800px
+
+@media screen and (max-width: 767px)
+  .title
+    font-size: 26px
+  .slick-dots
+    li
+      button
+        width: 5px
+        height: 5px
+        margin: 0 2px
+
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .title
+    font-size: 22px
+    line-height: 1.3
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .title
+    font-size: 18px
+
+// max-width 400px

@@ -1,0 +1,306 @@
+.calc
+  position: relative
+  padding-top: 25px
+  .title
+    margin-bottom: 24px
+  &__wrap
+    padding: 24px 68px 11px
+  &__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-right: 68px
+  &__title
+    flex-shrink: 0
+    width: 190px
+    margin-right: 22px
+    text-align: right
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    color: #001800
+    &--block
+      display: block
+      margin-bottom: 5px
+    strong
+      font-weight: 600
+  &__right
+    flex-grow: 1
+    display: flex
+    justify-content: space-between
+    &--two
+      .calc__right-item
+        width: calc(50% - 16px)
+      .calc__btn
+        justify-content: center
+    &--ranges
+      .calc__right-item
+        width: calc(50% - 24px)
+
+
+  &__right-item
+    min-width: 116px
+    margin-bottom: 22px
+    &--radio input,
+    &--checkbox input
+        display: none
+        &:checked + span
+          background-color: $accentl
+          border-color: $accentl
+    &--iconed
+      .icon
+        flex-shrink: 0
+        width: 27px
+        height: 27px
+        margin-right: 11px
+      .calc__btn
+        padding-top: 0
+        padding-bottom: 0
+        padding-right: 23px
+
+  &__btn
+    position: relative
+    display: flex
+    align-items: center
+    width: 100%
+    min-height: 48px
+    padding: 0 15px
+    background-color: #bbbebb
+    border-radius: 3.0px
+    border: 2px solid #bbbebb
+
+    font-size: 15px
+    line-height: 1.3
+    color: #ffffff
+    text-align: center
+    cursor: pointer
+    z-index: 1
+    overflow: hidden
+    transition: 0.3s
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: -2px
+
+      display: block
+      width: calc(100% + 4px)
+      height: calc(100% + 4px)
+      max-height: 4px
+      background-color: $accentl
+      opacity: 0
+      transition: opacity 0.5s, max-height 0.2s 0.5s
+      z-index: -1
+    &:hover
+      border-color: $accentl
+      transition: border-color 0.2s 0.5s, background-color 0.3s
+      &::after
+        opacity: 1
+        max-height: calc(100% + 4px)
+
+  .range
+    position: relative
+    .hidden
+      display: none
+
+    .irs--flat .irs-min, .irs--flat .irs-max
+      top: auto
+      bottom: -55px
+      visibility: visible !important
+      background: none
+      font-size: 14px
+      line-height: 1.714285714285714 /* 24 / 14 */
+      font-weight: 400
+      color: #001800
+
+    .irs--flat .irs-line
+      height: 5px
+      background-color: $accent
+      border-radius: 2.5px
+    .irs-bar
+      display: none
+    .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single
+      background: none
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      font-weight: 600
+      color: #001800
+      top: -10px
+      &::before
+        content: none
+
+    .irs--flat .irs-handle
+      position: relative
+      top: 12px
+      box-shadow: 1px 2px 5px 0px rgba(117,187,119,0.49)
+      width: 19px
+      height: 19px
+      background-color: #ffffff
+      border-radius: 50%
+      &::before
+        content: ''
+        position: absolute
+        top: 3px
+        left: 3px
+        width: 13px
+        height: 13px
+        background-color: #339933
+        border-radius: 50%
+      & > i:first-child
+        background: none
+
+  &__summary
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+
+      display: flex
+      justify-content: space-between
+      margin-top: 24px
+      padding: 9px 80px 12px
+      box-shadow: 5px 9px 7px 0px rgba(215,215,215,0.2)
+      background-color: #ffffff
+      border-radius: 3.0px
+    &-item
+      padding: 0 10px
+      text-align: center
+    &-text
+      margin-bottom: 5px
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 400
+      color: #001800
+    &-val
+      font-size: 20px
+      line-height: 1.2
+      font-weight: 600
+      color: #001800
+
+  &__bottom
+    margin-top: 31px
+
+  /* media */
+  @media screen and (max-width: 1170px)
+    &__wrap
+      padding-left: 30px
+      padding-right: 30px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__item
+      padding-left: 0
+      padding-right: 0
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__title
+      width: 150px
+    &__item
+      align-items: flex-start
+      margin-bottom: 20px
+    &__summary
+      &-list
+        padding: 9px 30px 12px
+    &__right
+      &--two
+        .calc__right-item
+          width: calc(50% - 10px)
+      &--ranges
+        .calc__right-item
+          width: calc(50% - 10px)
+
+      &--four
+        flex-wrap: wrap
+        .calc__right-item
+          width: calc(50% - 10px)
+
+  // max-width 991px
+
+  @media screen and (max-width: 800px)
+    &__summary
+      &-text
+        font-size: 13px
+      &-val
+        font-size: 17px
+
+    &__btn
+      &::after
+        content: none
+      &:hover
+        border-color: transparent
+
+  // max-width 800px
+
+  @media screen and (max-width: 700px)
+    &__item
+      flex-direction: column
+      align-items: center
+      margin-bottom: 10px
+    &__title
+      width: 100%
+      margin-bottom: 5px
+      margin-right: 0
+      text-align: center
+      br
+        display: none
+    &__right
+      &--ranges
+        width: 100%
+        margin-top: 20px
+    &__summary
+      &-list
+        flex-wrap: wrap
+        padding: 9px 15px 0
+      &-item
+        width: 50%
+        margin-bottom: 20px
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    &__right
+      &--two
+        flex-wrap: wrap
+        .calc__right-item
+          width: 100%
+      &--ranges
+        flex-wrap: wrap
+        .calc__right-item
+          width: 100%
+          margin-bottom: 40px
+
+  // max-width 575px
+
+  @media screen and (max-width: 550px)
+    &__right
+      &--four
+        .calc__right-item
+          width: 100%
+      &-item
+        margin-bottom: 10px
+
+  // max-width 550px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      padding-left: 15px
+      padding-right: 15px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+    &__summary
+      &-list
+        margin-top: 0
+      &-item
+        width: 100%
+
+  // max-width 400px
+
+/* calc */

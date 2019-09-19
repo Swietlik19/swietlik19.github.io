@@ -1,30 +1,44 @@
-.breadcrumbs 
-  position: relative 
-  ol 
+.breadcrumbs
+  position: relative
+  padding-top: 17px
+  padding-bottom: 17px
+  ol
     margin: 0
     padding: 0
-    list-style: none 
-    li 
+    list-style: none
+    li
       position: relative
-      display: inline-block      
+      display: inline-block
 
-      a 
+      a,
+      span span
         text-decoration: none
         transition: 0.3s
-        &[href]:hover 
-          // color: $b2
-              
-      &:not(:last-of-type) 
-        &::after 
+        font-size: 14px
+        line-height: 18px
+        font-weight: 400
+        color: #666666
+        font-style: italic
+      a
+        &[href]:hover
+          color: $accentl
+
+      &:not(:last-of-type)
+        &::after
           content: '/'
-          margin: 0 4px                     
+          margin: 0 4px
 
-  // @media screen and (max-width: 500px) 
+  @media screen and (max-width: 500px)
+    ol
+      li
+        a,
+        span span
+          font-size: 12px
 
-  // max-width 500px                    
+        &:not(:last-of-type)
+          &::after
+            margin: 0 1px
 
-  // @media screen and (max-width: 400px) 
-
-  // max-width 400px 
+  // max-width 500px
 
 /* breadcrumbs */

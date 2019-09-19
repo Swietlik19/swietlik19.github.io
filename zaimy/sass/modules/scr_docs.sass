@@ -1,0 +1,187 @@
+.docs
+  position: relative
+  padding-bottom: 10px
+  .title
+    margin-bottom: 28px
+  &__df
+    display: flex
+  &__left
+    flex-shrink: 0
+    width: 31.57894736842105%
+    margin-right: 98px
+  &__menu
+    margin: 0
+    padding: 0
+    list-style: none
+    width: 100%
+    background-color: #f9f9f9
+    border-radius: 3.0px
+    & > li
+      & > a
+        display: flex
+        align-items: center
+        height: 56px
+        padding-left: 27px
+        padding-right: 10px
+        text-decoration: none
+        border-bottom: 1px solid #cccccc
+        font-size: 16px
+        line-height: 1.2
+        font-weight: 600
+        color: #001800
+        transition: 0.3s
+        &:hover
+          background-color: #eee
+      &:last-of-type
+        & > a
+          border-bottom: none
+
+  &__right
+    flex-grow: 1
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-top: 6px
+  &__item
+    margin-bottom: 29px
+  &__link
+    display: block
+    margin-bottom: 19px
+    font-size: 18px
+    line-height: 1.33333333333 /* 24 / 18 */
+    font-weight: 600
+    color: #001800
+    transition: 0.3s
+    &:hover
+      color: $accentl
+  &__btns
+    display: inline-block
+  &__btn
+    display: flex
+    align-items: center
+    width: auto
+    height: 40px
+    padding-left: 14px
+    padding-right: 16px
+    background-color: #f9f9f9
+    border-radius: 3.0px
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      transform: translateX(5px)
+  &__icon
+    display: block
+    width: 21px
+    height: 21px
+    margin-right: 14px
+    .icon
+      fill: $accentl
+  &__text
+    display: block
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+    color: #3b9e3e
+
+  &__open
+    display: none
+
+  /* media */
+
+  @media screen and (max-width: 991px)
+    &__left
+      width: 40%
+      margin-right: 30px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__link
+      margin-bottom: 13px
+      font-size: 15px
+    &__text
+      font-size: 13px
+    &__icon
+      width: 19px
+      height: 19px
+      margin-right: 10px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__open
+      background: none
+      border: none
+      outline: none
+
+      position: relative
+      display: block
+      margin-bottom: 20px
+      font-size: 18px
+      color: $accentl
+      cursor: pointer
+      transition: 0.3s
+      &::after
+        content: ''
+        position: absolute
+        bottom: -2px
+        left: 0
+
+        display: block
+        width: 100%
+        height: 2px
+        background-color: $accentl
+        transition: 0.3s
+      &:hover
+        color: $accent
+        &::after
+          background-color: $accent
+    &__df
+      flex-direction: column
+    &__left
+      width: 100%
+    &__right
+      width: 100%
+    .title
+      margin-bottom: 8px
+    &__menu
+      max-height: 0px
+      overflow: hidden
+      transition: 0.5s
+      &.active
+        max-height: 5000px
+        margin-bottom: 30px
+
+  // max-width 700px
+
+  @media screen and (max-width: 400px)
+    &__menu
+      & > li
+        & > a
+          height: 38px
+          padding-left: 18px
+          font-size: 13px
+    &__open
+      font-size: 14px
+
+  // max-width 400px
+
+  @media screen and (max-width: 374px)
+    &__link
+      margin-bottom: 11px
+      font-size: 13px
+    &__text
+      font-size: 12px
+    &__btn
+      height: 37px
+    &__icon
+      width: 17px
+      height: 17px
+      margin-right: 6px
+    &__item
+      margin-bottom: 19px
+
+  // max-width 374px
+
+/* docs */

@@ -147,6 +147,11 @@
 
   setTimeout(function() {$('.header__second-menu').addClass('visible');}, 100);
 
+  // Показать/скрыть меню в "Документах"
+  $('.docs__open').click(function() {
+    $('.docs__menu').toggleClass('active');
+  });
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {

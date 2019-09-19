@@ -103,9 +103,11 @@
     $(xParent + ' .top').click(function() {
       $(this).find('.open').toggleClass('active');
       $(this).siblings().slideToggle();
+      $(this).parents().toggleClass('active');
       if (hideOther) {
         $(this).parent().siblings().find('.open').removeClass('active');
-        $(this).parent().siblings().find('.hidden').slideUp();
+        $(this).parent().siblings().find(xParent + '__hidden').slideUp();
+        $(this).parent().siblings().removeClass('active');
       }
     });
   }

@@ -1,41 +1,80 @@
 .faq
   position: relative
+  &__container
+    position: relative
+    padding-bottom: 48px
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
 
+      display: block
+      background: transparent url('../img/svg/bg-faq.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::before
+      top: -45px
+      right: -170px
+      width: 758px
+      height: 625px
+    &::after
+      left: -372px
+      bottom: -16px
+      width: 738px
+      height: 567px
+      background-image: url('../img/svg/bg-faq2.svg')
+
+  &__wrap
+    padding: 32px 68px 36px
+    border-radius: 3.0px
   &__list
     margin: 0
     padding: 0
     list-style: none
+
+  &__hidden
+    padding: 0 80px 29px 43px
+    display: none
+    font-weight: 400
+    color: transparent
+    transition: color 0.3s
+    p
+      font-size: 14px
+      line-height: 1.714285714285714 /* 24 / 14 */
   &__item
     position: relative
-    margin-bottom: 12px
-    background-color: #f5f5f5
-    &::before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
+    margin-bottom: 23px
+    background-color: $accentl
+    border-radius: 3.0px
+    transition: 0.3s
+    &:last-of-type
+      margin-bottom: 0
+    &.active
+      background-color: #fff
+      h2
+        color: #3ea041
+      .open
+        background-color: #e8f2e8
+      .faq__hidden
+        color: #666666
+    &:hover
+      box-shadow: 0 5px 10px rgba(#000, 0.1)
+      transform: translateY(-5px)
 
-      display: block
-      width: 3px
-      height: 100%
-      background-color: $accent2
     .top
       display: flex
       justify-content: space-between
       align-items: center
-
-      padding: 34px 16px 31px 62px
-
-    .hidden
-      display: none
-      padding: 0 80px 49px 73px
+      cursor: pointer
+      padding: 19px 17px 18px 37px
 
     h2
       margin-right: 15px
-      font-size: 18px
+      font-size: 16px
       line-height: 1.2
-      font-weight: 500
-      color: #333333
+      font-weight: 600
+      color: #ffffff
       transition: 0.3s
     p
       &:last-of-type
@@ -57,43 +96,77 @@
       outline: none
 
       display: block
-      width: 41px
-      height: 41px
-      &::before,
-      &::after
+      width: 31px
+      height: 31px
+      background-color: #ffffff
+      border-radius: 50%
+      transition: 0.3s
+      &::before
         content: ''
         position: absolute
-        top: calc(50% - 1px)
-        left: 0
+        top: calc(50% - 7px)
+        left: calc(50% - 5px)
 
         display: block
-        width: 22px
-        height: 3px
-        background-color: $accent
-        border-radius: 1.5px
-        transform-origin: center
+        width: 10px
+        height: 10px
+        border-bottom: 2px solid #3ea041
+        border-left: 2px solid #3ea041
+        transform: rotate(-45deg)
         transition: 0.3s
-      &::before
-        transform: rotate(270deg)
       &.active
         &::before
-          transform: rotate(0)
+          top: calc(50% - 4px)
+          transform: rotate(135deg)
 
   /* media */
 
-  // @media screen and (max-width: 992px)
+  @media screen and (max-width: 767px)
+    &__wrap
+      padding-left: 30px
+      padding-right: 30px
 
-  // max-width 992px
+  // max-width 767px
 
-  // @media screen and (max-width: 768px)
+  @media screen and (max-width: 575px)
+    &__container
+      padding-bottom: 28px
+    &__wrap
+      padding-left: 15px
+      padding-right: 15px
+    &__item
+      margin-bottom: 16px
+      .top
+        padding: 17px 17px 16px 30px
+      h2
+        font-size: 14px
+    &__hidden
+      padding: 0 40px 22px 33px
+      p
+        font-size: 13px
+        line-height: 1.5
 
-  // max-width 768px
+  // max-width 575px
 
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+    &__item
+      .top
+        padding: 15px 15px 14px 20px
+      h2
+        font-size: 13px
+      .open
+        width: 26px
+        height: 26px
+        &::before
+          top: calc(50% - 6px)
+          left: calc(50% - 4px)
+          width: 8px
+          height: 8px
+    &__hidden
+      padding: 0 30px 17px 23px
 
   // max-width 400px
 

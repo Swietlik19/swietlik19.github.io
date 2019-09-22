@@ -65,7 +65,7 @@ mixin scr_calc()
                             use(xlink:href="img/svg/sprite.svg#icon-calc-4")
                           |  Мото/спецтехника
 
-              .calc__item
+              .calc__item.calc__item--ranges
                 p.calc__title
                   strong.calc__title--block Сумма и срок займа:
                   strong Ставка:
@@ -108,6 +108,90 @@ mixin scr_calc()
                 li.calc__summary-item
                   p.calc__summary-text Дата погашения:
                   p.calc__summary-val 01.02.2019
+
+            .calc__bottom
+              .form.form--horizontal
+                .form__col
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-user")
+
+                .form__col
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-phone")
+
+                .form__col.form__col--submit
+                  .form__item
+                    input.wpcf7-form-control.wpcf7-submit.btn.btn--green(type='submit', value='Оставить заявку')
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.accept
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        span.wpcf7-list-item
+                          label
+                            input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                            span.wpcf7-list-item-label Согласие на обработку персональных данных
+                              i.accept__icon
+
+
+  // /.scr_calc
+
+
+mixin scr_calc--loan()
+  section.scr_calc.calc.calc--loan(id="scr_calc")
+    .container
+      .calc__wrap.grey-bg
+        h2.title Калькулятор займа под залог ПТС
+
+        .form.wpcf7.form--calc
+          form.wpcf7-form
+            .calc__top
+              .calc__item.calc__item--ranges
+                p.calc__title
+                  strong.calc__title--block Сумма и срок займа:
+                  strong Ставка:
+                  br
+                  |  7% мес. = 0,233 день
+
+                .calc__right.calc__right--ranges
+                  .calc__right-item
+                    span.wpcf7-form-control-wrap.text-input
+                      label.range
+                        input.wpcf7-form-control.wpcf7-text.wpcf7-count(type="text" class="count-range count_range--money" name="count_range" aria-required='true' aria-invalid='false')
+                        span.hidden.range__min 50000
+                        span.hidden.range__max 1000000
+                        span.hidden.range__from 100000
+
+                  .calc__right-item
+                    span.wpcf7-form-control-wrap.text-input
+                      label.range
+                        input.wpcf7-form-control.wpcf7-text.wpcf7-count(type="text" class="count-range count-range--months" name="count_range" aria-required='true' aria-invalid='false')
+                        // . В месяцах. Т.е. если 2 года, то 24:
+                        span.hidden.range__min 1
+                        span.hidden.range__max 24
+                        span.hidden.range__from 5
+
+
+            .calc__summary
+              ul.calc__summary-list
+                li.calc__summary-item
+                  p.calc__summary-text Вы получаете:
+                  p.calc__summary-val 100 000 руб.
+
+                li.calc__summary-item
+                  p.calc__summary-text Вы возвращаете:
+                  p.calc__summary-val 102 500 руб.
+
+                li.calc__summary-item
+                  p.calc__summary-text Ежемесячный платеж:
+                  p.calc__summary-val 10 000 руб.
 
             .calc__bottom
               .form.form--horizontal

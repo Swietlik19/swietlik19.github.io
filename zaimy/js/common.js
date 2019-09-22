@@ -154,6 +154,22 @@
     $('.docs__menu').toggleClass('active');
   });
 
+  // "Читать полностью" в SEO
+  $('.seo__show').click(function() {
+    $(this).parent().siblings('.seo__content').toggleClass('opened');
+    $(this).toggleClass('active');
+  });
+
+  function hideMore() {
+    $('.seo__content').each(function(xi,xel) {
+      if ($(xel).innerHeight() + 5 <= $(xel).css('max-height').replace('px','')) {
+        $(xel).parents('.seo__wrap').find('.seo__show').hide();
+      }
+    })
+  }
+
+  hideMore();
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {

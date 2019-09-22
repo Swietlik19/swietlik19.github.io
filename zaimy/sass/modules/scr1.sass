@@ -30,6 +30,8 @@
     line-height: 1.555555555555556 /* 28 / 18 */
     font-weight: 400
     color: #666666
+    strong
+      font-weight: 600
     a
       position: relative
       font-weight: 600
@@ -57,12 +59,62 @@
       line-height: 50px
       padding: 0 43px
 
+  &__advantages
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    margin-top: 50px
+    &-item
+      display: flex
+      align-items: center
+      max-width: calc(25% - 10px)
+    &-icon
+      flex-shrink: 0
+      width: 30px
+      height: 30px
+      margin-right: 14px
+      .icon
+        width: 100%
+        height: 100%
+        fill: $accentl
+
+    &-text
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      font-weight: 600
+      color: #666666
+
+  &__content
+    position: relative
+  &__bg
+    position: absolute
+    top: 34px
+    left: 488px
+
+    width: 722px
+    height: 363px
+
   /* media */
+
+  @media screen and (max-width: 1070px)
+    &__advantages
+      &-text
+        font-size: 15px
+
+  // max-width 1070px
 
   @media screen and (max-width: 991px)
     &__title
       br
         display: none
+    &__advantages
+      flex-wrap: wrap
+      &-item
+        margin-bottom: 15px
+        max-width: calc(33% - 10px)
 
   // max-width 991px
 
@@ -72,8 +124,23 @@
       font-size: 38px
     &__desc
       font-size: 16px
+    &__bg
+      left: 350px
+
+      width: 680px
+      height: 260px
 
   // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__advantages
+      justify-content: flex-start
+      &-item
+        max-width: 100%
+        width: calc(50% - 10px)
+        margin-right: 10px
+
+  // max-width 650px
 
   @media screen and (max-width: 575px)
     background: #f9f9f9 !important
@@ -84,10 +151,28 @@
       font-size: 32px
     &__desc
       width: 100%
+      margin-bottom: 18px
       br
         display: none
+    &__bg
+      display: none
+    &__btns
+      margin-top: 50px
 
   // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__advantages
+      align-items: flex-start
+      margin-top: 20px
+      &-text
+        font-size: 12px
+      &-icon
+        width: 20px
+        height: 20px
+        margin-right: 7px
+
+  // max-width 500px
 
   @media screen and (max-width: 374px)
     &__title
@@ -96,3 +181,17 @@
   // max-width 374px
 
 /* scr1 */
+
+
+.scr1--loan
+  padding-bottom: 44px
+  .scr1__title
+    margin-bottom: 54px
+  .scr1__desc
+    max-width: 480px
+
+  @media screen and (max-width: 575px)
+    .scr1__title
+      margin-bottom: 14px
+
+  // max-width 575px

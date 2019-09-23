@@ -15,6 +15,9 @@
     justify-content: space-between
     padding-left: 68px
     padding-right: 68px
+    &--three
+      .conditions__item
+        width: calc(33.3333% - 15px)
   &__item
     width: calc(50% - 15px)
     max-width: 421px
@@ -70,18 +73,61 @@
           background-color: $accentl
       td
         font-weight: 600
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        position: relative
+        margin-bottom: 10px
+        margin-left: 6px
+        &::before
+          content: '•'
+          position: absolute
+          top: 0
+          left: -10px
+          font-size: 16px
+          line-height: 1.2
+          font-weight: 600
+          color: #ffffff
+
+        .conditions__text
+          font-size: 16px
+          line-height: 1.2
+
   &__text
     font-size: 18px
     line-height: 1.333333333333333 /* 24 / 18 */
     font-weight: 600
     color: #ffffff
+  &__docs
+    margin-top: 30px
+    padding: 26px 0 0 29px
+    border-top: 1px solid #fff
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 600
+    color: #ffffff
+    strong
+      font-weight: 700
 
   /* media */
+
+  @media screen and (max-width: 1070px)
+    &__docs
+      padding-left: 0
+      font-size: 16px
+
+  // max-width 1070px
 
   @media screen and (max-width: 991px)
     &__list
       padding-left: 15px
       padding-right: 15px
+      &--three
+        flex-wrap: wrap
+        .conditions__item
+          width: calc(50% - 15px)
     &__item
       padding: 27px 15px 30px 20px
     &__top
@@ -122,6 +168,12 @@
       table
         th,td
           font-size: 14px
+      ul
+        li
+          .conditions__text
+            font-size: 14px
+    &__docs
+      margin-top: 10px
     &__text
       font-size: 14px
 
@@ -133,6 +185,9 @@
       padding-bottom: 22px
     &__list
       flex-wrap: wrap
+      &--three
+        .conditions__item
+          width: calc(50% - 5px)
     &__item
       width: 100%
       max-width: 100%
@@ -149,4 +204,38 @@
 
   // max-width 575px
 
+  @media screen and (max-width: 500px)
+    &__list
+      &--three
+        .conditions__item
+          width: 100%
+    &__docs
+      padding-top: 10px
+
+  // max-width 500px
+
 /* conditions */
+
+.conditions--cond
+  .conditions__wrap
+    padding: 24px 0
+  .conditions__list
+    padding-left: 0
+    padding-right: 0
+  .conditions__item
+    display: flex
+    flex-direction: column
+    padding-left: 16px
+    padding-right: 16px
+    padding-bottom: 38px
+  .conditions__icon
+    margin-right: 22px
+  .conditions__bottom
+    flex-grow: 1
+    padding-left: 0
+
+  @media screen and (max-width: 500px)
+    .conditions__item
+      padding-bottom: 25px
+
+  // max-width 500px

@@ -5833,15 +5833,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .article ul,
 .article ol {
+  list-style-type: none;
   padding-bottom: 1.5em;
   padding-left: 0;
   padding-right: 1.5em; }
 
 .article ul li,
 .article ol li {
+  position: relative;
   -webkit-transform: translateX(1.5em);
       -ms-transform: translateX(1.5em);
-          transform: translateX(1.5em); }
+          transform: translateX(1.5em);
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400; }
+  .article ul li::before,
+  .article ol li::before {
+    content: '•';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    font-size: 18px;
+    color: #e63c23;
+    font-weight: 700; }
 
 .article h2, .article h3, .article h4 {
   line-height: 1.2;
@@ -6219,7 +6233,10 @@ input[type="submit"][disabled] {
     font-size: 18px; }
   .colored__text {
     font-size: 13px;
-    line-height: 1.4; } }
+    line-height: 1.4; }
+  .article ul li,
+  .article ol li {
+    font-size: 15px; } }
 
 @media screen and (max-width: 700px) {
   .colored__item {
@@ -6264,7 +6281,10 @@ input[type="submit"][disabled] {
       top: -webkit-calc(50% - 20px);
       top: calc(50% - 20px);
       width: 3px;
-      height: 40px; } }
+      height: 40px; }
+  .article ul li,
+  .article ol li {
+    font-size: 14px; } }
 
 .header {
   position: fixed;

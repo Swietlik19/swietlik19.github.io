@@ -1,43 +1,48 @@
 .lead
   position: relative
-  padding-top: 30px
-  padding-bottom: 24px
+  background-color: #c9dbe6
   overflow: hidden
   z-index: 1
-  &::before
-    content: ''
-    position: absolute
-    bottom: 0
-    left: 227px
+  &__wrap
+    position: relative
+    padding-top: 40px
+    padding-left: 165px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      bottom: 70px
+      left: -162px
 
-    display: block
-    width: 592px
-    height: 485px
-    background: transparent url('../img/bg-lead.jpg') no-repeat bottom center
-    background-size: cover
-    z-index: -1
+      display: block
+      width: 592px
+      height: 485px
+      background: transparent url('../img/svg/bg-lead.svg') no-repeat bottom center
+      background-size: cover
+      opacity: 0.1
+      z-index: -1
   &__title
-    margin-bottom: 28px
+    margin-bottom: 38px
     font-size: 40px
     font-weight: 700
     text-transform: uppercase
     color: $accent
-    text-align: center
   &__form
     position: relative
     width: 391px
     max-width: 100%
-    margin-left: auto
-    margin-right: auto
+    z-index: 1
+    padding-bottom: 61px
 
   .bg-img
     position: absolute
-    top: -6px
-    right: -602px
+    bottom: -15px
+    right: -590px
 
-    width: 793px
-    height: 511px
-    z-index: -1
+    width: 633px
+    z-index: 2
+    img
+      display: block
 
   /* media */
   @media screen and (max-width: 1200px)
@@ -46,10 +51,25 @@
 
   // max-width 1200px
 
+  @media screen and (max-width: 1070px)
+    &__wrap
+      padding-left: 0
+
+  // max-width 1070px
+
   @media screen and (max-width: 992px)
     &__title
       margin-bottom: 25px
       font-size: 30px
+    .bg-img
+      position: absolute
+      bottom: 0
+      right: -500px
+
+      width: 550px
+      z-index: 2
+      img
+        display: block
 
   // max-width 992px
 
@@ -57,12 +77,24 @@
     &__title
       margin-bottom: 14px
       font-size: 24px
+    .bg-img
+      left: 40%
+      right: auto
+      z-index: -1
 
   // max-width 768px
 
   @media screen and (max-width: 630px)
     .bg-img
       display: none
+    &__form
+      margin-left: auto
+      margin-right: auto
+      padding-bottom: 41px
+    &__title
+      text-align: center
+    &__wrap
+      padding-top: 30px
 
   // max-width 630px
 

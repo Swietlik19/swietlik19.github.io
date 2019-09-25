@@ -92,12 +92,26 @@ h1,h2,h3,h4,h5,h6
       margin: 0 auto
   ul,
   ol
+    list-style-type: none
     padding-bottom: 1.5em
     padding-left: 0
     padding-right: 1.5em
   ul li,
   ol li
+    position: relative
     transform: translateX(1.5em)
+    font-size: 18px
+    line-height: 1.5
+    font-weight: 400
+    &::before
+      content: '•'
+      position: absolute
+      top: 0
+      left: -10px
+
+      font-size: 18px
+      color: $accent2
+      font-weight: 700
 
   h2,h3,h4
     line-height: 1.2
@@ -444,6 +458,10 @@ input[type="submit"]
     &__text
       font-size: 13px
       line-height: 1.4
+  .article
+    ul li,
+    ol li
+      font-size: 15px
 
 // max-width 768px
 
@@ -500,5 +518,9 @@ input[type="submit"]
       top: calc(50% - 20px)
       width: 3px
       height: 40px
+  .article
+    ul li,
+    ol li
+      font-size: 14px
 
 // max-width 400px

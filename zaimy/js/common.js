@@ -115,9 +115,9 @@
   toggleHidden('.faq',true);
 
   $(".count_range--money").each(function() {
-    xMin = $(this).siblings('.range__min').text();
-    xMax = $(this).siblings('.range__max').text();
-    xFrom = $(this).siblings('.range__from').text();
+    var xMin = $(this).siblings('.range__min').text();
+    var xMax = $(this).siblings('.range__max').text();
+    var xFrom = $(this).siblings('.range__from').text();
     $(this).ionRangeSlider({
       min: xMin,
       max: xMax,
@@ -127,10 +127,10 @@
     });
   });
 
-  $(".count-range--months").each(function() {
-    xMin = $(this).siblings('.range__min').text();
-    xMax = $(this).siblings('.range__max').text();
-    xFrom = $(this).siblings('.range__from').text();
+  $(".count_range--months").each(function() {
+    var xMin = $(this).siblings('.range__min').text();
+    var xMax = $(this).siblings('.range__max').text();
+    var xFrom = $(this).siblings('.range__from').text();
 
     $(this).ionRangeSlider({
       min: xMin,
@@ -139,6 +139,12 @@
       postfix: ' мес.',
     });
   });
+
+  // $('.range').each(function(xi,xel) {
+  //   var xIrsSingle = $(xel).find('.irs .irs-single');
+  //   var xIrsSingleText = $(xel).find('.count-range').val();
+  //   xIrsSingle.append('<input type="text" value="' + xIrsSingleText + '">');
+  // });
 
   // фиксированные шапка
   $(window).on("scroll", function() {
@@ -169,6 +175,29 @@
   }
 
   hideMore();
+
+  $('.count-range').change(function() {
+    var xSum = $(this).parents('.calc__ranges-wrap').find('.count_range--money').val();
+    xSum = Number.parseInt(xSum);
+    var xMonths = $(this).parents('.calc__ranges-wrap').find('.count_range--months').val();
+    xMonths = Number.parseInt(xMonths);
+    var xRate = $(this).parents('.form--calc').find('input[name="calc-rate"]').val();
+    var xDate = new Date();
+    var xLastDate = new Date();
+
+    xLastDate .setMonth(xLastDate .getMonth() + xMonths);
+    var xLastMonth = xLastDate.getMonth() + 1;
+    // var xDiff = new Date(Math.abs(xLastDate - xDate)) / 1000 / 60 / 60 / 24;
+    var xBack = xSum + xSum * xRate * xMonths / 100;
+
+    xLastDate = xLastDate.getDate() + '.' + xLastMonth + '.' + xLastDate.getFullYear();
+
+    var xCalc = $(this).parents('.form--calc').find('.calc__summary');
+    xCalc.find('.calc__summary-item--get span').text(xSum);
+    xCalc.find('.calc__summary-item--back span').text(Math.round(xBack));
+    xCalc.find('.calc__summary-item--overpay span').text(Math.round(xBack - xSum));
+    xCalc.find('.calc__summary-item--date span').text(xLastDate);
+  });
 
   /* Resize */
   $(window).resize(function(){

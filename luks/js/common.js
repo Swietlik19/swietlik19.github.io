@@ -20,11 +20,7 @@
   });
 
   /* инициализация twentytwenty */
-
-  $(window).on('load', function() {
-    $(".design__container").twentytwenty();
-  });
-  
+  $(".design__container").twentytwenty();
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
@@ -185,8 +181,8 @@
     if (document.querySelector('.steps__circle') !== null) {
       var circleParent = $('.steps__circle');
 
-      var koeff1 = 5.2;
-      var koeff2 = 2;
+      var koeff1 = 4.84;
+      var koeff2 = 1.65;
 
       circleParent.each(function(xi,el) {
         var items = $(el).find('.steps__item');
@@ -208,38 +204,6 @@
   }
 
   makeCircle();
-
-  $('.steps__item').hover(function() {
-    var currNum = $(this).find('.steps__num').text();
-    $('.steps__item').each(function(xi,el) {
-      if ( $(el).find('.steps__num').text() <= currNum ) {
-        $(el).addClass('active');
-        var xTr =  0.05 * xi;
-        $(el).find('.steps__num-wrap').css('transition','0.2s ' + xTr + 's');
-        $(el).find('.steps__num').css('transition','0.2s ' + xTr + 's');
-      } else {
-        $(el).removeClass('active');
-      }
-    });
-  });
-
-  $('.steps__circle').hover(function() {
-
-  },function(){
-    $('.steps__item').removeClass('active');
-  });
-
-  $('.steps__item a:not([download]').click(function(){
-    event.preventDefault();
-
-    var t = $(this).data('title');
-    $('.modal__steps .form__title').html(t);
-    $('.modal__steps input[name="text-service"]').val(t);
-
-    $('.modal__steps').addClass('active');
-    $('.modal__steps .modal__content').addClass('visible');
-  
-  });
 
   // фиксированные шапка
   $(window).on("scroll", function() {
@@ -281,10 +245,6 @@
       $('.without-cite').show();
       $('.without-cite').find('pattern').find('image').attr('xlink:href',xImg);
     }
-  });
-
-  $('.complex__feat-item').click(function() {
-    $(this).toggleClass('active');
   });
 
 

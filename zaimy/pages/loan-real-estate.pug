@@ -20,16 +20,18 @@ html(lang='ru')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
+    include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
 
+    include blocks/scr1.pug
+    include blocks/scr_calc.pug
     include blocks/scr_features.pug
     include blocks/scr_cta.pug
     include blocks/scr_map.pug
     include blocks/scr_requirments.pug
     include blocks/scr_conditions.pug
     include blocks/scr_seo.pug
-    include blocks/scr_rate.pug
 
     include blocks/footer.pug
     include blocks/modal.pug
@@ -41,13 +43,15 @@ html(lang='ru')
 
     +header("a")
 
-    #page_wr.page_wr.page_wr--second
-      +scr_features--cond
-      +scr_requirments--cond
-      +scr_conditions--cond
-      +scr_rate
+    #page_wr.page_wr
+      +scr1--loan-real-estate
+      +scr_features--loan
+      +scr_requirments
+      +scr_conditions
+      +scr_calc--loan
       +scr_seo
       +scr_cta
+      +scr_map
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
@@ -58,3 +62,4 @@ html(lang='ru')
 
     +styles-bottom
     +scripts
+    +script-map

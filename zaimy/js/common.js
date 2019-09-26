@@ -114,16 +114,45 @@
 
   toggleHidden('.faq',true);
 
+  // $(".count_range--money").each(function() {
+  //   var xMin = $(this).siblings('.range__min').text();
+  //   var xMax = $(this).siblings('.range__max').text();
+  //   var xFrom = $(this).siblings('.range__from').text();
+  //   $(this).ionRangeSlider({
+  //     min: xMin,
+  //     max: xMax,
+  //     from: xFrom,
+  //     postfix: ' руб.',
+  //     step: 10000
+  //   });
+  // });
+
+  // $(".count_range--months").each(function() {
+  //   var xMin = $(this).siblings('.range__min').text();
+  //   var xMax = $(this).siblings('.range__max').text();
+  //   var xFrom = $(this).siblings('.range__from').text();
+
+  //   $(this).ionRangeSlider({
+  //     min: xMin,
+  //     max: xMax,
+  //     from: xFrom,
+  //     postfix: ' мес.',
+  //   });
+  // });
+
   $(".count_range--money").each(function() {
     var xMin = $(this).siblings('.range__min').text();
     var xMax = $(this).siblings('.range__max').text();
     var xFrom = $(this).siblings('.range__from').text();
-    $(this).ionRangeSlider({
-      min: xMin,
-      max: xMax,
-      from: xFrom,
-      postfix: ' руб.',
-      step: 10000
+    $(this).jRange({
+      from: xMin,
+      to: xMax,
+      width: 330,
+      step: 10000,
+      format: '%s',
+      showLabels: true,
+      snap: true,
+      postfix: ' руб.'
     });
   });
 
@@ -131,20 +160,16 @@
     var xMin = $(this).siblings('.range__min').text();
     var xMax = $(this).siblings('.range__max').text();
     var xFrom = $(this).siblings('.range__from').text();
-
-    $(this).ionRangeSlider({
-      min: xMin,
-      max: xMax,
-      from: xFrom,
-      postfix: ' мес.',
+    $(this).jRange({
+      from: xMin,
+      to: xMax,
+      width: 330,
+      format: '%s',
+      showLabels: true,
+      snap: true,
+      postfix: ' мес.'
     });
   });
-
-  // $('.range').each(function(xi,xel) {
-  //   var xIrsSingle = $(xel).find('.irs .irs-single');
-  //   var xIrsSingleText = $(xel).find('.count-range').val();
-  //   xIrsSingle.append('<input type="text" value="' + xIrsSingleText + '">');
-  // });
 
   // фиксированные шапка
   $(window).on("scroll", function() {

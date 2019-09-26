@@ -311,30 +311,7 @@
           </div>
         </div>
       </section>
-      <!-- /.scr_cta-->
-      <section class="scr_map map" id="scr_map">
-        <div class="container">
-          <div class="map__wrap">
-            <div class="map__contacts">
-              <div class="map__content">
-                <h2 class="title">Контакты:</h2>
-                <div class="map__item">
-                  <p class="map__text">г. Краснодар,<br> ул. Селезнёва, 105, 2 этаж</p>
-                </div>
-                <div class="map__item"><a class="map__link" href="tel:88004000202">8 800 400 02 02</a>
-                  <p class="map__text">Звонок бесплатный</p><a class="map__link" href="tel:+79615245656">+7 961 524 56 56</a>
-                </div>
-                <div class="map__item">
-                  <p class="map__title">Время работы:</p>
-                  <p class="map__text">Пн-Пт с 10:00 до 20:00<br> Сб с 10:00 до 17:00<br> Вс - выходной</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="inner-map" id="inner-map" style="background: transparent url('img/map.jpg') no-repeat center center; background-size: cover;"></div>
-      </section>
-      <!-- /.scr_map--><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
+      <!-- /.scr_cta--><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
     </div>
     <footer class="footer grey-bg" id="footer">
       <div class="logo__wrap">
@@ -448,65 +425,8 @@
     <script src="js/libs/ofi.min.js"></script>
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
-    <script src="libs/rangeSlider/js/ion.rangeSlider.min.js"></script>
+    <script src="libs/jRange/jquery.range.js"></script>
     <script src="js/common.js"></script>
     <script src="js/slider.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>
-    <script>
-      (function($)
-      {
-        if (window.matchMedia('(max-width: 400px)').matches)
-        {
-          createMap('inner-map', [45.027037, 39.029625], [45.027037, 39.029625]);
-        }
-        else
-        {
-          createMap('inner-map', [45.026791, 39.031310], [45.027037, 39.029625]);
-        }
-
-        function createMap(xID, coords, pinCoords)
-        {
-          if ($("#" + xID + "").length > 0)
-          {
-            var myMap;
-            // Дождёмся загрузки API и готовности DOM.
-            ymaps.ready(init);
-
-            function init()
-            {
-              myMap = new ymaps.Map(xID,
-              {
-                center: coords,
-                zoom: 17
-              },
-              {
-                searchControlProvider: 'yandex#search'
-              });
-              // Создаём макет содержимого.
-              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-                myPlacemark = new ymaps.Placemark(pinCoords,
-                {
-                  hintContent: 'адрес',
-                  balloonContent: 'улица Селезнёва, 105'
-                },
-                {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
-                  // Размеры метки.
-                  iconImageSize: [41, 51],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
-                });
-              myMap.geoObjects.add(myPlacemark);
-              myMap.behaviors.disable('scrollZoom');
-            }
-          }
-        }
-      })(jQuery);
-    </script>
   </body>
 </html>

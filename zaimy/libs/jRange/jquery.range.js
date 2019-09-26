@@ -285,13 +285,19 @@
       var width = label.html('<input class="range-label" type="text" value="' + text + '"><span class="range-postfix">' + this.options.postfix + '</span><div class="input-buffer"></div>').width(),
         left = position - width / 2;
 
-      $('.range-label').each(function() {
-        var $input = $(this),
-        $buffer = $(this).siblings('.input-buffer');
+      $('.range-label').each(function(xi,xel) {
+        var $input = $(xel),
+        $buffer = $(xel).siblings('.input-buffer');
         $buffer.text($input.val());
         $input.width($buffer.width());
-        $input.on('change', function() {
 
+        $input.keyup(function(event){
+          if(event.keyCode == 13){
+              event.preventDefault();
+          }
+        });
+        $input.on('change', function() {
+          $input.parents('.slider-container').siblings('.count-range').jRange('setValue', $input.val());
         });
         $input.on('input', function() {
           $buffer.text($input.val());

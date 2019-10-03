@@ -119,6 +119,43 @@
     ]
   });
 
+  $('#certs__slider .slider2__slides').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider2__dots')
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider2__dots')
+        }
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider2__dots')
+        }
+      }
+    ]
+  });
+
   function equalHeight(sliderID) {
     $(sliderID).find('.slick-slide').height('auto');
     var slickTrack = $(sliderID).find('.slick-track');

@@ -80,6 +80,12 @@
         width: 100%
         height: 100%
         fill: $accentl
+    &--three
+      .scr1__advantages-item
+        align-items: flex-start
+        max-width: calc(33.3% - 10px)
+        &:nth-of-type(1)
+          max-width: calc(40% - 10px)
 
     &-text
       font-size: 18px
@@ -131,6 +137,17 @@
       height: 260px
 
   // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__advantages
+      &--three
+        .scr1__advantages-item
+          max-width: calc(50% - 10px)
+          &:nth-of-type(1)
+            max-width: calc(50% - 10px)
+
+
+  // max-width 700px
 
   @media screen and (max-width: 650px)
     &__advantages
@@ -374,3 +391,77 @@
       font-size: 20px
 
   // max-width 500px
+
+
+.scr1--about
+  min-height: 0
+  padding-bottom: 0
+  background-color: #f9f9f9
+  z-index: 1
+  overflow: hidden
+  .scr1__content
+    padding-bottom: 42px
+  .scr1__title
+    font-size: 36px
+    line-height: 1.2
+    font-weight: 400
+    strong
+      font-weight: 600
+  .scr1__desc
+    max-width: 768px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 400
+    color: #001800
+  .scr1__bg
+    top: auto
+    left: auto
+    right: 40px
+    bottom: -75px
+    z-index: -1
+    width: 331px
+    height: 565px
+
+  @media screen and (max-width: 991px)
+    padding-top: 160px
+    .scr1__title
+      font-size: 28px
+      width: 100%
+    .scr1__bg
+      bottom: -185px
+      opacity: 0.3
+    .scr1__desc
+      font-size: 16px
+    .scr1__content
+      padding-bottom: 10px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    .scr1__bg
+      display: none
+    .scr1__title
+      margin-bottom: 14px
+    .scr1__desc
+      width: 100%
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    padding-top: 130px
+    .scr1__title
+      font-size: 22px
+    .scr1__desc
+      font-size: 14px
+    .scr1__advantages
+      margin-top: 30px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    .scr1__title
+      font-size: 18px
+    .scr1__desc
+      font-size: 13px
+
+  // max-width 400px

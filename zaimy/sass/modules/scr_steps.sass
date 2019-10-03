@@ -8,6 +8,20 @@
     list-style: none
     display: flex
     margin-top: 70px
+    &--three
+      justify-content: space-between
+      .steps__item
+        width: calc((100% - 60px) / 3)
+        padding-left: 38px
+        text-align: left
+        &:nth-of-type(n + 2)
+          padding-left: 68px
+          .steps__num
+            right: calc(100% - 88px)
+      .steps__num
+        left: auto
+        right: calc(100% - 48px)
+        transform: none
   &__item
     position: relative
     width: 25%
@@ -17,23 +31,6 @@
     &:hover
       .steps__num
         top: -62px
-  &__num
-    position: absolute
-    top: -52px
-    left: 50%
-    transform: translateX(-50%)
-
-    opacity: 0.2
-    font-size: 138.1px
-    line-height: 1.2
-    font-weight: 900
-    color: #76bb78
-    font-style: italic
-    transition: 0.3s
-    z-index: -1
-  &__text
-    font-weight: 600
-    color: #001800
     a
       position: relative
       font-weight: 700
@@ -52,6 +49,29 @@
         background-color: #3b9e3e
       &:hover
         color: $accentl
+  &__num
+    position: absolute
+    top: -52px
+    left: 50%
+    transform: translateX(-50%)
+
+    opacity: 0.2
+    font-size: 138.1px
+    line-height: 1.2
+    font-weight: 900
+    color: #76bb78
+    font-style: italic
+    transition: 0.3s
+    z-index: -1
+  &__title
+    margin-bottom: 10px
+    font-size: 24px
+    line-height: 1.2
+    font-weight: 700
+    color: #001800
+  &__text
+    font-weight: 600
+    color: #001800
 
 
   /* media */
@@ -71,14 +91,40 @@
 
   // max-width 1170px
 
+  @media screen and (max-width: 991px)
+    &__list
+      &--three
+        .steps__item
+          &:nth-of-type(n + 2)
+            padding-left: 38px
+            .steps__num
+              right: calc(100% - 48px)
+
+  // max-width 991px
+
   @media screen and (max-width: 767px)
     &__list
       flex-wrap: wrap
+    &__list
+      &--three
+        .steps__item
+          width: 50%
+          padding-left: 48px
+          &:nth-of-type(n + 2)
+            padding-left: 48px
+            .steps__num
+              right: calc(100% - 68px)
+        .steps__num
+          right: calc(100% - 68px)
+
     &__item
       width: 50%
       margin-bottom: 60px
     &__num
       font-size: 110px
+    &__title
+      margin-bottom: 6px
+      font-size: 20px
 
   // max-width 767px
 
@@ -87,6 +133,20 @@
     padding-bottom: 0
     &__list
       margin-top: 30px
+      &--three
+        .steps__item
+          padding-left: 28px
+          padding-right: 0
+          &:nth-of-type(n + 2)
+            padding-left: 28px
+            .steps__num
+              right: calc(100% - 38px)
+        .steps__num
+          font-size: 90px
+          right: calc(100% - 38px)
+    &__title
+      margin-bottom: 4px
+      font-size: 16px
 
   // max-width 500px
 
@@ -96,7 +156,25 @@
       line-height: 1.2
     &__item
       margin-bottom: 40px
+    &__list
+      &--three
+        .steps__item
+          padding-left: 18px
+          &:nth-of-type(n + 2)
+            padding-left: 18px
+            .steps__num
+              right: calc(100% - 28px)
+        .steps__num
+          font-size: 75px
+          right: calc(100% - 28px)
 
   // max-width 400px
 
 /* steps */
+
+.steps--investor
+  padding-bottom: 45px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 25px
+  // max-width 767px

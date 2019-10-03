@@ -20,6 +20,35 @@
     ]
   });
 
+  $('#bonus__slider .slider1__slides').slick({
+    responsive: [
+      {
+        breakpoint: 4000,
+        settings: "unslick",
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('#bonus__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 430,
+        settings: {
+          slidesToShow: 1,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('#bonus__slider .slider1__dots')
+        }
+      }
+    ]
+  });
+
   $('#features__slider .slider1__slides').slick({
     responsive: [
       {

@@ -245,3 +245,128 @@ mixin scr_calc--loan()
 
 
   // /.scr_calc
+
+
+
+mixin scr_calc--investor()
+  section.scr_calc.calc.calc--investor(id="scr_calc")
+    .container
+      .calc__wrap.grey-bg
+        h2.title Расчитайте доход от инвестиций
+
+        .form.wpcf7.form--calc
+          form.wpcf7-form
+            .calc__top
+              .calc__item
+                p.calc__title
+                  strong Инвестор:
+
+                .calc__right.calc__right--two
+                  .calc__right-item.calc__right-item--radio
+                    span.wpcf7-form-control.wpcf7-radio
+                      label
+                        input(type="radio" name="person-type" id="person-type1" value="Физическое лицо")
+                        span.calc__btn.calc__btn--radio Физическое лицо
+
+                  .calc__right-item.calc__right-item--radio
+                    span.wpcf7-form-control.wpcf7-radio
+                      label
+                        input(type="radio" name="person-type" id="person-type2" value="Юридическое лицо" checked)
+                        span.calc__btn.calc__btn--radio Юридическое лицо
+
+              .calc__item.calc__item--ranges
+                p.calc__title
+                  strong Сумма
+                    br
+                    |  инвестиций:
+
+                .calc__right.calc__right--ranges.calc__ranges-wrap
+                  .calc__right-item
+                    span.wpcf7-form-control-wrap.text-input
+                      label.range
+                        input.wpcf7-form-control.wpcf7-text.wpcf7-count(type="hidden" class="count-range count_range--money" name="range-money" aria-required='true' aria-invalid='false')
+                        span.hidden.range__min 1000000
+                        span.hidden.range__max 20000000
+                        span.hidden.range__from 100000
+
+                  p.calc__title
+                    strong Срок
+                      br
+                      |  инвестиций:
+
+                  .calc__right-item
+                    span.wpcf7-form-control-wrap.text-input
+                      label.range
+                        input.wpcf7-form-control.wpcf7-text.wpcf7-count(type="hidden" class="count-range count_range--months" name="range-months" aria-required='true' aria-invalid='false')
+                        // В месяцах. Т.е. если 2 года, то 24:
+                        span.hidden.range__min 6
+                        span.hidden.range__max 36
+                        span.hidden.range__from 5
+
+
+              .calc__item
+                p.calc__title
+                  strong Получение дохода:
+
+                .calc__right.calc__right--two
+                  .calc__right-item.calc__right-item--radio
+                    span.wpcf7-form-control.wpcf7-radio
+                      label
+                        input(type="radio" name="get-type" id="get-type1" value="Monthly")
+                        span.calc__btn.calc__btn--radio Ежемесячно
+
+                  .calc__right-item.calc__right-item--radio
+                    span.wpcf7-form-control.wpcf7-radio
+                      label
+                        input(type="radio" name="get-type" id="get-type2" value="End" checked)
+                        span.calc__btn.calc__btn--radio В конце срока
+
+            .calc__summary
+              ul.calc__summary-list.calc__summary-list--two
+                li.calc__summary-item.calc__summary-item--percent
+                  p.calc__summary-text Процентная ставка:
+                  p.calc__summary-val
+                    span 20%
+
+                  // Процентная ставка:
+                  input(name="calc-percent" type="hidden" value="20")
+
+                li.calc__summary-item.calc__summary-item--get
+                  p.calc__summary-text Ваша доходность:
+                  p.calc__summary-val
+                    span 300 000 руб.
+
+            .calc__bottom
+              .form.form--horizontal
+                .form__col
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-user")
+
+                .form__col
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-phone")
+
+                .form__col.form__col--submit
+                  .form__item
+                    input.wpcf7-form-control.wpcf7-submit.btn.btn--green(type='submit', value='Оставить заявку')
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.accept
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        span.wpcf7-list-item
+                          label
+                            input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                            span.wpcf7-list-item-label Согласие на обработку персональных данных
+                              i.accept__icon
+
+
+  // /.scr_calc
+

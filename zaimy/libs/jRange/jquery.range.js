@@ -74,7 +74,8 @@
 				console.log('jRange : no width found, returning');
 				return;
 			} else {
-				this.options.width = this.options.width || this.inputNode.width();
+				// this.options.width = this.options.width || this.inputNode.width();
+        this.options.width = $('.calc__ranges-wrap .calc__right-item').width();
 				this.domNode.width(this.options.width);
 				this.inputNode.hide();
 			}
@@ -245,10 +246,10 @@
 			var str = '';
 			for (var i = 0; i < s.length; i++) {
         if (i == 0) {
-  				str += '<span style="left: 0">' + (s[i] != '|' ? '<ins>' + s[i] + '</ins>' : '') + '</span>';
+  				str += '<span style="left: 0">' + (Number.parseInt(s[i]).toLocaleString('ru') != '|' ? '<ins>' + Number.parseInt(s[i]).toLocaleString('ru') + '</ins>' : '') + '</span>';
         }
         if (i == 1) {
-          str += '<span style="right: 0">' + (s[i] != '|' ? '<ins>' + s[i] + '</ins>' : '') + '</span>';
+          str += '<span style="right: 0">' + (Number.parseInt(s[i]).toLocaleString('ru') != '|' ? '<ins>' + Number.parseInt(s[i]).toLocaleString('ru') + '</ins>' : '') + '</span>';
         }
 			}
 			this.scale.html(str);
@@ -282,13 +283,13 @@
 
 			// var width = label.html(text).width(),
 			// 	left = position - width / 2;
-      var width = label.html('<input class="range-label" type="text" value="' + text + '"><span class="range-postfix">' + this.options.postfix + '</span><div class="input-buffer"></div>').width(),
+      var width = label.html('<input class="range-label" type="text" value="' + Number.parseInt(text).toLocaleString('ru') + '"><span class="range-postfix">' + this.options.postfix + '</span><div class="input-buffer"></div>').width(),
         left = position - width / 2;
 
       $('.range-label').each(function(xi,xel) {
         var $input = $(xel),
         $buffer = $(xel).siblings('.input-buffer');
-        $buffer.text($input.val());
+        $buffer.text($input.val().toLocaleString('ru'));
         $input.width($buffer.width());
 
         $input.keyup(function(event){
@@ -297,11 +298,17 @@
           }
         });
         $input.on('change', function() {
-          $input.parents('.slider-container').siblings('.count-range').jRange('setValue', $input.val());
+          $input.parents('.slider-container').siblings('.count-range').jRange('setValue', $input.val().toLocaleString('ru'));
         });
         $input.on('input', function() {
-          $buffer.text($input.val());
+          $buffer.text($input.val().toLocaleString('ru'));
           $input.width($buffer.width());
+        });
+        $input.on('click', function() {
+          $input.val($input.val().replace(/\s+/g, ''));
+        });
+        $input.on('blur', function() {
+          $input.val(Number.parseInt($input.val()).toLocaleString('ru'));
         });
       });
 

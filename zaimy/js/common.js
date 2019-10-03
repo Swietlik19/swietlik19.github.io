@@ -201,28 +201,64 @@
 
   hideMore();
 
-  $('.count-range').change(function() {
-    var xSum = $(this).parents('.calc__ranges-wrap').find('.count_range--money').val();
+  // $('.count-range').change(function() {
+  //   var xSum = $(this).parents('.calc__ranges-wrap').find('.count_range--money').val();
+  //   xSum = Number.parseInt(xSum);
+  //   var xMonths = $(this).parents('.calc__ranges-wrap').find('.count_range--months').val();
+  //   xMonths = Number.parseInt(xMonths);
+  //   var xRate = $(this).parents('.form--calc').find('input[name="calc-rate"]').val();
+  //   var xPercent = $(this).parents('.form--calc').find('input[name="calc-percent"]').val();
+  //   var xDate = new Date();
+  //   var xLastDate = new Date();
+
+  //   xLastDate .setMonth(xLastDate .getMonth() + xMonths);
+  //   var xLastMonth = xLastDate.getMonth() + 1;
+  //   // var xDiff = new Date(Math.abs(xLastDate - xDate)) / 1000 / 60 / 60 / 24;
+  //   var xBack = xSum + xSum * xRate * xMonths / 100;
+
+  //   xLastDate = xLastDate.getDate() + '.' + xLastMonth + '.' + xLastDate.getFullYear();
+
+  //   var xCalc = $(this).parents('.form--calc').find('.calc__summary');
+  //   xCalc.find('.calc__summary-item--get span').text(xSum);
+  //   xCalc.find('.calc__summary-item--back span').text(Math.round(xBack));
+  //   xCalc.find('.calc__summary-item--overpay span').text(Math.round(xBack - xSum));
+  //   xCalc.find('.calc__summary-item--date span').text(xLastDate);
+  //   xCalc.find('.calc__summary-item--percent span').text(xPercent + '%');
+  // });
+
+  function calcSummary(xForm) {
+    var xSum = xForm.find('.count_range--money').val();
     xSum = Number.parseInt(xSum);
-    var xMonths = $(this).parents('.calc__ranges-wrap').find('.count_range--months').val();
+    var xMonths = xForm.find('.count_range--months').val();
     xMonths = Number.parseInt(xMonths);
-    var xRate = $(this).parents('.form--calc').find('input[name="calc-rate"]').val();
+    var xRate = xForm.find('input[name="calc-rate"]').val();
+    var xPercent = xForm.find('input[name="calc-percent"]').val();
     var xDate = new Date();
     var xLastDate = new Date();
 
     xLastDate .setMonth(xLastDate .getMonth() + xMonths);
     var xLastMonth = xLastDate.getMonth() + 1;
-    // var xDiff = new Date(Math.abs(xLastDate - xDate)) / 1000 / 60 / 60 / 24;
     var xBack = xSum + xSum * xRate * xMonths / 100;
 
     xLastDate = xLastDate.getDate() + '.' + xLastMonth + '.' + xLastDate.getFullYear();
 
-    var xCalc = $(this).parents('.form--calc').find('.calc__summary');
-    xCalc.find('.calc__summary-item--get span').text(xSum);
-    xCalc.find('.calc__summary-item--back span').text(Math.round(xBack));
-    xCalc.find('.calc__summary-item--overpay span').text(Math.round(xBack - xSum));
+    var xCalc = xForm.find('.calc__summary');
+    xCalc.find('.calc__summary-item--get span').text(xSum.toLocaleString('ru'));
+    xCalc.find('.calc__summary-item--back span').text(Math.round(xBack).toLocaleString('ru'));
+    xCalc.find('.calc__summary-item--overpay span').text(Math.round(xBack - xSum).toLocaleString('ru'));
     xCalc.find('.calc__summary-item--date span').text(xLastDate);
+    xCalc.find('.calc__summary-item--percent span').text(xPercent.toLocaleString('ru') + '%');
+    xCalc.find('.calc__summary-item--get span').text(Math.round(xSum * xPercent / 100 * xMonths / 12).toLocaleString('ru') + ' руб.');
+  }
+
+  $('.form--calc').each(function(xi,xel) {
+    calcSummary($(xel));
   });
+
+  $('.count-range').change(function() {
+    calcSummary($(this).parents('.form--calc'));
+  });
+
 
   /* Resize */
   $(window).resize(function(){

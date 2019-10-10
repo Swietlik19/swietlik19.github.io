@@ -1,0 +1,75 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+
+    include blocks/scripts.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+
+    include blocks/scr1.pug
+    include blocks/scr_features.pug
+    include blocks/scr_buy.pug
+    include blocks/scr_about.pug
+    include blocks/scr_serv.pug
+    include blocks/scr_lead.pug
+    include blocks/scr_insta.pug
+    include blocks/scr_price.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    //- ToDo: Перенести first-load.css в inline!!!
+    +styles-top
+
+  body
+
+    div.vertical-scrolling.page--ice-rink(data-anchor="firstSlide")
+
+      // Скопировала меню, чтобы легче было, изменён тут только логотип
+      div.opredelenie
+        div.fixedMenu
+
+          // Лого изменено!!!
+          div.logo
+            a(href="http://meganom.net")
+              noscript
+                img.lazy(src="img/logo.png" alt="" width="135" height="101")
+              img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/logo.png" alt="" width="135" height="101")
+
+
+          nav#site-navigation.main-navigation(role="navigation")
+            button.menu-toggle(aria-controls="primary-menu" aria-expanded="false") Primary Menu
+            div.menu-top-container
+              ul#primary-menu.menu.nav-menu(aria-expanded="false")
+                li#menu-item-16.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-home.menu-item-16
+                  a(href="http://meganom.net/" class="hoverIframe") Главная
+
+      +header("a")
+
+      #page_wr.page_wr
+        +scr1
+        +scr_buy
+        +scr_about
+        +scr_price
+        +scr_serv
+        +scr_lead
+        +scr_insta
+
+      +footer("a")
+
+    +styles-bottom
+    +scripts

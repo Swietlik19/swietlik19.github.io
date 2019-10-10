@@ -1,0 +1,825 @@
+.buy
+  position: relative
+  z-index: 1
+  &__wrap
+    padding-top: 35px
+    padding-bottom: 75px
+    background-color: #eff6fc
+    overflow: hidden
+  .title
+    position: absolute
+    top: 44%
+    left: 51px
+    transform: translateY(-50%)
+
+  &__tab
+    &#buy-tab-0
+      .buy__prev
+        opacity: 0
+        max-height: 0
+        overflow: hidden
+        cursor: default
+    max-height: 0
+    opacity: 0
+    overflow: hidden
+    transition: opacity 0.3s
+    &.active
+      display: block
+      opacity: 1
+      max-height: 10000px
+      overflow: visible
+
+  &__top
+    position: relative
+  &__title
+    font-size: 24px
+    line-height: 1.3
+    font-weight: 500
+    color: $accent
+    text-align: center
+
+  &__main
+    padding-left: 30px
+    padding-right: 30px
+  &__df
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    justify-content: center
+    &--three
+      .buy__item
+        width: calc(33.3333333% - 15px)
+        max-width: 358px
+    &--four
+      .buy__item
+        width: calc(25% - 15px)
+        max-width: 263px
+    &--fs
+      align-items: flex-start
+  &__item
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+
+  &__quantity
+    padding: 33px
+    box-shadow: 0px 15px 30px 0px rgba(55,119,167,0.15)
+    background-color: #ffffff
+    border-radius: 6.0px
+    &-wrap
+      position: relative
+      display: flex
+      flex-direction: column
+      height: 100%
+      padding: 0 10px 25px
+      border: 1.0px solid #dcdce1
+      border-radius: 6.0px
+    &-title
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%,-50%)
+
+      padding-left: 28px
+      padding-right: 28px
+      background-color: #fff
+      font-size: 24px
+      font-weight: 500
+      text-align: center
+      white-space: nowrap
+    &-desc
+      margin-top: 26px
+      text-align: center
+
+  .quantity-block
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: auto
+
+  .quantity-num
+    box-shadow: 0px 10px 15px 0px #eff5fb
+    width: 70px
+    height: 54px
+    background-color: #ffffff
+    border: 1.0px solid #eff6fc
+    border-radius: 3px
+    font-size: 30px
+    font-weight: 700
+    color: $accent
+    text-align: center
+    -moz-appearance:textfield
+    transition: 0.3s
+    &:focus
+      color: $accent
+    &:hover
+      border-color: #97d2fe
+
+  .quantity-arrow
+    background: none
+    border: none
+    outline: none
+    font-size: 0
+
+    display: block
+    width: 25px
+    height: 25px
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 8px)
+      left: calc(50% - 8px)
+
+      width: 16px
+      height: 16px
+      border-left: 2px solid #97d2fe
+      border-bottom: 2px solid #97d2fe
+      border-radius: 0
+      transition: 0.3s
+    &:hover
+      &::before
+        border-color: $accent
+    &-minus
+      margin-right: 8px
+      transform: rotate(45deg)
+    &-plus
+      margin-left: 8px
+      transform: rotate(-135deg)
+
+  .quantity-num::-webkit-outer-spin-button,
+  .quantity-num::-webkit-inner-spin-button
+    -webkit-appearance: none
+
+  &__bottom
+    position: relative
+    display: flex
+    align-items: center
+    margin-top: 46px
+    padding-left: 66px
+    padding-right: 108px
+    z-index: 1
+  &__link
+    text-decoration: none
+  &__prev
+    position: relative
+    margin-right: 72px
+    font-size: 16px
+    font-weight: 500
+    color: $accent
+    cursor: pointer
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      left: -18px
+      top: calc(50% - 5px)
+
+      display: block
+      width: 10px
+      height: 10px
+      border-bottom: 2px solid $accent
+      border-left: 2px solid $accent
+      transform: rotate(45deg)
+      transition: 0.3s
+    &:hover
+      color: $accent2
+      &::before
+        border-color: $accent2
+    &:visited
+      color: $accent
+      &:hover
+        color: $accent2
+
+  &__steps
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    align-items: center
+    .buy__link
+      display: block
+      position: relative
+    &-item
+      position: relative
+      width: 78px
+      padding: 0 13px
+      &.active
+        .buy__circle
+          box-shadow: 0px 10px 15px 0px rgba(255,99,3,0.2)
+          background-image: $grad
+          transition: 0.3s
+          .icon
+            fill: #fff
+          &:hover
+            box-shadow: 0px 10px 15px 0px rgba(255,99,3,0.4)
+        .buy__step
+          opacity: 1
+        .buy__link
+          cursor: pointer
+        & + .buy__steps-line
+          background-color: #ff9900
+    &-line
+      width: 159px
+      height: 8px
+      background-color: #fff
+
+  &__circle
+    display: flex
+    align-items: center
+    justify-content: center
+
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    background-color: #ffffff
+    .icon
+      width: 23px
+      height: 18px
+      fill: #eff6fc
+
+  &__step
+    position: absolute
+    left: 50%
+    bottom: -35px
+    transform: translateX(-50%)
+
+    display: block
+    font-size: 18px
+    font-weight: 500
+    color: #666666
+    text-align: center
+    white-space: nowrap
+    opacity: 0
+    transition: 0.3s
+  &__right
+    margin-left: auto
+  &__next
+    position: relative
+    display: flex
+    align-items: center
+
+    min-width: 186px
+    height: 50px
+    padding-left: 24px
+    padding-right: 5px
+    box-shadow: 0px 10px 15px 0px rgba(255,99,3,0.2)
+    background-image: $grad
+    border-radius: 25.0px
+    font-size: 16px
+    font-weight: 500
+    color: #ffffff
+    cursor: pointer
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      top: -17px
+      left: -33px
+
+      display: block
+      width: 307px
+      height: 147px
+      background: transparent url('../img/decor-buy.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::after
+      content: ''
+      display: block
+      width: 10px
+      height: 10px
+      margin-left: 5px
+      border-bottom: 2px solid #fff
+      border-left: 2px solid #fff
+      transform: rotate(-135deg)
+      transition: 0.3s
+    &:hover
+      color: #fff
+      box-shadow: 0px 10px 15px 0px rgba(255,99,3,0.4)
+      &::after
+        margin-left: 10px
+    &:visited
+      color: #fff
+    &.buy__pay
+      justify-content: center
+      padding-left: 0
+      &::after
+        content: none
+    &.mobile
+      display: none
+
+  .text-input
+    label
+      display: block
+    input[type="text"],
+    label span
+      background: none
+      border: none
+      outline: none
+
+      box-shadow: 0px 15px 30px 0px rgba(55,119,167,0.15)
+      display: flex
+      flex-direction: column
+      justify-content: center
+      width: 100%
+      height: 66px
+      padding-left: 10px
+      padding-right: 10px
+      background-color: #ffffff
+      border-radius: 6.0px
+      text-align: center
+
+      font-family: $font
+      font-size: 16px
+      font-weight: 400
+      color: #666666
+      cursor: pointer
+      transition: 0.3s
+      &:hover
+        box-shadow: 0px 15px 30px 0px rgba(55,119,167,0.3)
+    &--icon
+      position: relative
+      input[type="text"],
+      label span
+        padding-left: 57px
+        text-align: left
+      .icon__wrap
+        position: absolute
+        left: 19px
+        top: calc(50% - 9px)
+
+        display: block
+        width: 16px
+        height: 16px
+        .icon
+          width: 100%
+          height: 100%
+          fill: #455055
+    input[type="radio"]
+      display: none
+      &:checked + span
+        background-color: rgba(#fff,0.3)
+
+  &__info
+    margin-top: 41px
+    font-size: 18px
+    font-weight: 500
+    text-align: center
+    strong
+      color: $accent
+      // text-transform: uppercase
+
+  &__add
+    box-shadow: 0px 15px 30px 0px rgba(55,119,167,0.15)
+    background-color: #ffffff
+    border-radius: 6.0px
+    &-top
+      min-height: 117px
+      padding-top: 0
+      padding-bottom: 13px
+    &-title
+      margin-bottom: 0
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 500
+      color: #455055
+      text-align: center
+      small
+        font-size: 16px
+    &-row
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+      padding: 10px
+      border-bottom: 1px solid rgba(56,120,167,0.2)
+    &-table
+      table
+        width: 100%
+        margin-bottom: 0
+        border-collapse: collapse
+        th,td
+          vertical-align: middle
+        th
+          padding-right: 5px
+          font-size: 16px
+          font-weight: 500
+          color: #455055
+          border: none
+    &-one-price
+      min-height: 91px
+      .buy__price
+        font-size: 24px
+        font-weight: 700
+        color: $accent
+
+    &-quantity
+      padding-top: 18px
+      padding-bottom: 18px
+    &-select
+      padding-top: 15px
+      padding-bottom: 15px
+      .text-input
+        &--icon
+          .icon__wrap
+            left: 5px
+    &-time
+      .nice-select
+        padding-left: 30px
+        &::after
+          content: none
+    &-price
+      padding-top: 23px
+      padding-bottom: 23px
+    &-size
+      .nice-select
+        &::after
+          width: 0
+          height: 0
+          border-left: 4px solid transparent
+          border-right: 4px solid transparent
+          border-top: 5px solid $accent
+          border-bottom: none
+          transform: rotate(0)
+          transform-origin: center center
+      .nice-select.open
+        &::after
+          transform: rotate(-180deg)
+
+  &__price
+    display: block
+    font-size: 30px
+    font-weight: 700
+    color: $accent
+    small
+      font-size: 16px
+      font-weight: 500
+
+  .nice-select
+    border: none
+    .list
+      left: -40px
+
+  &__promo
+    max-width: 358px
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    .text-input
+      margin-bottom: 40px
+
+  &__sum
+    margin-bottom: 0
+    margin-left: 30px
+    font-size: 16px
+    font-weight: 500
+    color: $accent
+    strong
+      font-size: 30px
+      font-weight: 700
+    &.mobile
+      display: none
+
+  &__footer
+    position: relative
+    z-index: 1
+
+  /* media */
+  @media screen and (max-width: 2500px)
+    &__prev
+      margin-right: 12px
+
+  // max-width 2500px
+
+  @media screen and (max-width: 1919px)
+    &__bottom
+      padding-left: 56px
+    &__steps
+      &-line
+        width: 89px
+
+  // max-width 1920px
+
+  @media screen and (max-width: 1600px)
+    .title
+      position: static
+      transform: none
+      text-align: center
+      margin-bottom: 5px
+
+    &__bottom
+      padding-right: 30px
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1500px)
+    &__bottom
+      margin-bottom: 30px
+    &__footer
+      padding-left: 30px
+      padding-right: 30px
+    &__sum
+      margin-left: auto
+      text-align: right
+      &.desktop
+        display: none
+      &.mobile
+        display: block
+    &__add
+      width: calc(25% - 10px)
+      margin-right: 20px
+      &:last-of-type
+        margin-right: 0
+      &-table
+        table
+          th
+            font-size: 14px
+          th,td
+            padding-top: 5px
+            padding-bottom: 5px
+            .buy__price
+              font-size: 20px
+              small
+                font-size: 14px
+      &-one-price
+        min-height: 81px
+      &-title
+        font-size: 20px
+        small
+          font-size: 14px
+      &-top
+        min-height: 97px
+    &__main
+      &--add
+        padding-left: 15px
+        padding-right: 15px
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1200px)
+    &__steps
+      &-item
+        width: 68px
+      &-line
+        width: 49px
+    &__circle
+      width: 42px
+      height: 42px
+      .icon
+        width: 19px
+        height: 14px
+    &__step
+      bottom: -25px
+      font-size: 16px
+    &__quantity
+      padding: 20px
+      &-title
+        padding-left: 11px
+        padding-right: 11px
+        font-size: 18px
+      &-desc
+        margin-top: 14px
+        font-size: 13px
+    &__add
+      &-table
+        table
+          th
+            font-size: 13px
+          th,td
+            padding-top: 3px
+            padding-bottom: 3px
+      &-one-price
+        min-height: 76px
+    &__main--add
+      .buy__df--four
+        flex-wrap: wrap
+        .buy__add
+          width: calc(50% - 10px)
+          max-width: 330px
+          margin-bottom: 15px
+          &:nth-of-type(2n)
+            margin-right: 0
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    .title
+      margin-bottom: 0
+    &__title
+      font-size: 22px
+    &__wrap
+      padding-bottom: 25px
+    .text-input
+      input[type="text"],
+      label span
+        font-size: 14px
+      &--icon
+        input[type="text"],
+        label span
+          padding-left: 37px
+        .icon__wrap
+          left: 12px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__bottom
+      margin-bottom: 50px
+    &__footer
+      display: flex
+      justify-content: space-between
+      align-items: center
+    &__next
+      &.desktop
+        display: none
+      &.mobile
+        display: flex
+    &__steps
+      flex-grow: 1
+      &-line
+        flex-grow: 1
+        width: 10px
+    &__item
+      margin-right: 10px
+    &__df
+      &--three
+        .buy__item
+          width: calc(33.3333333% - 5px)
+          padding: 15px
+      &--four
+        flex-wrap: wrap
+        .buy__item
+          width: calc(50% - 5px)
+          margin-bottom: 15px
+          &:nth-of-type(2n)
+            margin-right: 0
+          .text-input
+            &--icon
+              input[type="text"],
+              label span
+                padding-left: 57px
+              .icon__wrap
+                left: 24px
+    &__main
+      padding-left: 15px
+      padding-right: 15px
+    .quantity-num
+      width: 60px
+      height: 44px
+      font-size: 26px
+    &__bottom
+      padding-left: 15px
+      padding-right: 15px
+    &__prev
+      display: none
+    &__df--four
+      .buy__add
+        .text-input--icon
+          .icon__wrap
+            left: 4px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__title
+      font-size: 18px
+      margin-bottom: 20px
+    &__add
+      &-top
+        min-height: 78px
+      &-title
+        font-size: 16px
+        small
+          font-size: 12px
+      &-quantity
+        padding-top: 11px
+        padding-bottom: 11px
+      &-select
+        padding-top: 5px
+        padding-bottom: 5px
+      &-price
+        padding-top: 11px
+        padding-bottom: 11px
+    &__price
+      font-size: 23px
+      small
+        font-size: 14px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__title
+      font-size: 16px
+      margin-bottom: 16px
+    .buy__df
+      &--three
+        flex-wrap: wrap
+        .buy__item
+          width: calc(50% - 5px)
+          margin-bottom: 15px
+          &:nth-of-type(2n)
+            margin-right: 0
+          &:last-of-type
+            width: 100%
+    &__footer
+      padding-left: 15px
+      padding-right: 15px
+    &__sum
+      font-size: 14px
+      strong
+        font-size: 22px
+    &__next
+      min-width: 156px
+      padding-left: 15px
+      font-size: 14px
+      &::after
+        width: 8px
+        height: 8px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 14px
+    &__info
+      margin-top: 21px
+      font-size: 16px
+    &__add
+      &-table
+        table
+          th
+            font-size: 13px
+          th,td
+            .buy__price
+              font-size: 16px
+              small
+                font-size: 13px
+    &__main--add
+      .buy__df--four
+        .buy__add
+          width: 100%
+          margin-right: 0
+
+  // max-width 500px
+
+  @media screen and (max-width: 450px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+    .buy__df
+      &--three
+        .buy__item
+          padding-left: 0
+          padding-right: 0
+
+    &__quantity
+      &-wrap
+        padding-bottom: 0
+        border: none
+    .text-input
+      input[type="text"],
+      label span
+        height: 56px
+    &__promo
+      .text-input
+        margin-bottom: 25px
+
+  // max-width 450px
+
+  @media screen and (max-width: 400px)
+    &__df
+      &--four
+        .buy__item
+          .text-input
+            &--icon
+              input[type="text"],
+              label span
+                padding-left: 37px
+              .icon__wrap
+                left: 12px
+    &__bottom
+      margin-top: 26px
+      padding-left: 5px
+      padding-right: 5px
+    &__steps
+      &-item
+        width: 50px
+        padding: 0 10px
+      &-line
+        height: 4px
+    &__circle
+      width: 32px
+      height: 32px
+      .icon
+        width: 15px
+        height: 10px
+    &__step
+      bottom: -21px
+      font-size: 14px
+
+  // max-width 400px
+
+/* buy */

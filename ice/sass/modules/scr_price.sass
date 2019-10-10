@@ -1,0 +1,252 @@
+.price
+  position: relative
+  padding-top: 57px
+  .title
+    line-height: 1.2
+  &__wr
+    padding: 34px 50px 17px
+    background-color: #eff6fc
+  &__top
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    margin-bottom: 20px
+  &__link
+    position: relative
+    display: block
+    font-size: 16px
+    font-weight: 500
+    text-decoration: none
+    color: #e54500
+    transition: 0.3s
+    &::after
+      content: ''
+      position: absolute
+      bottom: -3px
+      left: 0
+
+      display: block
+      width: 100%
+      height: 1px
+      background-color: #e54500
+      transition: 0.3s
+    &:hover,
+    &:visited:hover
+      color: $accent
+      &::after
+        background-color: $accent
+    &:visited
+      color: #e54500
+  &__desc
+    margin-bottom: 0
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
+    color: $accent
+  &__table
+    position: relative
+    margin-top: 37px
+    max-height: 360px
+    overflow: hidden
+    transition: 0.3s
+    &.active
+      max-height: 5000px
+      transition: 1.3s
+    table
+      width: 100%
+      margin-bottom: 0
+      border-collapse: collapse
+      border-radius: 6px
+      overflow: hidden
+      background-color: #fff
+      thead
+        background-color: $accent2
+        td
+          padding: 10px 10px 8px
+          font-size: 16px
+          line-height: 1.2
+          font-weight: 700
+          color: #ffffff
+          vertical-align: middle
+          text-align: center
+          border-right: 1px solid rgba(56,120,167,0.2)
+          border-bottom: 1px solid rgba(56,120,167,0.2)
+          &:last-of-type
+            border-right: none
+      tbody
+        tr
+          &:nth-of-type(2n + 1)
+            background-color: #eff6fc
+          &:last-of-type
+            .price__title
+              border-bottom: none
+        td
+          padding: 14px 10px 14px
+          font-size: 18px
+          line-height: 1.2
+          font-weight: 400
+          color: $accent
+          border-right: 1px solid rgba(56,120,167,0.2)
+          text-align: center
+          vertical-align: middle
+          strong
+            font-weight: 500
+          &.price__title
+            padding-left: 46px
+            text-align: left
+            background-color: #fff
+            border-bottom: 1px solid rgba(56,120,167,0.2)
+            strong
+              text-transform: uppercase
+          &:last-of-type
+            border-right: none
+          .price__price
+            font-size: 24px
+            font-weight: 700
+          p
+            margin-bottom: 0
+
+  &__btns
+    position: relative
+    text-align: center
+    z-index: 10
+    background-image: linear-gradient(0deg, #eff6fc 0%, rgba(#fff, 0.8) 100%)
+    // margin-top: -76px
+  &__show
+    position: relative
+    background: none
+    border: none
+    outline: none
+
+    display: block
+    width: 100%
+    height: 76px
+    &.active
+      .price__icon
+        transform: rotate(135deg)
+        top: 12px
+        &:last-of-type
+          top: 22px
+
+  &__icon
+    position: absolute
+    top: 8px
+    left: calc(50% - 7px)
+
+    display: block
+    width: 18px
+    height: 18px
+    border-bottom: 3px solid #97d2fe
+    border-left: 3px solid #97d2fe
+    border-top-left-radius: 2px
+    border-bottom-right-radius: 2px
+    transform: rotate(-45deg)
+    transition: 0.3s
+    &:last-of-type
+      top: 18px
+      border-color: #3878a7
+
+  /* media */
+  @media screen and (max-width: 1400px)
+    &__wr
+      padding-left: 30px
+      padding-right: 30px
+      padding-top: 24px
+    &__table
+      table
+        tbody
+          td
+            &.price__title
+              padding-left: 10px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    &__table
+      table
+        thead
+          td
+            padding-top: 6px
+            padding-bottom: 6px
+            font-size: 14px
+        tbody
+          td
+            padding-top: 10px
+            padding-bottom: 10px
+            font-size: 14px
+            .price__price
+              font-size: 20px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    &__table
+      table
+        tbody
+          td
+            padding-top: 8px
+            padding-bottom: 8px
+            font-size: 13px
+            .price__price
+              font-size: 16px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    .title
+      margin-bottom: -4px
+    &__table-cont
+      width: 700px
+      max-width: 100%
+      overflow: auto
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__wr
+      padding-left: 15px
+      padding-right: 15px
+    &__desc
+      font-size: 16px
+    &__link
+      font-size: 14px
+    &__top
+      margin-bottom: 10px
+    &__table
+      margin-top: 22px
+      max-height: 260px
+    &__show
+      height: 46px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__desc
+      font-size: 14px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__desc
+      font-size: 13px
+
+  // max-width 500px
+
+  @media screen and (max-width: 450px)
+    &__top
+      flex-direction: column
+      align-items: flex-start
+      margin-bottom: 20px
+    .title
+      margin-bottom: 4px
+
+  // max-width 450px
+
+  @media screen and (max-width: 400px)
+    &__wr
+      width: calc(100% + 30px)
+      margin-left: -15px
+
+  // max-width 400px
+
+/* price */

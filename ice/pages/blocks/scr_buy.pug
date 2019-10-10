@@ -1,0 +1,432 @@
+mixin scr_buy()
+  section.scr_buy.buy(id="scr_buy")
+    .wr
+      .buy__wrap
+        .buy__tab.active#buy-tab-0
+          .buy__top
+            h2.title Купить билет
+            p.buy__title Выберите возраст и количество человек:
+
+          .buy__main
+            ul.buy__df.buy__df--three
+              li.buy__item.buy__quantity
+                .buy__quantity-wrap
+                  p.buy__quantity-title Детский
+                  p.buy__quantity-desc до 12 лет
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+              li.buy__item.buy__quantity
+                .buy__quantity-wrap
+                  p.buy__quantity-title Взрослый
+                  p.buy__quantity-desc 12+
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+              li.buy__item.buy__quantity
+                .buy__quantity-wrap
+                  p.buy__quantity-title Гостевой визит
+                  p.buy__quantity-desc родителя для помощи ребенку
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+          .buy__bottom
+            .buy__left
+              a.buy__link.buy__prev Назад
+
+            ul.buy__steps
+              li.buy__steps-item.active
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 1
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 2
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 3
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 4
+
+            .buy__right
+              a.buy__link.buy__next.desktop(href="#buy-tab-1") Следующий шаг
+
+          .buy__footer
+            a.buy__link.buy__next.mobile(href="#buy-tab-1") Следующий шаг
+
+        .buy__tab#buy-tab-1
+          .buy__top
+            h2.title Купить билет
+            p.buy__title Выберите дату и диапазон времени посещения:
+
+          .buy__main
+            ul.buy__df.buy__df--four
+              li.buy__item.buy__datetime
+                .text-input.text-input--icon
+                  input.ice-datepicker(type="text")
+                  i.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-1")
+
+              li.buy__item.buy__datetime
+                .text-input.text-input--icon
+                  label
+                    input(name="chooseTime" type="radio" id="chooseTime1" value="с 10:00 до 15:00")
+                    span с 10:00 до 15:00
+                  i.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-2")
+
+              li.buy__item.buy__datetime
+                .text-input.text-input--icon
+                  label
+                    input(name="chooseTime" type="radio" id="chooseTime2" value="с 15:00 до 20:00")
+                    span с 15:00 до 20:00
+                  i.icon__wrap
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-form-2")
+
+              li.buy__item.buy__datetime
+                .text-input
+                  label
+                    input(name="chooseTime" type="radio" id="chooseTime3" value="Безлимитный")
+                    span Безлимитный
+
+            p.buy__info
+              strong Билет включает 1 час катания, перекат 3 р./минута
+
+          .buy__bottom
+            .buy__left
+              a.buy__link.buy__prev(href="#buy-tab-0") Назад
+
+            ul.buy__steps
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-0")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 1
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 2
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 3
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 4
+
+            p.buy__sum.desktop Итого:
+              strong  1 700
+              |  р.
+
+            .buy__right
+              a.buy__link.buy__next.desktop(href="#buy-tab-2") Следующий шаг
+
+          .buy__footer
+            a.buy__link.buy__next.mobile(href="#buy-tab-2") Следующий шаг
+            p.buy__sum.mobile Итого:
+              strong  1 700
+              |  р.
+
+        .buy__tab#buy-tab-2
+          .buy__top
+            h2.title Купить билет
+            p.buy__title Дополнительные услуги:
+
+          .buy__main.buy__main--add
+            ul.buy__df.buy__df--four.buy__df--fs
+              li.buy__item.buy__add.buy__add--instructor
+                .buy__add-row.buy__add-top
+                  p.buy__add-title Занятия
+                    br
+                    |  с инструктором
+                    br
+                    small  45 минут
+
+                .buy__add-row.buy__add-one-price
+                  .buy__add-table
+                    table
+                      tbody
+                        tr
+                          th Индивидуальное:
+                          td
+                            b.buy__price.buy__price--indiv
+                              span 600
+                              small  р.
+                        tr
+                          th 2+ человек:
+                            input(type="hidden" name="buyPersons" value="2")
+                          td
+                            b.buy__price.buy__price--group
+                              span 300
+                              small  р.
+
+                .buy__add-row.buy__add-quantity
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+                .buy__add-row.buy__add-select.buy__add-time
+                  .text-input.text-input--icon
+                    select.ice-select
+                      option(value="с 10:00 до 11:00" selected) с 10:00 до 11:00
+                      option(value="с 11:00 до 12:00") с 11:00 до 12:00
+
+                    i.icon__wrap
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#icon-form-2")
+
+                .buy__add-row.buy__add-price
+                  b.buy__price
+                    span 0
+                    small  р.
+
+              li.buy__item.buy__add
+                .buy__add-row.buy__add-top
+                  p.buy__add-title Аренда
+                    br
+                    |  костюма
+
+                .buy__add-row.buy__add-one-price
+                  .buy__add-table
+                    b.buy__price
+                      span 100
+                      small  р.
+
+                .buy__add-row.buy__add-quantity
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+                .buy__add-row.buy__add-select.buy__add-size
+                  .text-input
+                    select.ice-select
+                      option(value="" selected) Размер
+                      option(value="38") 38
+                      option(value="39") 39
+                      option(value="40") 40
+
+                .buy__add-row.buy__add-price
+                  b.buy__price
+                    span 0
+                    small  р.
+
+              li.buy__item.buy__add
+                .buy__add-row.buy__add-top
+                  p.buy__add-title Аренда
+                    br
+                    |  защиты
+
+                .buy__add-row.buy__add-one-price
+                  .buy__add-table
+                    b.buy__price
+                      span 100
+                      small  р.
+
+                .buy__add-row.buy__add-quantity
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+                .buy__add-row.buy__add-price
+                  b.buy__price
+                    span 0
+                    small  р.
+
+              li.buy__item.buy__add
+                .buy__add-row.buy__add-top
+                  p.buy__add-title Аренда
+                    br
+                    |  ледового
+                    br
+                    |  помощника
+
+                .buy__add-row.buy__add-one-price
+                  .buy__add-table
+                    b.buy__price
+                      span 100
+                      small  р.
+
+                .buy__add-row.buy__add-quantity
+
+                  .quantity-block
+                    button.quantity-arrow.quantity-arrow-minus(type="button") -
+                    input.quantity-num(type="number" value="0")
+                    button.quantity-arrow.quantity-arrow-plus(type="button") +
+
+                .buy__add-row.buy__add-price
+                  b.buy__price
+                    span 0
+                    small  р.
+
+          .buy__bottom
+            .buy__left
+              a.buy__link.buy__prev(href="#buy-tab-1") Назад
+
+            ul.buy__steps
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-0")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 1
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-1")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 2
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 3
+
+              li.buy__steps-line
+
+              li.buy__steps-item
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 4
+
+            p.buy__sum.desktop Итого:
+              strong  1 700
+              |  р.
+
+            .buy__right
+              a.buy__link.buy__next.desktop(href="#buy-tab-3") Следующий шаг
+
+          .buy__footer
+            a.buy__link.buy__next.mobile(href="#buy-tab-3") Следующий шаг
+            p.buy__sum.mobile Итого:
+              strong  1 700
+              |  р.
+
+        .buy__tab#buy-tab-3
+          .buy__top
+            h2.title Купить билет
+            p.buy__title Есть промо-код?
+
+          .buy__main
+            .buy__promo
+              .text-input
+                input(type="text")
+              button.btn.btn--blue Получить скидку по промо-коду
+
+          .buy__bottom
+            .buy__left
+              a.buy__link.buy__prev(href="#buy-tab-2") Назад
+
+            ul.buy__steps
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-0")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 1
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-1")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 2
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link(href="#buy-tab-2")
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 3
+
+              li.buy__steps-line
+
+              li.buy__steps-item.active
+                a.buy__link
+                  span.buy__circle
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-tick")
+                  span.buy__step Шаг 4
+
+            p.buy__sum.desktop Итого:
+              strong  1 700
+              |  р.
+
+            .buy__right
+              a.buy__link.buy__next.buy__pay.desktop Оплатить
+
+          .buy__footer
+            a.buy__link.buy__next.buy__pay.mobile Оплатить
+            p.buy__sum.mobile Итого:
+              strong  1 700
+              |  р.
+
+  // /.scr_buy

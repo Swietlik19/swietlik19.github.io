@@ -1,0 +1,45 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .footer__df
+      .footer__left
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo.png" alt="лого")
+
+        .footer__info
+          a.footer__link(href="tel:88002506603" rel="nofollow") 8 800 250 66 03
+
+          p.footer__text Ежедневно с 10:00 до 22:00
+          p.footer__text Чистка льда 15:00-15:45; 19:00-19:45
+
+      .footer__content
+        .footer__menu
+          ul.menu
+            li
+              a.inner-link(href="#scr_buy") Купить билет
+            li
+              a.inner-link(href="#scr_about") О катке
+            li
+              a.inner-link(href="#scr_price") Прайс
+            li
+              a.inner-link(href="#scr_serv") Услуги
+
+        .footer__address
+          p.footer__address-text г. Симферополь, Евпаторийское шоссе, 8, ТРЦ «МЕГАНОМ»
+
+    .footer__bottom
+      .copyright
+        p.text г. Симферополь © Copyright  2019&nbsp;г.
+
+      a.made(href="https://sheer82.ru/")
+        span.text Сделано в
+        svg.icon
+          use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+
+  // /.footer
+

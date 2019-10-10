@@ -1,0 +1,346 @@
+.page--ice-rink
+  position: relative
+
+  padding-left: 0
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  overflow: hidden
+
+  img
+    width: 100%
+    height: auto
+    border: none
+
+  .icon
+    max-width: 100%
+    max-height: 100%
+    fill: $icon
+    transition: 0.5s
+
+  .btn,
+  input[type="submit"]
+    position: relative
+
+    border: none
+    outline: none
+    background: none
+    padding: 0
+
+    cursor: pointer
+    text-decoration: none
+    transition: 0.3s
+    -webkit-appearance: none
+
+  input[type="submit"]
+    &[disabled]
+      cursor: no-drop
+      background: #5e5e5e
+
+  .btn
+    &__wrap
+      position: relative
+      display: inline-block
+      &--shadowed
+        &::after
+          content: ''
+          position: absolute
+          bottom: -40px
+          left: 50%
+          transform: translateX(-50%)
+
+          display: block
+          width: 100%
+          height: 35px
+          background: transparent url('../img/btn-shadow.png') no-repeat center center
+          background-size: contain
+          opacity: 0.49
+
+    &.btn--bordered
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 238px
+      height: 64px
+
+      border-radius: 30.0px
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 700
+      color: #ffffff
+      background: transparent url('../img/btn.png') no-repeat center center
+      background-size: 100% 100%
+      transition: 0.5s
+      &:hover
+        transform: translateY(5px)
+    &--circled
+      display: flex
+      align-items: center
+      justify-content: center
+
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      border: 2px solid $accent
+      .fa
+        transition: 0.3s
+      &:hover
+        border-color: $accent2
+        .fa
+          color: $accent2
+    &--blue
+      width: 100%
+      padding-top: 16px
+      padding-bottom: 14px
+
+      box-shadow: 0px 10px 15px 0px rgba(56,120,167,0.2)
+      background-image: linear-gradient(180.0deg, #97d2fe 0%, #3878a7 100%)
+      border-radius: 25.0px
+      font-size: 16px
+      font-weight: 500
+      color: #ffffff
+      font-family: $font
+      transition: 0.3s
+      &:hover
+        box-shadow: 0px 10px 15px 0px rgba(56,120,167,0.4)
+
+  .logo
+    width: 135px
+    height: 101px
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+.title
+  font-size: 40px
+  line-height: 1.4
+  font-weight: 500
+  color: #296293
+
+.wr
+  padding-right: 90px
+  padding-left: 30px
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: $accent
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+  &:hover
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: $accent2
+
+.slider1
+  .slick-arrow
+    position: relative
+    background: none
+    border: none
+    outline: none
+    font-size: 0
+
+    display: block
+    width: 66px
+    height: 66px
+    background-color: #ffffff
+    border: 1.0px solid #eff6fc
+    box-shadow: 0px 10px 15px 0px #eff5fb
+    border-radius: 50%
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 8px)
+
+      display: block
+      width: 16px
+      height: 16px
+      border-bottom: 2px solid #97d2fe
+      border-left: 2px solid #97d2fe
+    &:hover
+      transform: translateY(-3px)
+      box-shadow: 0px 10px 15px 0px rgba($accent, 0.1)
+  .slick-prev
+    &::before
+      transform: rotate(45deg)
+      left: calc(50% - 6px)
+  .slick-next
+    &::before
+      transform: rotate(-135deg)
+      left: calc(50% - 10px)
+  .slick-dots
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 15px
+    & > li
+      margin: 0 3px
+      & > button
+        background: none
+        border: none
+        outline: none
+        font-size: 0
+
+        width: 6px
+        height: 6px
+        background-color: $accent
+        border-radius: 50%
+        transition: 0.3s
+      &.slick-active
+        & > button
+          background-color: $accent2
+
+
+/* media */
+@media screen and (max-width: 1700px)
+  .wr
+    padding-right: 30px
+
+// max-width 1700px
+
+@media screen and (max-width: 1350px)
+  .wr
+    padding-right: 15px
+    padding-left: 15px
+  .page--ice-rink
+    .logo
+      width: 108px
+      height: 86px
+
+// max-width 1350px
+
+@media screen and (max-width: 1200px)
+  .title
+    font-size: 35px
+
+// max-width 1200px
+
+@media screen and (max-width: 991px)
+  .slider1
+    .slick-arrow
+      width: 46px
+      height: 46px
+      &::before
+        width: 10px
+        height: 10px
+        top: calc(50% - 5px)
+    .slick-prev
+      &::before
+        left: calc(50% - 3px)
+    .slick-next
+      &::before
+        left: calc(50% - 6px)
+
+// max-width 991px
+
+@media screen and (max-width: 850px)
+  .page--ice-rink
+    .logo
+      width: 100px
+
+// max-width 850px
+
+@media screen and (max-width: 768px)
+  .page--ice-rink
+    padding-right: 0
+    .btn
+      &.btn--bordered
+        width: 208px
+        height: 54px
+        font-size: 16px
+  .title
+    font-size: 30px
+    line-height: 1.2
+
+// max-width 768px
+
+@media screen and (max-width: 575px)
+  .page--ice-rink
+    .btn
+      &--bordered
+        width: 198px
+        height: 54px
+        font-size: 16px
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .title
+    font-size: 24px
+
+  .page--ice-rink
+    .btn
+      &--blue
+        font-size: 14px
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

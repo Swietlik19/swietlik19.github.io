@@ -112,6 +112,38 @@
     width: 135px
     height: 101px
 
+  .to-top
+    position: fixed
+    right: 30px
+    bottom: 60px
+    z-index: 100
+    text-decoration: none
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 40px
+    background: #fff
+    box-shadow: 0px 0px 10px 0px rgba(#999999,0.3)
+    cursor: pointer
+    transition: 0.5s
+    opacity: 0
+    height: 0
+    overflow: hidden
+    .fa
+      color: $accent
+      transition: 0.5s
+      font-size: 20px
+      font-weight: 800
+    &:hover
+      opacity: 1
+      .fa
+        color: $accent
+
+    &.fixed
+      opacity: 1
+      height: 40px
+
+
 [data-object-fit-cover]
   object-fit: cover
   object-position: center
@@ -257,6 +289,7 @@
           background-color: $accent2
 
 
+
 /* media */
 @media screen and (max-width: 1700px)
   .wr
@@ -314,6 +347,12 @@
         width: 208px
         height: 54px
         font-size: 16px
+    .to-top
+      bottom: 30px
+      &.fixed
+        opacity: 0.8
+        &:hover
+          opacity: 1
   .title
     font-size: 30px
     line-height: 1.2

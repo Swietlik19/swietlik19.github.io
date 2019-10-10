@@ -165,12 +165,10 @@
     $('html, body').animate({scrollTop: fromTop});
   });
 
-  // фиксированные шапка
-  // $(window).on("scroll", function() {
-  //   var fromTop = $(document).scrollTop();
-  //   $(".header__nav").toggleClass("fixed", (fromTop > 682));
-  //   $(".header").toggleClass("margined", (fromTop > 682));
-  // });
+  $(window).on("scroll", function() {
+    var fromTop = $(document).scrollTop();
+    $(".to-top").toggleClass("fixed", (fromTop > 682));
+  });
 
   function countSum(xEl) {
     var $parent = $(xEl).parents('.buy__add');

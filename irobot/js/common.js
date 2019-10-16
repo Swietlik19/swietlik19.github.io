@@ -23,7 +23,7 @@
   $(function(){
     $('.inner-link[href^="#"]').click(function(){
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 100 +'px'});
       return false;
     });
   });
@@ -130,11 +130,11 @@
   hideMore();
 
 
-  $('.card__tab:not(#card-tab-0):not(#card2-tab-0):not(#accessory-tab-0), .accessory__brands:not(#accessory-tab-0--brands)').each(function(xi,xel) {
+  $('.card__tab:not(#card-tab-0):not(#card2-tab-0):not(#accessory-tab-0)').each(function(xi,xel) {
     $(xel).css('display','none');
   });
 
-  $('.accessory__brand:nth-of-type(n + 2),.accessory__tab:nth-of-type(n + 2)').each(function(xi,xel) {
+  $('.accessory__brands:not(#accessory-tab-0--brands),.accessory__brand:nth-of-type(n + 2),.accessory__tab:nth-of-type(n + 2)').each(function(xi,xel) {
     $(xel).addClass('hidden');
   });
 

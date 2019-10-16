@@ -1,0 +1,117 @@
+.insta
+  position: relative
+  padding-top: 45px
+  padding-bottom: 13px
+  &__slider
+    margin-top: 50px
+  &__slides
+    display: flex
+  &__slide
+    width: calc((100% - 90px) / 4)
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+    &:nth-of-type(2)
+      .insta__content
+        height: 177px
+        padding-top: 45px
+    &:nth-of-type(3)
+      .insta__content
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        padding-bottom: 23px
+        background-color: #f1f8ec
+    &:nth-of-type(4)
+      margin-top: -89px
+  &__item
+    text-align: center
+  &__block
+    display: block
+    width: 100%
+    height: 264px
+    margin-bottom: 30px
+  &__img
+    text-decoration: none
+    outline: none
+    img
+      display: block
+      width: 100%
+      height: 100%
+  &__text
+    font-size: 18px
+    line-height: 1.555555555555556 /* 28 / 18 */
+  &__content
+    a
+      text-decoration: none
+      transition: 0.3s
+      &:hover
+        color: $accent
+    i
+      display: block
+      margin-top: 15px
+      font-size: 30px
+
+  /* media */
+
+  @media screen and (max-width: 991px)
+    &__slider
+      margin-top: 30px
+    &__slide
+      width: calc((100% - 60px) / 4)
+      margin-right: 20px
+      &:nth-of-type(2)
+        .insta__content
+          height: 117px
+          padding-top: 25px
+    &__block
+      height: 184px
+      margin-bottom: 20px
+    &__text
+      font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__slider
+      width: calc(100% + 20px)
+      margin-left: -10px
+      .slick-dots
+        margin-top: 0
+    &__slide
+      margin-right: 0
+      padding: 0 10px
+      &:nth-of-type(2)
+        .insta__content
+          height: 184px
+      &:nth-of-type(4)
+        margin-top: 0
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__block
+      height: 140px
+    &__slide
+      &:nth-of-type(2)
+        .insta__content
+          height: 140px
+      &:nth-of-type(3)
+        .insta__content
+          padding-bottom: 0
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    padding-top: 25px
+    &__slider
+      width: calc(100% + 10px)
+      margin-left: -5px
+      margin-top: 20px
+    &__slide
+      padding: 0 5px
+
+  // max-width 500px
+
+/* insta */

@@ -1,0 +1,33 @@
+$g: #71bf44
+$o: #ff5800
+
+$accent: $g
+$accent2: $o
+
+$icon: $g
+$body-color: #000
+
+$font: 'AvenirNext', sans-serif
+$font2: 'AvenirNextDemi',sans-serif
+
+$form-font: $font
+$title-font: $font
+
+/* Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px) */
+@mixin placeholder($color,$size)
+  &::-webkit-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &::-moz-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &:-ms-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+

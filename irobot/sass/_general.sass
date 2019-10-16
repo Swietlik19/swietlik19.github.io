@@ -1,0 +1,411 @@
+@keyframes hvr-bob
+  0%
+    -webkit-transform: translateY(-4px)
+    transform: translateY(-4px)
+  50%
+    -webkit-transform: translateY(-2px)
+    transform: translateY(-2px)
+  100%
+    -webkit-transform: translateY(-4px)
+    transform: translateY(-4px)
+
+@keyframes hvr-bob-float
+  100%
+    -webkit-transform: translateY(-4px)
+    transform: translateY(-4px)
+
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 320px
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 139px
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 18px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    font-size: 14px
+    font-weight: 500
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.title
+  font-size: 40px
+  font-weight: 700
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.btn__wrap
+  display: inline-block
+
+.btn,
+input[type="submit"].btn
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  font-family: $font2
+  font-size: 14px
+  line-height: 1.2
+  font-weight: 400
+  color: #ffffff
+  width: auto
+  height: 40px
+  padding: 0 28px
+  border-radius: 6.0px
+  &--orange
+    min-width: 166px
+    background: #ff6000 url('../img/btn.png') no-repeat center center
+    background-size: 100% 100%
+  &--green
+    height: 54px
+    padding: 0 31px
+    background: $accent url('../img/btn--green.png') no-repeat center center
+    background-size: 100% 100%
+    box-shadow: 0px 10px 10px 0px rgba(113,191,67,0.46)
+    &:hover
+      box-shadow: 0px 10px 20px 0px rgba(113,191,67,0.46)
+  &:hover
+    animation-name: hvr-bob-float, hvr-bob
+    animation-duration: .3s, 1.5s
+    animation-delay: 0s, .3s
+    animation-timing-function: ease-out, ease-in-out
+    animation-iteration-count: 1, infinite
+    animation-fill-mode: forwards
+    animation-direction: normal, alternate
+  &--circle
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    padding: 0
+    border-radius: 50%
+    background-color: darken($accent,10%)
+    box-shadow: 0 0 10px rgba(#2c2d2d, 0.3)
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  transition: 0.3s
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+  &:hover
+    opacity: 0.8
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #fff
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane']
+  display: none
+
+/* Переопределение стилей slick */
+.slick-slide
+  -webkit-backface-visibility: hidden
+  outline: none
+
+.slick-arrow
+  background: none
+  border: none
+  outline: none
+
+  position: absolute
+  top: calc(50% - 15px)
+  z-index: 100
+  cursor: pointer
+  font-size: 0
+  transition: 0.3s
+
+  display: block
+  width: 30px
+  height: 30px
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 6px)
+    left: calc(50% - 6px)
+
+    width: 12px
+    height: 12px
+    border-bottom: 3px solid #000
+    border-left: 3px solid #000
+    transition: 0.3s
+  &:hover
+    &::before
+      border-color: $accent
+
+.slick-prev
+  left: -12px
+  &::before
+    transform: rotate(45deg)
+
+.slick-next
+  right: -12px
+  &::before
+    transform: rotate(-135deg)
+
+
+.slick-dots
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 20px
+  font-size: 0
+  li
+    margin: 0 3px
+    button
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      background-color: $accent
+
+    &.slick-active
+      button
+        background-color: $accent2
+
+    &:not(.slick-active)
+      button
+        cursor: pointer
+
+.slider1
+  position: relative
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+// @media screen and (max-width: 991px)
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .page_wr
+    padding-top: 87px
+  .title
+    font-size: 34px
+
+// max-width 767px
+
+@media screen and (max-width: 600px)
+  .btn
+    &--green
+      padding: 0 21px
+
+// max-width 600px
+
+@media screen and (max-width: 575px)
+  .title
+    font-size: 28px
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .page_wr
+    padding-top: 70px
+  .title
+    font-size: 24px
+
+// max-width 400px

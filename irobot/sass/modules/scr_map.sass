@@ -1,0 +1,153 @@
+.map
+  position: relative
+  z-index: 2
+  .title
+    margin-bottom: 5px
+  &__top
+    background-color: #f8fcf5
+  &__title-wrap
+    max-width: calc(100% - 391px)
+    padding-top: 39px
+    padding-bottom: 43px
+  &__desc
+    font-size: 26px
+    line-height: 1.2
+  .inner-map
+    height: 463px
+    z-index: -1
+  &__wrap
+    position: relative
+    z-index: 2
+  &__contacts
+    position: absolute
+    top: 12px
+    right: 0
+
+    width: 361px
+    padding: 36px 20px 33px 54px
+    background-color: #ffffff
+    box-shadow: 5px 9px 15px 0px rgba(113,191,67,0.2)
+    border: 1.0px solid #f8fcf5
+    .title
+      margin-bottom: 48px
+      font-size: 24px
+  &__item
+    margin-bottom: 50px
+    &--socials
+      span
+        display: inline-block
+        margin-right: 10px
+        vertical-align: middle
+      a
+        display: inline-block
+        margin: 0 12px
+        vertical-align: middle
+        i
+          font-size: 26px
+          transition: 0.3s
+        &:hover
+          i
+            color: $accent
+  &__text,
+  &__link
+    font-size: 14px
+    line-height: 1.285714285714286 /* 18 / 14 */
+    font-weight: 400
+    font-family: $font2
+  &__text
+    &--legal
+      margin-top: 19px
+  &__link
+    display: block
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      color: $accent
+  &__contacts-bottom
+    margin-top: -20px
+    .map__text
+      font-size: 12px
+      line-height: 1.5 /* 18 / 12 */
+      font-weight: 500
+
+  /* media */
+  @media screen and (max-width: 1070px)
+    &__desc
+      font-size: 20px
+    &__contacts
+      .title
+        margin-bottom: 30px
+    &__item
+      margin-bottom: 30px
+    &__title
+      &-wrap
+        padding-top: 19px
+        padding-bottom: 33px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__desc
+      font-size: 18px
+    &__contacts
+      padding: 26px 20px 33px 34px
+      .title
+        margin-bottom: 20px
+    &__item
+      margin-bottom: 20px
+    .inner-map
+      height: 393px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__title-wrap
+      max-width: calc(100% - 300px)
+    .inner-map
+      height: 350px
+    &__contacts
+      width: 281px
+      padding: 24px 20px 10px 21px
+    &__desc
+      font-size: 16px
+    &__contacts
+      .title
+        margin-bottom: 12px
+      &-bottom
+        margin-top: 0
+    &__item
+      margin-bottom: 12px
+    &__text,
+    &__link
+      font-size: 12px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__top
+      .container
+        display: flex
+        flex-direction: column
+    &__wrap
+      order: 2
+    &__contacts
+      position: static
+      width: 100%
+      margin-bottom: 20px
+      box-shadow: none
+      &-bottom
+        display: none
+    &__title-wrap
+      max-width: 100%
+    .inner-map
+      height: 270px
+
+  // max-width 700px
+
+  @media screen and (max-width: 450px)
+    .inner-map
+      height: 200px
+
+  // max-width 450px
+
+/* map */

@@ -146,7 +146,7 @@
     $(this).parents('.scr_card').find('.card__tab:not(' + _href + ')').hide();
     $(_href).fadeIn();
     if (window.matchMedia('(max-width: 767px)').matches) {
-      $('html, body').animate({scrollTop: $('.card__tabs').offset().top - 80 +'px'});
+      $('html, body').animate({scrollTop: $(this).parents('.scr_card').find('.card__tabs').offset().top - 80 +'px'});
     }
   });
 

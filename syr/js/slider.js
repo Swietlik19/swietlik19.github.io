@@ -68,23 +68,22 @@
   });
 
 
-  $('#story__slider2 .story__slides2').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: false,
-    speed: 500,
-    arrows: false,
-    fade: true,
-    swipe: false,
-    asNavFor: '#story__slider .story__slides'
-  });
+  // $('#story__slider2 .story__slides2').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   infinite: false,
+  //   speed: 500,
+  //   arrows: false,
+  //   fade: true,
+  //   swipe: false,
+  //   asNavFor: '#story__slider .story__slides'
+  // });
 
   $('#story__slider .story__slides').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     swipeToSlide: true,
     arrows: false,
-    asNavFor: '#story__slider2 .story__slides2',
     focusOnSelect: true,
     infinite: false,
     responsive: [
@@ -98,6 +97,12 @@
         breakpoint: 576,
         settings: {
           slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
         }
       }
     ]

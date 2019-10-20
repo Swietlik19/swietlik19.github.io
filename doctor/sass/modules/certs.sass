@@ -1,0 +1,50 @@
+.certs
+  position: relative
+  padding-left: 14px
+  padding-right: 14px
+  &__slide
+    padding: 15px 17px
+  &__item
+    position: relative
+    display: block
+    text-decoration: none
+    outline: none
+    background-color: #dbf4f9
+    transition: 0.3s
+    &:hover
+      transform: translateY(-5px)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border: 11px solid #dbf4f9
+      border-image-source: url('../img/border-certs.png')
+      border-image-slice: 9
+      border-image-repeat: round
+
+    &::after
+      content: ''
+      position: absolute
+      bottom: -16px
+      right: -27px
+      z-index: -1
+
+      display: block
+      width: calc(100% + 27px)
+      height: calc(100% + 16px)
+      background: transparent url('../img/shadow-certs.png') no-repeat bottom right
+      background-size: contain
+
+
+  @media screen and (max-width: 991px)
+    padding-left: 0
+    padding-right: 0
+    &__slide
+      padding: 15px 5px
+
+  // max-width 991px
+
+/* certs */

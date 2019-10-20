@@ -1,0 +1,149 @@
+.header
+  position: fixed
+  width: 100%
+  box-shadow: 0px 5px 7px 0px rgba(43,45,45,0.2)
+  background-color: #ffffff
+  transition: 0.3s
+  z-index: 100
+
+  &__top
+    padding-top: 21px
+    padding-bottom: 21px
+    border-bottom: 1px solid $accent
+  &__df
+    display: flex
+    align-items: center
+  .logo
+    display: block
+    width: 195px
+    height: 44px
+    text-decoration: none
+    &__wrap
+      margin-right: auto
+  &__links
+    margin-right: 30px
+    margin-left: 15px
+    .mobile
+      display: none
+  &__link
+    font-size: 18px
+    font-weight: 600
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      color: $accent
+
+  &__menu
+    height: 50px
+    &-top
+      display: none
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      & > a
+        position: relative
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 500
+        text-transform: uppercase
+        color: #2c2d2d
+        text-decoration: none
+        transition: 0.3s
+        &:hover
+          color: $accent
+
+  .burger
+    display: none
+
+  @media screen and (max-width: 1070px)
+    &__top
+      border-bottom: none
+    .burger
+      display: flex
+      margin-right: 20px
+    &__menu
+      display: none
+      position: fixed
+      top: 0
+      left: 0
+
+      display: block
+      width: 100%
+      height: 100vh
+      overflow: hidden
+      background-color: transparent
+      z-index: 500
+      transform: translateX(-100%)
+      transition:  transform .35s ease-in 0.1s, background-color 0.1s
+      &.active
+        background-color: rgba(#000, 0.2)
+        transform: translateX(0)
+        transition:  transform .35s ease-in, background-color 0.3s 0.3s
+        .menu
+          max-height: calc(100vh - 57px)
+          overflow: auto
+      &-top
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 95%
+        max-width: 500px
+        padding: 10px 20px
+        background-color: #f8f8f8
+        .logo
+          width: 160px
+          height: 37px
+      .menu
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        text-align: left
+        width: 95%
+        max-width: 500px
+        padding: 10px 20px
+        background-color: #fff
+        & > li
+          width: 100%
+          & > a
+            display: block
+            width: 100%
+            padding: 10px 0
+            border-bottom: 1px solid rgba(#f5f5f5, 0.9)
+
+  // max-width 1070px
+
+  @media screen and (max-width: 767px)
+    &__top
+      padding-top: 11px
+      padding-bottom: 11px
+    .logo
+      width: 165px
+      height: 37px
+    .burger
+      margin-right: 10px
+    &__links
+      margin-right: 12px
+      .mobile
+        display: flex
+      .desktop
+        display: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__btns
+      display: none
+    &__links
+      margin-right: 0
+
+  // max-width 575px
+
+/* .header */

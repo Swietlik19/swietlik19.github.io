@@ -1,0 +1,93 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .footer__info
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/footer_logo.svg", alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/footer_logo.svg", alt="лого")
+
+          .footer__links
+            a.footer__link(href="tel:89284177828" rel="nofollow") 8 (928) 417-78-28
+
+          +socials
+
+        .footer__menu
+          .footer__menu-item
+            ul.menu
+              li.menu-item
+                a(href="#") О докторе
+              li.menu-item
+                a(href="#") О клинике
+              li.menu-item
+                a(href="#") Вопрос-ответ
+              li.menu-item
+                a(href="#") Отзывы
+              li.menu-item
+                a(href="#") цены
+              li.menu-item
+                a(href="#") Полезная информация
+              li.menu-item
+                a(href="#") Контакты
+
+          .footer__menu-item
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#") Направления лечения
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Герниология
+                  li.menu-item
+                    a(href="#") Хирургия ожирения
+                  li.menu-item
+                    a(href="#") Болезни пищевода желудка и ДПК
+                  li.menu-item
+                    a(href="#") Желчнокаменная болезнь
+
+        .footer__form
+          .form.wpcf7
+            form.wpcf7-form
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ф.И.О.')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#iconMan")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+                  i.input-icon
+                    img(src="img/svg/iconMail.svg" alt="иконка")
+
+            .form__item.form__item--submit
+              .btn__wrap
+                input.wpcf7-form-control.wpcf7-submit.btn.btn--blue(type='submit', value='Задать вопрос')
+
+
+
+      // /.container
+    // /.footer__top
+
+    .footer__bottom
+      .container
+        .row
+          .col-xl-3.col-lg-4.col-sm-7
+            .copyright
+              p.text г. Симферополь © Copyright  2019&nbsp;г.
+              a(href="#") Политика конфиденциальности
+          .col-xl-4.offset-xl-1.col-lg-4.col-sm-5
+            a.made(href="https://sheer82.ru/")
+              span.text Сделано в
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

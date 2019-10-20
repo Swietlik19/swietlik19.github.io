@@ -1,0 +1,142 @@
+.services
+  position: relative
+  padding-top: 60px
+  &__list
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 6px)
+      left: calc(50% - 6px)
+      width: 11px
+      height: 11px
+      transform: rotate(45deg)
+      background-color: #4cc7e3
+  &__item
+    width: 50%
+    &.active
+      a
+        background-color: rgba(74,198,227,0.2)
+    a
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 100%
+      height: 187px
+      padding-top: 37px
+      padding-left: 10px
+      padding-right: 10px
+      border: 1px solid transparent
+
+      text-decoration: none
+      transition: 0.3s
+    &:first-of-type
+      a
+        border-bottom-color: rgba(44,45,45,0.3)
+        border-right-color: rgba(44,45,45,0.3)
+    &:nth-of-type(2)
+      a
+        border-bottom-color: rgba(44,45,45,0.3)
+    &:nth-of-type(3)
+      a
+        border-right-color: rgba(44,45,45,0.3)
+    &:not(.active)
+      &:hover
+        .services__icon
+          transform: scale(1.05)
+        .services__title
+          color: $accent
+
+  &__icon
+    width: 69px
+    height: 69px
+    margin-bottom: 17px
+    transition: 0.3s
+  &__title
+    font-size: 14px
+    font-weight: 600
+    text-transform: uppercase
+    text-align: center
+    transition: 0.3s
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+    min-height: 100%
+    display: flex
+  &__tab
+    min-height: 100%
+    padding: 27px 40px 30px 36px
+    background-color: rgba(74,198,227,0.2)
+    &-title
+      margin-bottom: 16px
+    &:not(#serv-tab-0)
+      display: none
+  &__text
+    font-size: 14px
+    line-height: 1.714285714285714 /* 24 / 14 */
+
+  @media screen and (max-width: 991px)
+    &__title
+      font-size: 13px
+    &__tab
+      padding: 23px 30px 24px 31px
+    &__text
+      font-size: 13px
+      line-height: 1.51429
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    padding-top: 40px
+    &__tabs
+      margin-top: 20px
+    &__icon
+      width: 59px
+      height: 59px
+      margin-bottom: 9px
+    &__title
+      font-size: 12px
+    &__item
+      a
+        height: 137px
+        padding-top: 17px
+    &__tab
+      min-height: 0
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__tab
+      padding: 23px 20px 24px 21px
+      &-title
+        margin-bottom: 13px
+        font-size: 20px
+    &__text
+      font-size: 12px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__tabs
+      width: calc(100% + 30px)
+      margin-left: -15px
+    &__icon
+      width: 45px
+      height: 45px
+    &__title
+      font-size: 11px
+    &__item
+      a
+        height: 117px
+        padding-top: 12px
+
+  // max-width 400px
+
+/* services */

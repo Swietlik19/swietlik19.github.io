@@ -1,0 +1,59 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__df
+          button.burger#header__burger
+            span.burger__wrap
+              span.line
+
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+
+          .header__links
+            a.btn.btn--circle.mobile(href="tel:89284177828" rel="nofollow")
+              i.fa.fa-phone
+            a.header__link.desktop(href="tel:89284177828" rel="nofollow") 8 (928) 417-78-28
+          .header__btns
+            .btn__wrap
+              a.btn.btn--blue.open-modal(href="#") Задать вопрос
+
+    .header__bottom
+      .container
+        .header__menu
+          .header__menu-top
+            .logo__wrap
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/svg/logo.svg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/svg/logo.svg" alt="лого")
+            button.burger.active#header__menu-burger
+              span.burger__wrap
+                span.line
+          ul.menu
+            li.menu-item
+              a(href="#") О докторе
+            li.menu-item
+              a(href="#") Направления лечения
+            li.menu-item
+              a(href="#") О клинике
+            li.menu-item
+              a(href="#") Вопрос-ответ
+            li.menu-item
+              a(href="#") Цены
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Полезная информация
+            li.menu-item
+              a(href="#") Контакты
+
+      // /.container
+    // /.header__top

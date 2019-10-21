@@ -186,7 +186,8 @@
     dateFormat: "d-m-Y H:i",
     time_24hr: true,
     "locale": "ru",
-    minDate: "today"
+    minDate: "today",
+    disableMobile: true
   });
 
   $('img').on('dragstart', function (event) {

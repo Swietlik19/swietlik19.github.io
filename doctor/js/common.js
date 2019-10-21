@@ -181,6 +181,14 @@
   //   }
   // });
 
+  $('.wpcf7-date').flatpickr({
+    enableTime: true,
+    dateFormat: "d-m-Y H:i",
+    time_24hr: true,
+    "locale": "ru",
+    minDate: "today"
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });

@@ -23,9 +23,11 @@ html(lang='ru')
     include blocks/styles.pug
     include blocks/header.pug
     include blocks/socials.pug
+    include blocks/paginator.pug
 
     include blocks/scr_categories.pug
     include blocks/scr_posts.pug
+    include blocks/scr_lead.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -35,19 +37,20 @@ html(lang='ru')
 
   body.main-page
 
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr.page_wr--secondary
       .container
         h1.title-second полезная информация
       +scr_categories
       +scr_posts
+      +scr_lead--posts
 
 
     a.to-top(href="#page_wr")
       i.fa.fa-angle-up
 
-    +footer("div")
+    +footer("a")
 
     +styles-bottom
     +scripts

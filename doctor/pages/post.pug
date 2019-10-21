@@ -23,9 +23,10 @@ html(lang='ru')
     include blocks/styles.pug
     include blocks/header.pug
     include blocks/socials.pug
+    include blocks/breadcrumbs.pug
 
-    include blocks/scr_reviews.pug
-    include blocks/scr_aside.pug
+    include blocks/scr_post.pug
+    include blocks/scr_lead.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -38,15 +39,8 @@ html(lang='ru')
     +header("a")
 
     #page_wr.page_wr.page_wr--secondary
-      .container
-        h1.title-second отзывы
-      .page-reviews__main
-        .container
-          .row
-            .col-md-7
-              +scr_reviews
-            .col-md-5
-              +scr_aside--reviews
+      +scr_post
+      +scr_lead--posts
 
 
     a.to-top(href="#page_wr")

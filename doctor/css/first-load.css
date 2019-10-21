@@ -5800,7 +5800,8 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
   max-width: 100%;
   height: auto;
-  display: block; }
+  display: block;
+  margin-bottom: 20px; }
   .article img.alignleft {
     float: left;
     margin: 0 20px 10px 0; }
@@ -6116,8 +6117,12 @@ input[type="submit"][disabled] {
   top: -webkit-calc(50% - 22px);
   top: calc(50% - 22px);
   z-index: 100;
+  font-size: 0; }
+
+.slick-arrow,
+.paginator .prev,
+.paginator .next {
   cursor: pointer;
-  font-size: 0;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -6127,7 +6132,9 @@ input[type="submit"][disabled] {
   border: 3px solid rgba(75, 198, 227, 0.2);
   border-radius: 50%;
   transition: 0.3s; }
-  .slick-arrow::before {
+  .slick-arrow::before,
+  .paginator .prev::before,
+  .paginator .next::before {
     content: '';
     position: absolute;
     top: -webkit-calc(50% - 3px);
@@ -6138,7 +6145,9 @@ input[type="submit"][disabled] {
     height: 6px;
     border-bottom: 2px solid #999999;
     border-left: 2px solid #999999; }
-  .slick-arrow:hover {
+  .slick-arrow:hover,
+  .paginator .prev:hover,
+  .paginator .next:hover {
     border-color: rgba(75, 198, 227, 0.7); }
 
 .slick-prev {

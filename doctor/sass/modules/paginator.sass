@@ -8,8 +8,17 @@
   align-items: center
   justify-content: center
   flex-wrap: wrap
+  margin-top: 15px
   .page-numbers
     display: flex
+    padding: 11px
+    font-size: 18px
+    line-height: 28px
+    font-weight: 600
+    text-transform: uppercase
+    text-decoration: none
+    &:hover
+      color: $accent
 
   .page-numbers, .prev, .next
     position: relative
@@ -17,15 +26,47 @@
     line-height: 1.2
     transition: 0.3s
 
-  .page-numbers, .prev, .next
-    display: block
+  .prev, .next
+    text-decoration: none
+    &::before
+      border-color: $accent
+
+  .prev
+    margin-right: 86px
+    &::before
+      transform: rotate(45deg)
+
+  .next
+    margin-left: 86px
+    &::before
+      transform: rotate(-135deg)
 
   li
     &.current
       .page-numbers
+        color: $accent
 
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 767px)
+    .prev
+      margin-right: 30px
+    .next
+      margin-left: 30px
 
-  // max-width 400px
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    margin-top: 0
+    .page-numbers
+      padding: 4px
+      font-size: 15px
+    .prev, .next
+      width: 35px
+      height: 35px
+    .prev
+      margin-right: 20px
+    .next
+      margin-left: 20px
+
+  // max-width 500px
 
  /* paginator */

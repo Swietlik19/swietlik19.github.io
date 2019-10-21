@@ -194,6 +194,12 @@
     event.preventDefault();
   });
 
+  $('.your-file input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).siblings('.text').text(fileName);
+  });
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {

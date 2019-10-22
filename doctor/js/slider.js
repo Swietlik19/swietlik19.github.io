@@ -60,6 +60,89 @@
     ]
   });
 
+  $('#certs__slider--clinic .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1070,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider--clinic .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 5,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider--clinic .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 4,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider--clinic .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider--clinic .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider--clinic .slider1__dots')
+        }
+      }
+    ]
+  });
+
+  $('#clinic__slider .slider1__slides').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1070,
+        settings: {
+          arrows: false,
+          dots: true,
+          appendDots: $('#clinic__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true,
+          appendDots: $('#clinic__slider .slider1__dots')
+        }
+      }
+    ]
+  });
+
   $('#result__slider .slider1__slides').slick({
     infinite: true,
     slidesToShow: 1,

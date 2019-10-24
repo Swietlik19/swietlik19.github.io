@@ -126,12 +126,32 @@
     $(this).parent().addClass('active');
     $(this).parent().siblings('.services__item').removeClass('active');
     $('.services__tab').not(_href).hide();
+    $('.services__tab').not(_href).find('.services__content').removeClass('opened');
+    $('.services__tab').not(_href).find('.services__show').removeClass('active');
     $(_href).fadeIn();
+    hideMore();
     if (window.matchMedia('(max-width: 767px)').matches) {
       $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
     }
   });
 
+  // "Читать полностью"
+  $('.services__show').click(function() {
+    $(this).parent().siblings('.services__content').toggleClass('opened');
+    $(this).toggleClass('active');
+  });
+
+  function hideMore() {
+    $('.services__content').each(function(xi,xel) {
+      if ($(xel).innerHeight() + 5 <= $(xel).css('max-height').replace('px','') || window.matchMedia('(max-width: 767px)').matches) {
+        $(xel).parents('.services__tab').find('.services__show').hide();
+      } else {
+        $(xel).parents('.services__tab').find('.services__show').show();
+      }
+    })
+  }
+
+  setTimeout(hideMore(),1000);
 
   // $('.page_wr, .footer').hover(function() {
   //   if ( !(window.matchMedia('(max-width: 992px)').matches) ) {

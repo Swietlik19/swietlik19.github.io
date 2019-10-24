@@ -37,8 +37,8 @@
     slidesToShow: 3,
     slidesToScroll: 1,
     swipeToSlide: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1200,
@@ -49,7 +49,34 @@
         }
       },
       {
-        breakpoint: 400,
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 5,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 730,
+        settings: {
+          slidesToShow: 4,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 610,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          appendDots: $('#certs__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 450,
         settings: {
           slidesToShow: 2,
           arrows: false,

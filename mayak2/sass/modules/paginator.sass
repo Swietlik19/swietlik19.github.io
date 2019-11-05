@@ -1,0 +1,83 @@
+.paginator
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  .page-numbers
+    width: 34px
+    height: 34px
+    background-color: transparent
+    border-radius: 50%
+    font-size: 14px
+    font-weight: 600
+    color: #474747
+  li:not(.current)
+    a.page-numbers
+      &:hover
+        color: $accent
+
+  .page-numbers, .prev, .next
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    line-height: 1.2
+    transition: 0.3s
+
+  .prev, .next
+    width: 34px
+    height: 34px
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 4px)
+      left: calc(50% - 4px)
+
+      display: block
+      width: 7px
+      height: 7px
+      border-bottom: 2px solid #961d1d
+      border-left: 2px solid #961d1d
+      transition: 0.3s
+    &:hover
+      &::before
+        border-color: $accent2
+
+  .prev
+    margin-right: 17px
+    &::before
+      transform: rotate(45deg)
+  .next
+    margin-left: 17px
+    &::before
+      transform: rotate(-135deg)
+
+  li
+    margin: 0 3px
+    &.current
+      .page-numbers
+        background-color: $accent
+        color: #fff
+
+  @media screen and (max-width: 400px)
+    .page-numbers
+      width: 26px
+      height: 26px
+      font-size: 13px
+    .prev, .next
+      width: 26px
+      height: 26px
+    .prev
+      margin-right: 5px
+    .next
+      margin-left: 5px
+
+  // max-width 400px
+
+ /* paginator */

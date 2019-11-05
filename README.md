@@ -16,4 +16,3 @@ https://swietlik19.github.io/megagrad/ <br>
 https://swietlik19.github.io/aldent/ <br>
 https://swietlik19.github.io/ice/ <br>
 https://swietlik19.github.io/irobot/ <br>
-https://swietlik19.github.io/doctor/ <br>

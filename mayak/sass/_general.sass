@@ -97,9 +97,11 @@ h1,h2,h3,h4,h5,h6
     &.alignleft
       float: left
       margin: 0 20px 10px 0
+      max-width: calc(50% - 15px)
     &.alignright
       float: right
       margin: 0 0 10px 20px
+      max-width: calc(50% - 15px)
     &.aligncenter
       margin: 0 auto
   ul,
@@ -109,23 +111,40 @@ h1,h2,h3,h4,h5,h6
     padding-right: 1.5em
   ul li,
   ol li
+    font-size: 14px
+    line-height: 1.428571428571429 /* 20 / 14 */
     transform: translateX(1.5em)
+  ul
+    list-style: none
+    li
+      position: relative
+      text-indent: 15px
+      &::before
+        content: '•'
+        position: absolute
+        top: 0
+        left: -15px
+
+        color: $accent
+        font-size: 16px
+        display: block
 
   h2,h3,h4
     line-height: 1.2
-    font-weight: 500
+    font-weight: 400
   h2
     margin-top: 35px
-    margin-bottom: 20px
-    font-size: 18px
+    margin-bottom: 26px
+    font-size: 24px
+    line-height: 1.2
   h3
     margin-top: 25px
     margin-bottom: 15px
-    font-size: 16px
+    font-size: 20px
   h4
     margin-top: 20px
     margin-bottom: 10px
-    font-size: 14px
+    font-size: 18px
 
 .clearfix
   &::after
@@ -454,6 +473,16 @@ input[type="submit"].btn
   .title
     font-size: 26px
 
+  .article
+    h2
+      margin-top: 30px
+      margin-bottom: 20px
+      font-size: 20px
+    h3
+      font-size: 18px
+    h4
+      font-size: 16px
+
 // max-width 991px
 
 @media screen and (max-width: 767px)
@@ -470,6 +499,28 @@ input[type="submit"].btn
   .article
     time
       font-size: 14px
+    h2
+      margin-top: 26px
+      margin-bottom: 16px
+      font-size: 18px
+    h3
+      margin-top: 20px
+      margin-bottom: 14px
+      font-size: 16px
+    h4
+      margin-top: 18px
+      margin-bottom: 12px
+      font-size: 14px
+    p
+      font-size: 13px
+    ul li,
+    ol li
+      font-size: 13px
+    img
+      &.alignleft
+        max-width: calc(40% - 15px)
+      &.alignright
+        max-width: calc(40% - 15px)
 
 // max-width 767px
 
@@ -486,6 +537,29 @@ input[type="submit"].btn
     p
       margin-bottom: 10px
       font-size: 13px
+    img
+      &.alignleft
+        float: none
+        width: 100%
+        max-width: 350px
+        display: block
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 30px
+      &.alignright
+        float: none
+        width: 100%
+        max-width: 350px
+        display: block
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 30px
+    ul,
+    ol
+      padding: 0
+    ul li,
+    ol li
+      transform: none
   .title
     font-size: 20px
     br

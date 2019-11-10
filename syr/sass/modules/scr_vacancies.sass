@@ -1,0 +1,147 @@
+.vacancies
+  position: relative
+  padding-top: 38px
+  padding-bottom: 25px
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-top: 65px
+  &__item
+    position: relative
+    margin-bottom: 30px
+    box-shadow: 4px 7px 8px 0px rgba(3,81,137,0.2)
+    background-color: #ffffff
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 17px 20px 18px 35px
+      cursor: pointer
+
+    .hidden
+      display: none
+      padding: 0 80px 47px 68px
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+
+    h2
+      margin-right: 15px
+      transition: 0.3s
+      font-size: 18px
+      font-weight: 600
+      color: $accent
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a:not(.btn)
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 40px
+      height: 40px
+      background-color: rgba(248,248,248,0.7)
+      border-radius: 50%
+      &::before
+        content: ''
+        position: absolute
+        top: calc(50% - 5px)
+        left: calc(50% - 5px)
+
+        display: block
+        width: 10px
+        height: 10px
+        border-bottom: 2px solid #04528a
+        border-left: 2px solid #04528a
+        transform: rotate(-45deg)
+        transform-origin: center
+        transition: 0.3s
+      &.active
+        &::before
+          transform: rotate(135deg)
+
+  &__unit
+    margin-bottom: 26px
+  &__title
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 600
+
+
+  @media screen and (max-width: 768px)
+    &__list
+      margin-top: 35px
+    &__item
+      margin-bottom: 16px
+      .hidden
+        padding: 0 30px 37px 35px
+        font-size: 14px
+    &__title
+      font-size: 14px
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    &__list
+      margin-top: 25px
+    &__item
+      margin-bottom: 8px
+      box-shadow: 4px 3px 8px 0px rgba(3, 81, 137, 0.2)
+      .top
+        padding: 10px 15px 10px 20px
+      h2
+        font-size: 14px
+      .hidden
+        padding: 0 20px 30px 20px
+      .open
+        width: 35px
+        height: 35px
+        &::before
+          top: calc(50% - 4px)
+          left: calc(50% - 4px)
+          width: 8px
+          height: 8px
+    &__unit
+      margin-bottom: 16px
+
+  // max-width 576px
+
+  @media screen and (max-width: 500px)
+    &__btns
+      .btn
+        padding: 14px 18px
+        font-size: 12px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__item
+      .top
+        padding: 10px
+      h2
+        font-size: 13px
+      .hidden
+        padding-left: 10px
+        padding-right: 10px
+        font-size: 13px
+
+  // max-width 400px
+
+/* vacancies */

@@ -1,0 +1,278 @@
+.main
+  position: relative
+
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+  &__item
+    position: relative
+    width: 25%
+    border-right: 1px solid rgba(0,82,137,0.2)
+    z-index: 1
+    &:nth-of-type(2)
+      .main__link
+        &::before
+          background-color: $accent2
+    &:nth-of-type(3)
+      .main__link
+        &::before
+          background-color: #94c94b
+    &:last-of-type
+      border-right: none
+  &__logo
+    position: absolute
+    top: 43px
+    left: 50%
+    transform: translateX(-50%)
+    max-width: calc(100% - 20px)
+    text-align: center
+    .logo
+      width: 310px
+      max-width: 100%
+      height: 59px
+      margin-bottom: 10px
+    .logo__text
+      font-size: 16px
+      font-weight: 600
+      text-transform: uppercase
+      color: #04538b
+      transition: 0.3s
+
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    z-index: -1
+    transition: 0.5s
+
+  &__link
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100vh
+    padding-bottom: 25px
+    padding-left: 10px
+    padding-right: 10px
+    outline: none
+    text-decoration: none
+    text-align: center
+    overflow: hidden
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #04538b
+      z-index: -2
+      opacity: 0
+      transition: 0.5s
+    &:hover
+      .main__title
+        color: #feffff
+      .main__info
+        top: 55%
+        opacity: 1
+        transition: 0.6s
+      .main__overlay
+        opacity: .2
+      .main__logo
+        .logo
+          filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff)
+        .logo__text
+          color: #fefefe
+          text-shadow: 0 0 20px #fff, 0 0 20px #fff
+      &::before
+        opacity: 1
+  &__title
+    font-size: 40px
+    font-weight: 700
+    text-transform: uppercase
+    color: $accent
+    transition: 0.3s
+
+  &__info
+    position: absolute
+    top: 100%
+    left: 50%
+    transform: translateX(-50%)
+    display: flex
+    flex-direction: column
+    width: 100%
+    min-height: 150px
+    padding-left: 15px
+    padding-right: 15px
+    opacity: 0
+    transition: 0.3s
+
+  &__text
+    margin-bottom: 10px
+    color: #feffff
+  &__btns
+    margin-top: auto
+
+
+  .copyright,
+  .made
+    position: absolute
+    bottom: 25px
+    font-family: 'Roboto', sans-serif
+    font-size: 14px
+    font-weight: 500
+    color: #fff
+    z-index: 1000
+
+  .copyright
+    left: 87px
+    a
+      display: block
+      margin-top: -2px
+      color: #fff
+      font-size: 11px
+      transition: 0.3s
+      &:hover
+        color: $accent2
+  .made
+    right: 60px
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      color: $accent2
+
+
+  @media screen and (max-width: 1600px)
+    &__title
+      font-size: 30px
+    &__text
+      font-size: 14px
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1500px)
+    &__link
+      padding-left: 15px
+      padding-right: 15px
+    &__text
+      br
+        display: none
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1200px)
+    &__logo
+      .logo
+        margin-bottom: 0
+      .logo__text
+        font-size: 14px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 992px)
+    background: none !important
+    &__list
+      flex-direction: column
+    &__item
+      width: 100%
+      min-height: 100vh
+    &__title
+      color: #feffff
+    &__text
+      color: #feffff
+    &__info
+      top: 55%
+      min-height: auto
+      opacity: 1
+    &__link
+      &::before
+        opacity: 1
+    &__overlay
+      opacity: 0.2
+    &__btns
+      margin-top: 30px
+    &__text
+      br
+        display: block
+    &__logo
+      .logo
+        filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 10px #fff)
+      .logo__text
+        color: #fefefe
+        text-shadow: 0 0 20px #fff, 0 0 20px #fff
+    .copyright
+      left: 30px
+    .made
+      right: 30px
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__title
+      font-size: 23px
+    &__logo
+      top: 33px
+      .logo
+        width: 190px
+        height: 49px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: -4px
+      .logo__text
+        font-size: 12px
+    &__item
+      &:first-of-type
+        .main__link
+          padding-top: 80px
+    &__info
+      position: static
+      transform: none
+      margin-top: 30px
+      padding: 0
+    .copyright,
+    .made
+      font-size: 12px
+    .copyright a
+      font-size: 11px
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    .copyright,
+    .made
+      bottom: 15px
+    .copyright
+      left: 15px
+    .made
+      right: 15px
+    &__btns
+      margin-top: 22px
+
+  // max-width 576px
+
+  @media screen and (max-width: 400px)
+    &__title
+      font-size: 20px
+    &__text
+      font-size: 13px
+
+  // max-width 400px
+
+  @media screen and (max-width: 374px)
+    &__info
+      margin-top: 20px
+    &__btns
+      margin-top: 10px
+
+  // max-width 374px
+
+/* main */

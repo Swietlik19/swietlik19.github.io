@@ -5,6 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Roboto:500&display=swap&subset=cyrillic");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5961,6 +5962,37 @@ input[type="submit"][disabled] {
   cursor: no-drop;
   background: #5e5e5e; }
 
+.btn--arrow {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+  color: #feffff; }
+  .btn--arrow:hover {
+    background: none;
+    color: #feffff; }
+    .btn--arrow:hover::after {
+      -webkit-transform: translateX(3px);
+          -ms-transform: translateX(3px);
+              transform: translateX(3px); }
+  .btn--arrow::after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 11px;
+    margin-left: 19px;
+    background: transparent url("../img/svg/arrow.svg") no-repeat center center;
+    background-size: contain;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+
 .burger {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
@@ -6033,6 +6065,48 @@ input[type="submit"][disabled] {
       -webkit-transform: translateY(7px);
           -ms-transform: translateY(7px);
               transform: translateY(7px); }
+
+.video {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-decoration: none; }
+  .video__play {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    margin-bottom: -3px;
+    margin-left: -5px;
+    background-color: #e63c23;
+    background-image: -o-linear-gradient(56deg, rgba(23, 80, 154, 0.6) 7%, transparent 68%);
+    background-image: linear-gradient(34deg, rgba(23, 80, 154, 0.6) 7%, transparent 68%);
+    border-radius: 50%;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+    .video__play::before {
+      content: '';
+      position: absolute;
+      top: -webkit-calc(50% - 8px);
+      top: calc(50% - 8px);
+      left: -webkit-calc(50% - 6px);
+      left: calc(50% - 6px);
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-left: 13px solid #ffffff;
+      border-bottom: 8px solid transparent; }
+  .video:hover .video__play {
+    background-color: #04528a;
+    background-image: -o-linear-gradient(56deg, rgba(230, 60, 35, 0.6) 7%, transparent 68%);
+    background-image: linear-gradient(34deg, rgba(230, 60, 35, 0.6) 7%, transparent 68%); }
 
 .colored__list {
   margin: 0;
@@ -6223,7 +6297,7 @@ input[type="submit"][disabled] {
 @media screen and (max-width: 768px) {
   .title {
     padding-left: 26px;
-    font-size: 30px; }
+    font-size: 26px; }
     .title::before {
       top: -webkit-calc(50% - 25px);
       top: calc(50% - 25px);
@@ -6249,6 +6323,11 @@ input[type="submit"][disabled] {
     background: none !important; }
     .colored__item.colored__item--img {
       display: none; }
+    .colored__item:not(.colored__item--img) {
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
   .colored__text {
     color: #000; }
   .colored__title {
@@ -6273,12 +6352,14 @@ input[type="submit"][disabled] {
     font-size: 14px; }
   .colored__text {
     font-size: 12px;
-    line-height: 1.3; } }
+    line-height: 1.3; }
+  .title {
+    font-size: 22px; } }
 
 @media screen and (max-width: 400px) {
   .title {
     padding-left: 16px;
-    font-size: 21px; }
+    font-size: 19px; }
     .title br {
       display: none; }
     .title::before {
@@ -6557,67 +6638,26 @@ input[type="submit"][disabled] {
     line-height: 1.2;
     font-weight: 600;
     color: #ffffff; }
-  .scr1 .video {
+  .scr1 .video__wrap {
     position: absolute;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-    -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    text-decoration: none; }
-    .scr1 .video:hover .video__play {
-      background-color: #04528a;
-      background-image: -o-linear-gradient(56deg, rgba(230, 60, 35, 0.6) 7%, transparent 68%);
-      background-image: linear-gradient(34deg, rgba(230, 60, 35, 0.6) 7%, transparent 68%); }
-    .scr1 .video__wrap {
+    left: 0;
+    bottom: 156px;
+    width: 100%; }
+  .scr1 .video__text {
+    position: relative;
+    width: 145px;
+    font-size: 14px;
+    line-height: 1.28571;
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff; }
+    .scr1 .video__text svg {
       position: absolute;
       left: 0;
-      bottom: 156px;
-      width: 100%; }
-    .scr1 .video__text {
-      position: relative;
-      width: 145px;
-      font-size: 14px;
-      line-height: 1.28571;
-      font-weight: 700;
-      font-style: italic;
-      color: #ffffff; }
-      .scr1 .video__text svg {
-        position: absolute;
-        left: 0;
-        bottom: -12px;
-        display: block;
-        width: 100%;
-        height: 35px; }
-    .scr1 .video__play {
-      position: relative;
-      width: 58px;
-      height: 58px;
-      margin-bottom: -3px;
-      margin-left: -5px;
-      background-color: #e63c23;
-      background-image: -o-linear-gradient(56deg, rgba(23, 80, 154, 0.6) 7%, transparent 68%);
-      background-image: linear-gradient(34deg, rgba(23, 80, 154, 0.6) 7%, transparent 68%);
-      border-radius: 50%;
-      -webkit-transition: 0.3s;
-      -o-transition: 0.3s;
-      transition: 0.3s; }
-      .scr1 .video__play::before {
-        content: '';
-        position: absolute;
-        top: -webkit-calc(50% - 8px);
-        top: calc(50% - 8px);
-        left: -webkit-calc(50% - 6px);
-        left: calc(50% - 6px);
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 8px solid transparent;
-        border-left: 13px solid #ffffff;
-        border-bottom: 8px solid transparent; }
+      bottom: -12px;
+      display: block;
+      width: 100%;
+      height: 35px; }
   .scr1__slider-wrap {
     position: absolute;
     left: 0;

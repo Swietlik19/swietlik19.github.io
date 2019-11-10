@@ -84,17 +84,6 @@
   // маска поля tel
   $(".wpcf7-tel").mask("+7 (999) 999-99-99");
 
-  $("a.link--map").fancybox({
-    "padding": 0, // отступ контента от краев окна
-    "width" : 2500, // ширина окна, px (425px - по умолчанию)
-    "height" : 550, // высота окна, px(355px - по умолчанию)
-    "overlayOpacity" : 0.8, // Прозрачность затенения (0.3 по умолчанию)
-    "hideOnContentClick" :false, // Если TRUE закрывает окно по клику по любой его точке (кроме элементов навигации). Поумолчанию TRUE
-    "centerOnScroll" : false, // Если TRUE окно центрируется на экране, когда пользователь прокручивает страницу
-    "margin": 0,
-    "autoSize": false
-  });
-
   // Секции по типу "Вопрос - ответ"
   function toggleHidden(xParent,hideOther) {
     $(xParent + ' .top').click(function() {
@@ -107,7 +96,7 @@
     });
   }
 
-  toggleHidden('.faq',true);
+  toggleHidden('.vacancies',true);
 
   /* Раскрытие меню в футере на мобильных устройствах */
   $('.footer__menu .menu > li .menu-arrow').click(function(event) {
@@ -132,7 +121,9 @@
     $(".header").toggleClass("fixed", (fromTop > 50));
   });
 
-
+  $('img').on('dragstart', function (event) {
+    event.preventDefault();
+  });
 
   /* Resize */
   $(window).resize(function(){

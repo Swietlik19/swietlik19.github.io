@@ -12,6 +12,46 @@
     asNavFor: '#scr1__slider2 .scr1__slides2'
   });
 
+  $('#career__slider .slider1__slides').slick({
+    slidesToShow: 1,
+    speed: 500,
+    fade: true,
+    dots: true,
+    appendDots: $('#career__slider .slider1__dots'),
+    appendArrows: $('#career__slider .career__arrows-wrap'),
+  });
+
+  $('#mission__slider .slider1__slides').slick({
+    slidesToShow: 3,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dots: true,
+    appendDots: $('#mission__slider .slider1__dots'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 374,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+
   $('#scr1__slider2 .scr1__slides2').slick({
     slidesToShow: 4,
     slidesToScroll: 1,

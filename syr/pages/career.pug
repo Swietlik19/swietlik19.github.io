@@ -21,17 +21,34 @@ html(lang='ru')
 
     include blocks/scripts.pug
     include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/socials.pug
 
-    include blocks/scr_main.pug
+    include blocks/scr_career.pug
+    include blocks/scr_mission.pug
+    include blocks/scr_vacancies.pug
+    include blocks/scr_discuss.pug
+
+
+    include blocks/footer.pug
+    include blocks/socials.pug
 
     //- ToDo: Перенести first-load.css в inline!!!
     +styles-top
 
   body
 
-    #page_wr.page_wr
-      +scr_main
+    .page-top
+      +header--second("a")
 
+    #page_wr.page_wr
+      +scr_career
+      +scr_mission--career
+      +scr_vacancies
+      +scr_discuss
+
+
+    +footer("a")
 
     +styles-bottom
     +scripts

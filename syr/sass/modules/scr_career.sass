@@ -1,0 +1,186 @@
+.career
+  position: relative
+  .desc
+    margin-top: 58px
+    padding-left: 37px
+    font-size: 20px
+    line-height: 1.4 /* 28 / 20 */
+  &__slider
+    .container
+      position: relative
+  &__dots
+    margin-top: -30px
+    position: relative
+    .slick-dots
+      li
+        margin-right: 19px
+        &:last-of-type
+          margin-right: 0
+        button
+          width: 13px
+          height: 13px
+          margin: 0
+
+  &__arrows
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    width: 100%
+    &-wrap
+      display: flex
+      justify-content: space-between
+    .slick-arrow
+      position: relative
+      width: 55px
+      height: 55px
+      background-color: rgba(248,248,248,0.7)
+      border-radius: 50%
+      // transition: 0.3s
+      &::before
+        width: 13px
+        height: 13px
+        border-color: #04528a
+      &:hover
+        background-color: rgba(#04528a, 0.7)
+        &::before
+          border-color: #fff
+    .slick-prev
+      left: 0
+      &::before
+        left: calc(50% - 3px)
+    .slick-next
+      right: 0
+      &::before
+        left: calc(50% - 7px)
+
+  &__videos
+    padding-top: 54px
+    padding-bottom: 119px
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+
+      display: flex
+      justify-content: space-between
+      width: 100%
+      margin-top: 61px
+    &-item
+      width: calc(50% - 15px)
+      height: 305px
+      a
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        height: 100%
+        padding-bottom: 19px
+        text-decoration: none
+        outline: none
+        z-index: 1
+        transition: 0.3s
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: 0
+
+          display: block
+          width: 100%
+          max-height: 104px
+          height: 100%
+          background-image: linear-gradient(0deg, #04528a 0, transparent 100%)
+          z-index: -1
+          transition: 0.3s
+        .video
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+        &:hover
+          padding-bottom: 49px
+          &::after
+            max-height: 100%
+          .video__play
+            transform: scale(1.08)
+            box-shadow: 0 0 15px 5px rgba(#fff, 0.5)
+          .career__videos
+            &-text
+              font-size: 22px
+    &-text
+      display: block
+      padding: 0 15px
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 700
+      color: #ffffff
+      text-align: center
+      transition: 0.3s
+
+
+  @media screen and (max-width: 992px)
+    .desc
+      margin-top: 40px
+      padding-left: 0
+      font-size: 18px
+      br
+        display: none
+
+  // max-width 992px
+
+  @media screen and (max-width: 768px)
+    &__slider
+      display: none
+    .desc
+      margin-top: 20px
+      font-size: 16px
+    &__videos
+      padding-top: 34px
+      padding-bottom: 59px
+      &-list
+        margin-top: 37px
+      &-item
+        height: 235px
+        a
+          &:hover
+            padding-bottom: 29px
+            .career__videos
+              &-text
+                font-size: 18px
+      &-text
+        font-size: 16px
+
+  // max-width 768px
+
+  @media screen and (max-width: 576px)
+    .desc
+      margin-top: 16px
+      font-size: 14px
+    &__videos
+      padding-bottom: 39px
+      &-item
+        width: calc(50% - 5px)
+        height: 205px
+        a
+          &:hover
+            .career__videos
+              &-text
+                font-size: 14px
+      &-text
+        font-size: 14px
+
+  // max-width 576px
+
+  @media screen and (max-width: 450px)
+    &__videos
+      padding-bottom: 19px
+      &-list
+        flex-direction: column
+        margin-top: 27px
+      &-item
+        width: 100%
+        margin-bottom: 20px
+
+  // max-width 450px
+
+/* career */

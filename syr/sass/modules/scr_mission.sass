@@ -14,13 +14,100 @@
     .title
       margin-bottom: 60px
       font-weight: 400
+  &__bottom
+    margin-top: 42px
+    margin-bottom: 30px
+    font-size: 20px
+    line-height: 1.4 /* 28 / 20 */
+    strong
+      font-weight: 600
+
+  &__slider
+    width: calc(100% + 30px)
+    margin-left: -15px
+    .slick-arrow
+      width: 55px
+      height: 55px
+      background-color: rgba(248,248,248,0.7)
+      border-radius: 50%
+      &::before
+        width: 13px
+        height: 13px
+        border-color: #04528a
+      &:hover
+        background-color: rgba(#04528a, 0.7)
+        &::before
+          border-color: #fff
+    .slick-prev
+      left: -45px
+      &::before
+        left: calc(50% - 3px)
+    .slick-next
+      right: -45px
+      &::before
+        left: calc(50% - 7px)
+
+  &__slide
+    padding: 10px 15px
+    &-item
+      display: block
+      height: 250px
+      outline: none
+      text-decoration: none
+      transition: 0.3s
+      overflow: hidden
+      &:hover
+        border-radius: 10px
+        box-shadow: 0 0 15px rgba($accent, 0.3)
+      img
+        display: block
+        width: 100%
+        height: 100%
+  &__dots
+    margin-top: 15px
+    position: relative
+    .slick-dots
+      li
+        margin-right: 19px
+        &:last-of-type
+          margin-right: 0
+        button
+          width: 13px
+          height: 13px
+          margin: 0
+
 
   /* media */
+  @media screen and (max-width: 1290px)
+    &__slider
+      .slick-prev
+        left: -15px
+      .slick-next
+        right: -15px
+
+  // max-width 1290px
+
   @media screen and (max-width: 992px)
     .colored
       margin-bottom: 34px
+    &__bottom
+      margin-top: 32px
+      margin-bottom: 20px
+      font-size: 17px
 
   // max-width 992px
+
+  @media screen and (max-width: 767px)
+    &__slider
+      width: calc(100% + 10px)
+      margin-left: -5px
+    &__slide
+      padding-left: 5px
+      padding-right: 5px
+      &-item
+        height: 180px
+
+  // max-width 767px
 
   @media screen and (max-width: 700px)
     padding-bottom: 56px
@@ -31,8 +118,24 @@
 
   // max-width 700px
 
+  @media screen and (max-width: 575px)
+    &__bottom
+      margin-top: 0
+      font-size: 14px
+
+  // max-width 575px
+
   @media screen and (max-width: 500px)
     padding-bottom: 16px
+    &__dots
+      margin-top: 10px
+      margin-bottom: 20px
+      .slick-dots
+        li
+          margin-right: 9px
+          button
+            width: 7px
+            height: 7px
 
   // max-width 500px
 
@@ -50,3 +153,42 @@
   .mission__title
     margin-bottom: 0
     text-align: center
+
+.mission--career
+  padding-bottom: 31px
+  .colored
+    &__item
+      &:not(.colored__item--img)
+        padding: 20px 30px 40px 29px
+      &:nth-of-type(1)
+        background-color: $accent2
+      &:nth-of-type(3)
+        background-color: #9fc53c
+      &:nth-of-type(5)
+        background-color: $accent2
+      &:nth-of-type(7)
+        background-color: #04538b
+      &:nth-of-type(9)
+        background-color: #9fc53c
+    &__title
+      margin-bottom: 0
+      text-align: center
+
+  @media screen and (max-width: 700px)
+    .colored
+      &__list
+        flex-direction: column
+      &__item
+        width: 100%
+      &__title
+        text-align: left
+        br
+          display: none
+
+  // max-width 700px
+
+  @media screen and (max-width: 500px)
+    padding-top: 38px
+    padding-bottom: 6px
+
+  // max-width 500px

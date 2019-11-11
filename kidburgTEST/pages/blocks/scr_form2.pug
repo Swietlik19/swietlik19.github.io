@@ -1,0 +1,58 @@
+mixin scr_form2()
+  section.scr_form.scr_form2(id="scr_form")
+    .container
+      .row
+        .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+          .form.wpcf7
+            form.wpcf7-form
+              p.form__title Подать заявку 
+                br
+                |  на групповое посещение
+              p.form__desc Заполните форму и мы свяжемся 
+                br
+                |  с Вами в ближайшее время
+
+              .df
+                .left
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                      span.icon__wrap
+                        svg.icon(width='15', height='15')
+                          use(xlink:href='img/svg/sprite.svg#iconFormUser')
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+                      span.icon__wrap
+                        svg.icon(width='14', height='17')
+                          use(xlink:href='img/svg/sprite.svg#iconFormPhone')                 
+
+                // /.left              
+                
+                .right
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-mail.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email', name='email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+                      span.icon__wrap
+                        svg.icon(width='17', height='12')
+                          use(xlink:href='img/svg/sprite.svg#iconFormMail')
+              
+                  .form__item
+                    span.wpcf7-form-control-wrap.accept
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        span.wpcf7-list-item
+                          label
+                            input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                            span.wpcf7-list-item-label Согласие на обработку 
+                              br
+                              |  персональных данных             
+              .btn__wr
+                .form__item.form__item--submit.btn--grad__wrap
+                  .submit__wrap.submit__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit(type='submit', value='Отправить')
+                    span
+                // /.right 
+              // /.df
+
+  // /.scr_form

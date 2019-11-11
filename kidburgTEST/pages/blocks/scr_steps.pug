@@ -1,0 +1,118 @@
+mixin scr_steps()
+  section.scr_steps.steps(id="scr_steps")
+    .container
+      form.steps__form
+        .steps__section
+          .steps__title
+            h3 
+              span 1 шаг
+              b.title--lined Выберите параметры
+
+          .steps__age 
+            .top
+              label.text Укажите возраст ребенка:
+                input.wpcf7-form-control.wpcf7-text.wpcf7-age.age-text(type='number', name='age', value='10')
+              span.wpcf7-form-control-wrap.text-input
+                label.range Количество детей:
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-count(type="text" class="count-range" name="count_range" aria-required='true' aria-invalid='false')
+
+        .steps__section.steps__section--slider
+          .steps__title
+            h3 
+              span 2 шаг
+              b.title--lined Выберете программу для&nbsp;именинника и&nbsp;гостей
+
+          +scr_choose-bday
+
+        .steps__section
+          .steps__title
+            h3 
+              span 3 шаг
+              b.title--lined Дополните Ваш праздник
+          
+          .steps__price
+            .tprice.tprice--two-cols
+              h3.tprice__title.tprice__title--red Дополнительные возможности
+              
+              ul.tprice__table
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Поздравление с&nbsp;актером
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 1000 ₽
+                          input(type='checkbox', id="tprice1", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Украшение домика до&nbsp;10 человек
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label до&nbsp;10&nbsp;человек&nbsp;-&nbsp;1000&nbsp;₽/до&nbsp;20&nbsp;-&nbsp;1500&nbsp;₽
+                          input(type='checkbox', id="tprice2", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Фотосъемка (1 час)
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 2000 ₽
+                          input(type='checkbox', id="tprice3", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Видеоъемка (1 час)
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 3000 ₽
+                          input(type='checkbox', id="tprice4", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Шар сюрпириз
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 1000 ₽
+                          input(type='checkbox', id="tprice5", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Продление домика для чаепития (1 час)
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 2000 ₽
+                          input(type='checkbox', id="tprice6", name='tprice', value='1')
+                          span.circle.circle--small
+
+                li.tprice__row
+                  .tprice__cell.tprice__cell--th
+                    span Бумажная дискотека
+                  .tprice__cell
+                    span.wpcf7-form-control-wrap.circle-btn
+                      span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                        label 3500 ₽
+                          input(type='checkbox', id="tprice7", name='tprice', value='1')
+                          span.circle.circle--small
+
+          .steps__bottom
+            .steps__total
+              span Итого: 
+              b  7 500 ₽
+            
+            .form__item.form__item--submit.btn--grad__wrap
+              .submit__wrap.submit__wrap--grad
+                input.wpcf7-form-control.wpcf7-submit(type='submit', value='Внести предоплату')
+                span
+        
+  // /.scr_steps

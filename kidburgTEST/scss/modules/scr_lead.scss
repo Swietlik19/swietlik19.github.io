@@ -1,0 +1,95 @@
+.lead {
+  position: relative; 
+  z-index: 5;
+  padding-top: 20px;
+  
+  &::before {
+    content: '';    
+    position: absolute;
+    top: -368px;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 946px;
+    background: transparent url('../img/bg-lead.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  &__text {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 300;
+    color: #ffffff;
+    span {
+      font-weight: 400;
+    }
+    b {
+      font-size: 55px;
+      font-weight: 700;
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  } 
+  
+  /* media */
+  @media screen and (max-width: 1120px) {    
+    &__title {
+      margin-bottom: 24px;
+      font-size: 40px;
+      line-height: 1.3;
+    }
+    &__text {
+      font-size: 26px;
+      line-height: 1.4;
+      b {
+        font-size: 34px;
+      }
+    }
+  } /* max-width 1120px */
+
+  @media screen and (max-width: 992px) {  
+    &__title {
+      br {
+        display: none;
+      }
+    } 
+    &__text {
+      br {
+        display: none;
+      }
+    } 
+  } /* max-width 992px */
+
+  @media screen and (max-width: 400px) {
+    &__title {
+      margin-bottom: 16px;
+      font-size: 30px;
+    }
+    &__text {
+      font-size: 18px;
+      b {
+        font-size: 28px;
+      }
+    }
+  } /* max-width 400px */
+
+} /* lead */
+
+.about-page {
+
+  .lead {
+    background-color: #dfd9eb;
+    padding-bottom: 135px;
+  } /* lead */
+
+} /* about-page */

@@ -1,0 +1,49 @@
+$b: #324969;
+$g: #6e6e6e;
+$o: #eb6402;
+$v: #7c6eae;
+
+$accent: $o;
+$accent--dark: $v;
+
+$color: $g;
+$color2: $b;
+
+$grad: linear-gradient(180.0deg, #fb5847 0%, #ea473e 100%);
+
+$font: 'YandexSansText', sans-serif;
+
+/* Миксин замены цвета placeholder у input.
+Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px); */
+@mixin placeholder($color,$size) {
+  &::-webkit-input-placeholder {color:$color;font-size:$size;}
+  &::-moz-placeholder          {color:$color;font-size:$size;}
+  &:-ms-input-placeholder      {color:$color;font-size:$size;}
+}
+
+/* Анимации */
+@keyframes pulseIt {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+@keyframes pulseItPhone {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}

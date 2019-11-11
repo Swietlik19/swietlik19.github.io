@@ -1,0 +1,206 @@
+mixin scr_steps-buy()
+  section.scr_steps.steps(id="scr_steps")
+    .container
+      h1.title 
+        strong купить билет
+
+      form.steps__form
+        .steps__section
+          .steps__title
+            h2
+              span 1 шаг
+              b.title--lined Выберите необходимую услугу
+
+          ul.buy__nav
+            li
+              a.buy__link.current(href="#buy-tab-0")
+                span.circle
+                p.text Полное посещение города
+            li
+              a.buy__link(href="#buy-tab-1")
+                span.circle
+                p.text Детская комната Mega ясли (2&nbsp;часа)
+            li
+              a.buy__link(href="#buy-tab-2")
+                span.circle
+                p.text Предоплата групповой программы         
+
+        .steps__section.steps__section--tab(id="buy-tab-0")
+          .steps__title
+            h2 
+              span 2 шаг
+              span.right
+                b.title--lined Выберите возраст, время посещения и кол-во гостей города
+                  br 
+                small Посещение Города не ограничего во времни.
+                  br
+                  |  Срок действия билетов - 60 дней с даты покупки
+
+          ul.buy-options
+            li.buy-options__item
+              .top
+                h3 1,5 — 4 лет
+              .count__wrap
+                .quantity-block
+                  button.quantity-arrow.quantity-arrow-minus(type="button") - 
+                  input.quantity-num(type="number" value="0")
+                  button.quantity-arrow.quantity-arrow-plus(type="button") + 
+              .time__wrap
+                p Время посещения:
+            
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time1", name='timeOne', value='Вход до 18:00', checked='checked')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход до 18:00
+
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time2", name='timeOne', value='Вход после 18:00')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход после 18:00
+              
+              b.buy-options__price 700 ₽
+
+            li.buy-options__item
+              .top
+                h3 4 — 14 лет
+              .count__wrap
+                .quantity-block
+                  button.quantity-arrow.quantity-arrow-minus(type="button") - 
+                  input.quantity-num(type="number" value="0")
+                  button.quantity-arrow.quantity-arrow-plus(type="button") + 
+              .time__wrap
+                p Время посещения:
+            
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time3", name='timeTwo', value='Вход до 18:00', checked='checked')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход до 18:00
+
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time4", name='timeTwo', value='Вход после 18:00')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход после 18:00
+              
+              b.buy-options__price 1 500 ₽
+              
+            li.buy-options__item
+              .top
+                h3 Взрослый от 14 лет
+              .count__wrap
+                .quantity-block
+                  button.quantity-arrow.quantity-arrow-minus(type="button") - 
+                  input.quantity-num(type="number" value="0")
+                  button.quantity-arrow.quantity-arrow-plus(type="button") + 
+              .time__wrap
+                p Время посещения:
+            
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time5", name='timeThree', value='Вход до 18:00', checked='checked')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход до 18:00
+
+                span.wpcf7-form-control-wrap.circle-btn
+                  span.wpcf7-form-control.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='radio', id="time6", name='timeThree', value='Вход после 18:00')
+                        span.circle.circle--small
+                        span.wpcf7-list-item-label Вход после 18:00
+              
+              b.buy-options__price 300 ₽
+
+
+          .steps__bottom
+            .steps__total
+              span Итого: 
+              b  14 000 ₽
+            
+            .form__item.form__item--submit.btn--grad__wrap
+              .submit__wrap.submit__wrap--grad
+                input.wpcf7-form-control.wpcf7-submit(type='submit', value='Оплатить')
+                span
+     
+        .steps__section.steps__section--tab(id="buy-tab-1")
+          .steps__title
+            h2 
+              span 2 шаг
+              span.right
+                b.title--lined Выберите количество детей
+                  br 
+                small Срок действия билетов - 60 дней с&nbsp;даты покупки
+
+          ul.buy-options.buy-options--one-item
+            li.buy-options__item
+              .top
+                h3 от 3 — 7 лет
+                p Максимальное 
+                  br
+                  |  пребывание 2 часа
+              .count__wrap
+                .quantity-block
+                  button.quantity-arrow.quantity-arrow-minus(type="button") - 
+                  input.quantity-num(type="number" name="count2" value="1")
+                  button.quantity-arrow.quantity-arrow-plus(type="button") + 
+              
+              b.buy-options__price 700 ₽
+
+          .steps__bottom
+            .steps__total
+              span Итого: 
+              b  3 500 ₽
+            
+            .form__item.form__item--submit.btn--grad__wrap
+              .submit__wrap.submit__wrap--grad
+                input.wpcf7-form-control.wpcf7-submit(type='submit', value='Оплатить')
+                span   
+
+        .steps__section.steps__section--tab(id="buy-tab-2")
+          .steps__title
+            h2 
+              span 2 шаг
+              span.right
+                b.title--lined Выберите мероприятие
+                  br 
+                small Перед внесением предоплаты обязательно позвоните в&nbsp;MEGA&nbsp;ГРАД и&nbsp;забронируйте программу
+
+          ul.buy-options.buy-options--two-item
+            li.buy-options__item
+              .top
+                h3 День рождения
+              .steps__bottom
+                .steps__total
+                  b  5 000 ₽
+                
+                .form__item.form__item--submit.btn--grad__wrap
+                  .submit__wrap.submit__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit(type='submit', value='Оплатить')
+                    span        
+
+            li.buy-options__item
+              .top
+                h3 Групповые посещения
+              .steps__bottom
+                .steps__total
+                  b  5 000 ₽
+                
+                .form__item.form__item--submit.btn--grad__wrap
+                  .submit__wrap.submit__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit(type='submit', value='Оплатить')
+                    span    
+
+  // /.scr_steps

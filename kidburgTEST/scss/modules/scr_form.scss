@@ -1,0 +1,145 @@
+.scr_form {
+  position: relative; 
+  padding-top: 40px;
+  padding-bottom: 142px;
+  z-index: 10;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -340px;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 946px;
+    background: transparent url('../img/bg-lead.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .form {
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -113px;
+      left: 0;
+
+      display: block;
+      width: 753px;
+      height: 641px;
+      background: transparent url('../img/img-scr_form.png') no-repeat center center;
+      background-size: contain;
+      z-index: -1;
+    }
+    .df {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+    .left {
+      width: calc((100% - 30px) / 2);
+    }
+    .right {
+      width: calc((100% - 30px) / 2);
+    }
+    .btn--grad, .submit__wrap--grad, .btn--grad__wrap {
+      width: 231px;
+    }
+    .btn--grad__wrap {
+      margin-top: 0;
+    }
+    input[type="submit"] {
+      font-size: 16px;
+    }
+    .text-input {
+      width: 100%;
+    }
+  }
+
+  .form .accept {
+    margin-top: 20px;
+    display: block;
+    label span {
+      padding-left: 25px;
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  &.scr_form2 {
+    .btn__wr {
+      margin-top: 10px;
+    }
+  }
+
+  /* media */
+  @media screen and (max-width: 900px) {    
+    .form {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &::before {
+        left: -30px;
+      }
+    }
+  } /* max-width 900px */
+
+  @media screen and (max-width: 530px) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -90px;
+      left: 0;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/bg-lead--mobile.png');
+    }
+  } /* max-width 530px */
+
+  @media screen and (max-width: 500px) {
+    padding-top: 10px;
+    padding-bottom: 75px;
+    &::before {
+      height: 110%;
+    }
+    .form {
+      padding-left: 0;
+      padding-right: 0;
+      &::before {
+        content: none;
+        background: none;
+      }
+      .df {
+        flex-direction: column;
+      }
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+      .accept {
+        margin-top: 0;
+        margin-bottom: 20px;
+        br {
+          display: none;
+        }
+      }
+      &__desc {
+        margin-bottom: 10px;
+      }
+      .textarea-input {
+        margin-bottom: 10px;
+      }
+    }
+  } /* max-width 500px */
+
+} /* scr_form */

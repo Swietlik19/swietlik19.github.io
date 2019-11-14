@@ -1,0 +1,421 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.title
+  position: relative
+  margin-top: 0
+  margin-bottom: 61px
+  font-size: 48px
+  line-height: 1.2
+  font-weight: 300
+  &::after
+    content: ''
+
+    display: block
+    width: 69px
+    height: 2px
+    margin-top: 25px
+    background-color: $accent2
+
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s ease-in-out
+  -webkit-appearance: none
+  display: block
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.btn,
+input[type="submit"].btn
+
+  &--transparent
+    padding: 18px 23px
+    border: 1.0px solid $accent
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 500
+    color: $accent
+    z-index: 1
+    transition: 0.7s ease-in-out
+    &::before,
+    &::after,
+    span::before,
+    span::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 0
+      height: 100%
+      background-color: rgba($accent, 0.5)
+      transition: 0.4s
+      z-index: -1
+    &::after,
+    span::after
+      left: auto
+      right: 0
+    span::before,
+    span::after
+      transition-delay: 0.4s
+    &:hover
+      color: #000
+      &::before,
+      &::after,
+      span::before,
+      span::after
+        width: 100%
+
+  &--arrow
+    position: relative
+    padding: 17px 62px
+    background-color: $accent
+    font-size: 16px
+    line-height: 1.125 /* 18 / 16 */
+    font-weight: 500
+    color: $accent2
+    transition: 0.25s
+    z-index: 1
+    &:hover
+      box-shadow: 0 0.5em 0.5em -0.4em $accent
+      transform: translateY(-6px)
+  &--circle
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 40px
+    height: 40px
+    border: 2px solid $accent
+    .fa
+      color: $accent
+
+
+.btn__wrap
+  position: relative
+  &--arrow
+    &::after
+      content: ''
+      position: absolute
+      top: calc(50% - 3px)
+      right: 24px
+      display: block
+      width: 7px
+      height: 7px
+      border-bottom: 2px solid $accent2
+      border-left: 2px solid $accent2
+      transform: rotate(-135deg)
+      z-index: 2
+      transition: 0.25s
+  &:hover
+    .btn--arrow
+      box-shadow: 0 0.5em 0.5em -0.4em $accent
+      transform: translateY(-0.25em)
+  &--arrow
+    &:hover
+      &::after
+        right: 16px
+        top: calc(50% - 7px)
+
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 34px
+  height: 25px
+  transition: 0.3s
+  &.active
+    transition: all 0.3s ease-in-out 0.6s
+    transform: rotate(45deg)
+    .line
+      &:nth-of-type(2)
+        transform: scale(0)
+      &:nth-of-type(1),
+      &:nth-of-type(3)
+        transition-delay: 0.3s
+      &:nth-of-type(1)
+        transform: translateY(6px)
+      &:nth-of-type(3)
+        transform: translateY(-6px) rotate(90deg)
+  &:hover
+    .line
+      &:nth-of-type(2)
+        background-color: #f1f2f2
+      &:nth-of-type(1),
+      &:nth-of-type(3)
+        background-color: $accent
+
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  .line
+    display: block
+    width: 34px
+    height: 3px
+    margin: 3px auto
+    background-color: $accent
+    transition: all 0.3s ease-in-out
+    &:nth-of-type(1),
+    &:nth-of-type(3)
+      background-color: #f1f2f2
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane']
+  display: none
+
+/* Переопределение стилей slick */
+.slick-slide
+  -webkit-backface-visibility: hidden
+  outline: none
+
+.slick-arrow
+  background: none
+  border: none
+  outline: none
+
+  position: absolute
+  z-index: 100
+  cursor: pointer
+  font-size: 0
+  transition: 0.3s
+
+  display: block
+
+.slick-prev
+
+
+.slick-next
+
+
+.slick-dots
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  font-size: 0
+  li
+    button
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+
+    &.slick-active
+      button
+
+    &:not(.slick-active)
+      button
+        cursor: pointer
+
+.slider1
+  position: relative
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+@media screen and (max-width: 991px)
+  .title
+    margin-bottom: 41px
+    font-size: 39px
+    &::after
+      margin-top: 20px
+
+// max-width 991px
+
+// @media screen and (max-width: 767px)
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .title
+    margin-bottom: 31px
+    font-size: 33px
+    &::after
+      margin-top: 10px
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .burger
+    width: 26px
+    .line
+      width: 26px
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .title
+    font-size: 27px
+
+// max-width 400px

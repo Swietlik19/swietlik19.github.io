@@ -1,0 +1,36 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__wrap
+      button.burger#header__burger
+        span.burger__wrap
+          span.line
+          span.line
+          span.line
+
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo.svg" alt="лого")
+
+        p.logo__text Уникальное арт-пространство
+          br
+          |  трансформер в Крыму
+
+      .header__btns
+        .btn__wrap
+          a.btn.btn--transparent(href="#")
+            span Календарь мероприятий
+
+      .header__info
+        .header__phones
+          a.btn.btn--circle.mobile(href="tel:+79782583795" rel="nofollow")
+            i.fa.fa-phone
+          a.header__phone.desktop(href="tel:+79782583795" rel="nofollow") +7 (978) 258-37-95
+        p.header__text г. Симферополь, ул. К. Маркса, 28
+
+
+
+    // /.header__wrap

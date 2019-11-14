@@ -1,0 +1,166 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: $accent2
+  z-index: 500
+  &__wrap
+    display: flex
+    align-items: center
+    padding: 18px 58px
+  .burger
+    margin-right: 114px
+  .logo
+    display: block
+    text-decoration: none
+    width: 147px
+    height: 42px
+    margin-right: 28px
+    &__wrap
+      display: flex
+      align-items: center
+    &__text
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 400
+      color: #f1f2f2
+
+  a.logo
+    transition: 0.5s
+    &:hover
+      filter: drop-shadow(0 0 10px $accent)
+
+  &__btns
+    margin-left: auto
+
+  &__info
+    margin-left: 109px
+    text-align: right
+  &__phones
+    .mobile
+      display: none
+
+  &__phone
+    position: relative
+    display: inline-block
+    outline: none
+    text-decoration: none
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 400
+    color: #fff
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      bottom: -1px
+      left: 0
+      width: 100%
+      height: 1px
+      border-bottom: 1px solid $accent
+      transform: scale(0)
+      transition: 1s
+
+    &:hover
+      color: $accent
+      &::before
+        transform: scale(1)
+
+
+  &__text
+    font-size: 13px
+    line-height: 1.384615384615385 /* 18 / 13 */
+    font-weight: 400
+    color: #f1f2f2
+
+
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  @media screen and (max-width: 1400px)
+    &__info
+      margin-left: 40px
+    .burger
+      margin-right: 40px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1250px)
+    &__wrap
+      padding: 18px 30px
+
+  // max-width 1250px
+
+  @media screen and (max-width: 1200px)
+    &__wrap
+      padding: 18px 15px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    &__info
+      margin-left: 25px
+    .burger
+      margin-right: 30px
+    .logo
+      margin-right: 18px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__btns
+      display: none
+    &__info
+      margin-left: auto
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    .logo
+      width: 107px
+      height: 32px
+      margin-right: 13px
+      &__text
+        font-size: 11px
+    &__text
+      display: none
+    &__phones
+      .desktop
+        display: none
+      .mobile
+        display: flex
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      padding: 8px 15px
+    .logo
+      width: 81px
+      height: 20px
+      margin-right: 15px
+      margin-bottom: 7px
+      &__text
+        font-size: 10px
+      &__wrap
+        display: block
+    .burger
+      margin-right: 15px
+
+  // max-width 500px
+
+/* .header */

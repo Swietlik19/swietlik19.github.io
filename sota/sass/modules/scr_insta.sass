@@ -1,0 +1,138 @@
+.insta
+  position: relative
+  padding-top: 55px
+  padding-bottom: 81px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+  &__item
+    width: calc(25% - 15px)
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+
+  &__link
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    text-decoration: none
+    outline: none
+    text-align: center
+    &-wrap
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 166px
+      height: 190px
+      margin-bottom: 28px
+      text-align: center
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 100%
+        height: 100%
+        background: transparent url('../img/svg/icon-hexa3.svg') no-repeat center center
+        background-size: contain
+        transition: 1.3s
+      &::after
+        content: ''
+
+        display: block
+        width: 51px
+        height: 51px
+        background: transparent url('../img/svg/instagram.svg') no-repeat center center
+        background-size: contain
+      transition: 0.3s
+    &:hover
+      .insta__link-wrap
+        &::before
+          transform: rotate(180deg)
+      .insta__text
+        color: darken($accent, 20%)
+
+  &__text
+    font-size: 18px
+    color: #2c2d2d
+    transition: 0.3s
+  &__img
+    display: block
+    height: 264px
+    text-decoration: none
+    outline: none
+    overflow: hidden
+    transition: 0.3s
+    &:hover
+      box-shadow: 0 0 20px rgba($accent2, 0.4)
+      border-radius: 10px
+
+  @media screen and (max-width: 1070px)
+    &__item
+      width: calc(25% - 7px)
+      margin-right: 14px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &__list
+      flex-wrap: wrap
+    &__item
+      width: calc(50% - 15px)
+      margin-right: 30px
+      margin-bottom: 15px
+      &:nth-of-type(2n)
+        margin-right: 0
+
+  // max-width 900px
+
+  @media screen and (max-width: 575px)
+    &__item
+      width: calc(50% - 7px)
+      margin-right: 14px
+    &__img
+      height: 214px
+    &__link
+      &-wrap
+        width: 136px
+        height: 160px
+        margin-bottom: 8px
+        &::after
+          width: 44px
+          height: 44px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    padding-top: 35px
+    padding-bottom: 41px
+    &__img
+      height: 174px
+    &__link
+      &-wrap
+        width: 116px
+        height: 130px
+        &::after
+          width: 38px
+          height: 38px
+    &__text
+      font-size: 16px
+
+  // max-width 500px
+
+  @media screen and (max-width: 374px)
+    &__item
+      width: calc(50% - 3px)
+      margin-right: 6px
+      margin-bottom: 10px
+
+  // max-width 374px
+
+/* insta */

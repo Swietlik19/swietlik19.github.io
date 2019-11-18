@@ -34,6 +34,27 @@ body
 .page_wr
   flex-grow: 1
 
+.content-wrap
+  position: relative
+  overflow: hidden
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    left: -140px
+    bottom: -109px
+
+    display: block
+    width: 581px
+    height: 762px
+    background: transparent url('../img/decor-second.png') no-repeat center center
+    background-size: contain
+    z-index: -1
+  &--right
+    &::before
+      left: auto
+      right: -20px
+
 img
   width: 100%
   height: auto
@@ -180,6 +201,29 @@ h1,h2,h3,h4,h5,h6
 
 .link
   transition: 0.3s
+  text-decoration: none
+  outline: none
+  &--arrow
+    position: relative
+    display: inline-block
+    padding-right: 20px
+    font-size: 14px
+    font-weight: 600
+    color: $accent2
+    &::after
+      content: '\f054'
+      position: absolute
+      top: 2px
+      right: 0
+
+      display: block
+      font-family: 'FontAwesome'
+      font-weight: 300
+      font-size: 12px
+      transition: 0.3s
+    &:hover
+      &::after
+        right: -3px
 
 .btn,
 input[type="submit"]
@@ -381,6 +425,52 @@ input[type="submit"]
     font-weight: 400
     color: #ffffff
 
+.tabs-nav
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+
+    display: flex
+    flex-wrap: wrap
+    margin-top: 52px
+    margin-bottom: 17px
+  &__item
+    margin-right: 13px
+    margin-bottom: 17px
+    &:last-of-type
+      margin-right: 1px
+    a
+      display: flex
+      align-items: center
+      justify-content: center
+      text-decoration: none
+      outline: none
+      min-width: 210px
+      height: 59px
+      padding-right: 25px
+      padding-left: 25px
+      text-align: center
+      white-space: nowrap
+
+      background-color: $accent
+      border: 2.0px solid $accent
+      border-radius: 29.5px
+      font-size: 20px
+      font-weight: 600
+      text-transform: uppercase
+      color: #ffffff
+      transition: 0.3s
+      &:hover
+        background-color: #fff
+        color: $accent
+    &.active
+      a
+        background-color: #fff
+        color: $accent
+
+
+
 /* Переопределение стилей yandex map */
 [class$='-controls-pane']
   display: none
@@ -473,15 +563,47 @@ input[type="submit"]
     max-width: 1170px
 
 /* media */
+@media screen and (max-width: 1500px)
+  .content-wrap
+    &::before
+      left: -200px
+    &--right
+      &::before
+        left: auto
+        right: -100px
+
+// max-width 1500px
+
+@media screen and (max-width: 1300px)
+  .content-wrap
+    &::before
+      left: -300px
+    &--right
+      &::before
+        left: auto
+        right: -100px
+
+// max-width 1300px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
 
 // max-width 1200px
 
-// @media screen and (max-width: 1024px)
+@media screen and (max-width: 1070px)
+  .tabs-nav
+    &__list
+      margin-top: 32px
+    &__item
+      a
+        min-width: 190px
+        height: 53px
+        padding-right: 18px
+        padding-left: 18px
+        font-size: 16px
 
-// max-width 1024px
+// max-width 1070px
 
 @media screen and (max-width: 992px)
   .colored
@@ -492,6 +614,25 @@ input[type="submit"]
     &__title
       margin-bottom: 16px
       font-size: 22px
+
+  .content-wrap
+    &::before
+      width: 366px
+      height: 702px
+      left: -250px
+    &--right
+      &::before
+        left: auto
+        right: -100px
+
+  .tabs-nav
+    &__item
+      a
+        min-width: 160px
+        height: 49px
+        padding-right: 16px
+        padding-left: 16px
+        font-size: 14px
 
 // max-width 992px
 
@@ -528,6 +669,14 @@ input[type="submit"]
     ol li
       font-size: 15px
 
+  .tabs-nav
+    &__item
+      margin-right: 7px
+      a
+        min-width: 140px
+        height: 44px
+        font-size: 13px
+
 // max-width 768px
 
 @media screen and (max-width: 700px)
@@ -560,6 +709,17 @@ input[type="submit"]
         height: 7px
         margin: 0 3px
 
+  .content-wrap
+    &::before
+      width: 336px
+      height: 642px
+      left: -200px
+      opacity: 0.4
+    &--right
+      &::before
+        left: auto
+        right: -150px
+
 // max-width 576px
 
 @media screen and (max-width: 500px)
@@ -574,6 +734,14 @@ input[type="submit"]
       line-height: 1.3
   .title
     font-size: 22px
+
+  .tabs-nav
+    &__list
+      flex-direction: column
+    &__item
+      margin-right: 0
+      margin-bottom: 4px
+      width: 100%
 
 // max-width 500px
 

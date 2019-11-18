@@ -107,6 +107,36 @@
     ]
   });
 
+  $('.employees__slider').each(function(xi,xel) {
+    var xId = '#' + $(this).attr('id');
+    $(this).find('.employees__slides').slick({
+      slidesToShow: 3,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      swipeToSlide: true,
+      rows: 2,
+      responsive: [
+        {
+          breakpoint: 1330,
+          settings: {
+            arrows: false,
+            dots: true,
+            appendDots: $(xId + ' .slider1__dots'),
+          }
+        },
+        {
+          breakpoint: 730,
+          settings: {
+            slidesToShow: 2,
+            arrows: false,
+            dots: true,
+            appendDots: $(xId + ' .slider1__dots'),
+          }
+        }
+      ]
+    });
+  });
+
 
   // $('#story__slider2 .story__slides2').slick({
   //   slidesToShow: 1,

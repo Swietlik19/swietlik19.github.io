@@ -1,0 +1,41 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    a.to-top(href="#page_wr")
+      i.fa.fa-angle-up
+    .footer__top
+      .container
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              svg
+                use(xlink:href="img/svg/sprite.svg#logo1")
+          else
+            #{logotype}.logo
+              svg
+                use(xlink:href="img/svg/sprite.svg#logo1")
+
+          p.logo__title Завод кровельных
+            br
+            | материалов в Крыму
+
+      // /.container
+    // /.footer__top
+
+    .footer__bottom
+      .container
+        .row
+          .col-xl-3.col-lg-4.col-sm-7
+            .copyright
+              p.text г. Симферополь © Copyright  2019&nbsp;г.
+              a(href="#") Политика конфиденциальности
+          .col-xl-4.offset-xl-1.col-lg-4.col-sm-5
+            a.made(href="https://sheer82.ru/")
+              span.text Сделано в
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

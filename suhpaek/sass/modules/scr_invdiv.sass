@@ -1,0 +1,246 @@
+.indiv
+  position: relative
+  z-index: 10
+  padding-top: 40px
+  padding-bottom: 93px
+  background: #eae6ce
+  &::before
+    content: ''
+    position: absolute
+    top: -47px
+    left: 0
+
+    width: 100%
+    height: calc(100% + 47px)
+    background: transparent url('../img/indiv-bg.png') no-repeat top center
+    background-size: cover
+    z-index: -1
+  &__wrap
+    margin-top: 34px
+    padding: 33px 30px 18px
+    box-shadow: 4px 8px 16px 0px rgba(29,57,39,0.4)
+    background-color: #ffffff
+    border-radius: 6.0px
+    z-index: 2
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 28px
+    li
+      margin-right: 10px
+      &:last-of-type
+        margin-right: 0
+      a
+        display: block
+        min-width: 112px
+        padding: 8px 15px 7px
+        margin-bottom: 10px
+        background-color: $accent
+        border-radius: 6.0px
+        text-align: center
+
+        font-size: 16px
+        font-weight: 600
+        text-transform: uppercase
+        color: #ffffff
+        text-decoration: none
+        transition: 0.3s
+        &:hover
+          background-color: #a29775
+      &.active
+        a
+          background-color: #a29775
+
+  &__tabs
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+
+  &__df
+    display: flex
+  &__gallery
+    flex-shrink: 0
+    width: 384px
+    margin-right: 54px
+    .fotorama__nav-wrap
+      margin-top: 20px
+    .fotorama__thumb-border
+      border-color: #b3dabf
+  &__info
+    display: flex
+    flex-direction: column
+    width: calc(100% - 440px)
+    padding-top: 6px
+    .article
+      margin-bottom: 20px
+      ul,ol
+        column-count: 2
+        column-gap: 43px
+      ul li,
+      ol li
+        transform: none
+      ul,
+      ol
+        padding: 0
+  &__bottom
+    display: flex
+    margin-top: auto
+    padding-bottom: 10px
+  &__prices
+    margin-right: 77px
+  &__price
+    display: block
+    margin-bottom: 6px
+    font-size: 48px
+    line-height: 1.041666666666667 /* 50 / 48 */
+    font-weight: 400
+    color: $accent
+    &--old
+      font-size: 18px
+      line-height: 24px /* 24 / 18 */
+      color: #333333
+      text-decoration: line-through
+    &:last-of-type
+      margin-bottom: 0
+  &__btns
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding-bottom: 8px
+
+
+  @media screen and (max-width: 1070px)
+    &__wrap
+      padding: 23px 20px 18px
+    &__prices
+      margin-right: 47px
+    &__price
+      &--current
+        font-size: 42px
+    &__gallery
+      width: 314px
+      margin-right: 34px
+      .fotorama
+        max-width: 100%
+    &__info
+      width: calc(100% - 350px)
+    &__nav
+      justify-content: center
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__info .article
+      ul,
+      ol
+        column-gap: 23px
+    &__gallery
+      width: 274px
+    &__info
+      width: calc(100% - 310px)
+    &__nav
+      & > li
+        & > a
+          min-width: 92px
+          padding: 8px 15px 7px
+          font-size: 14px
+    &__price
+      &--current
+        font-size: 38px
+
+  // max-width 991px
+
+  @media screen and (max-width: 840px)
+    &__df
+      flex-direction: column
+      align-items: center
+    &__gallery
+      width: 100%
+      max-width: 350px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 20px
+    &__info
+      width: 100%
+      .article
+        ul,ol
+          column-count: 3
+          column-gap: 15px
+
+  // max-width 840px
+
+  @media screen and (max-width: 767px)
+    &::before
+      top: -33px
+      background-image: url('../img/indiv-bg--mobile.png')
+    &__wrap
+      margin-top: 24px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &::before
+      top: -23px
+      background-position: top right
+    &__info
+      .article
+        ul,ol
+          column-count: 2
+    &__prices
+      margin-right: 27px
+    &__price
+      &--old
+        font-size: 16px
+        line-height: 17px
+      &--current
+        font-size: 35px
+    &__btns
+      padding-bottom: 0
+      .btn
+        &--grad
+          font-size: 14px
+          padding-left: 20px
+          padding-right: 20px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    padding-top: 20px
+    padding-bottom: 53px
+    &__price
+      &--old
+        font-size: 14px
+      &--current
+        font-size: 31px
+    &__nav
+      & > li
+        margin-right: 5px
+        & > a
+          min-width: 82px
+          padding: 7px 12px 7px
+          font-size: 11px
+    &__wrap
+      padding: 19px 14px 16px
+    &__gallery
+      max-width: 240px
+      .fotorama__nav--thumbs .fotorama__nav__frame
+        height: 68px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__nav
+      & > li
+        & > a
+          min-width: 62px
+          padding: 7px 8px 7px
+
+  // max-width 400px
+
+/* invdiv */

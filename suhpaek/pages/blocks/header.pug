@@ -1,0 +1,43 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo-header.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo-header.png" alt="лого")
+
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") Продукция
+            li.menu-item
+              a(href="#") Об ИРП
+            li.menu-item
+              a(href="#") Для кого
+            li.menu-item
+              a(href="#") Условия покупки
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__info
+          p.header__text Ежедневно: 10:00—18:00
+          a.header__phone.desktop(href="tel:+79148525499" rel="nofollow") +7 (914) 852-54-99
+          a.btn.btn--circle.mobile(href="tel:+79148525499" rel="nofollow")
+            i.fa.fa-phone
+          a.header__text(href="mailto:suhpaek49@mail.ru" rel="nofollow") suhpaek49@mail.ru
+
+        .header__btns
+          a.btn.btn--circle.open-modal(href="#")
+            i.fa.fa-phone
+
+
+      // /.container
+    // /.header__top

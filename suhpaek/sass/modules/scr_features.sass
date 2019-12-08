@@ -5,16 +5,16 @@
     content: ''
     position: absolute
     top: 0
-    left: calc(50% - 960px)
+    left: 50%
 
-    width: 1920px
+    min-width: 1920px
+    width: 100%
     height: 81px
+    transform: translateX(-50%)
     background: transparent url('../img/cta-bg.png') no-repeat bottom center
     background-size: cover
   .title
     text-align: left
-    small
-      font-size: 36px
   &__bg
     position: absolute
     top: 0
@@ -29,7 +29,8 @@
   &__left
     position: relative
     width: 66.05263157894737%
-    padding-top: 115px
+    padding-top: 125px
+    padding-bottom: 60px
     margin-right: 24px
     &::before
       content: ''
@@ -53,7 +54,7 @@
       position: relative
       margin-bottom: 53px
       margin-left: 120px
-      padding-right: 18px
+      padding-right: 20px
       font-size: 14px
       line-height: 1.428571428571429 /* 20 / 14 */
       font-weight: 600
@@ -105,32 +106,104 @@
     color: #eae6ce
 
 
-  // @media screen and (max-width: 1170px)
-
-  // max-width 1170px
-
-  // @media screen and (max-width: 1070px)
-
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__info
+      margin-top: 33px
+      & > li
+        margin-bottom: 33px
+        margin-left: 70px
+        padding-right: 0
+        &:nth-of-type(2)
+          margin-left: 118px
+        &:last-of-type
+          margin-left: 183px
+    &__right
+      width: 37.947368%
+      padding: 95px 20px 84px
+    &__list
+      & > li
+        margin-bottom: 26px
+    &__icon
+      width: 33px
+      height: 33px
+      margin-bottom: 11px
+    &__text
+      font-size: 13px
+      line-height: 1.32857
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 860px)
+    &__left
+      &::before
+        top: 90px
+        right: 69px
 
-  // max-width 767px features
+  // max-width 860px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 767px)
+    &__info
+      & > li
+        margin-left: 50px
+        &:nth-of-type(2)
+          margin-left: 50px
+        &:last-of-type
+          margin-left: 50px
+    &__left
+      width: 53.052632%
+      padding-top: 95px
+      &::before
+        content: none
+    &__right
+      width: 43.947368%
+      padding: 75px 20px 84px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__info
+      & > li
+        margin-left: 30px
+        margin-bottom: 23px
+        font-size: 13px
+        line-height: 1.32857
+        &:nth-of-type(2)
+          margin-left: 30px
+        &:last-of-type
+          margin-left: 30px
+    &__left
+      padding-top: 85px
+    &__right
+      width: 48.947368%
+    &__text
+      font-size: 12px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__df
+      flex-direction: column
+    &__left
+      width: 100%
+      margin-right: 0
+      padding-bottom: 40px
+    &__right
+      width: 100%
+      max-width: 300px
+      margin-left: auto
+      margin-right: auto
+      padding: 25px 20px 64px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    &__info
+      & > li
+        margin-bottom: 17px
+        font-size: 12px
+    &__left
+      padding-bottom: 30px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* features */

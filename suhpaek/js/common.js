@@ -151,6 +151,40 @@
 
 
 
+  // Слайдеры:
+  $('.irp__list').slick({
+    responsive: [
+      {
+        breakpoint: 4000,
+        settings: "unslick",
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('.irp__dots')
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('.irp__dots')
+        }
+      }
+    ]
+  });
+
+
+
   /* Resize */
   $(window).resize(function(){
     if ($(window).width() != screenWidth) {

@@ -21,9 +21,9 @@
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
-    $('.inner-link[href^="#"]').click(function(){
+    $('.inner-link[href^="#"], .menu-item a').click(function(){
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 60 +'px'});
       return false;
     });
   });
@@ -144,7 +144,7 @@
   });
 
 
-  setTimeout($('.indiv__tabs-item:not(#indiv-tab0)').css('display', 'none'), 300);
+  $('.indiv__tabs-item:not(#indiv-tab0)').css('display', 'none');
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();

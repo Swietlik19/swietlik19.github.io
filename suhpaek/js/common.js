@@ -99,6 +99,7 @@
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
+    $(".to-top").toggleClass("fixed", (fromTop > 682));
     $(".header").toggleClass("fixed", (fromTop > 10));
   });
 
@@ -178,6 +179,45 @@
           arrows: false,
           dots: true,
           appendDots: $('.irp__dots')
+        }
+      }
+    ]
+  });
+
+  $('#insta__slider .slider1__slides').slick({
+    responsive: [
+      {
+        breakpoint: 4000,
+        settings: "unslick",
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 4,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('#insta__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('#insta__slider .slider1__dots')
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+          swipeToSlide: true,
+          arrows: false,
+          dots: true,
+          appendDots: $('#insta__slider .slider1__dots')
         }
       }
     ]

@@ -7808,6 +7808,58 @@ input[type="submit"][disabled] {
   background-color: #d8201e;
 }
 
+.to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 100;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(153, 153, 153, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(153, 153, 153, 0.3);
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.to-top .fa {
+  color: #1d3a28;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.to-top.fixed {
+  opacity: 0.9;
+}
+
+.to-top:hover {
+  opacity: 1;
+}
+
+.to-top:hover .fa {
+  color: #1d3a28;
+}
+
 /* Переопределение стилей yandex map */
 [class$='-controls-pane'] {
   display: none;
@@ -7817,20 +7869,6 @@ input[type="submit"][disabled] {
 .slick-slide {
   -webkit-backface-visibility: hidden;
   outline: none;
-}
-
-.slick-arrow {
-  background: none;
-  border: none;
-  outline: none;
-  position: absolute;
-  z-index: 100;
-  cursor: pointer;
-  font-size: 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  display: block;
 }
 
 .slick-dots {
@@ -7947,6 +7985,10 @@ input[type="submit"][disabled] {
   }
   .title small {
     font-size: 20px;
+  }
+  .to-top {
+    right: 15px;
+    bottom: 15px;
   }
 }
 
@@ -8167,7 +8209,47 @@ input[type="submit"][disabled] {
     margin-right: 15px;
   }
   .header__menu {
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    max-width: 350px;
+    background: #eae6ce;
+    -webkit-box-shadow: 0 10px 15px rgba(162, 151, 117, 0.4);
+            box-shadow: 0 10px 15px rgba(162, 151, 117, 0.4);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: 0.9s;
+    -o-transition: 0.9s;
+    transition: 0.9s;
+  }
+  .header__menu .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__menu .menu > li {
+    width: 100%;
+  }
+  .header__menu .menu > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(29, 58, 40, 0.6);
+  }
+  .header__menu .menu > li > a::after {
+    content: none;
+  }
+  .header__menu.active {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
   }
   .header .logo__wrap {
     margin-right: auto;

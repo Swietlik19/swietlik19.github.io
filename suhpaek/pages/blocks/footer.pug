@@ -1,18 +1,37 @@
 mixin footer(logotype)
   footer.footer(id="footer")
-    a.to-top(href="#page_wr")
-      i.fa.fa-angle-up
-    .footer__top
-      .container
+
+    .container
+      .footer__top
         .logo__wrap
           if logotype == "a"
             #{logotype}.logo(href="index.html")
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
+              img(src="img/logo-footer.png" alt="лого")
           else
             #{logotype}.logo
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
+              img(src="img/logo-footer.png" alt="лого")
+
+        .footer__menu
+          ul.menu
+            li.menu__item
+              a(href="#") Продукция
+            li.menu__item
+              a(href="#") Об ИРП
+            li.menu__item
+              a(href="#") Для кого
+            li.menu__item
+              a(href="#") Условия покупки
+
+        .footer__contacts
+          h3 Контакты
+
+          .footer__contacts-item
+            a.footer__text(href="tel:+79148525499" rel="nofollow") +7 (914)-852-54-99
+          .footer__contacts-item
+            a.footer__text(href="mailto:suhpaek49@mail.ru" rel="nofollow") suhpaek49@mail.ru
+          .footer__contacts-item
+            p.footer__text Ежедневно: с 10-00 до 18-00
+
 
       // /.container
     // /.footer__top

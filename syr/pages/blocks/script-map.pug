@@ -2,9 +2,13 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+      if ( window.matchMedia('(max-width: 575px)').matches ) {
+        createMap('contacts__map',[44.934922, 34.088882],[44.934922, 34.088882]);
+      } else {
+        createMap('contacts__map',[44.934979, 34.093109],[44.934922, 34.088882]);
+      }
 
-      function createMap(xID,coords) {
+      function createMap(xID,coords,pinCoords) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -16,7 +20,7 @@ mixin script-map()
           function init () {
               myMap = new ymaps.Map(xID, {
                   center: coords,
-                  zoom: 17
+                  zoom: 16
               }, {
                   searchControlProvider: 'yandex#search'
               });
@@ -26,9 +30,9 @@ mixin script-map()
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                myPlacemark = new ymaps.Placemark(pinCoords, {
                     hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
+                    balloonContent: 'г. Симферополь, Севастопольская. 31/А'
                 }, {
                   // Опции.
                   // Необходимо указать данный тип макета.
@@ -36,7 +40,7 @@ mixin script-map()
                   // Своё изображение иконки метки.
                   iconImageHref: 'img/svg/pin.svg',
                   // Размеры метки.
-                  iconImageSize: [41, 51],
+                  iconImageSize: [33, 45],
                   // Смещение левого верхнего угла иконки относительно
                   // её "ножки" (точки привязки).
                   iconImageOffset: [-15, -60]

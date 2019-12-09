@@ -7,6 +7,9 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  /* Инициализация красивых select'ов */
+  $('select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -110,6 +113,29 @@
     });
   });
 
+  /* Раскрытие подменю в header */
+  $('.header__menu .menu > li').hover(function() {
+    if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
+      $(this).find('.sub-menu').addClass('active');
+    }
+  },function() {
+    if ( !(window.matchMedia('(max-width: 992px)').matches) ) {
+      $(this).find('.sub-menu').removeClass('active');
+    }
+  });
+
+  $('.header__menu .menu > li .menu-arrow').click(function(e) {
+    e.preventDefault();
+    if ( window.matchMedia('(max-width: 992px)').matches ) {
+      $(this).parents('.header__menu .menu > li').siblings('li').find('.menu-arrow').removeClass('active');
+      $(this).parents('.header__menu .menu > li').siblings('li').find('.sub-menu').removeClass('active');
+      $(this).siblings('.sub-menu').toggleClass('active');
+      $(this).toggleClass('active');
+    }
+  });
+
+
+
   $('.page_wr, .footer').click(function() {
     $('#header-burger').removeClass('active');
     $('.header__menu').removeClass('active');
@@ -137,6 +163,12 @@
     if (window.matchMedia('(max-width: 767px)').matches) {
       $('html, body').animate({scrollTop: $(this).parents('.scr_card').find('.card__tabs').offset().top - 80 +'px'});
     }
+  });
+
+  $('.your-file input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).parents('label').find('.sl').text(fileName);
   });
 
   /* Resize */

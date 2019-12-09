@@ -14,6 +14,8 @@
     <!-- Custom Browsers Color End-->
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
+    <!--. ДОБАВИТЬ СТИЛИ:-->
+    <link rel="stylesheet" href="libs/nice-select/nice-select.min.css">
     <link rel="stylesheet" href="css/first-load.css">
   </head>
   <body>
@@ -29,7 +31,13 @@
               <ul class="menu">
                 <li class="menu-item"><a href="#">О нас</a></li>
                 <li class="menu-item"><a href="#">Продукция</a></li>
-                <li class="menu-item"><a href="#">Партнерство</a></li>
+                <li class="menu-item menu-item-has-children"><a href="#">Партнерство</a><span class="menu-arrow"></span>
+                  <ul class="sub-menu">
+                    <li class="menu-item"><a href="#">Поставщикам</a></li>
+                    <li class="menu-item"><a href="#">Покупателям</a></li>
+                    <li class="menu-item"><a href="#">Документация</a></li>
+                  </ul>
+                </li>
                 <li class="menu-item"><a href="#">Новости</a></li>
                 <li class="menu-item"><a href="#">Контакты</a></li>
               </ul>
@@ -262,7 +270,7 @@
         <div class="container">
           <div class="discuss__wrap">
             <p class="discuss__title">Не нашли свою вакансию?<br> обсудите карьеру<br> с HR - директором</p>
-            <div class="discuss__btns"><a class="btn" href="#">обсудить карьеру</a></div>
+            <div class="discuss__btns"><a class="btn open-modal" href="#modal__job">обсудить карьеру</a></div>
             <div class="discuss__img">
               <noscript><img class="lazy" src="img/img-discuss.jpg" alt="Девушка" width="358" height="370"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/img-discuss.jpg" alt="Девушка" width="358" height="370">
             </div>
@@ -353,6 +361,50 @@
       <!-- /.footer__bottom-->
     </footer>
     <!-- /.footer-->
+    <section class="modal modal__job" id="modal__job">
+      <div class="modal-job__content modal__content">
+        <button class="close"></button>
+        <div class="form wpcf7">
+          <form class="wpcf7-form">
+            <p class="form__title">Связаться с HR-директором</p>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input text-input--icon">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Ваше имя"><i class="input-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#form-user"></use>
+                  </svg></i></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input text-input--icon">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Ваш телефон"><i class="input-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#form-phone"></use>
+                  </svg></i></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input text-input--icon">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-email" type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="E-mail"><i class="input-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#form-email"></use>
+                  </svg></i></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input text-input--icon">
+                <input class="wpcf7-form-control wpcf7-text" type="text" name="your-text" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Сообщение"><i class="input-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#form-msg"></use>
+                  </svg></i></span></div>
+            <div class="form__item form__item--file">
+              <label><span class="wpcf7-form-control-wrap your-file">
+                  <input class="wpcf7-form-control wpcf7-text" type="file" name="your-resume" value="" size="40" aria-required="true" aria-invalid="false"></span><span class="sl">Прикрепить файл</span></label>
+            </div>
+            <div class="form__item form__item--submit">
+              <input class="wpcf7-form-control wpcf7-submit btn--grad" type="submit" value="Отправить">
+            </div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                    <label>
+                      <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Согласие на обработку персональных данных<i class="accept__icon"></i></span>
+                    </label></span></span></span></div>
+          </form>
+        </div>
+        <!-- /. form-->
+      </div>
+      <!-- /. modal__content-->
+    </section>
+    <!-- /. modal-->
     <link rel="stylesheet" href="css/main.css">
     <script src="js//libs/jquery.min.js"></script>
     <script src="js/libs/jquery.lazyload.min.js"></script>
@@ -363,6 +415,8 @@
     <script src="js/libs/ofi.min.js"></script>
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    <!--. ДОБАВИТЬ СКРИПТ:-->
+    <script src="libs/nice-select/jquery.nice-select.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/slider.js"></script>
   </body>

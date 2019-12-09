@@ -8,7 +8,7 @@
 
   &__title
     margin-bottom: 34px
-    font-size: 16px
+    font-size: 18px
     line-height: 1.2
     font-weight: 600
     color: #ffffff
@@ -78,6 +78,39 @@
 
     textarea
       // height: 136px
+  .form__item--file
+    .your-file
+      input
+        display: none
+    label
+      cursor: pointer
+    .sl
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-bottom: 40px
+      margin-top: 35px
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 400
+      text-decoration: underline
+      color: #ffffff
+      transition: 0.3s
+      &:hover
+        color: $accent2
+      &::after
+        content: ''
+
+        display: block
+        width: 17px
+        height: 19px
+        margin-left: 10px
+        transform-origin: center
+        transform: rotate(30deg)
+        background: transparent url('../img/svg/icon-clip.svg') no-repeat center center
+        background-size: contain
 
   .accept
     display: block
@@ -139,8 +172,15 @@
 
   @media screen and (max-width: 768px)
     &__title
-      margin-bottom: 27px
-      font-size: 14px
+      margin-bottom: 23px
+      font-size: 15px
+    .text-input
+      margin-bottom: 12px
+
+    .form__item--file
+      .sl
+        margin-bottom: 28px
+        margin-top: 25px
 
   //   max-width 768px
 
@@ -156,6 +196,11 @@
   @media screen and (max-width: 400px)
     width: calc(100% + 30px)
     margin-left: -15px
+
+    .form__item--file
+      .sl
+        margin-bottom: -7px
+        margin-top: 15px
 
   //   max-width 400px
 

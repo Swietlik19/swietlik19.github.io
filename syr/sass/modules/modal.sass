@@ -6,7 +6,7 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(0,0,0,0.5)
   z-index: 1000
   opacity: 0
   overflow: hidden
@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 451px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -32,9 +32,17 @@
 
   .form
     max-height: 100vh
+    padding: 37px 70px 29px
     overflow: auto
     width: 100%
     z-index: 0
+    &__item
+      padding: 0
+    &__title
+      font-size: 24px
+    .accept
+      width: calc(100% + 30px)
+      margin-left: -15px
 
   .close
     background: none
@@ -46,7 +54,7 @@
     transition: 0.3s
 
     position: absolute
-    top: 9px
+    top: 5px
     right: 9px
 
     display: block
@@ -59,9 +67,9 @@
       left: 50%
 
       display: block
-      width: 20px
-      height: 3px
-      background-color: $accent
+      width: 16px
+      height: 2px
+      background-color: #fff
       border-radius: 1.5px
       transition: 0.3s
 
@@ -75,13 +83,29 @@
       &::before,&::after
         background-color: #e99c02
 
-  /* media */
-  // @media screen and (max-width: 600px)
 
-  // max-width 600px
+  @media screen and (max-width: 768px)
+    &__content
+      width: 371px
+      top: 15px
+      transform: translateX(-50%)
+    .form
+      padding: 30px 30px 26px
+      &__title
+        font-size: 21px
 
-  // @media screen and (max-width: 560px)
+  // max-width 768px
 
-  // max-width 560px
+  @media screen and (max-width: 400px)
+    .form
+      width: 100%
+      margin-left: 0
+      &__title
+        margin-bottom: 20px
+        font-size: 18px
+      .accept
+        margin-top: 17px
+
+  // max-width 400px
 
  /* modal */

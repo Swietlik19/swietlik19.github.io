@@ -53,6 +53,8 @@
     & > li
       position: relative
       height: 100%
+      .menu-arrow
+        display: none
       & > a
         display: flex
         align-items: center
@@ -74,6 +76,36 @@
     margin: 0
     padding: 0
     list-style: none
+    position: absolute
+    top: 100%
+    left: 50%
+    max-height: 0
+    overflow: hidden
+    transition: 0.3s
+    transform: translateX(-50%)
+    box-shadow: 4px 7px 8px 0px rgba(3,81,137,0.2)
+    width: 194px
+    background-color: #f8f8f8
+    &.active
+      max-height: 5000px
+      border-top: 2px solid #05528a
+    & > li
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        padding: 22px 15px
+        font-size: 14px
+        font-weight: 700
+        color: #06508d
+        text-align: center
+        transition: 0.3s
+        &:hover
+          background-color: rgba($accent, 0.6)
+          color: #fff
+      &:nth-of-type(2n)
+        background-color: #fff
+
 
   &--second
     box-shadow: 0px 7px 15px 0px rgba(101,101,101,0.1)
@@ -130,16 +162,59 @@
       & > li
         width: 100%
         height: auto
+        .menu-arrow
+          display: block
+          position: absolute
+          top: 0
+          right: 0
+          width: 30px
+          height: 100%
+          &::after
+            content: ''
+            position: absolute
+            top: 17px
+            right: 15px
+            width: 11px
+            height: 11px
+            border-bottom: 2px solid $accent
+            border-left: 2px solid $accent
+            transform: rotate(-45deg)
+            transition: 0.3s
+            transform-origin: center
+          &.active
+            &::after
+              top: 20px
+              transform: rotate(135deg)
         & > a
           width: 100%
           height: auto
           font-size: 22px
           justify-content: flex-start
-          padding: 10px 15px
+          padding: 10px 45px
           padding-left: 30px
+          &:hover
+            & + .menu-arrow
+              &::after
+                border-color: #fff
     .logo
       &__wrap
         margin-right: auto
+
+    .sub-menu
+      position: static
+      transform: none
+      box-shadow: none
+      background: none
+      width: 100%
+      &.active
+        border: none
+      & > li
+        width: 100%
+        & > a
+          width: 100%
+          padding: 9px 15px
+          padding-left: 46px
+          text-align: left
 
   // max-width 992px
 
@@ -150,9 +225,26 @@
     .menu
       max-height: calc(100vh - 80px)
       & > li
+        .menu-arrow
+          width: 20px
+          &::after
+            top: 12px
+            right: 15px
+            width: 9px
+            height: 9px
+          &.active
+            &::after
+              top: 14px
         & > a
           font-size: 18px
           padding: 5px 15px
+    .sub-menu
+      & > li
+        & > a
+          padding-top: 7px
+          padding-bottom: 7px
+          padding-left: 32px
+          font-size: 13px
 
   // max-width 768px
 

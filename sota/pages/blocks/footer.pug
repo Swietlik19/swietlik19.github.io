@@ -1,25 +1,56 @@
 mixin footer(logotype)
   footer.footer(id="footer")
-    a.to-top(href="#page_wr")
-      i.fa.fa-angle-up
-    .footer__top
-      .container
-        .logo__wrap
-          if logotype == "a"
-            #{logotype}.logo(href="index.html")
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
-          else
-            #{logotype}.logo
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
+    .container
+      .footer__top
+        .footer__info
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
 
-          p.logo__title Завод кровельных
-            br
-            | материалов в Крыму
+            p.logo__text Уникальное арт-пространство
+              br
+              |  трансформер в Крыму
 
-      // /.container
-    // /.footer__top
+          .footer__item
+            p.footer__text г. Симферополь, ул. К. Маркса, 28
+          .footer__item
+            a.footer__link.open-modal(href="#") Смотреть на карте
+          .footer__item
+            a.footer__text(href="tel:+79782583795" rel="nofollow") +7 (978) 258-37-95
+
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") Выставки
+            li.menu-item
+              a(href="#") Концерты
+            li.menu-item
+              a(href="#") Вечеринки
+            li.menu-item
+              a(href="#") Конференции
+            li.menu-item
+              a(href="#") Лекции
+
+          ul.menu
+            li.menu-item
+              a(href="#") Иммерсивный театр
+            li.menu-item
+              a(href="#") Презентации
+            li.menu-item
+              a(href="#") Открытая cреда
+            li.menu-item
+              a(href="#") Вечерний бар
+
+      // /.footer__top
+    // /.container
+
+    .container
+      .footer__socials
+        +socials
 
     .footer__bottom
       .container

@@ -1,29 +1,50 @@
 .socials
   display: flex
+  padding-left: 26px
+  padding-right: 26px
   &__link
+    position: relative
     display: flex
     align-items: center
     justify-content: center
-    width: 39px
-    height: 39px
-    margin-right: 23px
+    width: 41px
+    height: 47px
+    margin-right: 28px
 
     text-decoration: none
     text-align: center
-    border-radius: 50%
-    background-color: #5e4948
-    transition: 0.3s  ease-in-out
+    z-index: 1
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+
+      width: 100%
+      height: 100%
+      background: transparent url('../img/svg/icon-hexa3.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+      transition: 0.7s ease-in-out
     &:last-of-type
       margin-right: 0
-
     .fa
       display: block
       color: #fff
       font-weight: 400
       font-size: 17px
-
     &:hover
-      transform: translateY(-2px)
-      background: rgba(#fff,0.3)
+      &::after
+        transform: rotate(180deg) scale(1.2)
+        transition: 1.3s ease-in-out
+
+  @media screen and (max-width: 575px)
+    padding-left: 15px
+    padding-right: 15px
+    &__link
+      margin-right: 15px
+
+  // max-width 575px
+
 
 /* socials */

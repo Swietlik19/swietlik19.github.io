@@ -1,5 +1,5 @@
 ::selection
-  background-color: $accent
+  background-color:  #ffbd09
   color: #fff
 
 *
@@ -43,6 +43,13 @@ img
   object-fit: cover
   object-position: center
   font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-top]
+  object-fit: cover
+  object-position: top center
+  font-family: 'object-fit: cover; object-position: top center;'
   width: 100%
   height: 100%
 
@@ -142,7 +149,31 @@ h1,h2,h3,h4,h5,h6
   transition: 0.5s
 
 .link
+  position: relative
+  display: flex
+  align-items: center
+  font-size: 14px
+  font-weight: 400
+  text-decoration: underline
+  color: #2c2d2d
   transition: 0.3s
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 19px
+    margin-left: 11px
+    background-color: $accent
+    transition: 0.3s
+    .icon
+      display: block
+      width: 16px
+      height: 11px
+      fill: #020000
+  &:hover
+    .link__icon
+      padding-left: 5px
 
 .btn__wrap
   display: inline-block
@@ -229,6 +260,10 @@ input[type="submit"].btn
     border: 2px solid $accent
     .fa
       color: $accent
+  &--black
+    background-color: #020000
+    color: #ffffff
+
 
 
 .btn__wrap
@@ -251,12 +286,34 @@ input[type="submit"].btn
     .btn--arrow
       box-shadow: 0 0.5em 0.5em -0.4em $accent
       transform: translateY(-0.25em)
+    .btn--black
+      &:hover
+        box-shadow: 0 0.5em 0.5em -0.4em #020000
   &--arrow
     &:hover
       &::after
         right: 16px
         top: calc(50% - 7px)
 
+.to-top
+  position: fixed
+  right: 30px
+  bottom: 30px
+  z-index: 100
+  display: flex
+  justify-content: center
+  align-items: center
+  opacity: 0
+  background: #020000
+  .fa
+    color: $accent
+    transition: 0.5s
+    font-size: 20px
+    font-weight: 800
+  &.fixed
+    opacity: 0.9
+    &:hover
+      opacity: 1
 
 .burger
   flex-shrink: 0
@@ -315,58 +372,31 @@ input[type="submit"].btn
 [class$='-controls-pane']
   display: none
 
-/* Переопределение стилей slick */
-.slick-slide
-  -webkit-backface-visibility: hidden
-  outline: none
-
-.slick-arrow
+/* Переопределение стилей swiper slider */
+.swiper-button-next,
+.swiper-button-prev
   background: none
   border: none
+  position: static
+  width: 30px
+  height: 30px
+  margin: 0
   outline: none
 
-  position: absolute
-  z-index: 100
-  cursor: pointer
-  font-size: 0
-  transition: 0.3s
+.swiper-button-next:focus,
+.swiper-container-rtl .swiper-button-prev:focus
+  outline: none
 
-  display: block
-
-.slick-prev
-
-
-.slick-next
-
-
-.slick-dots
-  margin: 0
-  padding: 0
-  list-style: none
-
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-wrap: wrap
-  font-size: 0
-  li
-    button
-      position: relative
-      background: none
-      border: none
-      outline: none
-
-      display: block
-
-    &.slick-active
-      button
-
-    &:not(.slick-active)
-      button
-        cursor: pointer
-
-.slider1
-  position: relative
+.swiper-button-next:after,
+.swiper-button-prev:after
+  content: ''
+  width: 20px
+  height: 14px
+  background: transparent url('../img/svg/arrow.svg') no-repeat center center
+  background-size: contain
+.swiper-button-prev:after
+  transform-origin: center
+  transform: rotate(180deg)
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
@@ -374,6 +404,12 @@ input[type="submit"].btn
     max-width: 1170px
 
 /* media */
+@media screen and (max-width: 1230px)
+  .to-top
+    right: 15px
+
+// max-width 1230px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
@@ -393,9 +429,14 @@ input[type="submit"].btn
 
 // max-width 991px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 650px)
+  .to-top
+    width: 35px
+    height: 35px
+    .fa
+      font-size: 17px
 
-// max-width 767px
+// max-width 650px
 
 @media screen and (max-width: 575px)
   .title
@@ -403,6 +444,12 @@ input[type="submit"].btn
     font-size: 33px
     &::after
       margin-top: 10px
+  .btn--arrow,
+  input[type="submit"].btn--arrow
+    padding: 14px 52px
+    font-size: 14px
+  input[type="submit"].btn--arrow
+    font-size: 16px
 
 // max-width 575px
 

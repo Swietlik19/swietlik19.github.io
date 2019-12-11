@@ -16,17 +16,21 @@ html(lang='ru')
     // Template Basic Images End
 
     // Custom Browsers Color Start
-    meta(name='theme-color', content='#432928')
+    meta(name='theme-color', content='#020000')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
     include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/socials.pug
 
     include blocks/scr1.pug
     include blocks/scr_visit.pug
     include blocks/scr_insta.pug
+    include blocks/scr_cta.pug
+    include blocks/scr_hexa.pug
+    include blocks/scr_events.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -41,22 +45,16 @@ html(lang='ru')
     #page_wr.page_wr
       +scr1
       +scr_visit
-
+      +scr_events
+      +scr_hexa
       +scr_insta
+      +scr_cta
 
-
+      a.to-top.btn.btn--circle(href="#page_wr")
+        i.fa.fa-angle-up
 
     +footer("div")
 
     +styles-bottom
     +scripts
     +script-map
-
-    //- пример картинки с lazyLoad
-    noscript
-      img.lazy(src="img/img-adv-2.png" alt="" width="125" height="90")
-    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/img-adv-2.png" alt="" width="125" height="90")
-
-    //- пример svg
-    svg.icon
-      use(xlink:href="img/svg/sprite.svg#iconSheer")

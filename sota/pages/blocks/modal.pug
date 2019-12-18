@@ -1,31 +1,109 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
+mixin modal_log()
+  section.modal.modal__log(id="modal__log")
     .modal__content
       button.close
 
-      .form.wpcf7
-        form.wpcf7-form
+      ul.modal__nav
+        li.active
+          a(href="#modal__tab-0") вход
+        li
+          a(href="#modal__tab-1") регистрация
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-name.text-input
-              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+      ul.modal__tabs
+        li.modal__tab#modal__tab-0
+          .form.form--general.wpcf7
+            .modal__df
+              .modal__info
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+              .modal__form
+                form.wpcf7-form
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ф.И.О.')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-user")
 
-          .form__item
-            span.wpcf7-form-control-wrap.accept
-              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
-                span.wpcf7-list-item
-                  label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
-                      i.accept__icon
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-password.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-password(type='password', name='your-password', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Пароль')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-psw")
 
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
+                  .form__item
+                    .btn__wrap.btn__wrap--arrow
+                      button.btn.btn--arrow(type='submit') Войти
 
-      // /. form
+              // /. modal__form
+
+        li.modal__tab#modal__tab-1
+          .form.form--general.wpcf7
+            .modal__df
+              .modal__info
+                p.modal__title Какие
+                  span.accent  преимущества
+                  br
+                  |  дает регистрация?
+
+                ol.modal__list
+                  li Только зарегистрированные
+                    br
+                    |  пользователи могут посещать
+                    br
+                    |  Digital Art Space SOTA
+
+                  li Уведомления о новых афишах, скидках,
+                    br
+                    |  акциях и подарочных промо-кодах
+
+                  li Участие в розыгрышах подарков
+
+                .form__item
+                  span.wpcf7-form-control-wrap.accept
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                          span.wpcf7-list-item-label Согласие на обработку персональных данных
+                            i.accept__icon
+
+              .modal__form
+                form.wpcf7-form
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ф.И.О.')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-user")
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-phone")
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-mail")
+
+                  .form__item
+                    span.wpcf7-form-control-wrap.your-password.text-input.text-input--icon
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-password(type='password', name='your-password', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Пароль')
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-psw")
+
+                  .form__item
+                    .btn__wrap.btn__wrap--arrow
+                      button.btn.btn--arrow(type='submit') Зарегистрироваться
+
+
+              // /. modal__form
+
     // /. modal__content
   // /. modal

@@ -33,6 +33,8 @@ body
 
 .page_wr
   flex-grow: 1
+  &--second
+    padding-top: 90px
 
 img
   width: 100%
@@ -68,6 +70,9 @@ a
 
 .accent
   color: $accent
+
+.grey-bg
+  background-color: #f5f5f4
 
 h1,h2,h3,h4,h5,h6
   font-family: $title-font
@@ -118,6 +123,19 @@ h1,h2,h3,h4,h5,h6
     margin-top: 20px
     margin-bottom: 10px
     font-size: 14px
+  p,h2,h3,h4,time
+    span
+      position: relative
+      z-index: 1
+      background-image: linear-gradient(to bottom, $accent 0%, $accent 100%)
+      padding-bottom: 3px
+      background-position: 0 0.5em
+      background-repeat: no-repeat
+    strong
+      font-weight: 500
+      letter-spacing: 0.05em
+  big
+    font-size: 20px
 
 .clearfix
   &::after
@@ -131,7 +149,7 @@ h1,h2,h3,h4,h5,h6
   margin-bottom: 61px
   font-size: 48px
   line-height: 1.2
-  font-weight: 300
+  font-weight: 400
   &::after
     content: ''
 
@@ -140,7 +158,21 @@ h1,h2,h3,h4,h5,h6
     height: 2px
     margin-top: 25px
     background-color: $accent2
-
+  &--second
+    text-align: center
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    color: #020000
+    span
+      position: relative
+      z-index: 1
+      background-image: linear-gradient(to bottom, $accent 0%, $accent 100%)
+      padding-bottom: 3px
+      background-position: 0 0.5em
+      background-repeat: no-repeat
 
 .icon
   max-width: 100%
@@ -264,8 +296,6 @@ input[type="submit"].btn
     background-color: #020000
     color: #ffffff
 
-
-
 .btn__wrap
   position: relative
   &--arrow
@@ -294,6 +324,9 @@ input[type="submit"].btn
       &::after
         right: 16px
         top: calc(50% - 7px)
+  &--black
+    &::after
+      border-color: $accent
 
 .to-top
   position: fixed
@@ -342,6 +375,7 @@ input[type="submit"].btn
         transform: translateY(6px)
       &:nth-of-type(3)
         transform: translateY(-6px) rotate(90deg)
+        background-color: $accent
   &:hover
     .line
       &:nth-of-type(2)
@@ -368,9 +402,55 @@ input[type="submit"].btn
     &:nth-of-type(3)
       background-color: #f1f2f2
 
+/* Декоры */
+.decor-wrap
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    left: -320px
+    bottom: -117px
+    background: transparent url('../img/decor-left.png') no-repeat center center
+    background-size: cover
+    width: 346px
+    height: 232px
+    z-index: -1
+  &::after
+    content: ''
+    position: absolute
+    top: -66px
+    right: -158px
+    background: transparent url('../img/decor-right.png') no-repeat center center
+    background-size: cover
+    width: 271px
+    height: 254px
+    z-index: -1
+
+.decor-wrap2
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: -3px
+    left: -710px
+    width: 776px
+    height: 550px
+    background: transparent url('../img/svg/decor.svg') no-repeat center center
+    background-size: contain
+    z-index: -1
+
+
 /* Переопределение стилей yandex map */
-[class$='-controls-pane']
+[class$='-controls-pane'],
+[class$='-map-copyrights-promo'],
+[class$='-copyrights-pane']
   display: none
+
+[class*="-ground-pane"]
+  filter: grayscale(100%) url(/img/filter-blue.svg#bluefilter)
+
 
 /* Переопределение стилей swiper slider */
 .swiper-button-next,
@@ -397,6 +477,45 @@ input[type="submit"].btn
 .swiper-button-prev:after
   transform-origin: center
   transform: rotate(180deg)
+
+
+.slider1
+  .slider__btns
+    display: flex
+    align-items: center
+    justify-content: space-between
+  .swiper-button-next,
+  .swiper-button-prev
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 19px
+    background-color: #f5f5f4
+    transition: 0.3s
+    &::after
+      content: ''
+      width: 16px
+      height: 11px
+      background: transparent url('../img/svg/orig/arrow.svg')
+    &:hover
+      background-color: $accent
+  .swiper-button-prev
+    &::after
+      transform: rotate(0deg)
+  .swiper-button-next
+    &::after
+      transform: rotate(180deg)
+  .swiper-pagination-bullet
+    width: 5px
+    height: 5px
+    background-color: #000000
+    margin-left: 8px
+    margin-right: 8px
+    opacity: 1
+  .swiper-pagination-bullet-active
+    background-color: $accent
+
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
@@ -428,6 +547,12 @@ input[type="submit"].btn
       margin-top: 20px
 
 // max-width 991px
+
+@media screen and (max-width: 767px)
+  .title--second
+    font-size: 16px
+
+// max-width 767px
 
 @media screen and (max-width: 650px)
   .to-top

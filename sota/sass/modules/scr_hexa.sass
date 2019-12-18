@@ -24,6 +24,33 @@
     text-align: center
     background: transparent url('../img/lead-hexa.png') no-repeat center center
     background-size: contain
+    &-cont
+      position: relative
+      z-index: 10
+      display: inline-block
+    &-wrap
+      position: absolute
+      top: -113px
+      left: 397px
+      width: 286px
+      height: 325px
+      padding: 85px 25px 20px
+      background: transparent url('../img/lead-hexa2.png') no-repeat center center
+      background-size: contain
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      color: #020000
+      text-align: center
+      z-index: -1
+      strong
+        font-weight: 700
+      a
+        display: block
+        text-decoration: none
+        outline: none
+        transition: 0.3s
+        &:hover
+          text-shadow: 0 4px 14px rgba($accent, 1)
     .white
       color: #ffffff
       text-transform: uppercase
@@ -42,13 +69,83 @@
     background-color: $accent
     .form
       max-width: 293px
+  &--rent
+    z-index: 3
+    .hexa__title
+      top: -61px
+      left: -50px
+      width: 621px
+      height: 633px
+      background: transparent url('../img/lead-hexa-man.png') no-repeat center center
+      background-size: contain
+    .hexa__form
+      padding-left: 500px
+  &--poster
+    .hexa__title
+      top: -101px
+      left: -62px
+      height: 683px
+      background: transparent url('../img/lead-hexa-man2.png') no-repeat center center
+      background-size: contain
 
+  &__name
+    padding-top: 7px
+    padding-bottom: 7px
+
+
+  @media screen and (max-width: 1100px)
+    &--rent
+      .hexa__form
+        padding-left: 450px
+
+  // max-width 1100px
 
   @media screen and (max-width: 1070px)
     &__form
       padding-left: 295px
+    &__title
+      &-wrap
+        top: -103px
+        left: 387px
+        width: 266px
+        height: 275px
+        padding: 75px 15px 20px
+        font-size: 16px
+    &--rent
+      .hexa__form
+        padding-left: 400px
 
   // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &--rent
+      .hexa__form
+        padding-left: 360px
+
+  // max-width 992px
+
+  @media screen and (max-width: 945px)
+    &--rent
+      .hexa__form
+        min-height: 455px
+        margin-left: 203px
+        padding-left: 235px
+      .hexa__title
+        width: 531px
+        height: 563px
+    &__title
+      &-wrap
+        top: -113px
+        left: 287px
+        width: 236px
+        height: 245px
+        padding: 65px 15px 20px
+        font-size: 15px
+    &--poster
+      .hexa__title
+        height: 603px
+
+  // max-width 945px
 
   @media screen and (max-width: 900px)
     &__form
@@ -81,21 +178,25 @@
   // max-width 900px
 
   @media screen and (max-width: 767px)
+    padding-top: 26px
     &__form
-      padding-left: 205px
       .form
         max-width: 253px
         .btn
           padding: 17px 22px
-
-  // max-width 767px
-
-  @media screen and (max-width: 767px)
-    padding-top: 26px
+    &--rent
+      .hexa__form
+        padding-left: 20px
+        margin-left: 0
     &__title
       position: static
       margin-left: auto
       margin-right: auto
+      &-cont
+        width: 100%
+      &-wrap
+        top: -83px
+        left: 57%
     &__form
       width: 100%
       padding-left: 20px
@@ -108,10 +209,45 @@
 
   // max-width 767px
 
+  @media screen and (max-width: 600px)
+    &__title
+      &-wrap
+        left: 60%
+    &--rent
+      .hexa__title
+        height: 473px
+        max-width: 100%
+
+  //   max-width 600px
+
+  @media screen and (max-width: 530px)
+    &__title
+      &-wrap
+        top: -115px
+        left: 49%
+    &--rent
+      .hexa__wrap
+        padding-top: 40px
+      .hexa__title
+        max-width: 90%
+        height: 403px
+        margin-left: 0
+
+  //   max-width 530px
+
   @media screen and (max-width: 460px)
     &__title
       width: 100%
       font-size: 23px
+      &-wrap
+        top: -105px
+        width: 186px
+        height: 205px
+        padding: 46px 15px 20px
+        font-size: 14px
+    &--rent
+      .hexa__title
+        height: 333px
 
   //   max-width 460px
 
@@ -121,6 +257,8 @@
       margin-left: -10px
       height: 400px
       font-size: 21px
+      &-wrap
+        font-size: 13px
 
   //   max-width 400px
 
@@ -129,6 +267,11 @@
       width: calc(100% + 30px)
       margin-left: -15px
       min-height: 0
+    &--rent
+      .hexa__title
+        height: 303px
+      .hexa__form
+        margin-left: -15px
 
   //   max-width 374px
 

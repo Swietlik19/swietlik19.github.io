@@ -15,15 +15,14 @@
     opacity: 1
     min-height: 100vh
   &__content
-    display: flex
-    justify-content: center
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
-    max-width: 100%
+    width: 815px
+    max-width: calc(100% - 60px)
+    background: $accent2
     opacity: 0
     transition: 0.7s
 
@@ -46,12 +45,13 @@
     transition: 0.3s
 
     position: absolute
-    top: 9px
-    right: 9px
+    top: -27px
+    right: -27px
 
     display: block
-    width: 30px
-    height: 30px
+    width: 27px
+    height: 27px
+    transition: 0.5s
     &::before,&::after
       content: ''
       position: absolute
@@ -59,28 +59,211 @@
       left: 50%
 
       display: block
-      width: 20px
+      width: 30px
       height: 3px
-      background-color: $accent
       border-radius: 1.5px
       transition: 0.3s
 
     &::before
       transform: translate(-50%,-50%) rotate(45deg)
+      background-color: #f1f2f2
 
     &::after
       transform: translate(-50%,-50%) rotate(-45deg)
+      background-color: $accent
 
     &:hover
-      &::before,&::after
-        background-color: #e99c02
+      transform: rotate(90deg)
 
-  // @media screen and (max-width: 767px)
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    & > li
+      width: 50%
+      & > a
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        text-decoration: none
+        outline: none
+        height: 86px
+        background-color: #161515
+
+        font-size: 24px
+        line-height: 30px /* 30 / 24 */
+        font-weight: 500
+        text-transform: uppercase
+        color: #f5f5f4
+        transition: 0.3s
+      &.active
+        & > a
+          background-color: transparent
+          color: $accent
+
+  &__df
+    display: flex
+  &__info
+    width: 50%
+    padding-left: 68px
+    padding-top: 55px
+    padding-bottom: 20px
+  &__form
+    width: 50%
+    padding: 53px 56px 54px
+  &__title
+    margin-bottom: 31px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
+    text-transform: uppercase
+    color: #ffffff
+  &__list
+    margin: 0
+    padding: 0
+    counter-reset: myCounter
+    margin-bottom: 53px
+    padding-left: 23px
+    li
+      position: relative
+      list-style: none
+      margin-bottom: 17px
+      font-size: 14px
+      line-height: 1.428571428571429 /* 20 / 14 */
+      font-weight: 500
+      letter-spacing: 0.05em
+      color: #ffffff
+      &::before
+        counter-increment: myCounter
+        content: counter(myCounter) '. '
+        position: absolute
+        top: -4px
+        left: -26px
+
+        font-size: 18px
+        line-height: 1.333333333333333 /* 24 / 18 */
+        font-weight: 500
+        text-transform: uppercase
+        color: $accent
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+
+  .form
+    .accept
+      label
+        font-size: 12px
+        line-height: 1.2
+        color: #ffffff
+        text-align: left
+        & > span
+          padding-left: 24px
+          .accept__icon
+            left: -2px
+            &::before
+              border-color: $accent
+
+
+  @media screen and (max-width: 767px)
+    &__info
+      padding-left: 28px
+      padding-top: 45px
+    &__form
+      padding: 33px 26px 24px
+    &__list
+      margin-bottom: 33px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 650px)
+    &__nav
+      & > li
+        & > a
+          height: 66px
+          font-size: 20px
+    &__info
+      padding-top: 25px
+    &__title
+      margin-bottom: 21px
+      font-size: 16px
+    &__list
+      margin-bottom: 27px
+      & > li
+        margin-bottom: 12px
+        font-size: 13px
+        &::before
+          top: 0px
+          font-size: 15px
+    .form
+      .btn--arrow
+        padding: 17px 22px
+    &__content
+      max-width: 100%
+    .close
+      top: -34px
+      right: 8px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__df
+      flex-direction: column
+    &__info
+      width: 100%
+      max-width: 400px
+      padding-top: 40px
+      margin-left: auto
+      margin-right: auto
+      text-align: center
+      padding-left: 0
+    &__list
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-bottom: 17px
+    &__form
+      width: 100%
+      max-width: 400px
+      padding: 25px 26px 24px
+      margin-left: auto
+      margin-right: auto
+    &__content
+      top: 110px
+      transform: translateX(-50%)
+    .form
+      .accept
+        label
+          text-align: center
 
   // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__nav
+      & > li
+        & > a
+          height: 46px
+          font-size: 14px
+    &__title
+      margin-bottom: 15px
+      font-size: 14px
+    &__info
+      max-width: 350px
+      padding-left: 15px
+      padding-right: 15px
+    &__list
+      & > li
+        margin-bottom: 8px
+        font-size: 12px
+        &::before
+          font-size: 13px
+          left: -18px
+        br
+          display: none
+
+  // max-width 500px
 
  /* modal */

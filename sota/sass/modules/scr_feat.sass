@@ -7,6 +7,13 @@
     display: flex
     padding-top: 58px
     padding-bottom: 64px
+    &--wrapped
+      flex-wrap: wrap
+      justify-content: center
+      .feat__item
+        &:nth-of-type(3n)
+          margin-right: 0
+
   &__item
     display: flex
     flex-direction: column
@@ -51,7 +58,30 @@
     text-transform: uppercase
     letter-spacing: 0.05em
     color: #020000
-
+  &--about
+    z-index: 2
+    .feat__list
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        left: -320px
+        top: -70px
+        background: transparent url('../img/poster-decor6.png') no-repeat center center
+        background-size: cover
+        width: 355px
+        height: 232px
+        z-index: -1
+      &::after
+        content: ''
+        position: absolute
+        bottom: -164px
+        right: -322px
+        width: 422px
+        height: 403px
+        background: transparent url('../img/poster-decor5.png') no-repeat center center
+        background-size: contain
+        z-index: -1
 
   @media screen and (max-width: 767px)
     &__list
@@ -81,6 +111,10 @@
       font-size: 12px
       br
         display: none
+    &--about
+      .feat__list
+        &::after
+          right: -372px
 
   // max-width 575px
 

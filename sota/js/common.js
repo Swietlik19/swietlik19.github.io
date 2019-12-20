@@ -11,7 +11,7 @@
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain],[data-object-fit-cover-top]'), {watchMQ: true});
 
   /* инициализация fancybox */
   $(".fancybox").fancybox({
@@ -149,7 +149,7 @@
   //   }
   // });
 
-  // фиксированные шапка
+  // фиксированная "наверх"
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
     $(".to-top").toggleClass("fixed", (fromTop > 682));

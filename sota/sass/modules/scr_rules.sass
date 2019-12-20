@@ -1,0 +1,291 @@
+.rules
+  position: relative
+  overflow: hidden
+  &__df
+    position: relative
+    display: flex
+    justify-content: space-between
+    z-index: 1
+    &::after
+      content: ''
+      position: absolute
+      top: 105px
+      right: -320px
+
+      width: 422px
+      height: 403px
+      background: transparent url('../img/poster-decor5.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+  &__content
+    width: 57.45614035087719%
+    max-width: 490px
+    padding-top: 13px
+    padding-bottom: 50px
+    .desc
+      text-indent: 17px
+    .article
+      big
+        font-size: 18px
+        line-height: 1.333333333333333 /* 24 / 18 */
+        text-transform: uppercase
+      a
+        font-weight: 500
+        text-decoration: underline
+      h2,h3
+        span
+          text-transform: uppercase
+  &__img
+    position: absolute
+    top: 0
+    right: 0
+    width: 44.45614035087719%
+    padding-left: 30px
+  &__grey
+    position: relative
+    padding-top: 24px
+    .rules__content
+      max-width: 560px
+    &-top
+      margin-bottom: 44px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 31.57894736842105%
+      width: 100%
+      height: 100%
+      background-color: #f5f5f4
+      z-index: -1
+    .article
+      big
+        text-transform: none
+  &__do
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 53px
+      right: -392px
+
+      width: 776px
+      height: 550px
+      background: transparent url('../img/svg/decor.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+      transform-origin: center
+      transform: rotateY(180deg)
+
+    .rules__content
+      max-width: 636px
+      padding-top: 24px
+      padding-bottom: 0
+      .article
+        ul
+          li
+            margin-bottom: 24px
+            font-size: 18px
+            line-height: 1.333333333333333 /* 24 / 18 */
+            &:last-of-type
+              margin-bottom: 0
+  &__more
+    .rules__content
+      width: 100%
+      max-width: 990px
+      padding-top: 0
+      padding-bottom: 10px
+    .article
+      p,ul li, ol li
+        font-size: 18px
+  &__yellow
+    padding: 27px 73px 35px 37px
+    background-color: $accent
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      column-count: 2
+      column-gap: 66px
+      li
+        font-weight: 500
+    h2
+      margin-bottom: 30px
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 700
+      text-transform: uppercase
+      letter-spacing: 0.05em
+      text-align: center
+  &__adding
+    position: relative
+    padding: 27px 116px 25px
+    &::before
+      content: ''
+      position: absolute
+      bottom: -94px
+      left: -332px
+
+      width: 355px
+      height: 232px
+      background: transparent url('../img/poster-decor6.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::after
+      content: ''
+      position: absolute
+      bottom: -56px
+      right: -392px
+
+      width: 797px
+      height: 502px
+      background: transparent url('../img/svg/decor5.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+  &__bottom
+    &-wrap
+      position: relative
+      padding-top: 49px
+      padding-bottom: 47px
+      z-index: 1
+      &::after
+        content: ''
+        position: absolute
+        top: 63px
+        right: -330px
+
+        width: 477px
+        height: 403px
+        background: transparent url('../img/poster-decor7.png') no-repeat center center
+        background-size: contain
+        z-index: -1
+
+    .article
+      h2
+        margin-top: 0
+        margin-bottom: 33px
+      ul
+        margin-bottom: 10px
+        li
+          font-size: 18px
+          line-height: 2 /* 36 / 18 */
+      .rules__bottom-desc
+        margin-bottom: 30px
+    .rules__content
+      width: 100%
+      max-width: 920px
+      padding: 0
+
+
+  @media screen and (max-width: 991px)
+    &__content
+      .article
+        big
+          font-size: 16px
+    &__do
+      .rules__content
+        max-width: 100%
+        width: 100%
+    &__yellow
+      padding: 27px 30px 35px 30px
+      ul
+        column-gap: 30px
+    &__adding
+      padding: 27px 30px 25px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__img
+      position: static
+      width: 200px
+      padding-left: 15px
+    &__df
+      .rules__content
+        width: calc(100% - 200px)
+    &__grey
+      &::before
+        width: calc(100% + 30px)
+        right: -15px
+      .rules__content
+        max-width: 100%
+        width: 100%
+        padding-bottom: 30px
+        .article
+          h2
+            margin-top: 0
+    &__more
+      .article
+        h2
+          margin-top: 15px
+        p,ul li, ol li
+          font-size: 16px
+    &__do
+      .rules__content
+        .article
+          h2
+            margin-top: 15px
+          ul
+            li
+              margin-bottom: 12px
+              font-size: 16px
+              br
+                display: none
+    &__yellow
+      h2
+        margin-bottom: 20px
+      ul
+        li
+          font-size: 14px
+    &__bottom
+      .article
+        ul
+          li
+            font-size: 16px
+            line-height: 1.5
+      &-wrap
+        padding-top: 39px
+        padding-bottom: 37px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__df
+      flex-direction: column
+      .rules__content
+        width: 100%
+    &__img
+      width: 100%
+      padding-left: 0
+      height: 300px
+      img
+        display: block
+        width: 100%
+        height: 100%
+    &__content
+      padding-bottom: 30px
+      padding-top: 0
+      .article
+        big
+          font-size: 15px
+    &__yellow
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding: 27px 15px 35px 15px
+      ul
+        column-gap: 20px
+    &__adding
+      padding: 27px 0 25px
+
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__content
+      padding-bottom: 20px
+    &__yellow
+      ul
+        column-count: 1
+
+  // max-width 500px
+
+/* rules */

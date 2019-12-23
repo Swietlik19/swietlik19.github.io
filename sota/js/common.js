@@ -195,13 +195,21 @@
     }
   });
 
-  // Табы
   $('.modal__nav a').click(function(event) {
     event.preventDefault();
     var _href = $(this).attr('href');
     $(this).parent().siblings().removeClass('active');
     $(this).parent().addClass('active');
     $('.modal__tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
+  $('.team__item a.team__wrap').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parents('.swiper-slide').siblings().find('.team__wrap').removeClass('active');
+    $(this).addClass('active');
+    $('.team__tab').not(_href).hide();
     $(_href).fadeIn();
   });
 
@@ -289,6 +297,20 @@
       el: '.post__slider .slider__dots',
     }
   });
+
+  if (window.matchMedia('(max-width: 1030px)').matches) {
+    var teamSlider = new Swiper('#team__slider', {
+      slidesPerView: 'auto',
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: '.team__slider .swiper-button-next',
+        prevEl: '.team__slider .swiper-button-prev',
+      },
+      pagination: {
+        el: '.team__slider .slider__dots',
+      }
+    });
+  }
 
   function equalHeightSwiper(sliderID) {
     $(sliderID).find('.swiper-slide').height('auto');

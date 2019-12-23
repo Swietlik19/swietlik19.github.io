@@ -1,0 +1,292 @@
+.team
+  position: relative
+  &__cont
+    position: relative
+    padding-top: 20px
+    padding-bottom: 38px
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      width: 422px
+      height: 403px
+      background: transparent url('../img/poster-decor5.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::before
+      top: 267px
+      right: -328px
+    &::after
+      bottom: -135px
+      left: -242px
+  .swiper-container
+    overflow: visible
+  .swiper-wrapper
+    display: flex
+    flex-wrap: wrap
+  .swiper-slide
+    width: calc((100% - 15px * 4) / 5)
+    margin-right: 15px
+    &:nth-of-type(5n)
+      margin-right: 0
+  &__item
+    padding-bottom: 20px
+  &__title
+    margin-bottom: 13px
+    font-size: 24px
+    line-height: 1.2
+    font-weight: 500
+  &__wrap
+    display: block
+    text-decoration: none
+    outline: none
+    position: relative
+    padding-left: 33px
+    padding-right: 15px
+    z-index: 1
+    &:hover
+      .team__hexa
+        filter: drop-shadow(0 0 0 rgba($accent, 0.31))
+        .icon
+          fill: $accent
+    &.active
+      .team__hexa
+        filter: drop-shadow(0 0 0 rgba($accent, 0.31))
+        .icon
+          fill: $accent
+
+  &__title-cont
+    position: absolute
+    top: -30px
+    left: 537px
+    z-index: -1
+    display: inline-block
+  &__title-wrap
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 316px
+    height: 351px
+    padding: 20px 25px 20px
+    background: transparent url('../img/lead-hexa3.png') no-repeat center center
+    background-size: contain
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    color: #020000
+    text-align: center
+    z-index: -1
+    strong
+      font-weight: 700
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      transition: 0.3s
+      &:hover
+        text-shadow: 0 4px 14px rgba($accent, 1)
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    padding-left: 70px
+    &:not(#team__tab-0)
+      display: none
+    &-wrap
+      position: relative
+      z-index: 1
+  &__job
+    line-height: 1.2
+  &__hexa
+    position: absolute
+    top: -65px
+    left: 0
+    height: 246px
+    z-index: -1
+    filter: drop-shadow(0 0 40px rgba($accent, 0.31))
+    transition: 0.5s
+    .icon
+      display: block
+      width: 100%
+      height: 100%
+      transition: 0.5s
+      fill: #fff
+  &__photo
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    width: 641px
+    height: 664px
+    &-front,
+    &-back
+      transition: 0.2s
+    &-back
+      position: absolute
+      bottom: 0
+      left: 0
+      opacity: 0
+    &:hover
+      .team__photo-front
+        opacity: 0
+      .team__photo-back
+        opacity: 1
+  &__name
+    margin-bottom: 11px
+  &__job
+    margin-bottom: 15px
+
+
+  @media screen and (max-width: 1170px)
+    &__title
+      margin-bottom: 8px
+      font-size: 20px
+    &__item
+      .team__job
+        font-size: 14px
+        br
+          display: none
+    &__hexa
+      height: 236px
+    &__tab
+      padding-left: 30px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1030px)
+    &__tab
+      padding-left: 150px
+    .swiper-wrapper
+      flex-wrap: nowrap
+    .swiper-slide
+      width: 217px
+    &__photo
+      width: 501px
+      height: 524px
+    &__title-wrap
+      width: 266px
+      height: 321px
+      font-size: 16px
+    &__title-cont
+      top: -30px
+      left: 437px
+
+  // max-width 1030px
+
+  @media screen and (max-width: 880px)
+    &__photo
+      width: 431px
+      height: 484px
+    &__title-wrap
+      width: 226px
+      height: 281px
+    &__tab
+      padding-left: 0
+    &__title-cont
+      top: -30px
+      left: 357px
+
+  // max-width 880px
+
+  @media screen and (max-width: 700px)
+    &__title
+      font-size: 16px
+    &__job
+      font-size: 13px
+    &__hexa
+      top: -55px
+      height: 206px
+    &__wrap
+      padding-left: 15px
+      text-align: center
+    .swiper-slide
+      width: 187px
+    &__photo
+      width: 361px
+      height: 374px
+    &__title-cont
+      top: -40px
+      left: 317px
+    &__title-wrap
+      font-size: 14px
+    &__name
+      margin-bottom: 7px
+    &__job
+      margin-bottom: 10px
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    &__title-wrap
+      width: 206px
+      height: 261px
+
+  // max-width 575px
+
+  @media screen and (max-width: 575px)
+    &__photo
+      width: 331px
+      height: 334px
+    &__title
+      &-wrap
+        width: 186px
+        height: 231px
+        font-size: 13px
+      &-cont
+        left: 287px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__cont
+      padding-bottom: 0
+    &__hexa
+      top: -35px
+      height: 166px
+    .swiper-slide
+      width: 159px
+    &__title
+      font-size: 14px
+    &__item
+      .team__job
+        font-size: 13px
+    &__wrap
+      padding-left: 12px
+      padding-right: 12px
+    &__photo
+      width: 291px
+      height: 300px
+    &__title
+      &-wrap
+        width: 176px
+        height: 201px
+        font-size: 12px
+      &-cont
+        left: 241px
+
+  // max-width 500px
+
+  @media screen and (max-width: 430px)
+    &__photo
+      width: 231px
+      height: 210px
+    &__title
+      &-cont
+        top: -60px
+        left: 191px
+
+  // max-width 430px
+
+  @media screen and (max-width: 374px)
+    &__photo
+      width: 211px
+      height: 190px
+    &__title
+      &-cont
+        top: -70px
+        left: 164px
+
+  // max-width 374px
+
+/* team */

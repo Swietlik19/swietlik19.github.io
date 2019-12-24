@@ -1,0 +1,70 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .footer__df
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo-footer.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo-footer.svg" alt="лого")
+
+        p.logo__text Мы находимся
+          br
+          |  в Симферополе
+
+      .footer__menu
+        ul.menu
+          li.menu-item
+            a(href="#") О нас
+            span.arrow
+          li.menu-item.mobile
+            a(href="#") Каталог
+            span.arrow
+          li.menu-item
+            a(href="#") Заказ
+            span.arrow
+          li.menu-item
+            a(href="#") Оплата
+            span.arrow
+          li.menu-item
+            a(href="#") Доставка
+            span.arrow
+          li.menu-item
+            a(href="#") Фото доставок
+            span.arrow
+          li.menu-item
+            a(href="#") Контакты
+            span.arrow
+
+        ul.menu
+          li.menu-item
+            a(href="#") Розы
+            span.arrow
+          li.menu-item
+            a(href="#") Premium букеты
+            span.arrow
+          li.menu-item
+            a(href="#") Цветы
+            span.arrow
+          li.menu-item
+            a(href="#") Цветы в коробках
+            span.arrow
+          li.menu-item
+            a(href="#") Подарки
+            span.arrow
+
+      .footer__phones
+        p.footer__phones-text Viber   /   WhatsApp
+
+        .footer__phones-item
+          a(href="tel:+79788953133" rel="nofollow") +7 978 895 31 33
+        .footer__phones-item
+          a(href="tel:+79785514455" rel="nofollow") +7 978 551 44 55
+
+    // /.footer__df
+
+    +socials--footer
+
+  // /.footer
+

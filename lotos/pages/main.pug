@@ -1,0 +1,61 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#f57873')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/navigation.pug
+    include blocks/socials.pug
+
+    include blocks/scr1.pug
+    include blocks/scr_prod.pug
+    include blocks/scr_feat.pug
+    include blocks/scr_reviews.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+  body.main-page
+
+
+    .page_df
+      +navigation("div")
+
+      #page_wr.page_wr
+        +header("div")
+
+        +scr1
+        +scr_prod("Лучшее предложение сезона")
+        +scr_prod--pink("Розы",'2')
+        +scr_prod--pink("Premium букеты",'3')
+        +scr_prod--pink("Цветы",'4')
+        +scr_prod--pink("Цветы в коробках",'5')
+        +scr_prod--pink("Подарки",'6')
+        +scr_feat
+        +scr_reviews
+        +footer("div")
+
+        a.to-top(href="#page_wr")
+          i.fa.fa-angle-up
+
+    +styles-bottom
+    +scripts

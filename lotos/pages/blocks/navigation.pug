@@ -1,0 +1,51 @@
+mixin navigation(logotype)
+  aside.navigation(id="navigation")
+    nav.wow.fadeInLeft(data-wow-duration="0.8s" data-wow-delay="0.2s")
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo.svg" alt="лого")
+
+      .navigation__menu
+        ul.menu
+          li.menu-item.menu-item-has-children
+            a(href="#") Розы
+          li.menu-item
+            a(href="#") Premium букеты
+          li.menu-item.menu-item-has-children
+            a(href="#") Цветы
+            ul.sub-menu
+              li.menu-item
+                a(href="#") Шляпные коробочки
+              li.menu-item
+                a(href="#") "Сладкие" коробочки
+              li.menu-item
+                a(href="#") Деревянные коробочки
+          li.menu-item.menu-item-has-children
+            a(href="#") Цветы в коробках
+            ul.sub-menu
+              li.menu-item
+                a(href="#") Шляпные коробочки
+              li.menu-item
+                a(href="#") "Сладкие" коробочки
+              li.menu-item
+                a(href="#") Деревянные коробочки
+              li.menu-item
+                a(href="#") Плайм коробочки
+          li.menu-item.menu-item-has-children
+            a(href="#") Подарки
+
+      .navigation__text
+        p Мы находимся
+          br
+          |  в Симферополе
+
+      +socials
+
+
+
+
+  // /.navigation

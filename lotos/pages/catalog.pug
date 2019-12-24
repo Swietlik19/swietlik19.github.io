@@ -1,0 +1,55 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#f57873')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/navigation.pug
+    include blocks/socials.pug
+    include blocks/paginator.pug
+
+    include blocks/scr_prod.pug
+    include blocks/scr_prod-menu.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+  body.main-page
+
+    .page_df
+      +navigation("a")
+
+      #page_wr.page_wr
+        +header("a")
+
+        +scr_prod--pink2("Цветы в коробках",'1')
+        +scr_prod-menu
+        +scr_prod--pink3("Лучшее предложение сезона",'2')
+
+
+        +footer("a")
+
+        a.to-top(href="#page_wr")
+          i.fa.fa-angle-up
+
+    +styles-bottom
+    +scripts

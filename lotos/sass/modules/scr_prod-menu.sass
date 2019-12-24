@@ -1,0 +1,101 @@
+.prod-menu
+  position: relative
+  padding: 8px 30px 40px 42px
+  background-image: linear-gradient(180.0deg, #fff3f3 0%, transparent 120px)
+  &__df
+    display: flex
+    justify-content: space-between
+    max-width: 1192px
+  &__col
+    padding-right: 30px
+    &:last-of-type
+      padding-right: 0
+    &:first-of-type
+      .menu
+        padding-top: 12px
+    &:nth-of-type(n + 2)
+      .menu
+        & > li
+          padding-left: 20px
+          padding-right: 20px
+          padding-top: 12px
+          padding-bottom: 25px
+          &.current-menu-item
+            box-shadow: 5px 9px 20px 0px rgba(217,129,121,0.4)
+            background-color: #fff3f3
+            border-radius: 6.0px
+            & > a
+              color: $accent
+
+  .menu
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      width: 100%
+      & > a
+        margin-bottom: 27px
+        text-decoration: none
+        outline: none
+        display: block
+        font-family: $font2
+        font-size: 18px
+        line-height: 1.2
+        font-weight: 700
+        transition: 0.3s
+        &:hover
+          color: $pink
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      margin-bottom: 22px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        text-decoration: none
+        outline: none
+        display: block
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 500
+        transition: 0.3s
+        &:hover
+          color: $pink
+
+
+  @media screen and (max-width: 1350px)
+    padding: 8px 15px 40px
+    &__col
+      padding-right: 15px
+      &:nth-of-type(n + 2)
+        .menu
+          & > li
+            padding-left: 15px
+            padding-right: 10px
+
+  // max-width 1350px
+
+  @media screen and (max-width: 991px)
+    .menu
+      & > li
+        & > a
+          margin-bottom: 18px
+          font-size: 16px
+    .sub-menu
+      & > li
+        margin-bottom: 14px
+        & > a
+          font-size: 13px
+    &__col
+      padding-right: 5px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    display: none
+
+  // max-width 767px
+
+/* prod-menu */

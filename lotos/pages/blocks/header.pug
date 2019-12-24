@@ -1,0 +1,79 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__wrap.wow.fadeIn(data-wow-duration="0.8s" data-wow-delay="0.2s")
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo.svg" alt="лого")
+
+      button.burger#header__burger
+        span.burger__wrap
+          span.line
+
+      .header__menu
+        ul.menu.mobile
+          li.menu-item.menu-item-has-children
+            a(href="#") Розы
+            span.arrow
+          li.menu-item
+            a(href="#") Premium букеты
+          li.menu-item.menu-item-has-children
+            a(href="#") Цветы
+            span.arrow
+            ul.sub-menu
+              li.menu-item
+                a(href="#") Шляпные коробочки
+              li.menu-item
+                a(href="#") "Сладкие" коробочки
+              li.menu-item
+                a(href="#") Деревянные коробочки
+          li.menu-item.menu-item-has-children
+            a(href="#") Цветы в коробках
+            span.arrow
+            ul.sub-menu
+              li.menu-item
+                a(href="#") Шляпные коробочки
+              li.menu-item
+                a(href="#") "Сладкие" коробочки
+              li.menu-item
+                a(href="#") Деревянные коробочки
+              li.menu-item
+                a(href="#") Плайм коробочки
+          li.menu-item.menu-item-has-children
+            a(href="#") Подарки
+            span.arrow
+        ul.menu
+          li.menu-item
+            a(href="#") О нас
+          li.menu-item
+            a(href="#") Заказ
+          li.menu-item
+            a(href="#") Оплата
+          li.menu-item
+            a(href="#") Доставка
+          li.menu-item
+            a(href="#") Фото доставок
+          li.menu-item
+            a(href="#") Контакты
+
+      .header__phones
+        .header__phones-text
+          p Viber   /   WhatsApp
+        .header__phones-item
+          a(href="tel:+79788953133" rel="nofollow") +7 978 895 31 33
+        .header__phones-item
+          a(href="tel:+79785514455" rel="nofollow") +7 978 551 44 55
+
+      .header__cart
+        a(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#cart")
+
+      .header__login
+        a.open-modal(href="#") Вход  /  Регистрация
+
+
+    // /.header__wrap

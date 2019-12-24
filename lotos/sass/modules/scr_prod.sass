@@ -1,0 +1,206 @@
+.prod
+  position: relative
+  padding: 30px 30px 17px
+  &__slider
+    max-width: 1228px
+    margin-left: auto
+    margin-right: auto
+  .title
+    margin-top: 0
+    margin-bottom: 39px
+
+  .swiper-wrapper
+    display: flex
+    flex-wrap: wrap
+  &__slide
+    width: calc((100% - 32px * 3) / 4)
+    padding-bottom: 36px
+    margin-right: 32px
+    height: auto
+    &:nth-of-type(4n)
+      margin-right: 0
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding-bottom: 1px
+    box-shadow: 2px 9px 20px 0px rgba(217,129,121,0.4)
+    background-color: #ffffff
+    border-radius: 6.0px
+    overflow: hidden
+    transition: 0.5s
+    &:hover
+      box-shadow: 2px 9px 50px 0px rgba(217,129,121,0.7)
+  &__img
+    display: block
+    height: 271px
+    overflow: hidden
+    img
+      display: block
+      width: 100%
+      height: 100%
+      transition: transform 2s
+    &:hover
+      img
+        transform: scale(1.1)
+  &__content
+    flex-grow: 1
+    text-align: center
+    padding: 17px 15px 16px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+  &__title
+    margin-bottom: 10px
+    font-family: $font
+    font-size: 18px
+    line-height: 1.111111111111111 /* 20 / 18 */
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+      color: $pink
+  &__art
+    font-size: 16px
+    line-height: 1.2
+  &__bottom
+    margin-top: auto
+    padding-bottom: 23px
+  &__price
+    display: block
+    text-align: center
+
+    font-family: $font2
+    font-size: 30px
+    line-height: 1.2
+    font-weight: 700
+    color: $accent
+    small
+      font-size: 24px
+
+  &--pink
+    background-image: linear-gradient(180.0deg, #fff3f3 0%, transparent 120px)
+    padding-top: 26px
+    padding-bottom: 31px
+    .title
+      margin-bottom: 45px
+
+  &__btns
+    margin-top: 8px
+    text-align: center
+
+  &__top
+    margin-bottom: 15px
+    max-width: 1192px
+  &__select
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    text-align: right
+    p
+      margin-right: 12px
+  &--pink2
+    .title
+      margin-bottom: 4px
+  &__info
+    margin-top: 20px
+    max-width: 1192px
+  .article
+    p
+      text-indent: 20px
+    h2,h3,h4,h5,h6
+      font-family: $font
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        position: relative
+        transform: none
+        &::before
+          content: '—'
+          margin-right: 5px
+
+  &--pink2,
+  &--pink3
+    padding-left: 42px
+    .prod__slider
+      max-width: 1192px
+      margin-left: 0
+
+
+  @media screen and (max-width: 1350px)
+    padding: 30px 15px 17px
+    &--pink
+      padding-bottom: 25px
+    &__slide
+      width: calc((100% - 16px * 3) / 4)
+      padding-bottom: 28px
+      margin-right: 16px
+      &:nth-of-type(4n)
+        margin-right: 0
+
+  // max-width 1350px
+
+  @media screen and (max-width: 1200px)
+    &__img
+      height: 200px
+    &__title
+      font-size: 16px
+    &__art
+      font-size: 14px
+    &__price
+      font-size: 27px
+      small
+        font-size: 20px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 991px)
+    .title
+      margin-bottom: 29px
+
+  // max-width 991px
+
+  @media screen and (max-width: 830px)
+    padding-bottom: 43px
+    &__btns
+      display: none
+    &__slide
+      height: 100%
+      padding: 0
+    .swiper-wrapper
+      flex-wrap: nowrap
+
+  // max-width 830px
+
+  @media screen and (max-width: 575px)
+    background-image: linear-gradient(180.0deg, #fff3f3 0%, transparent 120px)
+    padding: 15px
+    padding-bottom: 43px
+    .title
+      margin-bottom: 20px
+    &__img
+      height: 170px
+    &__title
+      font-size: 14px
+    &__price
+      font-size: 24px
+      small
+        font-size: 16px
+    &__content
+      padding: 13px 10px 15px
+    &__bottom
+      padding-bottom: 16px
+    &__select
+      justify-content: flex-start
+      p
+        font-size: 14px
+    &--pink2
+      padding-bottom: 23px
+    &--pink3
+      padding-bottom: 23px
+
+  // max-width 575px
+
+/* prod */

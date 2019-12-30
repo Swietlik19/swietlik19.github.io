@@ -1,0 +1,87 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+      background: #fff
+      border: 2px solid transparent
+
+      // @include placeholder(#999999, 18px)
+
+      &:focus
+        @include placeholder(#fff, 14px)
+
+      &:hover
+        border-color: darken(#88a06a,10%)
+
+    textarea
+      // height: 136px
+
+    input
+      height: 47px
+
+  .accept
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      & > span
+        position: relative
+        display: inline-block
+        transition: 0.3s
+
+    input
+      display: none
+
+    input:checked + span
+
+  &--search
+    .text-input
+      input
+        width: 100%
+        padding-left: 24px
+        font-size: 16px
+        line-height: 1.428571428571429 /* 20 / 14 */
+        font-weight: 300
+        color: #96b976
+        transition: 0.3s
+        @include placeholder(#96b976, 14px)
+    .search-wrap
+      position: relative
+    .btn
+      position: absolute
+      top: 0
+      right: -24px
+      height: 47px
+      width: 47px
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  // @media screen and (max-width: 575px)
+
+  //   max-width 575px
+
+ /* form */

@@ -1,0 +1,116 @@
+.prod
+  position: relative
+  background: #fdfbfc
+  padding-top: 54px
+  padding-bottom: 47px
+  &__slider
+    margin-top: 30px
+    .swiper-wrapper
+      display: flex
+    .slider__btns
+      display: none
+      justify-content: center
+  &__slide
+    width: calc((100% - 90px) / 4)
+    height: auto
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding-bottom: 25px
+    box-shadow: 2px 4px 35px 0px rgba(231,149,151,0.15)
+    background-color: #ffffff
+    transition: 0.3s
+    &:hover
+      box-shadow: 2px 4px 45px 0px rgba(231,149,151,0.6)
+  &__img
+    display: block
+    outline: none
+    text-decoration: none
+    margin-bottom: 15px
+  &__content
+    flex-grow: 1
+    padding-left: 10px
+    padding-right: 10px
+    text-align: center
+  &__title
+    position: relative
+    margin-bottom: 23px
+    font-family: $font3
+    font-size: 20px
+    font-weight: 400
+    a
+      display: block
+      outline: none
+      text-decoration: none
+      transition: 0.3s
+      &:hover
+        color: $accent
+    &::after
+      content: ''
+      position: absolute
+      left: calc(50% - 38px)
+      bottom: -14px
+
+      width: 76px
+      height: 1px
+      background-color: $accent
+  &__price
+    font-size: 26px
+    font-weight: 500
+  &__btns
+    margin-top: 13px
+    text-align: center
+    .btn__wrap
+      min-width: 0
+      box-shadow: 2px 4px 16px 0px rgba(243,89,79,0.4)
+      border-radius: 20px
+      z-index: 1
+      &::before
+        content: none
+      &:hover
+        box-shadow: 2px 4px 30px 0px rgba(243,89,79,0.7)
+    .btn
+      padding: 12px 26px 11px
+      font-size: 14px
+      border-radius: 20px
+  &__bottom
+    margin-top: 31px
+    text-align: center
+  &--2
+    padding-top: 20px
+
+
+  @media screen and (max-width: 991px)
+    &__slider
+      margin-top: 25px
+    &__slide
+      width: calc((100% - 45px) / 4)
+      margin-right: 15px
+    &__title
+      font-size: 18px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__slider
+      .slider__btns
+        display: flex
+        margin-top: 30px
+
+  // max-width 991px
+
+  @media screen and (max-width: 500px)
+    padding-top: 34px
+    padding-bottom: 27px
+    &__title
+      font-size: 16px
+    &__price
+      font-size: 21px
+
+  // max-width 500px
+
+/* prod */

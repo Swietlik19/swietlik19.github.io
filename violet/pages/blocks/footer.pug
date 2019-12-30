@@ -1,0 +1,101 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .footer__menu
+          .footer__col.footer__col--two
+            h3.footer__title Каталог
+              span.arrow
+            ul.menu
+              li.menu-item
+                a(href="#") Фиалки
+              li.menu-item
+                a(href="#") Стрептокарпусы
+              li.menu-item
+                a(href="#") Глоксинии
+              li.menu-item
+                a(href="#") Филодендроны
+              li.menu-item
+                a(href="#") Кампанулы
+              li.menu-item
+                a(href="#") Нематантусы
+              li.menu-item
+                a(href="#") Хойи
+              li.menu-item
+                a(href="#") Эсхинантусы
+              li.menu-item
+                a(href="#") Эписции
+              li.menu-item
+                a(href="#") Колумнеи
+              li.menu-item
+                a(href="#") Другие растения
+              li.menu-item
+                a(href="#") Кактусы
+
+          .footer__col
+            h3.footer__title О нас
+            ul.menu
+              li.menu-item
+                a(href="#") О магазине
+              li.menu-item
+                a(href="#") Как купить
+              li.menu-item
+                a(href="#") Отзывы
+              li.menu-item
+                a(href="#") Новости
+              li.menu-item
+                a(href="#") Корзина
+
+        .footer__info
+          .footer__map
+            h2.title Как нас найти
+
+            .footer__map-wrap#footer__map(style="background: transparent url('img/map-img.jpg') no-repeat center center; background-size: cover;")
+
+          .footer__content
+            .logo__wrap
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/svg/logo.svg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/svg/logo.svg" alt="лого")
+
+            .footer__item.footer__item--big
+              a.footer__text(href="tel:+79030594043" rel="nofollow")
+                big +7 903 059 40 43
+
+            .footer__item
+              a.footer__text(href="mailto:shuvenka@mail.ru" rel="nofollow") shuvenka@mail.ru
+
+            .footer__item
+              p.footer__text Нижний Новгород,
+                br
+                |  Канавинский р-к, Чкалова, 4
+
+            .footer__item
+              p.footer__text Наши соц. сети:
+              +socials
+
+
+      // /.container
+    // /.footer__top
+
+    .footer__bottom
+      .container
+        .row
+          .col-xl-3.col-lg-4.col-sm-7
+            .copyright
+              p.text г. Симферополь © Copyright  2019&nbsp;г.
+              a(href="#") Политика конфиденциальности
+          .col-xl-4.offset-xl-1.col-lg-4.col-sm-5
+            a.made(href="https://sheer82.ru/")
+              span.text Сделано в
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

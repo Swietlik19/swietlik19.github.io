@@ -1,0 +1,177 @@
+.categories
+  position: relative
+  padding-bottom: 18px
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__slider
+    .slider__btns
+      display: none
+  &__slide
+    width: calc((100% - 64px) / 3)
+    margin-right: 32px
+    padding-bottom: 24px
+    &:nth-of-type(3),
+    &:last-of-type
+      margin-right: 0
+    &--two
+      .categories__item
+        height: 200px
+        margin-bottom: 28px
+        &:last-of-type
+          margin-bottom: 0
+    &--cols
+      display: flex
+      width: 100%
+      .categories__item
+        width: calc((100% - 29px) / 2)
+        height: 240px
+        margin-right: 29px
+        padding-top: 72px
+        &:last-of-type
+          margin-right: 0
+
+  &__item
+    display: block
+    text-decoration: none
+    outline: none
+    position: relative
+    height: 428px
+    padding: 49px 25px 20px
+    transition: 0.5s
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 35px)
+      left: calc(50% - 35px)
+      width: 70px
+      height: 70px
+      transform: scale(0.5)
+      opacity: 0
+      background: rgba(#fff,0.3) url('../img/svg/search.svg') no-repeat center center
+      background-size: 25px 25px
+      border-radius: 50%
+      transition: 0.3s
+      z-index: 2
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(#000, 0.3)
+      opacity: 0
+      transition: 0.3s
+      z-index: 1
+    &:hover
+      &::before
+        transform: scale(1)
+        opacity: 1
+      &::after
+        opacity: 1
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+  &__title
+    margin-bottom: 5px
+    font-family: $font3
+    font-size: 30px
+    line-height: 1.2
+    font-weight: 300
+    letter-spacing: 0.025em
+  &__count
+    font-size: 16px
+    line-height: 1.25 /* 20 / 16 */
+    font-weight: 600
+    color: $accent2
+
+
+  @media screen and (max-width: 991px)
+    &__slide
+      width: calc((100% - 30px) / 3)
+      margin-right: 15px
+      padding-bottom: 18px
+      &:nth-of-type(3),
+      &:last-of-type
+        margin-right: 0
+      &--two
+        .categories__item
+          height: 200px
+          margin-bottom: 18px
+          &:last-of-type
+            margin-bottom: 0
+      &--cols
+        width: 100%
+        .categories__item
+          width: calc((100% - 15px) / 2)
+          margin-right: 15px
+          padding-top: 60px
+    &__item
+      display: block
+      text-decoration: none
+      outline: none
+      position: relative
+      height: 418px
+      padding: 49px 15px 20px
+    &__title
+      font-size: 27px
+    &__count
+      font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 800px)
+    &__list
+      flex-wrap: nowrap
+    &__slider
+      overflow: hidden
+      .slider__btns
+        display: flex
+        justify-content: center
+        margin-top: 10px
+    &__slide
+      &--cols
+        flex-direction: column
+        .categories__item
+          width: 100%
+          height: 200px
+          margin-right: 0
+          margin-bottom: 18px
+          &:last-of-type
+            margin-bottom: 0
+
+
+  // max-width 800px
+
+  @media screen and (max-width: 767px)
+    &__item
+      height: 348px
+      padding-top: 40px
+    &__slide
+      &--two
+        .categories__item
+          height: 170px
+          margin-bottom: 8px
+      &--cols
+        .categories__item
+          height: 170px
+          margin-bottom: 8px
+          padding-top: 40px
+
+  // max-width 767px
+
+  @media screen and (max-width: 600px)
+    &__title
+      font-size: 25px
+
+  // max-width 600px
+
+/* categories */

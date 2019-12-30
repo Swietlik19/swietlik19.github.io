@@ -1,0 +1,71 @@
+mixin header(logotype)
+  header.header.wow.slideInDown(data-wow-duration="0.8s" data-wow-delay="0.2s" id="header")
+    .container
+      .header__top
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .header__address
+          span.btn.btn--circle
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#icon-pin")
+          .header__text
+            p Канавинский р-к, Чкалова, 4
+            a.header__address-link(href="#") Как добраться?
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__links
+          .header__cart
+            .header__text
+              p Корзина
+            a.header__cart-icon(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#icon-cart")
+              span.header__cart-count 0
+
+          .header__phones
+            .header__phones-links
+              // Если нужно второй телефон, то скопировать .header__phone, но без a.btn.btn--circle.mobile
+              .header__phone
+                a.desktop(href="tel:+79030594043" rel="nofollow") +7 903 059 40 43
+                a.btn.btn--circle.mobile(href="tel:+79030594043" rel="nofollow")
+                  i.fa.fa-phone
+            a.btn.btn--circle.open-modal(href="#modal__callback")
+              i.fa.fa-phone
+
+    .header__menu
+      .container
+        ul.menu
+          li.menu__item
+            a(href="#") Каталог
+          li.menu__item
+            a(href="#") О магазине
+          li.menu__item
+            a(href="#") Где купить?
+          li.menu__item
+            a(href="#") Каталог
+          li.menu__item
+            a(href="#") Отзывы
+          li.menu__item
+            a(href="#") Новости
+          li.menu__item
+            a(href="#") Контакты
+
+        a.header__cart(href="#")
+          .header__text
+            p Корзина
+          .header__cart-icon(href="#")
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#icon-cart")
+            span.header__cart-count 0
+
+      // /.container
+    // /.header__top

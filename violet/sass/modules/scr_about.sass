@@ -1,0 +1,93 @@
+.about
+  position: relative
+  &__df
+    display: flex
+  &__img
+    width: 51.49122807017544%
+    margin-right: 40px
+    margin-left: -56px
+  &__info
+    width: 51.40350877192982%
+    padding: 41px 0 30px 30px
+  .article
+    text-align: justify
+    .green
+      font-size: 18px
+      text-indent: 0
+    blockquote
+      position: relative
+      &::before,
+      &::after
+        content: "“"
+        position: absolute
+        width: 32px
+        height: 26px
+        font-family: $font2
+        font-size: 100px
+        line-height: 1.2
+        font-weight: 400
+        color: #85a26b
+      &::before
+        content: "“"
+        top: -36px
+        left: -36px
+      &::after
+        content: "”"
+        right: 0
+        bottom: 0
+
+
+  @media screen and (max-width: 1300px)
+    &__img
+      width: 50%
+      margin-left: 0
+      margin-right: 28px
+    &__info
+      padding: 21px 0 30px 30px
+
+  // max-width 1300px
+
+  @media screen and (max-width: 1070px)
+    &__info
+      padding: 15px 0 20px 20px
+    .article
+      blockquote
+        &::before,
+        &::after
+          font-size: 85px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 850px)
+    &__df
+      flex-direction: column
+    &__img
+      width: 100%
+      max-width: 450px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 20px
+    &__info
+      width: 100%
+      padding-left: 0
+    .article
+      blockquote
+        margin-top: 40px
+        &::before
+          left: -8px
+          top: -50px
+
+  // max-width 850px
+
+  @media screen and (max-width: 450px)
+    &__img
+      margin-bottom: 10px
+    .article
+      blockquote
+        &::before,
+        &::after
+          font-size: 74px
+
+  // max-width 450px
+
+/* about */

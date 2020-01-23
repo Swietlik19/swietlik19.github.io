@@ -1,0 +1,37 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__wrap
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О проекте
+            li.menu-item
+              a(href="#") Как могу помочь?
+            li.menu-item
+              a(href="#") Отчеты
+            li.menu-item
+              a(href="#") Наши ветераны
+            li.menu-item
+              a(href="#") Новости
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__btns
+          .btn__wrap
+            a.btn.btn--red(href="#") Осуществить мечту ветерана
+
+      // /.container
+    // /.header__wrap

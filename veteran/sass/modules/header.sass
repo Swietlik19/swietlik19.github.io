@@ -1,0 +1,134 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  padding: 6px 0 21px
+  z-index: 500
+  &.fixed
+    box-shadow: 0 5px 10px rgba($accent2, 0.3)
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+
+  .burger
+    display: none
+
+  .logo
+    display: block
+    text-decoration: none
+    width: 164px
+    height: 61px
+    &__wrap
+      margin-right: 15px
+
+  &__menu
+    padding-top: 30px
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    & > li
+      position: relative
+      margin: 0 10px
+      & > a
+        text-decoration: none
+        outline: none
+        position: relative
+        display: block
+        font-size: 15px
+        transition: 0.3s
+        &::after
+          content: ''
+          position: absolute
+          bottom: -2px
+          left: 0
+
+          width: 100%
+          height: 1px
+          background-color: #000
+          border-radius: 1.5px
+          transform: scale(0)
+          opacity: 0
+          transition: 0.3s
+        &:hover
+          color: $accent2
+          &::after
+            background-color: $accent2
+            transform: scale(1)
+            opacity: 1
+
+  &__btns
+    margin-left: 10px
+    padding-top: 15px
+
+
+  @media screen and (max-width: 1070px)
+    padding: 6px 0 6px
+    &__wrap
+      align-items: center
+    .burger
+      display: flex
+      margin-right: 10px
+    .logo
+      &__wrap
+        margin-right: auto
+    &__menu
+      display: none
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      height: calc(100vh - 73px)
+      padding-top: 0
+      overflow: auto
+      z-index: 500
+      background: #fff
+      transition: 0.3s
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba($accent2, 0.1)
+        z-index: -1
+      .menu
+        flex-direction: column
+        & > li
+          width: 100%
+          margin: 0
+          & > a
+            width: 100%
+            padding: 7px 15px
+            border-bottom: 1px solid rgba($accent2, 0.3)
+            font-size: 16px
+            &::after
+              content: none
+    &__btns
+      height: 100%
+      padding-top: 0
+
+
+  @media screen and (max-width: 575px)
+    .logo
+      width: 134px
+
+  // max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__btns
+      display: none
+
+  // max-width 450px
+
+/* .header */

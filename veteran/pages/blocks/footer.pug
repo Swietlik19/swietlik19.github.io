@@ -1,0 +1,48 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__df
+        .footer__logo
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo-footer.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo-footer.svg" alt="лого")
+
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Как могу помочь?
+            li.menu-item
+              a(href="#") Наши ветераны
+
+          ul.menu
+            li.menu-item
+              a(href="#") Отчеты
+            li.menu-item
+              a(href="#") Новости
+            li.menu-item
+              a(href="#") Контакты
+
+        .footer__contacts
+          .footer__item
+            a.footer__phone(href="tel:+79787876767" rel="nofollow") +7 (978) 787-67-67
+          .footer__item
+            a.footer__mail(href="mailto:info@мечтаветерана.рф" rel="nofollow") info@мечтаветерана.рф
+
+        .footer__btns
+          .btn__wrap
+            a.btn.btn--red(href="#") Осуществить мечту ветерана
+
+          p.socials__title Поделиться ссылкой:
+          +socials
+
+
+      // /.container
+    // /.footer__df
+  // /.footer
+

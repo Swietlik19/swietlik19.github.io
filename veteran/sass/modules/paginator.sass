@@ -8,7 +8,6 @@
   align-items: center
   justify-content: center
   flex-wrap: wrap
-  padding-top: 30px
   ul
     margin: 0
     padding: 0
@@ -26,47 +25,36 @@
         outline: none
       .page-numbers:not(.prev):not(.next)
         position: relative
-        padding-left: 16px
-        padding-right: 16px
-        font-size: 14px
-        font-weight: 400
-        color: #2c2d2d
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 30px
+        height: 30px
+        margin: 0 12px
+        border-radius: 50%
+        text-transform: uppercase
         transition: 0.3s
-        &::before
-          content: ''
-          position: absolute
-          top: -3px
-          left: 0
-          border-radius: 3px
-          width: 100%
-          height: calc(100% + 6px)
-          background: $accent
-          transform: scale(0)
-          transition: 0.5s
-          z-index: -1
         &:not(.current):hover
-          color: #020000
-          &::before
-            transform: scale(1)
+          background-color: lighten($accent2, 30%)
 
         &.current
-          text-decoration: underline
+          color: $accent2
       .prev,
       .next
         display: flex
         align-items: center
         justify-content: center
         width: 30px
-        height: 19px
-        background-color: #f5f5f4
+        height: 30px
+        border-radius: 50%
         transition: 0.3s
         &::after
           content: ''
-          width: 16px
-          height: 11px
-          background: transparent url('../img/svg/orig/arrow.svg')
+          width: 9px
+          height: 15px
+          background: transparent url('../img/svg/icon-arrow.svg')
         &:hover
-          background-color: $accent
+          background-color: lighten($accent2, 30%)
       .prev
         margin-right: 80px
         &::after
@@ -88,9 +76,18 @@
 
   // max-width 575px
 
-  @media screen and (max-width: 430px)
-    padding-top: 10px
+  @media screen and (max-width: 500px)
+    ul
+      & > li
+        .page-numbers:not(.prev):not(.next)
+          margin: 0
+        .prev
+          margin-right: 10px
+        .next
+          margin-left: 10px
+    &--page
+      padding-bottom: 20px
 
-  // max-width 430px
+  // max-width 500px
 
  /* paginator */

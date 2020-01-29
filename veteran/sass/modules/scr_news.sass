@@ -11,7 +11,7 @@
     width: calc((100% - 60px) / 3)
     height: auto
     margin-right: 30px
-    &:last-of-type
+    &:nth-of-type(3n)
       margin-right: 0
   &__item
     display: flex
@@ -33,7 +33,7 @@
     flex-grow: 1
     padding-top: 33px
     .article
-      h3
+      h2,h3
         margin-top: 0
         margin-bottom: 25px
         font-size: 22px
@@ -48,8 +48,24 @@
     outline: none
     &:hover
       text-decoration: none !important
-      h3
+      h2,h3
         color: $accent2
+  &--page
+    padding-top: 40px
+    padding-bottom: 35px
+    .news__slider
+      margin-top: 30px
+    .news__slide
+      padding-bottom: 34px
+  &--post
+    padding: 0
+    .news__slide
+      padding-bottom: 25px
+      width: 100%
+      &:last-of-type
+        padding-bottom: 0
+    .news__img
+      height: 206px
 
 
   @media screen and (max-width: 1070px)
@@ -77,6 +93,16 @@
 
   // max-width 850px
 
+  @media screen and (max-width: 800px)
+    &--post
+      display: flex
+      justify-content: space-between
+      padding-top: 20px
+      .news__slide
+        width: calc(50% - 15px)
+
+  // max-width 800px
+
   @media screen and (max-width: 767px)
     padding-top: 40px
     &__slider
@@ -92,6 +118,15 @@
       margin-right: 0
     &__links
       margin-top: 50px
+    &--page
+      .news__slider .swiper-wrapper
+        flex-wrap: wrap
+        justify-content: space-between
+      .news__slide
+        width: calc(50% - 5px)
+        height: auto
+    &--post
+      padding-top: 20px
 
   // max-width 767px
 
@@ -102,5 +137,20 @@
           font-size: 15px
 
   // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &--page
+      padding-top: 28px
+      .news__slider
+        margin-top: 20px
+      .news__slide
+        width: 100%
+        padding-bottom: 20px
+    &--post
+      flex-direction: column
+      .news__slide
+        width: 100%
+
+  // max-width 500px
 
 /* news */

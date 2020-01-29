@@ -127,22 +127,22 @@
     $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
   }
 
-  if (window.matchMedia('(max-width: 767px)').matches) {
-    var projectsSlider = new Swiper('#veterans__slider', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      watchSlidesProgress: true,
-      loop: true,
-      pagination: {
-        el: '#veterans__slider .swiper-dots',
-      },
-      breakpoints: {
-        650: {
-          slidesPerView: 2,
-        },
-      },
-    });
-  }
+  // if (window.matchMedia('(max-width: 767px)').matches) {
+  //   var projectsSlider = new Swiper('#veterans__slider', {
+  //     slidesPerView: 1,
+  //     spaceBetween: 20,
+  //     watchSlidesProgress: true,
+  //     loop: true,
+  //     pagination: {
+  //       el: '#veterans__slider .swiper-dots',
+  //     },
+  //     breakpoints: {
+  //       650: {
+  //         slidesPerView: 2,
+  //       },
+  //     },
+  //   });
+  // }
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     var partnersSlider = new Swiper('#news__slider', {
@@ -160,6 +160,67 @@
       },
     });
   }
+
+  var veteranItemLifeSlider = new Swiper('#veteran-item__life-slider', {
+    slidesPerView: 1,
+    watchSlidesProgress: true,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.veteran-item__life-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.veteran-item__life-btns .swiper-button-next',
+      prevEl: '.veteran-item__life-btns .swiper-button-prev',
+    },
+  });
+
+  var veteranItemLifeSlider = new Swiper('.veteran-item__photo-slider', {
+    slidesPerView: 2,
+    watchSlidesProgress: true,
+    spaceBetween: 10,
+    loop: true,
+    pagination: {
+      el: '.veteran-item__photo-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.veteran-item__photo-btns .swiper-button-next',
+      prevEl: '.veteran-item__photo-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      991: {
+        spaceBetween: 30,
+      },
+      767: {
+        spaceBetween: 20,
+      },
+      575: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var veteranGalleryThumbs = new Swiper('.veteran-item__live-thumbs', {
+    spaceBetween: 9,
+    slidesPerView: 2,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      767: {
+        direction: 'vertical',
+      },
+      450: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var veteranGallery = new Swiper('.veteran-item__live-gallery', {
+    spaceBetween: 10,
+    thumbs: {
+      swiper: veteranGalleryThumbs
+    }
+  });
 
 
   $(window).resize(function() {

@@ -189,9 +189,11 @@
     },
     breakpoints: {
       991: {
+        slidesPerView: 3,
         spaceBetween: 30,
       },
       767: {
+        slidesPerView: 3,
         spaceBetween: 20,
       },
       575: {
@@ -207,6 +209,7 @@
     watchSlidesProgress: true,
     breakpoints: {
       767: {
+        slidesPerView: 3,
         direction: 'vertical',
       },
       450: {

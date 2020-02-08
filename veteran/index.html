@@ -58,7 +58,7 @@
             </ul>
           </div>
           <div class="header__btns">
-            <div class="btn__wrap"><a class="btn btn--red" href="#">Осуществить мечту ветерана</a></div>
+            <div class="btn__wrap"><a class="btn btn--red open-modal" href="#modal__realize">Осуществить мечту ветерана</a></div>
           </div>
         </div>
         <!-- /.container-->
@@ -77,6 +77,7 @@
             <li class="mmenu__item"><a class="mmenu__link" href="post.html">Статья</a></li>
             <li class="mmenu__item"><a class="mmenu__link" href="reports.html">Отчеты</a></li>
             <li class="mmenu__item"><a class="mmenu__link" href="veteran-item.html">Ветеран</a></li>
+            <li class="mmenu__item"><a class="mmenu__link" href="veterans.html">Ветераны</a></li>
           </ul>
         </div>
       </section>
@@ -106,7 +107,7 @@
             <div class="footer__item"><a class="footer__mail" href="mailto:info@мечтаветерана.рф" rel="nofollow">info@мечтаветерана.рф</a></div>
           </div>
           <div class="footer__btns">
-            <div class="btn__wrap"><a class="btn btn--red" href="#">Осуществить мечту ветерана</a></div>
+            <div class="btn__wrap"><a class="btn btn--red open-modal" href="#modal__realize">Осуществить мечту ветерана</a></div>
             <p class="socials__title">Поделиться ссылкой:</p>
             <section class="socials" id="socials"><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-vk"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-odnoklassniki"></i></a></section>
             <!-- /.socials-->
@@ -133,5 +134,23 @@
     <script src="libs/swiper/swiper.js"></script>
     <script src="libs/rangeSlider/js/ion.rangeSlider.min.js"></script>
     <script src="js/common.js"></script>
+    <script>
+      (function($)
+      {
+        $('.veterans__scale-range').each(function()
+        {
+          var xMin = $(this).siblings('.veterans__scale-min').val();
+          var xMax = $(this).siblings('.veterans__scale-max').val();
+          var xCurr = $(this).siblings('.veterans__scale-curr').val();
+          $('#' + $(this).attr('id')).ionRangeSlider(
+          {
+            min: xMin,
+            max: xMax,
+            from: xCurr,
+            block: true,
+          });
+        });
+      })(jQuery);
+    </script>
   </body>
 </html>

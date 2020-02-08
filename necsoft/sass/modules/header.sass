@@ -1,0 +1,427 @@
+.header
+  position: relative
+  background-color: #ffffff
+  box-shadow: 0px 3px 5px 0px rgba(7,69,125,0.15)
+  position: fixed
+  width: 100%
+  z-index: 500
+  &.fixed
+    .header__middle
+      display: none
+    .header__catalog
+      .menu
+        & > li
+          & > a
+            padding: 13px 0
+
+  .burger
+    display: none
+
+  &__top
+    padding: 10px 0
+    background-color: $accent
+    .container
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  .logo
+    display: block
+    width: 195px
+    height: 48px
+    text-decoration: none
+    &__wrap
+      margin-right: 80px
+      &.mobile
+        display: none
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &__menu
+    flex-grow: 1
+    .menu
+      & > li
+        margin-right: 20px
+        &:last-of-type
+          margin-right: 0
+        & > a
+          position: relative
+          text-decoration: none
+          outline: none
+          display: block
+          font-size: 14px
+          line-height: 1.2
+          color: #f7f9fb
+          &::after
+            content: ''
+            position: absolute
+            bottom: -2px
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: #f7f9fb
+            transition: 0.3s
+            transform: scale(0)
+          &:hover
+            &::after
+              transform: scale(1)
+
+  &__right
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-left: 40px
+
+  .search__form
+    margin-left: 31px
+
+  &__middle
+    padding: 17px 0 14px
+    border: 1px solid #f7f9fb
+    .container
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+  &__address
+    margin-right: 20px
+    font-size: 13px
+    line-height: 1.2
+    color: #363b40
+
+  &__contacts
+    margin-left: auto
+    margin-right: auto
+    padding: 0 10px
+  &__phone
+    display: block
+    outline: none
+    text-decoration: none
+    margin-bottom: 5px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 600
+    color: $accent
+    transition: 0.3s
+    &:hover
+      color: $accent2
+    &.mobile
+      display: none
+  &__mail
+    text-decoration: none
+    outline: none
+    display: block
+    font-size: 13px
+    line-height: 1.2
+    color: #363b40
+    transition: 0.3s
+    &:hover
+      color: $accent
+    &.mobile
+      display: none
+
+  &__partner
+    display: flex
+    align-items: center
+    &-text
+      margin-right: 12px
+      font-size: 13px
+      line-height: 1.461538461538462 /* 19 / 13 */
+    &-img
+      width: 65px
+      height: 29px
+
+  &__catalog
+    &--mobile
+      display: none
+    .menu
+      position: relative
+      & > li
+        transition: 0.3s
+        & > a
+          position: relative
+          display: flex
+          align-items: center
+          padding: 23px 0
+          text-decoration: none
+          outline: none
+          font-size: 14px
+          line-height: 1.2
+          font-weight: 500
+          text-transform: uppercase
+          // z-index: 1
+          &::before
+            content: ''
+            position: absolute
+            left: -15px
+            top: 0
+            width: calc(100% + 30px)
+            height: 100%
+            box-shadow: 0px 3px 5px 0px rgba(7,69,125,0.34)
+            background-color: #eef5fa
+            opacity: 0
+            transition: 0.3s
+            z-index: -1
+          &:hover,
+          &.active
+            &::before
+              opacity: 1
+
+        .arrow
+          position: relative
+          width: 6px
+          height: 6px
+          margin-left: 10px
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 3px)
+            left: calc(50% - 3px)
+            width: 6px
+            height: 6px
+            border-bottom: 1px solid #0495ff
+            border-left: 1px solid #0495ff
+            transform: rotate(-45deg)
+
+        .sub-menu__wrap
+          position: absolute
+          top: 100%
+          left: -15px
+          // display: flex
+          // justify-content: space-between
+          width: calc(100% + 30px)
+          max-height: 0
+          overflow: hidden
+
+          box-shadow: 0px 3px 5px 0px rgba(7,69,125,0.34)
+          background-color: #eef5fa
+          columns: 3
+          transition: opacity 0.3s
+          &.active
+            padding: 20px 40px 23px 40px
+            max-height: 10000px
+            opacity: 1
+            overflow: auto
+          & > .sub-menu
+            margin-bottom: 44px
+            &:last-of-type
+              margin-bottom: 0
+            & > li
+              & > a
+                position: relative
+                font-size: 16px
+                line-height: 1.25 /* 20 / 16 */
+                font-weight: 600
+                text-decoration: none
+                outline: none
+                color: $accent
+                display: inline-block
+                margin-bottom: 10x
+              & > .sub-menu
+                & > li
+                  & > a
+                    font-size: 14px
+                    line-height: 1.2
+                    font-weight: 400
+                    color: #363b40
+                    transition: 0.3s
+                    &:hover
+                      color: #0495ff
+
+
+  @media screen and (max-width: 1170px)
+    &__catalog
+      // display: none
+      .menu
+        & > li
+          & > a
+            padding: 15px 0
+            font-size: 13px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 1070px)
+    &__right
+      margin-left: 0
+      .btn
+        display: none
+    .logo
+      &__wrap
+        margin-right: 30px
+    &__catalog
+      .menu
+        & > li
+          & > a
+            padding: 10px 0
+            font-size: 12px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__catalog
+      position: static
+      width: 100%
+      background: #fff
+      z-index: 500
+      & > .menu
+        align-items: flex-start
+        justify-content: flex-start
+        flex-direction: column
+        padding: 10px 0
+        & > li
+          padding: 0
+          & > a
+            padding: 10px 0
+            justify-content: space-between
+            &::before
+              content: none
+          .arrow
+            width: 20px
+            height: 20px
+          .sub-menu__wrap
+            position: static
+            columns: 1
+            width: 100%
+            background: none
+            &.active
+              transition: max-height 1s
+              padding: 20px 20px 23px 20px
+              box-shadow: none
+
+      &--desktop
+        display: none
+      &--mobile
+        display: block
+    .logo
+      width: 155px
+      height: 44px
+      &__wrap
+        margin-right: 20px
+
+    &__menu
+      & > li
+        & > a
+          &:hover
+            background: none
+
+    &__menu
+      max-height: calc(100vh - 64px)
+      overflow: auto
+      .menu
+        flex-direction: column
+        & > li
+          width: 100%
+          margin-right: 0
+          & > a
+            color: $accent
+            text-transform: uppercase
+            padding: 12px 10px
+            border-bottom: 1px solid rgba($accent, 0.1)
+            transition: 0.3s
+            &::after
+              content: none
+            &:hover
+              background-color: rgba($accent, 0.5)
+              color: #fff
+          &:last-of-type
+            & > a
+              border-bottom: none
+    &.fixed
+      .header__middle
+        display: block
+
+    .burger
+      display: flex
+      margin-right: 24px
+
+    &__address
+      display: none
+    &__contacts
+      margin-right: 0
+    &__top
+      position: absolute
+      top: 100%
+      left: 0
+      width: 90%
+      max-width: 400px
+      padding: 0
+      display: none
+      z-index: 1000
+      background: #fff
+      box-shadow: 0 5px 10px rgba($accent, 0.2)
+      .search__form
+        display: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 700px)
+    &__partner
+      display: none
+    &__contacts
+      padding-right: 0
+
+  // max-width 700px
+
+  @media screen and (max-width: 500px)
+    &__contacts
+      display: flex
+      align-items: center
+      &-item
+        &:first-of-type
+          order: 2
+          margin-left: 21px
+    &__phone
+      margin-bottom: 0
+      &.desktop
+        display: none
+      &.mobile
+        display: block
+    &__mail
+      &.desktop
+        display: none
+      &.mobile
+        display: block
+    &__phone,
+    &__mail
+      .fa
+        display: block
+        font-size: 16px
+        color: #00487c
+    .logo
+      width: 94px
+      height: 31px
+      &__wrap
+        &.mobile
+          display: block
+        &.desktop
+          display: none
+
+  // max-width 500px
+
+  @media screen and (max-width: 450px)
+    &__top
+      width: 100%
+
+  // max-width 400px
+
+  @media screen and (max-width: 400px)
+    &__middle
+      padding-top: 22px
+      padding-bottom: 21px
+
+  // max-width 400px
+
+/* .header */

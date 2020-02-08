@@ -1,0 +1,339 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  &__df
+    display: flex
+    justify-content: center
+    margin-bottom: 29px
+    .form__item
+      margin-right: 30px
+      &:last-of-type
+        margin-right: 0
+    &--bottom
+      .form__item
+        width: 25%
+        margin-right: 24px
+        &:last-of-type
+          width: 18.39622641509434%
+          margin-right: 0
+
+  &__desc
+    margin-bottom: 25px
+    font-size: 14px
+    line-height: 1.428571428571429 /* 20 / 14 */
+    color: #000000
+    text-align: center
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 100%
+      height: 49px
+      padding-left: 44px
+      background-color: #eef5fa
+      border: 1.0px solid #e3edf4
+      border-radius: 3.0px
+
+      font-size: 16px
+      line-height: 49px
+      font-weight: 400
+      color: $accent
+
+      @include placeholder($accent, 14px)
+
+      &:focus
+        @include placeholder(#fff, 14px)
+
+      &:hover
+        border-color: $accent
+
+    &--icon
+      position: relative
+      textarea
+        padding: 13px 10px 15px 48px
+        line-height: 1.2
+      .input-icon
+        position: absolute
+        top: calc(50% - 7px)
+        left: 14px
+        width: 15px
+        height: 15px
+        .icon
+          display: block
+          width: 100%
+          height: 100%
+      label
+        .input-icon
+          top: 15px
+
+    textarea
+      height: 99px
+
+  input[type="submit"]
+    opacity: 0
+    display: inline-block
+
+  .btn--red span.front,
+  .btn--red span.back,
+  .btn--red span.hidden
+    width: 100%
+    min-width: 0
+
+  .your-file
+    display: block
+    text-align: center
+    input
+      display: none
+    label
+      display: inline-block
+      padding: 4px 25px 18px 0
+      font-size: 13px
+      line-height: 16px
+      font-weight: 400
+      color: #363b40
+      background: transparent url('../img/svg/orig/form-clip.svg') no-repeat right 3px
+      background-size: 17px 19px
+      outline: none
+      cursor: pointer
+
+  .checkbox
+    display: inline-block
+    label
+      cursor: pointer
+      & > span
+        position: relative
+        display: block
+        padding-left: 30px
+        font-size: 14px
+        line-height: 1.285714285714286 /* 18 / 14 */
+        transition: 0.3s
+
+        .accept__icon
+          position: absolute
+          top: -2px
+          left: 0
+
+          display: block
+          width: 19px
+          height: 19px
+          background-color: #f7f9fb
+          border: 1.0px solid $accent
+          border-radius: 3.0px
+          transition: 0.3s
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 3px)
+            left: calc(50% - 4px)
+
+            display: block
+            width: 8px
+            height: 6px
+            background: transparent url('../img/svg/tick.svg') no-repeat center center
+            background-size: contain
+            opacity: 0
+            transition: 0.3s
+      &:hover
+        & > span
+          color: $accent
+
+      input
+        display: none
+
+      input:checked + span
+        .accept__icon
+          background-color: $accent
+          &::before
+            opacity: 1
+
+  .accept
+    display: block
+    text-align: center
+
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      & > span
+        position: relative
+        display: inline-block
+        transition: 0.3s
+
+        font-size: 12px
+        line-height: 1.2
+        font-weight: 500
+        color: #000000
+
+        .accept__icon
+          border: 1.0px solid $accent2
+
+      &:hover
+        & > span
+          color: $accent2
+
+      input:checked + span
+        .accept__icon
+          background-color: $accent2
+
+  &--search
+    input
+      width: 197px
+      height: 36px
+      padding-left: 12px
+      padding-right: 24px
+      background-color: rgba(4,149,255,0.2)
+      border-radius: 6.0px
+      font-size: 16px
+      color: #fff
+      font-weight: 500
+      border: 2px solid transparent
+      transition: 0.3s
+      &:focus
+        background-color: #fff
+        color: rgba(4,149,255,0.8)
+        & + button
+          .icon
+            fill: rgba(4,149,255,0.8)
+    .search-wrap
+      position: relative
+      button
+        position: absolute
+        top: calc(50% - 7px)
+        right: 10px
+
+        display: block
+        outline: none
+        background: none
+        border: none
+        width: 14px
+        height: 14px
+        border-color: rgba(4,149,255,0.2)
+        z-index: 1
+        cursor: pointer
+        transition: 0.3s
+        .icon
+          display: block
+          width: 100%
+          height: 100%
+          fill: #fff
+          transition: 0.3s
+
+  &--general
+    .text-input
+      margin-bottom: 21px
+    .accept
+      margin-top: 27px
+      label
+        text-align: left
+
+  &__col
+    width: calc((100% - 25px) / 2)
+    margin-right: 25px
+    &:last-of-type
+      margin-right: 0
+    .form__item
+      margin-right: 0
+
+  &--project
+    .form__df
+      margin-bottom: 18px
+      flex-wrap: wrap
+    .form__item
+      margin-bottom: 21px
+      &:last-of-type
+        margin-bottom: 0
+      &--submit
+        text-align: center
+        .btn__wrap
+          min-width: 270px
+      textarea
+        height: 120px
+
+
+  @media screen and (max-width: 1170px)
+    &--search
+      input
+        width: 157px
+
+  //   max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__df
+      &--bottom
+        .form__item
+          width: 27%
+          margin-right: 10px
+
+  //   max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__df
+      &--top
+        flex-direction: column
+        .form__item
+          width: 100%
+          margin-right: 0
+          margin-bottom: 8px
+          &:last-of-type
+            margin-bottom: 0
+      &--bottom
+        flex-wrap: wrap
+        margin-bottom: 20px
+        .form__item
+          width: calc(50% - 5px)
+          margin-right: 10px
+          margin-bottom: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+          &:last-of-type
+            width: calc(50% - 5px)
+
+  //   max-width 991px
+
+  @media screen and (max-width: 500px)
+    &__df
+      &--top
+        margin-bottom: 20px
+        .form__item
+          margin-bottom: 15px
+      &--bottom
+        margin-bottom: 10px
+        .form__item
+          width: 100%
+          margin-right: 0
+          margin-bottom: 12px
+          &:last-of-type
+            width: 100%
+    .accept
+      label
+        text-align: left
+    &--project
+      .form__df
+        flex-direction: column
+      .accept label
+        text-align: center
+    &__col
+      width: 100%
+      margin-bottom: 20px
+      &:last-of-type
+        margin-bottom: 0
+
+  //   max-width 500px
+
+ /* form */

@@ -1,0 +1,322 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__menu
+          ul.menu
+            li.menu__item
+              a(href="#") О компании
+            li.menu__item
+              a(href="#") Проекты
+            li.menu__item
+              a(href="#") Акции и скидки
+            li.menu__item
+              a(href="#") Доставка и оплата
+            li.menu__item
+              a(href="#") Вопрос ответ
+            li.menu__item
+              a(href="#") Блог
+            li.menu__item
+              a(href="#") Контакты
+
+          .header__catalog.header__catalog--mobile
+            ul.menu
+              li.menu-item.menu-item-has-children
+                a(href="#") Программы 1С
+                  span.arrow
+                .sub-menu__wrap
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") Типовые решения1С
+                      ul.sub-menu
+                        li.menu-item
+                          a(href="#") Бухгалтерский налоговый учет
+                        li.menu-item
+                          a(href="#") Кадровый учет
+                        li.menu-item
+                          a(href="#") Документооборот
+                        li.menu-item
+                          a(href="#") Торговый учет и продажи
+                        li.menu-item
+                          a(href="#") Решения для комплексной автоматизации
+
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") Автоматизация бизнес-процессов
+                      ul.sub-menu
+                        li.menu-item
+                          a(href="#") Финансы управленческий учет
+                        li.menu-item
+                          a(href="#") Бухгалтерия и налоги
+                        li.menu-item
+                          a(href="#") Транспортная логистика
+                        li.menu-item
+                          a(href="#") Розничная торговля
+                        li.menu-item
+                          a(href="#") Зарплата и кадровый учет
+                        li.menu-item
+                          a(href="#") Поставки и запасы
+
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") Отраслевые решения1С
+                      ul.sub-menu
+                        li.menu-item
+                          a(href="#") Автозапчасти
+                        li.menu-item
+                          a(href="#") Аптека
+                        li.menu-item
+                          a(href="#") Аптечная сеть
+                        li.menu-item
+                          a(href="#") Бытовая техника и средства связи
+                        li.menu-item
+                          a(href="#") Бюджетные организации
+                        li.menu-item
+                          a(href="#") ЖКХ и ТСЖ
+                        li.menu-item
+                          a(href="#") ЗАГС
+                        li.menu-item
+                          a(href="#") Здоровье и отдых
+                        li.menu-item
+                          a(href="#") Издательсво и полиграфия
+                        li.menu-item
+                          a(href="#") Кадровое агентство
+                        li.menu-item
+                          a(href="#") Книжный магазин
+                        li.menu-item
+                          a(href="#") Логистика
+                        li.menu-item
+                          a(href="#") Медицина
+                        li.menu-item
+                          a(href="#") Образование
+                        li.menu-item
+                          a(href="#") Одежда и обувь
+                        li.menu-item
+                          a(href="#") Оптика
+                        li.menu-item
+                          a(href="#") Пищевая промышленность
+                        li.menu-item
+                          a(href="#") Сельское и лесное хозяйство
+                        li.menu-item
+                          a(href="#") Строительство и недвижимость
+                        li.menu-item
+                          a(href="#") Строительные и отделочные материалы
+                        li.menu-item
+                          a(href="#") Транспорт
+                        li.menu-item
+                          a(href="#") Управление сервисным центром
+                        li.menu-item
+                          a(href="#") Фотоуслуги
+                        li.menu-item
+                          a(href="#") Ювелирный бизнес
+                        li.menu-item
+                          a(href="#") CRM
+                        li.menu-item
+                          a(href="#") EPR решения
+                        li.menu-item
+                          a(href="#") GPS/ГОЛОНАСС мониторинг
+                        li.menu-item
+                          a(href="#") ITIL решения
+
+              li.menu-item.menu-item-has-children
+                a(href="#") Лицензии 1С
+                  span.arrow
+              li.menu-item.menu-item-has-children
+                a(href="#") Аренда 1С
+                  span.arrow
+              li.menu-item.menu-item-has-children
+                a(href="#") Торговое оборудование
+              li.menu-item
+                a(href="#") Услуги и сопровождение
+              li.menu-item
+                a(href="#") Сервисы 1С
+              li.menu-item
+                a(href="#") Мобильные решения
+
+        .header__right
+          a.btn.btn--transparent(href="#") Демо-доступ
+
+          .search__form
+            .form.form--search
+              form.wpcf7-form
+                .search-wrap
+                  input(type='search')
+                  button(type='submit')
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#form-search')
+
+      // /.container
+    // /.header__top
+
+    .header__middle
+      .container
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+            span.line2
+
+        .logo__wrap.desktop
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo-colored.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo-colored.svg" alt="лого")
+
+        .logo__wrap.mobile
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo-mobile.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo-mobile.svg" alt="лого")
+
+        .header__address
+          p г. Симферополь, ул. Гагарина, 14а, корп.«В», оф. 232
+            br
+            |  Представительства в городах Краснодар и Севастополь
+
+        .header__contacts
+          .header__contacts-item
+            a.header__phone.desktop(href="tel:+79787277424" rel="nofollow") +7 (978) 72-77-424
+            a.header__phone.mobile(href="tel:+79787277424" rel="nofollow")
+              i.fa.fa-phone
+          .header__contacts-item
+            a.header__mail.desktop(href="mailto:sale@necsoft.ru" rel="nofollow") sale@necsoft.ru
+            a.header__mail.mobile(href="mailto:sale@necsoft.ru" rel="nofollow")
+              i.fa.fa-envelope
+
+        .header__partner
+          .header__partner-text
+            p Официальный
+              br
+              |  статус партнера
+
+          .header__partner-img
+            noscript
+              img.lazy(src="img/partner-img.png" alt="" width="84" height="36")
+            img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/partner-img.png" alt="" width="84" height="36")
+
+
+      // /.container
+    // /.header__middle
+
+    .header__bottom
+      .container
+        .header__catalog.header__catalog--desktop
+          ul.menu
+            li.menu-item.menu-item-has-children
+              a(href="#") Программы 1С
+                span.arrow
+              .sub-menu__wrap
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Типовые решения1С
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Бухгалтерский налоговый учет
+                      li.menu-item
+                        a(href="#") Кадровый учет
+                      li.menu-item
+                        a(href="#") Документооборот
+                      li.menu-item
+                        a(href="#") Торговый учет и продажи
+                      li.menu-item
+                        a(href="#") Решения для комплексной автоматизации
+
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Автоматизация бизнес-процессов
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Финансы управленческий учет
+                      li.menu-item
+                        a(href="#") Бухгалтерия и налоги
+                      li.menu-item
+                        a(href="#") Транспортная логистика
+                      li.menu-item
+                        a(href="#") Розничная торговля
+                      li.menu-item
+                        a(href="#") Зарплата и кадровый учет
+                      li.menu-item
+                        a(href="#") Поставки и запасы
+
+                ul.sub-menu
+                  li.menu-item
+                    a(href="#") Отраслевые решения1С
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Автозапчасти
+                      li.menu-item
+                        a(href="#") Аптека
+                      li.menu-item
+                        a(href="#") Аптечная сеть
+                      li.menu-item
+                        a(href="#") Бытовая техника и средства связи
+                      li.menu-item
+                        a(href="#") Бюджетные организации
+                      li.menu-item
+                        a(href="#") ЖКХ и ТСЖ
+                      li.menu-item
+                        a(href="#") ЗАГС
+                      li.menu-item
+                        a(href="#") Здоровье и отдых
+                      li.menu-item
+                        a(href="#") Издательсво и полиграфия
+                      li.menu-item
+                        a(href="#") Кадровое агентство
+                      li.menu-item
+                        a(href="#") Книжный магазин
+                      li.menu-item
+                        a(href="#") Логистика
+                      li.menu-item
+                        a(href="#") Медицина
+                      li.menu-item
+                        a(href="#") Образование
+                      li.menu-item
+                        a(href="#") Одежда и обувь
+                      li.menu-item
+                        a(href="#") Оптика
+                      li.menu-item
+                        a(href="#") Пищевая промышленность
+                      li.menu-item
+                        a(href="#") Сельское и лесное хозяйство
+                      li.menu-item
+                        a(href="#") Строительство и недвижимость
+                      li.menu-item
+                        a(href="#") Строительные и отделочные материалы
+                      li.menu-item
+                        a(href="#") Транспорт
+                      li.menu-item
+                        a(href="#") Управление сервисным центром
+                      li.menu-item
+                        a(href="#") Фотоуслуги
+                      li.menu-item
+                        a(href="#") Ювелирный бизнес
+                      li.menu-item
+                        a(href="#") CRM
+                      li.menu-item
+                        a(href="#") EPR решения
+                      li.menu-item
+                        a(href="#") GPS/ГОЛОНАСС мониторинг
+                      li.menu-item
+                        a(href="#") ITIL решения
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Лицензии 1С
+                span.arrow
+            li.menu-item.menu-item-has-children
+              a(href="#") Аренда 1С
+                span.arrow
+            li.menu-item.menu-item-has-children
+              a(href="#") Торговое оборудование
+            li.menu-item
+              a(href="#") Услуги и сопровождение
+            li.menu-item
+              a(href="#") Сервисы 1С
+            li.menu-item
+              a(href="#") Мобильные решения
+
+
+      // /.container
+    // /.header__bottom

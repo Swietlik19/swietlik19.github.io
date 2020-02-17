@@ -1,0 +1,64 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .header__phones
+          .header__phone
+            a.mobile(href="tel:+79167034040" rel="nofollow")
+              span.btn.btn--circle
+                i.fa.fa-phone
+            a.desktop(href="tel:+79167034040" rel="nofollow") +7 916
+              strong  703 40 40
+              small  (Москва)
+          .header__phone
+            a.desktop(href="tel:+79781093015" rel="nofollow") +7 978
+              strong  109 30 15
+              small  (Симферополь)
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Врач косметолог, трихолог
+
+        .header__burger
+          button.burger
+            span.burger__wrap
+              span.line
+
+      // /.header__top
+    // /.container
+
+    .header__menu
+      .container
+        .header__menu-wrap
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo-menu.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo-menu.svg" alt="лого")
+
+          ul.menu
+            li.menu-item
+              a(href="#") Какие проблемы решаю
+            li.menu-item
+              a(href="#") Обо мне
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Кейсы
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Контакты
+
+
+        // /.header__menu-wrap
+      // /.container
+    // /.header__menu

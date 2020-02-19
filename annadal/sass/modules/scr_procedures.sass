@@ -1,0 +1,200 @@
+.procedures
+  position: relative
+  padding-bottom: 50px
+  &__inner
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: -26px
+      left: -110px
+      display: block
+      width: 1506px
+      height: 1267px
+      background: transparent url('../img/decor2.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+
+  .title
+    padding-bottom: 60px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+  &__item
+    position: relative
+    width: 20%
+    min-height: 260px
+    background-color: #ffffff
+    border: 1.0px solid #49c0bc
+    &:hover
+      .procedures__content
+        padding: 27px 15px 10px 20px
+        &::before
+          opacity: 1
+      .procedures__title
+        margin-bottom: 21px
+        font-size: 24px
+        line-height: 1.2
+        color: #fff
+        small
+          font-size: 24px
+      .procedures__hidden
+        max-height: 1000px
+        transition: 0.1s 0.3s
+        opacity: 1
+    &:last-of-type
+      border: none
+      padding: 26px 0 22px 22px
+      background: none
+
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0.2
+  &__content
+    position: relative
+    padding: 160px 24px 20px
+    height: 100%
+    z-index: 1
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      box-shadow: 0px 12px 18px 0px rgba(1,141,137,0.34)
+      background-image: $grad
+      z-index: -1
+      opacity: 0
+      transition: 0.3s
+  &__title
+    font-family: 'Oranienbaum', serif
+    font-size: 30px
+    line-height: 1.266666666666667 /* 38 / 30 */
+    font-weight: 400
+    color: $accent
+    transition: 0.3s
+  &__hidden
+    font-size: 14px
+    line-height: 1.428571428571429 /* 20 / 14 */
+    color: #ffffff
+    max-height: 0px
+    overflow: hidden
+    transition: opacity 0.1s max-height 0s
+    opacity: 0
+  &__last
+    position: relative
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 600
+    color: #ffffff
+    padding: 47px 15px 15px 23px
+    height: 100%
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $accent
+      z-index: -1
+
+
+  @media screen and (max-width: 1170px)
+    &__content
+      padding: 160px 14px 20px
+    &__title
+      font-size: 25px
+    &__item
+      &:hover
+        .procedures__title
+          margin-bottom: 18px
+          font-size: 20px
+          small
+            font-size: 20px
+        .procedures__content
+          padding: 27px 15px 10px 10px
+      &:last-of-type
+        padding: 16px 0 22px 12px
+    &__hidden
+      font-size: 13px
+    &__last
+      font-size: 14px
+      padding: 27px 15px 15px 13px
+
+  // max-width 1170px
+
+  // @media screen and (max-width: 1070px)
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    padding-bottom: 10px
+    .title
+      br
+        display: none
+    &__item
+      width: 33.3%
+      min-height: 200px
+      &:hover
+        .procedures__content
+          padding-top: 15px
+        .procedures__title
+          margin-bottom: 8px
+      &:last-of-type
+        width: 100%
+        min-height: 110px
+    &__content
+      padding: 100px 14px 20px
+    &__last
+      text-align: center
+      br
+        display: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__item
+      &:hover
+        .procedures__hidden
+          color: #fff
+    &__hidden
+      max-height: 1000px
+      color: $accent
+      opacity: 1
+      transition: 0.3s
+    &__content
+      padding: 15px 15px 10px 10px
+
+  // max-width 767px
+
+  @media screen and (max-width: 630px)
+    &__item
+      width: 50%
+      min-height: 170px
+      &:last-of-type
+        width: 50%
+    &__content
+      padding: 15px 15px 20px 10px
+
+  // max-width 630px
+
+  @media screen and (max-width: 450px)
+    .title
+      padding-bottom: 40px
+    &__title
+      font-size: 22px
+
+  // max-width 450px
+
+/* procedures */

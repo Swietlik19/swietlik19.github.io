@@ -1,30 +1,49 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
+mixin modal__signup()
+  section.modal.modal__signup(id="modal__signup")
     .modal__content
       button.close
 
       .form.wpcf7
-        form.wpcf7-form
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-name.text-input
-              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+        .form__wrap
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+          p.form__title Записаться на приём
 
-          .form__item
-            span.wpcf7-form-control-wrap.accept
-              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
-                span.wpcf7-list-item
-                  label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
-                      i.accept__icon
+          form.wpcf7-form
+            .form__item
+              span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-user")
 
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
+            .form__item
+              span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-phone")
+
+            .form__item
+              span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-mail")
+
+            .form__item.form__item--submit
+              .btn__wrap
+                input.wpcf7-form-control.wpcf7-submit.btn.btn--pink.btn--general(type='submit', value='отправить')
+
+            .form__item
+              span.wpcf7-form-control-wrap.accept
+                span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                  span.wpcf7-list-item
+                    label
+                      input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                      span.wpcf7-list-item-label Согласие на обработку персональных данных
+                        i.accept__icon
+
 
       // /. form
     // /. modal__content

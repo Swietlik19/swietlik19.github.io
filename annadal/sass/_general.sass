@@ -31,9 +31,9 @@ body
   display: flex
   flex-direction: column
   min-height: 100vh
+  overflow: hidden
 
   &.disabled
-    overflow: hidden
     max-height: 100vh
 
 .page_wr
@@ -318,11 +318,15 @@ input[type="submit"]
       border-bottom: 2px solid $accent
       border-left: 2px solid $accent
       transform: rotate(-45deg)
-      transition: max-height 0.4s, padding 0.3s 0.2s
+      transition: max-height 0.4s, padding 0.3s 0.2s, transform 0.3s, bottom 0.2s
   &:hover
     color: $accent2
   &.active
     padding-top: 10px
+    span
+      &::after
+        bottom: -20px
+        transform: rotate(135deg)
 
 .decor-wrap
   box-shadow: 5px 9px 20px 0px rgba(131,215,215,0.4)
@@ -362,58 +366,59 @@ input[type="submit"]
 [class$='-copyrights-pane']
   display: none
 
-/* Переопределение стилей slick */
-.slick-slide
-  -webkit-backface-visibility: hidden
-  outline: none
-
-.slick-arrow
+/* Переопределение стилей swiper */
+.swiper-button-prev,
+.swiper-button-next
+  position: relative
+  top: auto
+  left: auto
+  right: auto
+  bottom: auto
   background: none
   border: none
   outline: none
-
-  position: absolute
-  z-index: 100
-  cursor: pointer
-  font-size: 0
-  transition: 0.3s
-
-  display: block
-
-.slick-prev
-
-
-.slick-next
-
-
-.slick-dots
+  width: 39px
+  height: 15px
   margin: 0
-  padding: 0
-  list-style: none
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    margin: 0
+    width: 28px
+    height: 13px
+    transform: translateY(-50%)
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+.swiper-button-prev
+  margin-right: 19px
+  &::after
+    transform: translateY(-50%) rotate(180deg)
+.swiper-button-next
+  margin-left: 19px
 
+.slider__btns
   display: flex
   align-items: center
-  justify-content: center
-  flex-wrap: wrap
-  font-size: 0
-  li
-    button
-      position: relative
-      background: none
-      border: none
-      outline: none
+  justify-content: space-between
 
-      display: block
+.swiper-wrapper *
+  box-sizing: border-box
 
-    &.slick-active
-      button
+.swiper-pagination
+  position: static
 
-    &:not(.slick-active)
-      button
-        cursor: pointer
+.swiper-pagination-bullet
+  background: $accent
+  width: 8px
+  height: 8px
+  margin-right: 11px
+  margin-left: 11px
+  opacity: 1
+  &.swiper-pagination-bullet-active
+    background: $accent2
 
-.slider1
-  position: relative
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)

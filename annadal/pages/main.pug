@@ -23,6 +23,7 @@ html(lang='ru')
     include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/modal.pug
 
     include blocks/scr1.pug
     include blocks/scr_serv.pug
@@ -30,9 +31,14 @@ html(lang='ru')
     include blocks/scr_map.pug
     include blocks/scr_nums.pug
     include blocks/scr_education.pug
+    include blocks/scr_procedures.pug
+    include blocks/scr_lead.pug
+    include blocks/scr_media.pug
+    include blocks/scr_reviews.pug
+    include blocks/scr_contacts.pug
+    include blocks/scr_cases.pug
 
     include blocks/footer.pug
-    include blocks/socials.pug
 
 
   body.main-page
@@ -45,13 +51,20 @@ html(lang='ru')
       +scr_about
       +scr_nums
       +scr_education
-
+      +scr_procedures
+      +scr_cases
+      +scr_lead
+      +scr_media
+      +scr_reviews
+      +scr_contacts
       +scr_map
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
     +footer("div")
+
+    +modal__signup
 
     +styles
     +scripts

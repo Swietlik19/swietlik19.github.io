@@ -1,0 +1,141 @@
+.cases
+  position: relative
+  padding-bottom: 57px
+  &__imgs
+    height: 427px
+  &__wrap
+    margin-top: 27px
+    padding-bottom: 45px
+    padding-left: 15px
+    padding-right: 15px
+  &__cont
+    max-width: 812px
+    margin-left: auto
+    margin-right: auto
+  &__slider
+    position: relative
+    margin-bottom: 27px
+    overflow: hidden
+    &-wrap
+      position: relative
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        box-shadow: 5px 9px 20px 0px rgba(131,215,215,0.4)
+        width: calc(100% + 84px)
+        height: calc(100% - 82px)
+        background-color: #f2fafa
+        z-index: -2
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        box-shadow: 5px 9px 20px 0px rgba(131,215,215,0.4)
+        width: calc(100% + 44px)
+        height: calc(100% - 41px)
+        background-color: #f2fafa
+        z-index: -2
+  &__top
+    display: flex
+    justify-content: space-between
+    padding-top: 37px
+    margin-bottom: 14px
+  &__label
+    font-family: 'Oranienbaum', serif
+    font-size: 30px
+    line-height: 1.266666666666667 /* 38 / 30 */
+    color: $accent
+  .twentytwenty-before-label,
+  .twentytwenty-after-label
+    display: none
+  .twentytwenty-left-arrow,
+  .twentytwenty-right-arrow
+    display: none
+  .twentytwenty-handle
+    box-shadow: 0px 12px 18px 0px rgba(21,147,165,0.34)
+    width: 27px
+    height: 27px
+    background-color: #1693a5
+    background-image: linear-gradient(0.0deg, #028d8a 0%, #49c0bc 100%)
+    border: 3.0px solid #efefee
+  .twentytwenty-horizontal .twentytwenty-handle::before,
+  .twentytwenty-horizontal .twentytwenty-handle::after
+    width: 7px
+    background-color: #028d8a
+    box-shadow: none
+    margin-left: -2.5px
+  .twentytwenty-horizontal .twentytwenty-handle::before,
+    margin-bottom: 13px
+  .twentytwenty-horizontal .twentytwenty-handle::after
+    margin-top: 14px
+
+  &__thumbs
+    overflow: hidden
+    &-img
+      height: 123px
+    &-slide
+      cursor: pointer
+
+  &__bottom
+    padding-top: 39px
+    text-align: center
+    .cases__label
+      margin-bottom: 10px
+  &__desc
+    margin-bottom: 18px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
+  &__btns
+    .btn
+      padding: 17px 68px
+
+
+  @media screen and (max-width: 991px)
+    &__slider
+      &-wrap
+        &::before,
+        &::after
+          content: none
+    &__bottom
+      padding-top: 29px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__imgs
+      height: 300px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__slider
+      margin-bottom: 17px
+    &__imgs
+      height: 250px
+    &__label
+      font-size: 23px
+    &__desc
+      font-size: 15px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding-bottom: 35px
+    &__top
+      padding-top: 27px
+    &__label
+      font-size: 20px
+
+  // max-width 400px
+
+/* cases */

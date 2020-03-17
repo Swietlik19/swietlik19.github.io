@@ -7355,6 +7355,16 @@ img {
   height: 100%;
 }
 
+[data-object-fit-cover-right] {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center right;
+     object-position: center right;
+  font-family: 'object-fit: cover; object-position: center right;';
+  width: 100%;
+  height: 100%;
+}
+
 [data-object-fit-contain] {
   -o-object-fit: contain;
      object-fit: contain;
@@ -7653,6 +7663,106 @@ input[type="submit"].btn--red:hover span.back {
   top: 0;
 }
 
+.btn--blue,
+input[type="submit"].btn--blue {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 313px;
+  padding: 11px 20px 15px;
+  background-color: #0495ff;
+  border: 2px solid #0495ff;
+  border-radius: 8.0px;
+  text-align: center;
+}
+
+.btn--blue:hover,
+input[type="submit"].btn--blue:hover {
+  background-color: #fff;
+}
+
+.btn--blue:hover .btn__text,
+input[type="submit"].btn--blue:hover .btn__text {
+  color: #0495ff;
+}
+
+.btn--blue:hover .btn__bottom,
+input[type="submit"].btn--blue:hover .btn__bottom {
+  color: #0495ff;
+}
+
+.btn--blue:hover .btn__arrows .icon,
+input[type="submit"].btn--blue:hover .btn__arrows .icon {
+  fill: #0495ff;
+}
+
+.btn__text,
+input[type="submit"].btn__text {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn__bottom,
+input[type="submit"].btn__bottom {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn__arrows,
+input[type="submit"].btn__arrows {
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  top: calc(50% - 15px);
+  right: -28px;
+  display: block;
+  width: 14px;
+  height: 16px;
+}
+
+.btn__arrows .icon,
+input[type="submit"].btn__arrows .icon {
+  margin-bottom: -5px;
+  width: 14px;
+  height: 8px;
+  fill: #fff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn__arrows .icon:last-of-type,
+input[type="submit"].btn__arrows .icon:last-of-type {
+  margin-bottom: 5px;
+}
+
 .btn__wrap {
   display: inline-block;
 }
@@ -7863,6 +7973,7 @@ input[type="submit"][disabled] {
 }
 
 .second__nav-list > li {
+  width: 33.3%;
   margin-right: 27px;
 }
 
@@ -7909,10 +8020,43 @@ input[type="submit"][disabled] {
   color: #0495ff;
 }
 
+.second__nav-list--four > li {
+  width: 25%;
+}
+
 /* Переопределение стилей yandex map */
 [class$='-controls-pane'],
 [class$='-copyrights-pane'] {
   display: none;
+}
+
+/* Переопределение стилей custom scroller */
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(8, 69, 126, 0.75);
+}
+
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+  background-color: #08457e;
+}
+
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: rgba(170, 170, 170, 0.15);
+}
+
+.mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-rounded-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+  background-color: rgba(8, 69, 126, 0.75);
+}
+
+.mCSB_scrollTools {
+  right: 5px;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0;
 }
 
 /* Переопределение стилей swiper */
@@ -8058,6 +8202,22 @@ input[type="submit"][disabled] {
   .second__nav-list--four > li > a {
     min-width: 153px;
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .btn__text {
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .btn__bottom {
+    font-size: 13px;
+  }
+  .btn__arrows {
+    right: -24px;
+  }
+  .btn--blue {
+    min-width: 253px;
   }
 }
 

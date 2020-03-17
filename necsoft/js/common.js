@@ -11,12 +11,19 @@
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit-cover],[data-object-fit-cover-right],[data-object-fit-contain]'), {watchMQ: true});
 
   /* инициализация fancybox */
   $(".fancybox").fancybox({
     padding: 0,
     scrolling: 'auto'
+  });
+
+  /* инициализация кастомного скроллбара */
+  $(window).on("load",function(){
+    $(".landing__price-tab").mCustomScrollbar({
+      theme: "rounded-dark"
+    });
   });
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -99,6 +106,25 @@
   toggleHidden('.vacancy',true);
   toggleHidden('.faq',true);
 
+
+  $('.landing__price-item .top .open').click(function() {
+    $(this).toggleClass('active');
+    $(this).parent().toggleClass('active');
+    $(this).parent().siblings().slideToggle();
+
+    $(this).parent().parent().siblings().find('.top').removeClass('active');
+    $(this).parent().parent().siblings().find('.open').removeClass('active');
+    $(this).parent().parent().siblings().find('.landing__price-hidden').slideUp();
+  });
+
+  $('.landing__rework-top .open').click(function() {
+    $(this).toggleClass('active');
+    $(this).parent().parent().siblings().slideToggle();
+
+    $(this).parent().parent().parent().siblings().find('.open').removeClass('active');
+    $(this).parent().parent().parent().siblings().find('.landing__rework-hidden').slideUp();
+  });
+
   // фиксированное меню и кнопка "вверх"
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -126,6 +152,19 @@
     $('.about__tab').not(_href).hide();
     $(_href).fadeIn();
   });
+
+  $('.projects__nav-list-with-tabs a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().addClass('active');
+    $('.landing__price-tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();
@@ -166,6 +205,9 @@
     $(this).parent().siblings().find('.sub-menu').removeClass('active');
   });
 
+  $('.landing__compare-btn').click(function() {
+    $(this).siblings('.landing__compare-hidden').slideToggle();
+  });
 
   /* СЛАЙДЕРЫ */
 
@@ -216,6 +258,24 @@
         },
         400: {
           slidesPerView: 3,
+        },
+      },
+    });
+  }
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var landingList = new Swiper('.landing__maintain-serv-list', {
+      slidesPerView: 1,
+      watchSlidesProgress: true,
+      pagination: {
+        el: '.landing__maintain-serv-dots',
+      },
+      breakpoints: {
+        575: {
+          slidesPerView: 3,
+        },
+        450: {
+          slidesPerView: 2,
         },
       },
     });

@@ -1,0 +1,111 @@
+.contacts
+  position: relative
+  height: 416px
+  &__map
+    opacity: 0.67
+    width: 100%
+    height: 100%
+    &-wrap
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $bg
+  .container
+    position: relative
+  &__wrap
+    position: absolute
+    top: 19px
+    left: 15px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 328px
+    min-height: 379px
+    padding: 15px 15px 19px
+    background-color: $accent
+    text-align: center
+  .logo
+    width: 122px
+    height: 70px
+    .icon
+      fill: #fff
+    &__wrap
+      position: relative
+      margin-bottom: 60px
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -27px
+        width: 100%
+        height: 2px
+        background-color: #ffffff
+  &__address
+    margin-bottom: 29px
+    font-size: 14px
+    line-height: 1.2
+    color: #ffffff
+  &__phones
+    margin-bottom: 40px
+  &__phone
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 700
+    color: #ffffff
+  &__msgs
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      align-items: center
+      & > li
+        margin-right: 22px
+        &:last-of-type
+          margin-right: 0
+        & > a
+          font-size: 20px
+          color: #fff
+          transition: 0.3s
+          &:hover
+            color: $accent2
+
+
+  @media screen and (max-width: 991px)
+    height: 346px
+    &__wrap
+      width: 258px
+      min-height: 240px
+    .logo
+      &__wrap
+         margin-bottom: 50px
+      &::after
+        bottom: -24px
+    &__phones
+      margin-bottom: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    height: auto
+    background: $bg
+    &__wrap
+      position: static
+      margin-top: -90px
+    &__map
+      height: 280px
+      &-wrap
+        position: static
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      width: 100%
+
+  // max-width 400px
+
+/* contacts */

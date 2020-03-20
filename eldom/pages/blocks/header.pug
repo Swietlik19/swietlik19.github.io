@@ -1,0 +1,60 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .header__address
+          p г. Симферополь, ул. Г. Сталинграда, 8А
+        .header__time
+          p Режим работы: пн-сб с 9:00 до 18:00
+
+      .header__bottom
+        .header__burger
+          button.burger#header__burger
+            span.burger__wrap
+              span.line
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+
+          else
+            #{logotype}.logo
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Каталог
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Портфолио
+            li.menu-item
+              a(href="#") Сотрудничество
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+        .header__phones
+          a.header__phone.link(href="tel:+79782017978" rel="nofollow") +7 (978) 201-7-978
+          .header__socials
+            button.header__socials-btn(type="button")
+              span.header__socials-circle
+            ul.header__socials-list
+              li
+                a(href="tel:+79782017978" rel="nofollow")
+                  i.fa.fa-phone-alt
+              li
+                a(href="https://api.whatsapp.com/send?phone=79782017978" rel="nofollow")
+                  i.fab.fa-whatsapp
+              li
+                a(href="viber://chat?number=79782017978" rel="nofollow")
+                  i.fab.fa-viber
+
+      // /.header__top
+    // /.container

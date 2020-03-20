@@ -1,0 +1,372 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-top]
+  object-fit: cover
+  object-position: top center
+  font-family: 'object-fit: cover; object-position: top center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.title
+  font-size: 36px
+  line-height: 1.2
+  font-weight: 600
+  color: $bg
+  text-align: center
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  position: relative
+  text-decoration: none
+  outline: none
+  color: #ffffff
+  transition: 0.3s
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 2px
+    background-color: #fff
+    border-radius: 1.5px
+    opacity: 0
+    transition: 0.3s
+  &:hover
+    &::after
+      opacity: 1
+      bottom: -3px
+
+
+.btn__wrap
+  display: inline-block
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.btn,
+input[type="submit"].btn
+  &--yellow
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 293px
+    height: 68px
+    padding: 0 15px
+    background-color: $accent2
+    border-radius: 8.0px
+
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 500
+    color: $bg
+    overflow: hidden
+    &::after
+      content: ""
+      position: absolute
+      top: -50px
+      left: -75px
+      background: #fff
+      width: 50px
+      height: 155px
+      transform: rotate(35deg)
+      transition: all 1.3s cubic-bezier(0.19, 1, 0.22, 1)
+      opacity: 0.2
+      z-index: 10
+    &:hover
+      &::after
+        left: 130%
+
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #fff
+      border-radius: 1.5
+      transition: 0.2s ease-in-out
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+  &:hover
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: $accent2
+
+.to-top
+  position: fixed
+  right: 30px
+  bottom: 30px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 40px
+  background: #fff
+  box-shadow: 0px 0px 10px 0px rgba(#999999,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  .fa
+    color: $accent
+    transition: 0.5s
+    font-size: 20px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    .fa
+      color: $accent
+
+  &.fixed
+    opacity: 1
+    height: 40px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+[class*=ymaps-2][class*=-ground-pane]
+  filter: grayscale(100%)
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-dots
+  text-align: center
+.swiper-pagination-bullet
+  background-color: $accent2
+  opacity: 0.7
+.swiper-pagination-bullet-active
+  background-color: $accent
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+@media screen and (max-width: 991px)
+  .title
+    font-size: 32px
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .btn,
+  input[type="submit"].btn
+    &--yellow
+      min-width: 233px
+      height: 54px
+      font-size: 15px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .title
+    font-size: 28px
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

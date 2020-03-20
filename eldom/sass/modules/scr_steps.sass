@@ -1,0 +1,157 @@
+.steps
+  position: relative
+  background: $bg
+  padding-top: 127px
+  padding-bottom: 84px
+  &__wrap
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: -41px
+      display: block
+      width: 1348px
+      height: 487px
+      background: transparent url('../img/steps-bg.png') no-repeat center center
+      background-size: contain
+  &__img
+    position: absolute
+    left: 85px
+    bottom: -133px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    .swiper-wrapper
+      display: flex
+      flex-wrap: wrap
+  &__item
+    position: relative
+    width: 33.3%
+    height: 233px
+    margin-bottom: 7px
+    padding: 10px
+    text-align: center
+  &__num
+    position: absolute
+    top: -90px
+    left: 0
+    width: 100%
+    font-size: 66px
+    line-height: 1.2
+    font-weight: 700
+    color: rgba(#f6f6f9, 0.3)
+    text-align: center
+    &::after
+      content: ''
+      position: absolute
+      left: calc(50% - 10px)
+      bottom: -25px
+
+      width: 21px
+      height: 21px
+      background-color: $accent
+      border-radius: 50%
+  &__text
+    padding-top: 15px
+    font-size: 16px
+    line-height: 1.5
+    color: #ffffff
+    p
+      margin-bottom: 12px
+      &:last-of-type
+        margin-bottom: 0
+  &__btns
+    margin-top: -30px
+    text-align: center
+
+
+  @media screen and (max-width: 1070px)
+    &__text
+      font-size: 13px
+    &__num
+      top: -78px
+      font-size: 57px
+    &__wrap
+      &::before
+        width: 1168px
+        height: 427px
+    &__item
+      height: 202px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    padding-top: 107px
+    &__text
+      font-size: 12px
+      br
+        display: none
+    &__num
+      top: -71px
+      font-size: 51px
+    &__wrap
+      &::before
+        top: -5px
+        width: 1078px
+        height: 407px
+    &__item
+      height: 187px
+    &__img
+      bottom: -83px
+      left: 5px
+      width: 190px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    padding-top: 97px
+    padding-bottom: 64px
+    &__wrap
+      &::before
+        width: 978px
+        height: 369px
+    &__item
+      height: 167px
+    &__num
+      top: -63px
+      &::after
+        left: calc(50% - 7px)
+        bottom: -14px
+        width: 13px
+        height: 13px
+    &__text
+      font-size: 11px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    padding-top: 27px
+    padding-bottom: 44px
+    &__list
+      overflow: hidden
+      .swiper-wrapper
+        flex-wrap: nowrap
+    &__wrap
+      &::before
+        content: none
+    &__item
+      width: auto
+      height: auto
+    &__text
+      font-size: 12px
+    &__num
+      position: relative
+      top: auto
+      display: block
+      &::after
+        content: none
+    &__btns
+      margin-top: 40px
+    &__img
+      display: none
+
+  // max-width 700px
+
+/* steps */

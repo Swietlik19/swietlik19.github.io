@@ -1,0 +1,190 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  background-color: #e7eef1
+  padding: 38px 30px 37px
+
+  form
+    max-width: 750px
+    margin-left: auto
+    margin-right: auto
+
+  &__title
+    margin-bottom: 15px
+    font-size: 40px
+    line-height: 1.2
+    font-weight: 700
+    text-transform: uppercase
+    color: #013150
+    text-align: center
+
+  &__df
+    display: flex
+  &__col
+    width: calc(50% - 15px)
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+    .form__item
+      margin-bottom: 25px
+  &__label
+    position: absolute
+    top: calc(50% - 8px)
+    left: 0
+    font-size: 14px
+    text-transform: uppercase
+    transition: 0.3s
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    position: relative
+    display: block
+    width: 100%
+
+    input,textarea
+      width: 100%
+      background: none
+      border: none
+      outline: none
+      padding: 15px 0
+      transition: 0.3s
+      resize: none
+      border-bottom: 1px solid #0e3b42
+      &:focus
+        & + .form__label
+          transform: translateY(-20px)
+          font-size: 11px
+
+    textarea
+      // height: 136px
+
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: calc(100% + 80px)
+    margin-left: -40px
+    margin-top: 20px
+    .form__item
+      &:not(.form__item--submit)
+        flex-grow: 1
+        max-width: 33.3%
+      &:first-of-type
+        padding-right: 10px
+        padding-left: 40px
+      &:last-of-type
+        padding-left: 10px
+
+  input[type="submit"]
+    min-width: 227px
+    box-shadow: 0px 10px 20px 0px rgba(#04b5f8,0.3)
+
+  .your-file
+    display: block
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 700
+    text-transform: uppercase
+    color: #013150
+    vertical-align: middle
+    transition: 0.3s
+    input
+      display: none
+    label
+      display: inline-block
+      outline: none
+      cursor: pointer
+      i
+        display: inline-block
+        margin-left: 15px
+        font-style: normal
+    &:hover
+      color: $accent2
+
+  .accept
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+
+      & > span
+        position: relative
+        display: inline-block
+        transition: 0.3s
+
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 400
+        color: #999999
+        i
+          text-decoration: underline
+          font-style: normal
+        &:hover
+          color: $accent2
+
+    input
+      display: none
+
+  &--second
+    .form__bottom
+      justify-content: flex-start
+    .form__item
+      &:first-of-type
+        flex-grow: 0
+        max-width: 1000px
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &--general
+      .form__bottom
+        flex-direction: column
+        .form__item
+          margin-bottom: 20px
+          &:first-of-type
+            max-width: 100%
+            padding-left: 0
+            padding-right: 0
+          &:last-of-type
+            max-width: 100%
+            margin-bottom: 0
+
+  //   max-width 900px
+
+  @media screen and (max-width: 767px)
+    &__title
+      font-size: 32px
+
+  //   max-width 767px
+
+  @media screen and (max-width: 600px)
+    &__df
+      flex-direction: column
+    &__col
+      width: 100%
+      margin-right: 0
+    &--second
+      .form__bottom
+        flex-direction: column
+        .form__item
+          margin-bottom: 20px
+          &:last-of-type
+            margin-bottom: 0
+
+  //   max-width 600px
+
+  @media screen and (max-width: 500px)
+    padding: 38px 15px 37px
+    &__title
+      font-size: 26px
+
+  //   max-width 500px
+
+ /* form */

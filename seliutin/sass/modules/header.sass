@@ -1,0 +1,144 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  width: 100%
+  padding: 42px 60px 30px
+  background-color: #f3f8fa
+  transition: 0.1s
+
+  #header__burger
+    display: none
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .logo
+    display: block
+    width: 247px
+    height: 29px
+    text-decoration: none
+
+  &__menu
+    position: relative
+    .decor-line
+      position: absolute
+      bottom: -2px
+      left: 0
+
+      display: block
+      width: 50px
+      height: 2px
+      background-color: $accent
+      transform: translateY(0)
+      transition: left 0.7s, opacity 0.5s, width 0.5s
+      z-index: 2
+      opacity: 0
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    & > li
+      margin: 0 23px
+      & > a
+        display: inline-block
+        text-decoration: none
+        outline: none
+        font-size: 18px
+        line-height: 1.2
+        font-weight: 500
+        color: $accent
+
+  .scr1__phone
+    color: $accent
+    &::before
+      background-color: $accent
+
+  &.fixed
+    padding-top: 20px
+    padding-bottom: 20px
+    box-shadow: 0 0 25px rgba($accent, 0.3)
+    transition: 0.3s
+
+  &--main
+    max-height: 0px
+    opacity: 0
+    padding: 0
+    overflow: hidden
+    transition: opacity 0.2s
+    &.visible
+      max-height: 500px
+      padding: 42px 60px 30px
+      opacity: 1
+      transition: opacity 0.3s
+
+
+  @media screen and (max-height: 850px)
+    &--main
+      &.visible
+        padding: 22px 60px
+
+  // max-height 850px
+
+  @media screen and (max-width: 1400px)
+    padding: 20px
+    &--main
+      &.visible
+        padding: 20px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1320px)
+    .menu
+      & > li
+        margin: 0 13px
+
+  // max-width 1320px
+
+  @media screen and (max-width: 1200px)
+    .logo
+      width: 46px
+      height: 29px
+    .menu
+      & > li
+        margin: 0 20px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 991px)
+    border-bottom: 1px solid rgba($accent, 0.3)
+    &__menu
+      display: none
+    #header__burger
+      display: flex
+      .line
+        &,
+        &::before,
+        &::after
+          background-color: $accent
+
+  // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &--main
+      padding: 0 !important
+
+  // max-width 767px
+
+  @media screen and (max-width: 767px)
+    padding: 10px 20px
+    &.fixed
+      padding-top: 10px
+      padding-bottom: 10px
+
+  // max-width 767px
+
+/* .header */

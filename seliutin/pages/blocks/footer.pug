@@ -1,0 +1,46 @@
+mixin footer(logotype)
+  footer.footer.grey-bg(id="footer")
+    .footer__wrap
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/logo-inner.png", alt="Лого")
+
+        else
+          #{logotype}.logo
+            img(src="img/logo-inner.png", alt="Лого")
+
+      .footer__middle
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Команда
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Вопрос/ответ
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+        .footer__socials
+          +socials--footer
+
+      .footer__address
+        .footer__address-wrap
+          p Республика Крым, город Симферополь
+          p E-mail:&nbsp;
+            a(href="mailto:mail@mail.ru" rel="nofollow")  mail@mail.ru
+          p
+            a(href="tel:+79781234567" rel="nofollow")  +7 (978) 123 45 67
+
+
+
+    // /.footer__wrap
+  // /.footer
+

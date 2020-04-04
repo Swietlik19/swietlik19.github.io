@@ -1,0 +1,121 @@
+.faq
+  position: relative
+  padding-bottom: 62px
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-bottom: 81px
+  &__item
+    position: relative
+    margin-bottom: 26px
+    box-shadow: 2px 4px 20px 0px rgba(0,90,149,0.2)
+    background-color: #ffffff
+    &:last-of-type
+      margin-bottom: 0
+
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 34px 26px 31px 39px
+      &:hover
+        h2
+          color: $accent2
+
+    .hidden
+      display: none
+      padding: 0 80px 49px 39px
+
+    h2
+      padding-right: 15px
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      font-weight: 500
+
+      transition: 0.3s
+    p
+      font-size: 16px
+      line-height: 1.875 /* 30 / 16 */
+      &:last-of-type
+        margin-bottom: 0
+    ul,
+    ol
+      margin: 0
+      padding: 0
+      li
+        transform: none
+        font-size: 16px
+        line-height: 1.875 /* 30 / 16 */
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 41px
+      height: 41px
+      &::before
+        content: ''
+        position: absolute
+        top: calc(50% - 4px)
+        left: calc(50% - 5px)
+
+        display: block
+        width: 11px
+        height: 7px
+        background: transparent url('../img/svg/arrow-dark.svg') no-repeat center center
+        background-size: contain
+        transition: 0.3s
+      &.active
+        &::before
+          transform: rotate(180deg)
+
+
+  @media screen and (max-width: 991px)
+    padding-top: 25px
+    padding-bottom: 42px
+    &__list
+      margin-bottom: 50px
+    &__item
+      margin-bottom: 16px
+      .top
+        padding: 24px 26px 21px 39px
+      .hidden
+        padding: 0 30px 39px 39px
+      p
+        font-size: 14px
+        line-height: 1.5
+      ul,
+      ol
+        li
+          font-size: 14px
+          line-height: 1.5
+
+  // max-width 991px
+
+  @media screen and (max-width: 600px)
+    &__item
+      h2
+        font-size: 14px
+      .top
+        padding: 14px 16px 11px 25px
+      .hidden
+        padding: 0 40px 30px 25px
+
+  // max-width 600px
+
+/* faq */

@@ -82,7 +82,18 @@
     $('.inner-link[href^="#"]').click(function(e){
       e.preventDefault();
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 40 +'px'});
+
+      $('.scr1__menu').removeClass('active');
+      $('body').removeClass('disabled');
+      $('html').removeClass('disabled');
+      if ($('#page_wr_main').length > 0 && !(window.matchMedia('(max-width: 900px)').matches)) {
+        $.fn.fullpage.setAllowScrolling(true);
+      }
+      $('.scr1__menu .menu > li > a').each(function(xi,xel) {
+        $(xel).removeClass('active');
+      });
+
       return false;
     });
   });

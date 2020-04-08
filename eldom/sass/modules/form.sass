@@ -2,6 +2,17 @@
   position: relative
   z-index: 30
   width: 100%
+  background-color: #1e2128
+  padding: 27px 45px 28px
+
+  &__title
+    width: calc(100% + 30px)
+    margin-left: -15px
+    margin-bottom: 30px
+    font-size: 30px
+    font-weight: 500
+    color: #ffffff
+    text-align: center
 
   input,textarea
     font-family: $form-font
@@ -9,6 +20,7 @@
   .text-input
     display: block
     width: 100%
+    margin-bottom: 17px
 
     input,textarea
       background: none
@@ -17,16 +29,62 @@
       transition: 0.3s
       resize: none
 
+      width: 100%
+      height: 50px
+      background-color: #ffffff
+      border-radius: 8.0px
 
-      // @include placeholder(#999999, 18px)
+      font-size: 16px
+      line-height: 1.2
+      color: #333333
+      @include placeholder(#333333, 14px)
 
       &:focus
-        // @include placeholder(#fff, 18px)
+        @include placeholder(#fff, 14px)
 
     textarea
       // height: 136px
 
+    &--icon
+      position: relative
+      input
+        padding-left: 52px
+      &:hover
+        .input-icon
+          .icon
+            fill: $accent
+
+  .input-icon
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    .icon
+      position: absolute
+      top: calc(50% - 9px)
+      left: 15px
+      width: 18px
+      height: 18px
+      max-width: 18px
+      fill: #020000
+
+  .btn__wrap
+    &--yellow
+      width: 100%
+
+  input[type="submit"]
+    width: 100%
+    height: 56px
+
   .accept
+    display: block
+    margin-top: 30px
+    width: calc(100% + 50px)
+    margin-left: -25px
+    font-size: 14px
+    line-height: 1.2
+    color: #ffffff
+
     label
       display: block
       width: 100%
@@ -37,23 +95,108 @@
       & > span
         position: relative
         display: inline-block
-        transition: 0.3s
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 2px
+        left: 0
+
+        display: block
+        width: 13px
+        height: 13px
+        border: 1.0px solid #ffffff
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          border-left: 1px solid #ffffff
+          border-bottom: 1px solid #ffffff
+          transform: rotate(-45deg)
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
 
     input
       display: none
 
     input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
 
-  // @media screen and (max-width: 1070px)
+  &__df
+    display: flex
+    padding-left: 63px
+    padding-right: 24px
+    .form__item
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      &:last-of-type
+        margin-right: 0
+  &--horizontal
+    .form__item--submit
+      margin-top: 20px
+      text-align: center
+      .btn__wrap
+        width: auto
+    .accept
+      margin-top: 25px
+
+
+  @media screen and (max-width: 1070px)
+    padding: 27px 30px 28px
+    &__df
+      padding-left: 10px
+      padding-right: 0
 
   //   max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__df
+      padding-left: 0
+      .form__item
+        width: calc((100% - 30px) / 3)
+        margin-right: 15px
+        &:last-of-type
+          margin-right: 0
 
   //   max-width 991px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 767px)
+    &__df
+      flex-direction: column
+      .form__item
+        width: 100%
+        max-width: 400px
+        margin-left: auto
+        margin-right: auto
+        &:last-of-type
+          margin-right: auto
+
+  //   max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__title
+      font-size: 26px
+    .accept
+      font-size: 13px
 
   //   max-width 575px
+
+  @media screen and (max-width: 375px)
+    padding: 27px 20px 28px
+    .accept
+      width: calc(100% + 30px)
+      margin-left: -15px
+      font-size: 13px
+
+  //   max-width 375px
 
  /* form */

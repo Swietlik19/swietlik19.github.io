@@ -6,7 +6,7 @@ mixin scr_contacts()
     .container
       .contacts__wrap
         .logo__wrap
-          .logo(href="index.html")
+          .logo
             svg.icon
               use(xlink:href="img/svg/sprite.svg#logo")
 
@@ -26,5 +26,93 @@ mixin scr_contacts()
             li
               a(href="viber://chat?number=79782017978" rel="nofollow")
                 i.fab.fa-viber
+
+  // /.scr_contacts
+
+mixin scr_contacts--page()
+  section.scr_contacts.contacts.contacts--page(id="scr_contacts")
+    .container
+      .contacts__df
+        ul.contacts__list
+          li.contacts__item
+            .contacts__icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#cont-pin")
+            h3.contacts__title Адрес
+
+            .contacts__text
+              p г. Симферополь,
+                br
+                |  ул. Г. Сталинграда, 8А
+
+          li.contacts__item
+            .contacts__icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#cont-phone")
+            h3.contacts__title Телефон
+
+            .contacts__phones
+              a.contacts__text.link(href="tel:+79782017978" rel="nofollow") +7 (978) 201-7-978
+
+            .contacts__msgs
+              ul.contacts__msgs-list
+                li
+                  a(href="https://api.whatsapp.com/send?phone=79782017978" rel="nofollow")
+                    i.fab.fa-whatsapp
+                li
+                  a(href="viber://chat?number=79782017978" rel="nofollow")
+                    i.fab.fa-viber
+
+          li.contacts__item
+            .contacts__icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#cont-email")
+            h3.contacts__title E-mail
+
+            .contacts__mail
+              a.contacts__text.link(href="mailto:eldom-krim@yandex.ru" rel="nofollow") eldom-krim@yandex.ru
+
+
+        .contacts__form
+          .form.wpcf7
+            p.form__title Обратная связь
+
+            .form__item
+              span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-user")
+
+            .form__item
+              span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-phone")
+
+            .form__item
+              span.wpcf7-form-control-wrap.your-msg.text-input.text-input--icon
+                input.wpcf7-form-control.wpcf7-text.wpcf7-msg(type='text', name='your-msg', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Сообщение')
+                i.input-icon
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#form-msg")
+
+            .form__item.form__item--submit
+              .btn__wrap.btn__wrap--yellow
+                input.wpcf7-form-control.wpcf7-submit.btn.btn--yellow(type='submit', value='Отправить')
+
+            .form__item
+              span.wpcf7-form-control-wrap.accept
+                span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                  span.wpcf7-list-item
+                    label
+                      input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                      span.wpcf7-list-item-label Согласие на обработку персональных данных
+                        i.accept__icon
+
+
+    .contacts__map-wrap
+      .contacts__map#contacts__map
 
   // /.scr_contacts

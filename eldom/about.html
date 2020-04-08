@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title> |</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Template Basic Images Start-->
+    <!-- Template Basic Images End-->
+    <!-- Custom Browsers Color Start-->
+    <meta name="theme-color" content="#1e2128">
+    <!-- Custom Browsers Color End-->
+    <style>
+      @-webkit-keyframes scale {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50%,
+        75% {
+          -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes scale {
+        0% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50%,
+        75% {
+          -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 10000;
+        background-color: #1e2128;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .preloader__wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+      }
+
+      .preloader .preloader__item:nth-of-type(1) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eed968;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(1):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eed968;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 200ms;
+        animation-delay: 200ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(2) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eece68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(2):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eece68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 400ms;
+        animation-delay: 400ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(3) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eec368;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(3):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eec368;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 600ms;
+        animation-delay: 600ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(4) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eead68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(4):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eead68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 800ms;
+        animation-delay: 800ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(5) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ee8c68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(5):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ee8c68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 1000ms;
+        animation-delay: 1000ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <!--. нужен класс для body для preloader'а!-->
+  <body class="disabled">
+    <div class="preloader">
+      <div class="preloader__wrap"><span class="preloader__item"></span><span class="preloader__item"></span><span class="preloader__item"></span><span class="preloader__item"></span><span class="preloader__item"></span></div>
+    </div>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__top">
+          <div class="header__address">
+            <p>г. Симферополь, ул. Г. Сталинграда, 8А</p>
+          </div>
+          <div class="header__time">
+            <p>Режим работы: пн-сб с 9:00 до 18:00</p>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="header__burger">
+            <button class="burger" id="header__burger"><span class="burger__wrap"><span class="line"></span></span></button>
+          </div>
+          <div class="logo__wrap">
+            <a class="logo" href="index.html">
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="header__menu">
+            <ul class="menu">
+              <li class="menu-item"><a href="#">О нас</a></li>
+              <li class="menu-item"><a href="#">Каталог</a></li>
+              <li class="menu-item"><a href="#">Услуги</a></li>
+              <li class="menu-item"><a href="#">Портфолио</a></li>
+              <li class="menu-item"><a href="#">Сотрудничество</a></li>
+              <li class="menu-item"><a href="#">Отзывы</a></li>
+              <li class="menu-item"><a href="#">Блог</a></li>
+              <li class="menu-item"><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="header__phones"><a class="header__phone link" href="tel:+79782017978" rel="nofollow">+7 (978) 201-7-978</a>
+            <div class="header__socials">
+              <button class="header__socials-btn" type="button"><span class="header__socials-circle"></span></button>
+              <ul class="header__socials-list">
+                <li><a href="tel:+79782017978" rel="nofollow"><i class="fa fa-phone-alt"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=79782017978" rel="nofollow"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="viber://chat?number=79782017978" rel="nofollow"><i class="fab fa-viber"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.header__top-->
+      </div>
+      <!-- /.container-->
+    </header>
+    <!--. Для внутренних у page_wr добавляется ещё класс page_wr--second-->
+    <div class="page_wr page_wr--second" id="page_wr">
+      <section class="scr_about about" id="scr_about">
+        <div class="container">
+          <h1 class="title">О нас</h1>
+          <div class="about__desc">
+            <p>Компания «ЭлДом» – профессионально занимается оформлением интерьера на всей территории Республики Крым. У нас квалифицированные пециалисты, которые ежедневно вкладывают в работу свои силы, знания, опыт, энергию и профессионализм. Опыт работы наших сотрудников более 10 лет.</p>
+          </div>
+          <ul class="about__feat">
+            <li>
+              <p>Официальное представительство<br> компаний</p>
+              <div class="about__logos">
+                <div class="about__logo">
+                  <noscript><img class="lazy" src="img/about-feat-logo-1.png" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/about-feat-logo-1.png" alt="" width="125" height="90" data-object-fit-contain>
+                </div>
+                <div class="about__logo">
+                  <noscript><img class="lazy" src="img/about-feat-logo-2.png" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/about-feat-logo-2.png" alt="" width="125" height="90" data-object-fit-contain>
+                </div>
+              </div>
+            </li>
+            <li>
+              <p>Собственное<br>
+                <big>производство и склад</big><br> в Симферополе </p>
+            </li>
+            <li>
+              <p>
+                <big>Более 3000</big><br> тканей различных<br> цветов, фактур и стиля </p>
+            </li>
+          </ul>
+          <div class="about__complex">
+            <p class="about__complex-title">ЭлДом – это комплексный подход:</p>
+            <div class="article">
+              <ul>
+                <li>Вы экономите время на поиск и подборку материалов</li>
+                <li>При комплексном подходе, будет действовать гибкая система скидок</li>
+                <li>Вы можете увидеть, как будут сочетаться цвета и фактуры выбранных вами материалов</li>
+                <li>Наши специалисты помогут учесть по каждому подходу все нюансы сочетания материалов между собой и разобрать для вас общую концепцию интерьеров</li>
+                <li>Вам не нужно будет повторяться о своих пожеланиях в каждом отдельном направлении</li>
+                <li>Работа с ведущими европейскими, американскими и российскими производителями для того, чтобы предложить для самых требовательных потребителей, дизайнерам интерьера и архитектур большой выбор ассортимента продукции для самых разных направлений, при этом гарантируя качество самой продукции и высокую эстетику, учитывая тенденции рынка.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="about__mission grey-bg">
+            <h2 class="about__mission-title">Миссия</h2>
+            <div class="about__mission-desc">
+              <p>сделать так, чтобы ремонт от идеи до воплощения оставил у Вас только позитивные впечатления,<br> сэкономив Ваше время и деньги, предоставить качественные материалы и обслуживание.</p>
+              <p>
+                <big>Лучшая награда для нас – довольные клиенты!</big>
+              </p>
+            </div>
+          </div>
+          <div class="about__bottom">
+            <div class="about__bottom-content">
+              <p>Не бойтесь экспериментировать вместе с нами! Ваш дом – это отражение Вас, он должен гармонировать с Вашим характером, окутывать уютом, дарить вдохновение.</p>
+              <p>
+                <big>Ваш уют – это наша работа!</big>
+              </p>
+            </div>
+            <div class="about__bottom-img">
+              <noscript><img class="lazy" src="img/about-img.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/about-img.jpg" alt="" width="125" height="90" data-object-fit-cover>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr1-->
+      <section class="scr_partners partners" id="scr_partners">
+        <div class="container">
+          <h2 class="title">Наши клиенты:</h2>
+          <div class="partners__list" id="partners__slider">
+            <div class="swiper-wrapper">
+              <div class="partners__item swiper-slide">
+                <noscript><img class="lazy" src="img-temp/partners/img-1.png" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/partners/img-1.png" alt="" width="125" height="90">
+              </div>
+              <div class="partners__item swiper-slide">
+                <noscript><img class="lazy" src="img-temp/partners/img-2.png" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/partners/img-2.png" alt="" width="125" height="90">
+              </div>
+              <div class="partners__item swiper-slide">
+                <noscript><img class="lazy" src="img-temp/partners/img-3.png" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/partners/img-3.png" alt="" width="125" height="90">
+              </div>
+              <div class="partners__item swiper-slide">
+                <noscript><img class="lazy" src="img-temp/partners/img-4.png" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/partners/img-4.png" alt="" width="125" height="90">
+              </div>
+            </div>
+            <div class="swiper-dots"></div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_partners--><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__menu">
+            <ul class="menu">
+              <li class="menu-item"><a href="#">О нас</a></li>
+              <li class="menu-item"><a href="#">Услуги</a></li>
+              <li class="menu-item"><a href="#">Портфолио</a></li>
+              <li class="menu-item"><a href="#">Отзывы</a></li>
+              <li class="menu-item"><a href="#">Блог</a></li>
+              <li class="menu-item"><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__second-menu">
+            <div class="footer__second-menu-col">
+              <h3>Каталог</h3>
+              <ul class="menu">
+                <li class="menu-item"><a href="#">Карнизы и фурнитура</a></li>
+                <li class="menu-item"><a href="#">Жалюзи, рулонные шторы</a></li>
+                <li class="menu-item"><a href="#">Электроуправляемые системы</a></li>
+                <li class="menu-item"><a href="#">Шторы и фурнитура</a></li>
+                <li class="menu-item"><a href="#">Текстиль</a></li>
+                <li class="menu-item"><a href="#">Обои</a></li>
+                <li class="menu-item"><a href="#">Изделия из полиуретана</a></li>
+                <li class="menu-item"><a href="#">Ковровые покрытия, ковры</a></li>
+                <li class="menu-item"><a href="#">Одежда и механизация сцен</a></li>
+              </ul>
+            </div>
+            <div class="footer__second-menu-col">
+              <h3>Сотрудничество</h3>
+              <ul class="menu">
+                <li class="menu-item"><a href="#">Дизайнерам</a></li>
+                <li class="menu-item"><a href="#">Дилерам</a></li>
+                <li class="menu-item"><a href="#">Отелям и санаториям</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.footer__top-->
+      </div>
+      <!-- /.container-->
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-7">
+              <div class="copyright">
+                <p class="text">г. Симферополь © Copyright 2019&nbsp;г.</p><a href="#">Политика конфиденциальности</a>
+              </div>
+            </div>
+            <div class="col-xl-4 offset-xl-1 col-lg-4 col-sm-5"><a class="made" href="https://sheer82.ru/"><span class="text">Сделано в</span>
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#iconSheer"></use>
+                </svg></a></div>
+          </div>
+          <!-- /.row-->
+        </div>
+        <!-- /.container-->
+      </div>
+      <!-- /.footer__bottom-->
+    </footer>
+    <!-- /.footer-->
+    <link rel="stylesheet" href="libs/normalize.min.css">
+    <link rel="stylesheet" href="libs/animate.css">
+    <link rel="stylesheet" href="libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js//libs/jquery.min.js"></script>
+    <script src="js/libs/jquery.lazyload.min.js"></script>
+    <script src="js/libs/wow.min.js"></script>
+    <script src="js/libs/jquery.maskedinput.min.js"></script>
+    <script src="js/libs/svg4everybody.min.js"></script>
+    <script src="js/libs/ofi.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    <script src="libs/swiper/swiper.js"></script>
+    <script src="js/common.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>
+    <script>
+      (function($)
+      {
+        if (window.matchMedia('(max-width: 767px) and (min-width: 575.5px)').matches)
+        {
+          createMap('contacts__map', [44.937915, 34.056309], [44.938040, 34.054596]);
+        }
+        else
+        {
+          createMap('contacts__map', [44.937915, 34.056309], [44.937915, 34.056309]);
+        }
+
+        function createMap(xID, coords, xCenter)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: xCenter,
+                zoom: 17
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemark = new ymaps.Placemark(coords,
+                {
+                  hintContent: 'ул. Г. Сталинграда, 8А',
+                  balloonContent: 'ул. Г. Сталинграда, 8А'
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [31, 41],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -60]
+                });
+              myMap.geoObjects.add(myPlacemark);
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+      })(jQuery);
+    </script>
+  </body>
+</html>

@@ -73,9 +73,85 @@
           &:hover
             color: $accent2
 
+  &--page
+    height: auto
+    .contacts__map-wrap
+      position: static
+      height: 490px
+    .contacts__map
+      opacity: 0.9
+    .contacts__phones
+      margin-bottom: 20px
+      .link
+        font-weight: 700
+    .link
+      &:hover
+        color: $accent
+    .contacts__msgs-list
+      justify-content: center
+      & > li
+        & > a
+          color: $bg
+          &:hover
+            color: $accent
+  &__df
+    display: flex
+    padding-top: 40px
+  &__list
+    flex-grow: 1
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    justify-content: space-between
+    padding-top: 40px
+    padding-bottom: 20px
+  &__item
+    padding-right: 30px
+    text-align: center
+  &__form
+    width: 390px
+    margin-bottom: -85px
+  &__icon
+    width: 47px
+    height: 47px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 30px
+    .icon
+      fill: $bg
+  &__title
+    margin-top: 0
+    margin-bottom: 34px
+    font-size: 27px
+    font-weight: 600
+  &__text
+    font-weight: 500
+    color: $bg
+
+
+  @media screen and (max-width: 1070px)
+    &__form
+      width: 360px
+    &__icon
+      margin-bottom: 10px
+    &__title
+      margin-bottom: 4px
+      font-size: 25px
+    &__text
+      font-size: 14px
+    &--page
+      .contacts__phones
+        margin-bottom: 10px
+
+  // max-width 1070px
 
   @media screen and (max-width: 991px)
     height: 346px
+    &--page
+      height: auto
+      .contacts__map-wrap
+        height: 380px
     &__wrap
       width: 258px
       min-height: 240px
@@ -87,11 +163,55 @@
     &__phones
       margin-bottom: 20px
 
+    &__item
+      padding-right: 10px
+
   // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &__list
+      flex-direction: column
+      padding-top: 0
+    &__item
+      margin-bottom: 20px
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    &--page
+      height: auto
+      .contacts__map-wrap
+        height: 300px
+    &__form
+      width: 340px
+
+  // max-width 767px
+
+  @media screen and (max-width: 600px)
+    &__df
+      flex-direction: column
+      margin-bottom: 40px
+      padding-top: 30px
+    &__list
+      padding-bottom: 10px
+    &__item
+      padding-right: 0
+    &__form
+      width: 340px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 0
+    &__icon
+      width: 42px
+      height: 42px
+
+  // max-width 600px
 
   @media screen and (max-width: 575px)
     height: auto
     background: $bg
+    &--page
+      background: none
     &__wrap
       position: static
       margin-top: -90px
@@ -105,6 +225,9 @@
   @media screen and (max-width: 400px)
     &__wrap
       width: 100%
+    &__form
+      width: calc(100% + 30px)
+      margin-left: -15px
 
   // max-width 400px
 

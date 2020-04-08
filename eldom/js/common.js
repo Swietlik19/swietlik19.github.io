@@ -13,6 +13,11 @@
   /* полифил для object-fit */
   objectFitImages($('[data-object-fit-cover],[data-object-fit-cover-top],[data-object-fit-contain]'), {watchMQ: true});
 
+  $(window).on("load", function () {
+    $('.preloader').delay(1000).fadeOut('slow');
+    setTimeout(function() {$('body').removeClass('disabled');},1400);
+  });
+
   /* инициализация fancybox */
   $(".fancybox").fancybox({
     padding: 0,
@@ -96,27 +101,6 @@
 
   toggleHidden('.faq',true);
 
-  /* Раскрытие меню в футере на мобильных устройствах */
-  // function openSubMenu() {
-  //   $.each(['footer-menu'],function(xi,xe) {
-  //     $('.' + xe + ' h4').click(function(e) {
-  //       if (window.matchMedia('(max-width: 900px)').matches) {
-  //         $(this).toggleClass('active');
-  //         $(this).siblings('.menu').slideToggle();
-  //         $(this).parents('.' + xe).find('.' + xe + '__item').each(function(i, el) {
-  //           if ( $(el).has(e.target).length === 0 && !($(el).hasClass(xe + '__item--strong')) ) {
-  //             $(el).find('.menu').slideUp();
-  //             $(el).find('h4').removeClass('active');
-  //           }
-  //         });
-  //       }
-  //     });
-  //   });
-  // }
-
-  // openSubMenu();
-
-
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -128,42 +112,35 @@
     $('.header__socials-list').toggleClass('active');
   });
 
-
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
 
+  if (window.matchMedia('(max-width: 700px)').matches) {
+    $('.gallery__btns').appendTo('.gallery__wrap');
+  }
+
 
   /* СЛАЙДЕРЫ */
-  // function equalHeightSwiper(sliderID) {
-  //   $(sliderID).find('.swiper-slide').height('auto');
-  //   var slickTrackHeight = Math.max($(sliderID).find('.swiper-slide').outerHeight());
-  //   $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
-  // }
+  function equalHeightSwiper(sliderID) {
+    $(sliderID).find('.swiper-slide').height('auto');
+    var slickTrackHeight = Math.max($(sliderID).find('.swiper-slide').outerHeight());
+    $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
+  }
 
-  // var projectsSlider = new Swiper('#projects__slider', {
-  //   slidesPerView: 1,
-  //   spaceBetween: 20,
-  //   watchSlidesProgress: true,
-  //   loop: true,
-  //   autoplay: {
-  //     delay: 8000,
-  //   },
-  //   navigation: {
-  //     nextEl: '.projects__wrap .swiper-button-next',
-  //     prevEl: '.projects__wrap .swiper-button-prev',
-  //   },
-  //   pagination: {
-  //     el: '#projects__slider .swiper-dots',
-  //   },
-  //   on: {
-  //     init: function () {
-  //       $(window).on("load", function () {
-  //         equalHeightSwiper('#projects__slider');
-  //       });
-  //     },
-  //   },
-  // });
+  var gallerySlider = new Swiper('#gallery__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    watchSlidesProgress: true,
+    loop: true,
+    navigation: {
+      nextEl: '.gallery__btns .swiper-button-next',
+      prevEl: '.gallery__btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.gallery__btns .swiper-dots',
+    },
+  });
 
   if (window.matchMedia('(max-width: 575px)').matches) {
     var partnersSlider = new Swiper('#partners__slider', {
@@ -201,12 +178,41 @@
     });
   }
 
+  var reviewsSlider = new Swiper('#reviews__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.reviews__btns .swiper-button-next',
+      prevEl: '.reviews__btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.reviews__btns .swiper-dots',
+    },
+    on: {
+      init: function () {
+        $(window).on("load", function () {
+          equalHeightSwiper('#reviews__slider');
+        });
+      },
+    },
+  });
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
-
+      if (window.matchMedia('(max-width: 700px)').matches) {
+        $('.gallery__btns').appendTo('.gallery__wrap');
+      } else {
+        $('.gallery__btns').appendTo('.gallery__content');
+      }
     }
 
     screenWidth = $(window).width();

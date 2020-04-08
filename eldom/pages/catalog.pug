@@ -1,0 +1,328 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#1e2128')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/modal.pug
+
+    include blocks/scr_serv.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    style.
+      @-webkit-keyframes scale {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+        }
+        50%,
+        75% {
+          -webkit-transform: scale(2.5);
+                  transform: scale(2.5);
+        }
+        78%, 100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes scale {
+        0% {
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+        }
+        50%,
+        75% {
+          -webkit-transform: scale(2.5);
+                  transform: scale(2.5);
+        }
+        78%, 100% {
+          opacity: 0;
+        }
+      }
+
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 10000;
+        background-color: #1e2128;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+      }
+
+      .preloader__wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-animation-delay: 1s;
+                animation-delay: 1s;
+      }
+
+      .preloader .preloader__item:nth-of-type(1) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eed968;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(1):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eed968;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+                animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 200ms;
+                animation-delay: 200ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(2) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eece68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(2):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eece68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+                animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 400ms;
+                animation-delay: 400ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(3) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eec368;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(3):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eec368;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+                animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 600ms;
+                animation-delay: 600ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(4) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eead68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(4):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #eead68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+                animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 800ms;
+                animation-delay: 800ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+      }
+
+      .preloader .preloader__item:nth-of-type(5) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ee8c68;
+        margin: 7px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+      }
+
+      .preloader .preloader__item:nth-of-type(5):before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ee8c68;
+        opacity: 0.7;
+        -webkit-animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+                animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        -webkit-animation-delay: 1000ms;
+                animation-delay: 1000ms;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+      }
+
+  //. нужен класс для body для preloader'а!
+  body.disabled
+    .preloader
+      .preloader__wrap
+        span.preloader__item
+        span.preloader__item
+        span.preloader__item
+        span.preloader__item
+        span.preloader__item
+
+    +header("a")
+
+    //. Для внутренних у page_wr добавляется ещё класс page_wr--second
+    #page_wr.page_wr.page_wr--second
+
+      +scr_serv--page
+
+      a.to-top(href="#page_wr")
+        i.fa.fa-angle-up
+
+    +footer("a")
+
+
+    +styles
+    +scripts
+    +script-map

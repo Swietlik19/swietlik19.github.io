@@ -134,6 +134,10 @@
     $('.gallery__btns').appendTo('.gallery__wrap');
   }
 
+  $('.category__filter').click(function() {
+    $('.category__menu').slideToggle();
+  });
+
 
   /* СЛАЙДЕРЫ */
   function equalHeightSwiper(sliderID) {
@@ -212,15 +216,10 @@
 
   if (window.matchMedia('(max-width: 700px)').matches) {
     var partnersSlider = new Swiper('#steps__slider', {
-      slidesPerView: 1,
+      slidesPerView: 2,
       watchSlidesProgress: true,
       pagination: {
         el: '#steps__slider .swiper-dots',
-      },
-      breakpoints: {
-        500: {
-          slidesPerView: 2,
-        },
       },
     });
   }
@@ -250,9 +249,51 @@
     },
   });
 
-  var scr1Slider = new Swiper('#scr1__slider', {
+  var scr1SliderBg = new Swiper('#scr1__slider_bg', {
     slidesPerView: 1,
     spaceBetween: 20,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    // loop: true,
+    noSwiping: true,
+    // autoplay: {
+    //   delay: 8000,
+    // },
+  });
+
+  var scr1SliderText = new Swiper('#scr1__slider_text', {
+    slidesPerView: 1,
+    // spaceBetween: 20,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    // effect: 'fade',
+    // loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.scr1__slider-nav .swiper-button-next',
+      prevEl: '.scr1__slider-nav .swiper-button-prev',
+    },
+    pagination: {
+      el: '.scr1__slider-nav .swiper-dots',
+    },
+    on: {
+      init: function () {
+        $(window).on("load", function () {
+          equalHeightSwiper('#scr1__slider_text');
+        });
+      },
+      slideChange: function () {
+        var xIndex = this.activeIndex;
+        scr1SliderBg.slideTo(xIndex);
+      },
+    },
+  });
+
+  var gallerySlider = new Swiper('#gallery__slider2', {
+    slidesPerView: 2,
+    spaceBetween: 10,
     watchSlidesProgress: true,
     watchOverflow: true,
     loop: true,
@@ -260,17 +301,24 @@
       delay: 8000,
     },
     navigation: {
-      nextEl: '.scr1__slider .swiper-button-next',
-      prevEl: '.scr1__slider .swiper-button-prev',
-    },
-    pagination: {
-      el: '.scr1__slider .swiper-dots',
+      nextEl: '.gallery__bottom .swiper-button-next',
+      prevEl: '.gallery__bottom .swiper-button-prev',
     },
     on: {
       init: function () {
         $(window).on("load", function () {
-          equalHeightSwiper('#scr1__slider');
+          equalHeightSwiper('#gallery__slider2');
         });
+      },
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      500: {
+        slidesPerView: 3,
+        spaceBetween: 10,
       },
     },
   });

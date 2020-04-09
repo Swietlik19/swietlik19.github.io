@@ -1,7 +1,65 @@
 .scr1
   position: relative
-  padding-top: 240px
   z-index: 1
+  &__slider
+    &-nav
+      position: absolute
+      right: 161px
+      bottom: 107px
+      display: flex
+      flex-direction: column
+      align-items: center
+      z-index: 10
+      .swiper-pagination-bullet
+        position: relative
+        display: block
+        width: 6px
+        height: 6px
+        margin: 0
+        margin-bottom: 25px
+        background: #f6f6f9
+        z-index: 1
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 7px)
+          left: calc(50% - 7px)
+          display: block
+          width: 14px
+          height: 14px
+          background-color: rgba(246,246,249,0.3)
+          border-radius: 50%
+          z-index: -1
+          transform: scale(0.5)
+          transition: 0.3s
+        &:last-of-type
+          margin-bottom: 0
+        &.swiper-pagination-bullet-active
+          &::before
+            transform: scale(1)
+      .swiper-button-prev,
+      .swiper-button-next
+        left: auto
+        right: auto
+        &::after
+          background-image: url(../img/svg/arrow--white.svg)
+          width: 12px
+          height: 22px
+        &:hover
+          background: none
+      .swiper-button-next
+        margin-bottom: 10px
+      .swiper-dots
+        margin-top: 50px
+
+  &__item
+    position: relative
+    height: 100%
+    padding-top: 240px
+    .container
+      display: flex
+      flex-direction: column
+      height: 100%
   &__bg
     position: absolute
     top: 0
@@ -21,8 +79,10 @@
     font-size: 18px
     line-height: 1.333333333333333 /* 24 / 18 */
     color: #dcdfe7
+  .btn__wrap
+    margin-bottom: 114px
   &__adv
-    margin-top: 114px
+    margin-top: auto
     &-list
       margin: 0
       padding: 0
@@ -46,16 +106,71 @@
         background-color: $accent
 
 
+  @media screen and (max-width: 1700px)
+    &__slider
+      &-nav
+        right: 100px
+
+  // max-width 1700px
+
+  @media screen and (max-width: 1500px)
+    &__slider
+      &-nav
+        right: 50px
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1400px)
+    &__slider
+      &-nav
+        right: 10px
+        bottom: 157px
+
+  // max-width 1500px
+
+  @media screen and (max-height: 850px)
+    &__item
+      padding-top: 150px
+    &__title
+      font-size: 57px
+    &__desc
+      font-size: 16px
+    .btn__wrap
+      margin-bottom: 64px
+
+  // max-height 850px
+
+  @media screen and (max-height: 700px)
+    &__title
+      margin-bottom: 15px
+      font-size: 49px
+    &__desc
+      margin-bottom: 38px
+      font-size: 15px
+    .btn__wrap
+      margin-bottom: 34px
+    &__adv
+      &-item
+        padding: 19px 30px 19px 40px
+        font-size: 14px
+    &__slider
+      &-nav
+        bottom: 100px
+
+  // max-height 700px
+
   @media screen and (max-width: 1070px)
-    padding-top: 150px
+    &__item
+      padding-top: 150px
     &__title
       margin-bottom: 19px
       font-size: 55px
     &__desc
       margin-bottom: 38px
       font-size: 17px
+    .btn__wrap
+      margin-bottom: 64px
     &__adv
-      margin-top: 64px
       &-item
         padding: 29px 30px
         font-size: 15px
@@ -67,41 +182,60 @@
       font-size: 49px
     &__desc
       font-size: 16px
+    .btn__wrap
+      margin-bottom: 54px
     &__adv
-      margin-top: 54px
       &-item
         padding: 22px 20px
         font-size: 14px
+    &__content
+      max-width: 95%
 
   // max-width 991px
 
   @media screen and (max-width: 767px)
-    padding-top: 140px
+    &__item
+      padding-top: 140px
     &__title
       font-size: 40px
     &__adv
       &-item
         padding: 18px 15px
         font-size: 13px
+    &__slider
+      &-nav
+        bottom: 150px
+        .swiper-dots
+          margin-top: 20px
+        .swiper-button-prev,
+        .swiper-button-next
+          width: 30px
+          height: 30px
+          &::after
+            width: 10px
+            height: 16px
 
   // max-width 767px
 
   @media screen and (max-width: 575px)
-    padding-top: 110px
+    &__item
+      padding-top: 110px
     &__title
       font-size: 33px
     &__desc
       font-size: 15px
+    .btn__wrap
+      margin-bottom: 44px
     &__adv
-      margin-top: 44px
       &-item
         font-size: 12px
 
   // max-width 575px
 
   @media screen and (max-width: 500px)
+    .btn__wrap
+      margin-bottom: 34px
     &__adv
-      margin-top: 34px
       &-list
         flex-wrap: wrap
         justify-content: center
@@ -110,6 +244,11 @@
         padding: 10px 15px
     &__title
       font-size: 30px
+    &__slider
+      &-nav
+        bottom: auto
+        top: 100px
+        right: 0
 
   // max-width 500px
 

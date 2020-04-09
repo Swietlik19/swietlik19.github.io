@@ -101,6 +101,20 @@
 
   toggleHidden('.faq',true);
 
+  // Табы
+  $('.cowork__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.cowork__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -139,6 +153,39 @@
     },
     pagination: {
       el: '.gallery__btns .swiper-dots',
+    },
+  });
+
+  var categorySlider = new Swiper('#category__slider', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    loop: true,
+    navigation: {
+      nextEl: '.category__gallery .swiper-button-next',
+      prevEl: '.category__gallery .swiper-button-prev',
+    },
+    breakpoints: {
+      1070: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      800: {
+        spaceBetween: 10,
+        slidesPerView: 4,
+      },
+      575: {
+        spaceBetween: 10,
+        slidesPerView: 3,
+      },
+      400: {
+        spaceBetween: 10,
+        slidesPerView: 2,
+      },
     },
   });
 
@@ -203,11 +250,37 @@
     },
   });
 
+  var scr1Slider = new Swiper('#scr1__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.scr1__slider .swiper-button-next',
+      prevEl: '.scr1__slider .swiper-button-prev',
+    },
+    pagination: {
+      el: '.scr1__slider .swiper-dots',
+    },
+    on: {
+      init: function () {
+        $(window).on("load", function () {
+          equalHeightSwiper('#scr1__slider');
+        });
+      },
+    },
+  });
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
+      equalHeightSwiper('#scr1__slider');
       if (window.matchMedia('(max-width: 700px)').matches) {
         $('.gallery__btns').appendTo('.gallery__wrap');
       } else {

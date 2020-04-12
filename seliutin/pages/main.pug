@@ -28,6 +28,11 @@ html(lang='ru')
     include blocks/scr1.pug
     include blocks/scr_about.pug
     include blocks/scr_team.pug
+    include blocks/scr_reviews.pug
+    include blocks/scr_serv.pug
+    include blocks/scr_faq.pug
+    include blocks/scr_blog.pug
+    include blocks/scr_contacts.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -99,12 +104,28 @@ html(lang='ru')
       }
 
       .page_preloader .logo {
+        opacity: 0;
         width: 523px;
         height: 210px;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
         -webkit-filter: drop-shadow(0px 0px 20px rgba(3, 181, 247, 0.94));
                 filter: drop-shadow(0px 0px 20px rgba(3, 181, 247, 0.94));
         -webkit-animation: logoPulse 8s ease infinite;
                 animation: logoPulse 8s ease infinite;
+        -webkit-transition: 0.5s 0.2s;
+        -o-transition: 0.5s 0.2s;
+        transition: 0.5s 0.2s;
+      }
+
+      .page_preloader .logo.visible {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
       }
 
   // body нужно задать disabled, для прелоадера
@@ -114,6 +135,33 @@ html(lang='ru')
       .page_preloader__logo
         .logo
           img(src="img/svg/logo.svg" alt="лого")
+
+    #x-fp-nav
+      ul
+        li
+          a.active(href="#" data-section="1" data-slide="0")
+          .fp-tooltip 01
+        li
+          a(href="#" data-section="1" data-slide="1")
+          .fp-tooltip 02
+        li
+          a(href="#" data-section="1" data-slide="2")
+          .fp-tooltip 03
+        li
+          a(href="#" data-section="2" data-slide="0")
+          .fp-tooltip 04
+        li
+          a(href="#" data-section="3" data-slide="0")
+          .fp-tooltip 05
+        li
+          a(href="#" data-section="4" data-slide="0")
+          .fp-tooltip 06
+        li
+          a(href="#" data-section="5" data-slide="0")
+          .fp-tooltip 07
+        li
+          a(href="#" data-section="6" data-slide="0")
+          .fp-tooltip 08
 
     // HEADER на главной и внутренних различается классом!!!
     +header--main("div")
@@ -128,9 +176,9 @@ html(lang='ru')
 
       ul.menu
         li.menu-item
-          a.menu-anchor(href="#scr_about") О нас
+          a(href="#") О нас
         li.menu-item
-          a.menu-anchor(href="#scr_team") Команда
+          a(href="#") Команда
         li.menu-item
           a(href="#") Услуги
         li.menu-item
@@ -145,14 +193,22 @@ html(lang='ru')
     +socials
 
     // PAGE_WR отличается на главной от внутренних своим ID, это очень важно!
-    #page_wr_main.page_wr
-      +scr1
-      +scr_about
-      +scr_team
+    #page_wr_main.page_wr.grey-bg
+      .page_fp#page_fp
+        .section
+          +scr1
+          +scr_about--main
+          +scr_team--main
+
+        +scr_serv--main
+        +scr_reviews--main
+        +scr_faq--main
+        +scr_blog--main
+        +scr_contacts--main
 
 
-      a.to-top(href="#page_wr")
-        i.fa.fa-angle-up
+    a.to-top(href="#page_wr")
+      i.fa.fa-angle-up
 
     +styles
     +scripts

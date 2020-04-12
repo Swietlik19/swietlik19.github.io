@@ -85,12 +85,28 @@
       }
 
       .page_preloader .logo {
+        opacity: 0;
         width: 523px;
         height: 210px;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
         -webkit-filter: drop-shadow(0px 0px 20px rgba(3, 181, 247, 0.94));
         filter: drop-shadow(0px 0px 20px rgba(3, 181, 247, 0.94));
         -webkit-animation: logoPulse 8s ease infinite;
         animation: logoPulse 8s ease infinite;
+        -webkit-transition: 0.5s 0.2s;
+        -o-transition: 0.5s 0.2s;
+        transition: 0.5s 0.2s;
+      }
+
+      .page_preloader .logo.visible {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
       }
     </style>
   </head>
@@ -100,6 +116,34 @@
       <div class="page_preloader__logo">
         <div class="logo"><img src="img/svg/logo.svg" alt="лого"></div>
       </div>
+    </div>
+    <div id="x-fp-nav">
+      <ul>
+        <li><a class="active" href="#" data-section="1" data-slide="0"></a>
+          <div class="fp-tooltip">01</div>
+        </li>
+        <li><a href="#" data-section="1" data-slide="1"></a>
+          <div class="fp-tooltip">02</div>
+        </li>
+        <li><a href="#" data-section="1" data-slide="2"></a>
+          <div class="fp-tooltip">03</div>
+        </li>
+        <li><a href="#" data-section="2" data-slide="0"></a>
+          <div class="fp-tooltip">04</div>
+        </li>
+        <li><a href="#" data-section="3" data-slide="0"></a>
+          <div class="fp-tooltip">05</div>
+        </li>
+        <li><a href="#" data-section="4" data-slide="0"></a>
+          <div class="fp-tooltip">06</div>
+        </li>
+        <li><a href="#" data-section="5" data-slide="0"></a>
+          <div class="fp-tooltip">07</div>
+        </li>
+        <li><a href="#" data-section="6" data-slide="0"></a>
+          <div class="fp-tooltip">08</div>
+        </li>
+      </ul>
     </div>
     <!-- HEADER на главной и внутренних различается классом!!!-->
     <header class="header header--main" id="header">
@@ -114,8 +158,8 @@
         </div>
         <div class="header__menu"><span class="decor-line"></span>
           <ul class="menu">
-            <li class="menu-item"><a class="menu-anchor" href="#scr_about">О нас</a></li>
-            <li class="menu-item"><a class="menu-anchor" href="#scr_team">Команда</a></li>
+            <li class="menu-item"><a href="#">О нас</a></li>
+            <li class="menu-item"><a href="#">Команда</a></li>
             <li class="menu-item"><a href="#">Услуги</a></li>
             <li class="menu-item"><a href="#">Отзывы</a></li>
             <li class="menu-item"><a href="#">Вопрос/ответ</a></li>
@@ -135,8 +179,8 @@
         </div>
       </div>
       <ul class="menu">
-        <li class="menu-item"><a class="menu-anchor" href="#scr_about">О нас</a></li>
-        <li class="menu-item"><a class="menu-anchor" href="#scr_team">Команда</a></li>
+        <li class="menu-item"><a href="#">О нас</a></li>
+        <li class="menu-item"><a href="#">Команда</a></li>
         <li class="menu-item"><a href="#">Услуги</a></li>
         <li class="menu-item"><a href="#">Отзывы</a></li>
         <li class="menu-item"><a href="#">Вопрос/ответ</a></li>
@@ -147,241 +191,910 @@
     <section class="socials socials--aside" id="socials"><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-vk"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-instagram"></i></a></section>
     <!-- /.socials-->
     <!-- PAGE_WR отличается на главной от внутренних своим ID, это очень важно!-->
-    <div class="page_wr" id="page_wr_main">
-      <section class="scr1 section" id="scr1">
-        <div class="scr1__header">
-          <button class="burger" id="scr1__burger"><span class="burger__wrap"><span class="line"></span></span></button>
-          <div class="logo__wrap">
-            <div class="logo"><img src="img/svg/logo.svg" alt="лого"></div>
-          </div>
-          <div class="scr1__phones"><a class="mobile btn btn--circle" href="tel:+79781234567" rel="nofollow"><i class="fa fa-phone"></i></a><a class="desktop btn btn--circle" href="tel:+79781234567" rel="nofollow"><i class="fa fa-phone"></i></a><a class="scr1__phone link" href="tel:+79781234567" rel="nofollow">+7 (978) 123 45 67</a></div>
-        </div>
-        <div class="container">
-          <div class="scr1__bg"><img src="img/scr1-bg.png" alt=""></div>
-          <div class="scr1__wrap">
-            <div class="scr1__content">
-              <h1 class="scr1__title">Юридическая компания<br><span> с настоящим</span> именем</h1>
-              <div class="scr1__desc">
-                <p>Решаем сложные юридические вопросы<br> Отвечаем за работу своим именем</p>
+    <div class="page_wr grey-bg" id="page_wr_main">
+      <div class="page_fp" id="page_fp">
+        <div class="section">
+          <section class="scr1 slide" id="scr1">
+            <div class="scr1__header">
+              <button class="burger" id="scr1__burger"><span class="burger__wrap"><span class="line"></span></span></button>
+              <div class="logo__wrap">
+                <div class="logo"><img src="img/svg/logo.svg" alt="лого"></div>
+              </div>
+              <div class="scr1__phones"><a class="mobile btn btn--circle" href="tel:+79781234567" rel="nofollow"><i class="fa fa-phone"></i></a><a class="desktop btn btn--circle" href="tel:+79781234567" rel="nofollow"><i class="fa fa-phone"></i></a><a class="scr1__phone link" href="tel:+79781234567" rel="nofollow">+7 (978) 123 45 67</a></div>
+            </div>
+            <div class="container">
+              <div class="scr1__bg"><img src="img/scr1-bg.png" alt=""></div>
+              <div class="scr1__wrap">
+                <div class="scr1__content">
+                  <h1 class="scr1__title">Юридическая компания<br><span> с настоящим</span> именем</h1>
+                  <div class="scr1__desc">
+                    <p>Решаем сложные юридические вопросы<br> Отвечаем за работу своим именем</p>
+                  </div>
+                </div>
+                <div class="scr1__btns">
+                  <div class="btn__wrap"><a class="btn btn--blue open-modal" href="#">Заказать звонок</a></div>
+                </div>
               </div>
             </div>
-            <div class="scr1__btns">
-              <div class="btn__wrap"><a class="btn btn--blue open-modal" href="#">Заказать звонок</a></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /.scr1-->
-      <section class="scr_about about section grey-bg" id="scr_about">
-        <div class="container">
-          <div class="about__content clearfix">
-            <div class="about__img toAnimate" data-anim-name="fadeIn" data-anim-delay="0.5s">
-              <noscript><img class="lazy" src="img-temp/about-img.jpg" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/about-img.jpg" alt="" width="125" height="90">
-            </div>
-            <div class="about__top">
-              <h2 class="title toAnimate faster" data-anim-name="fadeInLeft" data-anim-delay="0.5s">О нас</h2>
-              <div class="article">
-                <p>Каждый из нас понимает очевидную вещь: граница обучения кадров играет определяющее значение для укрепления моральных ценностей. Противоположная точка зрения подразумевает, что некоторые особенности внутренней политики призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений. Ясность нашей позиции очевидна: перспективное планирование играет важную роль в формировании приоритизации разума над эмоциями.</p>
+          </section>
+          <!-- /.scr1-->
+          <section class="scr_about about about--main grey-bg slide" id="scr_about">
+            <div class="container">
+              <div class="about__content clearfix">
+                <div class="about__img toAnimate" data-anim-name="fadeIn" data-anim-delay="0.5s">
+                  <noscript><img class="lazy" src="img-temp/about-img.jpg" alt="" width="125" height="90"></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/about-img.jpg" alt="" width="125" height="90">
+                </div>
+                <div class="about__top">
+                  <h2 class="title toAnimate faster" data-anim-name="fadeInLeft" data-anim-delay="0.5s">О нас</h2>
+                  <div class="article toAnimate faster" data-anim-name="fadeIn" data-anim-delay="0.5s">
+                    <p>Каждый из нас понимает очевидную вещь: граница обучения кадров играет определяющее значение для укрепления моральных ценностей. Противоположная точка зрения подразумевает, что некоторые особенности внутренней политики призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений. Ясность нашей позиции очевидна: перспективное планирование играет важную роль в формировании приоритизации разума над эмоциями.</p>
+                  </div>
+                </div>
+                <div class="about__feat">
+                  <ol class="about__feat-list">
+                    <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.5s">
+                      <h3>открытость</h3>
+                      <p>Мы никогда не ограничиваемся конкретными отраслями или<br> технологиями</p>
+                    </li>
+                    <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.6s">
+                      <h3>экспертность</h3>
+                      <p>Наша команда состоит из<br> экспертов и возглавляется<br> экспертами</p>
+                    </li>
+                    <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.7s">
+                      <h3>команда</h3>
+                      <p>Наша команда состоит из<br> экспертов и возглавляется<br> экспертами</p>
+                    </li>
+                    <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.8s">
+                      <h3>понимание</h3>
+                      <p>Мы внимательно слушаем и слышим суть, чтобы превратить обыденное сообщение в магию</p>
+                    </li>
+                    <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.9s">
+                      <h3>прозрачность</h3>
+                      <p>Мы всегда рады предлагать честные условия сотрудничества, адекватные цены и разумные сроки</p>
+                    </li>
+                  </ol>
+                </div>
               </div>
             </div>
-            <div class="about__feat">
-              <ol class="about__feat-list">
-                <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.5s">
-                  <h3>открытость</h3>
-                  <p>Мы никогда не ограничиваемся конкретными отраслями или<br> технологиями</p>
-                </li>
-                <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.6s">
-                  <h3>экспертность</h3>
-                  <p>Наша команда состоит из<br> экспертов и возглавляется<br> экспертами</p>
-                </li>
-                <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.7s">
-                  <h3>команда</h3>
-                  <p>Наша команда состоит из<br> экспертов и возглавляется<br> экспертами</p>
-                </li>
-                <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.8s">
-                  <h3>понимание</h3>
-                  <p>Мы внимательно слушаем и слышим суть, чтобы превратить обыденное сообщение в магию</p>
-                </li>
-                <li class="about__feat-item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.9s">
-                  <h3>прозрачность</h3>
-                  <p>Мы всегда рады предлагать честные условия сотрудничества, адекватные цены и разумные сроки</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /.scr_about-->
-      <section class="scr_team team section grey-bg" id="scr_team">
-        <div class="container">
-          <div class="team__wrap">
-            <h2 class="title toAnimate faster" data-anim-name="fadeInLeft" data-anim-delay="0.5s">Команда</h2>
-            <ul class="team__list">
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.5s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.6s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Екатерина Сорокина</h3>
-                    <p>Помощник руководителя</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.7s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.8s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.9s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.0s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Екатерина Сорокина</h3>
-                    <p>Помощник руководителя</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.1s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-              <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.2s">
-                <div class="team__item-wrap">
-                  <div class="team__img">
-                    <noscript><img class="lazy" src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top>
-                  </div>
-                  <div class="team__content">
-                    <h3>Ярослав Селютин</h3>
-                    <p>Руководитель</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div class="team__form">
-              <div class="form form--general wpcf7">
-                <p class="form__title">хотите стать частью команды?</p>
-                <form class="wpcf7-form">
-                  <div class="form__df">
-                    <div class="form__col">
-                      <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
-                          <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" id="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
-                          <label class="form__label" for="your-name">Имя</label></span></div>
-                      <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input">
-                          <input class="wpcf7-form-control wpcf7-text wpcf7-email" type="email" name="your-email" id="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
-                          <label class="form__label" for="your-email">e-mail</label></span></div>
+          </section>
+          <!-- /.scr_about-->
+          <section class="scr_team team team--mean slide grey-bg" id="scr_team">
+            <div class="container">
+              <div class="team__wrap">
+                <h2 class="title toAnimate faster" data-anim-name="fadeInLeft" data-anim-delay="0.5s">Команда</h2>
+                <ul class="team__list">
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.5s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
                     </div>
-                    <div class="form__col">
-                      <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
-                          <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" id="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
-                          <label class="form__label" for="your-tel">телефон</label></span></div>
-                      <div class="form__item"><span class="wpcf7-form-control-wrap your-msg text-input">
-                          <input class="wpcf7-form-control wpcf7-text wpcf7-msg" type="text" name="your-msg" id="your-msg" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
-                          <label class="form__label" for="your-msg">сообщение</label></span></div>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.6s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Екатерина Сорокина</h3>
+                        <p>Помощник руководителя</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form__bottom">
-                    <div class="form__item"><span class="wpcf7-form-control-wrap your-file">
-                        <label tabindex="0">
-                          <input class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" type="file" name="your-file" size="40" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false"><span class="sl">прикрепить резюме<i>+</i></span>
-                        </label></span></div>
-                    <div class="form__item form__item--submit">
-                      <input class="wpcf7-form-control wpcf7-submit btn btn--blue" type="submit" value="отправить">
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.7s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
                     </div>
-                    <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
-                            <label>
-                              <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Нажимая на кнопку, я даю согласие<br><i> на обработку персональных данных</i></span>
-                            </label></span></span></span></div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="footer grey-bg" id="footer">
-          <div class="footer__wrap">
-            <div class="logo__wrap">
-              <div class="logo"><img src="img/logo-inner.png" alt="Лого"></div>
-            </div>
-            <div class="footer__middle">
-              <div class="footer__menu">
-                <ul class="menu">
-                  <li class="menu-item"><a href="#">О нас</a></li>
-                  <li class="menu-item"><a href="#">Команда</a></li>
-                  <li class="menu-item"><a href="#">Услуги</a></li>
-                  <li class="menu-item"><a href="#">Отзывы</a></li>
-                  <li class="menu-item"><a href="#">Вопрос/ответ</a></li>
-                  <li class="menu-item"><a href="#">Блог</a></li>
-                  <li class="menu-item"><a href="#">Контакты</a></li>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.8s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="0.9s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.0s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Екатерина Сорокина</h3>
+                        <p>Помощник руководителя</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.1s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="team__item toAnimate faster" data-anim-name="fadeInUp" data-anim-delay="1.2s">
+                    <div class="team__item-wrap">
+                      <div class="team__img"><img src="img-temp/team/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover-top></div>
+                      <div class="team__content">
+                        <h3>Ярослав Селютин</h3>
+                        <p>Руководитель</p>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
-              </div>
-              <div class="footer__socials">
-                <section class="socials socials--footer" id="socials-footer"><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-vk"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-instagram"></i></a></section>
-                <!-- /.socials-->
+                <div class="team__form">
+                  <div class="form form--general wpcf7">
+                    <p class="form__title">хотите стать частью команды?</p>
+                    <form class="wpcf7-form">
+                      <div class="form__df">
+                        <div class="form__col">
+                          <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                              <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" id="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                              <label class="form__label" for="your-name">Имя</label></span></div>
+                          <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input">
+                              <input class="wpcf7-form-control wpcf7-text wpcf7-email" type="email" name="your-email" id="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                              <label class="form__label" for="your-email">e-mail</label></span></div>
+                        </div>
+                        <div class="form__col">
+                          <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                              <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" id="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                              <label class="form__label" for="your-tel">телефон</label></span></div>
+                          <div class="form__item"><span class="wpcf7-form-control-wrap your-msg text-input">
+                              <input class="wpcf7-form-control wpcf7-text wpcf7-msg" type="text" name="your-msg" id="your-msg" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                              <label class="form__label" for="your-msg">сообщение</label></span></div>
+                        </div>
+                      </div>
+                      <div class="form__bottom">
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-file">
+                            <label tabindex="0">
+                              <input class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" type="file" name="your-file" size="40" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false"><span class="sl">прикрепить резюме<i>+</i></span>
+                            </label></span></div>
+                        <div class="form__item form__item--submit">
+                          <input class="wpcf7-form-control wpcf7-submit btn btn--blue" type="submit" value="отправить">
+                        </div>
+                        <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                                <label>
+                                  <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Нажимая на кнопку, я даю согласие<br><i> на обработку персональных данных</i></span>
+                                </label></span></span></span></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="footer__address">
-              <div class="footer__address-wrap">
-                <p>Республика Крым, город Симферополь</p>
-                <p>E-mail:&nbsp;<a href="mailto:mail@mail.ru" rel="nofollow"> mail@mail.ru</a></p>
-                <p><a href="tel:+79781234567" rel="nofollow"> +7 (978) 123 45 67</a></p>
+          </section>
+          <!-- /.scr_team-->
+        </div>
+        <section class="scr_serv serv serv--main section" id="scr_serv">
+          <div class="team__wrap">
+            <div class="container">
+              <h1 class="title">Услуги</h1>
+              <ul class="section__nav">
+                <li class="active"><a class="link" href="#serv__tab-0">Юридическим лицам</a></li>
+                <li><a class="link" href="#serv__tab-1">Физическим лицам</a></li>
+              </ul>
+              <ul class="serv__tabs">
+                <li class="serv__tab" id="serv__tab-0">
+                  <ul class="blog__list">
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.5s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>антимонопольное законодательство</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.7s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>государственно-частное партнерство (гчп) / инфраструктурные проекты</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.9s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>интеллектуальная собственность</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.1s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-4.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>корпоративная практика</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.3s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-5.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-5.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>правовое сопровождение инвестиционных проектов</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.5s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-6.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-6.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>судебно-арбитражная практика. международный коммерческий арбитраж</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.7s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-7.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-7.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>налоговая<br> практика</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.9s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-8.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-8.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>недвижимость<br> и строительство</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="2.1s"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-9.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-9.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                              <div class="blog__word"><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>несостоятельность<br> и банкротство</h2>
+                        </div>
+                      </a></li>
+                  </ul>
+                </li>
+                <li class="serv__tab" id="serv__tab-1">
+                  <ul class="blog__list">
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>антимонопольное законодательство</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-5.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-5.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>правовое сопровождение инвестиционных проектов</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-6.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-6.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>судебно-арбитражная практика. международный коммерческий арбитраж</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-7.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-7.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>налоговая<br> практика</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-8.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-8.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>недвижимость<br> и строительство</h2>
+                        </div>
+                      </a></li>
+                    <li class="blog__item"><a class="blog__wrap" href="#">
+                        <div class="blog__top">
+                          <div class="blog__img">
+                            <noscript><img class="lazy" src="img-temp/serv/img-9.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/serv/img-9.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                          </div>
+                          <div class="blog__hover">
+                            <div class="blog__inner">
+                              <div class="blog__word"><span>подробнее</span></div>
+                              <div class="blog__line"></div>
+                              <div class="blog__word"><span></span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="blog__content">
+                          <h2>несостоятельность<br> и банкротство</h2>
+                        </div>
+                      </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- /.scr_blog-->
+        <section class="scr_reviews reviews reviews--main section" id="scr_reviews">
+          <div class="team__wrap">
+            <div class="container">
+              <h1 class="title">Отзывы</h1>
+              <div class="reviews__slider" id="reviews__slider">
+                <div class="swiper-wrapper">
+                  <div class="reviews__item swiper-slide">
+                    <div class="reviews__wrap clearfix"><a class="reviews__img fancybox" href="img-temp/reviews-img.jpg"><img src="img-temp/reviews-img.jpg" alt=""></a>
+                      <div class="reviews__content">
+                        <h2>ООО «Трест»</h2>
+                        <div class="article">
+                          <p>На протяжении нескольких лет сотрудничаем с Ярославом Юрьевичем и неоднократно пользовались его юридическими услугами. Плодотворный опыт работы показал, что Ярослава Юрьевича отличает высокий профессионализм, позволяющий ему выполнять работу по оказанию юридической помощи любой сложности. Нельзя не отметить оказание услуг в сжатые сроки. В свою очередь выражаем благодарность и надеемся на дальнейшее сотрудничество.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item swiper-slide">
+                    <div class="reviews__wrap clearfix"><a class="reviews__img fancybox" href="img-temp/reviews-img.jpg"><img src="img-temp/reviews-img.jpg" alt=""></a>
+                      <div class="reviews__content">
+                        <h2>ООО «Трест»</h2>
+                        <div class="article">
+                          <p>На протяжении нескольких лет сотрудничаем с Ярославом Юрьевичем и неоднократно пользовались его юридическими услугами.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item swiper-slide">
+                    <div class="reviews__wrap clearfix"><a class="reviews__img fancybox" href="img-temp/reviews-img.jpg"><img src="img-temp/reviews-img.jpg" alt=""></a>
+                      <div class="reviews__content">
+                        <h2>ООО «Трест»</h2>
+                        <div class="article">
+                          <p>На протяжении нескольких лет сотрудничаем с Ярославом Юрьевичем и неоднократно пользовались его юридическими услугами.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__item swiper-slide">
+                    <div class="reviews__wrap clearfix"><a class="reviews__img fancybox" href="img-temp/reviews-img.jpg"><img src="img-temp/reviews-img.jpg" alt=""></a>
+                      <div class="reviews__content">
+                        <h2>ООО «Трест»</h2>
+                        <div class="article">
+                          <p>На протяжении нескольких лет сотрудничаем с Ярославом Юрьевичем и неоднократно пользовались его юридическими услугами.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews__slider-nav">
+                  <button class="swiper-button-prev"></button>
+                  <div class="swiper-dots"></div>
+                  <button class="swiper-button-next"></button>
+                </div>
               </div>
             </div>
           </div>
-          <!-- /.footer__wrap-->
-        </footer>
-        <!-- /.footer-->
-      </section>
-      <!-- /.scr_team--><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
-    </div>
+        </section>
+        <!-- /.scr_reviews-->
+        <section class="scr_faq faq faq--main section" id="scr_faq">
+          <div class="team__wrap">
+            <div class="container">
+              <h1 class="title">Вопрос/ответ</h1>
+              <ul class="faq__list">
+                <li class="faq__item">
+                  <div class="top">
+                    <h2>Как сделать перерасчет за коммунальные платежи?</h2>
+                    <button class="open"></button>
+                  </div>
+                  <div class="hidden">
+                    <div class="article">
+                      <p> Вы можете сделать перерасчет за коммунальные услуги, так как отсутствовали длительное время. Однако перерасчет можно сделать только в случае, если счетчики технически невозможно установить в квартире (обычно в старых домах, где проблемы с коммуникациями). Если у вас не стоят счетчики именно из-за технических условий, то вам нужно:</p>
+                      <ul>
+                        <li>подать заявление о перерасчете стоимости услуг по холодному и горячему водоснабжению,</li>
+                        <li>приложить к нему акт обследования, подтверждающий невозможность установки счетчиков,</li>
+                        <li>приложить документы, подтверждающие ваше отсутствие в указанный период. Например, билеты.</li>
+                        <li>Оформить перерасчет за услуги ЖКХ можно в центре госуслуг «Мои документы».</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq__item">
+                  <div class="top">
+                    <h2>Как сделать перерасчет за коммунальные платежи?</h2>
+                    <button class="open"></button>
+                  </div>
+                  <div class="hidden">
+                    <div class="article">
+                      <p> Вы можете сделать перерасчет за коммунальные услуги, так как отсутствовали длительное время. Однако перерасчет можно сделать только в случае, если счетчики технически невозможно установить в квартире (обычно в старых домах, где проблемы с коммуникациями). Если у вас не стоят счетчики именно из-за технических условий, то вам нужно:</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq__item">
+                  <div class="top">
+                    <h2>Как сделать перерасчет за коммунальные платежи?</h2>
+                    <button class="open"></button>
+                  </div>
+                  <div class="hidden">
+                    <div class="article">
+                      <p> Вы можете сделать перерасчет за коммунальные услуги, так как отсутствовали длительное время. Однако перерасчет можно сделать только в случае, если счетчики технически невозможно установить в квартире (обычно в старых домах, где проблемы с коммуникациями). Если у вас не стоят счетчики именно из-за технических условий, то вам нужно:</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq__item">
+                  <div class="top">
+                    <h2>Как сделать перерасчет за коммунальные платежи?</h2>
+                    <button class="open"></button>
+                  </div>
+                  <div class="hidden">
+                    <div class="article">
+                      <p> Вы можете сделать перерасчет за коммунальные услуги, так как отсутствовали длительное время. Однако перерасчет можно сделать только в случае, если счетчики технически невозможно установить в квартире (обычно в старых домах, где проблемы с коммуникациями). Если у вас не стоят счетчики именно из-за технических условий, то вам нужно:</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="faq__item">
+                  <div class="top">
+                    <h2>Как сделать перерасчет за коммунальные платежи?</h2>
+                    <button class="open"></button>
+                  </div>
+                  <div class="hidden">
+                    <div class="article">
+                      <p> Вы можете сделать перерасчет за коммунальные услуги, так как отсутствовали длительное время. Однако перерасчет можно сделать только в случае, если счетчики технически невозможно установить в квартире (обычно в старых домах, где проблемы с коммуникациями). Если у вас не стоят счетчики именно из-за технических условий, то вам нужно:</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="faq__form">
+                <div class="form form--second wpcf7">
+                  <p class="form__title">задайте свой вопрос</p>
+                  <form class="wpcf7-form">
+                    <div class="form__df">
+                      <div class="form__col">
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" id="your-name3" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-name">Имя</label></span></div>
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-email" type="email" name="your-email" id="your-email3" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-email">e-mail</label></span></div>
+                      </div>
+                      <div class="form__col">
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" id="your-tel3" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-tel">телефон</label></span></div>
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-msg text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-msg" type="text" name="your-msg" id="your-msg3" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-msg">сообщение</label></span></div>
+                      </div>
+                    </div>
+                    <div class="form__bottom">
+                      <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                              <label>
+                                <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Нажимая на кнопку, я даю согласие<br><i> на обработку персональных данных</i></span>
+                              </label></span></span></span></div>
+                      <div class="form__item form__item--submit">
+                        <input class="wpcf7-form-control wpcf7-submit btn btn--blue" type="submit" value="отправить">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /.scr_faq-->
+        <section class="scr_blog blog blog--main section" id="scr_blog">
+          <div class="team__wrap">
+            <div class="container">
+              <h1 class="title">Блог</h1>
+              <ul class="section__nav">
+                <li class="active"><a class="link" href="#">Все материалы</a></li>
+                <li><a class="link" href="#">Новости</a></li>
+                <li><a class="link" href="#">Мероприятия</a></li>
+              </ul>
+              <ul class="blog__list">
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.5s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.7s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="0.9s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.1s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.3s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.5s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.7s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-1.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="1.9s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-2.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+                <li class="blog__item faster toAnimate" data-anim-name="fadeInUp" data-anim-delay="2.1s"><a class="blog__wrap" href="#">
+                    <div class="blog__top">
+                      <div class="blog__img">
+                        <noscript><img class="lazy" src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/blog/img-3.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                      </div>
+                      <div class="blog__hover">
+                        <div class="blog__inner">
+                          <div class="blog__word"><span>читать</span></div>
+                          <div class="blog__line"></div>
+                          <div class="blog__word"><span>статью</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__content">
+                      <time class="blog__time" datetime=""><span>18 марта</span><span class="blog__time-line"></span><span>2020</span></time>
+                      <h2>Конфликт двух решений<br> и супружеский дом в ипотеке:<br> новые дела ВС</h2>
+                    </div>
+                  </a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- /.scr_blog-->
+        <section class="scr_contacts contacts contacts--main section" id="scr_contacts">
+          <div class="team__wrap">
+            <div class="container">
+              <h1 class="title">Контакты</h1>
+            </div>
+            <div class="contacts__top">
+              <div class="container">
+                <div class="contacts__content">
+                  <div class="contacts__content-wrap">
+                    <div class="contacts__item">
+                      <h3>Адрес:</h3>
+                      <div class="contacts__text">
+                        <p>г. Симферополь,<br> ул. Севастопольская, 123, оф. 123</p>
+                      </div>
+                    </div>
+                    <div class="contacts__item">
+                      <h3>Телефон:</h3>
+                      <div class="contacts__text">
+                        <p><a class="link" href="tel:+79781234567" rel="nofollow">+7 (978) 123 45 67</a></p>
+                        <p><a class="link" href="tel:+79781234568" rel="nofollow">+7 (978) 123 45 68</a></p>
+                      </div>
+                    </div>
+                    <div class="contacts__item">
+                      <h3>Почта:</h3>
+                      <div class="contacts__text">
+                        <p><a class="link" href="mailto:mail@mail.ru" rel="nofollow">mail@mail.ru</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="contacts__map grey-bg" id="contacts__map"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="contacts__form">
+                <div class="form form--general wpcf7">
+                  <p class="form__title">обратная связь</p>
+                  <form class="wpcf7-form">
+                    <div class="form__df">
+                      <div class="form__col">
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" id="your-name5" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-name">Имя</label></span></div>
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-email text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-email" type="email" name="your-email" id="your-email5" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-email">e-mail</label></span></div>
+                      </div>
+                      <div class="form__col">
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" id="your-tel5" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-tel">телефон</label></span></div>
+                        <div class="form__item"><span class="wpcf7-form-control-wrap your-msg text-input">
+                            <input class="wpcf7-form-control wpcf7-text wpcf7-msg" type="text" name="your-msg" id="your-msg5" value="" size="40" aria-required="true" aria-invalid="false" placeholder="">
+                            <label class="form__label" for="your-msg">сообщение</label></span></div>
+                      </div>
+                    </div>
+                    <div class="form__bottom">
+                      <div class="form__item"><span class="wpcf7-form-control-wrap your-file">
+                          <label tabindex="0">
+                            <input class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" type="file" name="your-file" size="40" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false"><span class="sl">прикрепить файл<i>+</i></span>
+                          </label></span></div>
+                      <div class="form__item form__item--submit">
+                        <input class="wpcf7-form-control wpcf7-submit btn btn--blue" type="submit" value="отправить">
+                      </div>
+                      <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                              <label>
+                                <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Нажимая на кнопку, я даю согласие<br><i> на обработку персональных данных</i></span>
+                              </label></span></span></span></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer grey-bg" id="footer">
+            <div class="footer__wrap">
+              <div class="logo__wrap">
+                <div class="logo"><img src="img/logo-inner.png" alt="Лого"></div>
+              </div>
+              <div class="footer__middle">
+                <div class="footer__menu">
+                  <ul class="menu">
+                    <li class="menu-item"><a href="#">О нас</a></li>
+                    <li class="menu-item"><a href="#">Команда</a></li>
+                    <li class="menu-item"><a href="#">Услуги</a></li>
+                    <li class="menu-item"><a href="#">Отзывы</a></li>
+                    <li class="menu-item"><a href="#">Вопрос/ответ</a></li>
+                    <li class="menu-item"><a href="#">Блог</a></li>
+                    <li class="menu-item"><a href="#">Контакты</a></li>
+                  </ul>
+                </div>
+                <div class="footer__socials">
+                  <section class="socials socials--footer" id="socials-footer"><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-vk"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-facebook"></i></a><a class="socials__link" href="#" rel="nofollow" target="_blank"><i class="fa fa-instagram"></i></a></section>
+                  <!-- /.socials-->
+                </div>
+              </div>
+              <div class="footer__address">
+                <div class="footer__address-wrap">
+                  <p>Республика Крым, город Симферополь</p>
+                  <p>E-mail:&nbsp;<a href="mailto:mail@mail.ru" rel="nofollow"> mail@mail.ru</a></p>
+                  <p><a href="tel:+79781234567" rel="nofollow"> +7 (978) 123 45 67</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- /.footer__wrap-->
+          </footer>
+          <!-- /.footer-->
+        </section>
+        <!-- /.scr_contacts-->
+      </div>
+    </div><a class="to-top" href="#page_wr"><i class="fa fa-angle-up"></i></a>
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="libs/swiper/swiper.min.css">
@@ -397,6 +1110,7 @@
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
     <script src="libs/swiper/swiper.js"></script>
+    <script src="libs/fullpage/fullpage.scrollHorizontally.min.js"></script>
     <script src="libs/fullpage/jquery.fullpage.js"></script>
     <script src="js/common.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>

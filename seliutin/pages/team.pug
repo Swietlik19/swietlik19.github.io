@@ -1,0 +1,75 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#011e31')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/socials.pug
+
+    include blocks/scr_team.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+
+  body
+
+    +header("a")
+
+    .scr1__menu
+      button.scr1__menu-close
+
+      .scr1__menu-logo-wrap
+        .scr1__menu-logo
+          .logo
+            img(src="img/svg/logo-menu.svg" alt="лого")
+
+      ul.menu
+        li.menu-item
+          a(href="#") О нас
+        li.menu-item
+          a(href="#") Команда
+        li.menu-item
+          a(href="#") Услуги
+        li.menu-item
+          a(href="#") Отзывы
+        li.menu-item
+          a(href="#") Вопрос/ответ
+        li.menu-item
+          a(href="#") Блог
+        li.menu-item
+          a(href="#") Контакты
+
+    +socials
+
+    #page_wr.page_wr.grey-bg
+      +scr_team
+
+
+      a.to-top(href="#page_wr")
+        i.fa.fa-angle-up
+
+    +footer("a")
+
+    +styles
+    +scripts
+    +script-map

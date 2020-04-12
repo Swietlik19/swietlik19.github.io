@@ -7,8 +7,10 @@
   padding: 0
 
 html, body
+  position: relative
   max-width: 100%
   overflow-x: hidden
+  height: 100%
 
 html
   &.disabled
@@ -17,7 +19,7 @@ html
 body
   position: relative
   width: 100%
-  height: 100%
+  height: auto
 
   font-family: $font
   font-size: 16px
@@ -33,9 +35,15 @@ body
   &.disabled
     overflow: hidden
     max-height: 100vh
+  &.fp-viewing-fp-serv
+    height: 100%
 
 .page_wr
-  flex-grow: 1
+  position: relative
+  height: 100%
+  &:not(#page_wr_main)
+    flex-grow: 1
+    height: auto
 #page_wr
   padding-top: 112px
 
@@ -363,10 +371,11 @@ input[type="submit"]
   filter: grayscale(100%)
 
 /* Переопределение стилей fullPage */
-#fp-nav
+#x-fp-nav
   position: absolute
-  top: 240px
+  top: 180px
   left: 68px
+  z-index: 100
   &::after
     content: ''
     position: absolute
@@ -387,6 +396,7 @@ input[type="submit"]
   ul
     list-style: none
     li
+      position: relative
       margin-left: 0
       margin-right: 0
       margin-bottom: 53px
@@ -394,6 +404,10 @@ input[type="submit"]
       &:last-of-type
         margin-bottom: 0
       .fp-tooltip
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
         display: block
         width: auto
         font-size: 16px
@@ -405,6 +419,9 @@ input[type="submit"]
         transition: 0.3s 0.2s
     a
       position: relative
+      display: block
+      width: 20px
+      height: 20px
       &::after
         content: ''
         position: absolute
@@ -422,11 +439,14 @@ input[type="submit"]
         display: none
     a.active + .fp-tooltip
       color: $accent2
-  .fp-sr-only
-    position: static
+  // .fp-sr-only
+  //   position: static
 
-.fp-viewing-fp-scr1
-  #fp-nav
+.fp-controlArrow
+  display: none
+
+.fp-viewing-fp-top-0
+  #x-fp-nav
     ul
       .fp-tooltip
         color: #fff
@@ -447,6 +467,10 @@ input[type="submit"]
   background-color: rgba($accent, 0.5) !important
 
 /* Переопределение стилей слайдера */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+
 .swiper-dots
   text-align: center
 .swiper-pagination-bullet
@@ -484,6 +508,9 @@ input[type="submit"]
   &::before
     transform: rotate(-90deg)
 
+.swiper-container-vertical>.swiper-scrollbar
+  right: 0
+
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
@@ -492,16 +519,49 @@ input[type="submit"]
 
 /* media */
 
+@media screen and (max-height: 850px)
+  #x-fp-nav
+    top: 140px
+    &::after
+      height: 65px
+    ul
+      li
+        margin-bottom: 40px
+
+// max-height 850px
+
+@media screen and (max-height: 750px)
+  #x-fp-nav
+    &::before
+      top: calc(100% + 32px)
+    &::after
+      top: calc(100% + 79px)
+
+// max-height 750px
+
+@media screen and (max-height: 700px)
+  #x-fp-nav
+    &::after
+      content: none
+
+// max-height 700px
+
 @media screen and (max-height: 670px)
   .page_preloader .logo
     width: 400px !important
     height: 150px !important
+  #x-fp-nav
+    ul
+      li
+        margin-bottom: 20px
+      .fp-tooltip
+        font-size: 14px
 
 // max-height 670px
 
 @media screen and (max-height: 550px)
-  #fp-nav
-    margin-top: -106px
+  #x-fp-nav
+    top: 100px
     &::after
       content: none
 
@@ -510,13 +570,13 @@ input[type="submit"]
 @media screen and (max-width: 1400px)
   #page_wr
     padding-top: 80px
-  #fp-nav
+  #x-fp-nav
     left: 20px
 
 // max-width 1400px
 
 @media screen and (max-width: 1350px)
-  #fp-nav
+  #x-fp-nav
     left: 20px
     ul
       & > li
@@ -529,7 +589,7 @@ input[type="submit"]
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
-  #fp-nav
+  #x-fp-nav
     left: 16px
 
 // max-width 1200px

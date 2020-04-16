@@ -1,0 +1,64 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#4dbc4b')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+
+    include blocks/scr_catalog.pug
+    include blocks/scr_steps.pug
+    include blocks/scr_deliver.pug
+    include blocks/scr_faq.pug
+    include blocks/scr_for.pug
+    include blocks/scr_get.pug
+    include blocks/scr_cta.pug
+    include blocks/scr1.pug
+
+    include blocks/footer.pug
+    include blocks/modal.pug
+
+
+  body.main-page
+
+    +header("div")
+
+    #page_wr.page_wr
+
+      +scr1
+      +scr_catalog
+      +scr_get
+      +scr_cta
+      +scr_for
+      +scr_steps
+      +scr_deliver
+      +scr_faq
+
+      a.to-top(href="#page_wr")
+        i.fa.fa-angle-up
+    +footer("div")
+
+    +modal__order
+    +modal__prod
+
+    +styles
+    +scripts
+    +script-map

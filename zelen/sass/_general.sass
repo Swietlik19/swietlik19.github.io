@@ -1,0 +1,454 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 500
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 15px
+    text-indent: 14px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 500
+    &:last-of-type
+      margin-bottom: 0
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      position: relative
+      margin-bottom: 22px
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 8px
+        left: -15px
+        width: 8px
+        height: 8px
+        background-color: $accent2
+        border-radius: 50%
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.grey-bg
+  background-color: #f8f8f8
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.title
+  margin-top: 0
+  font-size: 32px
+  line-height: 1.2
+  font-weight: 900
+
+.green
+  color: $accent
+
+.yellow
+  color: $accent2
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+  &--green
+    position: relative
+    background-image: $grad
+    border-radius: 27.0px
+    box-shadow: 0px 20px 25px -5px rgba(77,187,75,0.5)
+    overflow: hidden
+    z-index: 1
+    &:after,
+    &:before
+      content: ''
+      position: absolute
+      left: -50%
+      right: -50%
+      height: 0
+      padding-bottom: 200%
+      background: darken(#87df8c, 15%)
+      top: 0
+      z-index: -1
+      border-radius: 230px
+      transition: transform 2.5s, background 5s
+    &:after
+      transform: translate3d(-5%,6.5em,0) rotate(-45deg)
+    &:before
+      transform: translate3d(5%,6em,0) rotate(0deg)
+    &:hover,
+    &:focus
+      &:before,
+      &:after
+        transform: translate3d(0,-5em,0) rotate(180deg)
+        background: darken(#87df8c, 20%)
+        transition: transform 2.8s, background 6s
+
+    .btn
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 56px
+      padding: 0 44px
+
+      text-align: center
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 700
+      color: #ffffff
+      z-index: 2
+
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.btn
+  &--transparent
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 170px
+    height: 44px
+    border: 1.0px solid $accent
+    border-radius: 22.0px
+    font-size: 15px
+    line-height: 1.2
+    font-weight: 700
+    color: $accent
+    transition: 0.3s
+    &:hover
+      background-color: $accent
+      color: #fff
+  &--circle
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0px 5px 10px 0px rgba(59,61,91,0.4)
+    width: 43px
+    height: 43px
+    background-image: linear-gradient(180.0deg, #4dbc4b 0%, #87df8c 100%)
+    border-radius: 50%
+    transition: 0.3s
+    .fa
+      font-size: 21px
+    &:hover
+      box-shadow: 0px 5px 17px 0px rgba(59,61,91,0.7)
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  &:hover
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: #aaa
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 3px
+      background-color: $accent
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .fa
+    color: #fff
+    transition: 0.5s
+    font-size: 18px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+/* Переопределение стилей swiper */
+.swiper-dots
+  text-align: center
+  margin-top: 25px
+.swiper-pagination-bullet
+  width: 8px
+  height: 8px
+  margin: 0 8px
+  opacity: 1
+  background: $accent
+.swiper-pagination-bullet-active
+  background: $accent2
+.swiper-button-prev,
+.swiper-button-next
+  top: 45%
+  background: none
+  outline: none
+  border: none
+  box-shadow: 0px 10px 15px 0px rgba(59,61,91,0.15)
+  width: 37px
+  height: 37px
+  background-color: #f5f5f5
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: ''
+    width: 5px
+    height: 9px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+  &:hover
+    box-shadow: 0px 10px 20px 0px rgba(59,61,91,0.5)
+.swiper-button-prev
+  left: -20px
+  &::after
+    transform: rotate(-180deg)
+.swiper-button-next
+  right: -20px
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+@media screen and (max-width: 991px)
+  .title
+    br
+      display: none
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .title
+    font-size: 27px
+  .article
+    p
+      font-size: 14px
+    ul li,
+    ol li
+      font-size: 14px
+    ul
+      & > li
+        margin-bottom: 12px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .title
+    font-size: 24px
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

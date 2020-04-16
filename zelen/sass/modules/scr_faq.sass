@@ -1,0 +1,153 @@
+.faq
+  position: relative
+  padding-top: 55px
+  padding-bottom: 58px
+
+  .title
+    margin-bottom: 60px
+    text-align: center
+
+  &__df
+    display: flex
+
+  &__list
+    flex-grow: 1
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    position: relative
+    margin-bottom: 15px
+    box-shadow: 0px 10px 15px 0px rgba(59,61,91,0.15)
+    background-color: #f5f5f5
+    border-radius: 8.0px
+    transition: 0.3s
+    &:last-of-type
+      margin-bottom: 0
+    &:not(.active):hover
+      box-shadow: 0px 10px 15px 0px rgba(59,61,91,0.5)
+
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 20px 13px 20px 25px
+      cursor: pointer
+
+    .hidden
+      display: none
+      padding: 18px 40px 24px 47px
+      border-top: 1px solid #f8f8f8
+
+    h2
+      margin-right: 15px
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 700
+      transition: 0.3s
+    p
+      margin-bottom: 16px
+      font-size: 14px
+      line-height: 1.428571428571429 /* 20 / 14 */
+      font-weight: 500
+      color: #3d3d40
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 19px
+      height: 19px
+      transition: 0.5s
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: calc(50% - 1px)
+        left: 0
+
+        display: block
+        width: 19px
+        height: 3px
+        background-color: $accent
+        border-radius: 1.5px
+        transform-origin: center
+      &::before
+        transform: rotate(270deg)
+    &.active
+      background-color: #ffffff
+      .open
+        transform: rotate(135deg)
+
+  &__form
+    flex-shrink: 0
+    width: 322px
+    max-width: 100%
+    margin-left: 38px
+
+
+  @media screen and (max-width: 991px)
+    padding-top: 35px
+    padding-bottom: 38px
+    .title
+      margin-bottom: 40px
+    &__form
+      margin-left: 20px
+    &__item
+      .hidden
+        padding: 18px 30px 24px 27px
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &__form
+      width: 302px
+
+  // max-width 850px
+
+  @media screen and (max-width: 767px)
+    &__df
+      flex-direction: column
+    &__form
+      margin-left: auto
+      margin-right: auto
+      margin-top: 35px
+      width: 322px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__item
+      h2
+        font-size: 14px
+      p
+        font-size: 13px
+      .open
+        width: 15px
+        height: 15px
+        &::before,
+        &::after
+          width: 15px
+      .hidden
+        padding-top: 5px
+    .title
+      margin-bottom: 30px
+
+  // max-width 575px
+
+/* faq */

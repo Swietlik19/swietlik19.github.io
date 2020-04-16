@@ -1,0 +1,123 @@
+.for
+  position: relative
+  padding-bottom: 124px
+  padding-top: 50px
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    margin-top: 47px
+    margin-bottom: 33px
+    width: 655px
+    max-width: 100%
+    & > li
+      margin-right: 26px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        justify-content: center
+        min-width: 170px
+        height: 44px
+        padding: 0 15px
+        background-color: $accent
+        border-radius: 22.0px
+        font-size: 15px
+        line-height: 1.2
+        font-weight: 700
+        color: #ffffff
+        transition: 0.3s
+        &:hover
+          background-color: #f8f8f8
+          color: #92999f
+      &.current
+        & > a
+          background-color: #f8f8f8
+          color: #92999f
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+    width: 655px
+    max-width: 100%
+    box-shadow: 0px 15px 20px 0px rgba(59,61,91,0.15)
+    background-color: #ffffff
+    border-radius: 8.0px
+    padding: 32px 42px 37px 40px
+    &-wrap
+      position: relative
+      z-index: 1
+  &__tab
+    &:not(#for__tab-0)
+      display: none
+
+  &__img
+    position: absolute
+    right: 0
+    top: -30px
+    width: 655px
+    max-width: 100%
+    height: calc(100% + 65px)
+    z-index: -1
+    border-radius: 8.0px
+    overflow: hidden
+    img
+      display: block
+      height: 100%
+
+
+  @media screen and (max-width: 991px)
+    &__img
+      top: -20px
+      width: 475px
+      height: calc(100% + 45px)
+    &__tabs
+      padding: 28px 42px 28px 30px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__img
+      top: auto
+      bottom: -90px
+      height: calc(100% + -65px)
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    padding-bottom: 40px
+    &__img
+      position: static
+      width: 400px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 25px
+      height: auto
+
+  // max-width 700px
+
+  @media screen and (max-width: 500px)
+    .title
+      font-size: 21px
+      text-align: center
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__nav
+      flex-direction: column
+      margin-top: 37px
+      margin-bottom: 13px
+      & > li
+        margin-right: 0
+        margin-bottom: 8px
+    &__tabs
+      padding: 28px 42px 28px 10px
+
+  // max-width 400px
+
+/* for */

@@ -1,0 +1,56 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Производство и продажа
+            br
+            |  микрозелени
+            br
+            |  в Крыму и Севастополе
+
+        .header__phones
+          a.btn.btn--circle.open-modal.desktop(href="#")
+            i.fa.fa-phone
+          a.btn.btn--circle.mobile(href="#")
+            i.fa.fa-phone
+          .header__phones-links
+            a.link(href="tel:+79789368866" rel="nofollow") +7 (978) 936 88 66
+            .header__phones-msg
+              a(href="viber://chat?number=79789368866" rel="nofollow") Viber
+              span  /
+              a(href="https://api.whatsapp.com/send?phone=79789368866" rel="nofollow")  WhatsApp
+
+      // /.header__top
+
+      .header__menu
+        ul.menu
+          li.menu-item
+            a(href="#scr_catalog") Каталог
+          li.menu-item
+            a(href="#scr_get") Польза
+          li.menu-item
+            a(href="#scr_for") Рецепты
+          li.menu-item
+            a(href="#scr_feat") Для кого?
+          li.menu-item
+            a(href="#scr_catalog") Как заказать?
+          li.menu-item
+            a(href="#scr_faq") Вопрос-ответ
+          li.menu-item
+            a(href="#footer") Контакты
+
+      // /.header__menu
+
+    // /.container

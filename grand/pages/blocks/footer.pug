@@ -1,0 +1,66 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo.png" alt="лого")
+
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О застройщике
+            li.menu-item
+              a(href="#") Наши проекты
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Спецпредложения
+
+          ul.menu
+            li.menu-item
+              a(href="#") Документы
+            li.menu-item
+              a(href="#") Условия приобретения
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+        // /.footer__menu
+
+        .footer__address
+          a.footer__phone(href="tel:88001234567" rel="nofollow") 8 800 123 45 67
+
+          p.footer__text г. Ялта, ул. Васильева, 16
+
+          a.footer__text(href="mailto:Grandkrym@yandex.ru" rel="nofollow") Grandkrym@yandex.ru
+
+          p.footer__text Режим работы: 9:00-20:00
+
+      // /.footer__top
+    // /.container
+
+    .footer__bottom
+      .container
+        .footer__bottom-df
+          .footer__politics
+            a.text(href="#") Политика конфиденциальности
+
+          .footer__copyright
+            p.text г. Симферополь © Copyright  2020&nbsp;г.
+
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

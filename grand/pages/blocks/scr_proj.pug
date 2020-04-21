@@ -1,0 +1,67 @@
+mixin scr_proj()
+  section.scr_proj.proj(id="scr_proj")
+    .container
+      .proj__top
+        h2.title2 Наши проекты
+
+        a.link(href="#") Все проекты
+
+      .proj__slider-wrap
+        .proj__slider#proj__slider
+          .swiper-wrapper
+            .proj__slide.swiper-slide
+              a.proj__inner(href="#")
+                .proj__img
+                  noscript
+                    img.lazy(src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
+
+                .proj__content
+                  h3.proj__title Жилой комплекс
+                    span  «Испанская деревня»
+
+                  .proj__hidden
+                    p.proj__status на этапе застройки
+                    p.proj__text стоимость от
+                    p.proj__sum 1 500 000 Р
+
+
+        .proj__slider-nav
+          button.swiper-button-prev
+          .swiper-dots
+          button.swiper-button-next
+
+      .proj__form
+        .form.wpcf7
+          form.wpcf7-form
+            p.form__title Запишитесь
+              br
+              |  на персональную экскурсию
+              br
+              |  по нашим объектам
+
+            .form__df
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+
+            .form__item
+              .btn__wrap.btn__wrap--grad
+                input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Заказать экскурсию')
+
+            .form__item
+              span.wpcf7-form-control-wrap.accept
+                span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                  span.wpcf7-list-item
+                    label
+                      input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                      span.wpcf7-list-item-label Согласие на обработку персональных данных
+                        i.accept__icon
+
+
+  // /.scr_proj

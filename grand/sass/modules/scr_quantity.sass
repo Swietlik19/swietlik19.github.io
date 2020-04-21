@@ -1,0 +1,146 @@
+.quantity
+  position: relative
+  padding-top: 65px
+  padding-bottom: 112px
+  &__df
+    display: flex
+  &__content
+    position: relative
+    margin-right: 50px
+    padding-top: 26px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: -53px
+      left: -200px
+      display: block
+      width: 344px
+      height: 599px
+      background: transparent url('../img/logo-white.jpg') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 21px
+      height: 1px
+      background: $accent
+
+  &__slider
+    overflow: hidden
+    &-wrap
+      order: 2
+      flex-shrink: 0
+      width: 555px
+  &__item
+    display: block
+    text-decoration: none
+    outline: none
+    height: 606px
+    overflow: hidden
+    img
+      display: block
+      height: 100%
+      transition: 0.3s
+    &:hover
+      img
+        transform: scale(1.1)
+        transition: 1.3s
+
+  &__title
+    margin-top: 0
+    margin-bottom: 54px
+    font-size: 36px
+    line-height: 1.333333333333333 /* 48 / 36 */
+    font-weight: 400
+
+
+  @media screen and (max-width: 1170px)
+    padding-bottom: 62px
+    &__title
+      margin-bottom: 34px
+      font-size: 30px
+    &__content
+      margin-right: 30px
+    &__item
+      height: 516px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__slider
+      &-wrap
+        width: 505px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__title
+      margin-bottom: 24px
+      font-size: 25px
+    &__slider
+      &-wrap
+        width: 445px
+    &__item
+      height: 420px
+
+  // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &__df
+      display: block
+    &__slider
+      &-wrap
+        width: 355px
+        margin-left: 20px
+        margin-bottom: 20px
+        float: right
+    &__item
+      height: 320px
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    padding-top: 45px
+    padding-bottom: 42px
+    &__title
+      font-size: 19px
+    &__slider
+      &-wrap
+        width: 295px
+    &__item
+      height: 240px
+    &__content
+      &::before
+        top: 0
+        left: 0
+        width: 304px
+        height: 329px
+
+  // max-width 767px
+
+  @media screen and (max-width: 600px)
+    &__slider
+      &-wrap
+        width: 235px
+    &__item
+      height: 190px
+
+  // max-width 600px
+
+  @media screen and (max-width: 575px)
+    &__slider
+      &-wrap
+        float: none
+        width: 100%
+        margin-left: 0
+    &__content
+      margin-right: 0
+
+  // max-width 575px
+
+/* quantity */

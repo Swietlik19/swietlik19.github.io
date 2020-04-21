@@ -1,0 +1,126 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  text-align: center
+  box-shadow: 0px 10px 27px 0px rgba(179,173,153,0.2)
+  background-color: #ffffff
+  padding: 49px 72px 52px
+  &__title
+    margin-bottom: 30px
+    font-family: $font2
+    font-size: 30px
+    line-height: 1.266666666666667 /* 38 / 30 */
+
+  &__df
+    display: flex
+    margin-bottom: 37px
+    .form__item
+      width: calc((100% - 38px) / 2)
+      margin-right: 38px
+      &:last-of-type
+        margin-right: 0
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 100%
+      font-size: 16px
+      font-weight: 300
+      color: #241210
+      padding: 14px 0
+      border-bottom: 1px solid #b3ad99
+
+      @include placeholder(#241210, 14px)
+
+      &:focus
+        @include placeholder(#fff, 14px)
+
+      &:hover
+        border-color: $accent
+
+    textarea
+      // height: 136px
+
+  .btn__wrap
+    .btn
+      height: 61px
+      padding: 0 48px
+      text-transform: none
+
+  .accept
+    display: block
+    margin-top: 40px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(0,0,0,0.7)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  // @media screen and (max-width: 575px)
+
+  //   max-width 575px
+
+ /* form */

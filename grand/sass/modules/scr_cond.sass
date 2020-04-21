@@ -1,0 +1,225 @@
+.cond
+  position: relative
+  padding-top: 98px
+  padding-bottom: 120px
+  &__wrap
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: -36px
+      left: 0
+      width: 21px
+      height: 1px
+      background-color: $accent
+    &::after
+      content: ''
+      position: absolute
+      top: -21px
+      left: 50%
+      transform: translateX(-50%)
+      display: block
+      width: 344px
+      height: 599px
+      background: transparent url('../img/logo-grey.jpg') no-repeat center center
+      background-size: contain
+      z-index: -1
+  &__df
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: 55px
+  &__content
+    position: relative
+    padding-top: 6px
+    flex-grow: 1
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      bottom: -26px
+      display: block
+      width: 197px
+      height: 148px
+      background: transparent url('../img/key.png') no-repeat center center
+      background-size: contain
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-bottom: 80px
+  &__item
+    position: relative
+    padding-left: 38px
+    margin-bottom: 48px
+    &:nth-of-type(2)
+      margin-bottom: 58px
+    &:last-of-type
+      margin-bottom: 0
+    &::before
+      content: ''
+      position: absolute
+      top: 1px
+      left: 0
+      display: block
+      width: 12px
+      height: 17px
+      background: transparent url('../img/svg/icon-bookmark-full.svg') no-repeat center center
+      background-size: contain
+  &__text
+    font-size: 18px
+    line-height: 1.222222222222222 /* 22 / 18 */
+    font-weight: 500
+    .brown
+      display: flex
+      align-items: center
+    .percent
+      display: inline-block
+      margin-top: 17px
+      margin-left: 10px
+      margin-right: 10px
+      font-family: $font2
+      font-size: 30px
+      line-height: 38px
+      color: #241210
+      big
+        font-size: 50px
+    &-df
+      display: flex
+      margin-top: 15px
+    &-col
+      width: calc((100% - 20px) / 2)
+      margin-right: 20px
+      .percent
+        margin-left: 0
+        margin-bottom: 5px
+      &:last-of-type
+        margin-right: 0
+
+  &__partners
+    flex-shrink: 0
+    width: 457px
+    margin-left: 40px
+    padding: 35px 12px 10px
+    .title2
+      font-size: 30px
+      text-align: center
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      margin-top: 55px
+      li
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 50%
+        height: 175px
+        &:first-of-type,
+        &:nth-of-type(2)
+          border-bottom: 1px solid #b3ad99
+        &:first-of-type,
+        &:nth-of-type(3)
+          border-right: 1px solid #b3ad99
+        img
+          display: block
+          width: auto
+          height: auto
+          max-height: 100%
+          max-width: calc(100% - 66px)
+
+
+  @media screen and (max-width: 1070px)
+    &__text
+      font-size: 16px
+      br
+        display: none
+    &__content
+      &::before
+        right: -10px
+        bottom: -26px
+        width: 137px
+        height: 108px
+    &__item
+      padding-left: 28px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    padding-top: 88px
+    padding-bottom: 70px
+    &__partners
+      width: 350px
+      margin-left: 20px
+      .title2
+        font-size: 26px
+    &__content
+      &::after
+        width: 127px
+        height: 98px
+        bottom: 14px
+    &__item
+      margin-bottom: 28px
+      &:nth-of-type(2)
+        margin-bottom: 28px
+    &__text
+      font-size: 14px
+      .percent
+        big
+          font-size: 42px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 40px
+    &__df
+      flex-direction: column
+      margin-top: 30px
+    &__partners
+      margin-left: 0
+      margin-top: 25px
+      width: 100%
+      ul
+        margin-top: 35px
+        & > li
+          height: 125px
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__partners
+      .title2
+        font-size: 22px
+    &__content
+      &::after
+        width: 87px
+        height: 118px
+        bottom: 0
+    &__text
+      font-size: 13px
+      .percent
+        font-size: 25px
+        big
+          font-size: 38px
+      &-df
+        flex-direction: column
+      &-col
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__partners
+      ul
+        li
+          img
+            max-width: calc(100% - 20px)
+
+  // max-width 400px
+
+/* cond */

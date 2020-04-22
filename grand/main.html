@@ -139,9 +139,48 @@
                       </div>
                     </div>
                   </a></div>
+                <div class="proj__slide swiper-slide"><a class="proj__inner" href="#">
+                    <div class="proj__img">
+                      <noscript><img class="lazy" src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                    </div>
+                    <div class="proj__content">
+                      <h3 class="proj__title">Жилой комплекс<span> «Испанская деревня»</span></h3>
+                      <div class="proj__hidden">
+                        <p class="proj__status">на этапе застройки</p>
+                        <p class="proj__text">стоимость от</p>
+                        <p class="proj__sum">1 500 000 Р</p>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="proj__slide swiper-slide"><a class="proj__inner" href="#">
+                    <div class="proj__img">
+                      <noscript><img class="lazy" src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                    </div>
+                    <div class="proj__content">
+                      <h3 class="proj__title">Жилой комплекс<span> «Испанская деревня»</span></h3>
+                      <div class="proj__hidden">
+                        <p class="proj__status">на этапе застройки</p>
+                        <p class="proj__text">стоимость от</p>
+                        <p class="proj__sum">1 500 000 Р</p>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="proj__slide swiper-slide"><a class="proj__inner" href="#">
+                    <div class="proj__img">
+                      <noscript><img class="lazy" src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/proj-img.jpg" alt="" width="125" height="90" data-object-fit-cover>
+                    </div>
+                    <div class="proj__content">
+                      <h3 class="proj__title">Жилой комплекс<span> «Испанская деревня»</span></h3>
+                      <div class="proj__hidden">
+                        <p class="proj__status">на этапе застройки</p>
+                        <p class="proj__text">стоимость от</p>
+                        <p class="proj__sum">1 500 000 Р</p>
+                      </div>
+                    </div>
+                  </a></div>
               </div>
             </div>
-            <div class="proj__slider-nav">
+            <div class="proj__slider-nav swiper-slider__nav">
               <button class="swiper-button-prev"></button>
               <div class="swiper-dots"></div>
               <button class="swiper-button-next"></button>
@@ -368,13 +407,15 @@
                 {
                   window["myPlacemark" + xi] = new ymaps.Placemark(xel.coords,
                   {
-                    hintContent: '',
+                    hintContent: ' ',
                     // Зададим содержимое балуна.
                     balloonContent: '<div class="balloon-df">' + '<div class="balloon-img"><img src="' + xel.img + '" height="50" width="50" data-object-fit-cover></div>' + '<div class="balloon-text">' + xel.title + '</div></div>',
+                    balloonCloseButton: false,
                   },
                   {
                     // Опции.
                     balloonPanelMaxMapArea: 0,
+                    openTimeout: 0,
                     // Необходимо указать данный тип макета.
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
@@ -388,6 +429,10 @@
                 });
               xObjectArr.forEach(function(xel, xi)
               {
+                window["myPlacemark" + xi].events.add(['hintopen'], function(e)
+                {
+                  window["myPlacemark" + xi].balloon.open();
+                });
                 myMap.geoObjects.add(window["myPlacemark" + xi]);
               });
               myMap.behaviors.disable('scrollZoom');

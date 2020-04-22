@@ -50,16 +50,18 @@ mixin script-map()
 
                 xObjectArr.forEach(function(xel,xi) {
                   window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
-                      hintContent: '',
+                      hintContent: ' ',
                       // Зададим содержимое балуна.
                       balloonContent: '<div class="balloon-df">' +
                       '<div class="balloon-img"><img src="' + xel.img +'" height="50" width="50" data-object-fit-cover></div>'
                       +'<div class="balloon-text">' + xel.title +'</div></div>' ,
+                      balloonCloseButton: false,
 
                   }, {
                     // Опции.
 
                     balloonPanelMaxMapArea: 0,
+                    openTimeout: 0,
 
                     // Необходимо указать данный тип макета.
                     iconLayout: 'default#image',
@@ -75,6 +77,10 @@ mixin script-map()
                 });
 
           xObjectArr.forEach(function(xel,xi) {
+
+            window["myPlacemark"+xi].events.add(['hintopen'], function (e) {
+               window["myPlacemark"+xi].balloon.open();
+            });
 
             myMap.geoObjects
                 .add(window["myPlacemark"+xi]);

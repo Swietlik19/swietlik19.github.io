@@ -342,11 +342,71 @@ input[type="submit"]
     height: 37px
 
 
-
 /* Переопределение стилей yandex map */
 [class$='-controls-pane'],
 [class$='-copyrights-pane']
   display: none
+[class$='-inner-panes']
+  [class$='-image'],
+    background-image: url('../img/svg/pin-golden.svg') !important
+[class$='-balloon-pane']
+  &,
+  & *
+    box-sizing: border-box
+[class$='-balloon__content']
+  background: none
+  & > ymaps
+    overflow: visible !important
+[class$='-balloon__layout']
+  background: none
+[class$='-balloon-overlay']
+  transform: translateY(-20px)
+  & > ymaps > ymaps
+    box-shadow: none !important
+[class$='-balloon__tail']
+  transform: none !important
+  box-shadow: none !important
+  left: 50px
+  &::after
+    background: transparent url('../img/svg/pin-golden.svg') no-repeat center center
+    box-shadow: 0px 0px 20px 0px rgba(241,199,47,0.55)
+    width: 24px
+    height: 32px
+    bottom: -5px
+
+.balloon-df
+  display: flex
+  align-items: center
+.balloon-img
+  position: relative
+  flex-shrink: 0
+  box-shadow: 0px 7px 10px 0px rgba(35,17,15,0.5)
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  background-color: #b3ad99
+  border: 6.0px solid #ffffff
+  overflow: hidden
+  z-index: 2
+  img
+    display: block
+    height: 100%
+.balloon-text
+  position: relative
+  box-shadow: 0px 7px 18px 0px rgba(36,18,16,0.5)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 216px
+  min-height: 76px
+  margin-left: -30px
+  padding: 10px 15px 10px 40px
+  background-color: #ffffff
+  z-index: 1
+
+  font-size: 14px
+  line-height: 1.428571428571429
+  font-weight: 500
 
 /* Переопределение стилей swiper */
 .swiper-wrapper
@@ -519,6 +579,21 @@ input[type="submit"]
     &::before,
     &::after
       content: none
+  .link
+    margin-right: 60px
+    font-size: 13px
+    &::after
+      right: -53px
+      width: 40px
+
+  .balloon-img
+    width: 80px
+    height: 80px
+    border-width: 4px
+  .balloon-text
+    width: 186px
+    min-height: 56px
+    font-size: 12px
 
 // max-width 575px
 

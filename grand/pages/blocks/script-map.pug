@@ -2,9 +2,31 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('map__wrap',[44.500417, 34.167557]);
 
-      function createMap(xID,coords) {
+    xObject = function(xCoords,xImg,xTitle) {
+      this.coords = xCoords;
+      this.img = xImg;
+      this.title = xTitle;
+    }
+
+
+    xObject1 = new xObject([44.407976, 34.034220],'img-temp/map-img.jpg','Жилой комплекс <br> «Испанская деревня»');
+    xObject2 = new xObject([44.408610, 34.032279],'img-temp/map-img.jpg','Жилой комплекс <br> «Испанская»');
+
+    xObjectArr = [xObject1,xObject2];
+
+      /* Центр карты */
+      var xCenter = [44.407976, 34.034220];
+
+    var xZoom = 17;
+
+    if (window.matchMedia('(max-width: 575px)').matches) {
+      xZoom = 16;
+    }
+
+      createMap('map__wrap',xCenter);
+
+      function createMap(xID,xCenter) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -15,8 +37,8 @@ mixin script-map()
 
           function init () {
               myMap = new ymaps.Map(xID, {
-                  center: coords,
-                  zoom: 17
+                  center: xCenter,
+                  zoom: xZoom
               }, {
                   searchControlProvider: 'yandex#search'
               });
@@ -26,24 +48,38 @@ mixin script-map()
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: '',
-                    balloonContent: ''
-                }, {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
-                  // Размеры метки.
-                  iconImageSize: [41, 51],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
+                xObjectArr.forEach(function(xel,xi) {
+                  window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                      hintContent: '',
+                      // Зададим содержимое балуна.
+                      balloonContent: '<div class="balloon-df">' +
+                      '<div class="balloon-img"><img src="' + xel.img +'" height="50" width="50" data-object-fit-cover></div>'
+                      +'<div class="balloon-text">' + xel.title +'</div></div>' ,
+
+                  }, {
+                    // Опции.
+
+                    balloonPanelMaxMapArea: 0,
+
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    iconImageHref: 'img/svg/pin.svg',
+                    // Размеры метки.
+                    iconImageSize: [24, 32],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-5, -40]
+
+                  });
                 });
 
+          xObjectArr.forEach(function(xel,xi) {
+
             myMap.geoObjects
-                .add(myPlacemark);
+                .add(window["myPlacemark"+xi]);
+
+          });
 
             myMap.behaviors.disable('scrollZoom');
           }

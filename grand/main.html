@@ -172,6 +172,32 @@
         </div>
       </section>
       <!-- /.scr_proj-->
+      <section class="scr_near near" id="scr_near">
+        <div class="container">
+          <div class="near__df">
+            <div class="near__content">
+              <h2 class="title2">Что рядом с нашими ЖК</h2>
+              <ul>
+                <li><span class="near__icon near__icon--man"></span><span class="near__text"><strong>Пляж</strong> 4 мин (300 м)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Аэропорт</strong> 2 час (120км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Ай-петри</strong> 1 час (37км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Канатная дорога</strong> 20 мин (8 км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Воронцовский дворец</strong> 6 мин (2,6 км)</span></li>
+                <li><span class="near__icon near__icon--man"></span><span class="near__text"><strong>Милютинский парк</strong> 5 мин (450 м)</span></li>
+                <li><span class="near__icon near__icon--man"></span><span class="near__text"><strong>Пионерский парк</strong> 15 мин (1 км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Симеизский парк</strong> 8 минут (3,2 км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Аквапарк «Голубой залив»</strong> 15 мин (6 км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Ялта</strong> 30 мин (22 км)</span></li>
+                <li><span class="near__icon near__icon--auto"></span><span class="near__text"><strong>Севастополь</strong> 1 час 20 мин (67км)</span></li>
+              </ul>
+            </div>
+            <div class="near__desc-wrap">
+              <p class="near__desc">Жилье для тех, хочет жить<br> в уединении с природой,<br> но при этом оставаться<br> в центре событий города</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_near-->
       <section class="scr_cond cond" id="scr_cond">
         <div class="container">
           <div class="cond__wrap">
@@ -300,9 +326,25 @@
     <script>
       (function($)
       {
-        createMap('map__wrap', [44.500417, 34.167557]);
+        xObject = function(xCoords, xImg, xTitle)
+        {
+          this.coords = xCoords;
+          this.img = xImg;
+          this.title = xTitle;
+        }
+        xObject1 = new xObject([44.407976, 34.034220], 'img-temp/map-img.jpg', 'Жилой комплекс <br> «Испанская деревня»');
+        xObject2 = new xObject([44.408610, 34.032279], 'img-temp/map-img.jpg', 'Жилой комплекс <br> «Испанская»');
+        xObjectArr = [xObject1, xObject2];
+        /* Центр карты */
+        var xCenter = [44.407976, 34.034220];
+        var xZoom = 17;
+        if (window.matchMedia('(max-width: 575px)').matches)
+        {
+          xZoom = 16;
+        }
+        createMap('map__wrap', xCenter);
 
-        function createMap(xID, coords)
+        function createMap(xID, xCenter)
         {
           if ($("#" + xID + "").length > 0)
           {
@@ -314,32 +356,40 @@
             {
               myMap = new ymaps.Map(xID,
               {
-                center: coords,
-                zoom: 17
+                center: xCenter,
+                zoom: xZoom
               },
               {
                 searchControlProvider: 'yandex#search'
               });
               // Создаём макет содержимого.
               MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+                xObjectArr.forEach(function(xel, xi)
                 {
-                  hintContent: '',
-                  balloonContent: ''
-                },
-                {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
-                  // Размеры метки.
-                  iconImageSize: [41, 51],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
+                  window["myPlacemark" + xi] = new ymaps.Placemark(xel.coords,
+                  {
+                    hintContent: '',
+                    // Зададим содержимое балуна.
+                    balloonContent: '<div class="balloon-df">' + '<div class="balloon-img"><img src="' + xel.img + '" height="50" width="50" data-object-fit-cover></div>' + '<div class="balloon-text">' + xel.title + '</div></div>',
+                  },
+                  {
+                    // Опции.
+                    balloonPanelMaxMapArea: 0,
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    iconImageHref: 'img/svg/pin.svg',
+                    // Размеры метки.
+                    iconImageSize: [24, 32],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-5, -40]
+                  });
                 });
-              myMap.geoObjects.add(myPlacemark);
+              xObjectArr.forEach(function(xel, xi)
+              {
+                myMap.geoObjects.add(window["myPlacemark" + xi]);
+              });
               myMap.behaviors.disable('scrollZoom');
             }
           }

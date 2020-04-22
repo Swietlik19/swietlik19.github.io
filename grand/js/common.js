@@ -122,7 +122,7 @@
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
-    $(".header").toggleClass("fixed", (fromTop > 10));
+    // $(".header").toggleClass("fixed", (fromTop > 10));
     $(".to-top").toggleClass("fixed", (fromTop > 600));
   });
 
@@ -169,8 +169,8 @@
   });
 
   var projSlider = new Swiper('#proj__slider', {
-    slidesPerView: 2,
-    spaceBetween: 35,
+    slidesPerView: 1,
+    spaceBetween: 15,
     watchSlidesProgress: true,
     watchOverflow: true,
     loop: true,
@@ -185,11 +185,17 @@
       el: '.proj__slider-nav .swiper-dots',
     },
     breakpoints: {
-      575: {
+      1070: {
         slidesPerView: 3,
+        spaceBetween: 35,
       },
-      400: {
+      767: {
         slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      575: {
+        slidesPerView: 2,
+        spaceBetween: 15,
       },
     },
   });

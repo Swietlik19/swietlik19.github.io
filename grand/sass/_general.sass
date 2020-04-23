@@ -32,6 +32,9 @@ body
 
 .page_wr
   flex-grow: 1
+  &--second
+    background-color: #f5f5f5
+    padding-top: 100px
 
 img
   width: 100%
@@ -70,6 +73,9 @@ h1,h2,h3,h4,h5,h6
 
 .article
   p
+    font-size: 15px
+    line-height: 1.6 /* 24 / 15 */
+    text-indent: 22px
     margin-bottom: 20px
     &:last-of-type
       margin-bottom: 0
@@ -78,7 +84,16 @@ h1,h2,h3,h4,h5,h6
     transition: 0.3s
     &:hover
       text-decoration: underline
-
+  time
+    display: block
+    margin-bottom: 15px
+    text-decoration: none
+    outline: none
+    font-family: $font2
+    font-size: 14px
+    line-height: 1.2
+    color: $accent
+    text-align: center
   img
     width: auto
     max-width: 100%
@@ -100,6 +115,25 @@ h1,h2,h3,h4,h5,h6
   ul li,
   ol li
     transform: translateX(1.5em)
+  ul
+    list-style: none
+    & > li
+      position: relative
+      padding-left: 14px
+      margin-bottom: 20px
+      font-size: 15px
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: ''
+        width: 5px
+        height: 5px
+
+        display: inline-block
+        margin-left: -14px
+        margin-right: 10px
+        background-color: $accent
+        border-radius: 50%
 
   h2,h3,h4
     line-height: 1.2
@@ -141,6 +175,20 @@ h1,h2,h3,h4,h5,h6
   line-height: 1.222222222222222
   font-weight: 400
   color: #241210
+
+.title--second
+  position: relative
+  padding-top: 30px
+  margin-bottom: 45px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 21px
+    height: 1px
+    background-color: $accent
 
 .icon
   max-width: 100%
@@ -536,6 +584,8 @@ input[type="submit"]
 @media screen and (max-width: 991px)
   .title
     font-size: 31px
+    &--second
+      margin-bottom: 35px
   .swiper-pagination-bullet-active
     margin-right: 185px
     &::after
@@ -556,6 +606,10 @@ input[type="submit"]
 // max-width 900px
 
 @media screen and (max-width: 767px)
+  .page_wr
+    &--second
+      padding-top: 79px
+
   .title
     margin-bottom: 32px
     font-size: 23px
@@ -599,6 +653,8 @@ input[type="submit"]
 // max-width 600px
 
 @media screen and (max-width: 575px)
+  .title--second
+    padding-top: 20px
   .swiper-dots
     justify-content: center
   .swiper-pagination-bullet
@@ -626,6 +682,11 @@ input[type="submit"]
     min-height: 56px
     font-size: 12px
 
+  .article
+    p
+      font-size: 14px
+      line-height: 1.5
+
 // max-width 575px
 
 @media screen and (max-width: 500px)
@@ -637,6 +698,10 @@ input[type="submit"]
 // max-width 500px
 
 @media screen and (max-width: 400px)
+  .page_wr
+    &--second
+      padding-top: 69px
+
   .btn__wrap
     &--grad
       width: 100%

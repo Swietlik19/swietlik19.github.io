@@ -32,3 +32,37 @@ mixin header(logotype)
       // /.header__wrap
     // /.container
 
+mixin header--second(logotype)
+  header.header.header--second(id="header")
+    .container
+      .header__wrap
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo.png" alt="лого")
+
+          .logo__text
+            p Квартиры на ЮБК
+              br
+              |  от застройщика
+
+        .header__contacts
+          p.header__address г. Ялта, ул. Васильева, 16
+
+          .header__phones
+            a.btn.btn--circle.open-modal.desktop(href="#")
+              i.fa.fa-phone
+            a.btn.btn--circle.mobile(href="tel:88001234567" rel="nofollow")
+              i.fa.fa-phone
+            a.header__phones-link(href="tel:88001234567" rel="nofollow") 8 800 123 45 67
+
+      // /.header__wrap
+    // /.container
+

@@ -1,0 +1,147 @@
+.building
+  position: relative
+  padding-top: 53px
+  padding-bottom: 152px
+  background: #f5f5f5  url('../img/building-bg.jpg') no-repeat center bottom
+  background-size: 100% auto
+  &__years
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    margin-bottom: 40px
+    & > li
+      margin-right: 96px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-family: $font2
+        font-size: 40px
+        color: #b3ad99
+        transition: 0.3s
+        span
+          font-size: 24px
+        &:hover
+          background-image: linear-gradient(216.0deg, #ffd439 28%, rgba(241,199,47,0.99) 20%, #a58239 71%)
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+          span
+            color: #ffd439
+      &.current
+        & > a
+          background-image: linear-gradient(216.0deg, #ffd439 28%, rgba(241,199,47,0.99) 20%, #a58239 71%)
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+          span
+            color: #ffd439
+
+  &__months
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 30px
+    & > li
+      margin-right: 40px
+      margin-bottom: 5px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 18px
+        font-weight: 500
+        transition: 0.3s
+        &:hover
+          color: #a58239
+      &.current
+        & > a
+          color: #a58239
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__month
+    &-tabs
+      margin: 0
+      padding: 0
+      list-style: none
+    &-tab
+      position: relative
+  &__slider
+    overflow: hidden
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    height: 274px
+    background-color: #b3ad99
+    img
+      display: block
+      height: 100%
+  .slider1__nav
+    .swiper-button-prev,
+    .swiper-button-next
+      top: 50%
+      transform: translateY(-50%)
+      border-color: #b3ad99
+    .swiper-button-prev
+      left: -64px
+    .swiper-button-next
+      right: -64px
+
+
+  @media screen and (max-width: 1300px)
+    padding-bottom: 62px
+    &__month-tabs
+      margin-top: 90px
+    .slider1__nav
+      .swiper-button-prev,
+      .swiper-button-next
+        top: auto
+        transform: none
+        top: -60px
+      .swiper-button-prev
+        left: 0
+      .swiper-button-next
+        right: 0
+
+  // max-width 1300px
+
+  @media screen and (max-width: 991px)
+    &__years
+      margin-bottom: 10px
+      & > li
+        margin-right: 66px
+        & > a
+          font-size: 33px
+    &__months
+      & > li
+        & > a
+          font-size: 16px
+    &__img
+      height: 204px
+
+  // max-width 991px
+
+  @media screen and (max-width: 400px)
+    &__years
+      & > li
+        margin-right: 40px
+        & > a
+          font-size: 28px
+    &__months
+      justify-content: space-between
+      & > li
+        margin-right: 15px
+        & > a
+          font-size: 15px
+
+  // max-width 400px
+
+/* building */

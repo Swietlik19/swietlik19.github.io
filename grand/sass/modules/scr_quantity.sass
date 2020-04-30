@@ -51,12 +51,33 @@
         transform: scale(1.1)
         transition: 1.3s
 
+  .article
+    p
+      text-indent: 0
+
   &__title
     margin-top: 0
     margin-bottom: 54px
     font-size: 36px
     line-height: 1.333333333333333 /* 48 / 36 */
     font-weight: 400
+
+  &--object
+    padding-top: 107px
+    padding-bottom: 55px
+    .tabs__nav
+      margin-bottom: 70px
+      & > li
+        width: calc(25% - 8px)
+        & > a
+          min-width: 0
+    .quantity__content
+      &::after
+        top: -13px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
 
 
   @media screen and (max-width: 1170px)
@@ -121,6 +142,9 @@
         width: 304px
         height: 329px
 
+    .tabs__nav > li > a
+      font-size: 14px
+
   // max-width 767px
 
   @media screen and (max-width: 600px)
@@ -140,6 +164,15 @@
         margin-left: 0
     &__content
       margin-right: 0
+
+    &--object
+      .tabs__nav
+        flex-direction: column
+        margin-bottom: 30px
+        & > li
+          width: 100%
+          margin-bottom: 10px
+          margin-right: 0
 
   // max-width 575px
 

@@ -7,6 +7,8 @@
   background-color: rgba(36,18,16,0.25)
   transition: 0.3s
   z-index: 120
+  .container
+    position: relative
   &.fixed
     background-color: rgba(36,18,16,0.9)
     box-shadow: 0 5px 10px rgba(#000, 0.3)
@@ -79,15 +81,23 @@
     padding: 0
     margin: 0
     list-style: none
-
-    display: flex
-    justify-content: space-between
-    align-items: center
-    height: 100%
+    & > li
+      margin-bottom: 70px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: inline-block
+        text-decoration: none
+        outline: none
+        font-size: 16px
+        font-weight: 700
+        transition: 0.3s
+        &:hover
+          color: $accent
 
   &--second
     box-shadow: 3px 6px 10px 0px rgba(179,173,153,0.25)
-    background-color: #ffffff
+    background-color: #f5efe3
     .logo
       &__text
         color: #241210
@@ -104,6 +114,95 @@
         &:hover
           color: $accent2
 
+  &__menu
+    position: absolute
+    top: 100%
+    left: 15px
+    width: calc(100% - 30px)
+    background-color: rgba(245,245,245,0.9)
+    display: none
+    &-close
+      border: none
+      outline: none
+      position: absolute
+      left: 0
+      top: -43px
+      display: block
+      width: 43px
+      height: 43px
+      background: #a58239
+      cursor: pointer
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: calc(50% - 1px)
+        left: calc(50% - 13px)
+        display: block
+        width: 26px
+        height: 2px
+        background-color: #ffffff
+        transform-origin: center center
+      &::before
+        transform: rotate(45deg)
+      &::after
+        transform: rotate(-45deg)
+    &-df
+      display: flex
+      padding-top: 26px
+      padding-bottom: 30px
+    &-col
+      width: 30.70175438596491%
+      padding: 25px 20px 34px 103px
+      border-right: 1px solid #b3ad99
+      &:nth-of-type(2)
+        width: 37.71929824561404%
+        padding-left: 134px
+      &:nth-of-type(3)
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 31.57894736842105%
+        padding-top: 20px
+        padding-bottom: 20px
+        border-right: none
+    &-phone
+      display: inline-block
+      text-decoration: none
+      outline: none
+      margin-bottom: 35px
+      font-size: 17px
+      line-height: 1.2
+      font-weight: 700
+      transition: 0.3s
+      &:hover
+        color: $accent
+    &-item
+      margin-bottom: 17px
+      font-size: 14px
+      line-height: 1.285714285714286 /* 18 / 14 */
+      &:last-of-type
+        margin-bottom: 0
+      a
+        text-decoration: none
+        outline: none
+        display: inline-block
+        transition: 0.3s
+        &:hover
+          color: $accent
+
+
+  @media screen and (max-width: 1070px)
+    &__menu
+      &-col
+        padding: 25px 20px 34px 30px
+        &:nth-of-type(2)
+          padding-left: 30px
+    .menu
+      & > li
+        margin-bottom: 30px
+
+  // max-width 1070px
 
   @media screen and (max-width: 767px)
     &__address
@@ -124,7 +223,56 @@
     &__wrap
       height: 79px
 
+    &__menu
+      &-col
+        padding: 25px 20px 34px
+        &:nth-of-type(2)
+          padding-left: 20px
+      &-phone
+        margin-bottom: 25px
+        font-size: 15px
+      &-item
+        margin-bottom: 11px
+        font-size: 13px
+    .menu
+      & > li
+        margin-bottom: 20px
+        & > a
+          font-size: 14px
+
   // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__menu
+      max-width: 350px
+      box-shadow: 0 10px 10px rgba(#000, 0.2)
+      background-color: rgba(245, 245, 245, 0.95)
+      &-df
+        flex-direction: column-reverse
+        padding-top: 10px
+        padding-bottom: 0
+      &-col
+        width: 100%
+        // padding: 25px 20px 34px 103px
+        border-right: none
+        &:nth-of-type(2)
+          width: 100%
+          padding-bottom: 0px
+        &:nth-of-type(3)
+          width: 100%
+      &-phone
+        margin-bottom: 25px
+        font-size: 15px
+      &-item
+        margin-bottom: 11px
+        font-size: 13px
+    .menu
+      & > li
+        margin-bottom: 20px
+        & > a
+          font-size: 14px
+
+  // max-width 650px
 
   @media screen and (max-width: 500px)
     &__phones

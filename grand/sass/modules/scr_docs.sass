@@ -1,0 +1,114 @@
+.docs
+  position: relative
+  padding-top: 44px
+  padding-bottom: 43px
+  .title2
+    margin-bottom: 15px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+  &__item
+    width: 33.3%
+    padding: 37px 0 37px 98px
+    &--bordered
+      border-bottom: 1px solid #b3ad99
+    &:nth-of-type(3n + 1)
+      padding-left: 32px
+  &:not(.docs--object)
+    .docs__item
+      &:nth-of-type(3n)
+        .docs__link
+          border-right: none
+  &__link
+    position: relative
+    display: block
+    height: 100%
+    padding: 90px 30px 29px 0
+    text-decoration: none
+    outline: none
+    border-right: 1px solid #b3ad99
+
+    font-size: 15px
+    line-height: 1.6 /* 24 / 15 */
+    font-weight: 300
+
+    transition: 0.3s
+    &::before
+      content: ''
+      position: absolute
+      top: 23px
+      left: 0
+      width: 33px
+      height: 44px
+      background: transparent url('../img/icon-download.png') no-repeat center center
+      background-size: contain
+    &:hover
+      color: $accent
+
+  &__top
+    display: flex
+    justify-content: space-between
+  &__slider
+    overflow: hidden
+  .slider1__nav
+    display: flex
+    padding-top: 30px
+    .swiper-button-prev,
+    .swiper-button-next
+      position: static
+    .swiper-button-prev
+      margin-right: 15px
+
+  &--object
+    padding-bottom: 6px
+
+
+  @media screen and (max-width: 1070px)
+    &__item
+      padding-left: 30px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__link
+      font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__item
+      padding: 27px 0 27px 12px
+      &:nth-of-type(3n + 1)
+        padding-left: 12px
+    .pager
+      padding-top: 16px
+    &__link
+      padding: 60px 20px 19px 0
+      &::before
+        top: 7px
+        width: 29px
+        height: 39px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__item
+      width: 50%
+      &:nth-of-type(3n)
+        .docs__link
+          border-right: 1px solid #b3ad99
+
+    &:not(.docs--object)
+      .docs__item
+        &:nth-of-type(2n)
+          .docs__link
+            border-right: none
+    &__link
+      font-size: 13px
+
+  // max-width 650px
+
+/* docs */

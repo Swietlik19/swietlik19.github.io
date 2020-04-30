@@ -28,6 +28,36 @@
             <p class="header__address">г. Ялта, ул. Васильева, 16</p>
             <div class="header__phones"><a class="btn btn--circle open-modal desktop" href="#"><i class="fa fa-phone"></i></a><a class="btn btn--circle mobile" href="tel:88001234567" rel="nofollow"><i class="fa fa-phone"></i></a><a class="header__phones-link" href="tel:88001234567" rel="nofollow">8 800 123 45 67</a></div>
           </div>
+          <div class="header__menu">
+            <button class="header__menu-close" type="button"></button>
+            <div class="header__menu-df">
+              <div class="header__menu-col">
+                <ul class="menu">
+                  <li class="menu-item"><a href="#">О застройщике</a></li>
+                  <li class="menu-item"><a href="#">Наши проекты</a></li>
+                  <li class="menu-item"><a href="#">Услуги</a></li>
+                  <li class="menu-item"><a href="#">Спецпредложения</a></li>
+                </ul>
+              </div>
+              <div class="header__menu-col">
+                <ul class="menu">
+                  <li class="menu-item"><a href="#">Документы</a></li>
+                  <li class="menu-item"><a href="#">Условия приобретения</a></li>
+                  <li class="menu-item"><a href="#">Блог</a></li>
+                  <li class="menu-item"><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="header__menu-col"><a class="header__menu-phone" href="tel:88001234567" rel="nofollow">8 800 123 45 67</a>
+                <div class="header__menu-item">
+                  <p>г. Ялта, ул. Васильева, 16,<br> офис, 300</p>
+                </div>
+                <div class="header__menu-item"><a href="mailto:grandkrym@yandex.ru" rel="nofollow">Grandkrym@yandex.ru</a></div>
+                <div class="header__menu-item">
+                  <p>Режим работы: 9:00-20:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- /.header__wrap-->
       </div>
@@ -346,6 +376,34 @@
       <!-- /.footer__bottom-->
     </footer>
     <!-- /.footer-->
+    <section class="modal modal__order" id="modal__order">
+      <div class="modal__content">
+        <button class="close"></button>
+        <div class="form wpcf7">
+          <form class="wpcf7-form">
+            <p class="form__title">Записаться<br> на персональную экскурсию</p>
+            <div class="form__df">
+              <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                  <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Ваше имя"></span></div>
+              <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                  <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span></div>
+            </div>
+            <div class="form__item">
+              <div class="btn__wrap btn__wrap--grad">
+                <input class="wpcf7-form-control wpcf7-submit btn" type="submit" value="Записаться">
+              </div>
+            </div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                    <label>
+                      <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Согласие на обработку персональных данных<i class="accept__icon"></i></span>
+                    </label></span></span></span></div>
+          </form>
+        </div>
+        <!-- /. form-->
+      </div>
+      <!-- /. modal__content-->
+    </section>
+    <!-- /. modal-->
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="libs/swiper/swiper.min.css">
@@ -436,6 +494,50 @@
                 myMap.geoObjects.add(window["myPlacemark" + xi]);
               });
               myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+        createMap2('contacts__map', [44.500417, 34.167557]);
+
+        function createMap2(xID, coords)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap2;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap2 = new ymaps.Map(xID,
+              {
+                center: coords,
+                zoom: 16
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemarkX = new ymaps.Placemark(myMap2.getCenter(),
+                {
+                  hintContent: 'г. Ялта, ул. Васильева, 16',
+                  balloonContent: 'г. Ялта, ул. Васильева, 16'
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin-golden.svg',
+                  // Размеры метки.
+                  iconImageSize: [25, 35],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -30]
+                });
+              myMap2.geoObjects.add(myPlacemarkX);
+              myMap2.behaviors.disable('scrollZoom');
             }
           }
         }

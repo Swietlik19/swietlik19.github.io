@@ -97,6 +97,43 @@
       padding-top: 38px
       padding-left: 166px
 
+  &--object
+    &::before
+      content: none
+    .near__content
+      min-height: 400px
+    .near__text
+      strong
+        margin-right: 10px
+  &__map
+    position: absolute
+    right: 0
+    top: 0
+    width: calc(50% + 113px)
+    height: 100%
+  &__tour
+    position: relative
+    .scr1__tour
+      position: absolute
+      top: 24px
+      left: 400px
+      z-index: 200
+      width: 122px
+      height: 122px
+    .scr1__tour-wrap
+      right: 33px
+    .scr1__tour-btn
+      width: 46px
+      height: 46px
+    .scr1__tour-text
+      left: -7px
+      right: auto
+      height: calc(100% + 8px)
+      padding-left: 62px
+      padding-right: 16px
+      font-size: 14px
+      font-weight: 500
+
 
   @media screen and (max-width: 1400px)
     .title2
@@ -137,6 +174,12 @@
         font-size: 16px
     .title2
       font-size: 22px
+    &__map
+      width: calc(50% + 140px)
+    &__tour
+      .scr1__tour
+        top: 14px
+        left: 300px
 
   // max-width 1070px
 
@@ -177,14 +220,40 @@
       font-size: 14px
       br
         display: none
+    &__tour
+      .scr1__tour
+        top: 4px
+        left: 210px
+        width: 102px
+        height: 102px
+      .scr1__tour-wrap
+        right: 26px
+      .scr1__tour-text
+        font-size: 13px
 
   // max-width 767px
 
-  @media screen and (max-width: 575px)
+  @media screen and (max-width: 630px)
     height: 400px
     &::before
       background-image: url('../img/near-bg--mobile.jpg')
+    &__tour
+      .scr1__tour
+        top: 4px
     &__content
+      display: none
+    &--object
+      height: auto
+      .near__content
+        display: block
+        width: 100%
+        height: auto
+        min-height: 0
+    &__map
+      position: static
+      height: 280px
+      width: 100%
+    &__tour
       display: none
 
   // max-width 575px
@@ -199,6 +268,8 @@
 
   @media screen and (max-width: 430px)
     height: 350px
+    &--object
+      height: auto
 
   // max-width 430px
 

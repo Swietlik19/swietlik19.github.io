@@ -3,30 +3,32 @@ mixin script-map()
   script.
     (function($){
 
-    xObject = function(xCoords,xImg,xTitle) {
-      this.coords = xCoords;
-      this.img = xImg;
-      this.title = xTitle;
-    }
+      /* Код для карты на главной странице */
 
-
-    xObject1 = new xObject([44.407976, 34.034220],'img-temp/map-img.jpg','Жилой комплекс <br> «Испанская деревня»');
-    xObject2 = new xObject([44.408610, 34.032279],'img-temp/map-img.jpg','Жилой комплекс <br> «Испанская»');
-
-    xObjectArr = [xObject1,xObject2];
+      xObjectArr = [
+        {
+          coords: [44.407976, 34.034220],
+          img: 'img-temp/map-img.jpg',
+          title: 'Жилой комплекс <br> «Испанская деревня»',
+        },
+        {
+          coords: [44.408610, 34.032279],
+          img: 'img-temp/map-img.jpg',
+          title: 'Жилой комплекс <br> «Испанская',
+        },
+      ]
 
       /* Центр карты */
       var xCenter = [44.407976, 34.034220];
 
-    var xZoom = 17;
+      var xZoom = 17;
+      if (window.matchMedia('(max-width: 575px)').matches) {
+        xZoom = 16;
+      }
 
-    if (window.matchMedia('(max-width: 575px)').matches) {
-      xZoom = 16;
-    }
+      createMap('map__wrap');
 
-      createMap('map__wrap',xCenter);
-
-      function createMap(xID,xCenter) {
+      function createMap(xID) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -44,48 +46,48 @@ mixin script-map()
               });
 
               // Создаём макет содержимого.
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+              ),
 
-                xObjectArr.forEach(function(xel,xi) {
-                  window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
-                      hintContent: ' ',
-                      // Зададим содержимое балуна.
-                      balloonContent: '<div class="balloon-df">' +
-                      '<div class="balloon-img"><img src="' + xel.img +'" height="50" width="50" data-object-fit-cover></div>'
-                      +'<div class="balloon-text">' + xel.title +'</div></div>' ,
-                      balloonCloseButton: false,
+              xObjectArr.forEach(function(xel,xi) {
+                window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                    hintContent: ' ',
+                    // Зададим содержимое балуна.
+                    balloonContent: '<div class="balloon-df">' +
+                    '<div class="balloon-img"><img src="' + xel.img +'" height="50" width="50" data-object-fit-cover></div>'
+                    +'<div class="balloon-text">' + xel.title +'</div></div>' ,
+                    balloonCloseButton: false,
 
-                  }, {
-                    // Опции.
+                }, {
+                  // Опции.
 
-                    balloonPanelMaxMapArea: 0,
-                    openTimeout: 0,
+                  balloonPanelMaxMapArea: 0,
+                  openTimeout: 0,
 
-                    // Необходимо указать данный тип макета.
-                    iconLayout: 'default#image',
-                    // Своё изображение иконки метки.
-                    iconImageHref: 'img/svg/pin.svg',
-                    // Размеры метки.
-                    iconImageSize: [24, 32],
-                    // Смещение левого верхнего угла иконки относительно
-                    // её "ножки" (точки привязки).
-                    iconImageOffset: [-5, -40]
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [24, 32],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-5, -40]
 
-                  });
                 });
+              });
 
-          xObjectArr.forEach(function(xel,xi) {
+            xObjectArr.forEach(function(xel,xi) {
 
-            window["myPlacemark"+xi].events.add(['hintopen'], function (e) {
-               window["myPlacemark"+xi].balloon.open();
-            });
+              window["myPlacemark"+xi].events.add(['hintopen'], function (e) {
+                 window["myPlacemark"+xi].balloon.open();
+              });
 
-            myMap.geoObjects
+              myMap.geoObjects
                 .add(window["myPlacemark"+xi]);
 
-          });
+            });
 
             myMap.behaviors.disable('scrollZoom');
           }
@@ -93,8 +95,10 @@ mixin script-map()
       }
 
 
-      createMap2('contacts__map',[44.500417, 34.167557]);
 
+      /* Код для карты на странице "Контакты" */
+
+      createMap2('contacts__map',[44.500417, 34.167557]);
       function createMap2(xID,coords) {
 
         if ($("#" + xID + "").length > 0) {
@@ -105,41 +109,147 @@ mixin script-map()
           ymaps.ready(init);
 
           function init () {
-              myMap2 = new ymaps.Map(xID, {
-                  center: coords,
-                  zoom: 16
-              }, {
-                  searchControlProvider: 'yandex#search'
-              });
+            myMap2 = new ymaps.Map(xID, {
+                center: coords,
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-              // Создаём макет содержимого.
-                MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
-
-                myPlacemarkX = new ymaps.Placemark(myMap2.getCenter(), {
-                    hintContent: 'г. Ялта, ул. Васильева, 16',
-                    balloonContent: 'г. Ялта, ул. Васильева, 16'
-                }, {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin-golden.svg',
-                  // Размеры метки.
-                  iconImageSize: [25, 35],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -30]
-                });
+            myPlacemarkX = new ymaps.Placemark(myMap2.getCenter(), {
+                hintContent: 'г. Ялта, ул. Васильева, 16',
+                balloonContent: 'г. Ялта, ул. Васильева, 16'
+            }, {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: 'default#image',
+              // Своё изображение иконки метки.
+              iconImageHref: 'img/svg/pin-golden.svg',
+              // Размеры метки.
+              iconImageSize: [25, 35],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-15, -30]
+            });
 
             myMap2.geoObjects
-                .add(myPlacemarkX);
+              .add(myPlacemarkX);
 
             myMap2.behaviors.disable('scrollZoom');
           }
         }
       }
+
+
+
+      /* Код для карты на странице одного объекта */
+      /* xTransport - влияет на иконку, если можно пешком, то "man", если только на авто, то "auto". xMeters - расстояние, время */
+
+      xObjectArr2 = [
+        {
+          coords: [44.409712, 34.032797],
+          title: 'Парк',
+          transport: 'man',
+          meters: '15 мин (1 км)',
+        },
+        {
+          coords: [44.408787, 34.032961],
+          title: 'ЖК «Испанская деревня»',
+          transport: 'man',
+          meters: '0 мин',
+        },
+        {
+          coords: [44.407986, 34.032969],
+          title: 'Стадион',
+          transport: 'auto',
+          meters: '6 мин (2,6 км)',
+        },
+      ];
+
+        /* Центр карты */
+      var xCenter2 = [44.408264, 34.033848];
+
+      createMap3('near__map',xCenter2);
+
+      function createMap3(xID,xCenter) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap3;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+            myMap3 = new ymaps.Map(xID, {
+                center: xCenter,
+                zoom: xZoom
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+            // Контейнер для меню.
+            var menu = $('<ul></ul>');
+            var section = $($('.near--object'));
+
+              // Создаём макет содержимого.
+                MyIconContentLayout3 = ymaps.templateLayoutFactory.createClass(
+                    '<div>$[properties.iconContent]</div>'
+                ),
+
+                xObjectArr2.forEach(function(xel,xi) {
+                  window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                    iconContent: '<button type="button" class="map__pin pin-' + (xi + 1) + ' js-pin"></button><span class="balloon-title">' + xel.title + '</span>'
+                  }, {
+                    // Опции.
+                    balloonPanelMaxMapArea: 0,
+                    openTimeout: 0,
+
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#imageWithContent',
+                    // Своё изображение иконки метки.
+                    //- iconImageHref: 'img/svg/pin-golden.svg',
+                    iconImageHref: '',
+                    // Размеры метки.
+                    iconImageSize: [24, 32],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-20, -40],
+
+                    // Смещение слоя с содержимым относительно слоя с картинкой.
+                    iconContentOffset: [15, 15],
+                    // Макет содержимого.
+                    iconContentLayout: MyIconContentLayout3
+
+                  });
+                });
+
+            xObjectArr2.forEach(function(xel,xi) {
+
+              myMap3.geoObjects
+                  .add(window["myPlacemark"+xi]);
+
+              var menuItem = $('<li data-pin="pin-' + (xi + 1) + '" class="js-button-pin">' + '<span class="near__icon near__icon--' + xel.transport + '"></span>' +
+              '<span class="near__text"><strong>' + xel.title + '</strong>' + ' ' + xel.meters + '</span></li>');
+
+              menuItem
+                .appendTo(menu)
+                .on('mouseover', function() {
+                  var btn = $(this);
+                  var atr = btn.attr('data-pin');
+
+                  var pins = section.find('.js-pin');
+                  pins.removeClass('active');
+                  section.find('.' + atr).toggleClass('active');
+                });
+            });
+
+            myMap3.behaviors.disable('scrollZoom');
+
+            menu.appendTo('.near__content');
+          }
+        }
+      }
+
 
     })(jQuery);
 

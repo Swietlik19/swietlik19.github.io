@@ -1,0 +1,582 @@
+mixin scr_choose()
+  section.scr_choose.choose(id="scr_choose")
+    .container
+      .choose__df
+        .choose__main
+          h2.title2.title--second Выбрать квартиру
+
+          ul.choose__tabs
+            li.choose__tab.active#choose__tab-1(data-house="1")
+              .choose__building
+                h3.choose__text
+                  strong Корпус верхний
+                button.choose__change(type="button") Сменить
+
+              .choose__stages
+                p.choose__text
+                  strong Этаж
+
+                .choose__quantity.quantity-block
+                  span.quantity-num.choose__grad(data-house="1" data-num-max="4" data-num-min="1") 1
+                  button.quantity-arrow.quantity-arrow-minus(type="button")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#arrow")
+
+                  button.quantity-arrow.quantity-arrow-plus(type="button")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .choose__watch
+                .btn__wrap
+                  button.btn(type="button") Смотреть этаж
+
+
+            li.choose__tab#choose__tab-2(data-house="2")
+              .choose__building
+                h3.choose__text
+                  strong Корпус нижний
+                button.choose__change(type="button") Сменить
+
+              .choose__stages
+                p.choose__text
+                  strong Этаж
+
+                .choose__quantity.quantity-block
+                  span.quantity-num.choose__grad(data-house="2" data-num-max="3" data-num-min="1") 1
+                  button.quantity-arrow.quantity-arrow-minus(type="button")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#arrow")
+
+                  button.quantity-arrow.quantity-arrow-plus(type="button")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .choose__watch
+                .btn__wrap
+                  button.btn(type="button") Смотреть этаж
+
+
+
+          .choose__apparts
+            p.choose__grad 160
+
+            p.choose__text квартир площадью
+              br
+              |  от 21 до 104 кв.м
+
+          .choose__height
+            p.choose__text
+              strong Высота потолков
+
+            .choose__height-df
+              .choose__height-item
+                p.choose__text 1 и 2 этажи
+                p.choose__meters
+                  span.choose__grad 4,30
+                  |  м
+
+              .choose__height-item
+                p.choose__text 3 и 4 этажи
+                p.choose__meters
+                  span.choose__grad 3,50
+                  |  м
+
+            p.choose__height-add *можете увеличивать площадь квартиры
+              br
+              |  путем объединения нескольких в одну
+
+        .choose__visual
+          svg.choose__svg(viewbox="0 0 805 736")
+
+            //. #floor-1-3 - означает третий этаж первого здания
+            //. Верхний корпус:
+            a.choose__part-wrap.active(id="floor-1-1" data-house="1" data-floor="1")
+              path.choose__part(d="m 275.4192,198.37234 234.48322,36.76374 c 95.56267,6.62775 178.97098,26.63379 258.33017,25.22152 l 34.98178,-24.54862 0.61371,-17.18403 -34.98177,22.09375 C 604.95936,236.43763 443.18003,199.94857 276.03291,184.2569 Z")
+            a.choose__part-wrap(id="floor-1-2" data-house="1" data-floor="2")
+              path.choose__part(d="m 269.74686,163.88402 239.39294,27.55801 c 95.56267,6.62775 179.5847,21.11035 258.94389,19.69808 l 37.43664,-19.02518 -0.61372,-16.57031 -34.98177,15.34288 C 606.03789,186.60643 437.50769,164.84653 270.36057,149.15486 Z")
+            a.choose__part-wrap(id="floor-1-3" data-house="1" data-floor="3")
+              path.choose__part(d="m 268.80731,127.1944 233.86951,18.35228 263.85361,14.17463 37.43663,-12.2743 1e-5,-18.41146 -38.05035,10.43316 C 602.02977,135.18764 437.18186,127.54319 270.03474,111.85152 Z")
+            a.choose__part-wrap(id="floor-1-4" data-house="1" data-floor="4")
+              path.choose__part(d="m 272.96434,97.723028 249.21239,7.919122 c 102.47025,4.47664 171.34938,5.31785 250.35187,4.35519 l 33.14063,-6.75087 0,-15.342881 -33.75434,3.06857 C 622.0495,88.997895 467.78403,85.23326 272.96433,81.766442 Z")
+
+            //. Нижний корпус:
+            a.choose__part-wrap(id="floor-2-1" data-house="2" data-floor="1")
+              path.choose__part(d="m 34.368058,351.20049 236.894112,173.06772 272.4896,125.19793 123.35678,-60.75782 -0.61371,-31.91319 -83.46529,44.80121 -39.27778,9.20573 L 278.62676,489.90016 34.981773,322.35587 Z")
+            a.choose__part-wrap(id="floor-2-2" data-house="2" data-floor="2")
+              path.choose__part(d="M 33.140628,311.92271 266.96616,463.5104 557.86722,586.25346 c 0,0 119.06078,-68.73611 121.51564,-68.73611 2.45486,0 0,-35.59549 0,-35.59549 L 574.43754,539.6111 545.59292,544.52082 274.33075,434.05206 33.754343,284.91924 Z")
+            a.choose__part-wrap(id="floor-2-3" data-house="2" data-floor="3")
+              path.choose__part(d="M 34.981773,273.87236 260.2153,400.91144 569.52781,508.31162 676.31428,443.87151 675.70057,409.50345 564.6181,472.10241 303.30223,381.56474 35.595489,248.09633 Z")
+
+          .choose__img
+            noscript
+              img.lazy(src="img/choose-bg.jpg" alt="" width="125" height="90" data-object-fit-contain)
+            img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/choose-bg.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+
+      .choose__plans
+        .choose__plans-house#choose__plans-house-1(data-house="1")
+
+          h2.title2.title--second Планировки
+
+          ul.tabs__nav
+            li.current
+              a(href="#plans__tab-1-1") Первый этаж
+            li
+              a(href="#plans__tab-1-2") Второй этаж
+            li
+              a(href="#plans__tab-1-3") Третий этаж
+            li
+              a(href="#plans__tab-1-4") Четвертый этаж
+
+          ul.choose__plans-tabs
+            li.choose__plans-tab#plans__tab-1-1(data-floor="1")
+              h3.title2 Планировка I этажа
+
+              //. app-1-5 - квартира №5 в первом (верхнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 683")
+                  a.choose__plans-part-wrap.active(href="app-1-1")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-1-2")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-3")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-4")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-5")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-1-6")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-1-7")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-1-8")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-1-9")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-1-10")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-1-11")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-12")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-13")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-14")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-1-15")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-1-16")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-17")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-1-18")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-1-19")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-1-20")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-1.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-1.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-1.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-1.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-1.jpg" alt="" width="125" height="90")
+
+
+              ul.choose__plans-list
+
+            li.choose__plans-tab#plans__tab-1-2(data-floor="2")
+              h3.title2 Планировка II этажа
+
+              //. app-1-5 - квартира №5 в первом (верхнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 655")
+                  a.choose__plans-part-wrap.active(href="app-1-21")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-1-22")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-23")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-24")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-25")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-1-26")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-1-27")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-1-28")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-1-29")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-1-30")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-1-31")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-32")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-33")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-34")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-1-35")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-1-36")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-37")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-1-38")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-1-39")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-1-40")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-2.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+              ul.choose__plans-list
+
+
+            li.choose__plans-tab#plans__tab-1-3(data-floor="3")
+              h3.title2 Планировка III этажа
+
+              //. app-1-5 - квартира №5 в первом (верхнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 655")
+                  a.choose__plans-part-wrap.active(href="app-1-41")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-1-42")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-43")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-44")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-45")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-1-46")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-1-47")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-1-48")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-1-49")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-1-50")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-1-51")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-52")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-53")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-54")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-1-55")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-1-56")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-57")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-1-58")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-1-59")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-1-60")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-2.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+              ul.choose__plans-list
+
+            li.choose__plans-tab#plans__tab-1-4(data-floor="4")
+              h3.title2 Планировка IV этажа
+
+              //. app-1-5 - квартира №5 в первом (верхнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 655")
+                  a.choose__plans-part-wrap.active(href="app-1-61")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-1-62")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-63")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-64")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-1-65")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-1-66")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-1-67")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-1-68")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-1-69")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-1-70")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-1-71")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-72")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-73")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-1-74")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-1-75")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-1-76")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-1-77")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-1-78")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-1-79")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-1-80")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-2.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+              ul.choose__plans-list
+
+        .choose__plans-house#choose__plans-house-2(data-house="2")
+
+          h2.title2.title--second Планировки
+
+          ul.tabs__nav
+            li.current
+              a(href="#plans__tab-2-1") Первый этаж
+            li
+              a(href="#plans__tab-2-2") Второй этаж
+            li
+              a(href="#plans__tab-2-3") Третий этаж
+
+          ul.choose__plans-tabs
+            li.choose__plans-tab#plans__tab-2-1(data-floor="1")
+              h3.title2 Планировка I этажа
+
+              //. app-1-5 - квартира №5 во втором (нижнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 683")
+                  a.choose__plans-part-wrap.active(href="app-2-1")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-2-2")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-3")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-4")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-5")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-2-6")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-2-7")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-2-8")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-2-9")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-2-10")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-2-11")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-12")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-13")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-14")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-2-15")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-2-16")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-17")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-2-18")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-2-19")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-2-20")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-1.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-1.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-1.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-1.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-1.jpg" alt="" width="125" height="90")
+
+
+              ul.choose__plans-list
+
+            li.choose__plans-tab#plans__tab-2-2(data-floor="2")
+              h3.title2 Планировка II этажа
+
+              //. app-2-5 - квартира №5 во втором (нижнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 655")
+                  a.choose__plans-part-wrap.active(href="app-2-21")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-2-22")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-23")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-24")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-25")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-2-26")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-2-27")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-2-28")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-2-29")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-2-30")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-2-31")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-32")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-33")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-34")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-2-35")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-2-36")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-37")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-2-38")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-2-39")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-2-40")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-2.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+              ul.choose__plans-list
+
+
+            li.choose__plans-tab#plans__tab-2-3(data-floor="3")
+              h3.title2 Планировка III этажа
+
+              //. app-2-5 - квартира №5 во втором (нижнем) корпусе
+              .choose__plans-wrap
+                svg.choose__svg(viewbox="0 0 1920 655")
+                  a.choose__plans-part-wrap.active(href="app-2-41")
+                    path.choose__plans-part(d="m 1019.0665,277.75531 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1173.1825,9.579915 H 1059.802 c -10.4837,4.543719 -22.4117,3.556854 -31.2306,23.083451 -7.3607,10.458797 -6.5189,17.466574 -8.826,25.799152 z")
+                  a.choose__plans-part-wrap.active(href="app-2-42")
+                    path.choose__plans-part(d="m 1179.6434,275.83223 c 152.0792,-1.35785 154.7949,0 154.7949,0 l -0.6789,-268.1753919 -155.2074,0 c 0.9165,98.3780819 0.6865,179.3957919 1.0914,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-43")
+                    path.choose__plans-part(d="m 1343.1049,276.79377 c 152.0792,-1.35785 154.7949,0 154.7949,0 L 1497.2209,8.6183766 H 1342.0135 C 1342.93,106.99646 1342.7,188.01417 1343.1049,276.79377 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-44")
+                    path.choose__plans-part(d="m 1504.8082,275.83223 c 175.0497,-1.35785 178.1756,0 178.1756,0 L 1682.2024,7.6568381 H 1503.552 c 1.0549,98.3780819 0.7902,179.3957919 1.2562,268.1753919 z")
+                  a.choose__plans-part-wrap.active(href="app-2-45")
+                    path.choose__plans-part(d="m 1690.8654,8.4807681 -0.4808,308.1730819 217.3077,0.48077 -1.4423,-270.673082 c -5.3802,-27.671535 -19.5135,-32.835234 -33.6538,-37.9807695 z")
+                  a.choose__plans-part-wrap.active(href="app-2-46")
+                    path.choose__plans-part(d="m 1691.6712,635.40388 -0.4808,-308.1731 217.3077,-0.4808 -1.4423,270.6731 c -5.3802,27.6715 -19.5135,32.8352 -33.6538,37.9808 z")
+                  a.choose__plans-part-wrap.active(href="app-2-47")
+                    path.choose__plans-part(d="m 1523.901,637.37069 c 155.8238,-1.35785 158.6064,0 158.6064,0 l -0.6956,-268.17539 h -159.029 c 0.939,98.37808 0.7034,179.39579 1.1182,268.17539 z")
+                  a.choose__plans-part-wrap.active(href="app-2-48")
+                    path.choose__plans-part(d="m 1354.8077,368.57692 0.6215,194.00748 h 9.2755 l 0.6799,73.13524 151.1848,-0.4566 -0.9031,-266.96775 z")
+                  a.choose__plans-part-wrap.active(href="app-2-49")
+                    path.choose__plans-part(d="m 1187.0273,370.0273 0.6418,193.99574 14.8663,-0.96154 0.2212,73.61159 157.5547,-0.93734 -0.031,-57.05404 -6.8324,-0.0106 -0.3197,-208.92542 z")
+                  a.choose__plans-part-wrap.active(href="app-2-50")
+                    path.choose__plans-part(d="m 1017.7894,369.05869 0.6241,194.00604 13.9742,-5e-5 0.6959,72.65395 166.1771,-0.45662 -0.03,-57.05706 -19.6242,-0.49137 -0.3108,-208.93651 z")
+                  a.choose__plans-part-wrap.active(href="app-2-51")
+                    path.choose__plans-part(d="m 741.74579,368.37878 0.14333,210.35219 -41.79503,0.48072 -0.74641,56.3078 193.10018,0.0241 -0.03,-72.44168 11.14503,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-52")
+                    path.choose__plans-part(d="m 575.39964,368.85955 0.14333,210.35219 -14.39118,0.48072 -0.74641,56.3078 132.52325,0.0241 0.45077,-72.92245 43.83734,0.47017 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-53")
+                    path.choose__plans-part(d="m 406.64964,369.34032 0.14333,210.35219 -8.14118,-5e-5 0.21513,55.82703 155.60017,0.50487 -0.03,-71.96091 14.02965,-0.0106 -0.3108,-194.9942 z")
+                  a.choose__plans-part-wrap.active(href="app-2-54")
+                    path.choose__plans-part(d="m 236.36692,635.03872 156.56171,0.0241 -0.03,-71.48014 7.77965,-0.49137 -0.3108,-194.9942 c -70.94937,1.27645 -163.46148,-0.52092 -164.20951,0.57698 -2.16172,3.1728 -0.83031,164.58134 0.20895,266.36463 z")
+                  a.choose__plans-part-wrap.active(href="app-2-55")
+                    path.choose__plans-part(d="m 229.9802,635.62301 0.48187,-308.65494 -217.79153,-0.48156 1.44552,271.09631 c 5.392179,27.71476 19.556937,32.88654 33.728719,38.04019 z")
+                  a.choose__plans-part-wrap.active(href="app-2-56")
+                    path.choose__plans-part(d="M 229.82874,8.4663915 230.30955,317.12243 12.99613,317.604 14.438477,46.506717 C 19.818819,18.791859 33.952481,13.62006 48.093153,8.4663915 Z")
+                  a.choose__plans-part-wrap.active(href="app-2-57")
+                    path.choose__plans-part(d="m 240.17023,275.7553 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 398.08098,7.5799111 H 239.05203 c 0.939,98.3780789 0.7034,179.3957889 1.1182,268.1753889 z")
+                  a.choose__plans-part-wrap.active(href="app-2-58")
+                    path.choose__plans-part(d="m 407.55485,275.60145 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 565.4656,7.426065 H 406.43665 c 0.939,98.378075 0.7034,179.395785 1.1182,268.175385 z")
+                  a.choose__plans-part-wrap.active(href="app-2-59")
+                    path.choose__plans-part(d="m 575.82408,276.56299 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 733.73483,8.3876035 H 574.70588 c 0.939,98.3780765 0.7034,179.3957865 1.1182,268.1753865 z")
+                  a.choose__plans-part-wrap.active(href="app-2-60")
+                    path.choose__plans-part(d="m 743.13177,274.63991 c 155.82375,-1.35785 158.60635,0 158.60635,0 L 901.52329,48.772219 C 887.25317,12.602856 872.35686,14.074043 855.76923,6.4645266 H 742.01357 c 0.939,98.3780734 0.7034,179.3957834 1.1182,268.1753834 z")
+
+                .choose__plans-img.desktop
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+                a.choose__plans-img.mobile.fancybox(href="img/plan-1-2.jpg")
+                  noscript
+                    img.lazy(src="img/plan-1-2.jpg" alt="" width="125" height="90")
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/plan-1-2.jpg" alt="" width="125" height="90")
+
+              ul.choose__plans-list
+
+
+        //. Сюда данные будут подставляться из скрипта
+        .choose__plans-tooltip
+          .choose__plans-tooltip-wrap
+            p.choose__plans-title Студия №1
+            ul.choose__plans-features
+
+
+            b.choose__plans-price 1 500 000 Р
+
+            .choose__plans-btns
+              .btn__wrap.btn__wrap--grad
+                a.btn.open-modal(href="#") Записаться на показ
+
+
+        p.choose__plans-return
+          button(type="button") Вернуться к общему виду объекта
+
+
+
+  // /.scr_choose

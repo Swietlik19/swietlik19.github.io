@@ -192,6 +192,16 @@
     $(_href).fadeIn();
   });
 
+  $('.choose__plans .tabs__nav a').click(function(event) {
+    event.preventDefault();
+    $('.choose__plans-tooltip').removeClass('active');
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.choose__plans-tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
@@ -225,6 +235,75 @@
 
   deleteBorders();
 
+  $('.choose__change').click(function() {
+    $(this).parents('.choose__tab').hide();
+    $(this).parents('.choose__tab').removeClass('active');
+    $(this).parents('.choose__tab').siblings('.choose__tab').show();
+    $(this).parents('.choose__tab').siblings('.choose__tab').addClass('active');
+
+    $('.choose__part-wrap').removeClass('active');
+    var xNum = $(this).parents('.choose__tab').siblings('.choose__tab').find('.quantity-num');
+    var xHouseNum = xNum.attr('data-house');
+    var xFloorNum = xNum.text();
+    $('#floor-' + xHouseNum + '-' + xFloorNum).addClass('active');
+  });
+
+
+  /* Замена input(type="number") */
+  (function quantityProducts() {
+    if ($(".quantity-num").length > 0) {
+      var $quantityArrowMinus = $(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(".quantity-arrow-plus");
+
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+
+      function quantityMinus() {
+        var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
+        var $quantityNumMin = $quantityNum.attr('data-num-min');
+
+        if (+$quantityNum.text() > $quantityNumMin) {
+          $quantityNum.text(+$quantityNum.text() - 1);
+
+          var xHouseNum = $quantityNum.attr('data-house');
+          var xFloorNum = $quantityNum.text();
+          $('.choose__part-wrap').removeClass('active');
+          $('#floor-' + xHouseNum + '-' + xFloorNum).addClass('active');
+        }
+      }
+
+      function quantityPlus() {
+        var $quantityNum = $(this).parents('.quantity-block').find(".quantity-num");
+        var $quantityNumMax = $quantityNum.attr('data-num-max');
+
+        if (+$quantityNum.text() < $quantityNumMax) {
+          $quantityNum.text(+$quantityNum.text() + 1);
+
+          var xHouseNum = $quantityNum.attr('data-house');
+          var xFloorNum = $quantityNum.text();
+          $('.choose__part-wrap').removeClass('active');
+          $('#floor-' + xHouseNum + '-' + xFloorNum).addClass('active');
+        }
+      }
+
+    }
+  })();
+
+  $('.choose__part-wrap').mouseenter(function(){
+    // if ( !(window.matchMedia('(max-width: 880px)').matches) ) {
+      $('.choose__part-wrap').removeClass('active');
+      $(this).addClass('active');
+      var houseNum = $(this).attr('data-house');
+      var floorNum = $(this).attr('data-floor');
+      if ($('.choose__tab.active').attr('id') != 'choose__tab-' + houseNum) {
+        $('.choose__tab').hide();
+        $('.choose__tab').removeClass('active');
+        $('#choose__tab-' + houseNum).show();
+        $('.choose__tab-' + houseNum).addClass('active');
+      }
+      $('#choose__tab-' + houseNum).find('.quantity-num').text(floorNum);
+    // }
+  });
 
 
 
@@ -423,9 +502,11 @@
 
     if (currScreeWidth != screenWidth) {
       deleteBorders();
+      $('.choose__plans-tooltip').removeClass('active');
     }
 
     screenWidth = $(window).width();
   });
+
 
 })(jQuery);

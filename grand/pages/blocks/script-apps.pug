@@ -1,0 +1,145 @@
+mixin script-apps()
+  script.
+    (function($){
+
+      //. Перечисление квартир и их характеристик, подставляется потом в tooltip
+      xAppsArr = [
+        {
+          house: '1',
+          floor: '1',
+          appartment: '1',
+          title: 'Студия №1',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2'],['Глубина балкона','1,8 м']],
+          price: '1 500 000 Р',
+        },
+        {
+          house: '1',
+          floor: '1',
+          appartment: '2',
+          title: 'Студия №2',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+        {
+          house: '1',
+          floor: '1',
+          appartment: '3',
+          title: 'Студия №3',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+        {
+          house: '1',
+          floor: '1',
+          appartment: '4',
+          title: 'Студия №4',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+        {
+          house: '1',
+          floor: '1',
+          appartment: '5',
+          title: 'Студия №5',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+        {
+          house: '2',
+          floor: '2',
+          appartment: '3',
+          title: 'Студия №3',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+        {
+          house: '1',
+          floor: '2',
+          appartment: '21',
+          title: 'Студия №21',
+          features: [['Площадь','20,5 кв.м'],['Балкон','6 м2']],
+          price: '500 000 Р',
+        },
+      ]
+
+      $('.choose__plans-part-wrap').mouseenter(function() {
+        if (!(window.matchMedia('(max-width: 991px)').matches)) {
+          var xId = $(this).attr('href');
+          var xAppartment = {
+            house: '',
+            floor: '',
+            appartment: '',
+            title: 'Студия №',
+            features: [],
+            price: '',
+          };
+          xAppsArr.forEach(function(xel,xi) {
+            if (('app-' + xel.house + '-' + xel.appartment) == xId) {
+              xAppartment = xel;
+            }
+          });
+
+          $('.choose__plans-title').text(xAppartment.title);
+          $('.choose__plans-price').text(xAppartment.price);
+          $('.choose__plans-features').empty();
+          xAppartment.features.forEach(function(xel,xi) {
+            $('.choose__plans-features').append('<li><span>' + xel[0] + ':</span><span>' + xel[1] + '</span></li>');
+          });
+
+          var popup = $('.choose__plans-tooltip');
+          $(popup).addClass('active');
+          var myPath = $(this).find('.choose__plans-part')[0];
+          var w1 = myPath.getBoundingClientRect().width;
+          var w2 = popup.outerWidth();
+
+          var top = $(this).offset().top - $(popup).outerHeight() - 5;
+          var left = $(this).offset().left + w1/2 - w2/2;
+
+          $(popup).offset({top:top, left:left});
+        }
+      });
+
+
+
+      $('.choose__plans-list').each(function(xi,xel) {
+        var xList = $(xel);
+        var xHouse = $(xel).parents('.choose__plans-house').attr('data-house');
+        var xFloor = $(xel).parents('.choose__plans-tab').attr('data-floor');
+        xAppsArr.forEach(function(xel,xi) {
+          if (xHouse == xel.house && xFloor == xel.floor) {
+            var xFeat = '<ul class="choose__plans-features">';
+            xel.features.forEach(function(xel,xi) {
+              xFeat += '<li><span>' + xel[0] + ':</span><span>' + xel[1] + '</span></li>';
+            });
+            xFeat += '</ul>'
+
+            xList.append('<li><div class="choose__plans-app"><p class="choose__plans-title">' + xel.title +
+            '</p>' + xFeat + '<div class="choose__plans-bottom"><b class="choose__plans-price">' + xel.price + '</b>'
+            + '<div class="choose__plans-btns"><div class="btn__wrap btn__wrap--grad"><a class="btn open-modal" href="#"> Записаться на показ</a></div></div></div></div></li>');
+          }
+        });
+      });
+
+      $('.choose__watch').click(function() {
+        var xHouse = $(this).parents('.choose__tab').attr('data-house');
+        var xFloor = $(this).parents('.choose__tab').find('.quantity-num').text();
+        $('.choose__df').hide();
+        $('.choose__plans').show();
+        $('.choose__plans-tab').hide();
+        $('.choose .tabs__nav li').removeClass('current');
+        $('.choose__plans-house').hide();
+        $('#choose__plans-house-' + xHouse).show();
+        $('#plans__tab-' + xHouse + '-' + xFloor).show();
+        $('.choose .tabs__nav a[href="#plans__tab-' + xHouse + '-' + xFloor + '"]').parent().addClass('current');
+      });
+
+
+      $('.choose__plans-return').click(function() {
+        $('.choose__plans').hide();
+        $('.choose__df').show();
+      });
+
+
+
+    })(jQuery);
+

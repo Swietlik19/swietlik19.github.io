@@ -236,11 +236,9 @@
       on: {
         init: function () {
           $(window).on("load", function () {
-            equalHeightSwiper('#prices__nav');
             setTimeout(function() {
-              $(window).resize();
+              equalHeightSwiper('#prices__nav');
             },2300);
-
           });
         },
       },

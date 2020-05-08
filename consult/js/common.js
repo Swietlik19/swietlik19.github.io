@@ -255,6 +255,9 @@
     screenWidth = $(window).width();
   });
 
-  $(window).resize();
+  $(window).on("load", function () {
+    $(window).resize();
+  });
+
 
 })(jQuery);

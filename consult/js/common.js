@@ -22,7 +22,7 @@
   // Убираем прелоадер
   $(window).on("load", function () {
     $('.preloader').delay(1000).fadeOut();
-    setTimeout(function() {$('body').removeClass('disabled');},1500);
+    setTimeout(function() {$('body').removeClass('disabled');$(window).resize();},1500);
   });
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -253,10 +253,6 @@
     }
 
     screenWidth = $(window).width();
-  });
-
-  $(window).on("load", function () {
-    $(window).resize();
   });
 
 

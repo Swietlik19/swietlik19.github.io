@@ -210,38 +210,40 @@
     });
   }
 
-  if (window.matchMedia('(max-width: 900px)').matches) {
-    var pricesNav = new Swiper('#prices__nav', {
-      slidesPerView: 1,
-      spaceBetween: 8,
-      watchSlidesProgress: true,
-      breakpoints: {
-        767: {
-          slidesPerView: 5,
-          spaceBetween: 8,
+  $(window).on("load", function () {
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      var pricesNav = new Swiper('#prices__nav', {
+        slidesPerView: 1,
+        spaceBetween: 8,
+        watchSlidesProgress: true,
+        breakpoints: {
+          767: {
+            slidesPerView: 5,
+            spaceBetween: 8,
+          },
+          700: {
+            slidesPerView: 4,
+            spaceBetween: 8,
+          },
+          575: {
+            slidesPerView: 3,
+            spaceBetween: 8,
+          },
+          300: {
+            slidesPerView: 2,
+            spaceBetween: 8,
+          },
         },
-        700: {
-          slidesPerView: 4,
-          spaceBetween: 8,
+        on: {
+          init: function () {
+            $(window).on("load", function () {
+              equalHeightSwiper('#prices__nav');
+            });
+          },
         },
-        575: {
-          slidesPerView: 3,
-          spaceBetween: 8,
-        },
-        300: {
-          slidesPerView: 2,
-          spaceBetween: 8,
-        },
-      },
-      on: {
-        init: function () {
-          $(window).on("load", function () {
-            equalHeightSwiper('#prices__nav');
-          });
-        },
-      },
-    });
-  }
+      });
+    }
+  });
 
   $(window).resize(function() {
 

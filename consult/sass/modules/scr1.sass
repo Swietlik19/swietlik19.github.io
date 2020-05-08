@@ -1,0 +1,312 @@
+.scr1
+  position: relative
+  padding-top: 115px
+  padding-bottom: 33px
+  background-color: #f5f5f5
+  overflow: hidden
+  z-index: 1
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    bottom: 0
+    display: block
+    width: 1131px
+    height: 672px
+    background: transparent url('../img/svg/scr1-bg.svg') no-repeat center center
+    background-size: contain
+    z-index: -1
+  &__menu
+    position: relative
+    z-index: 2
+    &-slide
+      flex-grow: 1
+      flex-shrink: 1
+      width: 100%
+      height: auto
+      margin-right: 8px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        height: 100%
+    &-dots
+      display: none
+
+  &__df
+    display: flex
+    margin-bottom: 27px
+  &__garantie
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 177px
+    height: 177px
+    border-radius: 50%
+    background-image: linear-gradient(159.0deg, #d95284 8%, #8b2c6b 91%)
+    box-shadow: 0 0 0 12px rgba(255,255,255,0.5),
+    0 0 0 24px rgba(255,255,255,0.5)
+    text-align: center
+    font-size: 13px
+    line-height: 19px
+    color: #ffffff
+    strong
+      font-weight: 700
+    &-percent
+      font-size: 45px
+      font-weight: 900
+      small
+        font-size: 24px
+  &__info
+    position: relative
+    width: 751px
+    z-index: 2
+  &__img
+    position: absolute
+    width: 567px
+    height: 403px
+    top: 22px
+    left: -40px
+    z-index: -1
+    img
+      display: block
+      height: 100%
+    &-wrap
+      position: relative
+      flex-grow: 1
+      z-index: 1
+      padding-top: 203px
+      padding-left: 78px
+  &__title
+    margin-top: 52px
+    margin-bottom: 40px
+    font-size: 30px
+    line-height: 1.4 /* 42 / 30 */
+    font-weight: 400
+    span
+      font-size: 33px
+      line-height: 1.363636363636364 /* 45 / 33 */
+      font-weight: 900
+      text-transform: uppercase
+
+  &__bottom
+    display: flex
+    align-items: center
+  &__from
+    margin-right: 28px
+    font-size: 18px
+    line-height: 1.2
+    .blue
+      font-size: 24px
+      font-weight: 900
+
+  &__feat
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    z-index: 1
+    & > li
+      position: relative
+      flex-grow: 1
+      width: 100%
+      margin-right: 30px
+      box-shadow: 0px 4px 7px 0px rgba(241,243,245,0.57)
+      background-color: #fafafa
+      background-image: linear-gradient(-16.0deg, #ffffff 18%, rgba(255,255,255,0.0) 81%)
+      border: 1.0px solid #eaeaea
+      border-radius: 8.0px
+      padding: 30px 50px 26px 38px
+
+      font-size: 14px
+      line-height: 1.5 /* 21 / 14 */
+      font-weight: 500
+      &::before
+        content: ''
+        position: absolute
+        left: 12px
+        bottom: -9px
+        box-shadow: 0px 4px 7px 0px rgba(241,243,245,0.57)
+        display: block
+        width: calc(100% - 24px)
+        height: 100%
+        background-color: #fafafa
+        background-image: linear-gradient(-16.0deg, #ffffff 18%, rgba(255,255,255,0.0) 81%)
+        border: 1.0px solid #eaeaea
+        border-radius: 8.0px
+        box-shadow: 0 15px 10px -15px rgba(#06368a, 0.3)
+        z-index: -1
+      &:last-of-type
+        margin-right: 0
+
+  &__form
+    width: 100%
+    max-width: 428px
+    padding-right: 20px
+    .text-input
+      input
+        height: 62px
+        padding-left: 28px
+        padding-right: 210px
+    .btn__wrap
+      position: absolute
+      top: 0
+      right: 0
+
+
+  @media screen and (max-width: 1070px)
+    &__info
+      width: 621px
+    &__title
+      font-size: 26px
+      span
+        font-size: 27px
+    &__from
+      font-size: 15px
+      .blue
+        font-size: 20px
+    &__form
+      max-width: 368px
+      .text-input input
+        padding-right: 180px
+      .btn__wrap--grad .btn
+        padding: 0 26px
+    &__feat
+      & > li
+        margin-right: 10px
+        padding: 26px 20px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__menu
+      padding: 0 0 20px
+      overflow: hidden
+      &-slide
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100%
+        height: 100%
+        & > a
+          padding: 15px 16px
+          font-size: 13px
+      &-dots
+        display: flex
+        justify-content: center
+        text-align: center
+        margin-top: 5px
+    &__title
+      margin-top: 32px
+      margin-bottom: 30px
+
+  // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &__title
+      font-size: 21px
+      span
+        font-size: 23px
+    &__bottom
+      flex-direction: column
+      align-items: flex-start
+    &__from
+      margin-bottom: 20px
+    &__info
+      width: 512px
+    &__img
+      width: 397px
+      height: 323px
+      &-wrap
+        margin-left: -50px
+        padding-top: 163px
+        padding-left: 0
+    &__feat
+      & > li
+        font-size: 13px
+    &__garantie
+      margin-left: auto
+      &-percent
+        font-size: 34px
+        small
+          font-size: 20px
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    padding-top: 75px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__df
+      position: relative
+      flex-direction: column
+      align-items: center
+      text-align: center
+    &__bottom
+      align-items: center
+    &__from
+      margin-right: 0
+    &__img
+      left: auto
+      right: -90px
+      opacity: 0.3
+      &-wrap
+        position: static
+        margin-left: 0
+        padding-top: 20px
+    &__garantie
+      width: 100%
+      height: auto
+      box-shadow: none
+      background: none
+      border-radius: 0
+      color: #000
+      br
+        display: none
+      &-percent
+        font-weight: 500
+        font-size: 24px
+        small
+          font-size: 13px
+
+    &__feat
+      & > li
+        padding: 16px 14px
+        font-size: 12px
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    &__info
+      width: 100%
+    &__title
+      span
+        font-size: 19px
+    &__feat
+      flex-direction: column
+      & > li
+        margin-right: 0
+        margin-bottom: 20px
+        &:last-of-type
+          margin-bottom: 0
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__title
+      span
+        font-size: 17px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__form
+      padding-right: 0
+      .btn__wrap
+        position: static
+        margin-top: 20px
+
+  // max-width 400px
+
+/* scr1 */

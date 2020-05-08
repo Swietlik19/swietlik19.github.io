@@ -1,0 +1,43 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__wrap
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Финансовый
+            br
+            |  и инвестиционный
+            br
+            |  консалтинг
+
+        .header__right
+          .header__time
+            p Время работы:
+              br
+              |  пн – пт с 9:00 - 18:00
+
+          .header__phones
+            a.btn.btn--circle.open-modal.desktop(href="#modal__callback")
+              i.fa.fa-phone
+            a.btn.btn--circle.mobile(href="tel:+79780567654" rel="nofollow")
+              i.fa.fa-phone
+
+            .header__phones-links
+              a.header__phone(href="tel:+79780567654" rel="nofollow") +7 (978) 056-76-54
+              a.header__phone(href="tel:+79139678118" rel="nofollow") +7 (913)
+                span  967-81-18
+
+
+      // /.header__wrap
+    // /.container
+

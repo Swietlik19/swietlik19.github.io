@@ -1,0 +1,96 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .footer__logo
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+
+            p.logo__text Финансовый и инвестиционный
+              br
+              |  консалтинг
+
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О компании
+            li.menu-item
+              a(href="#") Прайс
+            li.menu-item
+              a(href="#") Наши проекты
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Вопрос-ответ
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+          ul.menu
+            li.menu-item
+              a(href="#") Услуги
+              ul.sub-menu
+                li.menu-item
+                  a(href="#") Разработка антикризисных программ
+                li.menu-item
+                  a(href="#") Разработка инвестиционных проектов
+                li.menu-item
+                  a(href="#") Разработка бизнес-планов
+                li.menu-item
+                  a(href="#") Финансовый анализ и оценка бизнеса
+                li.menu-item
+                  a(href="#") Финансовый директор в "аренду"
+                li.menu-item
+                  a(href="#") Постановка управленческого учета,
+                    br
+                    |  оптимизация затрат
+
+        .footer__info
+          .footer__phone
+            a(href="+79780567654" rel="nofollow") +7 (978) 056-76-54
+          .footer__phone
+            a(href="+79139678118" rel="nofollow") +7 (913)
+              span  967-81-18
+
+          .footer__text.footer__text--email
+            a(href="mailto:office@findir.shop" rel="nofollow") office@findir.shop
+
+          .footer__text
+            p Время работы:
+              br
+              |  пн – пт с 9:00 - 18:00
+
+          .footer__socials
+            .footer__text
+              b Соцсети:
+
+            +socials
+
+      // /.footer__top
+    // /.container
+
+    .footer__bottom
+      .container
+        .footer__bottom-df
+          .footer__politics
+            a.text(href="#") Политика конфиденциальности
+
+          .footer__copyright
+            p.text г. Симферополь © Copyright  2020&nbsp;г.
+
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

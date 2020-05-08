@@ -203,7 +203,9 @@
       on: {
         init: function () {
           $(window).on("load", function () {
-            equalHeightSwiper('#scr1__menu');
+            setTimeout(function() {
+              equalHeightSwiper('#scr1__menu');
+            },2300);
           });
         },
       },
@@ -236,9 +238,7 @@
       on: {
         init: function () {
           $(window).on("load", function () {
-            setTimeout(function() {
-              equalHeightSwiper('#prices__nav');
-            },2300);
+            equalHeightSwiper('#prices__nav');
           });
         },
       },

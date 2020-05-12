@@ -44,7 +44,8 @@
 
   $('.burger').click(function() {
     $(this).toggleClass('active');
-    $('.header__menu').toggleClass('active');
+    // $('.header__menu').toggleClass('active');
+    $('.header__menu').slideToggle('fast');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */

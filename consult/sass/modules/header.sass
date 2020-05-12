@@ -7,6 +7,8 @@
   z-index: 100
   box-shadow: 0 0 12px rgba(#597084, 0.3)
   transition: 0.3s
+  .burger
+    z-index: 500
   &.fixed
     padding: 14px 0
     .logo
@@ -86,16 +88,111 @@
     &:hover
       color: $accent
 
+  &__menu
+    position: absolute
+    left: 0
+    top: 100%
+    width: 100%
+    z-index: 300
+    display: none
+    &-wrap
+      position: relative
+      display: flex
+      justify-content: space-between
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding: 15px 15px 19px
+
+      box-shadow: 0px 10px 16px 0px rgba(241,243,245,0.57)
+      background-color: #fafafa
+      background-image: linear-gradient(-16.0deg, #ffffff 15%, rgba(255,255,255,0.0) 84%)
+      border: 1.0px solid #eaeaea
+      border-radius: 8.0px
+      &::before
+        content: ''
+        position: absolute
+        top: -79px
+        left: 0
+        box-shadow: 0px 10px 16px 0px rgba(241,243,245,0.57)
+        background-color: #f8f8f9
+        border: 1.0px solid #eaeaea
+        border-top-left-radius: 8.0px
+        border-top-right-radius: 8.0px
+        border-bottom: none
+        display: block
+        width: 55px
+        height: 80px
   .menu
     padding: 0
     margin: 0
     list-style: none
+    width: 31.14035087719298%
+    padding-right: 20px
+    padding-left: 51px
+    padding-top: 42px
+    &:nth-of-type(2)
+      width: 35.70175438596491%
+      padding-left: 0
+    & > li
+      margin-bottom: 32px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 18px
+        font-weight: 700
+        transition: 0.3s
+        color: $accent
+        &:hover
+          color: $accent2
 
-    display: flex
-    justify-content: space-between
-    align-items: center
-    height: 100%
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-top: 22px
+    & > li
+      margin-bottom: 34px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 16px
+        transition: 0.3s
+        &:hover
+          color: $accent2
 
+  &__form
+    flex-shrink: 0
+    width: 360px
+    .form
+      &::before
+        content: none
+
+
+  @media screen and (max-width: 1070px)
+    .menu
+      width: 26.140351%
+      padding-left: 21px
+      padding-top: 42px
+      &__nth-of-type(2)
+        width: 38.701754%
+      & > li
+        margin-bottom: 26px
+        & > a
+          font-size: 16px
+
+    .sub-menu
+      & > li
+        margin-bottom: 22px
+        & > a
+          font-size: 14px
+
+  // max-width 1070px
 
   @media screen and (max-width: 991px)
     padding: 14px 0
@@ -109,6 +206,8 @@
       font-size: 14px
     &__time
       font-size: 14px
+    &__form
+      width: 310px
 
   // max-width 991px
 
@@ -124,6 +223,21 @@
         display: flex
       &-links
         display: none
+    &__menu
+      &-wrap
+        flex-wrap: wrap
+        max-height: calc(100vh - 80px)
+        overflow: auto
+    .menu
+      width: 40%
+      padding-top: 10px
+      &:nth-of-type(2)
+        width: 60%
+    &__form
+      width: 360px
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
 
   // max-width 850px
 
@@ -145,6 +259,35 @@
       margin-right: 15px
 
   // max-width 767px
+
+  @media screen and (max-width: 575px)
+    .menu
+      width: 100%
+      padding-top: 0
+      padding-right: 0
+      padding-left: 0
+      &:nth-of-type(2)
+        width: 100%
+      & > li
+        width: 100%
+        margin-bottom: 0
+        & > a
+          padding: 7px 0
+          border-bottom: 1px solid rgba(#000, 0.1)
+    .sub-menu
+      padding-left: 20px
+      & > li
+        margin-bottom: 10px
+        & > a
+          font-size: 13px
+
+    &__form
+      width: 360px
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+
+  // max-width 575px
 
   @media screen and (max-width: 500px)
     &.fixed

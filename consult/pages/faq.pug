@@ -26,12 +26,7 @@ html(lang='ru')
     include blocks/socials.pug
     include blocks/modal.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_company.pug
-    include blocks/scr_quote.pug
-    include blocks/scr_lead.pug
     include blocks/scr_faq.pug
-    include blocks/scr_prices.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -84,22 +79,19 @@ html(lang='ru')
       .logo
         img(src="img/svg/logo.svg" alt="лого")
 
+    +header("a")
 
+    //. На внутренних page_wr добавляется класс page_wr--second
+    #page_wr.page_wr.page_wr--second
+      .container
+        h1.title--second.title--faq Вопрос-Ответ
 
-    +header("div")
-
-    #page_wr.page_wr
-      +scr1
-      +scr_company
-      +scr_quote
-      +scr_prices
-      +scr_lead
-      +scr_faq
+      +scr_faq--page
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
-    +footer("div")
+    +footer("a")
 
     +modal__callback
 

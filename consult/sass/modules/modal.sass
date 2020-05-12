@@ -6,7 +6,7 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(0,0,0,0.6)
   z-index: 1000
   opacity: 0
   overflow: hidden
@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 360px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -30,11 +30,53 @@
     &.visible
       opacity: 1
 
+    &::after
+      content: ''
+      position: absolute
+      bottom: -92px
+      right: -150px
+      display: block
+      width: 279px
+      height: 183px
+      background: transparent url('../img/svg/modal-img.svg') no-repeat center center
+      background-size: contain
+
+
   .form
-    max-height: 100vh
-    overflow: auto
+    position: relative
     width: 100%
     z-index: 0
+    &::after
+      content: ''
+      position: absolute
+      top: -59px
+      left: calc(50% - 67px)
+      box-shadow: 0px 10px 16px 0px rgba(241,243,245,0.57)
+      width: 135px
+      height: 135px
+      background-color: #ffffff
+      background-image: url('../img/svg/logo-small.svg'), linear-gradient(-16.0deg, #ffffff 7%, rgba(255,255,255,0.0) 92%)
+      background-size: 77px 67px, cover
+      background-repeat: no-repeat, repeat
+      background-position: center 28px
+      border: 1.0px solid #eaeaea
+      border-radius: 50%
+      z-index: 3
+    form
+      padding-top: 92px
+      padding-bottom: 46px
+      max-height: 100vh
+      overflow: auto
+    &__title
+      margin-bottom: 20px
+      font-size: 30px
+      font-weight: 700
+      color: $accent
+
+    .btn__wrap
+      width: 92.96296296296296%
+      .btn
+        width: 100%
 
   .close
     background: none
@@ -59,7 +101,7 @@
       left: 50%
 
       display: block
-      width: 20px
+      width: 25px
       height: 3px
       background-color: $accent
       border-radius: 1.5px
@@ -73,14 +115,22 @@
 
     &:hover
       &::before,&::after
-        background-color: #e99c02
+        background-color: $accent2
 
-  // @media screen and (max-width: 767px)
 
-  // max-width 767px
+  @media screen and (max-width: 500px)
+    .form
+      &::after
+        left: calc(50% - 57px)
+        width: 115px
+        height: 115px
+        background-size: 61px 53px, cover
+        background-position: center 25px
+      &__title
+        font-size: 25px
+      form
+        padding-top: 72px
 
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
+  // max-width 500px
 
  /* modal */

@@ -1,0 +1,195 @@
+.serv
+  position: relative
+  padding-top: 32px
+  &__wrap
+    padding-top: 47px
+    padding-bottom: 59px
+    background-color: #1a50b0
+    background-image: linear-gradient(-54.0deg, #9ee7f2 16%, #54b1f0 83%)
+  &__list
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    z-index: 1
+    & > li
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      padding-bottom: 47px
+      &:nth-of-type(3n)
+        margin-right: 0
+      &:nth-of-type(n + 4)
+        padding-bottom: 0
+
+  &__item
+    position: relative
+    height: 100%
+    background-color: #fafafa
+    background-image: linear-gradient(-16.0deg, #ffffff 8%, rgba(255,255,255,0.0) 91%)
+    border: 1.0px solid #eaeaea
+    border-radius: 8.0px
+    transition: .3s
+    &:hover
+      box-shadow: 0 5px 30px rgba(#06368a,0.5)
+    &::before
+      content: ''
+      position: absolute
+      bottom: -8px
+      left: 50%
+      display: block
+      width: calc(100% - 24px)
+      height: 100%
+      transform: translateX(-50%)
+      background-color: #fafafa
+      box-shadow: 0 5px 15px rgba(#06368a,0.5)
+      background-image: linear-gradient(-16.0deg, #ffffff 6%, rgba(255,255,255,0.0) 93%)
+      border-radius: 8.0px
+      z-index: -1
+  &__top
+    padding: 19px 30px 25px
+  &__img
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 229px
+    height: 209px
+    margin-left: auto
+    margin-right: auto
+    img
+      display: block
+      width: 100%
+      height: 100%
+  &__title
+    padding: 0 20px 15px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
+    text-align: center
+
+  &__add
+    position: relative
+    &-wrap
+      background-color: #fbfbfb
+      padding-top: 42px
+      padding-bottom: 22px
+      border-bottom: 10px solid #fff
+    &-content
+      max-height: 360px
+      overflow: hidden
+      transition: 0s
+      &.active
+        max-height: 10000px
+        transition: padding 0.4s, max-height 1s
+        overflow: visible
+        padding-bottom: 20px
+      .article
+        h2
+          margin-top: 0
+          margin-bottom: 36px
+    &-more
+      position: absolute
+      bottom: 0
+      left: 0
+      background: none
+      border: none
+      outline: none
+      display: block
+      width: 100%
+      padding-top: 150px
+      padding-bottom: 30px
+      text-align: center
+      cursor: pointer
+      background-image: linear-gradient(180deg, rgba(#fbfbfb, 0) 0%, #fbfbfb 70%, #fbfbfb 100%)
+      z-index: 5
+      transition: padding-top 0.5s, bottom 0.5s
+      span
+        position: relative
+        display: inline-block
+        font-size: 14px
+        color: #0249c0
+        transition: 0.3s
+        &::before
+          content: ''
+          position: absolute
+          left: 50%
+          bottom: -20px
+          display: block
+          width: 6px
+          height: 10px
+          transform: translateX(-50%) rotate(90deg)
+          background: transparent url('../img/svg/arrow.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+      &.active
+        padding-top: 30px
+        bottom: -30px
+        span
+          &::before
+            transform: translateX(-50%) rotate(-90deg)
+
+
+  @media screen and (max-width: 991px)
+    &__img
+      height: 149px
+    &__title
+      font-size: 16px
+    &__list
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+        padding-bottom: 37px
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &__top
+      padding: 19px 20px 20px
+    &__img
+      height: 109px
+    &__title
+      font-size: 14px
+    &__wrap
+      padding-top: 37px
+      padding-bottom: 49px
+
+  // max-width 850px
+
+  @media screen and (max-width: 630px)
+    &__img
+      height: 79px
+    &__title
+      font-size: 13px
+    &__add
+      &-content
+        .article
+          h2
+            margin-bottom: 22px
+
+  // max-width 630px
+
+  @media screen and (max-width: 500px)
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        padding-bottom: 37px
+        &:nth-of-type(3n)
+          margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+        &:nth-of-type(n + 4)
+          padding-bottom: 37px
+        &:nth-of-type(n + 5)
+          padding-bottom: 0
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__title
+      font-size: 12px
+
+  // max-width 400px
+
+/* serv */

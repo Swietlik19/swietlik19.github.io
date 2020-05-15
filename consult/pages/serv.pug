@@ -1,0 +1,99 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#2158ba')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    //- include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/socials.pug
+    include blocks/breadcrumbs.pug
+    include blocks/modal.pug
+
+    include blocks/scr_serv.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    style.
+      .preloader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: 0.3s linear;
+        -o-transition: 0.3s linear;
+        transition: 0.3s linear;
+        z-index: 1000; }
+      .preloader .logo {
+        position: absolute;
+        top: 50%;
+        width: 300px;
+        height: 200px;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: logo-delay 1s ease-in-out;
+                animation: logo-delay 1s ease-in-out;
+      }
+
+      @-webkit-keyframes logo-delay {
+        0% {
+          opacity: 0; }
+        20% {
+          opacity: 0; }
+        100% {
+          opacity: 1; } }
+
+      @keyframes logo-delay {
+        0% {
+          opacity: 0; }
+        20% {
+          opacity: 0; }
+        100% {
+          opacity: 1; } }
+
+
+  body.disabled
+    .preloader
+      .logo
+        img(src="img/svg/logo.svg" alt="лого")
+
+    +header("a")
+
+    //. На внутренних page_wr добавляется класс page_wr--second
+    #page_wr.page_wr.page_wr--second
+
+      +scr_serv
+
+      a.to-top(href="#page_wr")
+        i.fa.fa-angle-up
+
+    +footer("a")
+
+    +modal__callback
+
+    +styles
+    +scripts
+    //- +script-map

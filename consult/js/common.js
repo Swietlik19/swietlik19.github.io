@@ -132,6 +132,33 @@
     event.preventDefault();
   });
 
+  $('.company__person-link').click(function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+    $('.company__person-info .hidden').toggleClass('active');
+    if ($(this).hasClass('active')) {
+      $(this).text('Свернуть');
+    } else {
+      $(this).text('Подробнее');
+    }
+  });
+
+  $('.prices__more').click(function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+    $(this).parents('.prices__table').find('.prices__hidden').slideToggle();
+  });
+
+  $('.serv__add-more').click(function() {
+    $(this).toggleClass('active');
+    $('.serv__add-content').toggleClass('active');
+    if ($(this).hasClass('active')) {
+      $(this).find('span').text('Свернуть');
+    } else {
+      $(this).find('span').text('Читать дальше');
+    }
+  });
+
 
   /* СЛАЙДЕРЫ */
   function equalHeightSwiper(sliderID) {
@@ -147,10 +174,6 @@
     loop: true,
     autoplay: {
       delay: 8000,
-    },
-    navigation: {
-      nextEl: '.partners__btns .swiper-button-next',
-      prevEl: '.partners__btns .swiper-button-prev',
     },
     pagination: {
       el: '.partners__btns .swiper-dots',
@@ -170,6 +193,105 @@
       },
     },
   });
+
+  var partners__slider = new Swiper('#partners__slider-page', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.partners__slider-wrap .swiper-button-next',
+      prevEl: '.partners__slider-wrap .swiper-button-prev',
+    },
+    pagination: {
+      el: '.partners__slider-wrap .swiper-dots',
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 5,
+        spaceBetween: 21,
+      },
+      800: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      450: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  var projects__partners = new Swiper('#projects__partners', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    loop: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.projects__partners .swiper-button-next',
+      prevEl: '.projects__partners .swiper-button-prev',
+    },
+    pagination: {
+      el: '.projects__partners .swiper-dots',
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 5,
+        spaceBetween: 21,
+      },
+      800: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      450: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+
+  $(window).on("load", function () {
+    setTimeout(function() {
+      var reviews__slider = new Swiper('#reviews__slider', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        watchSlidesProgress: true,
+        loop: true,
+        autoplay: {
+          delay: 8000,
+        },
+        navigation: {
+          nextEl: '.reviews__btns .swiper-button-next',
+          prevEl: '.reviews__btns .swiper-button-prev',
+        },
+        pagination: {
+          el: '.reviews__btns .swiper-dots',
+        },
+        on: {
+          init: function () {
+            equalHeightSwiper('#reviews__slider');
+          },
+        },
+      });
+    },1500);
+  });
+
+
 
   if (window.matchMedia('(max-width: 991px)').matches) {
     var scr1__menu = new Swiper('#scr1__menu', {

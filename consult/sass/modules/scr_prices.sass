@@ -148,6 +148,99 @@
     .mobile
       display: none
 
+  &--page
+    padding-bottom: 26px
+    .prices__table
+      margin-bottom: 24px
+      &:last-of-type
+        margin-bottom: 0
+      &:nth-of-type(6n + 1)
+        .prices__row--heading
+          background-color: #ac4086
+      &:nth-of-type(6n + 2)
+        .prices__row--heading
+          background-color: #0585c7
+      &:nth-of-type(6n + 3)
+        .prices__row--heading
+          background-color: #30b0be
+      &:nth-of-type(6n + 4)
+        .prices__row--heading
+          background-color: #0249c0
+      &:nth-of-type(6n + 5)
+        .prices__row--heading
+          background-color: #0476d9
+      &:nth-of-type(6n + 6)
+        .prices__row--heading
+          background-color: #d95284
+    .prices__row
+      &:not(.prices__row--heading)
+        min-height: 88px
+      .prices__cell
+        &:first-of-type
+          width: 67.07431796801505%
+          b
+            font-size: 18px
+        &:nth-of-type(2)
+          width: 15.71025399811853%
+        &:last-of-type
+          padding-left: 15px
+          padding-right: 15px
+          text-align: center
+          flex-direction: column
+          justify-content: center
+          width: 17.21542803386642%
+
+    .prices__row--heading
+      color: #ffffff
+      .prices__cell
+        padding-top: 10px
+        padding-bottom: 10px
+        &:first-of-type
+          flex-direction: row
+          align-items: center
+          justify-content: space-between
+          padding-right: 23px
+          text-align: left
+          p
+            padding-right: 15px
+            font-size: 20px
+            line-height: 1.2
+            font-weight: 700
+            text-transform: uppercase
+          button
+            background: none
+            border: none
+            outline: none
+            cursor: pointer
+            .icon-circle
+              width: 33px
+              height: 33px
+              border: 2.0px solid #ffffff
+              background-image: url('../img/svg/arrow-white.svg')
+              transform: rotate(90deg)
+              transition: 0.3s
+            &.active
+              .icon-circle
+                transform: rotate(-90deg)
+            &:hover
+              .icon-circle
+                background-color: $accent
+
+
+  &__tables
+    padding: 27px 39px 29px
+    box-shadow: 0px 10px 16px 0px rgba(241,243,245,0.57)
+    background-color: #fafafa
+    background-image: linear-gradient(-16.0deg, #ffffff 5%, rgba(255,255,255,0.0) 94%)
+    border: 1.0px solid #eaeaea
+    border-radius: 8.0px
+
+  &--page
+    padding-top: 30px
+
+  &__hidden
+    display: none
+
 
   @media screen and (max-width: 1170px)
     &__feat
@@ -188,6 +281,25 @@
         flex-grow: 0
         height: 100%
         flex-shrink: 0
+
+    &--page
+      .prices__row
+        &:not(.prices__row--heading)
+          min-height: 60px
+        .prices__cell
+          &:first-of-type
+            b
+              font-size: 14px
+      .prices__row--heading
+        .prices__cell
+          &:first-of-type
+            p
+              font-size: 15px
+
+    &__tables
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding: 27px 20px 29px
 
   // max-width 991px
 
@@ -240,6 +352,18 @@
         content: none
       .mobile
         display: block
+
+    &--page
+      .prices__row
+        &--heading
+          display: block
+          .prices__cell
+            &:first-of-type
+              width: 100%
+              p
+                font-size: 13px
+            &:nth-of-type(n + 2)
+              display: none
 
   // max-width 650px
 

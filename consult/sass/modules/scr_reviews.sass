@@ -3,44 +3,177 @@
   padding-top: 32px
   margin-bottom: 61px
   &__wrap
-    padding: 57px 0 29px
+    padding: 27px 0 29px
     background-color: #1a50b0
     background-image: linear-gradient(-54.0deg, #9ee7f2 21%, #54b1f0 78%)
   &__slider
-    padding: 30px 0
+    width: calc(100% + 20px)
+    margin-left: -10px
+    padding: 30px 10px
     overflow: hidden
     &-wrap
       max-width: 836px
       margin-left: auto
       margin-right: auto
+  &__slide
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      bottom: -5px
+      left: 50%
+      transform: translateX(-50%)
+      display: block
+      width: calc(100% - 62px)
+      height: 100%
+      box-shadow: 0 15px 22px -10px rgba(#06368a,0.8)
+      background-color: #ffffff
+      border: 1.0px solid #eaeaea
+      border-radius: 8.0px
+      z-index: -1
+  &__item
+    display: flex
+    flex-direction: column
+    box-shadow: 0px 4px 7px 0px rgba(26,80,175,0.37)
+    background-color: #ffffff
+    border: 1.0px solid #eaeaea
+    border-radius: 8.0px
+    padding: 37px 38px 47px 51px
+    height: 100%
+  &__top
+    display: flex
+    margin-bottom: 29px
+  &__img
+    flex-shrink: 0
+    width: 65px
+    margin-right: 27px
+    img
+      display: block
+  &__title
+    margin-top: 0
+    margin-bottom: 0
+    padding-top: 17px
+    font-size: 30px
+    font-weight: 500
+    color: #8b2c6b
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: auto
+  &__person
+    margin-right: 15px
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 500
+  &__link
+    flex-shrink: 0
+    text-decoration: none
+    outline: none
+    display: flex
+    align-items: center
+    font-size: 14px
+    color: #0249c0
+    transition: 0.3s
+    &:hover
+      color: $accent2
+      .icon
+        fill: $accent2
+    .icon
+      display: block
+      width: 24px
+      height: 30px
+      margin-left: 15px
+      fill: $accent
+  &__content
+    margin-bottom: 26px
+    .article
+      p,h2,h3
+        font-size: 17.4px
+        line-height: 1.609195402298851 /* 28 / 17.4 */
+      h2,h3
+        margin-bottom: 30px
+  &__btns
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 9px
+    .swiper-pagination-bullet
+      background-color: #fff
+      opacity: 1
+    .swiper-pagination-bullet-active
+      background-color: $accent2
 
 
-  // @media screen and (max-width: 1170px)
-
-  // max-width 1170px
-
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    &__content
+      .article
+        p,h2,h3
+          font-size: 14px
+          line-height: 1.5
+        h2,h3
+          margin-bottom: 25px
+    &__title
+      font-size: 26px
+    &__top
+      margin-bottom: 10px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
-
-  // max-width 991px
-
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    &__item
+      padding: 27px 28px 37px 31px
+    &__title
+      padding-top: 0
+      font-size: 21px
+    &__top
+      align-items: center
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 650px)
+    margin-bottom: 41px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    padding-top: 22px
+    &__bottom
+      flex-direction: column
+      align-items: flex-start
+    &__content
+      margin-bottom: 12px
+      .article
+        h2,h3
+          margin-top: 10px
+          margin-bottom: 15px
+    &__person
+      font-size: 14px
+      margin-bottom: 20px
+    &__link
+      font-size: 14px
+    &__img
+      width: 55px
+      margin-right: 17px
+    &__title
+      font-size: 18px
+    &__item
+      padding: 27px 24px 37px
+    &__wrap
+      padding-top: 10px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    &__content
+      .article
+        p,h2,h3
+          font-size: 13px
+          line-height: 1.5
+    &__title
+      font-size: 16px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* reviews */

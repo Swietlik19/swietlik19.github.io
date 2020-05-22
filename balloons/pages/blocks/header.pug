@@ -1,0 +1,91 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__top-wrap
+          button.burger
+            span.burger__wrap
+              span.line
+
+          .header__menu
+            ul.menu
+              li.menu-item
+                a(href="#") О компании
+              li.menu-item
+                a(href="#") Новости
+              li.menu-item
+                a(href="#") Скидки
+              li.menu-item
+                a(href="#") Оплата и доставка
+              li.menu-item
+                a(href="#") Полезная информация
+              li.menu-item
+                a(href="#") Отзывы
+              li.menu-item
+                a(href="#") Блог
+              li.menu-item
+                a(href="#") Контакты
+
+          .header__user
+            a.header__user-button.header__user-button--login.open-modal(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#icon-login")
+              span Вход
+            a.header__user-button.header__user-button--signup.open-modal(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#icon-user")
+              span Регистрация
+
+      // /.container
+    // /.header__top
+
+    .container
+      .header__bottom
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+          span.logo__text Товары для праздника
+            br
+            |  оптом и в розницу
+
+        .header__address
+          strong Склад-магазин:
+          |  г. Симферополь,
+          br
+          |  ул. Севастопольская, 31
+
+        ul.header__phones
+          li.header__phones-item
+            a.header__phone(href="tel:88000000000" rel="nofollow") 8 (800) 00 00 000
+            p.header__text Бесплатно по России
+          li.header__phones-item
+            .header__phones-df
+              a.open-modal.desktop.btn.btn--circle(href="#modal__callback" rel="nofollow")
+                i.fa.fa-phone
+              a.mobile.btn.btn--circle(href="tel:89789224242" rel="nofollow")
+                i.fa.fa-phone
+
+              .header__phones-wrap
+                a.header__phone(href="tel:89789224242" rel="nofollow") 8 (978) 922 42 42
+                .header__phones-msgs
+                  p.header__text По Крыму
+
+                  a.header__phones-msg.header__phones-msg--wa(href="https://api.whatsapp.com/send?phone=89789224242" rel="nofollow")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-wa")
+
+                  a.header__phones-msg.header__phones-msg--viber(href="viber://chat?number=89789224242" rel="nofollow")
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-viber")
+
+
+
+
+
+      // /.header__bottom
+    // /.container

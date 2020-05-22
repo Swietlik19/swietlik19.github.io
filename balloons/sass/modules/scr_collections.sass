@@ -1,0 +1,195 @@
+.collections
+  position: relative
+  background-color: #f7f2ff
+  &__cont
+    position: relative
+    padding: 37px 0 74px
+    z-index: 15
+    &-top
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .title
+        margin-bottom: 0
+        margin-right: 15px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin-top: 34px
+  &__wrap
+    padding-bottom: 27px
+    width: calc((100% - 60px) / 3)
+    margin-right: 30px
+    &:nth-of-type(3)
+      margin-right: 0
+    &:nth-of-type(n + 4)
+      width: calc((100% - 90px) / 4)
+      margin-right: 30px
+      .collections__item
+        height: 296px
+    &:nth-of-type(7)
+      margin-right: 0
+
+    &:nth-of-type(7n + 1)
+      .collections__item
+        background-color: #b1c794
+      .collections__title
+        &::after
+          background-color: #8da260
+    &:nth-of-type(7n + 2)
+      .collections__item
+        background-color: #f3ab94
+      .collections__title
+        &::after
+          background-color: #f17b51
+    &:nth-of-type(7n + 3)
+      .collections__item
+        background-color: #ffd018
+      .collections__title
+        &::after
+          background-color: #9e5f00
+    &:nth-of-type(7n + 4)
+      .collections__item
+        background-color: #95bdf2
+      .collections__title
+        &::after
+          background-color: #0059a9
+    &:nth-of-type(7n + 5)
+      .collections__item
+        background-color: #f2c1de
+      .collections__title
+        &::after
+          background-color: #ff7bcd
+    &:nth-of-type(7n + 6)
+      .collections__item
+        background-color: #a6d797
+      .collections__title
+        &::after
+          background-color: #6c913a
+    &:nth-of-type(7n)
+      .collections__item
+        background-color: #c3c8e8
+      .collections__title
+        &::after
+          background-color: #9782f9
+
+  &__item
+    display: block
+    text-decoration: none
+    outline: none
+    position: relative
+    padding: 30px 15px 15px 27px
+    height: 204px
+    border-radius: 8.0px
+    overflow: hidden
+    z-index: 1
+    transition: 0.5s
+    &:hover
+      transform: translateY(-10px)
+      box-shadow: 0 5px 20px rgba(#000, 0.3)
+  &__img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    img
+      display: block
+      height: 100%
+  &__title
+    position: relative
+    display: inline-block
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 600
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -5px
+      width: 100%
+      height: 2px
+
+
+  @media screen and (max-width: 1070px)
+    &__wrap
+      &:nth-of-type(n + 4)
+        .collections__item
+          height: 204px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__wrap
+      padding-bottom: 20px
+      width: calc((100% - 45px) / 3)
+      margin-right: 15px
+      &:nth-of-type(3)
+        margin-right: 0
+      &:nth-of-type(n + 4)
+        width: calc((100% - 60px) / 4)
+        margin-right: 15px
+      &:nth-of-type(7)
+        margin-right: 0
+    &__cont
+      padding: 37px 0 44px
+    &__item
+      padding: 15px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__title
+      font-size: 16px
+    &__wrap
+      padding-bottom: 20px
+      width: calc((100% - 15px) / 2)
+      margin-right: 15px
+      &:nth-of-type(3)
+        margin-right: 15px
+      &:nth-of-type(n + 4)
+        width: calc((100% - 15px) / 2)
+        margin-right: 15px
+      &:nth-of-type(2n)
+        margin-right: 0
+      &:nth-of-type(7)
+        width: 100%
+        max-width: 400px
+        margin-right: auto
+        margin-left: auto
+        .collections__img
+          top: 0
+    &__img
+      top: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__cont
+      &-top
+        flex-direction: column
+        align-items: flex-start
+        .title
+          margin-bottom: 20px
+          margin-right: 0
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__wrap
+      &:nth-of-type(n + 4)
+        .collections__item
+          height: 150px
+      &:nth-of-type(7)
+        .collections__item
+          height: 220px
+    &__item
+      height: 150px
+
+  // max-width 575px
+
+/* collections */

@@ -2,15 +2,155 @@ mixin footer(logotype)
   footer.footer(id="footer")
     .container
       .footer__top
-        .logo__wrap
-          if logotype == "a"
-            #{logotype}.logo(href="index.html")
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
-          else
-            #{logotype}.logo
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
+        .footer__left
+          .footer__df
+            .footer__menu
+              ul.menu
+                li.menu-item
+                  a(href="#") Карта сайта
+                    span.menu__open
+
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") О компании
+                    li.menu-item
+                      a(href="#") Скидки
+                    li.menu-item
+                      a(href="#") Оплата и доставка
+                    li.menu-item
+                      a(href="#") Полезная информация
+                    li.menu-item
+                      a(href="#") Отзывы
+                    li.menu-item
+                      a(href="#") Блог
+                    li.menu-item
+                      a(href="#") Контакты
+
+            .footer__menu
+              ul.menu
+                li.menu-item
+                  a(href="#") Личный кабинет
+                    span.menu__open
+
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") Вход
+                    li.menu-item
+                      a(href="#") Регистрация
+                    li.menu-item
+                      a(href="#") Мои заказы
+                    li.menu-item
+                      a(href="#") Понравилось
+
+              a.footer__add(href="#") Книга жалоб
+                br
+                |  и предложений
+
+
+          .footer__pay
+            p.footer__pay-title Способы оплаты:
+
+            ul.footer__pay-list
+              li
+                .footer__pay-img
+                  noscript
+                    img.lazy(src="img-temp/pay/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/pay/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+              li
+                .footer__pay-img
+                  noscript
+                    img.lazy(src="img-temp/pay/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/pay/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+              li
+                .footer__pay-img
+                  noscript
+                    img.lazy(src="img-temp/pay/img-3.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/pay/img-3.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+              li
+                .footer__pay-another
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#icon-purse")
+                  span Моментальный платеж
+
+
+        .footer__right
+          .footer__df
+            .footer__menu
+              ul.menu
+                li.menu-item
+                  a(href="#") Каталог
+                    span.menu__open
+
+                  ul.sub-menu
+                    li.menu-item
+                      a(href="#") Композиции из гелиевых шаров
+                    li.menu-item
+                      a(href="#") Упаковка для цветов
+                    li.menu-item
+                      a(href="#") Латексные шары
+                    li.menu-item
+                      a(href="#") Фольгированные шары
+                    li.menu-item
+                      a(href="#") Сервировка шаров
+                    li.menu-item
+                      a(href="#") Свечи для торта
+                    li.menu-item
+                      a(href="#") Товары для праздника
+                    li.menu-item
+                      a(href="#") Подарочная упаковка
+                    li.menu-item
+                      a(href="#") Карнавальная продукция
+                    li.menu-item
+                      a(href="#") Декор и аксессуары
+                    li.menu-item
+                      a(href="#") Оборудование для шаров и гелия
+                    li.menu-item
+                      a(href="#") Гелий
+
+            .footer__menu
+              ul.menu
+                li.menu-item
+                  a(href="#") Контакты
+
+              .footer__contacts
+                .footer__contacts-item
+                  a.footer__contacts-link(href="tel:88001230000" rel="nofollow") 8 (800) 123-00-00
+                .footer__contacts-item
+                  .footer__contacts-df
+                    a.footer__contacts-link(href="tel:89789224242" rel="nofollow") 8 (978) 922-42-42
+
+                    .footer__contacts-msgs
+                      a.footer__contacts-msg(href="https://api.whatsapp.com/send?phone=89789224242" rel="nofollow")
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#icon-wa")
+
+                      a.footer__contacts-msg(href="viber://chat?number=89789224242" rel="nofollow")
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#icon-viber")
+
+                .footer__contacts-item.footer__contacts-item--mail
+                  a.footer__contacts-link(href="mailto:sharodei_shar@mail.ru" rel="nofollow") sharodei_shar@mail.ru
+
+                .footer__contacts-text
+                  p
+                    strong Склад-магазин:
+                    br
+                    |  г. Симферополь,
+                    br
+                    |  ул. Севастопольская, 31
+
+                .footer__contacts-text
+                  p
+                    strong Время работы:
+                    br
+                    |  ПН - ПТ с 9:00 до 18:00
+                    br
+                    |  суббота с 9:00 до 17:00
+
+                +socials
 
       // /.footer__top
     // /.container
@@ -23,11 +163,6 @@ mixin footer(logotype)
 
           .footer__copyright
             p.text г. Симферополь © Copyright  2020&nbsp;г.
-
-          a.made(href="https://sheer82.ru/")
-            span.text Сделано в
-            svg.icon
-              use(xlink:href='img/svg/sprite.svg#iconSheer')
 
         // /.row
       // /.container

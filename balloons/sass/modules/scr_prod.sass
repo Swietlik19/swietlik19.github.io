@@ -14,6 +14,12 @@
   &:not(.prod--collections)
     .prod__cont
       z-index: 10
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+
   &__wrap
     position: relative
     margin-top: 29px
@@ -48,6 +54,8 @@
     font-weight: 700
     text-transform: uppercase
     color: #ffffff
+    &--action
+      background-color: $accent
     &--new
       background-color: #92d32b
     &--hit
@@ -74,6 +82,9 @@
       fill: #000
       transition: 0.3s
   &__img
+    display: block
+    text-decoration: none
+    outline: none
     padding: 10px 15px
     height: 212px
     img
@@ -172,7 +183,9 @@
     padding: 0
     list-style: none
     display: flex
-    margin-bottom: 27px
+    margin-bottom: 17px
+    padding-bottom: 10px
+    overflow-x: auto
     & > li
       display: block
       margin-right: 8px
@@ -225,32 +238,60 @@
         z-index: -1
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1270px)
+    .swiper-btns .swiper-button-next,
+    .swiper-btns .swiper-button-prev
+      display: none
+    &__slider
+      &-btns
+        .swiper-dots
+          display: flex
+          margin-top: 30px
 
-  // max-width 1170px
+  // max-width 1270px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    &__cont
+      padding-bottom: 45px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 800px)
+    &__img
+      height: 162px
 
-  // max-width 991px
+  // max-width 800px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 550px)
+    &__bottom
+      flex-direction: column
+      align-items: center
+      .btn__wrap
+        margin-left: 0
+    &__quant
+      margin-bottom: 25px
+    &__title
+      min-height: 40px
+      font-size: 14px
+    &__desc
+      font-size: 12px
 
-  // max-width 767px
+  // max-width 550px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 470px)
+    &__quant
+      width: 100%
+      .quantity
+        max-width: 100%
+        &-arrow
+          width: 33.3%
+        &-num
+          width: 33.3%
+    &__bottom
+      .btn__wrap
+        .btn
+          min-width: 200px
 
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 470px
 
 /* prod */

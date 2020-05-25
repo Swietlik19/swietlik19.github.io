@@ -45,6 +45,7 @@
           padding: 9px 8px 8px
           background-color: #c3e6fc
           border-radius: 8.0px
+          height: 100%
 
           font-size: 14px
           line-height: 1.2
@@ -94,6 +95,17 @@
     &-wrap
       position: relative
       margin-bottom: 28px
+      &:hover
+        .swiper-button-prev,
+        .swiper-button-next
+          opacity: 1
+    &-btns
+      .swiper-button-prev,
+      .swiper-button-next
+        opacity: 0
+      .swiper-button-disabled
+        display: none
+
   &__slide
     background-color: #cec0f7
     border-radius: 6.0px
@@ -137,31 +149,69 @@
         z-index: -1
 
 
-  // @media screen and (max-width: 1170px)
-
-  // max-width 1170px
-
-  // @media screen and (max-width: 1070px)
-
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__menu
+      &-icon
+        width: 48px
+        height: 48px
+        img
+          width: 30px
+          height: 36px
+      &-text
+        font-size: 13px
+      .menu
+        & > li
+          & > a
+            word-break: break-all
+    &__feat
+      &-item
+        padding-left: 10px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 940px)
+    &__df
+      padding-top: 112px
+
+  // max-width 940px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 40px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__menu
+      overflow-x: auto
+      padding-bottom: 15px
+      margin-bottom: 0
+      .menu
+        & > li
+          min-width: 90px
+    &__df
+      padding-top: 98px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &__feat
+      flex-direction: column
+      &-item
+        width: 100%
+        font-size: 12px
+        margin-bottom: 15px
+        padding-left: 0
+        &::before
+          top: -5px
+          width: 36px
+          height: 36px
+        &:nth-of-type(2),
+        &:last-of-type
+          width: 100%
+        &:last-of-type
+          margin-bottom: 0
+        br
+          display: none
 
   // max-width 400px
 

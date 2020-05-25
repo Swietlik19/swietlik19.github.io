@@ -3,325 +3,641 @@ mixin scr_prod()
     .container
       .prod__cont
         ul.tabs-nav
-          li
-            a(href="#") Акционный товар
           li.current
-            a(href="#") Новинки
+            a(href="#prod__tab-0") Акционный товар
           li
-            a(href="#") Товар с наибольшей выгодой
+            a(href="#prod__tab-1") Новинки
+          li
+            a(href="#prod__tab-2") Товар с наибольшей выгодой
 
-        .prod__wrap
-          .prod__slider#prod__slider-0
-            .swiper-wrapper
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
+        ul.prod__tabs
+          li.prod__tab#prod__tab-0
+            .prod__wrap
+              .prod__slider#prod__slider-0-0
+                .swiper-wrapper
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
 
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
 
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Набор воздушных шаров
-                        br
-                        |  «Сердца красные» 5 шт. 10"
-                      .prod__desc
-                        p «Flexmetal» Испания
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
 
-                      span.prod__article Артикул:
-                        strong  1202-2809
+                          span.prod__article Артикул:
+                            strong  1202-2809
 
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
 
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
-
-
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
-
-                    a.prod__link.open-modal(href="#") Купить в один клик
-
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
-
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
-
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Свинка Джорж Супер,
-                      .prod__desc
-                        p «Flexmetal» Испания
-
-                      span.prod__article Артикул:
-                        strong  1202-2809
-
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
-
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
-
-                    a.prod__link.open-modal(href="#") Купить в один клик
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
 
 
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
 
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
+                        a.prod__link.open-modal(href="#") Купить в один клик
 
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
 
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Набор воздушных шаров
-                        br
-                        |  «Сердца красные» 5 шт. 10"
-                      .prod__desc
-                        p «Flexmetal» Испания
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                      span.prod__article Артикул:
-                        strong  1202-2809
+                      a.prod__img.fancybox(href="img-temp/prod/img-2.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
 
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
 
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
+                          span.prod__article Артикул:
+                            strong  1202-2809
 
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
 
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
 
-                    a.prod__link.open-modal(href="#") Купить в один клик
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
 
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
-
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
-
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Свинка Джорж Супер,
-                      .prod__desc
-                        p «Flexmetal» Испания
-
-                      span.prod__article Артикул:
-                        strong  1202-2809
-
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
-
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
-
-                    a.prod__link.open-modal(href="#") Купить в один клик
+                        a.prod__link.open-modal(href="#") Купить в один клик
 
 
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
 
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
 
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Набор воздушных шаров
-                        br
-                        |  «Сердца красные» 5 шт. 10"
-                      .prod__desc
-                        p «Flexmetal» Испания
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
 
-                      span.prod__article Артикул:
-                        strong  1202-2809
+                          span.prod__article Артикул:
+                            strong  1202-2809
 
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
 
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
-
-
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
-
-                    a.prod__link.open-modal(href="#") Купить в один клик
-
-              .swiper-slide.prod__slide
-                .prod__item
-                  .prod__top
-                    span.prod__label.prod__label--new Новинка
-
-                    .prod__btns
-                      button.prod__btn(type="button")
-                        svg.icon
-                          use(xlink:href="img/svg/sprite.svg#icon-heart")
-
-                  .prod__img
-                    noscript
-                      img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-                    img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
-
-                  .prod__main
-                    .prod__content
-                      h3.prod__title Свинка Джорж Супер,
-                      .prod__desc
-                        p «Flexmetal» Испания
-
-                      span.prod__article Артикул:
-                        strong  1202-2809
-
-                    .prod__table
-                      .prod__table-row
-                        span.prod__table-th Опт:
-                        span.prod__table-td 61,05 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-                      .prod__table-row
-                        span.prod__table-th Розница:
-                        span.prod__table-td 74 Р
-
-                    .prod__bottom
-                      .prod__quant
-                        .quantity
-                          button.quantity-arrow.quantity-arrow-minus(type='button') -
-                          input.quantity-num(type='number', value='1')
-                          button.quantity-arrow.quantity-arrow-plus(type='button') +
-
-                      .btn__wrap.btn__wrap--grad
-                        a.prod__to-cart.btn(href="#")
-                          span В корзину
-                          svg.icon
-                            use(xlink:href="img/svg/sprite.svg#icon-cart")
-
-                    a.prod__link.open-modal(href="#") Купить в один клик
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
 
 
-          .prod__slider-btns.swiper-btns
-            button.swiper-button-prev(type="button")
-            .swiper-dots
-            button.swiper-button-next(type="button")
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
 
-    // /.scr_prod
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-2.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--action Акция
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-2.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+
+              .prod__slider-btns.swiper-btns
+                button.swiper-button-prev(type="button")
+                .swiper-dots
+                button.swiper-button-next(type="button")
+
+
+          li.prod__tab#prod__tab-1
+            .prod__wrap
+              .prod__slider#prod__slider-0-1
+                .swiper-wrapper
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-2.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Набор воздушных шаров
+                            br
+                            |  «Сердца красные» 5 шт. 10"
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+                  .swiper-slide.prod__slide
+                    .prod__item
+                      .prod__top
+                        span.prod__label.prod__label--new Новинка
+
+                        .prod__btns
+                          button.prod__btn(type="button")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-heart")
+
+                      a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
+                        noscript
+                          img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+                        img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
+
+                      .prod__main
+                        .prod__content
+                          h3.prod__title Свинка Джорж Супер,
+                          .prod__desc
+                            p «Flexmetal» Испания
+
+                          span.prod__article Артикул:
+                            strong  1202-2809
+
+                        .prod__table
+                          .prod__table-row
+                            span.prod__table-th Опт:
+                            span.prod__table-td 61,05 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+                          .prod__table-row
+                            span.prod__table-th Розница:
+                            span.prod__table-td 74 Р
+
+                        .prod__bottom
+                          .prod__quant
+                            .quantity
+                              button.quantity-arrow.quantity-arrow-minus(type='button') -
+                              input.quantity-num(type='number', value='1')
+                              button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                          .btn__wrap.btn__wrap--grad
+                            a.prod__to-cart.btn(href="#")
+                              span В корзину
+                              svg.icon
+                                use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                        a.prod__link.open-modal(href="#") Купить в один клик
+
+
+              .prod__slider-btns.swiper-btns
+                button.swiper-button-prev(type="button")
+                .swiper-dots
+                button.swiper-button-next(type="button")
+
+
+  // /.scr_prod
 
 mixin scr_prod--collections()
   section.scr_prod.prod.prod--collections(id="scr_prod--collections")
@@ -365,7 +681,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -414,7 +730,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -464,7 +780,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -513,7 +829,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -563,7 +879,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -612,7 +928,7 @@ mixin scr_prod--collections()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -688,7 +1004,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -738,7 +1054,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -789,7 +1105,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -839,7 +1155,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -890,7 +1206,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain)
@@ -940,7 +1256,7 @@ mixin scr_prod--hits()
                         svg.icon
                           use(xlink:href="img/svg/sprite.svg#icon-heart")
 
-                  .prod__img
+                  a.prod__img.fancybox(href="img-temp/prod/img-1.jpg")
                     noscript
                       img.lazy(src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)
                     img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain)

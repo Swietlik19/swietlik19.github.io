@@ -158,6 +158,9 @@
         .icon
           transform: scale(1.1)
           transition: 1.3s
+      &--wa
+        .icon
+          fill: #25D366
       &--viber
         .icon
           fill: #834995
@@ -178,27 +181,141 @@
     color: #666666
 
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1170px)
+    .logo
+      &__wrap
+        margin-right: 62px
+    &__address
+      margin-right: 58px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__user
+      &-button
+        margin-right: 24px
+    .menu
+      & > li
+        margin-right: 15px
+    .logo
+      &__wrap
+        margin-right: 30px
+    &__address
+      margin-right: 30px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__address
+      display: none
+    &__phones
+      flex-grow: 0
+      margin-left: auto
+      &-item
+        &:first-of-type
+          display: none
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 940px)
+    .burger
+      display: flex
+      margin-right: 15px
+    &__top
+      position: relative
+    &__menu
+      position: absolute
+      left: 0
+      top: 100%
+      width: 100%
+      transform: translateX(-110%)
+      margin-right: 0
+      background-color: $modal-bg
+      opacity: 0
+      transition: opacity 0.3s, transform 0s 0.3s
+      height: calc(100vh - 45px)
+      &.active
+        transform: translateX(0)
+        opacity: 1
+        transition: opacity 0.3s
+        .menu
+          transform: translateX(0)
+          transition: 0.8s
+
+    .menu
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      width: 350px
+      padding-top: 20px
+      background: #fff
+      box-shadow: 0 5px 15px -5px rgba(#000,0.2)
+      transform: translateX(-110%)
+      transition: 0.5s
+      & > li
+        width: 100%
+        padding: 0 15px
+        & > a
+          padding: 8px 0
+          text-align: left
+          display: block
+          color: #0059a9
+          text-transform: uppercase
+          border-bottom: 1px solid rgba(#0059a9,0.2)
+
+  // max-width 940px
+
+  @media screen and (max-width: 767px)
+    &.fixed
+      .header__bottom
+        display: none
+    .logo
+      width: 109px
+      height: 36px
+      &__wrap
+        align-items: center
+      &__text
+        padding-top: 0
+        font-size: 13px
+    &__phones
+      &-df
+        .desktop
+          display: none
+        .mobile
+          display: flex
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__text
+      display: none
+    &__phone
+      display: none
+    &__phones
+      &-msg
+        padding-top: 0
+        margin-bottom: -10px
+      &-df
+        align-items: center
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 450px)
+    &__phones
+      &-msgs
+        display: none
+      &-df
+        .btn
+          margin-right: 0
 
-  // max-width 500px
+  // max-width 450px
 
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    .logo
+      width: 89px
+      height: 28px
+      &__text
+        font-size: 11px
 
   // max-width 400px
 

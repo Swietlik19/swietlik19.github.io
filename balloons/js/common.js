@@ -7,6 +7,9 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  /* Инициализация красивых select */
+  $('select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -111,7 +114,19 @@
     $('.prod__tab').not(_href).hide();
     $(_href).fadeIn();
     if (window.matchMedia('(max-width: 767px)').matches) {
-      $('html, body').animate({scrollTop: $(_href).offset().top - 30 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 40 +'px'});
+    }
+  });
+
+  $('.prod-item__info-nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 40 +'px'});
     }
   });
 
@@ -151,6 +166,42 @@
     $('.footer .sub-menu').hide();
     xButton.addClass('active');
     xSubMenu.slideDown();
+  });
+
+
+  // "Читать полностью"
+  $('.show-more__btns button').click(function() {
+    $(this).parent().siblings('.show-more__content').toggleClass('opened');
+    $(this).toggleClass('active');
+
+    if ($(this).hasClass('active')) {
+      $(this).find('span').text('Свернуть');
+    } else {
+      $(this).find('span').text('Развернуть');
+    }
+  });
+
+  function hideMore() {
+    $('.show-more__content').each(function(xi,xel) {
+      if ($(xel).innerHeight() + 5 <= $(xel).css('max-height').replace('px','')) {
+        $(xel).parents('.seo__wrap').find('.seo__show').hide();
+      }
+    })
+  }
+
+  hideMore();
+
+  $('.side-menu .menu-item-has-children').hover(function(event) {
+    if (!($(this).hasClass('active'))) {
+      $(this).addClass('active');
+      $(this).find('a').addClass('active');
+      $(this).find('.sub-menu').slideDown();
+    }
+
+  },function(){;
+    $(this).find('a').removeClass('active');
+    $(this).find('.sub-menu').slideUp('slow');
+    setTimeout(function(){$('.side-menu .menu-item-has-children').removeClass('active');}, 2000);
   });
 
 
@@ -238,6 +289,23 @@
     },
     pagination: {
       el: '.scr1__slider-wrap .swiper-dots',
+    },
+  });
+
+  var prodItem__slider = new Swiper('#prod-item__slider', {
+    slidesPerView: 1,
+    watchSlidesProgress: true,
+    spaceBetween: 10,
+    watchOverflow: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.prod-item__btns .swiper-button-next',
+      prevEl: '.prod-item__btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.prod-item__btns .swiper-dots',
     },
   });
 

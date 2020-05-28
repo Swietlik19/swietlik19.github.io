@@ -37,6 +37,24 @@
     textarea
       // height: 136px
 
+  &--general
+    .text-input
+      input,textarea
+        height: 46px
+        background-color: #ffffff
+        border: 1.0px solid #dce0e5
+        border-radius: 3.0px
+
+        padding-left: 15px
+        font-size: 16px
+        color: #666666
+        transition: 0.3s
+        @include placeholder(#666666, 13px)
+
+        &:focus
+          @include placeholder(#fff, 13px)
+        &:hover
+          border-color: $accent2
 
   &--search
     .text-input
@@ -120,18 +138,19 @@
         left: 0
 
         display: block
-        width: 15px
-        height: 15px
-        border: 1.0px solid rgba(0,0,0,0.7)
+        width: 22px
+        height: 22px
+        border: 1.0px solid #dce0e5
+        border-radius: 3.0px
         &::before
           content: ''
           position: absolute
-          top: calc(50% - 3px)
-          left: calc(50% - 4px)
+          top: calc(50% - 5px)
+          left: calc(50% - 5px)
 
           display: block
-          width: 8px
-          height: 5px
+          width: 11px
+          height: 9px
           background: transparent url('../img/svg/tick.svg') no-repeat center center
           background-size: contain
           transition: 0.3s

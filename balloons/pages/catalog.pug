@@ -24,13 +24,10 @@ html(lang='ru')
     include blocks/styles.pug
     include blocks/header.pug
     include blocks/socials.pug
+    include blocks/paginator.pug
 
-    include blocks/scr1.pug
     include blocks/scr_prod.pug
-    include blocks/scr_insta.pug
-    include blocks/scr_partners.pug
     include blocks/scr_cta.pug
-    include blocks/scr_collections.pug
     include blocks/side-menu.pug
 
     include blocks/footer.pug
@@ -41,14 +38,9 @@ html(lang='ru')
 
     +header("div")
 
-    #page_wr.page_wr
-      +scr1
-      +scr_prod
-      +scr_prod--collections
-      +scr_collections
-      +scr_prod--hits
-      +scr_insta
-      +scr_partners
+    //. Для внутренних страниц добавляется класс "page_wr--second"
+    #page_wr.page_wr.page_wr--second
+      +scr_prod--catalog
       +scr_cta
 
 

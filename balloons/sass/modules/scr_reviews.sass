@@ -1,0 +1,120 @@
+.reviews
+  position: relative
+  padding-bottom: 68px
+  &__cont
+    position: relative
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+
+      display: block
+      width: 324px
+      height: 927px
+      opacity: 0.4
+      background: transparent url('../img/many-balloons--2.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::before
+      top: -154px
+      left: -183px
+    &::after
+      top: 20px
+      right: -220px
+
+  &__wrap
+    box-shadow: 0px 2px 7px 0px rgba(0,89,169,0.15)
+    background-color: #f7f2ff
+    border-radius: 6.0px
+    padding: 32px 46px 32px 36px
+  &__df
+    display: flex
+    justify-content: space-between
+    margin-top: 32px
+  &__main
+    flex-grow: 1
+    max-width: 647px
+  &__form
+    flex-shrink: 0
+    width: 350px
+    max-width: 100%
+    margin-left: 20px
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      padding-bottom: 29px
+  &__item
+    box-shadow: 0px 6px 7px 0px rgba(0,89,169,0.15)
+    background-color: #ffffff
+    border: 1.0px solid #dce0e5
+    border-radius: 8.0px
+    padding: 30px 48px 45px
+  &__title
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24/18 */
+    font-weight: 600
+  &__desc
+    font-size: 14px
+  .article
+    p,
+    ul li,
+    ol li
+      margin-top: 27px
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24/18 */
+
+
+  @media screen and (max-width: 1070px)
+    .article
+      p,
+      ul li,
+      ol li
+        margin-top: 20px
+        font-size: 14px
+    &__wrap
+      padding: 32px 26px 32px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__form
+      width: 330px
+    &__item
+      padding: 30px 28px 35px
+    &__list
+      & > li
+        padding-bottom: 19px
+
+  // max-width 991px
+
+  @media screen and (max-width: 800px)
+    padding-bottom: 28px
+    &__df
+      flex-direction: column
+    &__form
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+    &__main
+      max-width: 100%
+
+  // max-width 800px
+
+  @media screen and (max-width: 575px)
+    &__df
+      margin-top: 22px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+
+  // max-width 400px
+
+/* reviews */

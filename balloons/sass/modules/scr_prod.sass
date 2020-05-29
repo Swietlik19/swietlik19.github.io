@@ -332,6 +332,102 @@
         transition: 0.3s
         opacity: 0
 
+  &__category
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      & > li
+        padding-bottom: 19px
+        width: calc((100% - 69px) / 4)
+        margin-right: 23px
+        &:nth-of-type(4)
+          margin-right: 0
+        &:nth-of-type(n + 5)
+          width: calc((100% - 46px) / 3)
+          .prod__category-item
+            height: 151px
+        &:nth-of-type(7)
+          margin-right: 0
+
+        &:nth-of-type(7n + 1)
+          .prod__category-item
+            background-color: #f3cf53
+        &:nth-of-type(7n + 2)
+          .prod__category-item
+            background-color: #69dde5
+        &:nth-of-type(7n + 3)
+          .prod__category-item
+            background-color: #ff9cb7
+        &:nth-of-type(7n + 4)
+          .prod__category-item
+            background-color: #9be0c2
+        &:nth-of-type(7n + 5)
+          .prod__category-item
+            background-color: #e38baf
+        &:nth-of-type(7n + 6)
+          .prod__category-item
+            background-color: #ffb963
+        &:nth-of-type(7n)
+          .prod__category-item
+            background-color: #d5bef3
+    &-item
+      position: relative
+      height: 188px
+      border-radius: 8.0px
+      padding: 16px 10px 16px 20px
+      z-index: 1
+      overflow: hidden
+      transition: 0.5s
+      &:hover
+        transform: translateY(-10px)
+        box-shadow: 0 5px 20px rgba(#000, 0.3)
+    &-name
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 600
+    &-bg
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: -1
+    &-title
+      margin-top: 29px
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 600
+
+
+  @media screen and (max-width: 1400px)
+    &__img
+      height: 142px
+    &__title
+      min-height: 34px
+      font-size: 14px
+    &__desc
+      margin-bottom: 4px
+      font-size: 13px
+    &__article
+      margin-bottom: 8px
+      font-size: 13px
+    &__table-td
+      font-size: 14px
+    &__table-th
+      font-size: 13px
+    .quantity
+      height: 36px
+    &__bottom
+      align-items: center
+      .btn
+        height: 41px
+    &__cont
+      padding-bottom: 55px
+
+  // max-width 1400px
 
   @media screen and (max-width: 1270px)
     .swiper-btns .swiper-button-next,
@@ -384,12 +480,30 @@
         margin-right: 10px
         &:nth-of-type(3n)
           margin-right: 0
+    &__category
+      &-list
+        & > li
+          padding-bottom: 12px
+          width: calc((100% - 30px) / 4)
+          margin-right: 10px
+          &:nth-of-type(n + 5)
+            width: calc((100% - 20px) / 3)
 
   // max-width 1070px
 
   @media screen and (max-width: 800px)
-    &__img
-      height: 162px
+    &__category
+      &-item
+        height: 108px
+      &-name
+        font-size: 15px
+      &-list
+        & > li
+          &:nth-of-type(n + 5)
+            .prod__category-item
+              height: 108px
+      &-bg
+        top: 10px
 
   // max-width 800px
 
@@ -401,6 +515,8 @@
           margin-right: 10px
         &:nth-of-type(2n)
           margin-right: 0
+    &__img
+      height: 112px
 
   // max-width 700px
 
@@ -412,9 +528,6 @@
         margin-left: 0
     &__quant
       margin-bottom: 25px
-    &__title
-      min-height: 40px
-      font-size: 14px
     &__desc
       font-size: 12px
     &__filter
@@ -425,7 +538,29 @@
           margin-right: 10px
           margin-left: 10px
 
+    &__category
+      &-name
+        font-size: 14px
+      &-bg
+        top: 20px
+
   // max-width 550px
+
+  @media screen and (max-width: 500px)
+    &__category
+      &-list
+        & > li
+          width: calc((100% - 10px) / 2) !important
+          margin-right: 10px !important
+          &:nth-of-type(2n)
+            margin-right: 0 !important
+          &:last-of-type
+            width: 100% !important
+            margin-right: 0 !important
+      &-bg
+        top: 0
+
+  // max-width 500px
 
   @media screen and (max-width: 470px)
     &__quant

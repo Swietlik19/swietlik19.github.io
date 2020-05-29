@@ -103,6 +103,7 @@
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
     $(".header").toggleClass("fixed", (fromTop > 10));
+    $(".to-top").toggleClass("fixed", (fromTop > 600));
   });
 
   // Табы

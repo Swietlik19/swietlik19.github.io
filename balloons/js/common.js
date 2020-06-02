@@ -146,7 +146,7 @@
 
       function quantityMinus() {
         var $quantityNum = $(xel).find(".quantity-num");
-        if ($quantityNum.val() >= 1) {
+        if ($quantityNum.val() >= 2) {
           $quantityNum.val(+$quantityNum.val() - 1);
         }
       }
@@ -167,6 +167,10 @@
     $('.footer .sub-menu').hide();
     xButton.addClass('active');
     xSubMenu.slideDown();
+  });
+
+  $('.footer__menu .menu > li > a').click(function(event) {
+    event.preventDefault();
   });
 
 
@@ -204,6 +208,23 @@
     $(this).find('.sub-menu').slideUp('slow');
     setTimeout(function(){$('.side-menu .menu-item-has-children').removeClass('active');}, 2000);
   });
+
+  $('.prod__filter-button').click(function() {
+    $(this).toggleClass('active');
+    $('.prod__filter-wrap').toggleClass('active');
+  });
+
+  function appendPrices() {
+    if ($('.prod-item__prices') && (window.matchMedia('(max-width: 470px)').matches)) {
+      $('.prod-item__slider-wrap').append( $('.prod-item__prices') );
+    }
+  }
+
+  appendPrices();
+
+  $('.header .header__user-button--search').click(function(event) {
+    $('.page-top').toggle();
+  })
 
 
   /* СЛАЙДЕРЫ */
@@ -351,13 +372,41 @@
           slidesPerView: 3,
           spaceBetween: 10,
         },
-        470: {
+        500: {
           slidesPerView: 2,
           spaceBetween: 10,
+        },
+        370: {
+          slidesPerView: 2,
+          spaceBetween: 0,
         },
       },
     });
   });
+
+
+
+  $('.prod__img-slider').each(function(xi,xel) {
+    var xId = '#' + $(xel).attr('id');
+    var xBtns = $(xel).parents('.prod__img-slider-wrap').find('.prod__img-slider-btns');
+    var scr1__slider = new Swiper(xId, {
+      slidesPerView: 1,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 8000,
+      },
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+    });
+  });
+
 
 
 
@@ -366,7 +415,7 @@
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
-
+      appendPrices();
     }
 
     screenWidth = $(window).width();

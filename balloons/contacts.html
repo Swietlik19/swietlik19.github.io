@@ -19,6 +19,12 @@
         <div class="container">
           <div class="header__top-wrap">
             <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
+            <div class="page-top__menu">
+              <button type="button">Каталог</button>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
             <div class="header__menu">
               <ul class="menu">
                 <li class="menu-item"><a href="#">О компании</a></li>
@@ -31,13 +37,30 @@
                 <li class="menu-item"><a href="#">Контакты</a></li>
               </ul>
             </div>
-            <div class="header__user"><a class="header__user-button header__user-button--login open-modal" href="#">
+            <div class="header__user">
+              <button class="header__user-button header__user-button--search">
+                <div class="page-top__search"><span>
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#icon-search"></use>
+                    </svg></span></div>
+              </button><a class="header__user-button header__user-button--login open-modal" href="#">
                 <svg class="icon">
                   <use xlink:href="img/svg/sprite.svg#icon-login"></use>
                 </svg><span>Вход</span></a><a class="header__user-button header__user-button--signup open-modal" href="#">
                 <svg class="icon">
                   <use xlink:href="img/svg/sprite.svg#icon-user"></use>
-                </svg><span>Регистрация</span></a></div>
+                </svg><span>Регистрация</span></a><a class="header__user-button header__user-button--cart open-modal" href="#">
+                <div class="page-top__total">
+                  <div class="page-top__cart">
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <div class="page-top__cart-sum">0</div>
+                  </div>
+                  <div class="page-top__sum">Итого:<strong> 250 Р</strong></div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <!-- /.container-->
@@ -49,9 +72,25 @@
             <a class="logo" href="index.html"><img src="img/svg/icons/logo.svg" alt="лого"></a><span class="logo__text">Товары для праздника<br> оптом и в розницу</span>
           </div>
           <div class="header__address"><strong>Склад-магазин:</strong> г. Симферополь,<br> ул. Севастопольская, 31</div>
+          <div class="page-top__menu">
+            <button type="button">все категории товаров</button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
           <ul class="header__phones">
-            <li class="header__phones-item"><a class="header__phone" href="tel:88000000000" rel="nofollow">8 (800) 00 00 000</a>
+            <li class="header__phones-item header__phones-item--tohide"><a class="header__phone" href="tel:88000000000" rel="nofollow">8 (800) 00 00 000</a>
               <p class="header__text">Бесплатно по России</p>
+            </li>
+            <li class="header__phones-item header__phones-item--toshow">
+              <div class="page-top__total"><a class="page-top__cart open-modal" href="#">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                  </svg>
+                  <div class="page-top__cart-sum">0</div>
+                </a>
+                <div class="page-top__sum">Итого:<strong> 250 Р</strong></div>
+              </div>
             </li>
             <li class="header__phones-item">
               <div class="header__phones-df"><a class="open-modal desktop btn btn--circle" href="#modal__callback" rel="nofollow"><i class="fa fa-phone"></i></a><a class="mobile btn btn--circle" href="tel:89789224242" rel="nofollow"><i class="fa fa-phone"></i></a>
@@ -144,7 +183,18 @@
                       </div>
                       <div class="contacts__text">
                         <p><strong>Телефоны:</strong></p>
-                        <div class="contacts__phones"><a href="tel:+79789224242" rel="nofollow"><strong>+7 (978) 922 42 42</strong></a><span> (По Крыму)</span><br><a href="tel:88000000000" rel="nofollow"><strong>8 (800) 00 00 000</strong></a><span> (Бесплатно по России)</span></div>
+                        <div class="contacts__phones">
+                          <div class="contacts__phone"><a href="tel:+79789224242" rel="nofollow"><strong>+7 (978) 922 42 42</strong></a><span> (По Крыму)</span>
+                            <div class="header__phones-msgs"><a class="header__phones-msg header__phones-msg--wa" href="https://api.whatsapp.com/send?phone=89789224242" rel="nofollow">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-wa"></use>
+                                </svg></a><a class="header__phones-msg header__phones-msg--viber" href="viber://chat?number=89789224242" rel="nofollow">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-viber"></use>
+                                </svg></a></div>
+                          </div>
+                          <div class="contacts__phone"><a href="tel:88000000000" rel="nofollow"><strong>8 (800) 00 00 000</strong></a><span> (Бесплатно по России)</span></div>
+                        </div>
                       </div>
                     </li>
                     <li class="contacts__item">
@@ -195,6 +245,7 @@
             </div>
           </div>
         </div>
+        <div class="contacts__map" id="contacts__map"></div>
       </section>
       <!-- /.scr_contacts-->
       <section class="scr_cta cta" id="scr_cta">
@@ -368,5 +419,55 @@
     <script src="libs/swiper/swiper.js"></script>
     <script src="libs/nice-select/jquery.nice-select.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>
+    <script>
+      (function($)
+      {
+        createMap('contacts__map', [44.934922, 34.088882]);
+
+        function createMap(xID, coords)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: coords,
+                zoom: 16
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+                {
+                  hintContent: 'адрес',
+                  balloonContent: 'Бизнес - аналитик'
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [31, 41],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [0, -50]
+                });
+              myMap.geoObjects.add(myPlacemark);
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+      })(jQuery);
+    </script>
   </body>
 </html>

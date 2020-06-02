@@ -63,13 +63,24 @@ mixin scr_contacts()
                     p
                       strong Телефоны:
                     .contacts__phones
-                      a(href="tel:+79789224242" rel="nofollow")
-                        strong +7 (978) 922 42 42
-                      span  (По Крыму)
-                      br
-                      a(href="tel:88000000000" rel="nofollow")
-                        strong 8 (800) 00 00 000
-                      span  (Бесплатно по России)
+                      .contacts__phone
+                        a(href="tel:+79789224242" rel="nofollow")
+                          strong +7 (978) 922 42 42
+                        span  (По Крыму)
+
+                        .header__phones-msgs
+                          a.header__phones-msg.header__phones-msg--wa(href="https://api.whatsapp.com/send?phone=89789224242" rel="nofollow")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-wa")
+
+                          a.header__phones-msg.header__phones-msg--viber(href="viber://chat?number=89789224242" rel="nofollow")
+                            svg.icon
+                              use(xlink:href="img/svg/sprite.svg#icon-viber")
+
+                      .contacts__phone
+                        a(href="tel:88000000000" rel="nofollow")
+                          strong 8 (800) 00 00 000
+                        span  (Бесплатно по России)
 
                 li.contacts__item
                   .contacts__icon
@@ -135,7 +146,7 @@ mixin scr_contacts()
 
 
 
-
+    .contacts__map#contacts__map
 
 
 

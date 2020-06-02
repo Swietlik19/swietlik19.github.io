@@ -8,12 +8,38 @@
   &.fixed
     background-color: #fff
     box-shadow: 0 5px 15px -10px rgba(#000, 0.2)
+    .header__phones
+      padding-top: 0
+    .header__phones-item--toshow
+      display: flex
+      margin-left: auto
+    .header__phones-item--tohide
+      display: none
+    .header__bottom
+      .page-top__menu
+        display: block
+        margin-left: -90px
+    .header__address
+      display: none
+    .header__bottom
+      align-items: center
+    .header__phones
+      align-items: center
+
   &__top
     background-color: #357bd1
-    padding: 10px 0
+    height: 36px
+    display: flex
+    flex-direction: column
+    justify-content: center
     &-wrap
       display: flex
       justify-content: space-between
+
+
+  .page-top__menu
+    display: none
+
 
   .burger
     display: none
@@ -95,6 +121,17 @@
           fill: #7cc705
         span
           color: #7cc705
+      &--cart
+        display: none
+      &--search
+        background: none
+        border: none
+        outline: none
+        cursor: pointer
+        display: none
+      &--signup
+        margin-right: 0
+
     span
       display: inline-block
       padding-top: 1px
@@ -129,6 +166,8 @@
       margin-right: 30px
       &:last-of-type
         margin-right: 0
+      &--toshow
+        display: none
     &-df
       display: flex
       .btn
@@ -187,6 +226,10 @@
         margin-right: 62px
     &__address
       margin-right: 58px
+    &.fixed
+      .header__bottom
+        .page-top__menu
+          margin-left: -40px
 
   // max-width 1170px
 
@@ -202,6 +245,10 @@
         margin-right: 30px
     &__address
       margin-right: 30px
+    &.fixed
+      .header__bottom
+        .page-top__menu
+          margin-left: -10px
 
   // max-width 1070px
 
@@ -218,11 +265,19 @@
   // max-width 991px
 
   @media screen and (max-width: 940px)
+    &.fixed
+      .header__bottom
+        .page-top__menu
+          display: none
+      .header__phones-item--toshow
+        display: none
     .burger
       display: flex
       margin-right: 15px
     &__top
       position: relative
+      .page-top__menu
+        width: 156px
     &__menu
       position: absolute
       left: 0
@@ -263,6 +318,33 @@
           text-transform: uppercase
           border-bottom: 1px solid rgba(#0059a9,0.2)
 
+    &__user
+      &-button
+        &--cart
+          display: block
+        &--search
+          display: block
+
+    &__top
+      .page-top__menu
+        display: block
+        background: none
+        button
+          padding: 0
+          color: #fff
+          &:hover
+            background: none
+          &::after
+            background-image: url('../img/svg/arrow-white.svg')
+            margin-left: 10px
+            margin-bottom: 3px
+
+      &-wrap
+        align-items: center
+        justify-content: flex-start
+    &__user
+      margin-left: auto
+
   // max-width 940px
 
   @media screen and (max-width: 767px)
@@ -283,6 +365,13 @@
           display: none
         .mobile
           display: flex
+    &__user
+      &-button
+        margin-right: 4px
+        &--login,
+        &--signup
+          span
+            display: none
 
   // max-width 767px
 
@@ -300,6 +389,13 @@
 
   // max-width 575px
 
+  @media screen and (max-width: 500px)
+    &__top
+      .page-top__sum
+        display: none
+
+  // max-width 500px
+
   @media screen and (max-width: 450px)
     &__phones
       &-msgs
@@ -316,6 +412,9 @@
       height: 28px
       &__text
         font-size: 11px
+    &__top
+      .page-top__menu
+        width: 96px
 
   // max-width 400px
 

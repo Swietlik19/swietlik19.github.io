@@ -19,6 +19,12 @@
         <div class="container">
           <div class="header__top-wrap">
             <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
+            <div class="page-top__menu">
+              <button type="button">Каталог</button>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
             <div class="header__menu">
               <ul class="menu">
                 <li class="menu-item"><a href="#">О компании</a></li>
@@ -31,13 +37,30 @@
                 <li class="menu-item"><a href="#">Контакты</a></li>
               </ul>
             </div>
-            <div class="header__user"><a class="header__user-button header__user-button--login open-modal" href="#">
+            <div class="header__user">
+              <button class="header__user-button header__user-button--search">
+                <div class="page-top__search"><span>
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#icon-search"></use>
+                    </svg></span></div>
+              </button><a class="header__user-button header__user-button--login open-modal" href="#">
                 <svg class="icon">
                   <use xlink:href="img/svg/sprite.svg#icon-login"></use>
                 </svg><span>Вход</span></a><a class="header__user-button header__user-button--signup open-modal" href="#">
                 <svg class="icon">
                   <use xlink:href="img/svg/sprite.svg#icon-user"></use>
-                </svg><span>Регистрация</span></a></div>
+                </svg><span>Регистрация</span></a><a class="header__user-button header__user-button--cart open-modal" href="#">
+                <div class="page-top__total">
+                  <div class="page-top__cart">
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                    </svg>
+                    <div class="page-top__cart-sum">0</div>
+                  </div>
+                  <div class="page-top__sum">Итого:<strong> 250 Р</strong></div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <!-- /.container-->
@@ -49,9 +72,25 @@
             <div class="logo"><img src="img/svg/icons/logo.svg" alt="лого"></div><span class="logo__text">Товары для праздника<br> оптом и в розницу</span>
           </div>
           <div class="header__address"><strong>Склад-магазин:</strong> г. Симферополь,<br> ул. Севастопольская, 31</div>
+          <div class="page-top__menu">
+            <button type="button">все категории товаров</button>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
           <ul class="header__phones">
-            <li class="header__phones-item"><a class="header__phone" href="tel:88000000000" rel="nofollow">8 (800) 00 00 000</a>
+            <li class="header__phones-item header__phones-item--tohide"><a class="header__phone" href="tel:88000000000" rel="nofollow">8 (800) 00 00 000</a>
               <p class="header__text">Бесплатно по России</p>
+            </li>
+            <li class="header__phones-item header__phones-item--toshow">
+              <div class="page-top__total"><a class="page-top__cart open-modal" href="#">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                  </svg>
+                  <div class="page-top__cart-sum">0</div>
+                </a>
+                <div class="page-top__sum">Итого:<strong> 250 Р</strong></div>
+              </div>
             </li>
             <li class="header__phones-item">
               <div class="header__phones-df"><a class="open-modal desktop btn btn--circle" href="#modal__callback" rel="nofollow"><i class="fa fa-phone"></i></a><a class="mobile btn btn--circle" href="tel:89789224242" rel="nofollow"><i class="fa fa-phone"></i></a>
@@ -152,58 +191,65 @@
                 </div>
               </div>
               <div class="prod__filter">
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Цена</option>
-                    <option value="150">150</option>
-                    <option value="250">250</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Размер</option>
-                    <option value="Большие">Большие</option>
-                    <option value="Средние">Средние</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Бренд</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Страна-производитель</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Цвет</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Количество в упаковке</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Праздник</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item">
-                  <select>
-                    <option value="" selected>Тематика</option>
-                  </select>
-                </div>
-                <div class="prod__filter-item prod__filter-item--checkbox">
-                  <label>
-                    <input type="checkbox" checked><span class="prod__filter-icon"></span><span class="prod__filter-text">Только в наличии</span>
-                  </label>
-                </div>
-                <div class="prod__filter-item prod__filter-item--submit">
-                  <div class="btn__wrap">
-                    <button class="btn btn--blue">Применить</button>
+                <button class="prod__filter-button"><span>Фильтр</span>
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#icon-filter"></use>
+                  </svg>
+                </button>
+                <div class="prod__filter-wrap">
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Цена</option>
+                      <option value="150">150</option>
+                      <option value="250">250</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Размер</option>
+                      <option value="Большие">Большие</option>
+                      <option value="Средние">Средние</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Бренд</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Страна-производитель</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Цвет</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Количество в упаковке</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Праздник</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item">
+                    <select>
+                      <option value="" selected>Тематика</option>
+                    </select>
+                  </div>
+                  <div class="prod__filter-item prod__filter-item--checkbox">
+                    <label>
+                      <input type="checkbox" checked><span class="prod__filter-icon"></span><span class="prod__filter-text">Только в наличии</span>
+                    </label>
+                  </div>
+                  <div class="prod__filter-item prod__filter-item--submit">
+                    <div class="btn__wrap">
+                      <button class="btn btn--blue">Применить</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,6 +266,320 @@
                               </svg>
                             </button>
                           </div>
+                        </div>
+                        <!--. У каждой карточки у слайдера картинок свой уникальный ID. Например 1-1 - это 1ая карточка товара у первого слайдера с карточками на странице-->
+                        <!--. в data-fancybox-group="prod-1" нужно, чтобы у каждой карточки была своя уникальная группа-->
+                        <div class="prod__img-slider-wrap">
+                          <div class="prod__img-slider" id="prod__img-slider-1-1">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg" data-fancybox-group="prod-1">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-2.jpg" data-fancybox-group="prod-1">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                            </div>
+                          </div>
+                          <div class="prod__img-slider-btns swiper-btns">
+                            <button class="swiper-button-prev" type="button"></button>
+                            <div class="swiper-dots"></div>
+                            <button class="swiper-button-next" type="button"></button>
+                          </div>
+                        </div>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <!--. У каждой карточки у слайдера картинок свой уникальный ID. Например 1-1 - это 1ая карточка товара у первого слайдера с карточками на странице-->
+                        <!--. в data-fancybox-group="prod-1" нужно, чтобы у каждой карточки была своя уникальная группа-->
+                        <div class="prod__img-slider-wrap">
+                          <div class="prod__img-slider" id="prod__img-slider-1-2">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg" data-fancybox-group="prod-2">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-2.jpg" data-fancybox-group="prod-2">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                            </div>
+                          </div>
+                          <div class="prod__img-slider-btns swiper-btns">
+                            <button class="swiper-button-prev" type="button"></button>
+                            <div class="swiper-dots"></div>
+                            <button class="swiper-button-next" type="button"></button>
+                          </div>
+                        </div>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Свинка Джорж Супер,</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <!--. У каждой карточки у слайдера картинок свой уникальный ID. Например 1-1 - это 1ая карточка товара у первого слайдера с карточками на странице-->
+                        <!--. в data-fancybox-group="prod-1" нужно, чтобы у каждой карточки была своя уникальная группа-->
+                        <div class="prod__img-slider-wrap">
+                          <div class="prod__img-slider" id="prod__img-slider-1-3">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg" data-fancybox-group="prod-3">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-2.jpg" data-fancybox-group="prod-3">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                            </div>
+                          </div>
+                          <div class="prod__img-slider-btns swiper-btns">
+                            <button class="swiper-button-prev" type="button"></button>
+                            <div class="swiper-dots"></div>
+                            <button class="swiper-button-next" type="button"></button>
+                          </div>
+                        </div>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <!--. У каждой карточки у слайдера картинок свой уникальный ID. Например 1-1 - это 1ая карточка товара у первого слайдера с карточками на странице-->
+                        <!--. в data-fancybox-group="prod-1" нужно, чтобы у каждой карточки была своя уникальная группа-->
+                        <div class="prod__img-slider-wrap">
+                          <div class="prod__img-slider" id="prod__img-slider-1-4">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg" data-fancybox-group="prod-4">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-2.jpg" data-fancybox-group="prod-4">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                            </div>
+                          </div>
+                          <div class="prod__img-slider-btns swiper-btns">
+                            <button class="swiper-button-prev" type="button"></button>
+                            <div class="swiper-dots"></div>
+                            <button class="swiper-button-next" type="button"></button>
+                          </div>
+                        </div>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <!--. У каждой карточки у слайдера картинок свой уникальный ID. Например 1-1 - это 1ая карточка товара у первого слайдера с карточками на странице-->
+                        <!--. в data-fancybox-group="prod-1" нужно, чтобы у каждой карточки была своя уникальная группа-->
+                        <div class="prod__img-slider-wrap">
+                          <div class="prod__img-slider" id="prod__img-slider-1-5">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg" data-fancybox-group="prod-5">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                              <div class="swiper-slide prod__img-slide"><a class="prod__img fancybox" href="img-temp/prod/img-2.jpg" data-fancybox-group="prod-5">
+                                  <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a></div>
+                            </div>
+                          </div>
+                          <div class="prod__img-slider-btns swiper-btns">
+                            <button class="swiper-button-prev" type="button"></button>
+                            <div class="swiper-dots"></div>
+                            <button class="swiper-button-next" type="button"></button>
+                          </div>
+                        </div>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Свинка Джорж Супер,</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
+                          <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
+                        <div class="prod__main">
+                          <div class="prod__content">
+                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
+                            <div class="prod__desc">
+                              <p>«Flexmetal» Испания</p>
+                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
+                          </div>
+                          <div class="prod__table">
+                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
+                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__quant">
+                              <div class="quantity">
+                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
+                                <input class="quantity-num" type="number" value="1">
+                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                              </div>
+                            </div>
+                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
+                                </svg></a></div>
+                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="prod__item">
+                        <div class="prod__top">
+                          <div class="prod__btns">
+                            <button class="prod__btn" type="button">
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
+                              </svg>
+                            </button>
+                          </div>
                         </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
                           <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
                         <div class="prod__main">
@@ -270,243 +630,6 @@
                           </div>
                           <div class="prod__table">
                             <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Свинка Джорж Супер,</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-1.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Набор воздушных шаров<br> «Сердца красные» 5 шт. 10"</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
-                          </div>
-                          <div class="prod__bottom">
-                            <div class="prod__quant">
-                              <div class="quantity">
-                                <button class="quantity-arrow quantity-arrow-minus" type="button">-</button>
-                                <input class="quantity-num" type="number" value="1">
-                                <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
-                              </div>
-                            </div>
-                            <div class="btn__wrap btn__wrap--grad"><a class="prod__to-cart btn" href="#"><span>В корзину</span>
-                                <svg class="icon">
-                                  <use xlink:href="img/svg/sprite.svg#icon-cart"></use>
-                                </svg></a></div>
-                          </div><a class="prod__link open-modal" href="#">Купить в один клик</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="prod__item">
-                        <div class="prod__top">
-                          <div class="prod__btns">
-                            <button class="prod__btn" type="button">
-                              <svg class="icon">
-                                <use xlink:href="img/svg/sprite.svg#icon-heart"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div><a class="prod__img fancybox" href="img-temp/prod/img-1.jpg">
-                          <noscript><img class="lazy" src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></noscript><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/prod/img-2.jpg" alt="" width="125" height="90" data-object-fit-contain></a>
-                        <div class="prod__main">
-                          <div class="prod__content">
-                            <h3 class="prod__title">Свинка Джорж Супер,</h3>
-                            <div class="prod__desc">
-                              <p>«Flexmetal» Испания</p>
-                            </div><span class="prod__article">Артикул:<strong> 1202-2809</strong></span>
-                          </div>
-                          <div class="prod__table">
-                            <div class="prod__table-row"><span class="prod__table-th">Опт:</span><span class="prod__table-td">61,05 Р</span></div>
-                            <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
                             <div class="prod__table-row"><span class="prod__table-th">Розница:</span><span class="prod__table-td">74 Р</span></div>
                           </div>
                           <div class="prod__bottom">

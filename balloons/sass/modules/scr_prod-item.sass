@@ -89,8 +89,6 @@
     font-size: 18px
     line-height: 1.2
     font-weight: 600
-    &.mobile
-      display: none
 
   &__content
     flex-grow: 1
@@ -269,10 +267,7 @@
     &__wrap
       flex-direction: column
     &__title
-      &.mobile
-        display: block
-      &.desktop
-        display: none
+      display: none
     &__left
       width: 100%
       max-width: 420px
@@ -339,6 +334,12 @@
 
   // max-width 550px
 
+  @media screen and (max-width: 500px)
+    .prod__article
+      display: inline-block
+
+  // max-width 500px
+
   @media screen and (max-width: 470px)
     &__right
       &-df
@@ -347,6 +348,8 @@
       margin-left: 0
       width: 100%
       margin-top: 20px
+    &__form .form .text-input
+      max-width: 100%
 
   // max-width 470px
 

@@ -7,6 +7,11 @@ mixin header(logotype)
             span.burger__wrap
               span.line
 
+          .page-top__menu
+            button(type="button") Каталог
+            ul
+              li
+
           .header__menu
             ul.menu
               li.menu-item
@@ -27,6 +32,12 @@ mixin header(logotype)
                 a(href="#") Контакты
 
           .header__user
+            button.header__user-button.header__user-button--search
+              .page-top__search
+                span
+                  svg.icon
+                    use(xlink:href='img/svg/sprite.svg#icon-search')
+
             a.header__user-button.header__user-button--login.open-modal(href="#")
               svg.icon
                 use(xlink:href="img/svg/sprite.svg#icon-login")
@@ -35,6 +46,18 @@ mixin header(logotype)
               svg.icon
                 use(xlink:href="img/svg/sprite.svg#icon-user")
               span Регистрация
+
+            a.header__user-button.header__user-button--cart.open-modal(href="#")
+              .page-top__total
+                .page-top__cart
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                  .page-top__cart-sum 0
+
+                .page-top__sum Итого:
+                  strong  250 Р
+
 
       // /.container
     // /.header__top
@@ -59,10 +82,27 @@ mixin header(logotype)
           br
           |  ул. Севастопольская, 31
 
+        .page-top__menu
+          button(type="button") все категории товаров
+          ul
+            li
+
         ul.header__phones
-          li.header__phones-item
+          li.header__phones-item.header__phones-item--tohide
             a.header__phone(href="tel:88000000000" rel="nofollow") 8 (800) 00 00 000
             p.header__text Бесплатно по России
+
+          li.header__phones-item.header__phones-item--toshow
+            .page-top__total
+              a.page-top__cart.open-modal(href="#")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#icon-cart")
+
+                .page-top__cart-sum 0
+
+              .page-top__sum Итого:
+                strong  250 Р
+
           li.header__phones-item
             .header__phones-df
               a.open-modal.desktop.btn.btn--circle(href="#modal__callback" rel="nofollow")

@@ -1,0 +1,165 @@
+.post
+  position: relative
+  &__wrap
+    box-shadow: 0px 2px 7px 0px rgba(0,89,169,0.15)
+    background-color: #ffffff
+    border-radius: 6.0px
+    padding: 0 163px 30px
+    .article
+      font-size: 16px
+      line-height: 1.5
+      p,
+      ol li,
+      ul li
+        font-size: 16px
+        line-height: 1.5
+      p
+        margin-bottom: 15px
+        &:first-of-type
+          text-indent: 18px
+      blockquote
+        p:first-of-type
+          text-indent: 0
+  .breadcrumbs
+    ol
+      text-align: center
+  &__top
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    padding: 30px
+    height: 251px
+    background-color: #0059a9
+    border-radius: 8.0px
+    overflow: hidden
+    position: relative
+    z-index: 1
+    color: #ffffff
+    time
+      display: block
+      font-size: 14px
+      font-weight: 700
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    opacity: 0.5
+    img
+      display: block
+      height: 100%
+  &__title
+    margin-top: 0
+    margin-bottom: 18px
+    font-size: 36px
+    line-height: 1.2
+    font-weight: 600
+  &__also
+    margin-top: 40px
+    &-read
+      font-size: 18px
+      vertical-align: middle
+      margin-left: 8px
+      i
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        margin-right: 17px
+        width: 18px
+        height: 18px
+        border: 1px solid $accent
+        border-radius: 50%
+        &::before
+          content: ''
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 7px
+          height: 7px
+          background-color: $accent
+          border-radius: 50%
+    &-links
+      margin-top: 30px
+      & > li
+        margin-bottom: 10px
+        &:last-of-type
+          margin-bottom: 0
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          font-size: 16px
+          color: #357bd1
+          transition: 0.3s
+          &:hover
+            color: $accent2
+            text-decoration: none
+
+
+  @media screen and (max-width: 1200px)
+    &__wrap
+      padding: 0 113px 30px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    &__wrap
+      padding: 0 63px 20px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__wrap
+      .article
+        font-size: 14px
+        p,
+        ol li,
+        ul li
+          font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__wrap
+      padding: 0 30px 20px
+    &__top
+      padding: 20px
+      height: 202px
+      time
+        font-size: 13px
+    &__title
+      font-size: 29px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+    &__top
+      height: 150px
+    &__title
+      font-size: 23px
+    &__also
+      &-links
+        margin-top: 20px
+        & > li
+          margin-bottom: 5px
+          & > a
+            font-size: 14px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      padding-left: 15px
+      padding-right: 15px
+
+  // max-width 500px
+
+/* post */

@@ -30,6 +30,9 @@ body
     overflow: hidden
     max-height: 100vh
 
+strong
+  font-weight: 600
+
 .page_wr
   flex-grow: 1
   &--second
@@ -95,31 +98,110 @@ a
       margin: 0 0 10px 20px
     &.aligncenter
       margin: 0 auto
-  ul,
-  ol
+  ul
     padding-bottom: 1.5em
     padding-left: 0
     padding-right: 1.5em
-  ul li,
-  ol li
+  ul li
     transform: translateX(1.5em)
     font-size: 14px
+  ul
+    list-style: none
+    & > li
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        left: -12px
+        top: 8px
+        display: block
+        width: 5px
+        height: 5px
+        border-radius: 50%
+        background-color: #0059a9
+
+  ol
+    counter-reset: myCounter
+    display: flex
+    flex-wrap: wrap
+    li
+      width: calc(50% - 28px)
+      list-style: none
+      padding-left: 57px
+      margin-right: 56px
+      margin-bottom: 20px
+      position: relative
+      font-size: 14px
+      &:nth-of-type(2n)
+        margin-right: 0
+      &::before
+        position: absolute
+        top: 0
+        left: 0
+        counter-increment: myCounter
+        content: counter(myCounter) "."
+        font-size: 32px
+        line-height: 48px
+        font-weight: 400
+        text-transform: uppercase
+        color: #357bd1
+
 
   h2,h3,h4
     line-height: 1.2
-    font-weight: 500
+    font-weight: 600
   h2
     margin-top: 35px
     margin-bottom: 20px
-    font-size: 18px
+    font-size: 24px
   h3
     margin-top: 25px
     margin-bottom: 15px
-    font-size: 16px
+    font-size: 20px
   h4
     margin-top: 20px
     margin-bottom: 10px
-    font-size: 14px
+    font-size: 18px
+
+  strong
+    font-weight: 600
+
+
+  blockquote
+    margin-top: 20px
+    margin-bottom: 20px
+    background-color: #f1f6fc
+    border-radius: 6.0px
+    width: calc(100% + 190px)
+    margin-left: -95px
+    padding: 80px 46px 50px 71px
+    position: relative
+    &::before,
+    &::after
+      content: ''
+      display: block
+      width: 35px
+      height: 23px
+      background: transparent url('../img/quotes.png') no-repeat center center
+      background-size: contain
+      position: absolute
+    &::before
+      top: 37px
+      left: 73px
+    &::after
+      bottom: 27px
+      right: 53px
+    div
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: -32px
+        width: 3px
+        height: 100%
+        background-color: $accent
+
 
 .clearfix
   &::after
@@ -866,13 +948,17 @@ input[type="submit"]
 // max-width 1200px
 
 @media screen and (max-width: 1070px)
+  .article
+    blockquote
+      width: 100%
+      margin-left: 0
+
   .page-top
     &--second
       .page-top__search
         margin-right: auto
       .page-top__total
         margin-left: 20px
-
 
   .side-menu
     &__wrap
@@ -926,6 +1012,28 @@ input[type="submit"]
       height: 8px
       right: 10px
       margin-top: -4px
+
+  .article
+    ol li
+      width: calc(50% - 18px)
+      padding-left: 37px
+      margin-right: 36px
+      &::before
+        top: -7px
+        left: 0
+        font-size: 26px
+    h2
+      margin-top: 25px
+      margin-bottom: 15px
+      font-size: 20px
+    h3
+      margin-top: 20px
+      margin-bottom: 15px
+      font-size: 18px
+    h4
+      margin-top: 20px
+      margin-bottom: 10px
+      font-size: 16px
 
 
 // max-width 991px
@@ -989,6 +1097,26 @@ input[type="submit"]
   .title
     &--second
       font-size: 29px
+  .article
+    blockquote
+      padding: 50px 26px 30px 41px
+      &::before,
+      &::after
+        width: 25px
+        height: 13px
+      &::before
+        top: 25px
+        left: 43px
+      &::after
+        right: 38px
+      div
+        &::before
+          left: -22px
+    ol
+      flex-direction: column
+      & > li
+        width: 100%
+        margin-right: 0
 
 // max-width 767px
 

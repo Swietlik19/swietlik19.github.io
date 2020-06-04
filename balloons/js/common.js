@@ -100,7 +100,7 @@
   toggleHidden('.faq',true);
 
   // фиксированные шапка
-  $(window).on("scroll", function() {
+  $(window).on("scroll load", function() {
     var fromTop = $(document).scrollTop();
     $(".header").toggleClass("fixed", (fromTop > 10));
     $(".to-top").toggleClass("fixed", (fromTop > 600));

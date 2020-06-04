@@ -1,0 +1,149 @@
+.blog
+  position: relative
+  &__wrap
+    box-shadow: 0px 2px 7px 0px rgba(0,89,169,0.15)
+    background-color: #ffffff
+    border-radius: 6.0px
+    padding: 22px 32px 29px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      width: calc((100% - 48px) / 3)
+      margin-right: 24px
+      padding-bottom: 30px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    overflow: hidden
+    height: 204px
+    border: 1.0px solid #dce0e5
+    border-radius: 8.0px
+    img
+      display: block
+      height: 100%
+      transition: 0.3s
+    &:hover
+      img
+        transform: scale(1.1)
+        transition: 1.1s
+  &__content
+    padding-top: 20px
+    flex-grow: 1
+    time
+      display: block
+      margin-bottom: 18px
+      font-size: 14px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      h2
+        margin-top: 0
+        margin-bottom: 22px
+        font-size: 20px
+        line-height: 1.4 /* 28 / 20 */
+        font-weight: 600
+        transition: 0.3s
+      &:hover
+        h2
+          color: $accent2
+  &__link
+    text-decoration: none
+    outline: none
+    display: flex
+    align-items: center
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 600
+    color: $accent
+    transition: 0.3s
+    .icon
+      display: block
+      width: 6px
+      height: 10px
+      margin-left: 10px
+      fill: $accent
+      transition: 0.3s
+    &:hover
+      color: $accent2
+      .icon
+        fill: $accent2
+
+  .pager
+    padding-left: 0
+    padding-right: 0
+
+
+  @media screen and (max-width: 1400px)
+    &__img
+      height: 154px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__list
+      & > li
+        width: calc((100% - 24px) / 3)
+        margin-right: 12px
+        padding-bottom: 20px
+    &__content
+      a
+        h2
+          margin-bottom: 12px
+          font-size: 18px
+      time
+        margin-bottom: 8px
+        font-size: 13px
+    &__link
+      font-size: 13px
+
+  // max-width 991px
+
+  @media screen and (max-width: 650px)
+    &__list
+      & > li
+        width: calc((100% - 12px) / 2)
+        margin-right: 12px
+        &:nth-of-type(3n)
+          margin-right: 12px
+        &:nth-of-type(2n)
+          margin-right: 0
+    &__content
+      a
+        h2
+          font-size: 16px
+      time
+        font-size: 12px
+    &__link
+      font-size: 12px
+    &__img
+      height: 124px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__wrap
+      padding: 22px 15px 29px
+      width: calc(100% + 30px)
+      margin-left: -15px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    .contacts__cont
+      padding-bottom: 25px
+
+  // max-width 500px
+
+/* blog */

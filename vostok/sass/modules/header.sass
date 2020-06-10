@@ -5,7 +5,9 @@
   width: 100%
   z-index: 100
   background-color: #fff
+  transition: 0.3s
   &.fixed
+    box-shadow: 0 0 15px rgba(#000, 0.1)
     .header__address
       display: none
     .header__phones-item:last-of-type
@@ -186,6 +188,9 @@
     &:hover
       color: $accent
 
+  &__catalog
+    display: none
+
 
   @media screen and (max-width: 1400px)
     .menu
@@ -308,6 +313,7 @@
       box-shadow: 0 0 15px rgba(#000, 0.1)
       z-index: 100
       padding-top: 60px
+      overflow: auto
       transition: 0.3s
       &.active
         transform: translateX(0)
@@ -329,9 +335,18 @@
     &__middle
       padding-top: 15px
 
-  // max-width 767px
+    &__catalog
+      background: none
+      border: none
+      outline: none
+      display: flex
+      align-items: center
+      font-size: 16px
+      margin-right: 10px
+      cursor: pointer
+      &:hover
+        color: $accent
 
-  @media screen and (max-width: 700px)
     &__total
       background: none
       padding: 0
@@ -368,7 +383,7 @@
       .header__total-item
         margin-right: 0
 
-  // max-width 700px
+  // max-width 767px
 
   @media screen and (max-width: 575px)
     .logo
@@ -390,7 +405,7 @@
 
   // max-width 575px
 
-  @media screen and (max-width: 410px)
+  @media screen and (max-width: 500px)
     .logo
       &__text
         display: none

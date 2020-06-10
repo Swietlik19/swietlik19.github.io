@@ -36,9 +36,17 @@
     return false;
   });
 
-  $('.burger').click(function() {
+  $('#header-burger').click(function() {
     $(this).toggleClass('active');
     $('.header__top').toggleClass('active');
+  });
+
+  $('#page-top-burger').click(function() {
+    $('.page-top').removeClass('active');
+  });
+
+  $('.header__catalog').click(function() {
+    $('.page-top').addClass('active');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */

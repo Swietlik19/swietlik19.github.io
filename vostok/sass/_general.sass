@@ -32,6 +32,8 @@ body
 
 .page_wr
   flex-grow: 1
+  &--second
+    padding-top: 157px
 
 img
   width: 100%
@@ -61,6 +63,10 @@ a
 
 .accent
   color: $accent
+
+.decor-wrap
+  background-color: #ffffff
+  border: 1.0px solid rgba(228,233,218,0.7)
 
 h1,h2,h3,h4,h5,h6
   font-family: $title-font
@@ -139,6 +145,7 @@ h1,h2,h3,h4,h5,h6
     display: block
     width: 3px
     height: calc(100% - 8px)
+    min-height: 38px
     background-color: $accent
 
 
@@ -289,8 +296,12 @@ input[type="submit"]
     height: 37px
 
 .page-top
+  position: relative
   background-color: $accent
   background-image: linear-gradient(180.0deg, #ff0000 0%, #cc0000 100%)
+  z-index: 50
+  .burger
+    display: none
   .menu
     margin: 0
     padding: 0
@@ -362,6 +373,54 @@ input[type="submit"]
             background: transparent url('../img/svg/icon-map.svg') no-repeat center center
             background-size: contain
 
+      .arrow
+        display: none
+  .sub-menu
+    max-height: 0
+    overflow: hidden
+    margin: 0
+    padding: 0
+    list-style: none
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    background-color: #fff
+    box-shadow: 0 3px 10px #c4c4c4
+    z-index: 100
+    transition: max-height 0.5s padding 0 0.5s
+    &.active
+      max-height: 1000px
+      padding: 31px 10px 32px 74px
+      transition: max-height 0.5s
+    & > li
+      margin-bottom: 12px
+      padding-right: 15px
+      &:last-of-type
+        padding-right: 0
+      & > a
+        display: flex
+        text-decoration: none
+        outline: none
+        transition: 0.3s
+        i
+          display: block
+          vertical-align: middle
+          width: 37px
+          height: 37px
+          margin-right: 12px
+          img
+            display: block
+            width: 100%
+            height: 100%
+        span
+          display: block
+          padding-top: 5px
+          vertical-align: middle
+
+        &:hover
+          color: $accent
+
 .quantity
   display: flex
   align-items: center
@@ -408,6 +467,116 @@ input[type="submit"]
     transition: 0.3s
     &:hover
       color: $accent
+
+.show-items
+  position: relative
+  input
+    border: none
+    outline: none
+    background: none
+
+    display: block
+    width: 70px
+    height: 40px
+    padding-left: 15px
+    background-color: #ffffff
+    border: 1.0px solid #cccccc
+
+    font-size: 14px
+    line-height: 1.2
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    margin: 0
+  &-arrow
+    position: absolute
+    right: 10px
+    background: none
+    outline: none
+    border: none
+
+    width: 6px
+    height: 10px
+    background: transparent url('../img/svg/arrow-black.svg') no-repeat center center
+    background-size: contain
+
+    cursor: pointer
+    &-minus
+      bottom: 9px
+      transform: rotate(90deg)
+    &-plus
+      top: 10px
+      transform: rotate(-90deg)
+
+
+.show-more
+  &__wrap
+    position: relative
+    padding: 33px 57px 60px 47px
+    background-color: #ffffff
+  &__btns
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    text-align: center
+    z-index: 10
+    button
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 100%
+      padding-top: 60px
+      padding-bottom: 30px
+      background-image: linear-gradient(180deg, rgba(#fff,0) 0%, #fff 70%, #fff 100%)
+
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 600
+      text-align: center
+      cursor: pointer
+      transition: 0.3s
+      z-index: 1
+      span
+        position: relative
+        display: inline-block
+        &::after
+          content: ''
+          position: absolute
+          bottom: -16px
+          left: calc(50% - 3px)
+
+          display: block
+          width: 8px
+          height: 13px
+          transform: rotate(90deg)
+          background: transparent url('../img/svg/arrow.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+      &:hover
+        color: $accent
+      &.active
+        padding-top: 60px
+        span
+          &::after
+            transform: rotate(-90deg)
+  &__content
+    max-height: 120px
+    overflow: hidden
+    transition: 0s
+    &.opened
+      max-height: 10000px
+      transition: padding 0.4s, max-height 1s
+      overflow: visible
+      padding-bottom: 20px
+    .article
+      p
+        font-size: 14px
+
 
 /* Переопределение стилей yandex map */
 .balloon-df
@@ -518,6 +687,27 @@ input[type="submit"]
   display: none
 
 
+/* Переопределение nice-select */
+.nice-select
+  width: 158px
+  height: 40px
+  border-radius: 0
+  border: 1.0px solid #cccccc
+  &::after
+    border: none
+    width: 6px
+    height: 10px
+    background: transparent url('../img/svg/arrow-black.svg') no-repeat center
+    center
+    background-size: contain
+    transform: rotate(90deg)
+    transform-origin: center center
+  &.open
+    &::after
+      transform: rotate(-90deg)
+  .list
+    width: 100%
+
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
   .container
@@ -525,6 +715,9 @@ input[type="submit"]
 
 /* media */
 @media screen and (max-width: 1400px)
+  .page_wr
+    &--second
+      padding-top: 130px
   .page-top .menu > li > a
     height: 50px
     font-size: 12px
@@ -538,6 +731,10 @@ input[type="submit"]
     max-width: 100%
   .title
     font-size: 30px
+  .page-top
+    .sub-menu
+      &.active
+        padding: 31px 15px
 
 // max-width 1200px
 
@@ -569,8 +766,28 @@ input[type="submit"]
           height: 40px
           font-size: 10px
           // white-space: nowrap
+    .sub-menu
+      & > li
+        padding-right: 10px
+        & > a
+          i
+            width: 31px
+            height: 31px
+            margin-right: 10px
+          span
+            font-size: 13px
+  .show-more
+    &__wrap
+      padding: 33px 20px 60px
 
 // max-width 991px
+
+@media screen and (max-width: 950px)
+  .page_wr
+    &--second
+      padding-top: 118px
+
+// max-width 950px
 
 @media screen and (max-width: 850px)
   .balloon-df
@@ -580,7 +797,18 @@ input[type="submit"]
 
 // max-width 850px
 
+@media screen and (min-width: 768px)
+  .page-top
+    .sub-menu
+      columns: 3
+      column-gap: 0
+
+// min-width 768px
+
 @media screen and (max-width: 767px)
+  .page_wr
+    &--second
+      padding-top: 90px
   .title
     font-size: 21px
   .swiper-dots
@@ -595,6 +823,7 @@ input[type="submit"]
     padding-top: 15px
     padding-left: 15px
     padding-right: 15px
+    padding-bottom: 15px
     height: 100vh
     overflow: auto
     background: #fff
@@ -605,10 +834,12 @@ input[type="submit"]
       transform: translateX(0)
       transition: 1s
     .burger
+      display: flex
       margin-left: 10px
     .menu
       flex-direction: column
       & > li
+        position: relative
         & > a
           color: $accent
           font-weight: 700
@@ -629,10 +860,40 @@ input[type="submit"]
           & > a
             color: #fff
             padding-left: 40px
+        .arrow
+          position: absolute
+          top: 5px
+          right: 0
+          display: block
+          width: 25px
+          height: 25px
+          background: transparent url('../img/svg/arrow.svg') no-repeat center center
+          background-size: 16px 10px
+          transform: rotate(90deg)
+          cursor: pointer
+          transition: 0.3s
+          transform-origin: center
+          &.active
+            transform: rotate(-90deg)
+
+    .sub-menu
+      position: static
+      background: none
+      box-shadow: none
 
 // max-width 767px
 
+@media screen and (max-width: 700px)
+  .page_wr
+    &--second
+      padding-top: 70px
+
+// max-width 700px
+
 @media screen and (max-width: 575px)
+  .page_wr
+    &--second
+      padding-top: 67px
   .title
     font-size: 18px
 
@@ -642,6 +903,9 @@ input[type="submit"]
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 410px)
+  .page_wr
+    &--second
+      padding-top: 63px
 
-// max-width 400px
+// max-width 410px

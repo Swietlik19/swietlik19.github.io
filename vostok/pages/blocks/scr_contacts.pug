@@ -1,0 +1,78 @@
+mixin scr_contacts()
+  section.scr_contacts.contacts(id="scr_contacts")
+    .container
+      +page-top
+
+
+      h1.title--second Контакты
+
+      .contacts__df
+        .contacts__info.decor-wrap
+          h2.title Симферополь
+
+          .contacts__item
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#icon-phone")
+
+            p
+              a(href="tel:88002228353" rel="nofollow") 8 (800) 222 83 53
+              a(href="tel:89781003269" rel="nofollow") 8 (978) 100 32 69
+
+          .contacts__item
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#icon-pin")
+
+            p Склад-магазин
+              br
+              |  г. Симферополь ул. Автомобилистов 2
+
+          .contacts__item
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#icon-clock")
+
+            p Время работы:
+              br
+              |  Пн-Сб с 9-00 до 18-00
+
+        .contacts__form.decor-wrap
+          .form.wpcf7
+            p.form__title Обратная связь
+
+            form.wpcf7-form
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#form-user")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+                  i.input-icon
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#icon-phone")
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-message.text-input.text-input--icon
+                  label(for="your-msg")
+                    i.input-icon
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#form-msg")
+
+                  textarea.wpcf7-form-control.wpcf7-text.wpcf7-message#your-msg(name='your-message', cols="40", rows="10", aria-required='true', aria-invalid='false', placeholder="Отзыв")
+
+              .form__item
+                input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Оставить заявку')
+
+              .form__item
+                span.wpcf7-form-control-wrap.accept
+                  span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                        span.wpcf7-list-item-label Согласие на обработку персональных данных
+                          i.accept__icon
+
+
+  // /.scr_contacts

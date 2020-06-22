@@ -23,14 +23,9 @@ html(lang='ru')
     include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/paginator.pug
     include blocks/page-top.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_categories.pug
-    include blocks/scr_brands.pug
-    include blocks/scr_mags.pug
-    include blocks/scr_about.pug
-    include blocks/scr_map.pug
     include blocks/scr_prod.pug
 
     include blocks/footer.pug
@@ -38,22 +33,16 @@ html(lang='ru')
 
   body
 
-    +header("div")
+    +header("a")
 
-    #page_wr.page_wr
-      +scr1
-      +scr_categories
-      +scr_prod
-      +scr_brands
-      +scr_prod--hit
-      +scr_mags
-      +scr_about
-      +scr_map
+    //. Для внутренних добавляется класс "page_wr--second"
+    #page_wr.page_wr.page_wr--second
+      +scr_prod--page
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
-    +footer("div")
+    +footer("a")
 
     +styles
     +scripts

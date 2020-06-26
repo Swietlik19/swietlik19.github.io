@@ -273,6 +273,12 @@
     }
   });
 
+  // $('.your-file__label input').change(function() {
+  //   var fileName = $(this).val();
+  //   fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    // $(this).parents('label').find('.sl').text(fileName);
+  // });
+
   /* СЛАЙДЕРЫ */
   function equalHeightSwiper(sliderID) {
     $(sliderID).find('.swiper-slide').height('auto');
@@ -358,6 +364,50 @@
         spaceBetween: 10,
         slidesPerColumn: 2,
         slidesPerColumnFill: 'row',
+      },
+    },
+  });
+
+  var contacts__teamSlider = new Swiper('#contacts__team-slider', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    loop: false,
+    watchOverflow: true,
+    autoplay: {
+      delay: 8000,
+    },
+    navigation: {
+      nextEl: '.contacts__team-btns .swiper-button-next',
+      prevEl: '.contacts__team-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.contacts__team-btns .swiper-dots',
+    },
+    breakpoints: {
+      1070: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      650: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      400: {
+        slidesPerView: 2,
+        spaceBetween: 15,
       },
     },
   });

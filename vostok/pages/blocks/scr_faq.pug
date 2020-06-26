@@ -1,50 +1,89 @@
 mixin scr_faq()
   section.scr_faq.faq(id="scr_faq")
     .container
-      h1.title Вопрос-ответ
+      +page-top
+
+      h1.title--second Вопрос-ответ
 
       ul.faq__list
         li.faq__item
           .top
-            h2 У вас оригинальный товар?
+            h2.title Как часто появляются новинки?
             button.open
           .hidden
             .article
-              p  Весь товар, продающийся у нас является оригинальным, новым (не вскрытая упаковка), официально поставляемым на территорию РФ, сопровождается гарантийными талонами производителя и подлежит обслуживанию в официальных сервисных центрах. При получении товара вы можете позвонить напрямую производителю или в сервис, продиктовать серийный номер изделия и убедиться, что товар является "белым" и подлежит обслуживанию.
+              p  Мы стараемся регулярно пополнять ассоримент новыми интереснымим товарами. Как правило раз в 2-3 месяца появляются новые позиции, чтобы порадовать наших постоянных покупателей.
+
+        li.faq__item
+          .top
+            h2.title Где производятся сладости?
+            button.open
+          .hidden
+            .article
+              p  Мы стараемся регулярно пополнять ассоримент новыми интереснымим товарами. Как правило раз в 2-3 месяца появляются новые позиции, чтобы порадовать наших постоянных покупателей.
+
+        li.faq__item
+          .top
+            h2.title Есть ли скидки на корпоративные заказы?
+            button.open
+          .hidden
+            .article
+              p  Мы стараемся регулярно пополнять ассоримент новыми интереснымим товарами. Как правило раз в 2-3 месяца появляются новые позиции, чтобы порадовать наших постоянных покупателей.
+
+        li.faq__item
+          .top
+            h2.title Где производится кофе и чай?
+            button.open
+          .hidden
+            .article
+              p  Мы стараемся регулярно пополнять ассоримент новыми интереснымим товарами. Как правило раз в 2-3 месяца появляются новые позиции, чтобы порадовать наших постоянных покупателей.
+
+        li.faq__item
+          .top
+            h2.title Как связаться с поддержкой сайта?
+            button.open
+          .hidden
+            .article
+              p  Мы стараемся регулярно пополнять ассоримент новыми интереснымим товарами. Как правило раз в 2-3 месяца появляются новые позиции, чтобы порадовать наших постоянных покупателей.
 
 
+    .faq__form
+      .container
+        .form.form--horizontal.wpcf7
+          p.form__title Задать свой вопрос
 
-      .form.form--horizontal.wpcf7.bg-grey
-        form.wpcf7-form
-          p.form__title Не нашли ответа на свой вопрос?
-          p.form__desc Свяжитесь с нами, и мы предоставим необходимую информацию
+          form.wpcf7-form
+            .form__df
+              .form__col
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+                    i.input-icon
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#form-user")
 
-          .form__top
-            .form__item
-              span.wpcf7-form-control-wrap.your-name.text-input.text-input--icon
-                input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
-                i.input-icon
-                  svg.icon
-                    use(xlink:href="img/svg/sprite.svg#form-user")
+                .form__item
+                  span.wpcf7-form-control-wrap.your-tel.text-input.text-input--icon
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+                    i.input-icon
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#icon-phone")
 
-            .form__item
-              span.wpcf7-form-control-wrap.your-email.text-input.text-input--icon
-                input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
-                i.input-icon
-                  svg.icon
-                    use(xlink:href="img/svg/sprite.svg#form-email")
+              .form__col
+                .form__item
+                  span.wpcf7-form-control-wrap.your-message.text-input.text-input--icon
+                    label(for="your-msg")
+                      i.input-icon
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#form-msg")
 
-            .form__item
-              span.wpcf7-form-control-wrap.your-question.text-input.text-input--icon
-                input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-question', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Сообщение')
-                i.input-icon
-                  svg.icon
-                    use(xlink:href="img/svg/sprite.svg#form-msg")
+                      span Сообщение
 
-          .form__bottom
+                    textarea.wpcf7-form-control.wpcf7-text.wpcf7-message#your-msg(name='your-message', cols="40", rows="10", aria-required='true', aria-invalid='false', placeholder="")
+
             .form__item.form__item--submit
-              .btn__wrap.btn__wrap--simple.btn__wrap--radius
-                input.wpcf7-form-control.wpcf7-submit.btn(type='submit', value='Отправить')
+              .btn__wrap
+                input.wpcf7-form-control.wpcf7-submit.btn.btn--red(type='submit', value='Отправить')
 
             .form__item
               span.wpcf7-form-control-wrap.accept
@@ -55,6 +94,7 @@ mixin scr_faq()
                       span.wpcf7-list-item-label Согласие на обработку персональных данных
                         i.accept__icon
 
-      // /. form
+
+        // /. form
 
   // /.scr_faq

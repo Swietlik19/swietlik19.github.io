@@ -306,6 +306,7 @@
         &:last-of-type
           margin-bottom: 0
       .scr1__feat-text
+        flex-shrink: 0
         color: $accent
         width: 110px
         margin-right: 10px
@@ -360,6 +361,19 @@
 
   // max-width 1070px
 
+  @media screen and (max-width: 991px)
+    .scr1__feat-df
+      padding: 23px 17px 35px 20px
+    .scr1__feat-nums
+      padding: 23px 27px 20px 24px
+      .scr1__feat-text
+        width: 60px
+    .scr1__feat > li
+      width: calc((100% - 20px) / 3)
+      margin-right: 10px
+
+  // max-width 991px
+
   @media screen and (max-width: 900px)
     &__item
       &:hover
@@ -391,6 +405,25 @@
       margin-bottom: -10px
 
   // max-width 700px
+
+  @media screen and (max-width: 650px)
+    .scr1__feat
+      flex-direction: column
+    .scr1__feat > li
+      width: 100%
+      margin-right: 0
+      margin-bottom: 10px
+    .scr1__feat-num
+      font-size: 24px
+    .scr1__feat-nums
+      .scr1__feat-text
+        width: 100px
+    .scr1__feat-desc
+      font-size: 14px
+    .scr1__feat-text
+      font-size: 14px
+
+  // max-width 650px
 
   @media screen and (max-width: 575px)
     &__label

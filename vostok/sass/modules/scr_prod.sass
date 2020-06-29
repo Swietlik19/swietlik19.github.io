@@ -227,6 +227,9 @@
     padding-bottom: 29px
     .page-top
       margin-bottom: 22px
+    .title--second
+      &.mobile
+        display: none
 
   &__submenu
     margin: 0
@@ -358,6 +361,11 @@
       height: 40px
       padding: 0 10px
       font-size: 14px
+    &__list
+      & > li
+        width: calc((100% - 30px) / 4)
+        margin-right: 10px
+        padding-bottom: 18px
 
   // max-width 1070px
 
@@ -371,6 +379,14 @@
     .scr1__feat > li
       width: calc((100% - 20px) / 3)
       margin-right: 10px
+    &__list
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+        &:nth-of-type(4n)
+          margin-right: 10px
+        &:nth-of-type(3n)
+          margin-right: 0
 
   // max-width 991px
 
@@ -391,10 +407,45 @@
   // max-width 900px
 
   @media screen and (max-width: 767px)
+    padding-top: 10px
     &__title
       font-size: 15px
     &__weight
       font-size: 13px
+    .title--second
+      margin-bottom: 12px
+      &.mobile
+        display: block
+    &__submenu
+      flex-wrap: nowrap
+      overflow: auto
+      padding-bottom: 10px
+      & > li
+        margin-right: 11px
+        &:last-of-type
+          margin-right: 0
+        & > a
+          flex-direction: column
+          box-shadow: 0px 7px 15px 0px #e5e5e5
+          width: 137px
+          height: 152px
+          padding: 24px 10px 10px
+          background-color: #ffffff
+          border-radius: 8.0px
+          text-align: center
+          line-height: 1.2
+          i
+            width: 54px
+            height: 43px
+            margin-bottom: 24px
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        &:nth-of-type(3n)
+          margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
 
   // max-width 767px
 
@@ -464,7 +515,69 @@
           display: none
         .prod__link
           display: block
+    &__sort
+      justify-content: flex-start
+      margin-bottom: 5px
+      &-item
+        &:first-of-type
+          display: none
+      &-text
+        display: none
+    &--page
+      .prod__submenu
+        margin-bottom: 0
 
   // max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__list
+      margin-bottom: 20px
+      & > li
+        width: 100%
+        margin-right: 0
+        padding-bottom: 11px
+        &:nth-of-type(3n)
+          margin-right: 0
+      .prod__item
+        flex-direction: row
+      .prod__img
+        width: 35.40540540540541%
+        min-width: 100px
+        padding-right: 7px
+        padding-left: 7px
+        padding-top: 10px
+        height: auto
+      .prod__main
+        position: relative
+        flex-grow: 1
+        padding-top: 13px
+        padding-bottom: 15px
+        padding-left: 0
+        z-index: 10
+      .prod__title
+        display: flex
+        justify-content: space-between
+      .prod__categor
+        margin-bottom: 14px
+      .prod__bottom
+        flex-direction: row
+        align-items: center
+      .prod__prices
+        display: block
+        margin-bottom: 0
+      .prod__price--new
+        margin-left: 0
+        font-size: 20px
+      .prod__link
+        margin-top: 0
+        .btn__wrap
+          width: auto
+        .btn--red
+          height: 37px
+          padding-left: 27px
+          padding-right: 27px
+          border-radius: 18.5px
+
+  // max-width 450px
 
 /* prod */

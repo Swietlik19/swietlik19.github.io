@@ -273,6 +273,13 @@
     }
   });
 
+  /* Перенести кнопку "в избранное" не мобильном в каталоге */
+  $('.prod__list .prod__item').each(function(xi,xel) {
+    var xButton = $(xel).find('.prod__btn');
+    var xTitle = $(xel).find('.prod__title');
+    xTitle.append(xButton);
+  });
+
   // $('.your-file__label input').change(function() {
   //   var fileName = $(this).val();
   //   fileName = fileName.replace (/\\/g, '/').split ('/').pop ();

@@ -209,6 +209,25 @@ input[type="submit"].btn
     &:hover
       color: $accent
       background: #fff
+  &--redtr
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 154px
+    height: 52px
+    padding-left: 15px
+    padding-right: 15px
+    border: 1.0px solid #c42333
+    border-radius: 8.0px
+    text-align: center
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 400
+    color: #c42333
+    &:hover
+      background-color: #c42333
+      color: #fff
+
   &--red
     position: relative
     display: flex
@@ -393,6 +412,56 @@ input[type="submit"]
   background-color: #ffffff
   border-radius: 6.0px
 
+.quantity
+  display: flex
+  align-items: center
+  max-width: 121px
+  height: 40px
+  background-color: #ffffff
+  border: 1.0px solid #bcd9ee
+  border-radius: 3.0px
+  input
+    border: none
+    outline: none
+    background: none
+
+    display: block
+    width: 40px
+    height: 100%
+    border-left: 1px solid #dce0e5
+    border-right: 1px solid #dce0e5
+
+    font-size: 16px
+    font-weight: 500
+    color: #08457e
+    text-align: center
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    margin: 0
+  &-arrow
+    position: relative
+    background: none
+    outline: none
+    border: none
+
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    width: 40px
+    height: 100%
+
+    font-size: 0
+    cursor: pointer
+    font-size: 16px
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+      color: $accent2
+
 .to-top
   position: fixed
   right: 15px
@@ -538,6 +607,16 @@ input[type="submit"]
   &::before
     transform: rotate(45deg)
 
+/* Переопределение nice-select */
+.nice-select
+  width: 244px
+  height: 46px
+  line-height: 42px
+  border-color: #bcd9ee
+  border-radius: 6px
+  &::after
+    border-color: #0495ff
+
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
@@ -660,6 +739,12 @@ input[type="submit"]
         width: 100%
         margin-right: 0
         margin-bottom: 5px
+  .nice-select
+    width: 164px
+    .current
+      max-width: 100%
+      overflow: hidden
+      display: block
 
 // max-width 500px
 

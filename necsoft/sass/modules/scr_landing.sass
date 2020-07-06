@@ -8,46 +8,41 @@
   &__wrap
     position: relative
     margin-bottom: 21px
+    background: #08457e url('../img/land-bg.jpg') no-repeat center center
+    background-size: cover
     overflow: hidden
     z-index: 1
   &__content
-    width: calc(100% - 380px)
-    padding: 44px 20px 36px 37px
-  &__img
-    position: absolute
-    top: 0
-    right: 0
-    z-index: -1
-    width: auto
-    height: 100%
-    img
-      width: auto
-      height: 100%
+    padding: 53px 75px 25px
   &__btns
     display: flex
-    margin-bottom: 44px
+    justify-content: center
+    margin-bottom: 40px
     .btn__wrap
-      margin-right: 20px
+      margin-right: 49px
       &:last-of-type
         margin-right: 0
     .btn
       span,
       &--transparent
         padding: 17px 27px 15px
+        font-weight: 700
       &--transparent
         font-size: 16px
         line-height: 1.2
-        color: #0495ff
+        color: #f7f9fb
+        border: 1.0px solid #f7f9fb
         &:hover
-          background-color: #0495ff
-          color: #fff
+          background-color: #f7f9fb
+          color: #0495ff
   &__title
     margin-top: 0
     margin-bottom: 53px
-    font-size: 36px
-    line-height: 1.333333333333333 /* 48 / 36 */
+    font-size: 40px
+    line-height: 1.375 /* 55 / 40 */
     font-weight: 600
-    color: #08457e
+    color: #f7f9fb
+    text-align: center
 
   &__feat
     margin: 0
@@ -72,18 +67,20 @@
         height: 100%
     &-text
       display: block
-      font-size: 14px
-      line-height: 1.428571428571429 /* 20 / 14 */
-      color: #000000
+      font-size: 16px
+      line-height: 1.5 /* 24 / 16 */
+      color: #f7f9fb
       b
         font-weight: 600
+      big
+        text-transform: uppercase
     &-link
       display: block
       outline: none
       margin-top: 15px
       font-size: 14px
       line-height: 1.2
-      color: #0495ff
+      color: #f7f9fb
       transition: 0.3s
       &:hover
         color: $accent2
@@ -92,13 +89,18 @@
     padding-top: 53px
     padding-bottom: 32px
     margin-bottom: 40px
+    .landing__feat-link
+      color: #0495ff
+      &:hover
+        color: $accent2
     &-top
       display: flex
       padding-right: 15px
     &-img
       flex-shrink: 0
-      width: 34.21052631578947%
-      margin-right: 100px
+      width: 48.85964912280702%
+      padding-left: 57px
+      margin-right: 32px
       img
         display: block
     &-title
@@ -760,7 +762,7 @@
     &__img
       width: 330px
     &__content
-      width: calc(100% - 320px)
+      // width: calc(100% - 320px)
       padding: 34px 20px 26px 27px
     &__title
       margin-bottom: 35px
@@ -768,8 +770,8 @@
     &__info
       padding-top: 43px
       &-img
-        width: 28.210526%
-        margin-right: 80px
+        width: 38.210526%
+        margin-right: 20px
       &-title
         margin-bottom: 25px
         font-size: 26px
@@ -815,16 +817,6 @@
   // max-width 1170px
 
   @media screen and (max-width: 1090px)
-    &__btns
-      flex-direction: column
-      max-width: 400px
-      margin-bottom: 34px
-      .btn__wrap
-        margin-right: 0
-        margin-bottom: 10px
-      .btn
-        span
-          width: 100%
     &__title
       margin-bottom: 25px
       font-size: 26px
@@ -877,8 +869,6 @@
           padding-right: 0
     &__img
       width: 270px
-    &__content
-      width: calc(100% - 250px)
     .projects__nav
       padding: 0 9px
       &-list
@@ -1032,8 +1022,19 @@
   // max-width 900px
 
   @media screen and (max-width: 850px)
-    &__content
-      width: 100%
+    &__btns
+      flex-direction: column
+      max-width: 400px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 34px
+      .btn__wrap
+        margin-right: 0
+        margin-bottom: 10px
+      .btn
+        span
+          width: 100%
+
     &__title
       margin-bottom: 25px
       font-size: 23px
@@ -1043,7 +1044,7 @@
     &__info
       padding-top: 33px
       &-img
-        width: 200px
+        width: 280px
         margin-right: 30px
       ul
         margin-bottom: 30px

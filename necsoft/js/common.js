@@ -165,6 +165,24 @@
     $(_href).fadeIn();
   });
 
+  $('.landing__types .second__nav-list > li > a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().addClass('active');
+    $('.landing__types-tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
+  $('.landing__opport .second__nav-list > li > a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().addClass('active');
+    $('.landing__opport-tab').not(_href).hide();
+    $(_href).fadeIn();
+  });
+
   $('.projects__nav-list-with-tabs a').click(function(event) {
     event.preventDefault();
     var _href = $(this).attr('href');
@@ -177,6 +195,19 @@
     }
   });
 
+  $('.section-prices .second__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('active');
+    $(this).parent().addClass('active');
+    $('.tab-content').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.tab-content:first').show();
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();

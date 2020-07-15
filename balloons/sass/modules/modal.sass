@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 420px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -30,11 +30,35 @@
     &.visible
       opacity: 1
 
+    &::after
+      content: ''
+      position: absolute
+      top: -41px
+      right: -101px
+      display: block
+      width: 140px
+      height: 417px
+      background: transparent url('../img/balloons.png') no-repeat center center
+      background-size: contain
+      z-index: -1
+
   .form
     max-height: 100vh
     overflow: auto
     width: 100%
     z-index: 0
+    padding: 34px 75px
+    .text-input
+      margin-bottom: 20px
+      input
+        height: 50px
+        border-radius: 6.0px
+        border: none
+    &__item
+      &--submit
+        margin-top: 29px
+    &__title
+      margin-bottom: 25px
 
   .close
     background: none
@@ -59,7 +83,7 @@
       left: 50%
 
       display: block
-      width: 20px
+      width: 13px
       height: 3px
       background-color: $accent
       border-radius: 1.5px
@@ -75,12 +99,34 @@
       &::before,&::after
         background-color: #e99c02
 
-  // @media screen and (max-width: 767px)
+  &__buy
+    .modal__content
+      &::after
+        top: 63px
+        right: -90px
+    .form
+      padding: 50px 64px
+      &__item
+        &--submit
+          margin-bottom: 28px
 
-  // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__buy
+      .form
+        padding: 30px 64px
 
   // max-width 575px
+
+  @media screen and (max-width: 430px)
+    .form
+      padding-left: 30px
+      padding-right: 30px
+    &__buy
+      .form
+        padding-left: 30px
+        padding-right: 30px
+
+  // max-width 430px
 
  /* modal */

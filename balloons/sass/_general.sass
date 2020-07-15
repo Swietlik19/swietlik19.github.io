@@ -74,6 +74,9 @@ a
 .accent
   color: $accent
 
+.blue
+  color: #357bd1
+
 .article
   p
     font-size: 14px
@@ -459,6 +462,7 @@ input[type="submit"]
     background-color: #f1f6fc
     border-radius: 6.0px
   & > li
+    position: relative
     & > a
       display: flex
       align-items: center
@@ -504,6 +508,9 @@ input[type="submit"]
           color: #000
 
   .sub-menu
+    position: absolute
+    left: 100%
+    top: 0
     display: none
     margin: 0
     padding: 0
@@ -513,8 +520,10 @@ input[type="submit"]
     padding-right: 5px
     margin-top: -2px
     background-color: rgba(255,255,255,0.76)
-    border-bottom-left-radius: 6.0px
-    border-bottom-right-radius: 6.0px
+    border-radius: 6.0px
+    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+    width: 450px
+    z-index: 100
     & > li
       & > a
         display: block
@@ -570,6 +579,80 @@ input[type="submit"]
       margin: 0
       padding: 0
       list-style: none
+    &-df
+      position: absolute
+      left: 0
+      top: 150px
+      width: 100%
+      padding: 0 10px 0 42px
+      z-index: 100
+      box-shadow: 0px 2px 7px 0px rgba(0,89,169,0.15)
+      background-color: #ffffff
+      border-radius: 8.0px
+      display: flex
+      max-height: 0
+      overflow: hidden
+      transition: 0.3s
+      &.active
+        max-height: 1000px
+        // overflow: visible
+        padding-top: 28px
+        padding-bottom: 24px
+        transition: 1s
+    &-col
+      width: 25.80645161290323%
+      padding-right: 10px
+      &:nth-of-type(2)
+        width: 29.49308755760369%
+    &-wrap
+      margin-bottom: 20px
+    &-link
+      display: block
+      outline: none
+      margin-top: 10px
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 600
+      color: $accent
+      transition: 0.3s
+      &:hover
+        color: $accent2
+
+    .pt-menu
+      & > li
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          margin-bottom: 7px
+          font-size: 15px
+          line-height: 1.2
+          font-weight: 600
+          color: #357bd1
+          transition: 0.3s
+          &:hover
+            color: $accent
+        .arrow
+          display: none
+    .pt-sub-menu
+      & > li
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          font-size: 14px
+          line-height: 24px
+          font-weight: 400
+          color: #666666
+          transition: 0.3s
+          &:hover
+            color: $accent
+        &:last-of-type
+          & > a
+            color: #999999
+            &:hover
+              color: $accent
+
   &__search
     flex-grow: 1
     margin-right: 24px
@@ -935,6 +1018,11 @@ input[type="submit"]
     height: 19px
     font-size: 12px
 
+  .page-top
+    &__menu
+      &-df
+        top: 139px
+
 // max-width 1400px
 
 // @media screen and (max-width: 1270px)
@@ -959,6 +1047,9 @@ input[type="submit"]
         margin-right: auto
       .page-top__total
         margin-left: 20px
+    &__menu
+      &-df
+        padding-left: 10px
 
   .side-menu
     &__wrap
@@ -1066,6 +1157,10 @@ input[type="submit"]
       display: none
     .page-top__search
       margin-right: 0
+    &__menu
+      &-df
+        position: fixed
+        top: 37px
 
   .page-top--second .page-top__search
     max-width: 100%
@@ -1120,6 +1215,58 @@ input[type="submit"]
 
 // max-width 767px
 
+@media screen and (max-width: 700px)
+  .page-top
+    &__menu
+      &-df
+        flex-direction: column
+        max-width: 450px
+        &.active
+          max-height: calc(100vh - 31px)
+          overflow: auto
+      &-col
+        width: 100% !important
+      &-link
+        max-height: 0
+        transition: 0.3s
+        opacity: 0
+        margin-top: 0
+      &-wrap
+        &.active
+          .pt-sub-menu
+            max-height: 800px
+            transition: 1s
+          .page-top__menu-link
+            max-height: 30px
+            opacity: 1
+            margin-top: 10px
+          .pt-menu
+            .arrow
+              transform: rotate(-90deg)
+      .pt-menu
+        & > li
+          position: relative
+          .arrow
+            position: absolute
+            top: -5px
+            right: -5px
+            display: block
+            width: 20px
+            height: 20px
+            background: transparent url('../img/svg/arrow.svg') no-repeat center center
+            background-size: 6px 11px
+            transform: rotate(90deg)
+            transition: 0.3s
+            cursor: pointer
+          & > a
+            padding-right: 15px
+      .pt-sub-menu
+        max-height: 0px
+        overflow: hidden
+        transition: 0.3s
+
+// max-width 700px
+
 @media screen and (max-width: 575px)
   .title
     font-size: 40px
@@ -1143,6 +1290,12 @@ input[type="submit"]
     font-size: 35px
   .quantity
     input
+      font-size: 14px
+  .page-top
+    &__menu
+      &-wrap
+        margin-bottom: 10px
+    .pt-menu > li > a
       font-size: 14px
 
 // max-width 500px

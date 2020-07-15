@@ -1,0 +1,118 @@
+.landing-price
+  position: relative
+  padding-top: 34px
+  padding-bottom: 69px
+  &__wrap
+    padding: 26px 29px 21px 33px
+    .title--second
+      margin-bottom: 22px
+      text-align: center
+  &__df
+    display: flex
+    align-items: flex-start
+  &__table
+    width: 50%
+    border: 1.0px solid #cccccc
+    padding-bottom: 1px
+    overflow: hidden
+    transition: 0.3s
+    table
+      width: 100%
+      border-collapse: collapse
+      thead
+        td
+          height: 47px
+          background-color: #f1f6fc
+          font-size: 18px
+          font-weight: 600
+          color: #000000
+      td
+        padding: 9px 15px
+        font-size: 15px
+        line-height: 1.6 /* 24 / 15 */
+        font-weight: 600
+        color: #000000
+        vertical-align: middle
+        border-bottom: 1.0px solid #cccccc
+        a
+          display: block
+          text-decoration: none
+          outline: none
+          transition: 0.3s
+          &:hover
+            color: $accent
+        &:first-of-type
+          padding-left: 30px
+        &:nth-of-type(n + 2)
+          text-align: center
+      tbody
+        tr
+          &:nth-of-type(n + 5)
+            display: none
+          &.active
+            display: table-row !important
+    &:first-of-type
+      border-top-left-radius: 8.0px
+      border-right: none
+      border-bottom: none
+      overflow: hidden
+      table
+        td
+          &:last-of-type
+            border-right: 1.0px solid #cccccc
+    &:last-of-type
+      border-top-right-radius: 8.0px
+      border-left: none
+      border-bottom: none
+      overflow: hidden
+  &__img
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 104px
+    height: 104px
+    margin: 0 auto
+    background-color: #ffffff
+    border: 1.0px solid #cccccc
+    img
+      display: block
+      height: 100%
+  &__btns
+    margin-top: 18px
+    text-align: center
+    .icon
+      transform: rotate(90deg)
+
+
+  @media screen and (max-width: 900px)
+    padding-bottom: 39px
+    &__wrap
+      padding: 26px 9px 21px 13px
+    &__table
+      table
+        td
+          font-size: 13px
+        thead
+          td
+            font-size: 16px
+    &__img
+      width: 74px
+      height: 74px
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    &__df
+      flex-direction: column
+    &__table
+      width: 100%
+      &:last-of-type
+        border-top: none
+        border-left: 1.0px solid #cccccc
+        border-radius: 0
+        thead
+          display: none
+
+  // max-width 767px
+
+/* landing-price */

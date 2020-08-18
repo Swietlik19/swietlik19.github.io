@@ -1,0 +1,455 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-bottom: 47px
+  font-size: 36px
+  line-height: 1.2
+  font-weight: 500
+  strong
+    font-weight: 800
+
+.page-desc
+  font-size: 18px
+  line-height: 1.444444444444444 /* 26 / 18 */
+
+.section-wrap
+  padding-top: 120px
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.btn,
+input[type="submit"].btn
+  &--orange
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 339px
+    height: 85px
+    padding: 0 10px
+    background-color: $accent2
+    box-shadow: 0px 10px 32px 0px rgba(255,113,35,0.55)
+    border-radius: 8px
+    text-align: center
+    font-size: 16px
+    line-height: 1.3125 /* 21 / 16 */
+    font-weight: 500
+    color: #ffffff
+    &:hover
+      background-color: $accent
+      box-shadow: 0px 10px 32px 0px rgba(darken($accent,10%),0.35)
+  &--circle
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 37px
+    height: 37px
+    background-color: #3f91a6
+    border-radius: 50%
+    overflow: hidden
+    transition: 0.2s
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      z-index: -1
+      transform: translateX(-100%)
+      background-color: #fbf0e1
+      display: block
+      width: 110%
+      height: 110%
+      transition: 0.3s
+      border-radius: 50%
+    &:hover
+      background-color: #fbf0e1
+      transition: 0.2s 0.2s
+      &::before
+        transform: translateX(0)
+        transition: 0.5s
+      .fa
+        color: #3f91a6
+    .fa
+      font-size: 14px
+      color: #fbf0e1
+      transition: 0.5s
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 63px
+  height: 53px
+  background-color: $accent
+  border: 1px solid #3f91a6
+  border-radius: 6px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &:not(.active)
+    &:hover
+      .line
+        &:before
+          width: 12px
+        &:after
+          width: 17px
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before
+          transform: translateX(0) rotate(-90deg),
+        &:after
+          opacity: 0
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #fbf0e1
+      transition: 0.4s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+      width: 15px
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .fa
+    color: #fff
+    transition: 0.5s
+    font-size: 18px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+// .swiper-dots
+//   display: flex
+//   align-items: center
+//   flex-wrap: wrap
+//   margin-top: 34px
+// .swiper-pagination-bullet
+//   outline: none
+//   display: block
+//   background: $accent
+//   width: 7px
+//   height: 7px
+//   margin: 0 4px
+//   opacity: 1
+// .swiper-pagination-bullet-active
+//   position: relative
+.swiper-button-prev,
+.swiper-button-next
+  box-sizing: border-box
+  position: relative
+  top: 0
+  left: 0
+  background: none
+  border: none
+  outline: none
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 46px
+  height: 46px
+  border: 1px solid rgba(153,153,153,0.4)
+  margin: 0
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: ''
+    position: absolute
+    top: calc(50% - 5px)
+    left: calc(50% - 3px)
+    display: block
+    width: 6px
+    height: 10px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 23px)
+    left: calc(50% - 23px)
+    display: block
+    width: 46px
+    height: 46px
+    background: transparent url('../img/svg/icon-circle.svg') no-repeat center center
+    background-size: contain
+    opacity: 0
+    transform: rotate(-180deg)
+    transition: opacity 0.3s, transform 0.5s 0.1s
+    box-sizing: border-box
+  &:hover
+    &::before
+      opacity: 1
+      transform: rotate(30deg)
+
+.swiper-pagination
+  position: static
+  text-align: left
+  margin-right: 55px
+  .swiper-pagination-current
+    display: inline-block
+    padding-right: 15px
+    min-width: 40px
+  .swiper-pagination-current,
+  .swiper-pagination-del
+    font-size: 16px
+    color: #3f91a6
+  .swiper-pagination-total
+    display: inline-block
+    min-width: 40px
+    padding-left: 15px
+    font-size: 16px
+    color: #999999
+
+.swiper-button-prev
+  margin-right: 35px
+  &::after
+    transform: rotate(180deg)
+
+.swiper-pagination-lock
+  display: none
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+// @media screen and (max-width: 991px)
+
+// max-width 991px
+
+// @media screen and (max-width: 767px)
+
+// max-width 767px
+
+// @media screen and (max-width: 575px)
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

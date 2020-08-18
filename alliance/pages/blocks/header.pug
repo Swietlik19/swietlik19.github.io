@@ -1,0 +1,18 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__wrap
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo.svg" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo.svg" alt="лого")
+
+      button.burger#header__burger
+        span.burger__wrap
+          span.line
+
+      +socials
+
+    // /.header__wrap

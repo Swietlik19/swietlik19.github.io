@@ -2,6 +2,16 @@
   background-color: $accent
   color: #fff
 
+@keyframes bounce
+  0%
+    transform: translateY(-40px)
+    opacity: 0.4
+  50%
+    opacity: 1
+  100%
+    transform: translateY(0)
+    opacity: 0
+
 *
   margin: 0
   padding: 0
@@ -293,6 +303,8 @@ input[type="submit"]
   display: flex
   justify-content: center
   align-items: center
+  border: none
+  outline: none
   width: 37px
   background: rgba($accent, 0.8)
   border-radius: 6px
@@ -409,6 +421,17 @@ input[type="submit"]
     font-size: 16px
     color: #999999
 
+.swiper-pagination-bullet
+  opacity: 1
+  width: 6px
+  height: 6px
+  background-color: $accent
+  margin-left: 12px
+  margin-right: 12px
+.swiper-pagination-bullet-active
+  background-color: #3f91a6
+
+
 .swiper-button-prev
   margin-right: 35px
   &::after
@@ -417,6 +440,14 @@ input[type="submit"]
 .swiper-pagination-lock
   display: none
 
+.mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+  background-color: rgba($accent, 0.4)
+.mCS-dark-3.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark-3.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar
+  background-color: rgba($accent, 0.8)
+.mCS-dark-3.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+  background-color: rgba($accent, 0.8)
+.fp-tableCell
+  padding: 20px 0
 
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
@@ -424,21 +455,68 @@ input[type="submit"]
     max-width: 1170px
 
 /* media */
+@media screen and (max-width: 1600px)
+  .section-wrap
+    padding-top: 40px
+
+// max-width 1600px
+
+@media screen and (max-width: 1400px)
+  .page-title
+    font-size: 28px
+    strong
+      font-size: 33px
+  .page-desc
+    font-size: 16px
+
+// max-width 1400px
+
+@media screen and (max-width: 1340px)
+  .burger
+    width: 39px
+    height: 43px
+  .fp-tableCell
+    padding-left: 50px
+  .page-title
+    br
+      display: none
+
+// max-width 1340px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
+  .page-title
+    strong
+      font-size: 30px
 
 // max-width 1200px
 
-// @media screen and (max-width: 1023px)
+@media screen and (max-width: 1000px)
+  .page_fp,
+  .page_wr
+    padding-left: 50px
 
-// max-width 1023px
+// max-width 1000px
 
 // @media screen and (max-width: 991px)
 
 // max-width 991px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .page_fp,
+  .page_wr
+    padding-left: 0
+    padding-top: 88px
+  .burger
+    width: 45px
+    height: 38px
+  .page-title
+    font-size: 24px
+    font-weight: 700
+    strong
+      font-size: 24px
+      font-weight: 700
 
 // max-width 767px
 

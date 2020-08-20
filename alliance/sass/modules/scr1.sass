@@ -10,8 +10,8 @@
       font-weight: 800
   &__wrap
     position: relative
-    padding-top: 105px
-    padding-bottom: 80px
+    padding-top: 85px
+    padding-bottom: 60px
     width: calc(100% + 36px)
     margin-left: -36px
     z-index: 1
@@ -42,6 +42,10 @@
       width: 33.3%
       padding-bottom: 23px
       padding-right: 20px
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
     &-icon
       position: relative
       display: flex
@@ -81,11 +85,13 @@
     z-index: 2
   &__scroll
     position: absolute
-    left: 50%
+    left: 55%
     bottom: 15px
     transform: translateX(-50%)
     font-size: 13px
     text-align: center
+    cursor: pointer
+    z-index: 2
     &::before
       content: ''
       position: absolute
@@ -96,6 +102,8 @@
       height: 24px
       background: transparent url('../img/svg/orig/icon-mouse.svg') no-repeat center center
       background-size: contain
+      animation: bounce 2s infinite
+
   &__dots
     margin: 0
     padding: 0
@@ -187,32 +195,174 @@
         transform: rotate(-225deg)
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1610px)
+    &__wrap
+      width: 100%
+      margin-left: 0
+    &__title
+      width: calc(100% + 100px)
+      font-size: 31px
+      strong
+        font-size: 39px
+      br
+        display: none
+    &__img
+      left: 29.553191%
+      bottom: 90px
+      width: 1043px
+      height: 442px
+    &__dots
+      & > li
+        &:first-of-type
+          .scr1__dots-text
+            width: 210px
+        &:nth-of-type(2)
+          .scr1__dots-text
+            right: 85px
+            bottom: 110px
+            width: 310px
+            &::before
+              width: 75px
 
-  // max-width 1170px
+  // max-width 1610px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-height: 700px)
+    &__wrap
+      padding-top: 35px
+    &__btns
+      padding-top: 0
+      .btn
+        min-width: 269px
+        height: 65px
+        font-size: 14px
 
-  // max-width 1070px
+  // max-width 1610px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 1400px)
+    &__btns
+      padding-top: 10px
+    &__wrap
+      padding-top: 35px
+      padding-bottom: 40px
+    &__content
+      max-width: 52.340426%
+    &__title
+      font-size: 28px
+      strong
+        font-size: 33px
+    &__feat
+      margin-top: 30px
+      & > li
+        padding-bottom: 13px
+      &-text
+        font-size: 11px
+      &-icon
+        width: 64px
+        height: 68px
+        img
+          width: 26px
+          height: 26px
+    &__img
+      left: 32.553191%
+      width: 793px
+      height: 372px
 
-  // max-width 991px
+  // max-width 1400px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 1200px)
+    &__img
+      left: 25.553191%
+      width: 713px
+      height: 342px
+    &__title
+      strong
+        font-size: 30px
+    &__dots
+      display: none
+    &__img
+      left: 23%
+      bottom: 0
+      width: 1200px
+      height: 500px
+    &__content
+      max-width: 76.340426%
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1000px)
+    &__wrap
+      padding-top: 50px
+    &__scroll
+      display: none
+
+  // max-width 1000px
+
+  @media screen and (max-width: 767px)
+    &__wrap
+      padding-top: 29px
+    &__content
+      max-width: 100%
+    &__title
+      width: 100%
+    &__feat
+      &-icon
+        width: 74px
+        height: 78px
+        img
+          width: 32px
+          height: 32px
+      &-text
+        font-size: 12px
+    &__btns
+      text-align: center
+      padding-left: 15px
+      padding-right: 15px
+      .btn
+        height: 85px
+        font-size: 16px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__feat
+      max-width: 100%
+      margin-top: 70px
+      padding-top: 10px
+      padding-bottom: 10px
+      overflow: auto
+      flex-wrap: nowrap
+      & > li
+        min-width: 150px
+        width: auto
+        flex-shrink: 0
+        padding-left: 10px
+        padding-top: 10px
+        padding-bottom: 0
+        text-align: center
+        & > a
+          display: flex
+          flex-direction: column
+          align-items: center
+    &__title
+      padding-left: 15px
+    &__btns
+      .btn__wrap
+        width: 100%
+    &__img
+      left: -370px
+      width: 830px
+      height: 490px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 374px)
+    &__title
+      padding-left: 0
+      padding-right: 0
+    &__btns
+      padding-left: 0
+      padding-right: 0
 
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 374px
 
 /* scr1 */

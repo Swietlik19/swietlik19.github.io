@@ -2,38 +2,40 @@
   position: relative
   .page-title
     margin-bottom: 30px
+    &.mobile
+      display: none
   .page-desc
     margin-bottom: 30px
   &__list
-    margin: 0
-    padding: 0
-    list-style: none
-    display: flex
-    flex-wrap: wrap
-    & > li
+    .swiper-wrapper
+      flex-wrap: wrap
+    .swiper-slide
       width: calc((100% - 2px) / 3)
+      height: auto
       margin-right: 1px
       margin-bottom: 1px
-      min-height: 258px
-      padding: 38px 15px 15px 27px
-      background-color: #f8f8f8
-      transition: 0.3s
       &:nth-of-type(3n)
         margin-right: 0
-      &:hover
-        background-color: $accent
-        .feat__top
-          .feat__title
-            opacity: 1
-        .feat__hidden
-          display: block
-          color: #fff
-        .to-hide
-          display: none
-        .feat__icon-wrap
-          fill: #f8f8f8
-        .feat__icon-img
-          fill: $accent
+  &__item
+    min-height: 258px
+    height: 100%
+    padding: 38px 15px 15px 27px
+    background-color: #f8f8f8
+    transition: 0.3s
+    &:hover
+      background-color: $accent
+      .feat__top
+        .feat__title
+          opacity: 1
+      .feat__hidden
+        display: block
+        color: #fff
+      .to-hide
+        display: none
+      .feat__icon-wrap
+        fill: #f8f8f8
+      .feat__icon-img
+        fill: $accent
 
   &__top
     display: flex
@@ -76,32 +78,102 @@
     transition: 0.3s
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1400px)
+    .page-title
+      margin-bottom: 13px
+      br
+        display: none
+    .page-desc
+      margin-bottom: 20px
+    &__icon
+      width: 56px
+      height: 61px
+      margin-right: 16px
+      &-img
+        width: 27px
+        height: 27px
+    &__hidden
+      font-size: 13px
+    &__title
+      font-size: 15px
+    &__item
+      min-height: 202px
+      padding: 18px 15px 15px 17px
 
-  // max-width 1170px
+  // max-width 1400px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    &__item
+      background-color: $accent
+      min-height: 192px
+      padding: 12px
+    &__top
+      margin-bottom: 14px
+      .feat__title
+        opacity: 1
+    &__hidden
+      display: block
+      color: #fff
+    .to-hide
+      display: none
+    &__icon-wrap
+      fill: #f8f8f8
+    &__icon-img
+      fill: $accent
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 1000px)
+    padding-bottom: 40px
 
-  // max-width 991px
+  // max-width 1000px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    &__icon
+      width: 74px
+      height: 78px
+      margin-right: 26px
+    &__list
+      width: calc(100% - 16px)
+      .swiper-wrapper
+        flex-wrap: nowrap
+    &__item
+      padding: 37px 27px 30px
+    .page-title
+      text-align: center
+      margin-bottom: 14px
+      &.desktop
+        display: none
+      &.mobile
+        display: block
+    .page-desc
+      display: none
+    &__title
+      font-size: 18px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    padding-bottom: 22px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &__title
+      font-size: 15px
 
   // max-width 400px
+
+  @media screen and (max-width: 374px)
+    &__item
+      padding: 27px 20px 20px
+    &__icon
+      width: 69px
+      height: 71px
+      margin-right: 15px
+    &__title
+      font-size: 14px
+
+  // max-width 374px
 
 /* feat */

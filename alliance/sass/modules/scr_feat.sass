@@ -27,8 +27,9 @@
       .feat__top
         .feat__title
           opacity: 1
+          color: #ffffff
       .feat__hidden
-        display: block
+        display: block !important
         color: #fff
       .to-hide
         display: none
@@ -43,7 +44,6 @@
     margin-bottom: 24px
     transition: 0.5s
     .feat__title
-      color: #ffffff
       opacity: 0
   &__icon
     flex-shrink: 0
@@ -73,9 +73,20 @@
     font-weight: 700
     transition: 0.3s
   &__hidden
-    display: none
     font-size: 14px
     transition: 0.3s
+
+  &--about
+    z-index: 1
+    padding-bottom: 90px
+    .feat__title
+      &.to-hide
+        display: none
+    .feat__top
+      .feat__title
+        opacity: 1
+    .feat__hidden
+      font-weight: 500
 
 
   @media screen and (max-width: 1400px)
@@ -84,7 +95,7 @@
       br
         display: none
     .page-desc
-      margin-bottom: 20px
+      display: none
     &__icon
       width: 56px
       height: 61px
@@ -111,6 +122,7 @@
       margin-bottom: 14px
       .feat__title
         opacity: 1
+        color: #fff
     &__hidden
       display: block
       color: #fff
@@ -146,8 +158,6 @@
         display: none
       &.mobile
         display: block
-    .page-desc
-      display: none
     &__title
       font-size: 18px
 

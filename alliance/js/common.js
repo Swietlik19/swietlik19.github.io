@@ -333,6 +333,11 @@
         },
       },
     });
+  } else {
+    $('.page_fp .feat__item').each(function(xi,xel) {
+      $(xel).css('height',$(xel).outerHeight() - 40 + 'px');
+      $(xel).find('.feat__hidden').css('display','none');
+    });
   }
 
   $(window).resize(function() {

@@ -66,8 +66,17 @@
     $.fn.fullpage.moveTo(2);
   });
 
-  $('.to-top').click(function() {
-    $.fn.fullpage.moveTo(1);
+  $('.to-top').click(function(e) {
+    e.preventDefault();
+    if ( $('.page_fp ').length == 0 ) return;
+
+    if (!(window.matchMedia('(max-width: 1000px)').matches)) {
+      $.fn.fullpage.moveTo(1);
+    } else {
+      var _href = $(this).attr('href');
+      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      return false;
+    }
   });
 
 

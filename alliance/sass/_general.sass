@@ -42,6 +42,8 @@ body
 
 .page_wr
   flex-grow: 1
+  display: flex
+  flex-direction: column
 
 img
   width: 100%
@@ -77,6 +79,7 @@ h1,h2,h3,h4,h5,h6
 
 .article
   p
+    font-size: 14px
   a
     text-decoration: none
     transition: 0.3s
@@ -106,22 +109,39 @@ h1,h2,h3,h4,h5,h6
   ul li,
   ol li
     transform: translateX(1.5em)
+    margin-bottom: 26px
+    font-size: 14px
+    &:last-of-type
+      margin-bottom: 0
+  ul
+    list-style: none
+    li
+      position: relative
+      &::before
+        content: '•'
+        position: absolute
+        top: 2px
+        left: -14px
+        color: #3f91a6
+        font-size: 18px
 
   h2,h3,h4
-    line-height: 1.2
-    font-weight: 500
+    line-height: 1.25
+    font-weight: 700
   h2
-    margin-top: 35px
-    margin-bottom: 20px
-    font-size: 18px
+    margin-top: 15px
+    margin-bottom: 22px
+    font-size: 24px
+
   h3
-    margin-top: 25px
+    margin-top: 10px
+    margin-bottom: 15px
+    font-size: 21px
+  h4
+    margin-top: 10px
     margin-bottom: 15px
     font-size: 16px
-  h4
-    margin-top: 20px
-    margin-bottom: 10px
-    font-size: 14px
+    font-weight: 500
 
 .clearfix
   &::after
@@ -517,6 +537,15 @@ input[type="submit"]
     strong
       font-size: 24px
       font-weight: 700
+  .article
+    h2
+      margin-bottom: 15px
+      font-size: 21px
+    h3
+      font-size: 19px
+    h4
+      margin-bottom: 10px
+      font-size: 14px
 
 // max-width 767px
 
@@ -528,6 +557,11 @@ input[type="submit"]
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 400px)
+  .article
+    h2
+      font-size: 19px
+    h3
+      font-size: 18px
 
 // max-width 400px

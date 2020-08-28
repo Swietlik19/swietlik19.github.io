@@ -1,0 +1,84 @@
+mixin scr_contacts()
+  section.scr_contacts.contacts(id="scr_contacts")
+    .container
+      h1.page-title
+        strong Контакты
+
+      .contacts__df
+        .contacts__content
+          .contacts__col
+            .contacts__item
+              h4 Адрес:
+              p.contacts__text РФ, Республика Крым,
+                br
+                |  г. Симферополь,
+                br
+                |  проспект Кирова, 29/1, офис 412
+
+            .contacts__item
+              h4 Телефон:
+              p.contacts__text тел/факс
+                a(href="tel:+79780293010" rel="nofollow")  +7 (978) 029-30-10
+
+            .contacts__item
+              h4 Почта:
+              p.contacts__text
+                a(href="mailto:test@mail.ru" rel="nofollow")  test@mail.ru
+
+            .contacts__item
+              h4 Соцсети:
+              +socials--contacts
+
+          .contacts__col
+            .contacts__item
+              h4 Юридические реквизиты:
+              p.contacts__text ООО «АЛЬЯНС82»
+                br
+                |  ИНН 7805524271
+                br
+                |  ОГРН 1107847199844
+                br
+                |  КПП 780201001
+                br
+                |  ОКАТО 40265000000
+                br
+                |  ОКПО 67396289
+                br
+                |  ОКТМО 40314000000
+
+        .contacts__form
+          .form.wpcf7
+            p.form__title Обратная связь
+
+            form.wpcf7-form
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input
+                  label(for="your-name") Имя
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name#your-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input
+                  label(for="your-tel") Телефон
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel#your-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-message.text-input
+                  label(for="your-msg") Сообщение
+                  textarea.wpcf7-form-control.wpcf7-text.wpcf7-message#your-msg(name='your-message', cols="40", rows="10", aria-required='true', aria-invalid='false', placeholder="")
+
+              .form__item.form__item--submit
+                .btn__wrap
+                  input.wpcf7-form-control.wpcf7-submit.btn.btn--orange(type='submit', value='Отправить')
+
+              .form__item.form__item--accept
+                span.wpcf7-form-control-wrap.accept
+                  span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                        span.wpcf7-list-item-label Согласие на обработку персональных данных
+                          i.accept__icon
+
+    .contacts__map#contacts__map
+
+  // /.scr_contacts

@@ -2,7 +2,7 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+      createMap('contacts__map',[44.951478, 34.103291]);
 
       function createMap(xID,coords) {
 
@@ -16,7 +16,7 @@ mixin script-map()
           function init () {
               myMap = new ymaps.Map(xID, {
                   center: coords,
-                  zoom: 17
+                  zoom: 18
               }, {
                   searchControlProvider: 'yandex#search'
               });
@@ -26,17 +26,24 @@ mixin script-map()
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
+                myPlacemark = new ymaps.Placemark(coords, {
+                    hintContent: '',
+                    balloonContent: '<div class="balloon-wrap"><div class="balloon-top">' +
+                    '<div class="balloon-img"><img src="img/svg/logo-map.svg" height="50" width="50" data-object-fit-contain></div>'
+                    +'<div class="balloon-title">Альянс 82</div></div>'
+                    +'<div class="balloon-text">г. Симферополь,<br>проспект Кирова, 29/1, офис 412<br>тел/факс <a href="tel:+79780293010" rel="nofollow">+7 (978) 029-30-10</a></div></div>' ,
+                    balloonCloseButton: false,
                 }, {
                   // Опции.
+                  balloonPanelMaxMapArea: 0,
+                  openTimeout: 0,
+
                   // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
+                  //- iconLayout: 'default#image',
                   // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
+                  //- iconImageHref: 'img/svg/pin.svg',
                   // Размеры метки.
-                  iconImageSize: [41, 51],
+                  //- iconImageSize: [41, 51],
                   // Смещение левого верхнего угла иконки относительно
                   // её "ножки" (точки привязки).
                   iconImageOffset: [-15, -60]
@@ -44,6 +51,8 @@ mixin script-map()
 
             myMap.geoObjects
                 .add(myPlacemark);
+
+            myPlacemark.balloon.open();
 
             myMap.behaviors.disable('scrollZoom');
           }

@@ -355,6 +355,58 @@ input[type="submit"]
 [class$='-copyrights-pane']
   display: none
 
+[class$='-balloon__close-button']
+  display: none
+
+[class$='-balloon__close']+[class$='-balloon__content']
+  margin-right: 0
+  padding: 0
+
+[class$='-balloon__tail']
+  bottom: 70px
+  left: -12px
+
+[class*='-balloon ']
+  margin-left: 100px
+  margin-top: 50px
+
+[class*="ymaps-2"][class*="-ground-pane"]
+  -webkit-filter: grayscale(100%) url(/img/filter.svg#filter)
+        filter: grayscale(100%) url(/img/filter.svg#filter)
+
+
+.balloon-wrap
+  width: 260px
+  padding: 11px 10px 14px 21px
+  background-color: #ffffff
+  box-shadow: 0px 10px 10px 0px rgba(13,59,65,0.4)
+  border-radius: 3px
+  color: $accent
+  box-sizing: border-box
+  font-family: $font
+  a
+    text-decoration: none
+    outline: none
+    color: $accent
+    transition: 0.3s
+    &:hover
+      color: $accent2
+.balloon-top
+  display: flex
+  align-items: center
+  margin-bottom: 8px
+.balloon-img
+  width: 45px
+  height: 41px
+  margin-right: 9px
+.balloon-title
+  font-size: 20px
+  font-weight: 700
+  text-transform: uppercase
+.balloon-text
+  font-size: 14px
+  line-height: 1.714285714285714 /* 24 / 14 */
+  font-weight: 500
 
 /* Переопределение стилей swiper */
 .swiper-wrapper
@@ -547,9 +599,27 @@ input[type="submit"]
       margin-bottom: 10px
       font-size: 14px
 
+  .balloon-img
+    width: 37px
+    height: 33px
+    margin-right: 9px
+  .balloon-title
+    font-size: 16px
+  .balloon-text
+    font-size: 13px
+    line-height: 1.5
+
 // max-width 767px
 
-// @media screen and (max-width: 575px)
+@media screen and (max-width: 575px)
+  .page-desc
+    font-size: 14px
+  [class*='-balloon ']
+    margin-left: 50px
+    margin-top: 50px
+  .swiper-pagination-bullet
+    margin-left: 5px
+    margin-right: 5px
 
 // max-width 575px
 
@@ -563,5 +633,7 @@ input[type="submit"]
       font-size: 19px
     h3
       font-size: 18px
+  [class$='-balloon__tail']
+    display: none
 
 // max-width 400px

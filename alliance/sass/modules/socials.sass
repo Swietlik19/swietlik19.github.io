@@ -9,13 +9,37 @@
     .fa
       display: block
       color: #5f90a2
-      // font-weight: 400
       font-size: 19px
       transition: 0.3s ease-in-out
 
     &:hover
       .fa
         color: rgba(#fff,0.7)
+
+  &--contacts
+    justify-content: flex-start
+    .socials__link
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 31px
+      height: 31px
+      background-color: #3f91a6
+      border: 1px solid #3f91a6
+      border-radius: 50%
+      margin-right: 14px
+      transition: 0.3s
+      &:last-of-type
+        margin-right: 0
+      .fa
+        color: #ffffff
+        font-size: 20px
+        &-vk
+          font-size: 18px
+      &:hover
+        background-color: #fff
+        .fa
+          color: #3f91a6
 
 
   @media screen and (max-width: 1610px)
@@ -26,13 +50,14 @@
   // max-width 1600px
 
   @media screen and (max-width: 1340px)
-    flex-direction: column
-    &__link
-      margin-bottom: 15px
-      .fa
-        font-size: 19px
-      &:last-of-type
-        margin-bottom: 0
+    &:not(.socials--contacts)
+      flex-direction: column
+      .socials__link
+        margin-bottom: 15px
+        .fa
+          font-size: 19px
+        &:last-of-type
+          margin-bottom: 0
 
   // max-width 1340px
 

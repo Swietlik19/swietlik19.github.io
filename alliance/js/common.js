@@ -210,7 +210,7 @@
 
 
   // Табы
-  $('.proj__nav a').click(function(event) {
+  $('.proj:not(.proj--page) .proj__nav a').click(function(event) {
     event.preventDefault();
     var _href = $(this).attr('href');
     $(this).parent().siblings().removeClass('current');
@@ -255,10 +255,10 @@
   //   $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
   // }
 
-  $('.proj__slider').each(function(xi,xel) {
+  $('.proj:not(.proj--page) .proj__slider').each(function(xi,xel) {
     var xId = '#' + $(xel).attr('id');
     var xBtns = $(xel).parents('.proj__slider-wrap').find('.proj__slider-nav');
-    var scr1__slider = new Swiper(xId, {
+    var proj__slider = new Swiper(xId, {
       slidesPerView: 1,
       watchSlidesProgress: true,
       watchOverflow: true,
@@ -290,6 +290,25 @@
       },
     });
   });
+
+  $('.proj--page .proj__slider').each(function(xi,xel) {
+    var xId = '#' + $(xel).attr('id');
+    var xBtns = $(xel).parents('.proj__slider-wrap').find('.proj__slider-nav');
+    var proj__slider = new Swiper(xId, {
+      slidesPerView: 1,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+    });
+  });
+
 
   // var clientsSlider = new Swiper('#clients__slider', {
   //   slidesPerView: 3,

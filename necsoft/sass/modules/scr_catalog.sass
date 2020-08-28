@@ -108,6 +108,52 @@
         height: 49px
         font-size: 16px
 
+  &--prog
+    padding-bottom: 42px
+    .second__nav
+      padding-top: 0
+      padding-bottom: 27px
+      &-list
+        & > li
+          flex-grow: 1
+          width: auto
+    h1.title-second
+      margin-top: 0
+      margin-bottom: 27px
+      font-size: 30px
+    .catalog__wrap
+      padding: 26px 26px 4px
+    .catalog__title
+      min-height: 0
+      margin-bottom: 0
+      transition: 0.3s
+    .catalog__img
+      height: 234px
+      transition: 0.3s
+    .catalog__list
+      padding-top: 0
+      padding-bottom: 0
+      justify-content: flex-start
+      li
+        width: calc((100% - 84px) / 3)
+        margin-right: 42px
+        max-width: 100%
+        &:nth-of-type(3n)
+          margin-right: 0
+        &:last-of-type
+          margin-bottom: 22px
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          &:hover
+            .catalog__title
+              color: $accent2
+            .catalog__img
+              box-shadow: 0 5px 15px rgba(#000, 0.15)
+              transform: translateY(-5px)
+
+
 
   @media screen and (max-width: 1170px)
     &--project
@@ -125,6 +171,13 @@
       .catalog__price
         margin-bottom: 20px
         font-size: 21px
+    &--prog
+      .catalog__list
+        & > li
+          width: calc((100% - 44px) / 3)
+          margin-right: 22px
+      .catalog__title
+        font-size: 16px
 
   // max-width 991px
 
@@ -144,6 +197,21 @@
       padding-top: 20px
       &-list
         display: none
+    &--prog
+      padding-bottom: 22px
+      .catalog__list
+        & > li
+          width: calc((100% - 24px) / 3)
+          margin-right: 12px
+          margin-bottom: 12px
+          &:last-of-type
+            margin-bottom: 12px
+      .catalog__title
+        font-size: 15px
+      .catalog__wrap
+        padding: 18px 15px 4px
+      .catalog__img
+        height: 144px
 
   // max-width 900px
 
@@ -153,6 +221,19 @@
       margin-right: 15px
     &__price
       font-size: 20px
+    &--prog
+      h1.title-second
+        margin-bottom: 22px
+        font-size: 26px
+    &--prog
+      .catalog__list
+        & > li
+          width: calc((100% - 12px) / 2)
+          margin-right: 12px
+          &:nth-of-type(3n)
+            margin-right: 12px
+          &:nth-of-type(2n)
+            margin-right: 0
 
   // max-width 700px
 
@@ -173,6 +254,19 @@
           width: 100%
           max-width: 100%
           margin-bottom: 20px !important
+    &--prog
+      padding-top: 20px
+      h1.title-second
+        font-size: 23px
+      .catalog__list
+        flex-direction: row
+        & > li
+          width: calc((100% - 12px) / 2)
+          margin-right: 12px
+          &:nth-of-type(3n)
+            margin-right: 12px
+          &:nth-of-type(2n)
+            margin-right: 0
 
   // max-width 575px
 
@@ -184,6 +278,18 @@
       flex-direction: column
     &__btns
       margin-top: 15px
+    &--prog
+      .catalog__list
+        flex-direction: column
+        width: 100%
+        margin-left: 0
+        & > li
+          width: 100%
+          margin-right: 0
+          &:nth-of-type(3n)
+            margin-right: 0
+      .catalog__img
+        max-width: 100%
 
   // max-width 450px
 

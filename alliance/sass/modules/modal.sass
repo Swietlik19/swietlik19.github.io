@@ -6,7 +6,7 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(0,0,0,0.5)
   z-index: 1000
   opacity: 0
   overflow: hidden
@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 696px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -34,7 +34,26 @@
     max-height: 100vh
     overflow: auto
     width: 100%
+    padding: 30px 55px 37px 86px
     z-index: 0
+    background-color: #ffffff
+    .form__df
+      margin-bottom: 55px
+    .form__title
+      text-align: center
+    .form__desc
+      margin-bottom: 30px
+    .form__item
+      &--accept
+        margin-bottom: 0
+        text-align: center
+      &--submit
+        width: auto
+        margin-bottom: 32px
+        text-align: center
+        .btn
+          min-width: 339px
+          height: 74px
 
   .close
     background: none
@@ -59,8 +78,8 @@
       left: 50%
 
       display: block
-      width: 20px
-      height: 3px
+      width: 15px
+      height: 2px
       background-color: $accent
       border-radius: 1.5px
       transition: 0.3s
@@ -73,14 +92,33 @@
 
     &:hover
       &::before,&::after
-        background-color: #e99c02
+        background-color: $accent2
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 991px)
+    &__content
+      width: 550px
+    .form
+      padding: 30px 30px 30px 50px
+      .form__df
+        margin-bottom: 30px
+      .form__desc
+        margin-bottom: 20px
+      .form__item
+        &--submit
+          margin-bottom: 25px
 
-  // max-width 767px
+  // max-width 991px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 450px)
+    .form
+      padding: 30px 20px 30px
+      .form__item
+        &--submit
+          .btn__wrap
+            width: 100%
+          .btn
+            min-width: 0
 
-  // max-width 575px
+  // max-width 450px
 
  /* modal */

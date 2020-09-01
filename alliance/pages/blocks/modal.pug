@@ -1,30 +1,44 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
-    .modal__content
+mixin modal__callback()
+  section.modal.modal__callback.active(id="modal__callback")
+    .modal__content.visible
       button.close
 
       .form.wpcf7
+        p.form__title Заказать звонок
+        .form__desc
+          p Заполните форму, и наш менеджер свяжется
+            br
+            |  с вами в течение 15 минут
+
         form.wpcf7-form
+          .form__df
+            .form__item
+              span.wpcf7-form-control-wrap.your-name.text-input
+                label(for="your-name") Имя
+                input.wpcf7-form-control.wpcf7-text.wpcf7-name#your-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='')
+
+            .form__item
+              span.wpcf7-form-control-wrap.your-tel.text-input
+                label(for="your-tel") Телефон
+                input.wpcf7-form-control.wpcf7-text.wpcf7-tel#your-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='')
 
           .form__item
-            span.wpcf7-form-control-wrap.your-name.text-input
-              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+            span.wpcf7-form-control-wrap.your-message.text-input
+              label(for="your-msg") Опишите вашу задачу или ваш проект
+              textarea.wpcf7-form-control.wpcf7-text.wpcf7-message#your-msg(name='your-message', cols="40", rows="10", aria-required='true', aria-invalid='false', placeholder="")
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+          .form__item.form__item--submit
+            .btn__wrap
+              input.wpcf7-form-control.wpcf7-submit.btn.btn--orange(type='submit', value='Отправить')
 
-          .form__item
+          .form__item.form__item--accept
             span.wpcf7-form-control-wrap.accept
               span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
                 span.wpcf7-list-item
                   label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
                       i.accept__icon
-
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
 
       // /. form
     // /. modal__content

@@ -189,7 +189,7 @@
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
 
-    if (window.matchMedia('(max-width: 1000px)').matches) {
+    if ( (window.matchMedia('(max-width: 1000px)').matches) || ($('#page_fp').length == 0) )  {
       $(".to-top").toggleClass("fixed", (fromTop > 600));
 
       if (fromTop > 10) {
@@ -255,14 +255,14 @@
   //   $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
   // }
 
-  $('.proj:not(.proj--page) .proj__slider').each(function(xi,xel) {
+  $('.proj:not(.proj--page) .proj__slider, .serv-item .proj__slider').each(function(xi,xel) {
     var xId = '#' + $(xel).attr('id');
     var xBtns = $(xel).parents('.proj__slider-wrap').find('.proj__slider-nav');
     var proj__slider = new Swiper(xId, {
       slidesPerView: 1,
       watchSlidesProgress: true,
       watchOverflow: true,
-      spaceBetween: 10,
+      spaceBetween: 30,
       navigation: {
         nextEl: xBtns.find('.swiper-button-next'),
         prevEl: xBtns.find('.swiper-button-prev'),
@@ -309,36 +309,24 @@
     });
   });
 
+  $('.proj__slider-img').each(function(xi,xel) {
+    var xId = '#' + $(xel).attr('id');
+    var xBtns = $(xel).parents('.proj__slider-img-wrap').find('.proj__slider-img-nav');
 
-  // var clientsSlider = new Swiper('#clients__slider', {
-  //   slidesPerView: 3,
-  //   slidesPerColumn: 3,
-  //   spaceBetween: 25,
-  //   slidesPerColumnFill: 'row',
-  //   watchSlidesProgress: true,
-  //   watchOverflow: true,
-  //   pagination: {
-  //     el: '.clients__btns .swiper-dots',
-  //   },
-  //   breakpoints: {
-  //     1400: {
-  //       slidesPerView: 3,
-  //       slidesPerColumn: 3,
-  //       spaceBetween: 25,
-  //     },
-  //     575: {
-  //       slidesPerView: 3,
-  //       slidesPerColumn: 3,
-  //       spaceBetween: 10,
-  //     },
-  //     400: {
-  //       slidesPerView: 2,
-  //       slidesPerColumn: 4,
-  //       spaceBetween: 10,
-  //       loop: true,
-  //     },
-  //   },
-  // });
+    var proj__sliderImg = new Swiper(xId, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+    });
+  });
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     var featList = new Swiper('#feat__list', {

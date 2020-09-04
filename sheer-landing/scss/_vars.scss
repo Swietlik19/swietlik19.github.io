@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+
+$b0: #f1f2fa;
+$b1: #9c9eb6;
+$b2: #082244;
+$b3: #071b36;
+$b4: #2a2c44;
+
+$r1: #fa222a;
+$r2: #ff383f;
+$r3: #891e22;
+
+$y: #fed343;
+
+$accent: $r2;
+$accent--dark: $b4;
+
+
+@mixin gradient {
+    background: rgb(250,34,42);
+    background: -moz-linear-gradient(top, rgba(250,34,42,1) 0%, rgba(255,56,63,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(250,34,42,1) 0%,rgba(255,56,63,1) 100%);
+    background: linear-gradient(to bottom, rgba(250,34,42,1) 0%,rgba(255,56,63,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa222a', endColorstr='#ff383f',GradientType=0 );
+}
+
+
+@mixin t {
+  transition:All 0.2s ease-in-out;
+  -webkit-transition:All 0.2s ease-in-out;
+  -moz-transition:All 0.2s ease-in-out;
+  -o-transition:All 0.2s ease-in-out;
+}
+
+
+@mixin transform($deg) {
+  -moz-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@keyframes transp-btn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

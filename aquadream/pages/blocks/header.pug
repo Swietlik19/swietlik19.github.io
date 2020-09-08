@@ -1,0 +1,92 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__top-df
+
+          .header__text
+            p Официальный представитель Cellfast и эксклюзивный поставщик  инструментов для сада в ЮФО, СКФО и Крыму
+
+          .header__cart
+            a.header__cart-btn(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#bascket")
+
+            span.header__cart-text (1)
+            span.header__cart-text Итого: 1 200 Р
+
+      // /.container
+    // /.header__top
+
+    .header__middle
+      .container
+        .header__middle-df
+          button.burger#header__burger
+            span.burger__wrap
+              span.line
+
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.jpg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.jpg" alt="лого")
+
+          .header__address
+            p г. Краснодар, ул. Российская, 315/1, оф 22
+              br
+              |  режим работы: Пн - Сб 8.00 - 17.00
+
+          .header__cart
+            a.header__cart-btn(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#bascket")
+
+          .header__phones
+            a.header__phone.mobile(href="tel:+78001234567" rel="nofollow")
+              i.fa.fa-phone
+            a.header__phone.desktop(href="tel:+78001234567" rel="nofollow") +7 (800) 123 45 67
+            a.open-modal(href="#modal__callback") Обратный звонок
+
+      // /.container
+    // /.header__middle
+
+    .header__menu
+      .container
+        .header__menu-top
+          .header__menu-df
+            .logo__wrap
+              if logotype == "a"
+                #{logotype}.logo(href="index.html")
+                  img(src="img/logo.jpg" alt="лого")
+              else
+                #{logotype}.logo
+                  img(src="img/logo.jpg" alt="лого")
+
+            .header__menu-close
+              button.burger.active
+                span.burger__wrap
+                  span.line
+
+
+        ul.menu
+          li
+            a(href="#") О нас
+          li
+            a(href="#") Каталог
+          li
+            a(href="#") Производство
+          li
+            a(href="#") Гарантии и возврат
+          li
+            a(href="#") Оплата и Доставка
+          li
+            a(href="#") Вопрос-Ответ
+          li
+            a(href="#") Новости
+          li
+            a(href="#") Контакты
+
+      // /.container
+    // /.header__middle

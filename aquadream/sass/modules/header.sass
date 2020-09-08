@@ -1,0 +1,280 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: #ffffff
+  box-shadow: 0px 7px 7px 0px rgba(203,203,203,0.2)
+  z-index: 50
+  &__top
+    padding-top: 5px
+    padding-bottom: 5px
+    background-color: $accent2
+    &-df
+      display: flex
+      align-items: center
+      justify-content: space-between
+  .burger
+    display: none
+  &__text
+    margin-right: 20px
+    font-size: 13px
+    line-height: 1.461538461538462 /* 19 / 13 */
+    color: #ffffff
+
+  &__cart
+    flex-shrink: 0
+    margin-left: auto
+    display: flex
+    align-items: center
+    &-btn
+      display: flex
+      align-items: center
+      justify-content: center
+      text-decoration: none
+      outline: none
+      width: 29px
+      height: 29px
+      margin-right: 8px
+      background-color: $accent
+      border-radius: 50%
+      transition: 0.3s
+      .icon
+        width: 19px
+        height: 19px
+        fill: #fff
+        transition: 0.3s
+      &:hover
+        background-color: #fff
+        .icon
+          fill: $accent
+    &-text
+      display: block
+      margin-right: 13px
+      font-size: 13px
+      line-height: 1.461538461538462 /* 19 / 13 */
+      color: #ffffff
+      &:last-of-type
+        margin-right: 0
+
+  &__middle
+    padding-top: 12px
+    padding-bottom: 5px
+    &-df
+      display: flex
+    .logo
+      display: block
+      width: 245px
+      height: 37px
+      text-decoration: none
+      &__wrap
+        margin-right: 48px
+    .header__cart
+      display: none
+  &__address
+    margin-right: 20px
+    font-size: 14px
+    line-height: 1.6
+  &__phones
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    margin-left: auto
+    .open-modal
+      display: block
+      font-size: 14px
+      line-height: 1.2
+      letter-spacing: 0.05em
+      transition: 0.3s
+      &:hover
+        color: $accent
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    margin-bottom: 4px
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 500
+    transition: 0.3s
+    &:hover
+      color: $accent
+    &.mobile
+      display: none
+
+  &__menu
+    padding-top: 18px
+    padding-bottom: 15px
+    .logo
+      &__wrap
+        display: none
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 400
+        text-transform: uppercase
+        transition: 0.5s
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: -3px
+          width: 100%
+          height: 2px
+          border-radius: 1.5px
+          transition: 0.5s
+          transform: scale(0.4)
+          opacity: 0
+          background-color: #666
+        &:hover
+          color: $accent
+          &::after
+            background-color: $accent
+            opacity: 1
+            transform: scale(1)
+
+
+  @media screen and (max-width: 991px)
+    .menu
+      & > li
+        & > a
+          font-size: 12px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &__address
+      display: none
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 10px
+    &__text
+      display: none
+    &__menu
+      position: fixed
+      top: 0
+      left: 0
+      width: 400px
+      max-width: 100%
+      height: 100vh
+      overflow: auto
+      box-shadow: 0 5px 15px rgba($accent2, 0.2)
+      z-index: 500
+      background: #fff
+      transform: translateX(-100%)
+      transition: 0.3s
+      &.active
+        transform: translateX(0)
+      &-df
+        display: flex
+        justify-content: space-between
+        margin-bottom: 15px
+      .logo
+        &__wrap
+          display: block
+          width: 170px
+          margin-right: 20px
+    .menu
+      flex-direction: column
+      & > li
+        width: 100%
+        & > a
+          font-size: 14px
+          text-transform: uppercase
+          padding: 8px 0
+          border-bottom: 1px solid rgba($accent2, 0.2)
+          &::after
+            content: none
+    &__top
+      display: none
+    .burger
+      display: flex
+    &__middle
+      .logo
+        width: 205px
+        height: 27px
+      .burger
+        margin-right: 15px
+      .header__cart
+        display: flex
+        margin-left: auto
+        margin-right: 10px
+        &-btn
+          margin-right: 0
+      &-df
+        align-items: center
+    &__phones
+      margin-left: 0
+    &__phone
+      font-size: 16px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__middle
+      .logo
+        width: 195px
+        height: 30px
+        &__wrap
+          margin-right: 20px
+      .burger
+        margin-right: 10px
+
+  // max-width 700px
+
+  @media screen and (max-width: 500px)
+    &__phone
+      &.desktop
+        display: none
+      &.mobile
+        display: flex
+        align-items: center
+        justify-content: center
+        text-decoration: none
+        outline: none
+        width: 29px
+        height: 29px
+        margin-right: 8px
+        background-color: $accent
+        border-radius: 50%
+        transition: 0.3s
+        margin-bottom: 0
+        margin-right: 0
+        .fa
+          color: #fff
+          font-size: 17px
+          transition: 0.3s
+        &:hover
+          background-color: #fff
+          .fa
+            color: $accent
+    &__phones
+      .open-modal
+        display: none
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__middle
+      .logo
+        width: 155px
+        height: 20px
+
+  // max-width 400px
+
+/* .header */

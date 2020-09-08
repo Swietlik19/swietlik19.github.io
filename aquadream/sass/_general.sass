@@ -1,0 +1,397 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 149px
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-left]
+  object-fit: cover
+  object-position: left center
+  font-family: 'object-fit: cover; object-position: left center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+.accent2
+  color: $accent2
+
+.grey-bg
+  background-color: #f8f8f8
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 10px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 10px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 0
+  font-size: 30px
+  line-height: 1.2
+  font-weight: 400
+  color: #666666
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  display: block
+  outline: none
+  margin-top: auto
+  transition: 0.3s
+  font-size: 14px
+  color: $accent
+  &:hover
+    color: $accent2
+
+.btn__wrap
+  display: inline-block
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+  font-family: $font2
+  font-size: 14px
+  line-height: 1.2
+  font-weight: 500
+  color: #ffffff
+
+.btn,
+input[type="submit"].btn
+  &--blue
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 62px
+    padding: 0 17px
+    background-color: $accent
+    border: 2px solid $accent
+    border-radius: 6px
+    &:hover
+      box-shadow: 0 0 30px rgba($accent2, 0.4)
+      transform: translateY(-5px)
+  &--transparent
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 62px
+    padding: 0 30px
+    background-color: rgba(16,24,96,0.4)
+    border: 2px solid #fefefe
+    border-radius: 6px
+    &:hover
+      box-shadow: 0 0 30px rgba($accent2, 0.4)
+      background-color: rgba(16,24,96,0.7)
+      transform: translateY(-5px)
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: $accent2
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .fa
+    color: #fff
+    transition: 0.5s
+    font-size: 18px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-dots
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-top: 34px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent
+  width: 7px
+  height: 7px
+  margin: 0 4px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+.swiper-button-prev,
+.swiper-button-next
+  position: static
+  background: none
+  border: none
+  outline: none
+  margin: 0
+  width: 34px
+  height: 34px
+  background: #ffffff url('../img/svg/arrow.svg') no-repeat center center
+  background-size: 16px 16px
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: none
+  &:hover
+    box-shadow: 0 0 15px rgba($accent2, 0.2)
+.swiper-button-prev
+  margin-right: 14px
+  transform: rotate(180deg)
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled
+  opacity: 0.8
+
+.swiper-pagination-lock
+  display: none
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+@media screen and (max-width: 1070px)
+  .page-title
+    font-size: 26px
+
+// max-width 1070px
+
+// @media screen and (max-width: 991px)
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .page-title
+    font-size: 22px
+    br
+      display: none
+  .page_wr
+    padding-top: 66px
+
+// max-width 767px
+
+// @media screen and (max-width: 575px)
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .page-title
+    font-size: 19px
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

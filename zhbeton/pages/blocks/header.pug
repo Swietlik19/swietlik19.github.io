@@ -1,0 +1,54 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__df
+      .header__left
+        .header__left-wrap
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
+
+      // /.header__left
+
+      .container
+        .header__middle
+          button.burger#header__burger
+            span.burger__wrap
+              span.line
+
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
+
+          .logo__text
+            p Научно-исследовательская
+              br
+              |  лаборатория бетона
+              br
+              |  и железобетона
+
+          ul.menu
+            li
+              a(href="#") Виды испытаний
+            li
+              a(href="#") Примеры исследований
+            li
+              a(href="#") Как мы работаем
+            li
+              a(href="#") Контакты
+
+          .header__phones
+            a.header__phone(href="tel:88002019365" rel="nofollow") 8 (800) 201-93-65
+            a.open-modal(href="#") Запросить прайс-лист
+
+
+
+      // /.container
+    // /.header__df

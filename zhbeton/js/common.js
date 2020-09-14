@@ -2,6 +2,7 @@
 
   /* Для проверки resize, т.к. на мобильном Хроме при скролле срабывает resize (без изменения ширины) */
   var screenWidth = $(window).width();
+  var screenHeight = $(window).height();
 
   /* Инициализация wow */
   wow = new WOW({mobile: false})
@@ -99,12 +100,38 @@
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
-    $(".header").toggleClass("fixed", (fromTop > 100));
-    $(".header:not(.opened)").toggleClass("noactive", (fromTop > 100));
-    if (fromTop <= 100) {
-      $(".header").removeClass('opened');
+    var pageHeight = $('body').height();
+
+    $(".header").toggleClass("fixed", (fromTop > 150));
+
+    if ( !(window.matchMedia('(max-width: 1110px)').matches) ) {
+      $(".header:not(.opened)").toggleClass("noactive", (fromTop > 100));
+      if (fromTop <= 100) {
+        $(".header").removeClass('opened');
+      }
     }
-    // $(".to-top").toggleClass("fixed", (fromTop > 600));
+
+    $('.page-line__line').css('height', fromTop + screenHeight - 200 + 'px');
+    if (fromTop + screenHeight > pageHeight - 300) {
+      $('.page-line__line').css('height', pageHeight - 12 + 'px');
+      $('.footer .decor-line').addClass('visible');
+    }
+    $(".to-top").toggleClass("fixed", (fromTop > 600));
+  });
+
+  $('.decor-line').each(function(xi,xel) {
+    var xTop = $(xel).offset().top;
+
+    if ($(xel).parents('.footer').length == 0) {
+      $(window).on("scroll", function() {
+        var fromTop = $(document).scrollTop();
+        if ( (fromTop + screenHeight - 100 >= xTop) && ( !($(xel).hasClass('visible')) ) ) {
+          $(xel).addClass('visible');
+        } else if (fromTop + screenHeight - 100 < xTop) {
+          $(xel).removeClass('visible');
+        }
+      });
+    }
   });
 
   $('.header .logo').click(function() {
@@ -112,6 +139,11 @@
       $(".header").toggleClass("noactive");
       $(".header").toggleClass("opened");
     }
+  });
+
+  $('.burger').click(function() {
+    $('.header .menu').toggleClass('opened');
+    $('body').toggleClass('disabled');
   });
 
   // Табы

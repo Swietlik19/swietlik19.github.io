@@ -25,14 +25,60 @@ body
   display: flex
   flex-direction: column
   min-height: 100vh
+  &::before
+    content: ''
+    position: fixed
+    width: 0
+    height: 0
+    background-color: rgba(darken($accent2, 20%), 0.4)
+    opacity: 0
+    z-index: 10
+    transition: opacity 0.3s
 
   &.disabled
-    overflow: hidden
-    max-height: 100vh
+    &::before
+      width: 100%
+      height: 100vh
+      opacity: 1
 
 .page_wr
+  position: relative
   flex-grow: 1
   padding-top: 110px
+
+.page-line
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 120
+  .container
+    position: relative
+  &__line
+    position: absolute
+    top: 12px
+    left: -26px
+    display: block
+    width: 1px
+    height: 500px
+    background-color: #8f9193
+    transition: 0.5s ease-in-out
+
+.decor-line
+  position: relative
+  &__line
+    display: block
+    width: calc(100% + 41px)
+    height: 1px
+    margin-left: -41px
+    background-color: #8f9193
+    transform: scale(0)
+    transform-origin: left center
+    transition: 0.5s
+  &.visible
+    .decor-line__line
+      transform: scale(1)
+
 
 img
   width: 100%
@@ -180,6 +226,19 @@ input[type="submit"].btn
     text-align: center
     &:hover
       background-color: $accent2
+  &--square
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    border: 1px solid $accent2
+    .fa
+      color: $accent2
+    &:hover
+      background-color: $accent2
+      .fa
+        color: #fff
 
 
 input[type="submit"]
@@ -214,9 +273,6 @@ input[type="submit"]
         &:before,
         &:after
           transform: translateX(0) rotate(-90deg)
-    &:hover
-      .burger__wrap
-        transform: rotate(90deg) scale(1.1)
 
   .line
     top: 50%
@@ -229,7 +285,7 @@ input[type="submit"]
       display: block
       width: 20px
       height: 2px
-      background-color: #fff
+      background-color: $accent2
       transition: 0.2s ease-in-out
 
     &::after,
@@ -246,33 +302,22 @@ input[type="submit"]
   right: 20px
   bottom: 20px
   z-index: 100
-  text-decoration: none
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 37px
-  background: rgba($accent, 0.8)
-  border-radius: 6px
-  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  box-shadow: 0px 0px 10px 0px rgba($accent2,0.3)
   cursor: pointer
   transition: 0.5s
   opacity: 0
   height: 0
   overflow: hidden
+  background-color: #fff
   z-index: 250
   .fa
-    color: #fff
     transition: 0.5s
     font-size: 18px
     font-weight: 800
 
-  &:hover
-    opacity: 1
-    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
-
   &.fixed
     opacity: 1
-    height: 37px
+    height: 40px
 
 
 /* Переопределение стилей yandex map */
@@ -299,7 +344,7 @@ input[type="submit"]
   margin: 0 4px
   opacity: 1
 .swiper-pagination-bullet-active
-  position: relative
+  background: $accent2
 .swiper-button-prev,
 .swiper-button-next
   position: absolute
@@ -345,9 +390,32 @@ input[type="submit"]
     max-width: 1170px
 
 /* media */
+@media screen and (max-width: 1870px)
+  .page_wr
+    padding-top: 85px
+
+// max-width 1870px
+
+@media screen and (max-width: 1400px)
+  .page-line
+    &__line
+      left: -6px
+  .decor-line
+    &__line
+      width: calc(100% + 21px)
+      margin-left: -21px
+
+// max-width 1400px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
+  .page-line
+    display: none
+  .decor-line
+    &__line
+      width: 100%
+      margin-left: 0
 
 // max-width 1200px
 
@@ -359,11 +427,28 @@ input[type="submit"]
 
 // max-width 991px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .page_wr
+    padding-top: 78px
+  .page-title
+    margin-bottom: 21px
+    font-size: 26px
+  .page-desc
+    margin-bottom: 34px
+    font-size: 15px
 
 // max-width 767px
 
-// @media screen and (max-width: 575px)
+@media screen and (max-width: 575px)
+  .page-title
+    margin-bottom: 14px
+    font-size: 23px
+    line-height: 1.3
+  .page-desc
+    margin-bottom: 24px
+    font-size: 13px
+    br
+      display: none
 
 // max-width 575px
 

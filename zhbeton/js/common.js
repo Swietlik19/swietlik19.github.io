@@ -24,7 +24,12 @@
   $(function(){
     $('.inner-link[href^="#"]').click(function(){
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+
+      if ( window.matchMedia('(max-width: 1110px)').matches ) {
+        $('html, body').animate({scrollTop: $(_href).offset().top - 60 +'px'});
+      } else {
+        $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      }
       return false;
     });
   });
@@ -104,7 +109,7 @@
 
     $(".header").toggleClass("fixed", (fromTop > 150));
 
-    if ( !(window.matchMedia('(max-width: 1110px)').matches) ) {
+    if ( !(window.matchMedia('(max-width: 1400px)').matches) ) {
       $(".header:not(.opened)").toggleClass("noactive", (fromTop > 100));
       if (fromTop <= 100) {
         $(".header").removeClass('opened');

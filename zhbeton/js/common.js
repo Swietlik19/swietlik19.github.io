@@ -30,6 +30,9 @@
       } else {
         $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
       }
+      $('.header .menu').removeClass('opened');
+      $('body').removeClass('disabled');
+      $('.header .burger').removeClass('active');
       return false;
     });
   });

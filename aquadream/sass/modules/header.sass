@@ -9,7 +9,7 @@
   &__top
     padding-top: 5px
     padding-bottom: 5px
-    background-color: $accent2
+    background-color: $accent
     &-df
       display: flex
       align-items: center
@@ -18,8 +18,7 @@
     display: none
   &__text
     margin-right: 20px
-    font-size: 13px
-    line-height: 1.461538461538462 /* 19 / 13 */
+    font-size: 16px
     color: #ffffff
 
   &__cart
@@ -36,7 +35,7 @@
       width: 29px
       height: 29px
       margin-right: 8px
-      background-color: $accent
+      background-color: $accent2
       border-radius: 50%
       transition: 0.3s
       .icon
@@ -47,7 +46,7 @@
       &:hover
         background-color: #fff
         .icon
-          fill: $accent
+          fill: $accent2
     &-text
       display: block
       margin-right: 13px
@@ -62,6 +61,7 @@
     padding-bottom: 5px
     &-df
       display: flex
+      align-items: center
     .logo
       display: block
       width: 245px
@@ -146,14 +146,32 @@
             opacity: 1
             transform: scale(1)
 
+  .logo2
+    width: 170px
+    height: 30px
+    margin-left: 25px
+
+
+  @media screen and (max-width: 1170px)
+    &__text
+      font-size: 13px
+    &.fixed
+      .header__middle
+        display: none
+
+  // max-width 1170px
 
   @media screen and (max-width: 991px)
     .menu
       & > li
         & > a
           font-size: 12px
+    &__text
+      font-size: 12px
+    .logo2
+      display: none
 
-  // max-width 1070px
+  // max-width 991px
 
   @media screen and (max-width: 900px)
     &__address
@@ -222,6 +240,9 @@
       margin-left: 0
     &__phone
       font-size: 16px
+    &.fixed
+      .header__middle
+        display: block
 
   // max-width 767px
 

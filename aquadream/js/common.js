@@ -96,11 +96,11 @@
   toggleHidden('.faq',true);
 
   // фиксированные шапка
-  // $(window).on("scroll", function() {
-  //   var fromTop = $(document).scrollTop();
-  //   $(".header").toggleClass("fixed", (fromTop > 10));
-  //   $(".to-top").toggleClass("fixed", (fromTop > 600));
-  // });
+  $(window).on("scroll", function() {
+    var fromTop = $(document).scrollTop();
+    $(".header").toggleClass("fixed", (fromTop > 10));
+    $(".to-top").toggleClass("fixed", (fromTop > 600));
+  });
 
   // Табы
   // $('.prod-item__nav a').click(function(event) {
@@ -121,11 +121,6 @@
 
 
   /* СЛАЙДЕРЫ */
-  // function equalHeightSwiper(sliderID) {
-  //   $(sliderID).find('.swiper-slide').height('auto');
-  //   var slickTrackHeight = Math.max($(sliderID).find('.swiper-slide').outerHeight());
-  //   $(sliderID).find('.swiper-slide').css('height', slickTrackHeight + 'px');
-  // }
 
   var prodSlider = new Swiper('#prod__slider', {
     slidesPerView: 1,

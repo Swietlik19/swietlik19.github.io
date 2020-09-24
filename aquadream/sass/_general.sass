@@ -184,6 +184,7 @@ input[type="submit"].btn
     display: flex
     align-items: center
     justify-content: center
+    min-width: 176px
     height: 62px
     padding: 0 17px
     background-color: $accent
@@ -192,6 +193,10 @@ input[type="submit"].btn
     &:hover
       box-shadow: 0 0 30px rgba($accent2, 0.4)
       transform: translateY(-5px)
+  &--dark
+    height: 52px
+    background-color: $accent2
+    border-color: $accent2
   &--transparent
     display: flex
     align-items: center
@@ -296,6 +301,52 @@ input[type="submit"]
     opacity: 1
     height: 37px
 
+.quantity
+  position: relative
+  input
+    border: none
+    outline: none
+    background: none
+
+    display: block
+    width: 85px
+    height: 52px
+    background-color: #ffffff
+    border: 1px solid #cccccc
+    border-radius: 6px
+    padding-left: 17px
+    padding-right: 30px
+
+    font-size: 16px
+    color: #666666
+    transition: 0.3s
+    &:hover
+      border-color: $accent
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    margin: 0
+  &-arrow
+    position: absolute
+    right: 14px
+    background: none
+    outline: none
+    border: none
+
+    width: 9px
+    height: 9px
+    background: transparent url('../img/svg/arrow2.svg') no-repeat center center
+    background-size: 9px 5px
+
+    cursor: pointer
+    &-minus
+      bottom: 10px
+      transform: rotate(180deg)
+    &-plus
+      top: 10px
+
 
 /* Переопределение стилей yandex map */
 [class$='-controls-pane'],
@@ -365,6 +416,9 @@ input[type="submit"]
 @media screen and (max-width: 1070px)
   .page-title
     font-size: 26px
+  .quantity
+    input
+      width: 65px
 
 // max-width 1070px
 
@@ -389,6 +443,8 @@ input[type="submit"]
 @media screen and (max-width: 500px)
   .page-title
     font-size: 19px
+  .page_wr
+    padding-top: 59px
 
 // max-width 500px
 

@@ -374,7 +374,9 @@ input[type="submit"]
 .swiper-pagination-bullet-active
   position: relative
 .swiper-button-prev,
-.swiper-button-next
+.swiper-button-next,
+.page-numbers .prev,
+.page-numbers .next
   position: static
   background: none
   border: none
@@ -390,6 +392,7 @@ input[type="submit"]
     content: none
   &:hover
     box-shadow: 0 0 15px rgba($accent2, 0.2)
+.page-numbers .prev,
 .swiper-button-prev
   margin-right: 14px
   transform: rotate(180deg)
@@ -399,6 +402,27 @@ input[type="submit"]
 
 .swiper-pagination-lock
   display: none
+
+.nice-select
+  border: 1px solid #cccccc
+  height: 44px
+  padding-left: 15px
+  padding-right: 50px
+  &::after
+    right: 16px
+    width: 9px
+    height: 5px
+    border: none
+    background: transparent url('../img/svg/arrow2.svg') no-repeat center center
+    background-size: contain
+    transform: rotate(180deg)
+    transform-origin: center center
+    border-radius: 6px
+  &.open
+    &::after
+      transform: rotate(0)
+  &:hover
+    border-color: $accent
 
 
 /* Переопределение bootstrap */

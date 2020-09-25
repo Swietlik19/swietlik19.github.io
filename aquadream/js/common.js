@@ -7,6 +7,9 @@
   wow = new WOW({mobile: false})
   wow.init();
 
+  /* Инициализация красивых select */
+  $('select').niceSelect();
+
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
 
@@ -158,23 +161,14 @@
     });
   }
 
-  if (window.matchMedia('(max-width: 991px)').matches) {
-    $('.prod-item__menu > li').click(function() {
-      $(this).siblings('li').find('.prod-item__sub-menu').hide();
-      $(this).find('.prod-item__sub-menu').toggle();
-    });
-  } else {
-    $('.prod-item__menu > li').hover(function() {
-      if ( !($(this).hasClass('current')) ) {
-        $(this).find('.prod-item__sub-menu').toggle();
-      }
-    });
-  }
-
 
   if (window.matchMedia('(max-width: 730px)').matches) {
     $('.prod-item__content-df:not(.prod-item__content-df--bottom) .prod-item__pics').append($('.prod-item__gallery-tabs'));
   }
+
+  $('.prod__filter-open').click(function() {
+    $('.prod__filter').slideToggle();
+  });
 
 
   /* СЛАЙДЕРЫ */

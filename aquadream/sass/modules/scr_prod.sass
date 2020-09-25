@@ -92,11 +92,78 @@
   &--prod-item
     padding-bottom: 56px
 
+  &--page
+    padding-bottom: 58px
+
+  &__df
+    display: flex
+
+  &__right
+    flex-grow: 1
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      width: calc((100% - 38px) / 3)
+      margin-right: 19px
+      padding-bottom: 24px
+      &:nth-of-type(3n)
+        margin-right: 0
+    .prod__item
+      border: 1px solid #cccccc
+
+  &__filter
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 12px
+    &-item
+      height: 100%
+      margin-right: 16px
+      margin-bottom: 10px
+      &:last-of-type
+        margin-right: 0
+    &-open
+      background: none
+      border: none
+      outline: none
+      display: none
+
 
   @media screen and (max-width: 991px)
     padding-bottom: 39px
+    &__df
+      flex-direction: column
 
   // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &__list
+      .prod__img
+        height: 180px
+      .prod__title
+        min-height: 54px
+        margin-bottom: 10px
+        font-size: 13px
+      .prod__price
+        margin-bottom: 6px
+        font-size: 20px
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    &__list
+      & > li
+        width: calc((100% - 18px) / 3)
+        margin-right: 9px
+        padding-bottom: 14px
+
+  // max-width 767px
 
   @media screen and (max-width: 650px)
     padding-bottom: 29px
@@ -112,7 +179,54 @@
     &__price
       margin-bottom: 5px
       font-size: 20px
+    &__list
+      & > li
+        width: calc((100% - 9px) / 2)
+        margin-right: 9px
+        &:nth-of-type(3n)
+          margin-right: 9px
+        &:nth-of-type(2n)
+          margin-right: 0
 
   // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__filter
+      display: none
+      &-open
+        display: flex
+        align-items: center
+        width: 100%
+        margin-bottom: 20px
+        padding: 12px 15px
+        border: 1px solid #ccc
+        border-radius: 6px
+        background: transparent url('../img/svg/filter.svg') no-repeat 97% center
+        background-size: 20px 20px
+        color: #666
+        font-size: 14px
+        cursor: pointer
+        transition: 0.3s
+        &:hover
+          border-color: $accent
+      &-item
+        width: 100%
+        height: auto
+        margin-right: 0
+        .nice-select
+          width: 100%
+          float: none
+
+  // max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__list
+      & > li
+        width: 100%
+        margin-right: 0
+        &:nth-of-type(3n)
+          margin-right: 0
+
+  // max-width 450px
 
 /* prod */

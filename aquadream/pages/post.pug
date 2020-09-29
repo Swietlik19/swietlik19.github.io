@@ -23,13 +23,9 @@ html(lang='ru')
     include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
-    include blocks/modal.pug
+    include blocks/breadcrumbs.pug
 
-    include blocks/scr1.pug
-    include blocks/scr_prod.pug
-    include blocks/scr_lead.pug
-    include blocks/scr_feat.pug
-    include blocks/scr_blog.pug
+    include blocks/scr_post.pug
     include blocks/scr_cta.pug
 
     include blocks/footer.pug
@@ -38,23 +34,17 @@ html(lang='ru')
 
   body
 
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr
 
-      +scr1
-      +scr_prod
-      +scr_lead
-      +scr_feat
-      +scr_blog
+      +scr_post
       +scr_cta
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
-    +footer("div")
-
-    +modal__callback
+    +footer("a")
 
     +styles
     +scripts

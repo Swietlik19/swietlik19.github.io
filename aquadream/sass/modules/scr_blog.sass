@@ -76,6 +76,66 @@
     p
       font-size: 14px
 
+  &--page
+    padding-bottom: 44px
+    .blog__list
+      flex-wrap: wrap
+      padding-top: 6px
+      & > li
+        width: calc((100% - 30px) / 2)
+        padding-bottom: 44px
+        &:nth-of-type(3n)
+          margin-right: 30px
+        &:nth-of-type(2n)
+          margin-right: 0
+    .blog__item
+      display: flex
+      height: 100%
+    .blog__img
+      flex-shrink: 0
+      width: 262px
+      height: auto
+      margin-right: 30px
+    .blog__content
+      padding-bottom: 32px
+      a
+        margin-bottom: 36px
+      h2
+        position: relative
+        min-height: 0
+        &::before
+          content: ''
+          position: absolute
+          bottom: -18px
+          left: 0
+          display: block
+          width: 29px
+          height: 3px
+          background-color: #1ab5ef
+      p
+        font-family: $font2
+  .pager
+    margin-top: 10px
+
+
+  @media screen and (max-width: 1070px)
+    &--page
+      .blog__list
+        & > li
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          padding-bottom: 20px
+          &:nth-of-type(3n)
+            margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+      .blog__img
+        width: 200px
+        margin-right: 20px
+      .blog__content
+        padding-bottom: 25px
+
+  // max-width 1070px
 
   @media screen and (max-width: 991px)
     padding-bottom: 49px
@@ -92,6 +152,17 @@
       height: 203px
 
   // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &--page
+      .blog__item
+        display: block
+      .blog__img
+        width: 100%
+        height: 200px
+        margin-right: 0
+
+  // max-width 900px
 
   @media screen and (max-width: 767px)
     &__content
@@ -116,15 +187,22 @@
         width: 100%
         margin-right: 0
         padding-bottom: 20px
+    &--page
+      .blog__list
+        flex-direction: row
 
   // max-width 600px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 450px)
+    &--page
+      .blog__list
+        flex-direction: column
+        & > li
+          width: 100%
+          margin-right: 0
+          &:nth-of-type(3n)
+            margin-right: 0
 
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 450px
 
 /* blog */

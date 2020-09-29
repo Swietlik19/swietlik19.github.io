@@ -87,10 +87,10 @@
   // Секции по типу "Вопрос - ответ"
   function toggleHidden(xParent,hideOther) {
     $(xParent + ' .top').click(function() {
-      $(this).find('.open').toggleClass('active');
+      $(this).parents('.faq__item').toggleClass('active');
       $(this).siblings().slideToggle();
       if (hideOther) {
-        $(this).parent().siblings().find('.open').removeClass('active');
+        $(this).parent().siblings().removeClass('active');
         $(this).parent().siblings().find('.hidden').slideUp();
       }
     });

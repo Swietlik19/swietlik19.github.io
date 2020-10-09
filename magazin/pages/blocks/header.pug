@@ -1,0 +1,65 @@
+mixin header(logotype)
+  header.header(id="header")
+
+    .container
+      .header__top
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo.png" alt="лого")
+
+        .header__payment
+          .payment
+            p.payment__title Принимаем к оплате:
+
+            ul.payment__list
+              li.payment__item
+                img(src="img/pay-icon.jpg", alt="" data-object-fit-contain)
+              li.payment__item
+                img(src="img/svg/icons/mir.svg", alt="" data-object-fit-contain)
+              li.payment__item
+                img(src="img/svg/icons/mastercard.svg", alt="" data-object-fit-contain)
+              li.payment__item
+                img(src="img/svg/icons/visa.svg", alt="" data-object-fit-contain)
+
+        .header__btns
+          .btn__wrap
+            a.btn.btn--red.open-modal(href="#") Хочу бонусную карту
+
+        .header__info
+          p Без выходных: 8:00 - 22:00
+          a.header__phone.desktop(href="tel:+79780833358" rel="nofollow") +7 (978) 083-33-58
+          a.header__phone.btn.btn--circle.mobile(href="tel:+79780833358" rel="nofollow")
+            i.fa.fa-phone
+          p Горячая линия
+
+      // /.header__top
+    // /.container
+
+    .header__menu
+      .container
+        ul.menu
+          li.menu-item
+            a(href="#") Клубная карта
+          li.menu-item
+            a(href="#") Наши магазины
+          li.menu-item
+            a(href="#") Поставщикам
+          li.menu-item
+            a(href="#") Акции
+          li.menu-item
+            a(href="#") Вакансии
+          li.menu-item
+            a(href="#") Бренды
+          li.menu-item
+            a(href="#") Обратная связь
+
+      // /.container
+    // /.header__menu

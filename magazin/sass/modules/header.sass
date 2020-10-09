@@ -1,0 +1,236 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  background: #fff
+  &.fixed
+    box-shadow: 0 3px 10px 0 rgba(#000, 0.2)
+    .header__top
+      align-items: center
+      padding-top: 6px
+      padding-bottom: 6px
+    .header__info
+      p
+        display: none
+      a
+        margin-bottom: 0
+    .logo
+      width: 188px
+      height: 62px
+      &__wrap
+        margin-right: auto
+  &__top
+    display: flex
+    padding-top: 16px
+    padding-bottom: 16px
+  .burger
+    display: none
+
+  .logo
+    display: block
+    width: 278px
+    height: 82px
+    text-decoration: none
+    &__wrap
+      margin-right: 55px
+
+  &__payment
+    margin-right: 30px
+    padding-top: 4px
+
+  &__btns
+    position: relative
+    padding-top: 9px
+    margin-left: auto
+    margin-right: 74px
+    &::before
+      content: ''
+      position: absolute
+      top: 4px
+      left: -45px
+      display: block
+      width: 73px
+      height: 53px
+      background: transparent url('../img/header-img.png') no-repeat center center
+      background-size: contain
+      z-index: 2
+    .btn
+      padding-left: 38px
+      padding-right: 25px
+
+  &__info
+    padding-top: 4px
+    text-align: right
+    font-size: 14px
+    letter-spacing: 0.025em
+    color: #000000
+    p
+      margin-bottom: 2px
+      &:last-of-type
+        margin-bottom: 0
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 20px
+    font-weight: 700
+    letter-spacing: 0.025em
+    color: #000000
+    transition: 0.3s
+    &:hover
+      color: $accent2
+    &.mobile
+      display: none
+
+  &__menu
+    background-color: $accent
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 48px
+    & > li
+      margin-right: 15px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 16px
+        font-weight: 500
+        letter-spacing: 0.025em
+        color: #000000
+        transition: 0.3s
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          bottom: -1px
+          width: 100%
+          height: 3px
+          background: $accent2
+          transform: scale(0)
+          transform-origin: left center
+          transition: 0.3s
+        &:hover
+          color: $accent2
+          &::before
+            transform: scale(1)
+
+
+  @media screen and (max-width: 1170px)
+    &__top
+      align-items: center
+    &__btns
+      margin-right: 30px
+    .logo
+      width: 208px
+      height: 42px
+      &__wrap
+        margin-right: 35px
+    &.fixed
+      .logo
+        width: 208px
+        height: 42px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__payment
+      display: none
+    .menu
+      & > li
+        & > a
+          font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__top
+      padding-top: 6px
+      padding-bottom: 6px
+      border-bottom: 1px solid #f5f5f5
+    .burger
+      display: flex
+      margin-right: 15px
+    &__btns
+      display: none
+    &__info
+      margin-left: auto
+      font-size: 12px
+      p
+        display: none
+    .logo
+      width: 178px
+      height: 52px
+      &__wrap
+        margin-right: 25px
+    &__phone
+      font-size: 16px
+    &__menu
+      position: fixed
+      top: 64px
+      left: 0
+      width: 300px
+      height: calc(100vh - 64px)
+      background: #fff
+      box-shadow: 0 7px 10px rgba(#000, 0.2)
+      transform: translateX(-110%)
+      transition: 0.3s
+      &.active
+        transform: translateX(0)
+        transition: 0.7s
+      .container
+        height: 100%
+      .menu
+        justify-content: flex-start
+        flex-direction: column
+        height: 100%
+        max-height: 100%
+        overflow: auto
+        & > li
+          width: 100%
+          margin-right: 0
+          & > a
+            text-transform: uppercase
+            font-weight: 400
+            text-align: left
+            padding: 7px 0
+            border-bottom: 1px solid #f5f5f5
+            &::before
+              content: none
+    &.fixed
+      .logo
+        width: 178px
+        height: 52px
+
+  // max-width 767px
+
+  @media screen and (max-width: 450px)
+    .logo
+      width: 158px
+      height: 42px
+    &__phone
+      &.desktop
+        display: none
+      &.mobile
+        display: flex
+    &__menu
+      top: 56px
+      height: calc(100vh - 56px)
+    &.fixed
+      .logo
+        width: 158px
+        height: 42px
+
+  // max-width 450px
+
+/* .header */

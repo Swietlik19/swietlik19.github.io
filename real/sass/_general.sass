@@ -1,0 +1,496 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-top]
+  object-fit: cover
+  object-position: top center
+  font-family: 'object-fit: cover; object-position: top center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.grey-bg
+  background-color: #f4f4f4
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 18px
+  font-size: 30px
+  line-height: 1.333333333333333 /* 40 / 30 */
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+
+.page-desc
+  margin-bottom: 30px
+  font-size: 18px
+  line-height: 1.333333333333333 /* 24 / 18 */
+  text-align: center
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  position: relative
+  display: inline-block
+  &--blue
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -7px
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #03768c
+      box-shadow: 0px 20px 51px 0px #025b6d
+      border-radius: 10px
+      transition: 0.3s
+    &:hover
+      &::before
+        background-color: darken($accent2, 15%)
+        box-shadow: 0px 20px 51px 0px darken($accent2, 15%)
+      .btn--blue
+        background-color: $accent2
+  &--general
+    &::before
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: 0
+      display: block
+      width: 70%
+      height: 75%
+      transform: translateX(-50%)
+      box-shadow: 0 5px 25px 0px rgba($accent, 0.6)
+      border-radius: 60px
+    &:hover
+      &::before
+        box-shadow: 0 10px 25px 0px rgba($accent2, 0.6)
+      .btn--general
+        background-color: $accent2
+
+.btn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.btn,
+input[type="submit"].btn
+  &--blue
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 365px
+    height: 78px
+    padding: 10px 27px
+    background-color: $accent
+    border-radius: 10px
+    font-size: 14px
+    font-weight: 700
+    color: #ffffff
+    text-align: center
+  &--green
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 112px
+    height: 44px
+    padding: 10px
+    background-color: $accent2
+    border-radius: 10px
+    font-size: 16px
+    font-weight: 700
+    color: #ffffff
+    text-align: center
+    transition: 0.3s
+    &:hover
+      background-color: $accent
+  &--general
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 309px
+    height: 55px
+    padding: 10px 15px
+    background-color: $accent
+    border-radius: 10px
+    font-size: 14px
+    font-weight: 700
+    color: #ffffff
+    text-align: center
+    transition: 0.3s
+  &--circle
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 35px
+    height: 35px
+    border-radius: 50%
+    background: $accent
+    .fa
+      color: #fff
+    &:hover
+      background-color: #fff
+      .fa
+        color: $accent
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 26px
+  height: 26px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 26px
+      height: 3px
+      background-color: #4ec5dc
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-9px)
+    &::after
+      transform: translateY(9px)
+
+  &:hover
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: $accent2
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .fa
+    color: #fff
+    transition: 0.5s
+    font-size: 18px
+    font-weight: 800
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 0
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent
+  width: 7px
+  height: 7px
+  margin: 0 4px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: $accent2
+.swiper-button-prev,
+.swiper-button-next
+  position: static
+  background: none
+  border: none
+  outline: none
+  width: 21px
+  height: 18px
+  margin: 0
+  transition: 0.3s
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+
+.swiper-button-prev
+  margin-right: 15px
+.swiper-button-next
+  margin-left: 15px
+  &::after
+    transform: rotate(180deg)
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled
+  opacity: 0
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1400px)
+  .page-title
+    margin-bottom: 8px
+    font-size: 22px
+  .page-desc
+    margin-bottom: 25px
+    font-size: 16px
+
+// max-width 1400px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+  .swiper-pagination-bullet
+    margin: 3px 4px
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+@media screen and (max-width: 991px)
+  .page-title
+    br
+      display: none
+  .page-desc
+    br
+      display: none
+
+// max-width 991px
+
+// @media screen and (max-width: 767px)
+
+// max-width 767px
+
+@media screen and (max-width: 650px)
+  .page-title
+    font-size: 19px
+  .page-desc
+    font-size: 14px
+
+// max-width 650px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .btn,
+  input[type="submit"].btn
+    &--blue
+      min-width: 0
+      width: 100%
+      height: 60px
+      padding: 10px 17px
+      font-size: 13px
+    br
+      display: none
+  .page-title
+    font-size: 18px
+  .page-desc
+    font-size: 13px
+
+// max-width 400px

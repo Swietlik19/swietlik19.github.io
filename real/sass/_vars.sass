@@ -1,0 +1,53 @@
+@keyframes moveCloud
+  from
+    transform: translateX(40%)
+  to
+    transform: translateX(-100%)
+
+@keyframes moveCloud2
+  from
+    transform: translateX(100%)
+  to
+    transform: translateX(-100%)
+
+@keyframes moveCloud3
+  from
+    transform: translateX(60%)
+  to
+    transform: translateX(-100%)
+
+$b: #22abc5
+$g: #99ba3e
+
+$accent: $b
+$accent2: $g
+
+$icon: $accent
+$body-color: #000
+
+// $grad: linear-gradient(0.0deg, #ffbd09 0%, #ffe799 100%)
+
+$font: 'ProximaNova', sans-serif
+$font2: 'Roboto', sans-serif
+
+$form-font: $font
+$title-font: $font
+
+// Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px)
+@mixin placeholder($color,$size)
+  &::-webkit-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &::-moz-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &:-ms-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+

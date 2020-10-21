@@ -1,0 +1,79 @@
+mixin header(logotype)
+  header.header.wow.fadeInUp(data-wow-duration="0.7s" id="header" style="visibility: hidden")
+    .container
+      .header__wrap
+        .header__top
+          button.burger
+            span.burger__wrap
+              span.line
+
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/icons/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/icons/logo.svg" alt="лого")
+
+            p.logo__text Единый центр
+              br
+              |  недвижимости
+              br
+              |  и кадастровых услуг
+
+          .header__address
+            p
+              b Севастополь,
+              br
+              |  ул. Адм. Октябрьского, д.9
+              br
+              |  Пн-Пт: 09:00-18:00
+
+          .header__address
+            p
+              b Балаклава,
+              br
+              |  ул. Крестовского, 28-А, оф.27
+              br
+              |  Пн-Пт: 09:00-18:00
+
+          .header__phones.header__phones--tohide
+            a.header__phone(href="tel:+79782077070" rel="nofollow") +7 (978) 207-70-70
+            .header__text
+              a.header__msg(href="viber://chat?number=79782077070" rel="nofollow") Viber
+              a.header__msg(href="https://api.whatsapp.com/send?phone=79782077070" rel="nofollow") WhatsApp
+
+          .header__phones
+            a.header__phone(href="tel:+88007759780" rel="nofollow") 8 (800) 775-97-80
+            .header__text
+              p Бесплатно по России
+
+
+        .header__bottom
+          button.burger
+            span.burger__wrap
+              span.line
+
+          .header__menu
+            ul.menu
+              li
+                a(href="#") Кадастровые услуги
+                  span
+              li
+                a(href="#") Геодезические работы
+                  span
+              li
+                a(href="#") Юридические услуги
+                  span
+              li
+                a(href="#") Подбор участков в Севастополе
+                  span
+              li
+                a(href="#") Строительство домов
+
+          .header__phones
+            a.header__phone.btn.btn--circle(href="tel:+88007759780" rel="nofollow")
+              i.fa.fa-phone
+
+      // /.header__wrap
+    // /.container

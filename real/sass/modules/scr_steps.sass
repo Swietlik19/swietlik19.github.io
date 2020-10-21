@@ -1,0 +1,112 @@
+.steps
+  position: relative
+  background-color: $accent
+  &__content
+    position: relative
+    padding: 40px 30px 34px 0
+    z-index: 1
+  .page-title
+    max-width: 49%
+    margin-bottom: 40px
+  &__img
+    position: absolute
+    top: 0
+    right: 0
+    width: 50%
+    height: 100%
+  .page-title
+    text-align: left
+    color: #ffffff
+
+  &__list
+    counter-reset: myCounter
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    width: 940px
+    max-width: 100%
+    & > li
+      display: flex
+      width: calc((100% - 40px) / 2)
+      margin-right: 20px
+      margin-bottom: 17px
+      padding: 30px 27px 37px 19px
+      background-color: #ffffff
+      box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.37)
+      font-size: 14px
+      font-weight: 600
+      transition: 0.3s
+      &:hover
+        transform: translateY(-5px)
+        box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.7)
+      &:nth-of-type(2n)
+        margin-right: 0
+      &::before
+        counter-increment: myCounter
+        content: '0' counter(myCounter)
+        display: block
+        margin-right: 29px
+        padding-top: 1px
+        font-size: 48px
+        line-height: 1
+        font-weight: 900
+        color: $accent
+
+
+  @media screen and (max-width: 1400px)
+    &__list
+      & > li
+        width: calc((100% - 14px) / 2)
+        margin-right: 14px
+        margin-bottom: 15px
+        padding: 20px 15px 24px
+        &::before
+          margin-right: 19px
+          font-size: 38px
+        p
+          font-size: 13px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__content
+      padding: 30px 0 24px 0
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__img
+      width: 30%
+      opacity: 0.7
+    .page-title
+      max-width: 69%
+    &__list
+      & > li
+        display: block
+        &::before
+          float: left
+          margin-bottom: 10px
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        margin-bottom: 10px
+        padding: 20px 15px 14px
+        &:last-of-type
+          width: 100%
+          margin-right: 0
+        &::before
+          margin-right: 19px
+          font-size: 30px
+        p
+          font-size: 12px
+
+  // max-width 500px
+
+/* steps */

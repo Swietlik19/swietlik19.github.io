@@ -1,0 +1,97 @@
+mixin scr_choose()
+  section.scr_choose.choose.grey-bg(id="scr_choose")
+    .container
+      h2.page-title Как мы подбираем земельные участки под ключ
+      p.page-desc У нас есть собственная база участков для строительства домов и коммерческой недвижимости в Севастополе,
+        br
+        |  также мы можем проверить юридическую чистоту любого найденного Вами участка
+
+      .choose__df
+        ul.choose__steps
+          li
+            .choose__item
+              span.choose__item-num 01
+              h3.choose__item-title Оставьте запрос
+              .choose__item-text
+                p Вас наберет консультант и уточнит все детали по срокам и бюджету. После этого он сформирует для  Вас районную выборку из нашей базы
+
+          li
+            .choose__item
+              span.choose__item-num 02
+              h3.choose__item-title Подпишите договор на&nbsp;подбор участка
+              .choose__item-text
+                p Если Вам нужны будут дополнительные варианты для выбора участка, мы проведем анализ актуальных предложений на рынке и предоставим на выбор дополнительные варианты без юридических и технических рисков
+
+          li
+            .choose__item
+              span.choose__item-num 03
+              h3.choose__item-title Просмотрите варианты из нашей базы - это бесплатно
+              .choose__item-text
+                p Через 20 минут мы отправим все варианты земельных участков, которые уже есть в нашей базе по интересующему Вас району в пределах указанного бюджета
+
+          li
+            .choose__item
+              span.choose__item-num 04
+              h3.choose__item-title Покупка выбранного участка
+              .choose__item-text
+                p Мы будем сопровождать сделку, досконально проверим все документы и историю операций с выбранным участком, поможем в оформлении и регистрации права собственности
+
+        .choose__form
+          .form.wpcf7
+            form.wpcf7-form
+              p.form__title
+                span Запрос на подбор участка
+                  br
+                  |  в Севастополе
+
+              a.open-modal.form__districts(href="modal__districts") Смотреть все районы Севастополя
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-email.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Номер телефона')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-square.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-square(type='number', name='your-square', value='', aria-required='true', aria-invalid='false', placeholder='Площадь участка: от 4 до [  ] соток')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-district.text-input
+                  select
+                    option(value="1" disabled selected) РАЙОН: например, "Балаклавский"
+                    option(value="Балаклавский") Балаклавский
+                    option(value="Второй") Второй
+
+              .form__item.form__item--radio
+                span.wpcf7-form-control-wrap.your-radio
+                  label ИЖС
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-radio(type="radio" name="your-check" value="check1")
+                    span.check-circle
+
+                span.wpcf7-form-control-wrap.your-radio
+                  label СНТ / ДНТ
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-radio(type="radio" name="your-check" value="check2" checked)
+                    span.check-circle
+
+
+              .form__item.form__item--submit
+                .btn__wrap.btn__wrap--general
+                  input.wpcf7-form-control.wpcf7-submit.btn.btn--general(type='submit', value='Отправить')
+
+              .form__item
+                span.wpcf7-form-control-wrap.accept
+                  span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                        span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
+                          i.accept__icon
+
+  // /.scr_choose

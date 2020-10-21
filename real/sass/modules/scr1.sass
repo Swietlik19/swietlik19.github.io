@@ -1,0 +1,207 @@
+.scr1
+  position: relative
+  padding-bottom: 50px
+  z-index: 1
+  overflow: hidden
+  &__cloud
+    position: absolute
+    z-index: -1
+    &--top
+      top: -250px
+      left: 0
+      // transform: translateX(110%)
+      width: 3364px
+      height: 760px
+      background: transparent url('../img/cloud-top.png') no-repeat center center
+      background-size: contain
+      animation: moveCloud 120s forwards
+    &--middle
+      bottom: 20px
+      left: 0
+      transform: translateX(110%)
+      width: 1876px
+      height: 608px
+      background: transparent url('../img/cloud-middle.png') no-repeat center center
+      background-size: contain
+      animation: moveCloud2 140s forwards
+    &--bottom
+      bottom: -260px
+      left: 0
+      transform: translateX(110%)
+      width: 2544px
+      height: 633px
+      background: transparent url('../img/cloud-bottom.png') no-repeat center center
+      background-size: contain
+      animation: moveCloud3 100s forwards
+    &--lead
+      top: 28px
+      left: 0
+      transform: translateX(110%)
+      width: 1991px
+      height: 936px
+      background: transparent url('../img/cloud-lead.png') no-repeat center center
+      background-size: contain
+      animation: moveCloud3 100s 5s forwards
+
+  &__cont
+    position: relative
+    padding-top: 232px
+    background: transparent url('../img/scr1-bg.jpg') no-repeat bottom center
+    background-size: cover
+    z-index: 1
+  &__title
+    margin-top: 0
+    margin-bottom: 42px
+    padding-left: 68px
+    text-transform: uppercase
+    color: #ffffff
+    font-size: 36px
+    font-weight: 400
+    line-height: 1.25 /* 45 / 36 */
+    strong
+      font-size: 45px
+      line-height: 1.222222222222222 /* 55 / 45 */
+      font-weight: 900
+    span
+      position: relative
+      display: inline-block
+      margin-bottom: 8px
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 2px
+        left: -7px
+        display: block
+        width: calc(100% + 14px)
+        height: 100%
+        background-color: rgba(153,186,63,0.9)
+        z-index: -1
+  &__btns
+    margin-bottom: 82px
+    padding-left: 68px
+  &__feat
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    & > li
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      &:nth-of-type(3n)
+        margin-right: 0
+    &-item
+      padding: 15px 15px 28px 46px
+      height: 100%
+      background-color: #ffffff
+      box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.37)
+      transition: 0.3s
+      &:hover
+        transform: translateY(-4px)
+    &-icon
+      display: block
+      width: 45px
+      height: 48px
+      margin-bottom: 17px
+    &-title
+      margin-top: 0
+      margin-bottom: 20px
+      font-size: 24px
+      font-weight: 900
+    &-text
+      font-size: 14px
+      font-weight: 600
+
+
+  @media screen and (max-width: 1400px)
+    &__title
+      margin-bottom: 32px
+      padding-left: 38px
+      font-size: 28px
+      strong
+        font-size: 35px
+    &__btns
+      margin-bottom: 42px
+      padding-left: 38px
+    &__feat
+      &-item
+        padding: 15px 15px 18px 26px
+      &-title
+        margin-bottom: 5px
+        font-size: 21px
+      &-text
+        font-size: 13px
+      &-icon
+        width: 39px
+        height: 40px
+        margin-bottom: 11px
+    &__cont
+      padding-top: 115px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    padding-bottom: 40px
+    &__title
+      font-size: 22px
+      strong
+        font-size: 31px
+    &__feat
+      &-text
+        br
+          display: none
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__feat
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+      &-item
+        padding: 15px 15px 18px
+      &-icon
+        margin-bottom: 7px
+    &__cont
+      padding-top: 105px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__title
+      margin-bottom: 20px
+      padding-left: 0px
+    &__btns
+      padding-left: 0px
+    &__feat
+      &-title
+        font-size: 19px
+        line-height: 1.2
+    &__cloud
+      display: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__feat
+      flex-direction: column
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+    &__title
+      font-size: 18px
+      strong
+        font-size: 25px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__title
+      font-size: 16px
+      strong
+        font-size: 23px
+
+  // max-width 400px
+
+/* scr1 */

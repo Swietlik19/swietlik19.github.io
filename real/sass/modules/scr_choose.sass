@@ -1,0 +1,140 @@
+.choose
+  position: relative
+  padding-top: 40px
+  padding-bottom: 20px
+  &__df
+    display: flex
+  &__steps
+    position: relative
+    flex-grow: 1
+    display: flex
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    list-style: none
+    z-index: 2
+    & > li
+      width: calc((100% - 30px) / 2)
+      margin-right: 30px
+      padding-bottom: 30px
+      &:nth-of-type(2n)
+        margin-right: 0
+      &:nth-of-type(2)
+        min-height: 330px
+      &:nth-of-type(3)
+        margin-top: -70px
+  &__item
+    padding: 22px 18px 48px 40px
+    background-color: #ffffff
+    box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.37)
+    transition: 0.3s
+    &:hover
+      box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.7)
+    &-num
+      display: block
+      margin-bottom: 19px
+      font-size: 48px
+      line-height: 1
+      font-weight: 900
+      color: $accent
+    &-title
+      margin-top: 0
+      margin-bottom: 28px
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 900
+    &-text
+      font-size: 14px
+      font-weight: 600
+  &__form
+    flex-shrink: 0
+    width: 440px
+    max-width: 100%
+    padding-top: 29px
+    padding-bottom: 23px
+    .form
+      position: relative
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        display: block
+        width: 862px
+        height: 100%
+        background: #87aa3c
+        z-index: -1
+
+
+  @media screen and (max-width: 1400px)
+    &__item
+      padding: 22px 18px 28px 20px
+      &-num
+        margin-bottom: 12px
+        font-size: 38px
+      &-title
+        margin-bottom: 8px
+        font-size: 19px
+    &__steps
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        padding-bottom: 10px
+        &:nth-of-type(2)
+          min-height: 0
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    &__form
+      width: 370px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &__df
+      flex-direction: column
+    &__item
+      height: 100%
+    &__steps
+      & > li
+        &:nth-of-type(3)
+          margin-top: 0
+    &__form
+      margin-left: auto
+      margin-right: auto
+      .form
+        &::before
+          content: none
+
+  // max-width 900px
+
+  @media screen and (max-width: 500px)
+    &__item
+      padding: 14px
+      &-num
+        margin-bottom: 10px
+        font-size: 29px
+      &-title
+        font-size: 16px
+      &-text
+        font-size: 12px
+    &__steps
+      & > li
+        width: calc((100% - 5px) / 2)
+        margin-right: 5px
+        padding-bottom: 5px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__steps
+      & > li
+        width: 100%
+        margin-right: 0
+        padding-bottom: 5px
+
+  // max-width 400px
+
+/* choose */

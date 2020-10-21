@@ -1,0 +1,150 @@
+.faq
+  position: relative
+  overflow: hidden
+  .page-title
+    margin-bottom: 35px
+    text-align: left
+  &__img
+    position: absolute
+    top: -20%
+    left: 54%
+    width: 1324px
+    height: 1324px
+    border-radius: 50%
+    overflow: hidden
+    background-color: $accent2
+    img
+      display: block
+      height: 100%
+      opacity: 0.8
+
+  &__df
+    display: flex
+    justify-content: space-between
+  &__content
+    flex-grow: 1
+    max-width: 620px
+    margin-right: 20px
+    padding-top: 55px
+    padding-bottom: 64px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    border-top: 1px solid #cccccc
+  &__item
+    position: relative
+    border-bottom: 1px solid #cccccc
+    .top
+      display: flex
+      align-items: center
+      padding: 25px 15px
+      cursor: pointer
+      h2,
+      h3
+        margin-top: 0
+        margin-bottom: 0
+        font-size: 24px
+        font-weight: 400
+        transition: 0.3s
+      &:hover
+        h2,
+        h3
+          color: $accent
+    .hidden
+      display: none
+      padding: 0 70px 25px 57px
+      margin-top: -10px
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 22px
+      height: 22px
+      margin-right: 22px
+      background: transparent url('../img/svg/circle.svg') no-repeat center center
+      background-size: contain
+      transition: 0.5s
+      transform: rotate(135deg)
+      &.active
+        transform: rotate(0)
+  &__form
+    flex-shrink: 0
+    width: 418px
+    max-width: 100%
+    padding-top: 172px
+
+
+  @media screen and (max-width: 1400px)
+    &__item
+      .top
+        padding: 15px
+        h3
+          font-size: 18px
+      .hidden
+        padding: 0 40px 25px 57px
+        font-size: 14px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__form
+      width: 348px
+    &__item
+      .top
+        h3
+          font-size: 16px
+      .hidden
+        font-size: 13px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 20px
+    &__df
+      flex-direction: column
+    &__content
+      max-width: 100%
+      padding-bottom: 44px
+      margin-right: 0
+    &__form
+      margin-left: auto
+      margin-right: auto
+      padding-top: 0
+    &__img
+      opacity: 0.3
+      z-index: -1
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__item
+      .top
+        padding: 12px 0
+      .hidden
+        padding: 0 30px 25px 35px
+        margin-top: 0
+      .open
+        width: 17px
+        height: 17px
+        margin-right: 12px
+
+  // max-width 500px
+
+/* faq */

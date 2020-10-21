@@ -1,0 +1,242 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  padding-top: 20px
+  z-index: 300
+  transition: 0.3s
+  &.fixed
+    padding-top: 10px
+    .header__top
+      display: none
+    .header__bottom
+      padding: 11px 0 14px 18px
+    .header__phones
+      display: block
+    .burger
+      margin-right: 30px
+
+  &__wrap
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      display: block
+      width: calc(100% + 114px)
+      height: 100%
+      background-color: #ffffff
+      box-shadow: 0px 0px 15px 0px rgba(117,117,117,0.37)
+      z-index: -1
+
+  &__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 15px
+    padding-bottom: 14px
+    border-bottom: 1px solid #999
+    .burger
+      display: none
+
+  &__bottom
+    display: flex
+    align-items: center
+    padding: 16px 0 19px 18px
+    .header__phone
+      display: flex
+    .header__phones
+      flex-shrink: 0
+      display: none
+      padding-left: 15px
+
+  .burger
+    margin-right: 40px
+    transition: 0.3s
+
+  .logo
+    display: block
+    width: 61px
+    height: 66px
+    margin-right: 23px
+    text-decoration: none
+    svg
+      display: block
+      height: 100%
+    &__wrap
+      display: flex
+      align-items: center
+      margin-right: 30px
+    &__text
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 600
+
+  &__address
+    margin-right: 30px
+    font-size: 14px
+    b
+      font-weight: 600
+  &__phones
+    text-align: right
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 18px
+    font-weight: 700
+    transition: 0.3s
+    &:hover
+      color: $accent
+  &__text
+    font-size: 14px
+  &__msg
+    position: relative
+    display: inline-block
+    text-decoration: none
+    outline: none
+    margin-right: 26px
+    transition: 0.3s
+    &::before
+      content: '|'
+      position: absolute
+      top: 0
+      right: -13px
+    &:last-of-type
+      margin-right: 0
+      &::before
+        content: none
+    &:hover
+      color: $accent
+
+
+  &__menu
+    flex-grow: 1
+    height: 100%
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      flex-grow: 1
+      &:last-of-type
+        flex-grow: 0
+      & > a
+        display: flex
+        align-items: center
+        text-decoration: none
+        outline: none
+        font-size: 15px
+        line-height: 1.333333333333333 /* 20 / 15 */
+        font-weight: 700
+        transition: 0.3s
+        span
+          flex-grow: 1
+          position: relative
+          display: flex
+          align-items: center
+          justify-content: center
+          min-width: 20px
+          &::after
+            content: ''
+            display: block
+            width: 4px
+            height: 4px
+            background-color: $accent2
+            border-radius: 50%
+        &:hover
+          color: $accent
+
+
+  @media screen and (max-width: 1400px)
+    padding-top: 0
+    &__bottom
+      padding: 16px 0 19px
+    &__address
+      display: none
+    .logo
+      &__wrap
+        margin-right: auto
+    .menu
+      & > li
+        & > a
+          font-size: 14px
+    &__top
+      border-bottom: none
+      padding-top: 9px
+      padding-bottom: 10px
+      .burger
+        display: flex
+        margin-right: 20px
+    &__bottom
+      position: fixed
+      top: 0
+      left: 0
+      display: block
+      width: 400px
+      max-width: 95%
+      height: 100vh
+      padding: 20px 15px 0
+      background-color: #fff
+      box-shadow: 0 5px 10px rgba(#000, 0.2)
+      z-index: 150
+      transform: translateX(-110%)
+      transition: 0.5s
+      .burger
+        margin-bottom: 20px
+        margin-left: auto
+        margin-right: 0
+      &.active
+        transform: translateX(0)
+        transition: 1s
+    .logo
+      width: 51px
+      height: 56px
+      &__text
+        display: none
+    .menu
+      display: block
+      border-top: 1px solid rgba(0,0,0,0.2)
+      & > li
+        & > a
+          padding: 13px 0
+          border-bottom: 1px solid rgba(0,0,0,0.2)
+          text-transform: uppercase
+          span
+            display: none
+    &.fixed
+      padding-top: 0
+      .header__top
+        display: flex
+        .burger
+          margin-right: 20px
+
+
+  // max-width 1400px
+
+  @media screen and (max-width: 767px)
+    &__phone
+      font-size: 16px
+    &__phones
+      &--tohide
+        display: none
+    &.fixed
+      .header__phones
+        &--tohide
+          display: none
+
+  // max-width 767px
+
+/* .header */

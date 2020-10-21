@@ -1,0 +1,225 @@
+.serv
+  position: relative
+  padding-top: 40px
+  padding-bottom: 49px
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 2px
+    & > li
+      width: calc((100% - 34px * 3) / 4)
+      max-width: 308px
+      margin-right: 34px
+      padding-bottom: 21px
+      &:nth-of-type(n + 5)
+        width: calc((100% - 34px * 2) / 3)
+      &:nth-of-type(7n + 4),
+      &:nth-of-type(7n)
+        margin-right: 0
+      & > a
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        min-height: 88px
+        padding: 10px 15px 10px 28px
+        background-color: #ffffff
+        transition: 0.3s
+        &:hover
+          background-color: $accent
+          color: #ffffff
+          .icon
+            fill: #ffffff
+      &.current
+        & > a
+          background-color: $accent
+          color: #ffffff
+          .icon
+            fill: #ffffff
+
+    &-icon
+      flex-shrink: 0
+      width: 38px
+      height: 38px
+      margin-right: 20px
+      .icon
+        display: block
+        height: 100%
+        transition: 0.3s
+    &-text
+      display: block
+      font-size: 15px
+      line-height: 1.33333333 /* 20 / 15 */
+      font-weight: 700
+      text-transform: uppercase
+
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    &:not(#serv__tab-0)
+      display: none
+  &__wrap
+    background-color: #ffffff
+    margin-bottom: 29px
+    padding: 22px 20px 28px
+  &__table
+    table
+      width: 100%
+      border-collapse: collapse
+      td
+        max-width: 440px
+        font-size: 14px
+        font-weight: 600
+        padding: 22px 15px 13px 24px
+        &:nth-of-type(2),
+        &:nth-of-type(3)
+          text-align: center
+        span
+          font-size: 18px
+          font-weight: 700
+      thead
+        border-bottom: 1px solid $accent
+        td
+          padding: 0 10px 17px
+          font-weight: 700
+          text-transform: uppercase
+          &:first-of-type
+            padding-left: 26px
+      tbody
+        tr
+          &:nth-of-type(2n)
+            background-color: rgba(244,244,244,0.5)
+        td
+          vertical-align: middle
+  &__btns
+    text-align: center
+
+
+  @media screen and (max-width: 1400px)
+    padding-top: 35px
+    padding-bottom: 39px
+    &__nav
+      & > li
+        width: calc((100% - 14px * 3) / 4)
+        max-width: 268px
+        margin-right: 14px
+        padding-bottom: 14px
+        &:nth-of-type(n + 5)
+          width: calc((100% - 14px * 2) / 3)
+        & > a
+          min-height: 78px
+          padding: 10px 15px 10px 17px
+      &-text
+        font-size: 14px
+    &__table
+      table
+        td
+          padding: 15px 10px 13px
+          font-size: 13px
+          span
+            font-size: 15px
+          .btn
+            min-width: 96px
+            height: 40px
+            font-size: 14px
+        thead
+          td
+            padding: 0 10px 10px
+            &:first-of-type
+              padding-left: 10px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__nav
+      &-icon
+        width: 32px
+        height: 32px
+        margin-right: 12px
+      &-text
+        font-size: 13px
+      & > li
+        & > a
+          padding: 10px 10px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__table
+      table
+        td
+          span
+            font-size: 13px
+        thead
+          td
+            font-size: 12px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__table
+      overflow: auto
+      table
+        width: 700px
+    &__nav
+      &-text
+        font-size: 11px
+      &-icon
+        width: 29px
+        height: 29px
+      & > li
+        width: calc((100% - 10px) / 2)
+        max-width: 100%
+        margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+        &:nth-of-type(7n + 4)
+          margin-right: 14px
+        &:nth-of-type(2n)
+          margin-right: 0
+        &:nth-of-type(n + 5)
+          width: calc((100% - 14px * 2) / 3)
+          margin-right: 14px
+        &:last-of-type
+          margin-right: 0
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    &__nav
+      &-text
+        word-break: break-all
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__nav
+      &-icon
+        width: 25px
+        height: 25px
+      & > li
+        &:nth-of-type(n + 5)
+          width: calc((100% - 14px) / 2)
+          margin-right: 14px
+        &:nth-of-type(2n)
+          margin-right: 0
+      &-text
+        word-break: normal
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__nav
+      &-text
+        word-break: break-all
+        font-size: 10px
+
+  // max-width 400px
+
+/* serv */

@@ -1,0 +1,183 @@
+@keyframes animateBubbleFeat
+  0%
+    margin-top: 0
+  100%
+    margin-top: -110%
+
+@keyframes sideWaysFeat
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(15px)
+
+.scr1
+  position: relative
+  padding-top: 29px
+  padding-bottom: 34px
+  &__df
+    display: flex
+  &__left
+    width: 61.2727%
+    margin-right: 31px
+  &__slider
+    overflow: hidden
+    padding: 15px
+    width: calc(100% + 30px)
+    margin: -15px
+    &-item
+      display: block
+      text-decoration: none
+      outline: none
+      height: 529px
+      transition: 0.7s
+      &:hover
+        box-shadow: 0 5px 20px rgba($accent, 0.7)
+  &__feat
+    flex-grow: 1
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      padding-bottom: 40px
+      &:nth-of-type(3n + 1)
+        .scr1__feat-item
+          background-color: #ffecc1
+        .scr1__feat-bubbles
+          span
+            background-color: #ffecc1
+      &:nth-of-type(3n + 2)
+        .scr1__feat-item
+          background-color: #fedbd7
+        .scr1__feat-bubbles
+          span
+            background-color: #fedbd7
+      &:nth-of-type(3n)
+        .scr1__feat-item
+          background-color: #b3deff
+        .scr1__feat-bubbles
+          span
+            background-color: #b3deff
+      &:last-of-type
+        padding-bottom: 0
+
+    &-item
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: center
+      min-height: 150px
+      padding: 10px 238px 10px 43px
+      background-color: #ffecc1
+      transition: 0.7s
+      overflow: hidden
+      &:hover
+        transform: translateY(-7px)
+        box-shadow: 0 5px 15px rgba($accent, 0.7)
+        .scr1__feat-bubbles
+          span
+            &:nth-of-type(1)
+              animation: animateBubbleFeat 35s linear forwards, sideWaysFeat 2s ease-in-out infinite alternate
+            &:nth-of-type(2)
+              animation: animateBubbleFeat 15s linear forwards, sideWaysFeat 4s ease-in-out infinite alternate
+            &:nth-of-type(6)
+              animation: animateBubbleFeat 25s linear forwards, sideWaysFeat 4s ease-in-out infinite alternate
+    &-img
+      position: absolute
+      top: 0
+      right: 0
+      width: 100%
+      max-width: 231px
+      height: 100%
+      margin-left: auto
+    &-text
+      position: relative
+      font-size: 20px
+      line-height: 1.2 /* 24 / 20 */
+      color: $accent2
+      font-family: $font3
+      font-size: 18px
+      z-index: 2
+      strong
+        font-family: $font2
+        text-transform: uppercase
+      b
+        font-weight: 800
+        text-transform: uppercase
+      a
+        display: inline-block
+        outline: none
+        margin-top: 14px
+        margin-left: 4px
+        font-family: $font
+        font-size: 14px
+        color: $accent2
+        &:hover
+          text-decoration: none
+    &-bubbles
+      span
+        position: absolute
+        top: 116px
+        right: 177px
+        display: block
+        width: 25px
+        height: 25px
+        border-radius: 50%
+        z-index: 1
+        transition: 0.5s
+        &:nth-of-type(2)
+          top: 11px
+          right: 191px
+          width: 17px
+          height: 17px
+        &:nth-of-type(3)
+          top: -8px
+          right: 216px
+          width: 68px
+          height: 68px
+        &:nth-of-type(4)
+          top: auto
+          bottom: -21px
+          right: 209px
+          width: 85px
+          height: 85px
+        &:nth-of-type(5)
+          top: 27px
+          right: 188px
+          width: 92px
+          height: 92px
+        &:nth-of-type(6)
+          top: 110%
+          right: 70px
+          width: 50px
+          height: 50px
+
+
+  // @media screen and (max-width: 1170px)
+
+  // max-width 1170px
+
+  // @media screen and (max-width: 1070px)
+
+  // max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  // max-width 991px
+
+  // @media screen and (max-width: 767px)
+
+  // max-width 767px
+
+  // @media screen and (max-width: 575px)
+
+  // max-width 575px
+
+  // @media screen and (max-width: 500px)
+
+  // max-width 500px
+
+  // @media screen and (max-width: 400px)
+
+  // max-width 400px
+
+/* scr1 */

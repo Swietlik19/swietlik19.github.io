@@ -1,0 +1,124 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__df
+          .header__deliver
+            .header__deliver-icon
+              img(src="img/svg/truck.svg" alt="")
+
+            p
+              strong Бесплатная доставка
+              |  при заказе от 3500 Р
+
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Оплата и доставка
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+          a.header__login(href="#")
+            .header__login-icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#password")
+
+            span Войти
+
+      // /.container
+    // /.header__top
+
+    .header__middle
+      .container
+        .header__df
+          button.burger#header__burger
+            span.burger__wrap
+              span.line
+
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="лого")
+
+            .logo__text
+              p Интернет-магазин
+                br
+                |  корейской косметики
+
+          .header__search
+            .form
+              form
+                .header__search-wrap
+                  .text-input
+                    input(type='search', placeholder='Поиск')
+                  button(type='submit')
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#icon-search')
+
+          .header__df.header__df--contacts
+            a.header__phone(href="tel:+79850116908" rel="nofollow") +7 (985) 011-69-08
+            a.header__msg.header__msg--tg(href="tel:+79850116908" rel="nofollow")
+            a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79850116908" rel="nofollow")
+
+          .header__df.header__df--btns
+            button.header__btn(type="button")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#heart")
+              span.header__btn-count 0
+
+            .header__btn-wrap
+              button.header__btn(type="button")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#cart")
+                span.header__btn-count 12
+              span.header__btn-text 2 500 Р
+
+      // /.container
+    // /.header__middle
+
+    .header__menu
+      .container
+        ul.menu
+          li.menu-item.menu-item-has-children
+            a(href="#") Лицо
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item.menu-item-has-children
+            a(href="#") Тело
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item.menu-item-has-children
+            a(href="#") Волосы
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item.menu-item-has-children
+            a(href="#") Мини формат
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item.menu-item-has-children
+            a(href="#") Макияж
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item.menu-item-has-children
+            a(href="#") Наборы
+              span.arrow
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+          li.menu-item
+            a(href="#") Бренды
+          li.menu-item
+            a(href="#") Акции
+
+      // /.container
+    // /.header__menu

@@ -1,0 +1,82 @@
+mixin footer(logotype)
+  footer.footer.grey-bg(id="footer")
+    .container
+      .footer__top
+        .footer__col
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo.svg" alt="")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo.svg" alt="")
+
+          .footer__info
+            .logo__text
+              p Интернет-магазин
+                br
+                |  корейской косметики
+
+            a.footer__phone(href="tel:+79850116908" rel="nofollow") +7 (985) 011-69-08
+
+        .footer__col
+          h3.footer__title категории
+
+          .footer__df
+            ul.menu
+              li.menu-item
+                a(href="#") Лицо
+              li.menu-item
+                a(href="#") Тело
+              li.menu-item
+                a(href="#") Волосы
+              li.menu-item
+                a(href="#") Мини форма
+
+            ul.menu
+              li.menu-item
+                a(href="#") Макияж
+              li.menu-item
+                a(href="#") Наборы
+              li.menu-item
+                a(href="#") Бренды
+              li.menu-item
+                a(href="#") Акции
+
+        .footer__col
+          h3.footer__title информация
+
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#") Оплата и доставка
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+        .footer__col
+          +socials
+
+      // /.footer__top
+    // /.container
+
+    .footer__bottom
+      .container
+        .footer__bottom-df
+          .footer__politics
+            a.text(href="#") Политика конфиденциальности
+
+          .footer__copyright
+            p.text г. Симферополь © Copyright  2020&nbsp;г.
+
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer

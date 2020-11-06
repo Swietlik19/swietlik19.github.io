@@ -1,27 +1,49 @@
 mixin header(logotype)
   header.header(id="header")
+    .header__bottom
+      a.header__bottom-btn(href="/")
+        span.header__bottom-icon
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#house")
+      a.header__bottom-btn.header__bottom-btn--search(href="#")
+        span.header__bottom-icon
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#icon-search")
+      a.header__bottom-btn.open-modal(href="#")
+        span.header__bottom-icon
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#heart-filled")
+      a.header__bottom-btn.open-modal(href="#")
+        span.header__bottom-icon
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#packet")
+      a.header__bottom-btn.open-modal(href="#")
+        span.header__bottom-icon
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#login")
+
     .header__top
       .container
         .header__df
           .header__deliver
             .header__deliver-icon
               img(src="img/svg/truck.svg" alt="")
-
             p
               strong Бесплатная доставка
               |  при заказе от 3500 Р
 
-          ul.menu
-            li.menu-item
-              a(href="#") О нас
-            li.menu-item
-              a(href="#") Оплата и доставка
-            li.menu-item
-              a(href="#") Блог
-            li.menu-item
-              a(href="#") Контакты
+          .header__top-menu
+            ul.menu
+              li.menu-item
+                a(href="#") О нас
+              li.menu-item
+                a(href="#") Оплата и доставка
+              li.menu-item
+                a(href="#") Блог
+              li.menu-item
+                a(href="#") Контакты
 
-          a.header__login(href="#")
+          a.header__login.open-modal(href="#")
             .header__login-icon
               svg.icon
                 use(xlink:href="img/svg/sprite.svg#password")
@@ -34,9 +56,12 @@ mixin header(logotype)
     .header__middle
       .container
         .header__df
-          button.burger#header__burger
-            span.burger__wrap
-              span.line
+          .header__burger
+            button.burger
+              span.burger__wrap
+                span.line
+                span.line
+                span.line
 
           .logo__wrap
             if logotype == "a"
@@ -62,9 +87,14 @@ mixin header(logotype)
                       use(xlink:href='img/svg/sprite.svg#icon-search')
 
           .header__df.header__df--contacts
-            a.header__phone(href="tel:+79850116908" rel="nofollow") +7 (985) 011-69-08
+            a.header__phone.desktop(href="tel:+79850116908" rel="nofollow") +7 (985) 011-69-08
+            a.btn.btn--circle.header__phone.mobile(href="tel:+79850116908" rel="nofollow")
+              i.fa.fa-phone
+
             a.header__msg.header__msg--tg(href="tel:+79850116908" rel="nofollow")
             a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79850116908" rel="nofollow")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#wa")
 
           .header__df.header__df--btns
             button.header__btn(type="button")
@@ -84,41 +114,114 @@ mixin header(logotype)
 
     .header__menu
       .container
-        ul.menu
-          li.menu-item.menu-item-has-children
-            a(href="#") Лицо
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item.menu-item-has-children
-            a(href="#") Тело
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item.menu-item-has-children
-            a(href="#") Волосы
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item.menu-item-has-children
-            a(href="#") Мини формат
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item.menu-item-has-children
-            a(href="#") Макияж
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item.menu-item-has-children
-            a(href="#") Наборы
-              span.arrow
-                svg.icon
-                  use(xlink:href="img/svg/sprite.svg#arrow")
-          li.menu-item
-            a(href="#") Бренды
-          li.menu-item
-            a(href="#") Акции
+        .header__menu-wrap
+          ul.menu
+            li.menu-item.menu-item-has-children
+              a(href="#") Лицо
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+              .sub-menu__wrap
+                .container
+                  .sub-menu__cont
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Демакияж
+                      li.menu-item
+                        a(href="#") Очищение
+                      li.menu-item
+                        a(href="#") Тонеры и мисты
+                      li.menu-item
+                        a(href="#") Сыворотки
+                      li.menu-item
+                        a(href="#") Кремы
+                      li.menu-item
+                        a(href="#") Маски
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Пилинги / Скрабы
+                      li.menu-item
+                        a(href="#") Патчи
+                      li.menu-item
+                        a(href="#") Тканевые маски
+                      li.menu-item
+                        a(href="#") Крем для век
+                      li.menu-item
+                        a(href="#") Солнцезащитные средства
+                    .sub-menu__img
+                      noscript
+                        img.lazy(src="img/menu-img.jpg" alt="" width="125" height="90" )
+                      img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/menu-img.jpg" alt="" width="125" height="90" )
+
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Тело
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+              .sub-menu__wrap
+                .container
+                  .sub-menu__cont
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Демакияж
+                      li.menu-item
+                        a(href="#") Очищение
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Пилинги / Скрабы
+                      li.menu-item
+                        a(href="#") Патчи
+                    .sub-menu__img
+                      noscript
+                        img.lazy(src="img/menu-img.jpg" alt="" width="125" height="90" )
+                      img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/menu-img.jpg" alt="" width="125" height="90" )
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Волосы
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+              .sub-menu__wrap
+                .container
+                  .sub-menu__cont
+                    ul.sub-menu
+                      li.menu-item
+                        a(href="#") Демакияж
+                      li.menu-item
+                        a(href="#") Очищение
+                      li.menu-item
+                        a(href="#") Тонеры и мисты
+                      li.menu-item
+                        a(href="#") Сыворотки
+                      li.menu-item
+                        a(href="#") Кремы
+                      li.menu-item
+                        a(href="#") Маски
+                    .sub-menu__img
+                      noscript
+                        img.lazy(src="img/menu-img.jpg" alt="" width="125" height="90" )
+                      img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img/menu-img.jpg" alt="" width="125" height="90" )
+
+            li.menu-item.menu-item-has-children
+              a(href="#") Мини формат
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+            li.menu-item.menu-item-has-children
+              a(href="#") Макияж
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+            li.menu-item.menu-item-has-children
+              a(href="#") Наборы
+                span.arrow
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+            li.menu-item
+              a(href="#") Бренды
+            li.menu-item
+              a(href="#") Акции
 
       // /.container
     // /.header__menu

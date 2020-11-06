@@ -9,12 +9,14 @@
     .swiper-slide
       height: auto
     &-btns
-      position: relative
       .swiper-dots
         position: absolute
         width: 100%
-        bottom: -40px
+        bottom: -25px
         margin-top: 0
+        display: none
+    &-wrap
+      position: relative
   &__item
     position: relative
     display: flex
@@ -24,25 +26,24 @@
     background-color: #ffffff
     transition: 0.6s
     &:hover
-      transform: translateY(-12px)
-      box-shadow: 0 5px 25px rgba($accent, 0.5)
+      box-shadow: 0 5px 25px rgba($accent, 0.3)
 
   &__top
     position: absolute
     top: 0
     left: 0
-    display: flex
-    justify-content: space-between
     width: 100%
-    padding: 10px 17px 0 8px
   &__label
+    position: absolute
+    top: 10px
+    left: 8px
     display: flex
     align-items: center
     justify-content: center
     width: 60px
     height: 60px
     margin-right: 10px
-    background-color: $accent
+    background-color: #fe99b3
     border-radius: 50%
     font-family: $font2
     font-size: 14px
@@ -53,6 +54,9 @@
       background: #8eccfd
       font-size: 23.8px
   &__like
+    position: absolute
+    top: 10px
+    right: 17px
     background: none
     border: none
     outline: none
@@ -60,6 +64,7 @@
     align-items: center
     justify-content: center
     border-radius: 6px
+    padding: 6px
     background-color: #fff
     cursor: pointer
     .icon
@@ -88,17 +93,18 @@
     font-family: $font
     font-size: 14px
     line-height: 1.2
-    font-weight: 600
+    font-weight: 500
     color: $accent2
-    text-transform: uppercase
-  &__desc
-    margin-bottom: 20px
-    font-size: 14px
-    color: #999999
   &__more
-    font-weight: 600
+    font-weight: 500
     text-transform: uppercase
     color: #666666
+    display: block
+    text-decoration: none
+    outline: none
+    transition: 0.3s
+    &:hover
+      color: $accent
   &__prices
     display: flex
     align-items: center
@@ -108,44 +114,95 @@
       display: block
       margin-right: 40px
       font-size: 24px
-      font-weight: 600
+      font-weight: 500
       color: $accent2
     &--old
       display: block
       text-decoration: line-through
       font-size: 14px
-      font-weight: 600
+      font-weight: 400
       color: #666666
   &__btns
     text-align: center
+    .btn
+      .icon
+        display: none
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1800px)
+    &__slider
+      &-btns
+        .swiper-dots
+          display: flex
+          justify-content: center
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+
+  // max-width 1800px
+
+  @media screen and (max-width: 1400px)
+    padding-top: 30px
+    &__more
+      font-size: 13px
+    &__price
+      &--new
+        margin-right: 20px
+        font-size: 22px
+    &__img
+      height: 185px
 
   // max-width 1170px
 
-  // @media screen and (max-width: 1070px)
-
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
-
-  // max-width 991px
-
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    padding-top: 24px
+    padding-bottom: 13px
+    &__img
+      height: 179px
+    &__slider
+      overflow: none
+      &-btns
+        display: none
+    &__label
+      top: 4px
+      left: 4px
+      width: 45px
+      height: 45px
+    &__like
+      right: 4px
+    &__content
+      padding: 0 5px 12px 10px
+    &__title
+      margin-bottom: 7px
+      font-size: 12px
+    &__more
+      font-size: 12px
+    &__prices
+      flex-direction: column
+      align-items: flex-start
+      padding: 0 5px 0 10px
+    &__price
+      &--new
+        font-size: 16px
+      &--old
+        font-size: 12px
+    &__item
+      padding-bottom: 16px
+    &__btns
+      position: absolute
+      bottom: 12px
+      right: 14px
+      .btn
+        font-size: 0
+        width: 47px
+        height: 47px
+        padding: 0
+        .icon
+          display: block
+          width: 18px
+          height: 21px
+          fill: #ffffff
 
   // max-width 767px
-
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* prod */

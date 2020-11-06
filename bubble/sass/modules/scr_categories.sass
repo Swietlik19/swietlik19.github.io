@@ -13,6 +13,22 @@
       &:first-of-type
         grid-row-start: 1
         grid-row-end: 3
+        .categories__item
+          display: flex
+          flex-direction: column
+          padding: 10px 28px 45px 15px
+        .categories__title
+          margin-top: auto
+          text-align: right
+        .categories__bubbles
+          span
+            background: #ffa09a
+            &:nth-of-type(1)
+              left: 4.9057%
+              bottom: 39px
+            &:nth-of-type(2)
+              left: 73.9622641509434%
+              bottom: 120px
       &:nth-of-type(2),
       &:nth-of-type(3)
         grid-column-start: 2
@@ -22,10 +38,139 @@
       &:nth-of-type(2)
         grid-row-start: 1
         grid-row-end: 2
+        .categories__item
+          padding: 58px 168px 10px 15px
+        .categories__title
+          text-align: right
+        .categories__bubbles
+          span
+            background: #81c0ea
+            &:nth-of-type(1)
+              left: 54.02298850574713%
+              bottom: 60px
+              width: 14px
+              height: 14px
+            &:nth-of-type(2)
+              left: 59.96168582375479%
+              bottom: 62px
+              width: 32px
+              height: 32px
+            &:nth-of-type(3)
+              left: 92.91187739463602%
+              bottom: 117px
+              width: 22px
+              height: 22px
+            &:nth-of-type(4)
+              left: 98.08429118773946%
+              bottom: 137px
+              width: 14px
+              height: 14px
       &:nth-of-type(3)
         grid-row-start: 2
         grid-row-end: 3
-
+        .categories__item
+          display: flex
+          flex-direction: column
+          padding: 10px 15px 49px 44px
+        .categories__title
+          margin-top: auto
+        .categories__bubbles
+          span
+            background: #ffd5a3
+            &:nth-of-type(1)
+              left: 7.662835249042146%
+              top: 12px
+              bottom: auto
+              width: 15px
+              height: 15px
+            &:nth-of-type(2)
+              left: 11.49425287356322%
+              top: 25px
+              bottom: auto
+              width: 25px
+              height: 25px
+            &:nth-of-type(3)
+              left: 45.78544061302682%
+              top: 73px
+              bottom: auto
+              width: 36px
+              height: 36px
+      &:nth-of-type(4),
+      &:nth-of-type(5)
+        grid-column-start: 4
+        grid-column-end: 6
+        .categories__item
+          height: 185px
+      &:nth-of-type(4)
+        grid-row-start: 1
+        grid-row-end: 2
+        .categories__item
+          padding: 22px 15px 10px 116px
+        .categories__bubbles
+          span
+            background: #ffd5a3
+            &:nth-of-type(1)
+              left: 25.28735632183908%
+              bottom: 101px
+              width: 12px
+              height: 12px
+            &:nth-of-type(2)
+              left: 27.01149425287356%
+              bottom: 67px
+              width: 26px
+              height: 26px
+            &:nth-of-type(3)
+              left: 53.44827586206897%
+              bottom: -6px
+              width: 26px
+              height: 26px
+      &:nth-of-type(5)
+        grid-row-start: 2
+        grid-row-end: 3
+        .categories__item
+          display: flex
+          flex-direction: column
+          padding: 10px 43px 65px 15px
+        .categories__title
+          margin-top: auto
+          text-align: right
+        .categories__bubbles
+          span
+            background: #81c0ea
+            &:nth-of-type(1)
+              left: 48.65900383141762%
+              bottom: 53px
+              width: 12px
+              height: 12px
+            &:nth-of-type(2)
+              left: 55.55555555555556%
+              bottom: 38px
+              width: 31px
+              height: 31px
+            &:nth-of-type(3)
+              left: 85.63218390804598%
+              bottom: 161px
+              width: 31px
+              height: 31px
+      &:last-of-type
+        grid-column-start: 6
+        grid-column-end: 7
+        grid-row-start: 1
+        grid-row-end: 3
+        .categories__item
+          display: flex
+          flex-direction: column
+          padding: 10px 15px 50px 35px
+        .categories__title
+          margin-top: auto
+        .categories__bubbles
+          span
+            background: #ffa09a
+            &:nth-of-type(1)
+              left: 61.74242424242424%
+              bottom: 82px
+              width: 33px
+              height: 33px
   &__item
     position: relative
     display: block
@@ -33,6 +178,25 @@
     text-decoration: none
     outline: none
     z-index: 1
+    transition: 0.7s
+    overflow: hidden
+    &:hover
+      transform: translateY(-7px)
+      box-shadow: 0 5px 35px rgba($accent, 0.7)
+      .categories__bubbles
+        span
+          transform: translateY(-70px) scale(1.4)
+          opacity: 0
+          transition: opacity 0.3s 1.2s, transform 1.9s
+          &:nth-of-type(2)
+            transition: opacity 0.3s 1.4s, transform 1.9s 0.2s
+          &:nth-of-type(3)
+            transition: opacity 0.3s 1.6s, transform 1.9s 0.4s
+          &:nth-of-type(4)
+            transition: opacity 0.3s 1.8s, transform 1.9s 0.6s
+          &:nth-of-type(5)
+            transition: opacity 0.3s 2s, transform 1.9s 0.8s
+
   &__img
     position: absolute
     top: 0
@@ -51,34 +215,88 @@
     font-weight: 400
     text-transform: uppercase
     color: $accent2
+  &__bubbles
+    span
+      position: absolute
+      bottom: -120px
+      display: block
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      transition: 0s
+      z-index: -1
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1400px)
+    &__title
+      font-size: 24px
+    &__list
+      grid-gap: 10px
+    &__item
+      height: 381px
 
-  // max-width 1170px
+  // max-width 1400px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    padding-top: 19px
+    &__item
+      height: 294px
+    &__list
+      & > li
+        &:nth-of-type(2),
+        &:nth-of-type(3)
+          grid-column-start: 2
+          grid-column-end: 4
+          .categories__item
+            height: 142px
+        &:nth-of-type(4),
+        &:nth-of-type(5)
+          .categories__item
+            height: 142px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    padding-bottom: 20px
+    &__list
+      display: flex
+      overflow: auto
+      grid-gap: 0
+      & > li
+        flex-shrink: 0
+        width: 373px
+        margin-right: 9px
+        &:last-of-type
+          margin-right: 0
+        &:nth-of-type(2)
+          .categories__item
+            padding: 28px 118px 10px 15px
+        &:nth-of-type(5)
+          .categories__item
+            padding: 10px 143px 75px 15px
+        &:nth-of-type(4)
+          .categories__item
+            padding: 12px 15px 10px 66px
+    &__item
+      height: 142px
+      &:hover
+        transform: none
+    &__bubbles
+      span
+        display: none
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 550px)
+    &__list
+      width: calc(100% + 15px)
+      & > li
+        width: calc(100% - 15px)
+        margin-right: 9px
+    &__img
+      border-radius: 6px
+      overflow: hidden
 
-  // max-width 767px
+  // max-width 550px
 
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
-
-/* categories */
+/* categories

@@ -97,7 +97,7 @@ body
 
 .page_wr
   flex-grow: 1
-  padding-top: 208px
+  padding-top: 201px
 
 img
   width: 100%
@@ -109,6 +109,13 @@ img
   object-fit: cover
   object-position: center
   font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-bottom]
+  object-fit: cover
+  object-position: bottom center
+  font-family: 'object-fit: cover; object-position: bottom center;'
   width: 100%
   height: 100%
 
@@ -194,6 +201,7 @@ h1,h2,h3,h4,h5,h6
   font-size: 45px
   font-weight: 400
   color: $accent2
+  text-align: center
 
 .icon
   max-width: 100%
@@ -206,44 +214,9 @@ h1,h2,h3,h4,h5,h6
 
 .btn__wrap
   display: inline-block
-  &--blue
+  &--pink
     position: relative
     z-index: 1
-    &::after
-      content: ''
-      position: absolute
-      left: 0
-      bottom: -6px
-      display: block
-      width: 100%
-      height: 100%
-      background-color: $accent2
-      border-radius: 22px
-      transition: 0.3s
-      z-index: -1
-    &:hover
-      &::after
-        background-color: darken($accent, 10%)
-      .btn__bubbles
-        span
-          background-color: $accent
-
-        @for $i from 1 through 10
-          span:nth-of-type(#{$i})
-            animation: spot-#{$i} .7s .4/random(10) + random(10)/10 + s linear infinite
-
-.btn__bubbles
-  span
-    position: absolute
-    display: block
-    border-radius: 50%
-    background-color: $accent2
-    transition: all 1s + random(10)/10
-  @for $i from 1 through 10
-    span:nth-child(#{$i})
-      padding: random(3) + 3 + px
-      left: -2 + ($i * 12) + px
-      top: 3px
 
 .btn,
 input[type="submit"]
@@ -260,40 +233,56 @@ input[type="submit"]
 
 .btn,
 input[type="submit"].btn
-  &--blue
+  &--pink
     position: relative
     display: flex
     align-items: center
     justify-content: center
-    padding: 12px 40px
-    background-color: $accent2
-    background-image: linear-gradient(180.0deg, #8eccfd 0%, #41719f 100%)
+    padding: 13px 40px
     border-radius: 22px
-    box-shadow: inset 0 0 16px rgba(#fcf8ef, .7)
+    box-shadow: 0px 10px 15px 0px rgba(253,159,153,0.4)
+    background-color: #fe9f99
     font-size: 14px
     font-weight: 700
     text-transform: uppercase
     color: #ffffff
     text-align: center
     z-index: 1
-    &::before
+    &:before,
+    &:after
       content: ''
       position: absolute
-      left: 0
-      top: 0
-      display: block
-      width: 100%
-      height: 100%
-      background-color: $accent
-      border-radius: 22px
-      background-image: linear-gradient(180.0deg, lighten($accent, 10%) 0%, $accent 100%)
-      box-shadow: inset 0 0 16px rgba(#fcf8ef, .7)
-      opacity: 0
-      transition: 0.3s
+      display: inline-block
+      background: #fe9f99
+      width: 4.4em
+      height: 2.95em
+      border-radius: 50%
+      transition: transform 1s ease
+      transform: scale(0)
       z-index: -1
+    &:before
+      top: -25%
+      left: 20%
+    &:after
+      bottom: -25%
+      right: 20%
     &:hover
-      &::before
-        opacity: 1
+      &:before,
+      &:after
+        transform: none
+  &--circle
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 35px
+    height: 35px
+    background-color: #f1908a
+    border-radius: 50%
+    transition: 0.3s
+    .fa
+      color: #fff
+    &:hover
+      transform: scale(1.1)
 
 
 input[type="submit"]
@@ -302,6 +291,7 @@ input[type="submit"]
     background: #5e5e5e
 
 .burger
+  position: relative
   flex-shrink: 0
   position: relative
   background: none
@@ -309,11 +299,10 @@ input[type="submit"]
   border: none
   cursor: pointer
   display: flex
-  align-items: center
-  justify-content: center
+  align-items: flex-end
 
-  width: 25px
-  height: 25px
+  width: 20px
+  height: 18px
   &__wrap
     position: relative
     transition: 0.3s
@@ -324,36 +313,34 @@ input[type="submit"]
   &.active
     .burger__wrap
       .line
-        transform: translate(-50%,-50%) rotate(45deg)
-        &:before,
-        &:after
-          transform: translateX(0) rotate(-90deg)
-    &:hover
-      .burger__wrap
-        transform: rotate(90deg) scale(1.1)
+        &:nth-of-type(2)
+          left: -25px
+          opacity: 0
+        &:nth-of-type(1)
+          transform: rotate(-45deg)
+          width: 20px
+        &:nth-of-type(3)
+          transform: rotate(45deg)
 
   .line
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    &,
-    &::after,
-    &::before
-      position: absolute
-      display: block
-      width: 20px
-      height: 2px
-      background-color: #fff
-      transition: 0.2s ease-in-out
-
-    &::after,
-    &::before
-      content: ''
-      left: 0
-    &::before
-      transform: translateY(-7px)
-    &::after
-      transform: translateY(7px)
+    left: 0
+    bottom: 0
+    width: 20px
+    position: absolute
+    display: block
+    height: 2px
+    background-color: #fff
+    transition: 0.2s ease-in-out
+    &:nth-of-type(1)
+      width: 17px
+      transition: 0.2s ease-in-out 0.1s
+      transform-origin: bottom left
+    &:nth-of-type(2)
+      bottom: 7px
+    &:nth-of-type(3)
+      bottom: 14px
+      transition: 0.2s ease-in-out 0.1s
+      transform-origin: top left
 
 .to-top
   position: fixed
@@ -419,25 +406,34 @@ input[type="submit"]
   background: $accent
 .swiper-button-prev,
 .swiper-button-next
-  top: 225px
+  top: calc(50% - 22px)
   background: none
   border: none
   outline: none
-  box-shadow: 0px 10px 15px 0px rgba(36,18,16,0.15)
-  width: 37px
-  height: 37px
+  width: 45px
+  height: 45px
+  background-color: #ffffff
+  box-shadow: 0px 9px 18px 0px rgba(253,159,153,0.2)
   margin: 0
-  background-color: rgba(255,255,255,0.3)
   border-radius: 50%
-  transition: 0.3s
+  transition: 0.7s
   &::after
-    content: none
+    content: ''
+    width: 16px
+    height: 9px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0px 9px 18px 0px rgba(253,159,153,0.4)
 .swiper-button-prev
-  left: -56px
+  left: -62px
   &::after
-    transform: rotate(180deg)
+    transform: rotate(90deg)
 .swiper-button-next
-  right: -56px
+  right: -62px
+  &::after
+    transform: rotate(-90deg)
 
 .swiper-pagination-lock
   display: none
@@ -451,21 +447,38 @@ input[type="submit"]
     max-width: 1680px
 
 /* media */
+@media screen and (max-width: 1400px)
+  .page_wr
+    padding-top: 172px
+  .page-title
+    font-size: 39px
+
+// max-width 1400px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
 
 // max-width 1200px
 
-// @media screen and (max-width: 1023px)
+@media screen and (max-width: 1070px)
+  .page_wr
+    padding-top: 168px
 
-// max-width 1023px
+// max-width 1070px
 
-// @media screen and (max-width: 991px)
+@media screen and (max-width: 991px)
+  .page_wr
+    padding-top: 110px
+  .page-title
+    margin-bottom: 22px
+    font-size: 36px
 
 // max-width 991px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .page-title
+    font-size: 16px
 
 // max-width 767px
 

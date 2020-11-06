@@ -2,6 +2,7 @@
 
   /* Для проверки resize, т.к. на мобильном Хроме при скролле срабывает resize (без изменения ширины) */
   var screenWidth = $(window).width();
+  var firstTime = true;
 
   /* Инициализация wow */
   wow = new WOW({mobile: false})
@@ -11,12 +12,25 @@
   svg4everybody();
 
   /* полифил для object-fit */
-  objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
+  objectFitImages($('[data-object-fit-cover],[data-object-fit-cover-bottom],[data-object-fit-contain]'), {watchMQ: true});
 
   /* инициализация fancybox */
   $(".fancybox").fancybox({
     padding: 0,
     scrolling: 'auto'
+  });
+
+  /* инициализация drawsvg */
+  var mySVG = $('.scr2__item-tail svg').drawsvg({
+    stagger: 100,
+    callback: function () {
+      $('.scr2__item-tail:not(.scr2__item-tail--reverse) svg g').css('fill','#fe9f99');
+    }
+  });
+
+  // Убираем прелоадер
+  $(window).on("load", function () {
+    $('.page_preloader').delay(1000).fadeOut('slow');
   });
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -38,7 +52,7 @@
 
   $('.burger').click(function() {
     $(this).toggleClass('active');
-    $('.header__menu').toggleClass('active');
+    $('.header__top .header__df').toggleClass('active');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -97,11 +111,17 @@
   toggleHidden('.faq',true);
 
   // фиксированные шапка
-  // $(window).on("scroll", function() {
-  //   var fromTop = $(document).scrollTop();
-  //   $(".header").toggleClass("fixed", (fromTop > 10));
-  //   $(".to-top").toggleClass("fixed", (fromTop > 600));
-  // });
+  $(window).on("scroll", function() {
+    var fromTop = $(document).scrollTop();
+    var scr2Top = $('.scr2').offset().top;
+    $(".header").toggleClass("fixed", (fromTop > 10));
+    $(".to-top").toggleClass("fixed", (fromTop > 600));
+
+    if (fromTop > scr2Top - 600 && firstTime) {
+      mySVG.drawsvg('animate');
+      firstTime = false;
+    }
+  });
 
   // Табы
   // $('.prod-item__nav a').click(function(event) {
@@ -147,12 +167,60 @@
     $(xel).append(xHtml);
   });
 
+  $('.categories__item').each(function(xi, xel) {
+    var xHtml = '<div class="categories__bubbles">';
+    for (i = 0; i < 5; i++) {
+      xHtml += '<span></span>';
+    }
+    xHtml += '</div>';
+    $(xel).append(xHtml);
+  });
+
+  function relocateMenu() {
+    if (window.matchMedia('(max-width: 991px)').matches) {
+      $('.header__menu-wrap').appendTo($('.header__top > .container > .header__df'));
+    } else {
+      $('.header__menu-wrap').appendTo($('.header__menu > .container'));
+    }
+  }
+
+  relocateMenu();
+
+  if (window.matchMedia('(max-width: 991px)').matches) {
+    $('.footer__title').click(function(e) {
+      e.preventDefault();
+      $(this).toggleClass('active');
+      $(this).parents('.footer__col').find('.menu').toggle();
+      $(this).parents('.footer__col').siblings('.footer__col').find('.menu').hide();
+      $(this).parents('.footer__col').siblings('.footer__col').find('.footer__title').removeClass('active');
+    });
+  } else {
+    $('.header__middle, .header__top, .page_wr').hover(function() {
+      $('.sub-menu__wrap').hide();
+    });
+  }
+
+  if (window.matchMedia('(max-width: 991px)').matches) {
+    $('.header__menu-wrap .menu-item-has-children > a .arrow').click(function(e) {
+      e.preventDefault();
+      $('.header__menu-wrap .menu-item-has-children > a .arrow').removeClass('active');
+      $(this).addClass('active');
+      $('.sub-menu__wrap').hide();
+      $(this).parent().siblings('.sub-menu__wrap').show();
+    });
+  } else {
+    $('.header__menu .menu-item-has-children > a').hover(function() {
+      $('.sub-menu__wrap').hide();
+      $(this).siblings('.sub-menu__wrap').show();
+    });
+  }
+
 
   /* СЛАЙДЕРЫ */
 
   var scr1Slider = new Swiper('#scr1__slider', {
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 9,
     watchSlidesProgress: true,
     loop: true,
     watchOverflow: true,
@@ -162,13 +230,18 @@
     pagination: {
       el: '.scr1__slider-btns .swiper-dots',
     },
+    breakpoints: {
+      900: {
+        spaceBetween: 20,
+      },
+    },
   });
 
   var brandsSlider = new Swiper('#brands__slider', {
-    slidesPerView: 8,
+    slidesPerView: 3,
+    spaceBetween: 10,
     slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
-    spaceBetween: 60,
     loop: false,
     watchSlidesProgress: true,
     watchOverflow: true,
@@ -178,6 +251,24 @@
     pagination: {
       el: '.brands__slider-btns .swiper-dots',
     },
+    breakpoints: {
+      1170: {
+        slidesPerView: 7,
+        spaceBetween: 20,
+      },
+      1070: {
+        slidesPerView: 6,
+        spaceBetween: 20,
+      },
+      575: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+      450: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
   });
 
   $('.prod__slider').each(function(xi,xel) {
@@ -185,19 +276,41 @@
     var xBtns = $(xel).siblings('.prod__slider-btns');
     var scr1__slider = new Swiper(xId, {
       slidesPerView: 1,
+      slidesPerColumn: 2,
+      slidesPerColumnFill: 'row',
       watchSlidesProgress: true,
       watchOverflow: true,
-      spaceBetween: 10,
+      spaceBetween: 8,
       autoplay: {
         delay: 8000,
+      },
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
       },
       pagination: {
         el: xBtns.find('.swiper-dots'),
       },
       breakpoints: {
-        300: {
+        1400: {
           slidesPerView: 5,
           spaceBetween: 32,
+          slidesPerColumn: 1,
+        },
+        1070: {
+          slidesPerView: 4,
+          spaceBetween: 32,
+          slidesPerColumn: 1,
+        },
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerColumn: 1,
+        },
+        400: {
+          slidesPerView: 2,
+          slidesPerColumn: 4,
+          spaceBetween: 12,
         },
       },
     });
@@ -208,7 +321,7 @@
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
-
+      relocateMenu();
     }
 
     screenWidth = $(window).width();

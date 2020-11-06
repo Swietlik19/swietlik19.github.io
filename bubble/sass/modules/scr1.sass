@@ -17,7 +17,7 @@
   &__df
     display: flex
   &__left
-    width: 61.2727%
+    width: calc(100% - 638px)
     margin-right: 31px
   &__slider
     overflow: hidden
@@ -32,8 +32,11 @@
       transition: 0.7s
       &:hover
         box-shadow: 0 5px 20px rgba($accent, 0.7)
+      img
+        display: block
   &__feat
-    flex-grow: 1
+    width: 607px
+    max-width: 100%
     margin: 0
     padding: 0
     list-style: none
@@ -48,15 +51,53 @@
       &:nth-of-type(3n + 2)
         .scr1__feat-item
           background-color: #fedbd7
+          padding-right: 200px
         .scr1__feat-bubbles
           span
+            top: 113px
+            right: 145px
             background-color: #fedbd7
+            &:nth-of-type(2)
+              top: 8px
+              right: 159px
+            &:nth-of-type(3)
+              top: -11px
+              right: 184px
+            &:nth-of-type(4)
+              top: auto
+              bottom: -20px
+              right: 177px
+            &:nth-of-type(5)
+              top: 24px
+              right: 156px
+            &:nth-of-type(6)
+              top: 110%
+              right: 70px
       &:nth-of-type(3n)
         .scr1__feat-item
           background-color: #b3deff
+          padding-right: 200px
         .scr1__feat-bubbles
           span
+            top: 110px
+            right: 145px
             background-color: #b3deff
+            &:nth-of-type(2)
+              top: 5px
+              right: 159px
+            &:nth-of-type(3)
+              top: -19px
+              right: 184px
+            &:nth-of-type(4)
+              top: auto
+              bottom: -17px
+              right: 177px
+            &:nth-of-type(5)
+              top: 21px
+              right: 156px
+            &:nth-of-type(6)
+              top: 110%
+              right: 70px
       &:last-of-type
         padding-bottom: 0
 
@@ -91,23 +132,18 @@
       margin-left: auto
     &-text
       position: relative
-      font-size: 20px
-      line-height: 1.2 /* 24 / 20 */
-      color: $accent2
-      font-family: $font3
       font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      color: $accent2
       z-index: 2
       strong
         font-family: $font2
         text-transform: uppercase
-      b
-        font-weight: 800
-        text-transform: uppercase
+        font-size: 20px
       a
         display: inline-block
         outline: none
         margin-top: 14px
-        margin-left: 4px
         font-family: $font
         font-size: 14px
         color: $accent2
@@ -125,8 +161,8 @@
         z-index: 1
         transition: 0.5s
         &:nth-of-type(2)
-          top: 11px
-          right: 191px
+          top: 10px
+          right: 189px
           width: 17px
           height: 17px
         &:nth-of-type(3)
@@ -152,31 +188,102 @@
           height: 50px
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1400px)
+    padding-top: 19px
+    &__feat
+      width: 457px
+      & > li
+        padding-bottom: 17px
+      &-item
+        min-height: 136px
+        padding: 10px 110px 10px 18px !important
+      &-text
+        font-size: 14px
+        strong
+          font-size: 16px
+      &-bubbles
+        span
+          top: 105px !important
+          right: 131px !important
+          &:nth-of-type(2)
+            top: 10px !important
+            right: 144px !important
+          &:nth-of-type(3)
+            top: -7px !important
+            right: 166px !important
+            width: 62px
+            height: 62px
+          &:nth-of-type(4)
+            top: auto !important
+            bottom: -20px !important
+            right: 160px !important
+            width: 77px
+            height: 77px
+          &:nth-of-type(5)
+            top: 25px !important
+            right: 141px !important
+            width: 84px
+            height: 84px
+          &:nth-of-type(6)
+            top: 110% !important
+            right: 70px !important
+      &-img
+        max-width: 191px
+    &__left
+      width: calc(100% - 477px)
+      margin-right: 20px
+    &__slider
+      &-item
+        height: 442px
 
-  // max-width 1170px
+  // max-width 1400px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 900px)
+    &__df
+      flex-direction: column
+    &__left
+      width: 100%
+      margin-bottom: 18px
+      margin-right: 0
+    &__feat
+      width: 100%
+    &__slider
+      overflow: none
+      &-btns
+        .swiper-dots
+          display: none
+      &-item
+        height: auto
+        border-radius: 6px
+        overflow: hidden
 
-  // max-width 1070px
+  // max-width 900px
 
-  // @media screen and (max-width: 991px)
-
-  // max-width 991px
-
-  // @media screen and (max-width: 767px)
-
-  // max-width 767px
-
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    padding-top: 0
+    padding-bottom: 17px
 
   // max-width 500px
 
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &__feat
+      &-item
+        padding: 10px 50px 10px 18px !important
+      &-bubbles
+        span
+          right: 71px !important
+          &:nth-of-type(2)
+            right: 84px !important
+          &:nth-of-type(3)
+            right: 106px !important
+          &:nth-of-type(4)
+            right: 100px !important
+          &:nth-of-type(5)
+            right: 81px !important
+          &:nth-of-type(6)
+            right: 40px !important
+      &-img
+        max-width: 141px
 
   // max-width 400px
 

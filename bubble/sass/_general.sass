@@ -135,6 +135,9 @@ a
 .accent
   color: $accent
 
+.blue
+  color: $accent2
+
 .grey-bg
   background-color: #f7f7f7
 
@@ -142,7 +145,7 @@ h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
 .article
-  p
+  font-size: 14px
   a
     text-decoration: none
     transition: 0.3s
@@ -176,18 +179,45 @@ h1,h2,h3,h4,h5,h6
   h2,h3,h4
     line-height: 1.2
     font-weight: 500
+    text-transform: uppercase
+    font-family: $font
   h2
-    margin-top: 35px
-    margin-bottom: 20px
-    font-size: 18px
+    margin-top: 29px
+    margin-bottom: 4px
+    font-size: 16px
+
   h3
     margin-top: 25px
-    margin-bottom: 15px
-    font-size: 16px
+    margin-bottom: 4px
+    font-size: 14px
   h4
     margin-top: 20px
-    margin-bottom: 10px
-    font-size: 14px
+    margin-bottom: 4px
+    font-size: 13px
+  blockquote
+    margin-top: 27px
+    margin-bottom: 30px
+    padding: 37px 74px 37px 44px
+    background-color: #fbf2ed
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
+    &.with-info
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 25px
+        left: -42px
+        display: block
+        width: 68px
+        height: 68px
+        box-shadow: 0px 15px 16px 0px rgba(253,159,153,0.31)
+        border-radius: 50%
+        background: #ffffff url('../img/i-img.png') no-repeat center center
+        background-size: 12px 33px
+  strong
+    font-weight: 700
 
 .clearfix
   &::after
@@ -398,7 +428,7 @@ input[type="submit"]
   background: $accent2
   width: 10px
   height: 10px
-  margin: 0 6px
+  margin: 4px 6px
   opacity: 1
   transition: 0.3s
 .swiper-pagination-bullet-active
@@ -452,6 +482,13 @@ input[type="submit"]
     padding-top: 172px
   .page-title
     font-size: 39px
+  .article
+    blockquote
+      &.with-info
+        &::before
+          left: -22px
+          width: 58px
+          height: 58px
 
 // max-width 1400px
 
@@ -464,6 +501,16 @@ input[type="submit"]
 @media screen and (max-width: 1070px)
   .page_wr
     padding-top: 168px
+  .article
+    blockquote
+      padding: 27px 34px 27px 44px
+      font-size: 16px
+      &.with-info
+        &::before
+          left: -14px
+          width: 48px
+          height: 48px
+          background-size: 8px 24px
 
 // max-width 1070px
 
@@ -473,16 +520,38 @@ input[type="submit"]
   .page-title
     margin-bottom: 22px
     font-size: 36px
+  .to-top
+    right: 10px
+    bottom: 76px
 
 // max-width 991px
 
 @media screen and (max-width: 767px)
   .page-title
+    padding-top: 5px
     font-size: 16px
+  .swiper-button-prev,
+  .swiper-button-next
+    top: calc(50% - 17px)
+    width: 35px
+    height: 35px
+    &::after
+      width: 13px
+      height: 7px
 
 // max-width 767px
 
-// @media screen and (max-width: 575px)
+@media screen and (max-width: 575px)
+  .article
+    font-size: 13px
+    blockquote
+      padding: 17px 14px 17px 33px
+      font-size: 14px
+      &.with-info
+        &::before
+          width: 38px
+          height: 38px
+          background-size: 8px 20px
 
 // max-width 575px
 

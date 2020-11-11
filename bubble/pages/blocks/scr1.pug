@@ -3,26 +3,25 @@ mixin scr1()
     .container
       .scr1__df
         .scr1__left
+          //. Нужны две картинки - для ретины и обычная
           .scr1__slider#scr1__slider
             .swiper-wrapper
               .swiper-slide
                 a.scr1__slider-item(href="#")
-                  noscript
-                    img.lazy(src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
-                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
+                  picture
+                    source(srcset="img-temp/slider-img-retina.jpg 4x, img-temp/slider-img-retina.jpg 2x, img-temp/slider-img.jpg 1x" data-object-fit-cover)
+                    img(src="img-temp/slider-img.jpg" alt="" data-object-fit-cover)
               .swiper-slide
                 a.scr1__slider-item(href="#")
-                  noscript
-                    img.lazy(src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
-                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
-              .swiper-slide
-                a.scr1__slider-item(href="#")
-                  noscript
-                    img.lazy(src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
-                  img.lazy( src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="img-temp/slider-img.jpg" alt="" width="125" height="90" data-object-fit-cover)
+                  picture
+                    source(srcset="img-temp/slider-img-retina.jpg 2x, img-temp/slider-img.jpg 1x" data-object-fit-cover)
+                    img(src="img-temp/slider-img.jpg" alt="" data-object-fit-cover)
+
 
             .scr1__slider-btns
+              button.swiper-button-prev
               .swiper-dots
+              button.swiper-button-next
 
         ul.scr1__feat
           li

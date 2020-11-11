@@ -17,7 +17,9 @@
   &__df
     display: flex
   &__left
-    width: calc(100% - 638px)
+    position: relative
+    flex-shrink: 0
+    width: 1011px
     margin-right: 31px
   &__slider
     overflow: hidden
@@ -34,8 +36,30 @@
         box-shadow: 0 5px 20px rgba($accent, 0.7)
       img
         display: block
+        &.retina
+          display: none
+    &-btns
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 15px
+      .swiper-button-prev,
+      .swiper-button-next
+        position: relative
+        top: auto
+        left: auto
+        right: auto
+        box-shadow: 0px 9px 18px 0px rgba(253, 159, 153, 0.7)
+      .swiper-button-prev
+        margin-right: auto
+      .swiper-button-next
+        margin-left: auto
+      .swiper-dots
+        margin-top: 0
+        margin-left: 10px
+        margin-right: 10px
   &__feat
-    width: 607px
+    flex-grow: 1
     max-width: 100%
     margin: 0
     padding: 0
@@ -188,10 +212,16 @@
           height: 50px
 
 
-  @media screen and (max-width: 1400px)
+  @media screen and (max-width: 1700px)
+    &__left
+      width: 900px
+
+  @media screen and (max-width: 1500px)
     padding-top: 19px
+    &__left
+      width: 800px
+      margin-right: 20px
     &__feat
-      width: 457px
       & > li
         padding-bottom: 17px
       &-item
@@ -229,43 +259,51 @@
             right: 70px !important
       &-img
         max-width: 191px
-    &__left
-      width: calc(100% - 477px)
-      margin-right: 20px
     &__slider
       &-item
         height: 442px
 
-  // max-width 1400px
+  // max-width 1500px
 
-  @media screen and (max-width: 900px)
+  @media screen and (max-width: 1200px)
+    &__left
+      width: 700px
+    &__feat
+      & > li
+        padding-bottom: 10px
+      &-item
+        min-height: 126px
+    &__slider
+      &-item
+        height: 397px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1100px)
     &__df
       flex-direction: column
     &__left
       width: 100%
+      max-width: 900px
+      margin-left: auto
+      margin-right: auto
       margin-bottom: 18px
-      margin-right: 0
     &__feat
       width: 100%
+      &-item
+        min-height: 136px
     &__slider
       overflow: none
-      &-btns
-        .swiper-dots
-          display: none
       &-item
         height: auto
         border-radius: 6px
         overflow: hidden
 
-  // max-width 900px
+  // max-width 1100px
 
   @media screen and (max-width: 500px)
     padding-top: 0
     padding-bottom: 17px
-
-  // max-width 500px
-
-  @media screen and (max-width: 400px)
     &__feat
       &-item
         padding: 10px 50px 10px 18px !important
@@ -286,5 +324,27 @@
         max-width: 141px
 
   // max-width 400px
+
+  @media screen and (max-width: 400px)
+    &__feat
+      &-bubbles
+        span
+          right: 31px !important
+          &:nth-of-type(2)
+            right: 44px !important
+          &:nth-of-type(3)
+            right: 66px !important
+          &:nth-of-type(4)
+            right: 60px !important
+          &:nth-of-type(5)
+            right: 41px !important
+          &:nth-of-type(6)
+            right: 40px !important
+      &-img
+        max-width: 101px
+
+  // max-width 400px
+
+
 
 /* scr1 */

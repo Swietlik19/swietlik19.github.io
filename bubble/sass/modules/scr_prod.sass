@@ -14,7 +14,6 @@
         width: 100%
         bottom: -25px
         margin-top: 0
-        display: none
     &-wrap
       position: relative
   &__item
@@ -132,12 +131,13 @@
   @media screen and (max-width: 1800px)
     &__slider
       &-btns
-        .swiper-dots
-          display: flex
-          justify-content: center
         .swiper-button-prev,
         .swiper-button-next
-          display: none
+          box-shadow: 0px 9px 18px 0px rgba(253, 159, 153, 0.7)
+        .swiper-button-prev
+          left: -16px
+        .swiper-button-next
+          right: -16px
 
   // max-width 1800px
 
@@ -157,12 +157,33 @@
   @media screen and (max-width: 767px)
     padding-top: 24px
     padding-bottom: 13px
+    &__header
+      position: relative
+      padding-left: 80px
+      padding-right: 80px
     &__img
       height: 179px
     &__slider
       overflow: none
       &-btns
-        display: none
+        position: absolute
+        width: 65px
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        display: flex
+        justify-content: space-between
+        padding-top: 0
+        .swiper-button-prev,
+        .swiper-button-next
+          position: relative
+          top: auto
+          left: auto
+          right: auto
+          width: 28px
+          height: 28px
+        .swiper-button-disabled
+          display: flex
     &__label
       top: 4px
       left: 4px

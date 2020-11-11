@@ -27,15 +27,11 @@
     overflow: hidden
     padding: 15px
     margin: -15px
-    &-btns
-      position: relative
-      .swiper-dots
-        position: absolute
-        bottom: -30px
-        width: 100%
     .swiper-slide
       display: flex
       justify-content: center
+    &-wrap
+      position: relative
   &__item
     display: flex
     align-items: center
@@ -52,13 +48,46 @@
       height: 100%
 
 
+  @media screen and (max-width: 1800px)
+    &__slider
+      &-btns
+        .swiper-button-prev
+          left: -16px
+        .swiper-button-next
+          right: -16px
+
+  // max-width 1800px
+
   @media screen and (max-width: 767px)
     padding-top: 0
-    padding-bottom: 58px
+    padding-bottom: 38px
     &__item
       max-width: 95px
       height: 89px
       padding: 8px
+    &__header
+      position: relative
+      padding-left: 80px
+      padding-right: 80px
+    &__slider
+      &-btns
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        display: flex
+        justify-content: space-between
+        width: 65px
+        .swiper-button-prev,
+        .swiper-button-next
+          position: relative
+          top: auto
+          right: auto
+          left: auto
+          width: 28px
+          height: 28px
+        .swiper-button-disabled
+          display: flex
 
   // max-width 767px
 

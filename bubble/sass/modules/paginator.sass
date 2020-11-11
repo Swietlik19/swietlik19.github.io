@@ -8,83 +8,81 @@
   align-items: center
   justify-content: center
   flex-wrap: wrap
-  padding-top: 30px
+  margin-top: -5px
+  padding: 11px
+  background-color: #f7f7f7
   ul
     margin: 0
     padding: 0
     list-style: none
     display: flex
     align-items: center
+    width: 100%
+    max-width: 800px
+    margin-left: auto
+    margin-right: auto
     & > li
       position: relative
       line-height: 1.2
       transition: 0.3s
-
+      &:first-of-type
+        margin-right: auto
+      &:last-of-type
+        margin-left: auto
       .page-numbers, .prev, .next
         display: block
         text-decoration: none
         outline: none
       .page-numbers:not(.prev):not(.next)
         position: relative
-        padding-left: 16px
-        padding-right: 16px
-        font-size: 14px
-        font-weight: 400
-        color: #2c2d2d
+        padding-left: 8px
+        padding-right: 8px
+        font-size: 16px
+        line-height: 1.2
+        text-transform: uppercase
+        color: #666666
         transition: 0.3s
-        &::before
-          content: ''
-          position: absolute
-          top: -3px
-          left: 0
-          border-radius: 3px
-          width: 100%
-          height: calc(100% + 6px)
-          background: $accent
-          transform: scale(0)
-          transition: 0.5s
-          z-index: -1
         &:not(.current):hover
-          color: #020000
-          &::before
-            transform: scale(1)
-
+          color: $accent2
         &.current
-          text-decoration: underline
+          color: $accent2
       .prev,
       .next
         display: flex
         align-items: center
         justify-content: center
-        width: 30px
-        height: 19px
-        background-color: #f5f5f4
+        width: 45px
+        height: 45px
+        background-color: #ffffff
+        box-shadow: 0px 9px 18px 0px rgba(253,159,153,0.2)
+        border-radius: 50%
         transition: 0.3s
         &::after
           content: ''
           width: 16px
-          height: 11px
-          background: transparent url('../img/svg/orig/arrow.svg')
+          height: 9px
+          background: transparent url('../img/svg/arrow.svg') no-repeat center center
+          background-size: contain
         &:hover
-          background-color: $accent
+          box-shadow: 0px 9px 26px 0px rgba(253,159,153,0.6)
       .prev
-        margin-right: 80px
         &::after
-          transform: rotate(180deg)
+          transform: rotate(90deg)
       .next
-        margin-left: 80px
+        &::after
+          transform: rotate(-90deg)
+
 
   @media screen and (max-width: 575px)
     ul
       flex-wrap: wrap
       & > li
-        .page-numbers:not(.prev):not(.next)
-          padding-left: 11px
-          padding-right: 11px
-        .prev
-          margin-right: 30px
+        .prev,
         .next
-          margin-left: 30px
+          width: 35px
+          height: 35px
+          &::after
+            width: 14px
 
   // max-width 575px
 
@@ -93,4 +91,4 @@
 
   // max-width 430px
 
- /* paginator */
+/* paginator */

@@ -113,7 +113,9 @@
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
-    var scr2Top = $('.scr2').offset().top;
+    if ( $('.scr2').length >= 1 ) {
+      var scr2Top = $('.scr2').offset().top;
+    }
     $(".header").toggleClass("fixed", (fromTop > 10));
     $(".to-top").toggleClass("fixed", (fromTop > 600));
 
@@ -179,6 +181,7 @@
   function relocateMenu() {
     if (window.matchMedia('(max-width: 991px)').matches) {
       $('.header__menu-wrap').appendTo($('.header__top > .container > .header__df'));
+      $('.header__search').appendTo($('.header__bottom'));
     } else {
       $('.header__menu-wrap').appendTo($('.header__menu > .container'));
     }
@@ -203,10 +206,11 @@
   if (window.matchMedia('(max-width: 991px)').matches) {
     $('.header__menu-wrap .menu-item-has-children > a .arrow').click(function(e) {
       e.preventDefault();
-      $('.header__menu-wrap .menu-item-has-children > a .arrow').removeClass('active');
-      $(this).addClass('active');
-      $('.sub-menu__wrap').hide();
-      $(this).parent().siblings('.sub-menu__wrap').show();
+      $(this).parents('.menu-item').siblings('.menu-item').find('.arrow').removeClass('active');
+      $(this).parents('.menu-item').siblings('.menu-item').find('.sub-menu__wrap').hide();
+
+      $(this).toggleClass('active');
+      $(this).parent().siblings('.sub-menu__wrap').toggle();
     });
   } else {
     $('.header__menu .menu-item-has-children > a').hover(function() {
@@ -215,6 +219,10 @@
     });
   }
 
+  $('.header__bottom-btn--search').click(function(e) {
+    e.preventDefault();
+    $('.header__bottom .header__search').toggle();
+  });
 
   /* СЛАЙДЕРЫ */
 
@@ -225,10 +233,14 @@
     loop: true,
     watchOverflow: true,
     autoplay: {
-      delay: 8000,
+      delay: 15000,
     },
     pagination: {
       el: '.scr1__slider-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.scr1__slider-btns .swiper-button-next',
+      prevEl: '.scr1__slider-btns .swiper-button-prev',
     },
     breakpoints: {
       900: {
@@ -251,6 +263,10 @@
     pagination: {
       el: '.brands__slider-btns .swiper-dots',
     },
+    navigation: {
+      nextEl: '.brands__slider-btns .swiper-button-next',
+      prevEl: '.brands__slider-btns .swiper-button-prev',
+    },
     breakpoints: {
       1170: {
         slidesPerView: 7,
@@ -269,13 +285,22 @@
         spaceBetween: 20,
       },
     },
+    on: {
+      init: function () {
+        $(window).on("load", function () {
+          if (window.matchMedia('(max-width: 767px)').matches) {
+           $('.brands__header').append($('.brands__slider-btns'));
+          }
+        });
+      },
+    },
   });
 
   $('.prod__slider').each(function(xi,xel) {
     var xId = '#' + $(xel).attr('id');
     var xBtns = $(xel).siblings('.prod__slider-btns');
     var scr1__slider = new Swiper(xId, {
-      slidesPerView: 1,
+      slidesPerView: 2,
       slidesPerColumn: 2,
       slidesPerColumnFill: 'row',
       watchSlidesProgress: true,
@@ -287,9 +312,6 @@
       navigation: {
         nextEl: xBtns.find('.swiper-button-next'),
         prevEl: xBtns.find('.swiper-button-prev'),
-      },
-      pagination: {
-        el: xBtns.find('.swiper-dots'),
       },
       breakpoints: {
         1400: {
@@ -313,8 +335,48 @@
           spaceBetween: 12,
         },
       },
+      on: {
+        init: function () {
+          $(window).on("load", function () {
+            if (window.matchMedia('(max-width: 767px)').matches) {
+              $(xId).parents('.prod').find('.prod__header').append(xBtns);
+            }
+          });
+        },
+      },
     });
   });
+
+  var galleryThumbs = new Swiper('#prod-item__thumbs', {
+    spaceBetween: 22,
+    slidesPerView: 2,
+    freeMode: true,
+    direction: 'vertical',
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.prod-item__thumbs-wrap .swiper-button-next',
+      prevEl: '.prod-item__thumbs-wrap .swiper-button-prev',
+    },
+  });
+
+  var prodItemGallery = new Swiper('#prod-item__gallery', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    loop: true,
+    watchOverflow: true,
+    autoplay: {
+      delay: 8000,
+    },
+    // pagination: {
+    //   el: '.scr1__slider-btns .swiper-dots',
+    // },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
+
 
   $(window).resize(function() {
 

@@ -224,6 +224,19 @@
     $('.header__bottom .header__search').toggle();
   });
 
+
+  if (window.matchMedia('(max-width: 1070px)').matches) {
+
+    /* инициализация кастомного скроллбара */
+    $(window).on("load",function(){
+      $(".scr2__list-wrap").mCustomScrollbar({
+        theme: "minimal-dark",
+        scrollInertia: 10000,
+        axis:"x",
+      });
+    });
+  }
+
   /* СЛАЙДЕРЫ */
 
   var scr1Slider = new Swiper('#scr1__slider', {

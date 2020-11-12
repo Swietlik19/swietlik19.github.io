@@ -126,17 +126,17 @@
   });
 
   // Табы
-  // $('.prod-item__nav a').click(function(event) {
-  //   event.preventDefault();
-  //   var _href = $(this).attr('href');
-  //   $(this).parent().siblings().removeClass('current');
-  //   $(this).parent().addClass('current');
-  //   $('.services__tab').not(_href).hide();
-  //   $(_href).fadeIn();
-  //   if (window.matchMedia('(max-width: 767px)').matches) {
-  //     $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
-  //   }
-  // });
+  $('.prod-item__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();
@@ -236,6 +236,43 @@
       });
     });
   }
+
+  if (window.matchMedia('(max-width: 1170px)').matches) {
+    $('.prod-item__title').appendTo('.prod-item__mobile');
+    $('.prod-item__desc').appendTo('.prod-item__mobile');
+  }
+
+  /* Замена input(type="number") */
+  (function quantityProducts() {
+    $(".quantity").each(function(xi,xel) {
+      var $quantityArrowMinus = $(xel).find(".quantity-arrow-minus");
+      var $quantityArrowPlus = $(xel).find(".quantity-arrow-plus");
+
+      $quantityArrowMinus.click(quantityMinus);
+      $quantityArrowPlus.click(quantityPlus);
+
+      function quantityMinus() {
+        var $quantityNum = $(xel).find(".quantity-num");
+        if ($quantityNum.val() >= 2) {
+          $quantityNum.val(+$quantityNum.val() - 1);
+        }
+      }
+
+      function quantityPlus() {
+        var $quantityNum = $(xel).find(".quantity-num");
+        $quantityNum.val(+$quantityNum.val() + 1);
+      }
+    });
+  })();
+
+  $('.prod__menu .menu-item-has-children > a .arrow').click(function(e) {
+    e.preventDefault();
+    $(this).parents('.menu-item').siblings('.menu-item').find('.arrow').removeClass('active');
+    $(this).parents('.menu-item').siblings('.menu-item').find('.sub-menu').hide();
+
+    $(this).toggleClass('active');
+    $(this).parent().siblings('.sub-menu').toggle();
+  });
 
   /* СЛАЙДЕРЫ */
 
@@ -361,15 +398,25 @@
   });
 
   var galleryThumbs = new Swiper('#prod-item__thumbs', {
-    spaceBetween: 22,
+    spaceBetween: 10,
     slidesPerView: 2,
     freeMode: true,
-    direction: 'vertical',
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     navigation: {
       nextEl: '.prod-item__thumbs-wrap .swiper-button-next',
       prevEl: '.prod-item__thumbs-wrap .swiper-button-prev',
+    },
+    breakpoints: {
+      1170: {
+        spaceBetween: 22,
+        slidesPerView: 2,
+      },
+    },
+    breakpoints: {
+      450: {
+        direction: 'vertical',
+      },
     },
   });
 

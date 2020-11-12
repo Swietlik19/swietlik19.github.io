@@ -21,7 +21,7 @@
   &__gallery
     overflow: hidden
     border: 1px solid #f1f1f1
-    transition: 03s
+    transition: 0.3s
     &:hover
       border-color: $accent
   &__title
@@ -151,34 +151,252 @@
       margin-right: 10px
       background-color: $accent2
       border-radius: 50%
+  .prod__prices
+    padding: 19px 0 21px 0
+    .prod__price--new
+      font-weight: 700
+  &__bottom
+    &-df
+      display: flex
+      align-items: center
+  &__btns
+    margin-right: 23px
+    padding-bottom: 6px
+  &__like
+    background: none
+    border: none
+    outline: none
+    width: 24px
+    height: 20px
+    cursor: pointer
+    .icon
+      fill: $accent
+      transition: 0.3s
+  &__quantity
+    margin-right: 24px
+  &__nav
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    padding-left: 77px
+    & > li
+      margin-right: 5px
+      z-index: 1
+      & > a
+        position: relative
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        justify-content: center
+        min-width: 259px
+        height: 57px
+        margin-bottom: -2px
+        padding: 10px
+        background-color: #f7f7f7
+        font-size: 16px
+        line-height: 1.2
+        font-weight: 700
+        text-transform: uppercase
+        color: #666666
+        text-align: center
+        transition: 0.3s
+        border-top: 2px solid transparent
+        border-left: 2px solid transparent
+        border-right: 2px solid transparent
+        &:hover
+          background-color: #fff
+      &.current
+        z-index: 50
+        & > a
+          background-color: #fff
+          border-color: $accent2
+  &__tabs
+    position: relative
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-bottom: 75px
+    border-top: 2px solid $accent2
+    z-index: 2
+  &__tab
+    &:not(#prod-item__tab-0)
+      display: none
+    &-content
+      padding: 55px 0 0 77px
+      .article
+        max-width: 1020px
+        font-size: 16px
+        color: #333333
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1550px)
+    &__left
+      width: 41.4848%
+      margin-right: 24px
+    &__right
+      width: 57.4848%
+
+  // max-width 1550px
+
+  @media screen and (max-width: 1400px)
+    &__left
+      width: 44.4848%
+      margin-right: 15px
+    &__right
+      width: 54.4848%
+    &__title
+      margin-bottom: 9px
+      font-size: 21px
+    &__feat
+      width: 41.2547%
+      margin-left: 11px
+      padding: 27px 20px 30px
+      &-icon
+        width: 23px
+        margin-right: 18px
+      &-text
+        font-size: 13px
+        line-height: 1.51429
+    &__thumbs
+      &-wrap
+        width: 189px
+        margin-right: 13px
+    &__img
+      height: 363px
+      padding: 40px 20px
+    &__table
+      table
+        td
+          font-size: 13px
+          &:last-of-type
+            width: 70%
+    &__desc
+      margin-bottom: 7px
+      font-size: 13px
+    &__info
+      padding-top: 10px
+      padding-bottom: 10px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__nav
+      padding-left: 20px
+    &__tab
+      &-content
+        padding: 30px 0 0 20px
+    &__tabs
+      padding-bottom: 45px
+    &__df
+      flex-direction: column
+    &__left
+      width: 100%
+      margin-right: 0
+    &__right
+      width: 100%
+      padding-top: 30px
+    &__thumbs
+      height: 247px
+      &-wrap
+        .swiper-button-prev
+          margin-top: 17px
+        .swiper-button-next
+          margin-bottom: 17px
+
+    &__thumb
+      height: 108px
+      padding: 10px 20px
+    &__img
+      height: 263px
+      padding: 30px 20px
 
   // max-width 1170px
 
-  // @media screen and (max-width: 1070px)
-
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__tab
+      &-content
+        .article
+          font-size: 14px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    &__nav
+      flex-direction: column
+      padding-left: 0
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 4px
+        & > a
+          border-bottom: 2px solid transparent
+        &.current
+          & > a
+            border-color: $accent2
+    &__tabs
+      border-top: none
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 670px)
+    &__df
+      margin-bottom: 30px
+    &__right
+      padding-top: 20px
+      &-df
+        flex-direction: column
+        align-items: center
+    &__content
+      width: 100%
+    &__feat
+      margin-top: 30px
+      margin-left: 0
+      width: 100%
 
-  // max-width 575px
+  // max-width 670px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    &__thumbs
+      &-wrap
+        width: 159px
 
   // max-width 500px
 
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 450px)
+    &__gallery
+      order: -1
+    &__left
+      flex-direction: column
+    &__thumbs
+      width: 100%
+      padding-top: 20px
+      height: auto
+      &-wrap
+        flex-direction: row
+        width: 100%
+        .swiper-button-prev
+          margin-top: 0
+          margin-right: 15px
+          order: -1
+          &::after
+            transform: rotate(90deg)
+        .swiper-button-next
+          margin-bottom: 0
+          margin-left: 15px
+          order: 2
+          &::after
+            transform: rotate(-90deg)
+    &__img
+      height: 213px
+      padding: 20px
+    &__quantity
+      margin-right: 14px
+    &__btns
+      margin-right: 13px
 
-  // max-width 400px
+  // max-width 450px
 
 /* prod-item */

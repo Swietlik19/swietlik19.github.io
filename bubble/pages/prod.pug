@@ -25,9 +25,9 @@ html(lang='ru')
     include blocks/header.pug
     include blocks/socials.pug
     include blocks/breadcrumbs.pug
+    include blocks/paginator.pug
 
-    include blocks/scr_post.pug
-    include blocks/scr_blog.pug
+    include blocks/scr_prod.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -36,16 +36,15 @@ html(lang='ru')
 
   body
 
-    +header("div")
+    +header("a")
 
     #page_wr.page_wr
-      +scr_post
-
+      +scr_prod--page
 
       a.to-top(href="#page_wr")
         i.fa.fa-angle-up
 
-    +footer("div")
+    +footer("a")
 
     +scripts
     //- +script-map

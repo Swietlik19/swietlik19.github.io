@@ -247,6 +247,24 @@ h1,h2,h3,h4,h5,h6
   &--pink
     position: relative
     z-index: 1
+  &--shadowed
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -6px
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #f1908a
+      border-radius: 22px
+      transition: 0.3s
+      z-index: -1
+    &:hover
+      &::before
+        bottom: -2px
 
 .btn,
 input[type="submit"]
@@ -313,6 +331,20 @@ input[type="submit"].btn
       color: #fff
     &:hover
       transform: scale(1.1)
+  &--shadowed
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 160px
+    height: 44px
+    background-color: $accent2
+    background-image: $grad
+    border-radius: 22px
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    color: #ffffff
+    text-align: center
 
 
 input[type="submit"]
@@ -404,6 +436,58 @@ input[type="submit"]
   &.fixed
     opacity: 1
     height: 37px
+
+.quantity
+  display: flex
+  align-items: center
+  max-width: 136px
+  padding: 10px 0
+  height: 50px
+  background-color: #f7f7f7
+  border-radius: 3.0px
+  input
+    border: none
+    outline: none
+    background: none
+
+    display: block
+    width: 33.3%
+    height: 100%
+    background-color: #ffffff
+    border: 1px solid rgba(204,204,204,0.49)
+
+    font-size: 14px
+    font-weight: 500
+    text-transform: uppercase
+    color: #666666
+    text-align: center
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    margin: 0
+  &-arrow
+    position: relative
+    background: none
+    outline: none
+    border: none
+
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    width: 33.3%
+    height: 100%
+
+    font-size: 0
+    cursor: pointer
+    font-size: 24px
+    font-weight: 600
+    transition: 0.3s
+    color: $accent2
+    &:hover
+      color: $accent
 
 
 /* Переопределение стилей yandex map */
@@ -559,6 +643,8 @@ input[type="submit"]
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 430px)
+  .quantity
+    max-width: 116px
 
-// max-width 400px
+// max-width 430px

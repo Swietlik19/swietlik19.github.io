@@ -3,6 +3,8 @@ mixin scr_prod-item()
     .container
       +breadcrumbs--prod-item
 
+      .prod-item__mobile
+
       .prod-item__df
         .prod-item__left
           .prod-item__thumbs-wrap
@@ -88,6 +90,20 @@ mixin scr_prod-item()
                   b.prod__price.prod__price--new 710 Р
                   b.prod__price.prod__price--old 1 500 Р
 
+                .prod-item__bottom-df
+                  .prod-item__quantity
+                    .quantity
+                      button.quantity-arrow.quantity-arrow-minus(type='button') -
+                      input.quantity-num(type='number', value='1')
+                      button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                  .prod-item__btns
+                    .btn__wrap.btn__wrap--shadowed
+                      a.btn.btn--shadowed(href="#") в корзину
+
+                  button.prod-item__like
+                    svg.icon
+                      use(xlink:href="img/svg/sprite.svg#heart-filled")
 
             ul.prod-item__feat
               li
@@ -117,6 +133,29 @@ mixin scr_prod-item()
                     br
                     |  от 3500 Р – БЕСПЛАТНО
 
+
+      ul.prod-item__nav
+        li.current
+          a(href="#prod-item__tab-0") описание
+        li
+          a(href="#prod-item__tab-1") отзывы
+
+      ul.prod-item__tabs
+        li.prod-item__tab#prod-item__tab-0
+          .prod-item__tab-content
+            .article
+              p Крем замедляет фотостарение и предотвращает возникновение новых морщинок. Кожа под его действием становится более гладкой и шелковистой. Она содержит следующие компоненты:
+              br
+              p Экстракт чёрной (осетровой) икры, который увлажняет, смягчает и подтягивает кожу. Способствует регенерации клеток кожи.
+              p Гиалурановая кислота питает кожу, разглаживает морщины, помогает задержать влагу в глубоких слоях эпидермиса.
+              p Экстракт алоэ обладает противовоспалительным эффектом и увлажняет кожу.
+              p Витамин Е придаёт коже сияние, выравнивает её тон.
+              p Способ применения: нанесите крем лёгкими массажными движениями на очищенную кожу лица.
+
+        li.prod-item__tab#prod-item__tab-1
+          .prod-item__tab-content
+            .article
+              p Крем замедляет фотостарение и предотвращает возникновение новых морщинок. Кожа под его действием становится более гладкой и шелковистой. Она содержит следующие компоненты:
 
 
   // /.scr_prod-item

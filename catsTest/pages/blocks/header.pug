@@ -1,0 +1,48 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__menu
+          .header__menu-top
+            button.burger.active
+              span.burger__wrap
+                span.line
+
+          span.decor-line
+
+          ul.menu
+            li.menu-item
+              a(href="#") Main
+            li.menu-item
+              a(href="#") Gallery
+            li.menu-item
+              a(href="#") News
+            li.menu-item
+              a(href="#") Profile
+
+        .header__phones
+          a.header__phone.desktop(href="tel:+544349000000" rel="nofollow") +544 3490 00000
+          a.header__phone.mobile(href="tel:+544349000000" rel="nofollow")
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#call")
+
+          p.header__text Звони скорее!
+
+      // /.header__top
+
+      .header__found
+        p Найдено 349 котов
+
+    // /.container

@@ -1,0 +1,235 @@
+.scr1
+  position: relative
+  background: transparent url('../img/scr1-bg.jpg') no-repeat center bottom
+  background-size: cover
+  min-height: 1017px
+  padding-top: 215px
+  z-index: 2
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 220px
+    background-image: linear-gradient(180.0deg, #fff 0%, #fff 30%, transparent 100%)
+    z-index: -1
+  &__title
+    margin-top: 0
+    margin-bottom: 54px
+    font-size: 36px
+    line-height: 1.25 /* 45 / 36 */
+    font-weight: 400
+    strong
+      font-size: 40px
+      font-weight: 800
+  &__prod
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    margin-bottom: 60px
+    & > li
+      margin-right: 24px
+      &:last-of-type
+        margin-right: 0
+    &-icon
+      width: 80px
+      padding-top: 4px
+      margin-right: 16px
+    &-item
+      display: flex
+      padding: 28px 27px 24px 21px
+      background-color: rgba(255,255,255,0.74)
+      transition: 0.3s
+      &:hover
+        background-color: rgba(255,255,255,1)
+    &-title
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      strong
+        font-weight: 800
+        text-transform: none
+        color: #005d8f
+        span
+          font-size: 18px
+  &__feat
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    margin-bottom: -14px
+    padding-top: 122px
+    & > li
+      width: calc((100% - 30px) / 3)
+      margin-right: 15px
+      &:nth-of-type(3n)
+        margin-right: 0
+      &:first-of-type
+        .scr1__feat-item
+          z-index: 2
+    &-item
+      position: relative
+      min-height: 202px
+      height: 100%
+      padding: 18px 15px 33px 35px
+      border-radius: 6px
+      background-color: #ffffff
+      transition: 0.3s
+      z-index: 1
+      &:hover
+        transform: translateY(-5px)
+    &-img
+      position: absolute
+      right: -20px
+      bottom: -15px
+      width: 101px
+      height: 101px
+    &-num
+      margin-bottom: -5px
+      color: $accent2
+      font-family: $font2
+      font-size: 48px
+      font-weight: 700
+
+
+  @media screen and (max-width: 1400px)
+    min-height: 0
+    padding-top: 135px
+    &__title
+      margin-bottom: 24px
+      font-size: 27px
+      strong
+        font-size: 29px
+    &__prod
+      margin-bottom: 20px
+      &-item
+        padding: 18px 17px 14px 11px
+      &-icon
+        width: 70px
+        margin-right: 10px
+      &-title
+        font-size: 12px
+    &__feat
+      padding-top: 32px
+      &-item
+        min-height: 0
+        padding: 16px 15px 23px 15px
+      &-num
+        float: left
+        margin-right: 10px
+        font-size: 39px
+        line-height: 1.2
+      &-text
+        font-size: 14px
+      &-img
+        right: 10px
+        bottom: -5px
+        width: 71px
+        height: 71px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    padding-top: 95px
+    &__title
+      margin-bottom: 18px
+      font-size: 23px
+      strong
+        font-size: 25px
+    &__prod
+      margin-bottom: 15px
+      &-item
+        padding: 14px 13px 14px 11px
+      &-title
+        font-size: 11px
+        strong
+          span
+            font-size: 16px
+    &__feat
+      padding-top: 24px
+      &-item
+        padding: 15px
+      &-num
+        font-size: 35px
+      &-text
+        font-size: 13px
+      &-img
+        width: 61px
+        height: 61px
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    padding-top: 75px
+    &__title
+      margin-bottom: 14px
+      font-size: 21px
+      strong
+        font-size: 23px
+      br
+        display: none
+    &__feat
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+      &-num
+        font-size: 28px
+      &-text
+        font-size: 12px
+
+  // max-width 850px
+
+  @media screen and (max-width: 575px)
+    &__title
+      font-size: 19px
+      strong
+        font-size: 21px
+    &__prod
+      flex-direction: column
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+        &:last-of-type
+          margin-bottom: 0
+      &-item
+        padding: 10px
+      &-title
+        font-size: 10px
+        br
+          display: none
+        strong
+          display: block
+      &-icon
+        width: 44px
+    &__feat
+      flex-direction: column
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+        &:last-of-type
+          margin-bottom: 0
+      &-img
+        display: none
+
+  // max-width 575px
+
+  @media screen and (max-width: 360px)
+    padding-top: 55px
+    &__title
+      font-size: 17px
+      strong
+        font-size: 19px
+    &__feat
+      &-item
+        padding: 11px
+      &-num
+        font-size: 25px
+
+  // max-width 360px
+
+/* scr1 */

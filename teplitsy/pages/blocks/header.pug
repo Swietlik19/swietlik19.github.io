@@ -1,0 +1,59 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger.mobile
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+          p.logo__text Крымский завод металлоконструкций
+
+        .header__right
+          .header__info
+            p.header__address г. Симферополь, ул. Глинки, 80
+            a.header__link(href="mailto:teplictm@mail.ru" rel="nofollow") teplictm@mail.ru
+
+          .header__msgs
+            a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79788334363" rel="nofollow")
+              i.fab.fa-whatsapp
+            a.header__msg.header__msg--viber(href="viber://chat?number=79788334363" rel="nofollow")
+              i.fab.fa-viber
+
+          .header__phones
+            p.header__time Пн - Пт: с 09:00 до 17:00
+            a.header__phone(href="tel:79788334363" rel="nofollow") +7 (978) 833-43-63
+
+          .header__btns
+            a.btn.btn--blue.open-modal(href="#modal__calback") Обратный звонок
+
+      // /.header__top
+    // /.container
+
+    .container
+      .header__menu
+        button.burger.desktop
+          span.burger__wrap
+            span.line
+
+        ul.menu
+          li.menu-item
+            a(href="#") Производство ангаров
+          li.menu-item
+            a(href="#") Строительство теплиц
+          li.menu-item
+            a(href="#") Производство металлоконструкций
+          li.menu-item
+            a(href="#") Наши работы
+          li.menu-item
+            a(href="#") Калькулятор
+
+      // /.header__menu
+    // /.container

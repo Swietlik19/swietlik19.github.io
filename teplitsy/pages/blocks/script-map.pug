@@ -1,0 +1,58 @@
+mixin script-map()
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
+  script.
+    (function($){
+
+      if ( !(window.matchMedia('(max-width: 767px)').matches) || (window.matchMedia('(max-width: 500px)').matches) ) {
+        createMap('contacts__map',[44.982791, 34.152995],[44.982791, 34.152995]);
+      } else {
+        createMap('contacts__map',[44.982791, 34.152995],[44.982982, 34.151831]);
+      }
+
+      function createMap(xID,coords,xCenter) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: xCenter,
+                  zoom: 18
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemark = new ymaps.Placemark(coords, {
+                    hintContent: 'адрес',
+                    balloonContent: 'Теплиц техномонтаж'
+                }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/icons/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [41, 54],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -60]
+                });
+
+            myMap.geoObjects
+                .add(myPlacemark);
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+    })(jQuery);

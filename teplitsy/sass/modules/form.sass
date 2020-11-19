@@ -1,0 +1,147 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  border-radius: 6px
+  background-color: #ffffff
+  padding: 32px 74px 28px
+  &__title
+    margin-bottom: 29px
+    font-size: 16px
+    line-height: 1.625 /* 26 / 16 */
+    font-weight: 500
+    text-align: center
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+    margin-bottom: 21px
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 100%
+      height: 57px
+      padding-left: 54px
+      box-shadow: inset 1px 2px 5px rgba(170, 185, 192, 0.25)
+      border-radius: 6px
+      background-color: #f6f7f7
+      color: #000
+      font-size: 16px
+
+      @include placeholder(#000, 14px)
+
+      &:focus
+        @include placeholder(#fff, 14px)
+
+      &:hover
+        background-color: rgba($accent, 0.1)
+
+    textarea
+      // height: 136px
+
+    &--icon
+      position: relative
+      .input-icon
+        position: absolute
+        top: 0
+        left: 0
+        width: 54px
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        .icon
+          display: block
+          width: 22px
+          height: 22px
+          fill: #8b98ae
+
+  &__item
+    &--submit
+      text-align: center
+      margin-top: 32px
+
+  .accept
+    display: block
+    margin-top: 30px
+    width: calc(100% + 40px)
+    margin-left: -20px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1px solid rgba(57, 80, 92, 0.7)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  @media screen and (max-width: 1070px)
+    padding: 32px 34px 28px
+
+  //   max-width 1070px
+
+  @media screen and (max-width: 575px)
+    padding: 22px 24px 18px
+    &__title
+      margin-bottom: 19px
+      font-size: 14px
+      line-height: 1.425
+
+  //   max-width 575px
+
+  @media screen and (max-width: 430px)
+    width: calc(100% + 30px)
+    margin-left: -15px
+
+  //   max-width 575px
+
+ /* form */

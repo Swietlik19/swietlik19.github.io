@@ -1,0 +1,26 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__wrap
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/logo.png" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/logo.png" alt="лого")
+
+      ul.menu
+        li.menu-item
+          a(href="#scr_video") Смотреть фильм
+        li.menu-item
+          a(href="#scr_video-download") Скачать фильм
+        li.menu-item
+          a(href="#scr_dates") Хронология событий
+        li.menu-item
+          a(href="#scr_gallery") Галерея
+
+      button.burger
+        span.burger__wrap
+          span.line
+
+    // /.header__wrap

@@ -1,0 +1,80 @@
+mixin scr_write()
+  section.scr_write.write.grey-bg(id="scr_write")
+    .container
+      h2.page-title Написать письмо генеральному директору
+      .page-desc Вы можете оставить предложения по улучшению качества обслуживания или высказать критику относительно
+        br
+        |  качества услуг ПАО «Севастопольгаз». Все письма будут в обязательном порядке рассмотрены
+
+      .write__df
+        .write__director
+          .write__img
+            img(src="img/write-img.jpg" alt="" data-object-fit-cover)
+
+          p.write__name Авласевич
+            br
+            |  Илья Мирославович
+
+          p.write__desc Генеральный директор ПАО «Севастопольгаз»
+
+        .write__form
+          .form.wpcf7
+            form.wpcf7-form
+              p.form__title Заполните форму
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Введите своё ФИО')
+
+              .form__df
+                .form__item
+                  span.wpcf7-form-control-wrap.your-email.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Введите свой e-mail')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-tel.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-question.text-input
+                  textarea.wpcf7-form-control.wpcf7-text.wpcf7-msg(name='your-question', aria-required='true', aria-invalid='false', placeholder='Текст письма')
+
+              .form__files
+                p.form__text Приложить файлы (до 10 мб, форматы doc, docx, odt, txt, rtf, pdf, jpg, gif, png, jpeg,)
+
+                ul.form__files-list
+                  li
+                    .form__item.form__item--download
+                      span.wpcf7-form-control-wrap.your-file
+                        label(tabindex="0")
+                          input(type="file" name="your-file" size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false")
+                          span.sl Файл №1
+
+                  li
+                    .form__item.form__item--download
+                      span.wpcf7-form-control-wrap.your-file
+                        label(tabindex="0")
+                          input(type="file" name="your-file2" size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false")
+                          span.sl Файл №2
+
+                  li
+                    .form__item.form__item--download
+                      span.wpcf7-form-control-wrap.your-file
+                        label(tabindex="0")
+                          input(type="file" name="your-file3" size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required wpcf7-resume" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-required="true" aria-invalid="false")
+                          span.sl Файл №3
+
+              .form__bottom
+                .form__item.form__item--submit
+                  input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--red(type='submit', value='Отправить')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.accept
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                          span.wpcf7-list-item-label Согласие на обработку персональных данных
+                            i.accept__icon
+
+  // /.scr_write

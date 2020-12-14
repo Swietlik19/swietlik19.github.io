@@ -1,0 +1,205 @@
+.scr1
+  position: relative
+  background: transparent url('../img/scr1-bg.jpg') no-repeat center center
+  background-size: cover
+  padding-top: 60px
+  padding-bottom: 31px
+  .container
+    max-width: 1430px
+  &__df
+    display: flex
+    justify-content: space-between
+  &__info
+    flex-grow: 1
+    padding-right: 20px
+    max-width: 970px
+  &__title
+    margin-top: 0
+    margin-bottom: 55px
+    font-size: 36px
+    line-height: 1.388888888888889
+    /* 50 / 36 */
+    font-weight: 400
+    strong
+      font-weight: 800
+  &__nums
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    max-width: 840px
+    & > li
+      width: 50%
+      margin-bottom: 46px
+      padding-right: 20px
+  &__num
+    margin-bottom: 4px
+    font-size: 36px
+    font-weight: 800
+    color: $accent
+    span
+      opacity: 0
+    small
+      font-size: 18px
+      font-weight: 700
+  &__links
+    flex-shrink: 0
+    width: 330px
+    padding-top: 43px
+    &-item
+      text-decoration: none
+      outline: none
+      position: relative
+      display: flex
+      align-items: center
+      height: 53px
+      margin-bottom: 16px
+      padding-right: 10px
+      background-color: #1f4b99
+      background-image: $grad
+      border-radius: 8px
+      font-weight: 700
+      color: #ffffff
+      overflow: hidden
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        width: 100%
+        height: 100%
+        background-color: darken($accent2, 20%)
+        background-image: linear-gradient(180.0deg, rgba($accent2,0.63) 0%, rgba(#dd4224,0.0) 100%)
+        opacity: 0
+        transition: 0.3s
+        z-index: -1
+      &:hover
+        &::before
+          opacity: 1
+      &:last-of-type
+        color: #ffe400
+        .icon
+          width: 29px
+          fill: #ffe400
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 74px
+      .icon
+        display: block
+        width: 22px
+        height: 29px
+        fill: #fff
+
+
+  @media screen and (max-width: 1400px)
+    padding-top: 40px
+    &__links
+      &-item
+        height: 50px
+        font-size: 14px
+      &-icon
+        width: 54px
+    &__title
+      margin-bottom: 25px
+      font-size: 29px
+    &__nums
+      & > li
+        margin-bottom: 16px
+    &__num
+      font-size: 30px
+    &__text
+      br
+        display: none
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__title
+      font-size: 22px
+    &__text
+      font-size: 14px
+    &__num
+      font-size: 25px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__links
+      width: 280px
+      padding-top: 33px
+      &-item
+        margin-bottom: 6px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &__title
+      font-size: 19px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__title
+      font-size: 18px
+    &__info
+      padding-right: 15px
+    &__nums
+      & > li
+        padding-right: 10px
+    &__text
+      font-size: 13px
+    &__links
+      width: 230px
+      &-item
+        font-size: 12px
+      &-icon
+        width: 40px
+        .icon
+          width: 16px
+          height: 24px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    &__links
+      width: 40px
+      &-item
+        height: 44px
+        padding-right: 0
+        font-size: 0
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    padding-top: 20px
+    padding-bottom: 10px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 16px
+    &__num
+      font-size: 22px
+    &__links
+      width: 33px
+      margin-top: auto
+      &-item
+        height: 39px
+        &:last-of-type
+          .icon
+            width: 22px
+      &-icon
+        width: 100%
+        .icon
+          width: 16px
+          height: 18px
+
+  // max-width 500px
+
+/* scr1 */

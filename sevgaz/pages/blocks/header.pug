@@ -1,0 +1,72 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__top-wrap
+          ul.menu
+            li.menu-item
+              a(href="#") О предприятии
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Информация для физлиц
+            li.menu-item
+              a(href="#") Информация для юрлиц
+            li.menu-item
+              a(href="#") Новости
+            li.menu-item
+              a(href="#") Безопасность
+            li.menu-item
+              a(href="#") Контакты
+
+          .header__accident
+            span.header__accident-top Аварийная служба
+            .header__accident-bottom
+              span.header__accident-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#phone")
+
+              a.header__accident-num(href="tel:104" rel="nofollow") 104
+
+      // /.container
+    // /.header__top
+
+    .container
+      .header__bottom
+        button.burger#header__burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+          p.logo__text Публичное акционерное общество
+
+        .header__address
+          p.header__text Центральный офис:
+            br
+            |  г. Севастополь,
+            br
+            |  ул. Гидрографическая, 1
+
+        .header__time
+          p.header__text Пн-Чт: 07:30 - 16:30,
+            br
+            |  Пт: 7:30 - 15:15
+            br
+            |  Обед: 11:30 - 12:15
+
+        .header__phones
+          a.header__link(href="tel:+78692540025" rel="nofollow") +7 (8692) 54-00-25
+
+          p.header__text Контактный центр, для передачи
+            br
+            |  показаний счетчиков
+
+      // /.header__bottom
+    // /.container

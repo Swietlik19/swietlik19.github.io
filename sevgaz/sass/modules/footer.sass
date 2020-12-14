@@ -1,0 +1,201 @@
+.footer
+  position: relative
+  background-color: #141d2e
+  .container
+    max-width: 1430px
+  &__top
+    display: flex
+    padding: 25px 0 33px
+    a
+      text-decoration: none
+      outline: none
+      color: #ffffff
+      transition: 0.3s
+      &:hover
+        color: $accent2
+  &__col
+    width: 28.0714%
+    padding-right: 20px
+    &:nth-of-type(2)
+      width: 24.2143%
+    &:nth-of-type(3)
+      width: 24.57142857142857%
+    &:last-of-type
+      width: 23.21428571428571%
+
+  &__title
+    margin-top: 0
+    margin-bottom: 12px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 700
+    color: #ffffff
+  &__text
+    margin-bottom: 22px
+    font-size: 14px
+    color: #ffffff
+    b
+      font-weight: 700
+    &:last-of-type
+      margin-bottom: 0
+  .menu
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      margin-bottom: 6px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: block
+        font-size: 14px
+
+
+  &__bottom
+    border-top: 1px solid rgba(31,75,153,0.3)
+    &-df
+      height: 57px
+      display: flex
+      align-items: center
+    .text
+      font-size: 13px
+      line-height: 16px
+      color: #ffffff
+    a.text
+      text-decoration: none
+      outline: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+
+  &__politics
+    margin-right: 70px
+
+  &__copyright
+    margin-right: 99px
+
+  .made
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    cursor: pointer
+    text-decoration: none
+    .icon
+      width: 60px
+      height: 22px
+      margin-left: 13px
+      fill: #fff
+      transition: 0.3s
+
+    &:hover
+      .icon
+        fill: rgba(#fff,.7)
+
+
+  @media screen and (max-width: 991px)
+    &__top
+      flex-direction: column
+    &__col
+      width: 100%
+      padding-right: 0
+      &:first-of-type,
+      &:nth-of-type(2),
+      &:last-of-type
+        .footer__title
+          position: relative
+          margin-bottom: 0
+          padding: 10px 0
+          padding-right: 30px
+          border-bottom: 1px solid rgba(255,255,255,0.2)
+          cursor: pointer
+          &::before,
+          &::after
+            content: ''
+            position: absolute
+            top: 50%
+            right: 10px
+            display: block
+            width: 14px
+            height: 4px
+            background: #ffffff
+          &::after
+            transform: rotate(90deg)
+            transition: 0.3s
+          &.active
+            &::after
+              transform: rotate(0)
+        .footer__text
+          padding-top: 10px
+      &:first-of-type
+        .footer__text
+          display: none
+      &:nth-of-type(2)
+        width: 100%
+        .footer__text
+          display: none
+      &:nth-of-type(3)
+        order: 2
+        width: 100%
+        padding-top: 30px
+      &:last-of-type
+        width: 100%
+        .menu
+          display: none
+          padding-top: 10px
+    &__title
+      br
+        display: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__bottom
+      &-df
+        justify-content: space-between
+      .footer__politics
+        margin-right: 30px
+      .footer__copyright
+        margin-right: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__bottom
+      &-df
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        text-align: center
+        height: auto
+        padding: 10px 0
+      .footer__politics
+        margin-right: 0
+        margin-bottom: 15px
+      .footer__copyright
+        margin-right: 0
+        margin-bottom: 15px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__bottom
+      height: auto
+    &__title
+      font-size: 16px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 14px
+    &__text
+      font-size: 13px
+    .menu
+      & > li
+        & > a
+          font-size: 13px
+
+  // max-width 500px
+
+/* footer */

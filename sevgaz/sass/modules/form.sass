@@ -1,0 +1,206 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  background-color: #ffffff
+  border: 1px solid #efefef
+  box-shadow: 0px 7px 15px 0px #efefef
+  border-radius: 8px
+  &__title
+    margin-bottom: 23px
+    font-size: 20px
+    font-weight: 700
+    text-transform: uppercase
+    color: $accent
+  &__item
+    margin-bottom: 12px
+    &--submit
+      .xbtn
+        width: 100%
+  &__df
+    display: flex
+    justify-content: space-between
+    .form__item
+      width: calc(50% - 6px)
+  &__bottom
+    display: flex
+    align-items: center
+    .form__item
+      width: 39.2578%
+      margin-right: 22px
+      margin-bottom: 0
+      &:last-of-type
+        width: 56.4453%
+        margin-right: 0
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+      width: 100%
+      height: 49px
+      padding-left: 18px
+      background-color: #f9f9f9
+      box-shadow: inset 0 2px 5px rgba(#aab9c0, 0.25)
+      border-radius: 6px
+
+      @include placeholder(#333333, 14px)
+
+      &:focus
+        @include placeholder(#ffffff, 14px)
+      &:hover
+        background-color: rgba($accent, 0.1)
+
+    textarea
+      height: 108px
+      padding: 15px 17px
+
+  &__files
+    padding-left: 22px
+    padding-bottom: 15px
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      & > li
+        margin-right: 50px
+        &:last-of-type
+          margin-right: 0
+
+  &__text
+    margin-bottom: 15px
+    font-size: 14px
+
+  .your-file
+    display: block
+    input
+      display: none
+    label
+      display: inline-block
+      padding-left: 30px
+      font-size: 14px
+      font-weight: 700
+      background: transparent url('../img/svg/paperclip.svg') no-repeat left 3px
+      background-size: 20px 18px
+      outline: none
+      cursor: pointer
+      transition: 0.3s
+      &:hover
+        color: $accent2
+
+  .accept
+    display: block
+    width: calc(100% + 50px)
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+      color: #666666
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(51,51,51,0.69)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  @media screen and (max-width: 991px)
+    &__bottom
+      .form__item
+        margin-right: 8px
+
+  //   max-width 991px
+
+  @media screen and (max-width: 850px)
+    .accept
+      width: calc(100% + 30px)
+
+  //   max-width 850px
+
+  @media screen and (max-width: 575px)
+    &__files
+      &-list
+        & > li
+          margin-right: 20px
+    &__bottom
+      flex-direction: column
+      .form__item
+        width: 100%
+        &--submit
+          max-width: 300px
+          margin-bottom: 15px
+          margin-right: 0
+        &:last-of-type
+          width: 100%
+    .accept
+      width: 100%
+
+  //   max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__df
+      flex-direction: column
+      .form__item
+        width: 100%
+    &__files
+      &-list
+        flex-direction: column
+        & > li
+          margin-right: 0
+          margin-bottom: 15px
+    .accept
+      label
+        font-size: 12px
+
+  //   max-width 450px
+
+ /* form */

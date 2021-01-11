@@ -188,31 +188,32 @@
 
   $('.portfolio__tab:not(#portfolio__tab-0').hide();
 
-  // var projectsSlider = new Swiper('#projects__slider', {
-  //   slidesPerView: 1,
-  //   spaceBetween: 20,
-  //   watchSlidesProgress: true,
-  //   loop: true,
-
-    // watchOverflow: true,
-  //   autoplay: {
-  //     delay: 8000,
-  //   },
-  //   navigation: {
-  //     nextEl: '.projects__wrap .swiper-button-next',
-  //     prevEl: '.projects__wrap .swiper-button-prev',
-  //   },
-  //   pagination: {
-  //     el: '#projects__slider .swiper-dots',
-  //   },
-  //   on: {
-  //     init: function () {
-  //       $(window).on("load", function () {
-  //         equalHeightSwiper('#projects__slider');
-  //       });
-  //     },
-  //   },
-  // });
+  var licsSlider = new Swiper('#lics__slider', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.lics__slider-btns .swiper-button-next',
+      prevEl: '.lics__slider-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.lics__slider-btns .swiper-dots',
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 28,
+      },
+      700: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
 
   // if (window.matchMedia('(max-width: 767px)').matches) {
   //   var partnersSlider = new Swiper('#partners__slider', {

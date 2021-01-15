@@ -1,0 +1,106 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__top
+      .container
+        .header__df
+
+          p.header__desc Полный комплекс услуг по ремонту и обслуживанию бытовой техники
+
+          ul.menu
+            li.menu-item
+              a(href="#") О компании
+            li.menu-item
+              a(href="#") Услуги
+            li.menu-item
+              a(href="#") Контакты
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Вопрос-ответ
+            li.menu-item
+              a(href="#") Проекты
+            li.menu-item
+              a(href="#") Отзывы
+
+          .header__links
+            a.header__link(href="#") Магазин кондиционеров
+
+      // /.container
+    // /.header__top
+
+    .container
+      .header__bottom
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+        p.header__text.header__text--address г. Севастополь,
+          br
+          |  ул. Индустриальная, 28
+
+        p.header__text Режим работы:
+          br
+          |  Пн-Сб: 09:00-18:00
+
+        .header__phones
+          .header__phones-df
+            a.header__phone(href="tel:+79782592973" rel="nofollow") +7 (978) 259-29-73
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#phone")
+
+            a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79782592973" rel="nofollow")
+
+          a.header__phones-link.open-modal(href="#modal__callback") Заказать звонок
+
+      // /.header__bottom
+    // /.container
+
+    .header__catalog
+      .container
+        ul.menu
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/cond.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Кондиционеры
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/ice.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Холодильники
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/washing.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Стиральные машины
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/svch.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Духовые шкафы
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/gas.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Газовые плиты
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/boile.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Бойлеры
+          li.menu-item
+            a(href="#")
+              span.menu-item__img
+                img(src="img/svg/icons/tv.svg" alt="" data-object-fit-contain)
+              span.menu-item__text Телевизоры
+
+      // /.container
+    // /.header__catalog

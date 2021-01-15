@@ -1,0 +1,235 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  &__title
+    margin-bottom: 24px
+    font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 600
+  &__wrap
+    position: relative
+    padding-right: 219px
+    .form__item
+      margin-bottom: 0
+      .text-input
+        input
+          height: 72px
+    .btn__wrap
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      .xbtn
+        width: 242px
+        height: 72px
+        padding-left: 58px
+        padding-right: 20px
+        white-space: normal
+        text-align: left
+
+  input,textarea
+    font-family: $form-font
+
+  &__item
+    margin-bottom: 16px
+    &--submit
+      margin-top: 24px
+      margin-bottom: 30px
+      .xbtn
+        width: 100%
+        height: 60px
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+      width: 360px
+      height: 59px
+      background-color: #ffffff
+      border: 1px solid rgba(189,189,189,0.35)
+      border-radius: 8px
+      padding-left: 23px
+      font-size: 16px
+
+      @include placeholder(#000000, 16px)
+
+      &:focus
+        @include placeholder(#ffffff, 16px)
+
+      &:hover
+        border-color: $accent
+
+    textarea
+      height: 99px
+      padding: 18px 22px
+
+  .accept
+    display: block
+    margin-top: 33px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+
+      padding-left: 20px
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(30,34,46,0.69)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+  &--general
+    background-color: #6e94a5
+    background-image: $grad2
+    border-radius: 10px
+    padding: 39px 80px 24px
+    .form__title
+      margin-bottom: 23px
+      font-size: 30px
+      font-weight: 900
+      color: #ffffff
+    .text-input
+      input,textarea
+        width: 100%
+    .form__item
+      &--submit
+        .btn__wrap
+          display: block
+        .xbtn
+          height: 60px
+    .accept
+      label
+        .accept__icon
+          &::before
+            background-image: url('../img/svg/tick--white.svg')
+
+
+  @media screen and (max-width: 1400px)
+    &--general
+      padding: 29px 40px 14px
+      .form__title
+        font-size: 24px
+      .accept
+        width: calc(100% + 20px)
+        margin-left: -10px
+    &__title
+      br
+        display: none
+    .text-input
+      input,textarea
+        width: 250px
+    &__wrap
+      padding-right: 149px
+      .btn__wrap
+        .xbtn
+          width: 192px
+          padding-left: 28px
+          padding-right: 20px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1270px)
+    .text-input
+      input,textarea
+        width: 100%
+
+  // max-width 1270px
+
+  @media screen and (max-width: 991px)
+    &--general
+      padding: 29px 30px 14px
+      .form__title
+        font-size: 20px
+      .accept
+        width: calc(100% + 40px)
+        margin-left: -20px
+
+  //   max-width 991px
+
+  @media screen and (max-width: 575px)
+    &__item
+      margin-bottom: 10px
+      &--submit
+        margin-top: 18px
+        margin-bottom: 24px
+        .xbtn
+          height: 54px
+
+    .text-input
+      input,textarea
+        height: 46px
+        padding-left: 16px
+      textarea
+        height: 79px
+        padding: 14px 16px
+
+  //   max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      padding-right: 0
+      .btn__wrap
+        position: static
+        transform: none
+        display: block
+        margin-top: 20px
+        text-align: center
+        .xbtn
+          width: 100%
+
+  //   max-width 500px
+
+  @media screen and (max-width: 400px)
+    &--general
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding-left: 20px
+      padding-right: 20px
+
+  //   max-width 400px
+
+ /* form */

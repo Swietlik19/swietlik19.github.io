@@ -1,0 +1,67 @@
+mixin script-map()
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
+  script.
+    (function($){
+
+      if (window.matchMedia('(max-width: 575px)').matches) {
+        createMap('scr_map',[44.556407, 33.515820],18);
+      } else {
+        createMap('scr_map',[44.556407, 33.515820],19);
+      }
+
+      function createMap(xID,coords,xZoom) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: coords,
+                  zoom: xZoom
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    hintContent: 'адрес',
+                    // Зададим содержимое балуна.
+                    balloonContent: '<div class="balloon-wrap">' +
+                    '<img src="' + 'img/svg/icons/logo.svg' +'"></div>',
+                    balloonCloseButton: false,
+                }, {
+                  // Опции.
+
+                  balloonPanelMaxMapArea: 0,
+                  openTimeout: 0,
+
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [41, 51],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -60]
+                });
+
+            myMap.geoObjects
+                .add(myPlacemark);
+
+            myPlacemark.balloon.open();
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+    })(jQuery);

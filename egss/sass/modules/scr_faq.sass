@@ -1,0 +1,135 @@
+.faq
+  position: relative
+  padding-top: 39px
+  padding-bottom: 70px
+  &__df
+    display: flex
+  &__wrap
+    flex-grow: 1
+    position: relative
+    z-index: 1
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    position: relative
+    margin-bottom: 20px
+    background-color: #ffffff
+    box-shadow: 0px 10px 20px 0px rgba(30,34,46,0.2)
+    border-radius: 8px
+    &:last-of-type
+      margin-bottom: 0
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 18px 16px 18px 24px
+      cursor: pointer
+      &:hover
+        h3
+          color: $accent
+
+    .hidden
+      display: none
+      padding: 0 65px 30px 24px
+
+    h3
+      margin-top: 0
+      margin-bottom: 0
+      margin-right: 15px
+      font-size: 18px
+      line-height: 1.333333333333333 /* 24 / 18 */
+      font-weight: 600
+      transition: 0.3s
+    p
+      font-size: 16px
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      text-decoration: underline
+      &:hover
+        color: $accent
+
+    .open
+      flex-shrink: 0
+      background: none
+      border: none
+      outline: none
+      width: 40px
+      height: 40px
+      background: #ffffff url('../img/svg/arrow.svg') no-repeat center center
+      background-size: 7px 11px
+      border: 2px solid #5c6bc0
+      border-radius: 50%
+      transform: rotate(90deg)
+      transition: 0.3s
+      transform-origin: center
+      &:hover
+        border-color: #29b6f6
+      &.active
+        transform: rotate(-90deg)
+
+  &__form
+    flex-shrink: 0
+    width: 517px
+    max-width: 100%
+    margin-left: 45px
+
+
+  @media screen and (max-width: 1400px)
+    &__form
+      width: 397px
+      margin-left: 35px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    padding-top: 29px
+    padding-bottom: 40px
+    &__item
+      .top
+        h3
+          font-size: 14px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__item
+      p
+        font-size: 13px
+    &__form
+      width: 358px
+      margin-left: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__df
+      flex-direction: column
+    &__item
+      .open
+        width: 35px
+        height: 35px
+      .top
+        h3
+          font-size: 12px
+      p
+        font-size: 12px
+    &__form
+      margin-top: 55px
+      margin-left: auto
+      margin-right: auto
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__form
+      margin-top: 35px
+
+  // max-width 575px
+
+/* faq */

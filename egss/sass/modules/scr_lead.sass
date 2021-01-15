@@ -1,0 +1,195 @@
+.lead
+  position: relative
+  background-color: #ffffff
+  overflow: hidden
+  &__df
+    display: flex
+  &__info
+    flex-grow: 1
+    position: relative
+    padding-top: 212px
+    background-color: #d2dce2
+    z-index: 2
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: -50vw
+      display: block
+      width: 50vw
+      height: 100%
+      background-color: #d2dce2
+      z-index: -1
+  &__img
+    position: absolute
+    bottom: 0
+    right: -51px
+    width: 523px
+    height: 525px
+    z-index: 3
+    img
+      display: block
+      height: 100%
+  &__form
+    position: relative
+    flex-shrink: 0
+    width: 550px
+    max-width: 100%
+    padding: 133px 20px 79px 113px
+    background-color: rgba(110,148,165,0.25)
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      height: 100%
+    &::before
+      left: 0
+      width: 60px
+      background-image: linear-gradient(90deg, rgba(#000,0.15) 0, rgba(#000,0) 100%)
+    &::after
+      right: -50vw
+      width: 50vw
+      background-color: rgba(110,148,165,0.25)
+    .form
+      .xbtn
+        width: 360px
+        height: 60px
+  &__title
+    font-size: 36px
+    line-height: 1.2
+    font-weight: 600
+    strong
+      line-height: 1.333333333333333 /* 48 / 36 */
+      font-weight: 900
+      text-transform: uppercase
+  &__decor
+    span
+      position: absolute
+      display: block
+      width: 280px
+      height: 280px
+      border-radius: 50px
+      transform: rotate(45deg)
+      z-index: -1
+      &:nth-of-type(4n + 1)
+        top: 177px
+        left: 10px
+        background-color: rgba(#49c7f8, 0.3)
+      &:nth-of-type(4n + 2)
+        bottom: 60px
+        left: 240px
+        background-color: rgba(#41d2e2, 0.3)
+      &:nth-of-type(4n + 3)
+        top: -10px
+        right: 350px
+        background-color: rgba(#7a87ce, 0.3)
+      &:nth-of-type(4n)
+        bottom: -160px
+        left: 270px
+        background-color: rgba(#7a87ce, 0.3)
+
+
+  @media screen and (max-width: 1400px)
+    &__info
+      padding-top: 162px
+    &__form
+      width: 470px
+      padding: 63px 20px 39px 83px
+    &__img
+      right: -81px
+      width: 413px
+      height: 415px
+    &__decor
+      span
+        width: 200px
+        height: 200px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1270px)
+    &__form
+      width: 400px
+      padding: 33px 20px 29px 83px
+      .form
+        .xbtn
+          width: 100%
+          white-space: normal
+
+  // max-width 1270px
+
+  @media screen and (max-width: 1170px)
+    &__title
+      max-width: 450px
+      font-size: 29px
+    &__img
+      z-index: -1
+
+  // max-width 1170px
+
+  @media screen and (max-width: 950px)
+    &__img
+      display: none
+    &__form
+      width: 360px
+      padding: 33px 20px 29px 40px
+    &__title
+      padding-right: 20px
+      font-size: 27px
+      br
+        display: none
+
+  // max-width 950px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 35px
+    &__df
+      display: block
+    &__info
+      padding-top: 35px
+      background: none
+      &::before
+        content: none
+    &__title
+      font-size: 22px
+      padding-right: 0
+    &__form
+      position: relative
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+      padding: 33px 30px 19px
+      background-color: #6e94a5
+      background-image: $grad2
+      border-radius: 10px
+      z-index: 5
+      .form__title
+        font-size: 19px
+        font-weight: 900
+        color: #ffffff
+      &::before,
+      &::after
+        content: none
+      .accept
+        width: calc(100% + 50px)
+        margin-left: -25px
+        label
+          .accept__icon
+            &::before
+              background-image: url('../img/svg/tick--white.svg')
+    &__decor
+      span
+        &:nth-of-type(4n + 2),
+        &:nth-of-type(4n + 3)
+          display: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    padding-bottom: 15px
+    &__title
+      font-size: 20px
+
+  // max-width 575px
+
+/* lead */

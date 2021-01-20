@@ -1,0 +1,57 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+          p.logo__text Производство и продажа
+            br
+            |  ленточных пил по РФ и странам СНГ
+
+        ul.menu
+          li.menu-item
+            a(href="#") О компании
+          li.menu-item
+            a(href="#") Наши клиенты
+          li.menu-item
+            a(href="#") Сертификаты
+          li.menu-item
+            a(href="#") Доставка и оплата
+          li.menu-item
+            a(href="#") Вопрос-ответ
+          li.menu-item
+            a(href="#") Блог
+          li.menu-item
+            a(href="#") Контакты
+
+        .header__btns
+          .btn__wrap
+            a.xbtn.xbtn--blue.open-modal(href="modal__callback") Заказать обратный звонок
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#phone")
+
+      // /.header__top
+    // /.container
+
+    .header__catalog
+      .container
+        ul.menu
+          li.menu-item
+            a(href="#") Биметаллические пилы BX TOOL M42
+          li.menu-item
+            a(href="#") Биметаллические пилы BX TOOL M51
+          li.menu-item
+            a(href="#") Твердосплавные пилы BX TOOL CT
+
+      // /.container
+    // /.header__catalog

@@ -1,0 +1,459 @@
+::selection
+  background-color: $accent2
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 146px
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.grey-bg
+  background-color: rgba(216,224,230,0.5)
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  ul
+    list-style: none
+    & > li
+      font-weight: 600
+      letter-spacing: 0.025em
+      &::before
+        content: '•'
+        display: inline-block
+        margin-right: 12px
+        font-size: 14px
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 50px
+  font-size: 40px
+  line-height: 1.2
+  text-transform: uppercase
+  letter-spacing: 0.025em
+  color: #000000
+  font-weight: 400
+  b
+    font-weight: 700
+  strong
+    font-weight: 800
+
+.page-df
+  display: flex
+  padding-bottom: 50px
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--red
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 59px
+    padding-left: 34px
+    padding-right: 34px
+    background-color: $accent
+    box-shadow: 0px 10px 30px 0px rgba(227,63,34,0.51)
+    border-radius: 29.5px
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 700
+    letter-spacing: 0.025em
+    color: #ffffff
+    text-align: center
+    &:hover
+      background-color: $accent2
+      box-shadow: 0px 10px 30px 0px rgba($accent2,0.51)
+  &--blue
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 41px
+    padding-left: 20px
+    padding-right: 20px
+    background-color: $accent2
+    border-radius: 20.5px
+    border: 1px solid $accent2
+    font-family: Akrobat
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 700
+    letter-spacing: 0.025em
+    color: #ffffff
+    text-align: center
+    &:hover
+      background-color: #ffffff
+      color: $accent2
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: $accent2
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .icon
+    width: 12px
+    height: 12px
+    fill: #fff
+    transform: rotate(-90deg)
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 34px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent2
+  width: 9px
+  height: 9px
+  margin: 0 11px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: $accent
+.swiper-button-prev,
+.swiper-button-next
+  top: 225px
+  background: none
+  border: none
+  outline: none
+  box-shadow: 0px 10px 15px 0px rgba(36,18,16,0.15)
+  width: 37px
+  height: 37px
+  margin: 0
+  background-color: rgba(255,255,255,0.3)
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: none
+.swiper-button-prev
+  left: -56px
+  &::after
+    transform: rotate(180deg)
+.swiper-button-next
+  right: -56px
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1500px
+
+/* media */
+
+@media screen and (max-width: 1400px)
+  .page-title
+    margin-bottom: 40px
+    font-size: 35px
+  .page-df
+    padding-bottom: 40px
+  .page_wr
+    padding-top: 106px
+
+// max-width 1400px
+
+@media (max-width: 1200px)
+  .container
+    max-width: 1500px
+  .page-title
+    font-size: 30px
+
+// max-width 1200px
+
+@media screen and (max-width: 1070px)
+  .page-df
+    display: block
+    padding-bottom: 30px
+
+// max-width 1070px
+
+@media screen and (max-width: 991px)
+  .page_wr
+    padding-top: 56px
+  .page-title
+    br
+      display: none
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .page-title
+    margin-bottom: 30px
+    font-size: 25px
+  .to-top
+    right: 10px
+    bottom: 10px
+  .xbtn,
+  input[type="submit"].xbtn
+    &--red
+      height: 49px
+      padding-left: 20px
+      padding-right: 20px
+      font-size: 16px
+      box-shadow: 0px 5px 15px 0px rgba(227,63,34,0.51)
+      &:hover
+        box-shadow: 0px 5px 15px 0px rgba($accent2,0.51)
+    &--blue
+      height: 41px
+      padding-left: 10px
+      padding-right: 10px
+      font-size: 13px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .swiper-dots
+    margin-top: 18px
+  .swiper-pagination-bullet
+    width: 7px
+    height: 7px
+    margin: 0 4px
+  .page-title
+    margin-bottom: 20px
+    font-size: 20px
+  .page-df
+    padding-bottom: 20px
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .page-title
+    font-size: 18px
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

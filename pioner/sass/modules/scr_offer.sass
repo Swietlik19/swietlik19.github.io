@@ -1,0 +1,224 @@
+.offer
+  position: relative
+  background-color: #e4e7f0
+  padding-bottom: 54px
+  overflow: hidden
+  &__top
+    display: flex
+    align-items: flex-end
+    margin-bottom: 44px
+  &__label
+    margin-top: -3px
+    margin-bottom: 50px
+    padding-top: 12px
+    padding-left: 41px
+    font-size: 18px
+    font-weight: 500
+    background: transparent url('../img/bookmark.png') no-repeat left center
+    background-size: 23px 31px
+  .page-title
+    flex-shrink: 0
+    margin-bottom: 0
+    font-weight: 900
+  &__percent
+    flex-shrink: 0
+    position: relative
+    margin-left: 87px
+    font-size: 36px
+    line-height: 24px
+    font-weight: 900
+    color: $accent
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      left: 25px
+      display: block
+      width: 168px
+      height: 188px
+      background: transparent url('../img/svg/icons/decor-4.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::before
+      top: -69px
+    &::after
+      top: 131px
+    strong
+      display: inline-block
+      margin-right: 10px
+      font-size: 104.1px
+      line-height: 90px
+      font-weight: 900
+  &__time
+    position: relative
+    margin-left: 136px
+    width: 441px
+    padding: 24px 38px 17px
+    background-color: #0d0b0c
+    border-radius: 3px
+    &::after
+      content: ''
+      position: absolute
+      top: calc(50% - 47px)
+      left: -176px
+      display: block
+      width: 180px
+      height: 95px
+      background: transparent url('../img/svg/icons/decor-3.svg') no-repeat center center
+      background-size: contain
+      transform: rotate(-90deg)
+    &-title
+      margin-bottom: 20px
+      font-size: 20px
+      color: #ffffff
+  #countdown
+    display: flex
+    justify-content: center
+    width: 100%
+    .countText
+      display: block
+      font-size: 14px
+      line-height: 1.2
+      letter-spacing: 0.03em
+      color: #ffffff
+    .countDays,
+    .countHours
+      margin-right: 31px
+    .countDiv
+      display: none
+    .countSeconds
+      display: none
+    .position
+      width: 47px
+      height: 68px
+      &:nth-of-type(2)
+        margin-left: -2px
+    .digit
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100%
+      height: 100%
+      background: #ffffff
+      border-radius: 3px
+      font-size: 40px
+      line-height: 1.2
+      font-weight: 500
+      text-transform: uppercase
+      letter-spacing: 0.03em
+      color: #303036
+      box-shadow: none
+      &:last-of-type
+        margin-right: 0
+
+
+  @media screen and (max-width: 1170px)
+    &__percent
+      margin-left: 47px
+      font-size: 32px
+      strong
+        font-size: 85.1px
+    &__label
+      margin-bottom: 30px
+      font-size: 16px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    .page-title
+      br
+        display: block
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__percent
+      &::before,
+      &::after
+        left: 135px
+    &__percent
+      margin-left: 37px
+      font-size: 29px
+      strong
+        font-size: 65.1px
+    &__time
+      margin-left: 0
+      &::after
+        content: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &__percent
+      margin-left: 27px
+      font-size: 25px
+      strong
+        font-size: 55.1px
+
+  // max-width 850px
+
+  @media screen and (max-width: 700px)
+    padding-bottom: 34px
+    .page-title
+      br
+        display: none
+    &__top
+      display: block
+      margin-bottom: 24px
+    &__percent
+      margin-left: 0
+      &::before,
+      &::after
+        content: none
+    &__label
+      margin-bottom: 20px
+      padding-top: 8px
+      font-size: 15px
+
+  // max-width 700px
+
+  @media screen and (max-width: 500px)
+    &__top
+      margin-bottom: 5px
+    &__time
+      width: 100%
+      padding: 24px 20px 17px
+      &-title
+        font-size: 17px
+    &__percent
+      margin-left: 17px
+      font-size: 19px
+      strong
+        font-size: 35.1px
+    #countdown
+      .position
+        width: 42px
+        height: 48px
+      .digit
+        font-size: 34px
+      .countDays,
+      .countHours
+        margin-right: 14px
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__time
+      &-title
+        font-size: 16px
+        br
+          display: none
+    #countdown
+      .position
+        width: 34px
+        height: 42px
+      .digit
+        font-size: 24px
+      .countDays,
+      .countHours
+        margin-right: 10px
+
+  // max-width 400px
+
+/* offer */

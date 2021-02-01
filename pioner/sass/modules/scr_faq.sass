@@ -1,0 +1,146 @@
+.faq
+  position: relative
+  width: 56.28070175438596%
+  max-width: 615px
+  margin-left: auto
+  .page-title
+    font-size: 30px
+    font-weight: 900
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    position: relative
+    border-top: 1px solid #b1b0b8
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 19px 0
+      cursor: pointer
+      &:hover
+        h3
+          color: $accent2
+
+    .hidden
+      display: none
+      padding: 4px 30px 30px 0
+
+    h2,
+    h3
+      margin-right: 15px
+      font-size: 20px
+      font-weight: 700
+      transition: 0.3s
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 45px
+      height: 45px
+      background-color: transparent
+      border-radius: 50%
+      transform-origin: center center
+      transition: 0.3s
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        display: block
+        width: 24px
+        height: 2px
+        background-color: #b1b0b8
+        transform-origin: center
+        transition: 0.3s
+        transform: translate(-50%, -50%)
+      &::before
+        transform: translate(-50%, -50%) rotate(270deg)
+      &.active
+        background-color: #e4e7f0
+        transform: rotate(135deg)
+
+    &:last-of-type
+      border-bottom: 1px solid #b1b0b8
+
+
+  @media screen and (max-width: 1400px)
+    &__item
+      .top
+        padding: 12px 0
+      h2,
+      h3
+        font-size: 17px
+      .hidden
+        .article
+          p
+            font-size: 14px
+    .page-title
+      font-size: 25px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    width: 60.28070175438596%
+    .page-title
+      font-size: 21px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    width: 50.28070175438596%
+    &__item
+      .top
+        padding: 8px 0
+      h2,
+      h3
+        font-size: 16px
+      .hidden
+        padding: 0 20px 20px 0
+        .article
+          p
+            font-size: 13px
+      .open
+        width: 35px
+        height: 35px
+        &::before,
+        &::after
+          width: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    .page-title
+      font-size: 18px
+    &__item
+      h2,
+      h3
+        font-size: 15px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    width: 100%
+
+  // max-width 575px
+
+/* faq */

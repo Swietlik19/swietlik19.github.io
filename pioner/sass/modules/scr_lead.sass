@@ -1,0 +1,195 @@
+.lead
+  position: relative
+  background-color: #0d0b0c
+  z-index: 10
+  &__df
+    display: flex
+  &__content
+    position: relative
+    width: calc(50% + 15px)
+    padding-right: 30px
+    padding-top: 90px
+    padding-bottom: 20px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      display: block
+      width: calc(50vw + 30px)
+      height: 100%
+      background: #f8f9fe url('../img/lead-bg.jpg') no-repeat center center
+      background-size: cover
+      z-index: -1
+  &__img
+    position: absolute
+    left: 117px
+    bottom: -125px
+    width: 713px
+    z-index: -1
+  &__form
+    width: calc(50% - 15px)
+    .form
+      width: 319px
+      max-width: 100%
+      margin-left: auto
+  &__title
+    font-size: 36px
+    line-height: 1.277777777777778 /* 48 / 36 */
+    font-weight: 900
+  &__desc
+    padding-top: 35px
+    font-size: 24px
+    line-height: 1.25 /* 30 / 24 */
+    font-weight: 500
+    color: #ffffff
+  &--2
+    background-color: #9b9aa2
+    overflow: hidden
+    .lead__df
+      min-height: 558px
+    .lead__content
+      width: calc(100% - 457px)
+      padding-top: 144px
+      &::before
+        width: calc(100vw)
+        background: #070605
+    .lead__img
+      left: 51%
+      bottom: -10px
+      width: 463px
+      height: 631px
+      &-part
+        position: absolute
+        bottom: 157px
+        left: -92px
+        width: 154px
+        height: 232px
+        z-index: 100
+    .lead__title
+      color: #ffffff
+    .lead__form
+      position: relative
+      width: 457px
+      background-color: #9b9aa2
+      z-index: 1
+      .form
+        width: 355px
+        padding-top: 82px
+        &__item--submit
+          margin-top: 44px
+          padding-left: 21px
+          text-align: left
+        .accept
+          label
+            text-align: left
+  &--3
+    .lead__content
+      padding-top: 106px
+
+
+  @media screen and (max-width: 1400px)
+    &__img
+      width: 583px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    &--2
+      .lead__img
+        &-part
+          display: none
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    &--2
+      .lead__content
+        width: calc(100% - 377px)
+      .lead__form
+        width: 377px
+        .form
+          padding-top: 42px
+          padding-bottom: 26px
+      .lead__img
+        left: 41%
+        width: 373px
+        height: 521px
+      .lead__df
+        min-height: 468px
+    &--3
+      .lead__content
+        padding-top: 76px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__img
+      display: none
+    &__title
+      font-size: 27px
+      br
+        display: none
+    &__desc
+      font-size: 19px
+      br
+        display: none
+    &--2
+      .lead__df
+        min-height: 0
+      .lead__form
+        .form__item--submit
+          margin-top: 34px
+          padding-left: 0
+          text-align: center
+        .form
+          padding-top: 32px
+          .accept
+            label
+              text-align: center
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__df
+      display: block
+    .lead__content
+      width: 100%
+      padding-top: 36px
+      padding-bottom: 36px
+      padding-right: 0
+      &::before
+        right: -15px
+        width: 100vw
+    &--2
+      .lead__form
+        width: 316px
+    &__form
+      width: 316px
+      max-width: 100%
+      margin-left: auto
+      margin-right: auto
+      .form
+        width: 100%
+        padding-top: 41px
+        padding-bottom: 36px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__title
+      font-size: 23px
+    &__desc
+      padding-top: 15px
+      font-size: 16px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 20px
+
+  // max-width 500px
+
+/* lead */

@@ -1,0 +1,52 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Стабильный доход от вложения
+            br
+            |  в недвижимость г. Севастополь и Крыму
+
+        p.header__address Республика Крым,
+          br
+          |  г. Севастополь, ул. Террасная, 14
+
+        .header__phones
+          a.header__phone(href="tel:+78003025207" rel="nofollow") +7 800 302-52-07
+          a.header__modal.open-modal(href="#modal__callback") Перезвоните мне
+
+      // /.header__top
+    // /.container
+
+    .header__bottom
+      .container
+        ul.menu
+          li.menu-item
+            a(href="#") Преимущества
+          li.menu-item
+            a(href="#") О проекте
+          li.menu-item
+            a(href="#") Программа доходности
+          li.menu-item
+            a(href="#") Готовые проекты
+          li.menu-item
+            a(href="#") Отзывы
+          li.menu-item
+            a(href="#") Документация
+          li.menu-item
+            a(href="#") Команда
+          li.menu-item
+            a(href="#") Блог
+          li.menu-item
+            a(href="#") Контакты

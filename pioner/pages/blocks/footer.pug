@@ -1,0 +1,76 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .footer__content
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/svg/logo--footer.svg" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/svg/logo--footer.svg" alt="лого")
+
+            p.logo__text Стабильный доход от вложения
+              br
+              |  в недвижимость г. Севастополь и Крыму
+
+          .footer__df
+            .footer__info
+              p.footer__text Республика Крым,
+                br
+                |  г. Севастополь, ул. Террасная, 14
+
+              a.footer__text(href="mailto:Gk.Pioneri@yandex.ru" rel="nofollow") Gk.Pioneri@yandex.ru
+
+              a.footer__link(href="tel:+78003025207" rel="nofollow") +7 800 302-52-07
+
+              +socials
+
+            .footer__menu
+              ul.menu
+                li.menu-item
+                  a(href="#") Преимущества
+                li.menu-item
+                  a(href="#") О проекте
+                li.menu-item
+                  a(href="#") Программы доходности
+                li.menu-item
+                  a(href="#") Готовые проекты
+                li.menu-item
+                  a(href="#") Отзывы
+                li.menu-item
+                  a(href="#") Команда
+                li.menu-item
+                  a(href="#") Документация
+                li.menu-item
+                  a(href="#") Блог
+                li.menu-item
+                  a(href="#") Контакты
+
+        // /.footer__content
+
+        .footer__map#footer__map
+
+      // /.footer__top
+    // /.container
+
+    .footer__bottom
+      .container
+        .footer__bottom-df
+          .footer__politics
+            a.text(href="#") Политика конфиденциальности
+
+          .footer__copyright
+            p.text г. Симферополь © Copyright  2020&nbsp;г.
+
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

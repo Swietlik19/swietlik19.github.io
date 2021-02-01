@@ -1,0 +1,188 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: #0d0b0c
+  z-index: 140
+  .container
+    max-width: 1580px
+  &__top
+    display: flex
+    align-items: center
+    padding-top: 6px
+    padding-bottom: 9px
+  .burger
+    display: none
+  .logo
+    display: block
+    text-decoration: none
+    width: 207px
+    height: 77px
+    margin-right: 25px
+    &__wrap
+      display: flex
+      align-items: center
+    &__text
+      font-size: 14px
+      color: #ffffff
+  &__address
+    margin-left: auto
+    margin-right: 96px
+    font-size: 14px
+    color: #ffffff
+  &__phones
+    text-align: right
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 700
+    color: #ffffff
+    transition: 0.3s
+    &:hover
+      color: $accent2
+  &__modal
+    display: block
+    outline: none
+    margin-top: 6px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    color: #d82027
+    transition: 0.3s
+    &:hover
+      color: $accent2
+
+  &__bottom
+    background-color: #9b9aa2
+    background-image: linear-gradient(180.0deg, #e4e7f0 0%, #9b9aa2 100%)
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    & > li
+      & > a
+        position: relative
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        height: 50px
+        line-height: 1.2
+        font-weight: 600
+        color: #0d0b0c
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: 0
+          display: block
+          width: 100%
+          height: 3px
+          background-color: $accent
+          transform-origin: center center
+          transform: scale(0)
+          transition: 0.5s
+        &:hover
+          &::after
+            transform: scale(1)
+
+
+  @media screen and (max-width: 1400px)
+    .logo
+      width: 157px
+      height: 59px
+      margin-right: 20px
+      &__text
+        font-size: 12px
+    &__address
+      margin-right: 46px
+      font-size: 12px
+    &__phone
+      font-size: 16px
+    &__modal
+      font-size: 13px
+    .menu
+      & > li
+        & > a
+          height: 40px
+          font-size: 14px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    .burger
+      display: flex
+      margin-right: 20px
+    &__bottom
+      position: fixed
+      top: 0
+      left: 0
+      width: 350px
+      height: 100vh
+      padding-top: 55px
+      box-shadow: 0 5px 20px rgba(#000, 0.1)
+      background: #fff
+      z-index: 200
+      transform: translateX(-101%)
+      transition: 0.5s
+      &.active
+        transform: translateX(0)
+        transition: 1.3s
+    .menu
+      max-height: calc(100vh - 55px)
+      overflow: auto
+      display: block
+      & > li
+        width: 100%
+        & > a
+          height: auto
+          padding: 9px 0
+          border-bottom: 1px solid rgba(#000, 0.1)
+          &::after
+            content: none
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__address
+      display: none
+    &__phones
+      margin-left: auto
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    .logo
+      &__text
+        display: none
+    &__modal
+      display: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    .logo
+      width: 127px
+      height: 49px
+    &__phone
+      font-size: 14px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__phone
+      font-size: 13px
+
+  // max-width 400px
+
+/* .header */

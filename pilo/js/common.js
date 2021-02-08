@@ -1,7 +1,13 @@
+!function(t){t.extend(t.easing,{spincrementEasing:function(t,a,e,n,r){return a===r?e+n:n*(-Math.pow(2,-10*a/r)+1)+e}}),t.fn.spincrement=function(a){function e(t,a){if(t=t.toFixed(a),a>0&&"."!==r.decimalPoint&&(t=t.replace(".",r.decimalPoint)),r.thousandSeparator)for(;o.test(t);)t=t.replace(o,"$1"+r.thousandSeparator+"$2");return t}var n={from:0,to:null,decimalPlaces:null,decimalPoint:".",thousandSeparator:",",duration:1e3,leeway:50,easing:"spincrementEasing",fade:!0,complete:null},r=t.extend(n,a),o=new RegExp(/^(-?[0-9]+)([0-9]{3})/);return this.each(function(){var a=t(this),n=r.from;a.attr("data-from")&&(n=parseFloat(a.attr("data-from")));var o;if(a.attr("data-to"))o=parseFloat(a.attr("data-to"));else if(null!==r.to)o=r.to;else{var i=t.inArray(r.thousandSeparator,["\\","^","$","*","+","?","."])>-1?"\\"+r.thousandSeparator:r.thousandSeparator,l=new RegExp(i,"g");o=parseFloat(a.text().replace(l,""))}var c=r.duration;r.leeway&&(c+=Math.round(r.duration*(2*Math.random()-1)*r.leeway/100));var s;if(a.attr("data-dp"))s=parseInt(a.attr("data-dp"),10);else if(null!==r.decimalPlaces)s=r.decimalPlaces;else{var d=a.text().indexOf(r.decimalPoint);s=d>-1?a.text().length-(d+1):0}a.css("counter",n),r.fade&&a.css("opacity",0),a.animate({counter:o,opacity:1},{easing:r.easing,duration:c,step:function(t){a.html(e(t*o,s))},complete:function(){a.css("counter",null),a.html(e(o,s)),r.complete&&r.complete(a)}})})}}(jQuery);
+
 (function($){
 
   /* Для проверки resize, т.к. на мобильном Хроме при скролле срабывает resize (без изменения ширины) */
   var screenWidth = $(window).width();
+
+  /* Инициализация wow */
+  wow = new WOW({mobile: false})
+  wow.init();
 
   /* Нужно для IE и некоторых других браузеров, чтобы понимал svg спрайты во внешних файлах */
   svg4everybody();
@@ -103,17 +109,17 @@
   });
 
   // Табы
-  // $('.prod-item__nav a').click(function(event) {
-  //   event.preventDefault();
-  //   var _href = $(this).attr('href');
-  //   $(this).parent().siblings().removeClass('current');
-  //   $(this).parent().addClass('current');
-  //   $('.services__tab').not(_href).hide();
-  //   $(_href).fadeIn();
-  //   if (window.matchMedia('(max-width: 767px)').matches) {
-  //     $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
-  //   }
-  // });
+  $('.prod-types .tabs__nav-js a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-types__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();
@@ -122,6 +128,28 @@
 
   if (window.matchMedia('(max-width: 991px)').matches) {
     $('.header__catalog .menu > li').appendTo('.header__top .menu');
+  }
+
+  /* Анимация чисел */
+  if ($('.about__certs-nums').length > 0) {
+    var show = true;
+    var countbox = ".about__certs";
+    $(window).on("scroll load resize", function () {
+        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+        var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+        var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+        var w_height = $(window).height(); // Высота окна браузера
+        var d_height = $(document).height(); // Высота всего документа
+        var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            $('.about__certs-num strong').css('opacity', '1');
+            $('.about__certs-num strong').spincrement({
+                thousandSeparator: " ",
+                duration: 1700
+            });
+            show = false;
+        }
+    });
   }
 
 
@@ -146,6 +174,107 @@
       },
       450: {
         slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  var certsSliderAbout = new Swiper('#certs__slider--about', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    pagination: {
+      el: '.certs__slider-wrap .swiper-dots',
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 17,
+      },
+      900: {
+        slidesPerView: 2,
+        spaceBetween: 17,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 17,
+      },
+      300: {
+        slidesPerView: 2,
+        spaceBetween: 17,
+      },
+    },
+  });
+
+  var aboutTimesSlider = new Swiper('#about__times-slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    pagination: {
+      el: '.about__times-btns .swiper-dots',
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 3,
+        spaceBetween: 90,
+      },
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      575: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+    },
+  });
+
+  var aboutTimeline = new Swiper('#about__timeline', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    breakpoints: {
+      1450: {
+        slidesPerView: 5,
+      },
+      900: {
+        slidesPerView: 4,
+      },
+      650: {
+        slidesPerView: 3,
+      },
+      400: {
+        slidesPerView: 2,
+      },
+    },
+  });
+
+  var prodAddSlider = new Swiper('#prod-add__slider', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    pagination: {
+      el: '.prod-add__slider-wrap .swiper-dots',
+    },
+    breakpoints: {
+      1170: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      500: {
+        slidesPerView: 2,
         spaceBetween: 10,
       },
     },

@@ -1,0 +1,146 @@
+.blog
+  position: relative
+  padding-top: 58px
+  padding-bottom: 46px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 28px
+    & > li
+      width: calc((100% - 84px * 2) / 3)
+      margin-right: 84px
+      padding-bottom: 52px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+  &__img
+    height: 260px
+    background-color: #cccccc
+    overflow: hidden
+    img
+      display: block
+      transition: 0.3s
+    &:hover
+      img
+        transform: scale(1.1)
+        transition: 1.3s
+  &__content
+    flex-grow: 1
+    padding-top: 20px
+    time
+      display: block
+      margin-bottom: 18px
+      font-size: 14px
+      line-height: 1.2
+      font-weight: 700
+      letter-spacing: 0.025em
+      color: #1c4b6e
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        h2
+          color: $accent
+    h2
+      min-height: 68px
+      margin-top: 0
+      margin-bottom: 26px
+      font-size: 28px
+      line-height: 1.214285714285714 /* 34 / 28 */
+      font-weight: 800
+      letter-spacing: 0.025em
+      color: #000101
+      transition: 0.3s
+  &__links
+    padding-top: 5px
+  &__link
+    display: inline-block
+
+
+  @media screen and (max-width: 1400px)
+    &__list
+      margin-bottom: 8px
+      & > li
+        width: calc((100% - 50px * 2) / 3)
+        margin-right: 50px
+        padding-bottom: 42px
+    &__content
+      time
+        margin-bottom: 12px
+        font-size: 13px
+      h2
+        min-height: 58px
+        margin-bottom: 20px
+        font-size: 24px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    padding-top: 38px
+    padding-bottom: 26px
+    &__list
+      & > li
+        width: calc((100% - 30px * 2) / 3)
+        margin-right: 30px
+        padding-bottom: 42px
+    &__img
+      height: 190px
+    &__content
+      h2
+        min-height: 50px
+        margin-bottom: 16px
+        font-size: 20px
+        br
+          display: none
+
+  // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__list
+      & > li
+        width: calc((100% - 20px * 2) / 3)
+        margin-right: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__list
+      & > li
+        width: calc((100% - 15px) / 2)
+        margin-right: 15px
+        padding-bottom: 32px
+        &:nth-of-type(3n)
+          margin-right: 15px
+        &:nth-of-type(2n)
+          margin-right: 0
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    padding-top: 28px
+    &__img
+      height: 150px
+    &__content
+      h2
+        min-height: 44px
+        font-size: 18px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__list
+      & > li
+        padding-bottom: 22px
+    .article
+      font-size: 13px
+
+  // max-width 500px
+
+/* blog */

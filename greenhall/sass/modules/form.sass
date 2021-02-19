@@ -1,0 +1,155 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-height: 653px
+  padding: 40px
+  &::before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -29px
+    display: block
+    width: 516px
+    height: 715px
+    background: transparent url('../img/svg/decor-1.svg') no-repeat center center
+    background-size: contain
+    z-index: -1
+  &::after
+    content: ''
+    position: absolute
+    top: 15px
+    left: 10px
+    display: block
+    width: 434px
+    height: 623px
+    background: transparent url('../img/svg/decor-2.svg') no-repeat center center
+    background-size: contain
+    z-index: -1
+
+  &__title
+    margin-bottom: 11px
+    padding-left: 9px
+    font-family: $font2
+    font-size: 24px
+    color: #094b53
+    text-align: center
+  &__desc
+    margin-bottom: 20px
+    font-weight: 500
+    color: #094b53
+    text-align: center
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 322px
+      padding-top: 15px
+      padding-bottom: 15px
+      border-bottom: 1px solid rgba(9,75,83,0.2)
+      font-size: 16px
+      font-weight: 500
+      color: #094b53
+
+      @include placeholder(#094b53, 16px)
+
+      &:focus
+        @include placeholder(#fff, 18px)
+      &:hover
+        border-color: rgba(9,75,83,0.4)
+
+    textarea
+      // height: 136px
+
+  &__item
+    margin-bottom: 35px
+    text-align: center
+    &--submit
+      position: relative
+      z-index: 1
+      margin-top: 53px
+    &:last-of-type
+      margin-bottom: 0
+
+  .accept
+    display: block
+    margin-top: 45px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 400
+      color: #094b53
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 17px
+        height: 17px
+        border: 1px solid #094b53
+        border-radius: 50%
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 2px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 9px
+          height: 6px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  // @media screen and (max-width: 575px)
+
+  //   max-width 575px
+
+ /* form */

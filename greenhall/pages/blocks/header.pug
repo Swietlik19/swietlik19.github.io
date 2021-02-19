@@ -1,0 +1,39 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+        .header__item
+          .header__item-icon
+            img(src="img/svg/icons/pin.svg" alt="")
+          .header__item-text
+            p Республика Крым,
+              br
+              b  г. Ялта, парк им. Гагарина, 3
+
+        .header__item
+          .header__item-icon
+            img(src="img/svg/icons/call.svg" alt="")
+          a.header__phone(href="tel:+79788177717" rel="nofollow") +7 (978) 817-77-17
+
+        .header__btn
+          .btn__wrap.btn__wrap--blue
+            a.xbtn.xbtn--blue.open-modal(href="#modal__callback") Заказать звонок
+
+        button.header__like.xbtn.xbtn--circle(type="button")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#like")
+
+        button.burger
+          span.burger__wrap
+            span.line
+
+      // /.header__top
+    // /.container

@@ -1,0 +1,36 @@
+$b: #094b53
+$br: #dbb978
+
+$accent: $b
+$accent2: $br
+
+$icon: $b
+$body-color: #333333
+
+$grad: linear-gradient(170.0deg, #dbb877 17%, #ae915b 82%)
+$grad2: linear-gradient(170.0deg, #2fcde0 17%, #0f9fb0 82%)
+
+$font: 'Gotham Pro', sans-serif
+$font2: 'BerlingskeSerif-DBd', serif
+
+$form-font: $font
+$title-font: $font2
+
+// Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px)
+@mixin placeholder($color,$size)
+  &::-webkit-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &::-moz-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &:-ms-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+

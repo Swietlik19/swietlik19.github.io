@@ -1,0 +1,72 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#094b53')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/socials.pug
+
+    include blocks/scr1.pug
+    include blocks/scr2.pug
+    include blocks/scr_adv.pug
+    include blocks/scr_lead.pug
+    include blocks/scr_plans.pug
+    include blocks/scr_about.pug
+    include blocks/scr_prod.pug
+    include blocks/scr_map.pug
+    include blocks/scr_cases.pug
+    include blocks/scr_gallery.pug
+    include blocks/scr_insta.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    +styles
+
+  body
+
+    +header("div")
+
+    #page_wr.page_wrp
+      +scr1
+      +scr2
+      +scr_advts
+      +scr_lead
+      +scr_plans
+      +scr_about
+      +scr_prod
+      +scr_lead--2
+      +scr_map
+      +scr_cases
+      +scr_gallery
+      +scr_insta
+      +scr_lead--3
+
+
+      a.to-top(href="#page_wr")
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#arrow")
+
+    +footer("div")
+
+    +scripts
+    +script-map

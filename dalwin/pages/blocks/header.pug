@@ -1,0 +1,63 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Лицензированная клиника
+            br
+            |  косметологии и омоложения
+
+        .header__address
+          p Симферополь, ул. Толстого, 10
+            br
+            |  Пн - Пт: 09:00 - 18:00
+
+        a.header__phone(href="tel:+79782077070" rel="nofollow") +7 (978) 207-70-70
+
+        .header__online
+          .btn__wrap
+            a.xbtn.xbtn--trsp(href="#") On-line запись
+
+        .header__pricelist
+          .btn__wrap.btn__wrap--grad
+            a.xbtn.xbtn--grad(href="#") Прайс-лист
+
+      // /.header__top
+    // /.container
+
+    .header__bottom
+      .container
+        .header__df
+          ul.menu
+            li.menu-item
+              a(href="#") Косметология
+            li.menu-item
+              a(href="#") Дерматология
+            li.menu-item
+              a(href="#") Трихология
+            li.menu-item
+              a(href="#") Антивозрастная медицина
+            li.menu-item
+              a(href="#") Эндокринология
+            li.menu-item
+              a(href="#") Врачи
+            li.menu-item
+              a(href="#") Акции
+            li.menu-item
+              a(href="#") Контакты
+            li.menu-item
+              a(href="#") Медицинская лаборатория
+
+          button.burger
+            span.burger__wrap
+              span.line
+
+      // /.container
+    // /.header__top

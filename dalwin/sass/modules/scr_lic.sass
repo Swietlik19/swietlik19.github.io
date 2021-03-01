@@ -13,9 +13,11 @@
       display: flex
       align-items: flex-end
       width: 100%
-      bottom: -15px
+      bottom: -30px
       .swiper-button-prev
         margin-right: 20px
+      .swiper-button-disabled
+        display: flex
       .swiper-button-next
         margin-left: 20px
       .swiper-button-prev,
@@ -34,9 +36,9 @@
         &:hover
           .icon
             fill: $accent2
-
   &__item
-    display: block
+    position: relative
+    display: inline-block
     text-decoration: none
     outline: none
     padding: 10px
@@ -58,36 +60,65 @@
       border-radius: 6px
       z-index: -1
     &:hover
-      box-shadow: 0px 7px 10px 0px rgba(178,172,165,0.3)
+      box-shadow: 0px 7px 10px 0px rgba($accent2,0.6)
+    img
+      display: block
+      width: auto
+      height: auto
+      max-width: 100%
+      max-height: 521px
 
 
+  @media screen and (max-width: 1600px)
+    width: 340px
+    &__item
+      img
+        max-height: 451px
 
-  // @media screen and (max-width: 1170px)
+  // max-width 1600px
 
-  // max-width 1170px
+  @media screen and (max-width: 1400px)
+    width: 300px
+    &__item
+      img
+        max-height: 425px
 
-  // @media screen and (max-width: 1070px)
+  // max-width 1600px
 
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    width: 270px
+    &__slider
+      &-nav
+        bottom: -20px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    width: 100%
+    margin-right: 0
+    &__item
+      img
+        max-height: 275px
+    &__slider
+      &-nav
+        bottom: -1px
+        display: flex
+        justify-content: center
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 450px)
+    &__slider
+      overflow: visible
+      &-nav
+        display: flex
+        justify-content: center
+        width: 100%
+        bottom: 51px
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
 
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 450px
 
 /* certs */

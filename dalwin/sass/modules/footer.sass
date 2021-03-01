@@ -101,20 +101,53 @@
       transform: scale(1.1)
 
 
-  // @media screen and (max-width: 1023px)
+  @media screen and (max-width: 991px)
+    &__df
+      flex-direction: column
+      padding-bottom: 60px
+    &__col
+      width: 100% !important
+      padding-right: 0
+      margin-right: 0
+      &:last-of-type
+        .footer__col-content
+          padding-bottom: 0
+      &:nth-of-type(2)
+        order: -1
+        padding-bottom: 15px
+      &:not(:nth-of-type(2))
+        .footer__title
+          display: flex
+          align-items: center
+          justify-content: space-between
+          cursor: pointer
+          &::after
+            content: ''
+            display: block
+            width: 18px
+            height: 18px
+            margin-left: 15px
+            background: transparent url('../img/svg/add.svg') no-repeat center center
+            background-size: contain
+            transition: 0.4s
+          &.active
+            &::after
+              transform: rotate(45deg)
 
-  // max-width 1023px
-
-  // @media screen and (max-width: 991px)
+      &-content
+        display: none
+        padding-bottom: 15px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 500px)
+    &__title
+      margin-bottom: 15px
+      font-size: 17px
+    .menu
+      & > li
+        margin-bottom: 6px
 
-  // max-width 767px
-
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
+  // max-width 500px
 
 /* footer */

@@ -1,23 +1,139 @@
 .advts
   position: relative
+  padding-top: 52px
   padding-bottom: 290px
+  z-index: 3
+  &::before
+    content: ''
+    position: absolute
+    top: -160px
+    left: 0
+    width: 100%
+    height: 160px
+    background-image: linear-gradient(0.0deg, rgba(#ffffff, 1) 0%, rgba(#ffffff, 0) 100%)
+    z-index: -2
+  &::after
+    content: ''
+    position: absolute
+    top: -380px
+    left: 0
+    width: 1226px
+    height: 1933px
+    background: transparent url('../img/advantages-bg.png') no-repeat center center
+    background-size: contain
+    z-index: -1
+  &__bg
+    position: absolute
+    bottom: 580px
+    right: 0
+    display: block
+    width: 1238px
+    height: 2007px
+    background: transparent url('../img/advantages-bg2.png') no-repeat center center
+    background-size: contain
+    z-index: -1
+  // &__list
+  //   margin: 0
+  //   padding: 0
+  //   list-style: none
+  //   padding-top: 52px
   &__list
-    margin: 0
-    padding: 0
-    list-style: none
-    padding-top: 52px
+    &-btns
+      display: none
+    .swiper-wrapper
+      position: static
+      display: block
+      transform: none
+    .swiper-slide
+      height: auto
+      margin-bottom: 140px
+      &:nth-of-type(2)
+        .advts__decor
+          left: -215px
+          bottom: -173px
+          width: 490px
+          height: 542px
+          z-index: 3
+          &--bg
+            left: 34.45040214477212%
+            top: 0
+            bottom: auto
+            width: 800px
+            height: 675px
+            background-image: url('../img/advantages-img-2.png')
+            z-index: -1
+      &:nth-of-type(3)
+        position: static
+        .scr2__feat-bird2
+          bottom: -56px
+          right: auto
+          left: 417px
+        .advts__decor
+          &--bg
+            left: auto
+            right: 0
+            bottom: auto
+            width: 1336px
+            height: 630px
+            margin-top: -73px
+            background-image: url('../img/advantages-img-4.jpg')
+            z-index: -2
+        .advts__content
+          position: relative
+      &:nth-of-type(4)
+        position: static
+        .scr2__feat-bird1
+          top: 119px
+          right: -46px
+          left: auto
+          bottom: auto
+        .advts__decor
+          bottom: -217px
+          left: -400px
+          width: 553px
+          height: 417px
+          background-image: url('../img/advantages-img-6.png')
+          z-index: 3
+          &--bg
+            left: auto
+            right: 0
+            bottom: auto
+            width: 967px
+            height: 754px
+            margin-top: -152px
+            background-image: url('../img/advantages-img-5.jpg')
+            z-index: -2
+        .advts__content
+          position: relative
+          padding-top: 42px
+      &:nth-of-type(2n)
+        .advts__img
+          order: -1
+          margin-left: -54px
+          margin-right: 100px
+      &:last-of-type
+        margin-bottom: 0
+        .advts__content
+          padding-right: 64px
   &__item
+    // position: relative
     display: flex
-    margin-bottom: 140px
-    &:nth-of-type(2n)
-      .advts__img
-        order: -1
-        margin-left: -54px
-        margin-right: 100px
-    &:last-of-type
-      margin-bottom: 0
-      .advts__content
-        padding-right: 64px
+    z-index: 1
+  &__decor
+    position: absolute
+    display: block
+    background: transparent url('../img/advantages-img-3.png') no-repeat center center
+    background-size: contain
+  &__leaf
+    position: absolute
+    top: -215px
+    right: -137px
+    display: block
+    width: 875px
+    height: 697px
+    background: transparent url('../img/advantages-img-1.png') no-repeat center center
+    background-size: contain
+    z-index: -1
   &__content
     flex-grow: 1
   &__text
@@ -46,32 +162,151 @@
         transition: 1.5s
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1400px)
+    &__img
+      width: 50.789015%
+      height: 400px
+      margin-left: 38px
+    &__leaf
+      top: -195px
+      width: 785px
+      height: 487px
+    &__text
+      margin-bottom: 40px
+      font-size: 14px
+    &__list
+      .swiper-slide
+        margin-bottom: 80px
+        &:nth-of-type(2)
+          .advts__decor
+            left: -85px
+            bottom: -103px
+            width: 310px
+            height: 382px
+          .advts__img
+            margin-right: 40px
+        &:nth-of-type(3)
+          .scr2__feat-bird1,
+          .scr2__feat-bird2
+            display: none
+          .advts__decor--bg
+            right: -250px
+            width: 1086px
+            height: 580px
+        &:nth-of-type(4)
+          .advts__decor--bg
+            width: 717px
+            height: 684px
+            z-index: -3
+          .advts__img
+            margin-right: 40px
+          // .advts__decor
+          //   bottom: -117px
+          //   width: 363px
+          //   height: 287px
 
-  // max-width 1170px
+  // max-width 1400px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    padding-bottom: 100px
+    &::after
+      content: none
+    &__leaf,
+    &__decor
+      display: none
+    &__wrap
+      position: relative
+    &__list
+      .swiper-wrapper
+        position: relative
+        display: flex
+        transform: translate3d(0px,0,0)
+      .swiper-slide
+        height: 100%
+        margin-bottom: 0
+        &:nth-of-type(2n)
+          .advts__img
+            order: 2
+            margin-left: 30px
+            margin-right: 0
+        &:last-of-type
+          .advts__content
+            padding-right: 0
+      &-btns
+        display: block
+        .swiper-button-prev,
+        .swiper-button-next
+          top: 50%
+          transform: translateY(-50%)
+        .swiper-button-prev
+          left: -9px
+        .swiper-button-next
+          right: -9px
+        .swiper-dots
+          bottom: -52px
+    .scr2__feat-bird1,
+    .scr2__feat-bird2
+      display: none
+    &__img
+      margin-left: 30px
+    &__content
+      padding-left: 40px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &::before
+      top: 0px
+    &__bg
+      display: none
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    &__btns
+      display: none
+    &__text
+      display: none
+    &__img
+      width: 100%
+      height: 432px
+      margin-left: 0
+      box-shadow: 0px 9px 30px -6px rgba(9,75,83,0.2)
+    &__item
+      display: block
+    &__list
+      .swiper-slide
+        &:nth-of-type(2n)
+          .advts__img
+            margin-left: 0
+        &:nth-of-type(4)
+          .advts__content
+            padding-top: 0
+      &-btns
+        .swiper-button-prev,
+        .swiper-button-next
+          top: 55%
+        .swiper-dots
+          bottom: -40px
+          // bottom: 10px
+
+    &__content
+      padding-left: 0
+    .page-title
+      margin-bottom: 15px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    padding-top: 22px
+    padding-bottom: 60px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 370px)
+    &__img
+      height: 382px
 
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 370px
 
 /* advts */

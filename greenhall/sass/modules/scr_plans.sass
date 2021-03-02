@@ -1,6 +1,15 @@
 .plans
   position: relative
   z-index: 10
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 340px
+    background-image: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%)
+    z-index: 1
   &__df
     display: flex
     align-items: flex-start
@@ -48,6 +57,7 @@
       font-size: 100px
       line-height: 55px
   &__stage
+    position: relative
     margin: 0
     padding: 0
     list-style: none
@@ -55,6 +65,7 @@
     flex-shrink: 0
     width: 780px
     margin-right: -52px
+    z-index: 2
     &-tab
       flex-shrink: 0
       display: flex
@@ -124,33 +135,142 @@
       z-index: 2
 
 
+  @media screen and (max-width: 1630px)
+    &__stage
+      margin-right: -32px
 
-  // @media screen and (max-width: 1170px)
+  // max-width 1630px
+
+  @media screen and (max-width: 1550px)
+    &__stages
+      margin-left: -125px
+    &__stage
+      margin-right: 0
+      width: 660px
+      &-title
+        margin-bottom: 18px
+        font-size: 50px
+        line-height: 47px
+        strong
+          font-size: 82px
+      &-desc
+        font-size: 16px
+      &-text
+        font-size: 14px
+    .scr2__feat-item
+      width: 192px
+      height: 192px
+      h3
+        font-size: 15px
+    .scr2__feat-num
+      font-size: 90px
+
+  // max-width 1550px
+
+  @media screen and (max-width: 1250px)
+    &__stages
+      margin-right: -77px
+    &__stage
+      &-sold
+        font-size: 11px
 
   // max-width 1170px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    &__stages
+      margin-right: -20px
+      margin-left: -65px
+    &__stage
+      width: 420px
+      max-width: 100%
+      &-tab
+        flex-direction: column
+      &-title
+        margin-bottom: 14px
+        font-size: 35px
+        line-height: 37px
+        strong
+          font-size: 55px
+      &-desc,
+      &-text
+        display: none
+      &-add
+        font-size: 14px
+        &-img
+          width: 24px
+      &-info
+        padding-left: 34px
+        padding-right: 0
+    .scr2__feat
+      display: flex
+      justify-content: space-between
+      width: 100%
+      margin: 0
+      padding-top: 32px
+      padding-right: 0
+      padding-left: 0
+      order: 2
+      & > li
+        margin-right: 15px
+        &:last-of-type
+          margin-right: 0
+          padding-top: 0
+      &-item
+        width: auto
+        height: auto
+        background: none
+        display: flex
+        align-items: center
+        padding: 0
+        h3
+          color: $accent
+          font-size: 12px
+          text-align: left
+      &-num
+        margin-right: 16px
+        font-size: 45px
+        color: $accent
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    &__stage
+      &-title
+        display: none
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 800px)
+    &::before
+      content: none
+    &__df
+      display: block
+    &__stages
+      max-width: 600px
+      &::before
+        content: ''
+        position: absolute
+        bottom: -3px
+        left: 0
+        display: block
+        width: 100%
+        height: 50px
+        background-image: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%)
+      &-img
+        overflow: hidden
 
-  // max-width 767px
+  // max-width 870px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 450px)
+    &__stages
+      margin-right: -50px
+    &__stage
+      &-sold
+        padding: 10px 0 10px 15px
+        font-size: 10px
+        background-position: 5px center
+        background-size: 7px 7px
 
-  // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
+  // max-width 450px
 
 /* plans */

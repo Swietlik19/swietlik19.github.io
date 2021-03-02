@@ -23,16 +23,23 @@
     transition: 0.3s
     &:hover
       color: $accent2
+  &__wrap
+    position: relative
   &__list
-    margin: 0
-    padding: 0
-    list-style: none
-    display: flex
-    & > li
-      width: calc((100% - 44px * 3) / 4)
-      margin-right: 44px
-      &:nth-of-type(4n)
-        margin-right: 0
+    overflow: hidden
+    // margin: 0
+    // padding: 0
+    // list-style: none
+    // display: flex
+    &-btns
+      .swiper-button-prev,
+      .swiper-button-next
+        top: calc(50% - 17px)
+      .swiper-button-next
+        right: -13px
+      .swiper-button-prev
+        left: -13px
+
   &__item
     display: block
     text-decoration: none
@@ -44,32 +51,39 @@
     overflow: hidden
 
 
-  // @media screen and (max-width: 1170px)
-
-  // max-width 1170px
-
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    .page-title
+      padding-left: 66px
+      background-size: 42px 42px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 850px)
+    &__top
+      margin-bottom: 24px
+    .page-title
+      padding-left: 42px
+      background-size: 31px 31px
+      font-size: 23px
+    &__link
+      font-size: 13px
 
-  // max-width 991px
+  // max-width 850px
 
-  // @media screen and (max-width: 767px)
-
-  // max-width 767px
-
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    padding-bottom: 63px
+    &__top
+      display: block
+    &__link
+      margin-left: 42px
+      margin-top: 10px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    &__item
+      height: 370px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* insta */

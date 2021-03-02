@@ -12,26 +12,343 @@
     <!-- Custom Browsers Color Start-->
     <meta name="theme-color" content="#094b53">
     <!-- Custom Browsers Color End-->
+    <style>
+      @keyframes sk-circle-bounce-delay
+      {
+
+        0%,
+        80%,
+        100%
+        {
+          transform: scale(0);
+        }
+
+        40%
+        {
+          transform: scale(1.0);
+        }
+      }
+
+      .page_preloader
+      {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -ms-align-items: center;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background-color: #f9f7f4;
+      }
+
+      .page_preloader::before
+      {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        display: block;
+        width: 60%;
+        height: 60%;
+        background: transparent url('img/svg/icons/logo.svg') no-repeat center center;
+        background-size: contain;
+        opacity: 0.1;
+        z-index: -1;
+      }
+
+      .page_preloader__circle
+      {
+        position: relative;
+        width: 6em;
+        height: 6em;
+      }
+
+      .page_preloader__circle .circle-child
+      {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-2
+      {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-2::before
+      {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-3
+      {
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-3::before
+      {
+        -webkit-animation-delay: -1s;
+        animation-delay: -1s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-4
+      {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-4::before
+      {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-5
+      {
+        -webkit-transform: rotate(120deg);
+        transform: rotate(120deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-5::before
+      {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-6
+      {
+        -webkit-transform: rotate(150deg);
+        transform: rotate(150deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-6::before
+      {
+        -webkit-animation-delay: -0.7s;
+        animation-delay: -0.7s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-7
+      {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-7::before
+      {
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-8
+      {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-8::before
+      {
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-9
+      {
+        -webkit-transform: rotate(240deg);
+        transform: rotate(240deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-9::before
+      {
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-10
+      {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-10::before
+      {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-11
+      {
+        -webkit-transform: rotate(300deg);
+        transform: rotate(300deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-11::before
+      {
+        -webkit-animation-delay: -0.2s;
+        animation-delay: -0.2s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-12
+      {
+        -webkit-transform: rotate(330deg);
+        transform: rotate(330deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-12::before
+      {
+        -webkit-animation-delay: -0.1s;
+        animation-delay: -0.1s;
+      }
+
+      .page_preloader__circle .circle-child::before
+      {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 15%;
+        height: 15%;
+        background-color: #094b53;
+        border-radius: 100%;
+        -webkit-animation: sk-circle-bounce-delay 1.2s infinite ease-in-out both;
+        animation: sk-circle-bounce-delay 1.2s infinite ease-in-out both;
+      }
+    </style>
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="libs/swiper/swiper.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <div class="page_preloader" id="page_preloader">
+      <div class="page_preloader__circle"><span class="circle-child" id="circle-child-1"></span><span class="circle-child" id="circle-child-2"></span><span class="circle-child" id="circle-child-3"></span><span class="circle-child" id="circle-child-4"></span><span class="circle-child" id="circle-child-5"></span><span class="circle-child" id="circle-child-6"></span><span class="circle-child" id="circle-child-7"></span><span class="circle-child" id="circle-child-8"></span><span class="circle-child" id="circle-child-9"></span><span class="circle-child" id="circle-child-10"></span><span class="circle-child" id="circle-child-11"></span><span class="circle-child" id="circle-child-12"></span></div>
+    </div>
+    <svg style="visibility:hidden; width: 0; height: 0; position: absolute;">
+      <style type="text/css">
+        .st0
+        {
+          filter: url(#Filter_0);
+        }
+
+        .st1
+        {
+          fill: #FFFFFF;
+        }
+      </style>
+      <filter id="Filter_0" filterunits="userSpaceOnUse" height="722px" width="523px" x="0px" y="0px">
+        <feoffset dx="0" dy="20" in="SourceAlpha"></feoffset>
+        <fegaussianblur result="blurOut" stddeviation="5.916"></fegaussianblur>
+        <feflood flood-color="rgb(215, 212, 212)" result="floodOut"></feflood>
+        <fecomposite in="floodOut" in2="blurOut" operator="atop"></fecomposite>
+        <fecomponenttransfer>
+          <fefunca slope="0.4" type="linear"></fefunca>
+        </fecomponenttransfer>
+        <femerge>
+          <femergenode></femergenode>
+          <femergenode in="SourceGraphic"></femergenode>
+        </femerge>
+      </filter>
+    </svg>
+    <ul class="page__links">
+      <li>
+        <div class="page__links-icon"><img src="img/svg/icons/apts.svg" alt=""></div><a class="page__links-text" href="#">апартаменты</a>
+      </li>
+      <li>
+        <div class="page__links-icon"><img src="img/svg/icons/pin-blue.svg" alt=""></div><a class="page__links-text" href="#">адрес</a>
+      </li>
+      <li>
+        <div class="page__links-icon"><img src="img/svg/icons/rotate-camera-blue.svg" alt=""></div><a class="page__links-text" href="#">3d тур</a>
+      </li>
+    </ul>
     <header class="header" id="header">
+      <div class="header__menu">
+        <div class="header__menu-img" style="background: transparent url('../img/menu-img.jpg') no-repeat center center; background-size: contain;"></div>
+        <div class="container">
+          <div class="header__menu-df">
+            <div class="header__menu-info">
+              <div class="header__item">
+                <div class="header__item-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#pin"></use>
+                  </svg>
+                </div>
+                <div class="header__item-text">
+                  <p>Республика Крым,<br><b> г. Ялта, парк им. Гагарина, 3</b></p>
+                </div>
+              </div>
+              <div class="header__item header__item--phone">
+                <div class="header__item-icon">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#call"></use>
+                  </svg>
+                </div><a class="header__phone" href="tel:+79788177717" rel="nofollow">+7 (978) 817-77-17 <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#call"></use>
+                  </svg></a>
+              </div>
+              <section class="socials socials--menu" id="socials-menu"><a class="socials__link socials__link--viber xbtn xbtn--circle" href="viber://chat?number=79788177717" rel="nofollow" target="_blank">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#viber"></use>
+                  </svg></a><a class="socials__link socials__link--wa xbtn xbtn--circle" href="https://api.whatsapp.com/send?phone=79788177717" rel="nofollow" target="_blank">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#wa"></use>
+                  </svg></a><a class="socials__link socials__link--insta xbtn xbtn--circle" href="#" rel="nofollow" target="_blank">
+                  <svg class="icon" viewbox="0 0 440.8 440.8" xmlns="http://www.w3.org/2000/svg">
+                    <radialgradient id="da" cx="14.115" cy="465.452" r="589.454" gradientunits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#fec053"></stop>
+                      <stop offset=".327" stop-color="#f2203e"></stop>
+                      <stop offset=".648" stop-color="#b729a8"></stop>
+                      <stop offset="1" stop-color="#5342d6"></stop>
+                    </radialgradient>
+                    <path d="M306.7 425.4H129.1c-64.7 0-117.3-52.6-117.3-117.3V130.5c0-64.7 52.6-117.3 117.3-117.3h177.6c64.7 0 117.3 52.6 117.3 117.3v177.6c0 64.7-52.6 117.3-117.3 117.3zM129.1 48.6c-45.2 0-82 36.8-82 82v177.6c0 45.2 36.8 82 82 82h177.6c45.2 0 82-36.8 82-82V130.5c0-45.2-36.8-82-82-82H129.1z" fill="url(#da)"></path>
+                    <path d="M217.9 324.9c-58.2 0-105.5-47.3-105.5-105.5s47.3-105.5 105.5-105.5 105.5 47.3 105.5 105.5c0 58.1-47.3 105.5-105.5 105.5zm0-175.8c-38.7 0-70.2 31.5-70.2 70.2s31.5 70.2 70.2 70.2 70.2-31.5 70.2-70.2-31.5-70.2-70.2-70.2zM353.3 107.7c0 14-11.4 25.4-25.4 25.4-14 0-25.4-11.4-25.4-25.4 0-14 11.4-25.4 25.4-25.4 14.1.1 25.4 11.4 25.4 25.4z" fill="url(#da)"></path>
+                  </svg></a></section>
+              <!-- /.socials-->
+            </div>
+            <ul class="menu">
+              <li class="menu-item"><a href="#">Жилой комплекс</a></li>
+              <li class="menu-item"><a href="#">Планировки</a></li>
+              <li class="menu-item"><a href="#">Инфраструктура</a></li>
+              <li class="menu-item"><a href="#">О застройщике</a></li>
+              <li class="menu-item"><a href="#">Как приобрести</a></li>
+              <li class="menu-item"><a href="#">Ход строительства</a></li>
+              <li class="menu-item"><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="header__top">
           <div class="logo__wrap">
             <div class="logo"><img src="img/svg/icons/logo.svg" alt="лого"></div>
           </div>
           <div class="header__item">
-            <div class="header__item-icon"><img src="img/svg/icons/pin.svg" alt=""></div>
+            <div class="header__item-icon">
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#pin"></use>
+              </svg>
+            </div>
             <div class="header__item-text">
               <p>Республика Крым,<br><b> г. Ялта, парк им. Гагарина, 3</b></p>
             </div>
           </div>
-          <div class="header__item">
-            <div class="header__item-icon"><img src="img/svg/icons/call.svg" alt=""></div><a class="header__phone" href="tel:+79788177717" rel="nofollow">+7 (978) 817-77-17</a>
+          <div class="header__item header__item--phone">
+            <div class="header__item-icon">
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#call"></use>
+              </svg>
+            </div><a class="header__phone" href="tel:+79788177717" rel="nofollow">+7 (978) 817-77-17 <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#call"></use>
+              </svg></a>
           </div>
           <div class="header__btn">
             <div class="btn__wrap btn__wrap--blue"><a class="xbtn xbtn--blue open-modal" href="#modal__callback">Заказать звонок</a></div>
@@ -53,10 +370,10 @@
         <div class="container">
           <div class="scr1__df">
             <aside class="scr1__socials">
-              <section class="socials" id="socials"><a class="socials__link socials__link--viber xbtn xbtn--circle" href="#" rel="nofollow" target="_blank">
+              <section class="socials" id="socials"><a class="socials__link socials__link--viber xbtn xbtn--circle" href="viber://chat?number=79788177717" rel="nofollow" target="_blank">
                   <svg class="icon">
                     <use xlink:href="img/svg/sprite.svg#viber"></use>
-                  </svg></a><a class="socials__link socials__link--wa xbtn xbtn--circle" href="#" rel="nofollow" target="_blank">
+                  </svg></a><a class="socials__link socials__link--wa xbtn xbtn--circle" href="https://api.whatsapp.com/send?phone=79788177717" rel="nofollow" target="_blank">
                   <svg class="icon">
                     <use xlink:href="img/svg/sprite.svg#wa"></use>
                   </svg></a></section>
@@ -77,33 +394,45 @@
       </section>
       <!-- /.scr1-->
       <section class="scr2" id="scr2">
+        <div class="scr2__top">
+          <div class="container">
+            <div class="scr2__feat-wrap"><span class="scr2__feat-bird1 js-parallax"><img src="img/bird-2.png" alt=""></span><span class="scr2__feat-bird2 js-parallax"><img src="img/bird-1.png" alt=""></span>
+              <div class="scr2__feat" id="scr2__feat">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.2s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.8s">1</span>
+                      <h3>Премиум расположение</h3>
+                      <div class="scr2__feat-text">
+                        <p>Комплекс расположен на первой линии набережной Ялты, в шаговой доступности от моря, в центре Приморского парка</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.4s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1s">2</span>
+                      <h3>Панорамный вид</h3>
+                      <div class="scr2__feat-text">
+                        <p>Из окна своего апартамента<br> Вы сможете любоваться<br> великолепным видом на<br> ялтинское побережье</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.6s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1.2s">3</span>
+                      <h3>Премиум расположение</h3>
+                      <div class="scr2__feat-text">
+                        <p>Оригинальность зданию придаёт<br> форма балконов имеющая<br> плавную округлую линию<br> по образу морской волны</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scr2__feat-btns">
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container">
-          <ul class="scr2__feat">
-            <li>
-              <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.2s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.8s">1</span>
-                <h3>Премиум расположение</h3>
-                <div class="scr2__feat-text">
-                  <p>Комплекс расположен на первой линии набережной Ялты, в шаговой доступности от моря, в центре Приморского парка</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.4s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1s">2</span>
-                <h3>Панорамный вид</h3>
-                <div class="scr2__feat-text">
-                  <p>Из окна своего апартамента<br> Вы сможете любоваться<br> великолепным видом на<br> ялтинское побережье</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.6s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1.2s">3</span>
-                <h3>Премиум расположение</h3>
-                <div class="scr2__feat-text">
-                  <p>Оригинальность зданию придаёт<br> форма балконов имеющая<br> плавную округлую линию<br> по образу морской волны</p>
-                </div>
-              </div>
-            </li>
-          </ul>
           <div class="scr2__wrap">
             <h2 class="page-title">В здании запроектировано:</h2>
             <ul class="scr2__list">
@@ -118,62 +447,79 @@
         </div>
       </section>
       <!-- /.scr2-->
-      <section class="scr_advts advts" id="scr_advts">
+      <section class="scr_advts advts" id="scr_advts"><span class="advts__bg"></span>
         <div class="container">
-          <ul class="advts__list">
-            <li class="advts__item">
-              <div class="advts__content">
-                <h3 class="page-title">Терраса с выходом на&nbsp;пальмовую аллею</h3>
-                <div class="advts__text">
-                  <p>Из-за большого перепада высот на участке, было принято решение обустроить две входные группы. Одна расположена на уровне набережной. Вторая на уровне пальмовой аллее, со стороны Приморского парка. Этаж на уровне пальмовой аллеи имеет открытую террасу, благодаря чему со стороны «Приморского парка» открывается вид на море и зданию придается легкость</p>
+          <div class="advts__wrap">
+            <div class="advts__list" id="advts__list">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="advts__item"><span class="advts__leaf js-parallax"></span>
+                    <div class="advts__content">
+                      <h3 class="page-title">Терраса с выходом на&nbsp;пальмовую аллею</h3>
+                      <div class="advts__text">
+                        <p>Из-за большого перепада высот на участке, было принято решение обустроить две входные группы. Одна расположена на уровне набережной. Вторая на уровне пальмовой аллее, со стороны Приморского парка. Этаж на уровне пальмовой аллеи имеет открытую террасу, благодаря чему со стороны «Приморского парка» открывается вид на море и зданию придается легкость</p>
+                      </div>
+                      <div class="advts__btns">
+                        <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по аллее</a></div>
+                      </div>
+                    </div>
+                    <div class="advts__img"><img src="img/advantages/img-1.jpg" alt="" data-object-fit-cover></div>
+                  </div>
                 </div>
-                <div class="advts__btns">
-                  <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по аллее</a></div>
+                <div class="swiper-slide">
+                  <div class="advts__item"><span class="advts__decor js-parallax"></span><span class="advts__decor advts__decor--bg"></span>
+                    <div class="advts__content">
+                      <h3 class="page-title">Апартаменты на первой линии набережной</h3>
+                      <div class="advts__text">
+                        <p>Расположен комплекс с апартаментами «GREEN HALL» на первой линии на набережной, в шаговой доступности от моря, в центре Приморского парка имени Юрия Гагарина, территория которого занимает 2 кв.км и является естественным продолжением Ялтинской набережной.</p>
+                      </div>
+                      <div class="advts__btns">
+                        <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по набережной</a></div>
+                      </div>
+                    </div>
+                    <div class="advts__img"><img src="img/advantages/img-2.jpg" alt="" data-object-fit-cover></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="advts__item"><span class="advts__decor advts__decor--bg"></span>
+                    <div class="advts__content"><span class="scr2__feat-bird2 js-parallax"><img src="img/bird-1.png" alt=""></span>
+                      <h3 class="page-title">Образ морской волны в&nbsp;архитектуре здания</h3>
+                      <div class="advts__text">
+                        <p>Оригинальность зданию придаёт форма балконов имеющая плавную округлую линию. За основу взят образ морской волны.</p>
+                      </div>
+                      <div class="advts__btns">
+                        <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Вдохновиться дизайном</a></div>
+                      </div>
+                    </div>
+                    <div class="advts__img"><img src="img/advantages/img-3.jpg" alt="" data-object-fit-cover></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="advts__item"><span class="advts__decor advts__decor--bg"></span>
+                    <div class="advts__content"><span class="scr2__feat-bird1 js-parallax"><img src="img/bird-2.png" alt=""></span><span class="advts__decor"></span>
+                      <h3 class="page-title">Смотровая площадка на 6 этаже комплекса</h3>
+                      <div class="advts__text">
+                        <p>Квартиры в «GREEN HALL», являются показателем статусности жильцов. Из окон открываются панорамные виды на горы и море, а прямо на крыше будет размещен фитнес-центр с бассейном</p>
+                      </div>
+                      <div class="advts__btns">
+                        <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по смотровой</a></div>
+                      </div>
+                    </div>
+                    <div class="advts__img"><img src="img/advantages/img-4.jpg" alt="" data-object-fit-cover></div>
+                  </div>
                 </div>
               </div>
-              <div class="advts__img"><img src="img/advantages/img-1.jpg" alt="" data-object-fit-cover></div>
-            </li>
-            <li class="advts__item">
-              <div class="advts__content">
-                <h3 class="page-title">Апартаменты на первой линии набережной</h3>
-                <div class="advts__text">
-                  <p>Расположен комплекс с апартаментами «GREEN HALL» на первой линии на набережной, в шаговой доступности от моря, в центре Приморского парка имени Юрия Гагарина, территория которого занимает 2 кв.км и является естественным продолжением Ялтинской набережной.</p>
-                </div>
-                <div class="advts__btns">
-                  <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по набережной</a></div>
-                </div>
-              </div>
-              <div class="advts__img"><img src="img/advantages/img-2.jpg" alt="" data-object-fit-cover></div>
-            </li>
-            <li class="advts__item">
-              <div class="advts__content">
-                <h3 class="page-title">Образ морской волны в&nbsp;архитектуре здания</h3>
-                <div class="advts__text">
-                  <p>Оригинальность зданию придаёт форма балконов имеющая плавную округлую линию. За основу взят образ морской волны.</p>
-                </div>
-                <div class="advts__btns">
-                  <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Вдохновиться дизайном</a></div>
-                </div>
-              </div>
-              <div class="advts__img"><img src="img/advantages/img-3.jpg" alt="" data-object-fit-cover></div>
-            </li>
-            <li class="advts__item">
-              <div class="advts__content">
-                <h3 class="page-title">Смотровая площадка на 6 этаже комплекса</h3>
-                <div class="advts__text">
-                  <p>Квартиры в «GREEN HALL», являются показателем статусности жильцов. Из окон открываются панорамные виды на горы и море, а прямо на крыше будет размещен фитнес-центр с бассейном</p>
-                </div>
-                <div class="advts__btns">
-                  <div class="btn__wrap btn__wrap--brown"><a class="xbtn xbtn--brown" href="#">Прогуляться по смотровой</a></div>
-                </div>
-              </div>
-              <div class="advts__img"><img src="img/advantages/img-4.jpg" alt="" data-object-fit-cover></div>
-            </li>
-          </ul>
+            </div>
+            <div class="advts__list-btns">
+              <button class="swiper-button-prev"></button>
+              <div class="swiper-dots"></div>
+              <button class="swiper-button-next"></button>
+            </div>
+          </div>
         </div>
       </section>
       <!-- /.scr_advts-->
-      <section class="scr_lead lead" id="scr_lead">
+      <section class="scr_lead lead lead--top" id="scr_lead">
         <div class="container">
           <h2 class="page-title">Получите визуализацию дизайна интерьеров под наши апартаменты</h2>
           <div class="lead__df">
@@ -184,6 +530,18 @@
             </ul>
             <div class="lead__form">
               <div class="form wpcf7">
+                <div class="form__decor1">
+                  <svg x="0px" y="0px" preserveAspectRatio="none" viewbox="0 0 523 722" style="enable-background:new 0 0 523 722;" xml:space="preserve">
+                    <g class="st0">
+                      <path class="st1" d="M51.9,33.6c146.1-45.6,279.6,2,419,5.8c9.4,0.3,17.1,6.9,17.1,15.2c0,192.9,0,385.8,0,578.7                  c0,8.2-7.7,17.1-17.1,19.4c-139.8,33.1-279.9-1.5-419.8-4.2c-9.5-0.2-17.1-6.9-17.1-15.1c0-192.9,0-385.8,0-578.7                  C34,46.5,42.1,36.8,51.9,33.6z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="form__decor2">
+                  <svg fill-rule="evenodd" fill="transparent" stroke-width="1px" stroke="rgba(9,75,83,0.12)" preserveAspectRatio="none" viewBox="0 0 436 625" x="0px" y="0px">
+                    <path d="M20.558,22.182 C159.557,-21.194 286.591,24.098 419.249,27.713 C428.207,27.963 435.500,34.308 435.500,42.171 C435.500,225.629 435.500,409.086 435.500,592.543 C435.500,600.365 428.220,608.802 419.238,610.954 C286.235,642.446 152.940,609.564 19.782,606.940 C10.789,606.759 3.500,600.406 3.500,592.543 C3.500,409.086 3.500,225.629 3.500,42.171 C3.493,34.364 11.166,25.148 20.558,22.182 Z"></path>
+                  </svg>
+                </div>
                 <p class="form__title">Заполните короткую форму</p>
                 <p class="form__desc">Чтобы получить визуализацию</p>
                 <form class="wpcf7-form">
@@ -444,7 +802,7 @@
         </div>
       </section>
       <!-- /.scr_plans-->
-      <section class="scr_about about" id="scr_about">
+      <section class="scr_about about" id="scr_about"><span class="about__leaf js-parallax"></span><span class="about__leaf about__leaf--right js-parallax"></span>
         <div class="container">
           <div class="about__wrap">
             <h2 class="page-title">О комплексе:</h2>
@@ -700,7 +1058,7 @@
           <div class="lead__df">
             <div class="lead__info">
               <h2 class="page-title">Станьте владельцем коммерческой недвижимости премиум класса на&nbsp;берегу Чёрного моря</h2>
-              <ul class="scr2__feat">
+              <ul class="scr2__list">
                 <li>
                   <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.2s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.8s">50<span> м<sup>2</sup></span></span>
                     <div class="scr2__feat-text">
@@ -710,7 +1068,7 @@
                 </li>
                 <li>
                   <div class="scr2__feat-item wow flipInY" data-wow-duration="0.8s" data-wow-delay="0.4s"><span class="scr2__feat-num wow fadeIn" data-wow-duration="0.8s" data-wow-delay="1s">550 000<br><span> руб/м<sup>2</sup></span></span>
-                    <div class="scr2__feat-text">Стоимость от 550 000 руб/м<sup>2 со свободной планировкой и предчистовой отделкой</sup></div>
+                    <div class="scr2__feat-text">Стоимость от 550 000 руб/м<sup>2</sup> со свободной планировкой и предчистовой отделкой</div>
                   </div>
                 </li>
               </ul>
@@ -720,6 +1078,18 @@
             </div>
             <div class="lead__form">
               <div class="form wpcf7">
+                <div class="form__decor1">
+                  <svg x="0px" y="0px" preserveAspectRatio="none" viewbox="0 0 523 722" style="enable-background:new 0 0 523 722;" xml:space="preserve">
+                    <g class="st0">
+                      <path class="st1" d="M51.9,33.6c146.1-45.6,279.6,2,419,5.8c9.4,0.3,17.1,6.9,17.1,15.2c0,192.9,0,385.8,0,578.7                  c0,8.2-7.7,17.1-17.1,19.4c-139.8,33.1-279.9-1.5-419.8-4.2c-9.5-0.2-17.1-6.9-17.1-15.1c0-192.9,0-385.8,0-578.7                  C34,46.5,42.1,36.8,51.9,33.6z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="form__decor2">
+                  <svg fill-rule="evenodd" fill="transparent" stroke-width="1px" stroke="rgba(9,75,83,0.12)" preserveAspectRatio="none" viewBox="0 0 436 625" x="0px" y="0px">
+                    <path d="M20.558,22.182 C159.557,-21.194 286.591,24.098 419.249,27.713 C428.207,27.963 435.500,34.308 435.500,42.171 C435.500,225.629 435.500,409.086 435.500,592.543 C435.500,600.365 428.220,608.802 419.238,610.954 C286.235,642.446 152.940,609.564 19.782,606.940 C10.789,606.759 3.500,600.406 3.500,592.543 C3.500,409.086 3.500,225.629 3.500,42.171 C3.493,34.364 11.166,25.148 20.558,22.182 Z"></path>
+                  </svg>
+                </div><span class="lead__leaf"></span>
                 <p class="form__title">Заполните короткую форму</p>
                 <p class="form__desc">Чтобы связаться с отделом продаж</p>
                 <form class="wpcf7-form">
@@ -762,10 +1132,18 @@
       <section class="scr_cases cases" id="scr_cases">
         <div class="container">
           <h2 class="page-title">За 16 лет работы мы сдали в эксплуатацию<br> более 10 объектов</h2>
-          <div class="cases__df">
+          <div class="cases__df"><span class="scr2__feat-bird1 js-parallax"><img src="img/bird-2.png" alt=""></span>
             <div class="cases__wrap">
               <div class="cases__slider" id="cases__slider">
                 <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a class="cases__item fancybox" href="img-temp/prod-img.jpg">
+                      <div class="cases__img"><img src="img-temp/prod-img.jpg" alt="" data-object-fit-cover></div>
+                      <div class="cases__title">Ресторан «Фабрикант»</div>
+                    </a></div>
+                  <div class="swiper-slide"><a class="cases__item fancybox" href="img-temp/prod-img.jpg">
+                      <div class="cases__img"><img src="img-temp/prod-img.jpg" alt="" data-object-fit-cover></div>
+                      <div class="cases__title">Ресторан «Фабрикант»</div>
+                    </a></div>
                   <div class="swiper-slide"><a class="cases__item fancybox" href="img-temp/prod-img.jpg">
                       <div class="cases__img"><img src="img-temp/prod-img.jpg" alt="" data-object-fit-cover></div>
                       <div class="cases__title">Ресторан «Фабрикант»</div>
@@ -810,23 +1188,25 @@
       <!-- /.scr_cases-->
       <section class="scr_gallery gallery" id="scr_gallery">
         <div class="container">
-          <h2 class="page-title">Насладитесь видами GREEN HALL</h2>
-          <div class="gallery__wrap">
-            <div class="gallery__slider" id="gallery__slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
+          <div class="gallery__cont"><span class="about__leaf js-parallax"></span><span class="about__leaf about__leaf--gallery js-parallax"></span>
+            <h2 class="page-title">Насладитесь видами GREEN HALL</h2>
+            <div class="gallery__wrap">
+              <div class="gallery__slider" id="gallery__slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="gallery__item"><a class="gallery__img fancybox img-link img-link--big" href="img-temp/gallery-img.jpg" data-fancybox-group="gallery"><img src="img-temp/gallery-img.jpg" alt="" data-object-fit-cover></a></div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="gallery__slider-btns">
-              <div class="swiper-dots"></div>
+              <div class="gallery__slider-btns">
+                <div class="swiper-dots"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -837,12 +1217,21 @@
           <div class="insta__top">
             <h2 class="page-title">Мы в Инстаграм</h2><a class="insta__link" href="#">#апартаментыгринхолл</a>
           </div>
-          <ul class="insta__list">
-            <li><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-1.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-1.jpg" alt="" data-object-fit-cover></a></li>
-            <li><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-2.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-2.jpg" alt="" data-object-fit-cover></a></li>
-            <li><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-3.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-3.jpg" alt="" data-object-fit-cover></a></li>
-            <li><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-4.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-4.jpg" alt="" data-object-fit-cover></a></li>
-          </ul>
+          <div class="insta__wrap">
+            <div class="insta__list" id="insta__list">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-1.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-1.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-2.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-2.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-3.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-3.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item fancybox img-link img-link--big" href="img-temp/insta/img-4.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-4.jpg" alt="" data-object-fit-cover></a></div>
+              </div>
+            </div>
+            <div class="insta__list-btns">
+              <button class="swiper-button-prev"></button>
+              <div class="swiper-dots"></div>
+              <button class="swiper-button-next"></button>
+            </div>
+          </div>
         </div>
       </section>
       <!-- /.scr_insta-->
@@ -857,6 +1246,42 @@
             </div>
             <div class="lead__form">
               <div class="form wpcf7">
+                <div class="form__decor1">
+                  <svg x="0px" y="0px" preserveAspectRatio="none" viewbox="0 0 523 722" style="enable-background:new 0 0 523 722;" xml:space="preserve">
+                    <style type="text/css">
+                      .st0
+                      {
+                        filter: url(#Filter_0);
+                      }
+
+                      .st1
+                      {
+                        fill: #FFFFFF;
+                      }
+                    </style>
+                    <filter id="Filter_0" filterunits="userSpaceOnUse" height="722px" width="523px" x="0px" y="0px">
+                      <feoffset dx="0" dy="20" in="SourceAlpha"></feoffset>
+                      <fegaussianblur result="blurOut" stddeviation="5.916"></fegaussianblur>
+                      <feflood flood-color="rgb(215, 212, 212)" result="floodOut"></feflood>
+                      <fecomposite in="floodOut" in2="blurOut" operator="atop"></fecomposite>
+                      <fecomponenttransfer>
+                        <fefunca slope="0.4" type="linear"></fefunca>
+                      </fecomponenttransfer>
+                      <femerge>
+                        <femergenode></femergenode>
+                        <femergenode in="SourceGraphic"></femergenode>
+                      </femerge>
+                    </filter>
+                    <g class="st0">
+                      <path class="st1" d="M51.9,33.6c146.1-45.6,279.6,2,419,5.8c9.4,0.3,17.1,6.9,17.1,15.2c0,192.9,0,385.8,0,578.7                  c0,8.2-7.7,17.1-17.1,19.4c-139.8,33.1-279.9-1.5-419.8-4.2c-9.5-0.2-17.1-6.9-17.1-15.1c0-192.9,0-385.8,0-578.7                  C34,46.5,42.1,36.8,51.9,33.6z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="form__decor2">
+                  <svg fill-rule="evenodd" fill="transparent" stroke-width="1px" stroke="rgba(9,75,83,0.12)" preserveAspectRatio="none" viewBox="0 0 436 625" x="0px" y="0px">
+                    <path d="M20.558,22.182 C159.557,-21.194 286.591,24.098 419.249,27.713 C428.207,27.963 435.500,34.308 435.500,42.171 C435.500,225.629 435.500,409.086 435.500,592.543 C435.500,600.365 428.220,608.802 419.238,610.954 C286.235,642.446 152.940,609.564 19.782,606.940 C10.789,606.759 3.500,600.406 3.500,592.543 C3.500,409.086 3.500,225.629 3.500,42.171 C3.493,34.364 11.166,25.148 20.558,22.182 Z"></path>
+                  </svg>
+                </div>
                 <p class="form__title">Заполните короткую форму</p>
                 <p class="form__desc">Чтобы получить документацию</p>
                 <form class="wpcf7-form">
@@ -889,37 +1314,43 @@
         <div class="footer__top">
           <div class="footer__col">
             <h3 class="footer__title">Обратная связь</h3>
-            <div class="footer__item">
-              <p>Офис продаж:<br> Ялта, Приморский Парк, 4</p>
-            </div>
-            <div class="footer__item">
-              <p>Адрес объекта:<br> Ялта, парк имени Гагарина, 3</p>
-            </div>
-            <div class="footer__item"><a class="footer__link" href="tel:+79788177717" rel="nofollow">+7 (978) 817-77-17</a></div>
-            <div class="footer__item">
-              <p>Просмотр объектов:<br> Пн-Сб 9:00-18:00,</p>
-            </div>
-            <div class="footer__item">
-              <p>вс - по предварительной записи</p>
+            <div class="footer__hidden">
+              <div class="footer__item">
+                <p>Офис продаж:<br> Ялта, Приморский Парк, 4</p>
+              </div>
+              <div class="footer__item">
+                <p>Адрес объекта:<br> Ялта, парк имени Гагарина, 3</p>
+              </div>
+              <div class="footer__item"><a class="footer__link" href="tel:+79788177717" rel="nofollow">+7 (978) 817-77-17</a></div>
+              <div class="footer__item">
+                <p>Просмотр объектов:<br> Пн-Сб 9:00-18:00,</p>
+              </div>
+              <div class="footer__item">
+                <p>вс - по предварительной записи</p>
+              </div>
             </div>
           </div>
           <div class="footer__col">
             <h3 class="footer__title">О жилом комплексе</h3>
-            <ul class="menu">
-              <li class="menu-item"><a href="#">Описание комплекса</a></li>
-              <li class="menu-item"><a href="#">Технологии строительства</a></li>
-              <li class="menu-item"><a href="#">Документация</a></li>
-              <li class="menu-item"><a href="#">Ход строительства</a></li>
-              <li class="menu-item"><a href="#">Галерея и 3D тур</a></li>
-            </ul>
+            <div class="footer__hidden">
+              <ul class="menu">
+                <li class="menu-item"><a href="#">Описание комплекса</a></li>
+                <li class="menu-item"><a href="#">Технологии строительства</a></li>
+                <li class="menu-item"><a href="#">Документация</a></li>
+                <li class="menu-item"><a href="#">Ход строительства</a></li>
+                <li class="menu-item"><a href="#">Галерея и 3D тур</a></li>
+              </ul>
+            </div>
           </div>
           <div class="footer__col">
             <h3 class="footer__title">О застройщике</h3>
-            <ul class="menu">
-              <li class="menu-item"><a href="#">Общая информация</a></li>
-              <li class="menu-item"><a href="#">Готовые объекты</a></li>
-              <li class="menu-item"><a href="#">Сертификаты</a></li>
-            </ul>
+            <div class="footer__hidden">
+              <ul class="menu">
+                <li class="menu-item"><a href="#">Общая информация</a></li>
+                <li class="menu-item"><a href="#">Готовые объекты</a></li>
+                <li class="menu-item"><a href="#">Сертификаты</a></li>
+              </ul>
+            </div>
           </div>
           <div class="footer__col">
             <div class="footer__menu">
@@ -963,6 +1394,9 @@
     <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
     <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
     <script src="libs/swiper/swiper.js"></script>
+    <script src="libs/TweenLite.js"></script>
+    <script src="libs/CSSPlugin.js"></script>
+    <script src="libs/parallax_content.js"></script>
     <script src="js/common.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>
     <script>

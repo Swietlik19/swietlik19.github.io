@@ -9,8 +9,8 @@
     left: 0
     display: block
     width: 1226px
-    height: 1542px
-    background: transparent url('../img/lead-bg.jpg') no-repeat center center
+    height: 1625px
+    background: transparent url('../img/lead-bg.png') no-repeat center center
     background-size: contain
     z-index: -1
 
@@ -52,6 +52,7 @@
   &__form
     position: relative
     width: 454px
+    max-width: 100%
     z-index: 2
     &::before
       content: ''
@@ -89,13 +90,13 @@
       &::before,
       &::after
         content: none
+    .page-title
+      max-width: 910px
+      margin-bottom: 65px
   &__info
     flex-grow: 1
     margin-right: 30px
-  .page-title
-    max-width: 910px
-    margin-bottom: 65px
-  .scr2__feat
+  .scr2__list
     width: 100%
     margin-top: 0
     margin-bottom: 0
@@ -105,6 +106,7 @@
       &:nth-of-type(2)
         margin-left: 85px
         padding-top: 145px
+  .scr2__feat
     &-item
       width: 323px
       height: 323px
@@ -167,33 +169,258 @@
       padding-top: 0
       & > li
         padding-left: 44px
+  &__leaf
+    position: absolute
+    right: -185px
+    bottom: -80px
+    display: block
+    width: 635px
+    height: 524px
+    background: transparent url('../img/leaf4.png') no-repeat center center
+    background-size: contain
+    z-index: -5
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1600px)
+    .page-title
+      font-size: 46px
+    &__form
+      &::before
+        left: 180px
+        top: -530px
+        width: 747px
+        height: 1061px
+      &::after
+        top: 150px
+        width: 660px
+        height: 695px
+    &__list
+      & > li
+        margin-bottom: 57px
+        padding-left: 54px
+        font-size: 21px
 
-  // max-width 1170px
+  // max-width 1600px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1400px)
+    padding-bottom: 85px
+    &::before
+      width: 826px
+      height: 1445px
+    &--2
+      padding-bottom: 165px
+      &::before
+        width: 100%
+      .page-title
+        margin-bottom: 45px
+        font-size: 36px
+    .scr2__list
+      padding-left: 0px
+      & > li
+        &:nth-of-type(2)
+          margin-left: 65px
+          padding-top: 50px
+    .scr2__feat
+      &-item
+        width: 273px
+        height: 273px
+        padding-top: 50px
+      &-num
+        position: static
+        font-size: 40px
+        transform: none
+        margin-bottom: 40px
+        span
+          font-size: 30px
+    .lead__btns
+      margin-top: 0px
+      padding-left: 26px
+    &--3
+      padding-top: 94px
+      padding-bottom: 15px
+      &::before
+        width: 100%
+      .lead__form
+        padding-bottom: 66px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    padding-bottom: 65px
+    .page-title
+      max-width: 100%
+    &__df
+      padding-top: 30px
+    &__form
+      flex-shrink: 0
+      &::after
+        content: none
+    &__list
+      width: auto
+      margin-right: 28px
+      flex-grow: 1
+    &--2
+      .lead__btns
+        display: none
+    .scr2__list
+      display: block
+      & > li
+        &:nth-of-type(2)
+          margin-left: 0
+          padding-top: 30px
+    .scr2__feat
+      &-item
+        width: auto
+        height: auto
+        padding-top: 0
+        padding-left: 0
+        background: none
+        border-radius: 0
+        text-align: left
+        color: $accent
+        font-weight: 500
+        &::before
+          content: '•'
+          display: inline
+      &-text
+        display: inline
+        p
+          display: inline
+      &-num
+        display: none
+      &-text
+        color: $accent
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    &__form
+      &::before
+        content: none
+    .page-title
+      font-size: 36px
+    &--2
+      .page-title
+        margin-bottom: 35px
+        font-size: 28px
+    &--3
+      z-index: 3
+      padding-top: 44px
+      padding-bottom: 25px
+    &__list
+      margin-top: 20px
+      & > li
+        padding-left: 26px
+        font-size: 17px
+        &::before
+          width: 18px
+          height: 26px
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    padding-bottom: 35px
+    .page-title
+      font-size: 31px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 850px)
+    &--top
+      display: none
+    &__df
+      flex-direction: column
+      align-items: center
+    .scr2__list
+      & > li
+        &:nth-of-type(2)
+          padding-top: 15px
+    &--2
+      padding-bottom: 120px
+      .page-title
+        margin-bottom: 25px
+        font-size: 24px
+      .lead__form
+        margin-top: 40px
+    &--3
+      &::before
+        height: 605px
+      .lead__df
+        padding-top: 0
+      .lead__form
+        margin-left: auto
+      .lead__info
+        max-width: 100%
+        padding-top: 0
+        margin-right: 0
+        padding-bottom: 228px
+        &::before
+          left: -150px
+          bottom: -192px
+          width: 569px
+          height: 340px
+
+  // max-width 850px
+
+  @media screen and (max-width: 767px)
+    &--2
+      padding-bottom: 70px
+    &--3
+      padding-top: 0
+      .lead__form
+        padding-bottom: 0
+      .page-title
+        font-size: 23px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__leaf
+      display: none
+    &--2
+      .page-title
+        margin-bottom: 20px
+        font-size: 23px
+      &::before
+        top: 150px
+        background-image: url('../img/lead-bg-2-mobile.jpg')
+        height: 575px
+        background-position: top center
+      .lead__form
+        width: 404px
+        margin-top: 130px
+    .scr2__list
+      & > li
+        font-size: 14px
+    .scr2__feat
+      &-item
+        padding-right: 0
+    &__info
+      margin-right: 0
+    &--3
+      &::before
+        height: 755px
+        background-image: url('../img/lead-bg-3-mobile.jpg')
+      .lead__info
+        &::before
+          left: -250px
+    &__list
+      & > li
+        padding-left: 32px
+        font-size: 16px
+        &::before
+          width: 17px
+          height: 23px
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &--2
+      .lead__form
+        margin-top: 80px
+    &--3
+      &::before
+        height: 725px
 
   // max-width 400px
 

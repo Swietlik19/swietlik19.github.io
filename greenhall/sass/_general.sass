@@ -229,7 +229,9 @@ input[type="submit"].xbtn
     &:hover
       background-color: #2dcadd
       .icon
-        fill: #ffffff
+        fill: #ffffff !important
+        path
+          fill: #ffffff !important
   &--download
     padding-left: 90px
     padding-right: 39px
@@ -321,7 +323,7 @@ input[type="submit"]
   opacity: 0
   height: 0
   overflow: hidden
-  z-index: 250
+  z-index: 200
   .icon
     width: 12px
     height: 12px
@@ -444,6 +446,7 @@ input[type="submit"]
       position: relative
       display: flex
       justify-content: center
+      height: 100%
       padding: 0 10px 17px
       font-weight: 700
       text-transform: uppercase
@@ -468,6 +471,43 @@ input[type="submit"]
       & > a
         &::after
           opacity: 1
+
+
+.page__links
+  margin: 0
+  padding: 0
+  list-style: none
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  padding: 11px 15px 9px
+  display: none
+  justify-content: space-between
+  background-color: #094b53
+  z-index: 300
+  & > li
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-width: 73px
+  &-icon
+    width: 23px
+    height: 23px
+    margin-bottom: 8px
+    img
+      display: block
+      width: auto
+      max-width: 100%
+      max-height: 100%
+  &-text
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 9px
+    text-transform: uppercase
+    color: #ffffff
+    text-align: center
 
 
 /* Переопределение стилей swiper */
@@ -534,27 +574,130 @@ input[type="submit"]
 
 /* media */
 
-// @media screen and (max-width: 1200px)
+@media screen and (max-width: 1650px)
+  .swiper-button-prev
+    left: 6px
+  .swiper-button-next
+    right: 6px
+
+// max-width 1650px
+
+@media screen and (max-width: 1400px)
+  .page-title
+    margin-bottom: 47px
+    font-size: 40px
+  .tabs__nav
+    & > li
+      & > a
+        padding: 0 5px 14px
+        font-size: 14px
+
+// max-width 1400px
+
+@media screen and (max-width: 1300px)
+  .xbtn,
+  input[type="submit"].xbtn
+    &--circle
+      width: 45px
+      height: 45px
+      box-shadow: 0px 10px 20px 0px rgba(12,147,163,0.2)
+      .icon
+        width: 20px
+        height: 20px
+
+// max-width 1300px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 1523px
+  .tabs__nav
+    & > li
+      & > a
+        padding: 0 5px 12px
+        font-size: 12px
+  .xbtn,
+  input[type="submit"].xbtn
+    &--blue,
+    &--brown
+      padding-left: 18px
+      padding-right: 18px
+      height: 70px
+      font-size: 13px
+    &--download
+      padding-left: 90px
+      font-size: 14px
 
 // max-width 1200px
 
-// @media screen and (max-width: 1023px)
+@media screen and (max-width: 1070px)
+  .page-title
+    margin-bottom: 40px
+    font-size: 33px
 
-// max-width 1023px
+// max-width 1070px
 
-// @media screen and (max-width: 991px)
+@media screen and (max-width: 850px)
+  .burger
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: #2dcadd
+  .xbtn,
+  input[type="submit"].xbtn
+    &--circle
+      width: 36px
+      height: 36px
+      box-shadow: none
+      .icon
+        width: 18px
+  .page-title
+    font-size: 28px
+  .page__links
+    display: flex
+  .to-top
+    bottom: 70px
+    right: 10px
 
-// max-width 991px
+// max-width 850px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .page-title
+    margin-bottom: 35px
+    font-size: 23px
+    br
+      display: none
+  .swiper-pagination-bullet
+    width: 5px
+    height: 5px
+    margin: 0 13px
 
 // max-width 767px
 
-// @media screen and (max-width: 575px)
+@media screen and (max-width: 575px)
+  .btn__wrap
+    &--blue
+      border-radius: 38.5px
+      &::after
+        border-radius: 38.5px
+  .xbtn,
+  input[type="submit"].xbtn
+    &--blue
+      padding-left: 35px
+      padding-right: 35px
+      height: 57px
+      font-size: 12px
 
 // max-width 575px
 
-// @media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+  .swiper-button-prev,
+  .swiper-button-next
+    top: 229px
+  .swiper-button-prev
+    left: -9px
+  .swiper-button-next
+    right: -9px
 
 // max-width 500px
 

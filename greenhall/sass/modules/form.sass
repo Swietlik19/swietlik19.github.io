@@ -5,30 +5,31 @@
   display: flex
   flex-direction: column
   justify-content: center
-  min-height: 653px
-  padding: 40px
-  &::before
-    content: ''
+  // min-height: 653px
+  padding: 69px 40px 60px
+  &__decor1
     position: absolute
     top: -10px
     left: -29px
-    display: block
-    width: 516px
-    height: 715px
-    background: transparent url('../img/svg/decor-1.svg') no-repeat center center
-    background-size: contain
+    width: calc(100% + 60px)
+    height: calc(100% + 40px)
+    // height: 715px
     z-index: -1
-  &::after
-    content: ''
+    svg
+      width: 100%
+      height: 100%
+  &__decor2
     position: absolute
-    top: 15px
-    left: 10px
-    display: block
-    width: 434px
-    height: 623px
-    background: transparent url('../img/svg/decor-2.svg') no-repeat center center
-    background-size: contain
+    top: 17px
+    left: 13px
+    // width: 434px
+    // height: 623px
+    width: calc(100% - 28px)
+    height: calc(100% - 48px)
     z-index: -1
+    svg
+      width: 100%
+      height: 100%
 
   &__title
     margin-bottom: 11px
@@ -117,8 +118,8 @@
         &::before
           content: ''
           position: absolute
-          top: calc(50% - 2px)
-          left: calc(50% - 4px)
+          top: calc(50% - 3px)
+          left: calc(50% - 5px)
 
           display: block
           width: 9px
@@ -148,8 +149,55 @@
 
   //   max-width 991px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    padding: 50px 50px 80px
+    &__title
+      width: calc(100% + 40px)
+      margin-left: -20px
+      margin-bottom: 10px
+      padding-left: 0
+      font-size: 20px
+    &__desc
+      width: calc(100% + 40px)
+      margin-left: -20px
+      font-size: 13px
+    .text-input
+      input,textarea
+        width: 100%
+        padding-top: 12px
+        padding-bottom: 12px
+        @include placeholder(#094b53, 13px)
+
+        &:focus
+          @include placeholder(#fff, 13px)
+    .accept
+      width: calc(100% + 40px)
+      margin-left: -20px
+      label
+        font-size: 10.6px
+        .accept__icon
+          width: 15px
+          height: 15px
+          &::before
+            top: calc(50% - 2px)
+            left: calc(50% - 3px)
+            width: 7px
+            height: 4px
+    &__item
+      &--submit
+        margin-top: 43px
 
   //   max-width 575px
+
+  @media screen and (max-width: 400px)
+    padding: 50px 40px 60px
+    &__title
+      margin-bottom: 5px
+      font-size: 17px
+    &__item
+      &--submit
+        margin-top: 33px
+
+  //   max-width 400px
 
  /* form */

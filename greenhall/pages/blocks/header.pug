@@ -1,27 +1,79 @@
 mixin header(logotype)
   header.header(id="header")
+    .header__menu
+      .header__menu-img(style="background: transparent url('../img/menu-img.jpg') no-repeat center center; background-size: contain;")
+      .container
+        .header__menu-df
+          .header__menu-info
+            .header__item
+              .header__item-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#pin")
+              .header__item-text
+                p Республика Крым,
+                  br
+                  b  г. Ялта, парк им. Гагарина, 3
+
+            .header__item.header__item--phone
+              .header__item-icon
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#call")
+              a.header__phone(href="tel:+79788177717" rel="nofollow") +7 (978) 817-77-17
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#call")
+            +socials--menu
+
+          ul.menu
+            li.menu-item
+              a(href="#") Жилой комплекс
+            li.menu-item
+              a(href="#") Планировки
+            li.menu-item
+              a(href="#") Инфраструктура
+            li.menu-item
+              a(href="#") О застройщике
+            li.menu-item
+              a(href="#") Как приобрести
+            li.menu-item
+              a(href="#") Ход строительства
+            li.menu-item
+              a(href="#") Контакты
+
     .container
       .header__top
         .logo__wrap
           if logotype == "a"
             #{logotype}.logo(href="index.html")
               img(src="img/svg/icons/logo.svg" alt="лого")
+
+              //- picture
+              //-   source(srcset="img/svg/icons/logo-mobile.svg" media="(max-width: 850px)")
+              //-   source(srcset="img/svg/icons/logo.svg")
+              //-   img(srcset="img/svg/icons/logo.svg" alt="лого")
           else
             #{logotype}.logo
               img(src="img/svg/icons/logo.svg" alt="лого")
+              //- picture
+              //-   source(srcset="img/svg/icons/logo-mobile.svg" media="(max-width: 850px)")
+              //-   source(srcset="img/svg/icons/logo.svg")
+              //-   img(srcset="img/svg/icons/logo.svg" alt="лого")
 
         .header__item
           .header__item-icon
-            img(src="img/svg/icons/pin.svg" alt="")
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#pin")
           .header__item-text
             p Республика Крым,
               br
               b  г. Ялта, парк им. Гагарина, 3
 
-        .header__item
+        .header__item.header__item--phone
           .header__item-icon
-            img(src="img/svg/icons/call.svg" alt="")
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#call")
           a.header__phone(href="tel:+79788177717" rel="nofollow") +7 (978) 817-77-17
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#call")
 
         .header__btn
           .btn__wrap.btn__wrap--blue

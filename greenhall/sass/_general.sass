@@ -40,6 +40,61 @@ body
 
 .page_wr
   flex-grow: 1
+.section_wr
+  padding-top: 165px
+  &--decored
+    position: relative
+    overflow: hidden
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      display: block
+      width: 1165px
+      height: 100%
+      background: transparent url('../img/second-bg.png') repeat top center
+      background-size: 1165px 1326px
+      z-index: -1
+    &::before
+      top: 0
+      left: 0
+      background-position: top center
+    &::after
+      top: 425px
+      right: 0
+      transform: rotate(180deg)
+      background-position: bottom center
+.decor-wrap
+  position: relative
+  background-color: #ffffff
+  box-shadow: 0px 20px 35px 0px rgba(215,212,212,0.4)
+  border-radius: 15px
+  &__inner
+    position: relative
+    z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 10px
+    right: 10px
+    bottom: 10px
+    left: 10px
+    border: 1px solid rgba(9,75,83,0.12)
+    border-radius: 13px
+    // z-index: -1
+  &::after
+    content: ''
+    position: absolute
+    left: 10px
+    right: 10px
+    bottom: -10px
+    display: block
+    height: 100%
+    background-color: #ffffff
+    box-shadow: 0px 20px 35px 0px rgba(215,212,212,0.4)
+    border-radius: 15px
+    z-index: -2
 
 img
   width: 100%
@@ -81,20 +136,25 @@ h1,h2,h3,h4,h5,h6
     transition: 0.3s
     &:hover
       text-decoration: underline
-
+  time
+    display: block
+    margin-bottom: 30px
+    font-family: $font2
+    font-size: 18px
+    color: #dbb877
   img
     width: auto
     max-width: 100%
     height: auto
     display: block
     &.alignleft
-      max-width: 50%
+      max-width: 45%
       float: left
-      margin: 0 20px 20px 0
+      margin: 0 70px 20px 0
     &.alignright
-      max-width: 50%
+      max-width: 45%
       float: right
-      margin: 0 0 20px 20px
+      margin: 0 0 20px 70px
     &.aligncenter
       margin: 0 auto
   ul,
@@ -104,7 +164,24 @@ h1,h2,h3,h4,h5,h6
     padding-right: 1.5em
   ul li,
   ol li
+    margin-bottom: 29px
     transform: translateX(1.5em)
+    h2,h3
+      margin-top: 0
+      font-family: $font
+      color: $accent
+  ul
+    list-style: none
+    li
+      position: relative
+      text-indent: 14px
+      &::before
+        content: '•'
+        position: absolute
+        top: -2px
+        left: 0
+        display: block
+        text-indent: 0
 
   h2,h3,h4
     line-height: 1.2
@@ -112,15 +189,45 @@ h1,h2,h3,h4,h5,h6
   h2
     margin-top: 35px
     margin-bottom: 20px
-    font-size: 18px
+    font-size: 20px
   h3
     margin-top: 25px
     margin-bottom: 15px
-    font-size: 16px
+    font-size: 18px
   h4
     margin-top: 20px
     margin-bottom: 10px
-    font-size: 14px
+    font-size: 16px
+
+  blockquote
+    position: relative
+    margin-top: 50px
+    margin-bottom: 50px
+    padding: 20px 94px 44px 42px
+    background-color: #eff5fa
+    &::before,
+    &::after
+      content: '“'
+      position: absolute
+      display: block
+      font-family: $font2
+      font-size: 72px
+      line-height: 65px
+      letter-spacing: 0.025em
+      color: $accent
+    &::before
+      left: 19px
+      top: -14px
+    &::after
+      right: 35px
+      bottom: -15px
+      transform: rotate(180deg)
+    h2,h3
+      margin-top: 0
+      margin-bottom: 18px
+      font-size: 24px
+      font-weight: 400
+      color: $accent
 
 .clearfix
   &::after
@@ -535,7 +642,9 @@ input[type="submit"]
   position: relative
   background: #dbb877
 .swiper-button-prev,
-.swiper-button-next
+.swiper-button-next,
+.pager .prev,
+.pager .next
   top: 209px
   background: none
   border: none
@@ -554,6 +663,12 @@ input[type="submit"]
     height: 11px
     background: transparent url('../img/svg/arrow.svg') no-repeat center center
     background-size: contain
+.pager .prev,
+.pager .next
+  display: flex
+  align-items: center
+  justify-content: center
+.pager .prev,
 .swiper-button-prev
   left: -34px
   &::after
@@ -582,6 +697,12 @@ input[type="submit"]
 
 // max-width 1650px
 
+@media screen and (max-width: 1600px)
+  .section_wr
+    padding-top: 115px
+
+// max-width 1600px
+
 @media screen and (max-width: 1400px)
   .page-title
     margin-bottom: 47px
@@ -604,6 +725,8 @@ input[type="submit"]
       .icon
         width: 20px
         height: 20px
+  .section_wr
+    padding-top: 77px
 
 // max-width 1300px
 
@@ -626,6 +749,10 @@ input[type="submit"]
     &--download
       padding-left: 90px
       font-size: 14px
+  .article
+    time
+      margin-bottom: 20px
+      font-size: 16px
 
 // max-width 1200px
 
@@ -637,6 +764,14 @@ input[type="submit"]
 // max-width 1070px
 
 @media screen and (max-width: 850px)
+  .article
+    font-size: 14px
+    blockquote
+      margin-top: 35px
+      margin-bottom: 35px
+      padding: 20px 44px 34px 42px
+    ul li::before
+      top: 0
   .burger
     .line
       &,
@@ -658,6 +793,8 @@ input[type="submit"]
   .to-top
     bottom: 70px
     right: 10px
+  .section_wr
+    padding-top: 68px
 
 // max-width 850px
 
@@ -671,8 +808,29 @@ input[type="submit"]
     width: 5px
     height: 5px
     margin: 0 13px
+  .article
+    blockquote
+      padding: 28px 24px 28px
 
 // max-width 767px
+
+@media screen and (max-width: 630px)
+  .article
+    img
+      &.alignleft,
+      &.alignright
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
+      &.aligncenter
+        margin: 0 auto
+    ul,ol
+      margin: 0
+      padding: 0
+      & > li
+        transform: none
+
+// max-width 630px
 
 @media screen and (max-width: 575px)
   .btn__wrap
@@ -698,6 +856,9 @@ input[type="submit"]
     left: -9px
   .swiper-button-next
     right: -9px
+  .decor-wrap
+    width: calc(100% + 30px)
+    margin-left: -15px
 
 // max-width 500px
 

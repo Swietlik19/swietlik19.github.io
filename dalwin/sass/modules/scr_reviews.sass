@@ -2,35 +2,189 @@
   position: relative
   padding-top: 75px
   padding-bottom: 159px
+  background-color: rgba(225,217,201,0.2)
+  overflow: hidden
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: -126px
+    left: 9.84375%
+    display: block
+    width: 872px
+    height: 930px
+    background: transparent url('../img/svg/decor.svg') no-repeat center center
+    background-size: contain
+    z-index: -1
+  &__df
+    display: flex
+    margin-top: 60px
+  &__col
+    width: calc((100% - 30px) / 2)
+    margin-right: 30px
+    &:nth-of-type(2n)
+      margin-right: 0
+  &__wrap
+    position: relative
+    .swiper-slider-nav
+      bottom: -50px
+  &__slider
+    margin: -30px
+    padding: 30px
+    overflow: hidden
+    .swiper-slide
+      &::before
+        content: ''
+        position: absolute
+        bottom: -15px
+        left: 10px
+        right: 10px
+        display: block
+        height: 100%
+        background-color: #f7f6f5
+        box-shadow: 0px 7px 10px 0px rgba(178,172,165,0.15)
+        border-radius: 6px
+        z-index: -1
+  &__item
+    display: block
+    text-decoration: none
+    outline: none
+    overflow: hidden
+    height: 401px
+    background-color: #dfe1de
+    box-shadow: 0px 7px 30px 0px rgba(185,175,165,0.2)
+    border-radius: 8px
+    img
+      transform: scale(1.1)
+    .btn__wrap
+      position: absolute
+      top: 28px
+      left: 27px
+      border-radius: 50%
+      box-shadow: 0 0 0 11px rgba(225,217,201,0.5)
+      transition: 0.3s
+      &::before,
+      &::after
+        bottom: 0
+        border-radius: 50%
+      .xbtn
+        width: 64px
+        height: 64px
+        padding: 0
+        .icon
+          width: 14px
+          height: 19px
+          fill: #fff
+  &__link
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    text-decoration: none
+    outline: none
+    width: 58px
+    height: 46px
+    margin-bottom: 45px
+    .icon
+      transition: 0.4s ease-in-out
+    &--yt
+      .icon
+        fill: #ff2b2b
+    &-wrap
+      display: flex
+      justify-content: center
+    &:hover
+      .icon
+        filter: drop-shadow(0 0 15px rgba($accent2, 1))
+  .link-watch
+    &::before
+      background: rgba($accent, 0.3)
 
 
+  @media screen and (max-width: 1400px)
+    padding-bottom: 109px
+    &__df
+      margin-top: 40px
+    &__item
+      height: 351px
+    &__link
+      margin-bottom: 35px
+    &__wrap
+      .swiper-slider-nav
+        bottom: -30px
 
-  // @media screen and (max-width: 1170px)
+  // max-width 1400px
 
-  // max-width 1170px
-
-  // @media screen and (max-width: 1070px)
-
-  // max-width 1070px
-
-  // @media screen and (max-width: 991px)
+  @media screen and (max-width: 991px)
+    padding-bottom: 89px
+    &__df
+      margin-top: 30px
+    &__item
+      height: 321px
+    &__link
+      width: 48px
+      height: 36px
+      margin-bottom: 25px
 
   // max-width 991px
 
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    padding-top: 40px
+    &__df
+      margin-top: 20px
+    &__item
+      height: 301px
+    &__link
+      width: 42px
+      height: 32px
+      margin-bottom: 20px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    padding-top: 30px
+    padding-bottom: 60px
+    &__df
+      display: block
+    &__col
+      width: 100%
+      margin-bottom: 60px
+      &:last-of-type
+        margin-bottom: 0
+    &__item
+      height: 201px
+      .btn__wrap
+        top: 12px
+        left: 12px
+        box-shadow: 0 0 0 5px rgba(225,217,201,0.5)
+        .xbtn
+          width: 54px
+          height: 54px
+          .icon
+            width: 12px
+            height: 15px
+            fill: #fff
+    &__wrap
+      .swiper-slider-nav
+        bottom: -15px
+      .swiper-dots
+        position: static
+      .swiper-pagination-bullet-active
+        background-color: $accent2
+    &__slider
+      overflow: visible
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 500px)
+    &__item
+      height: 151px
+      .btn__wrap
+        top: 8px
+        left: 8px
+        .xbtn
+          width: 50px
+          height: 50px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* reviews */

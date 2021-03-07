@@ -106,7 +106,73 @@
     &:hover
       .icon
         fill: $accent2
+  &--page
+    padding-top: 27px
+    padding-bottom: 72px
+    background-color: rgba(249,247,244,0.6)
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    margin-top: 34px
+    & > li
+      position: relative
+      flex-direction: row
+      margin-bottom: 30px
+      padding: 14px
+      padding-left: 17px
+      z-index: 1
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 14px
+        right: 14px
+        bottom: 14px
+        left: 17px
+        border: 1px solid #e1d9c9
+        border-radius: 6px
+        z-index: -1
+    .spec__img
+      flex-shrink: 0
+      width: 346px
+      height: auto
+      margin-right: 56px
+    .spec__content-top
+      flex-direction: column
+      .spec__title
+        margin-top: 12px
+        margin-right: 0
+        order: 2
+    .spec__title
+      font-size: 24px
+    .spec__content
+      padding-top: 8px
+    .spec__item-btns
+      width: 345px
+  &__main
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    padding-bottom: 23px
 
+
+  @media screen and (max-width: 1600px)
+    &__img
+      height: 290px
+    &__content
+      padding: 15px 3px 15px 12px
+      &-top
+        margin-bottom: 8px
+      &-item
+        p
+          margin-bottom: 4px
+    &__title
+      margin: 0 15px 0 0
+      font-size: 18px
+
+  // max-width 1600px
 
   @media screen and (max-width: 1400px)
     &__title
@@ -115,16 +181,27 @@
       &-top
         margin-bottom: 11px
       &-item
+        .to-hide
+          display: none
         p
           margin-bottom: 8px
+    &__img
+      height: 260px
 
   // max-width 1400px
 
+  @media screen and (max-width: 1170px)
+    &__list
+      margin-top: 24px
+      & > li
+        margin-bottom: 20px
+      .spec__img
+        width: 316px
+        margin-right: 26px
+      .spec__title
+        font-size: 20px
+
   @media screen and (max-width: 850px)
-    &__content
-      &-item
-        .to-hide
-          display: none
     &__item
       &-btns
         flex-direction: column
@@ -134,8 +211,24 @@
         .btn__wrap
           margin-right: 0
           margin-bottom: 20px
+    &__list
+      .spec__item-btns
+        align-items: flex-start
+        width: 100%
+      .spec__img
+        width: 236px
+        margin-right: 10px
 
   // max-width 850px
+
+  @media screen and (max-width: 767px)
+    &--page
+      padding-bottom: 30px
+    &__list
+      & > li
+        margin-bottom: 15px
+      .spec__title
+        font-size: 17px
 
   @media screen and (max-width: 630px)
     &__content
@@ -146,6 +239,21 @@
       height: 250px
 
   // max-width 630px
+
+  @media screen and (max-width: 575px)
+    &__list
+      & > li
+        padding: 8px
+        &::before
+          top: 8px
+          right: 8px
+          bottom: 8px
+          left: 8px
+    &__main
+      flex-grow: 1
+      display: flex
+      flex-direction: column
+      padding-bottom: 23px
 
   @media screen and (max-width: 500px)
     padding-top: 30px
@@ -158,6 +266,17 @@
         height: 59px
         padding-left: 52px
         padding-right: 52px
+    &__list
+      & > li
+        display: block
+      .spec__img
+        width: 100%
+        height: 250px
+        margin-right: 0
+        margin-bottom: 15px
+    &__main
+      padding-left: 15px
+      padding-right: 15px
 
   // max-width 500px
 

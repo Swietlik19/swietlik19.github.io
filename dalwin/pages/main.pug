@@ -23,6 +23,7 @@ html(lang='ru')
     //- include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
+    include blocks/modal.pug
 
     include blocks/scr1.pug
     include blocks/scr_servs.pug
@@ -192,6 +193,21 @@ html(lang='ru')
     +styles
 
   body
+    svg(style='visibility:hidden; width: 0; height: 0; position: absolute;')
+      style(type='text/css').
+        .st0{filter:url(#Filter_0);}
+        .st1{fill:#FFFFFF;}
+      filter#Filter_0(filterunits='userSpaceOnUse', height='722px', width='523px', x='0px', y='0px')
+        feoffset(in='SourceAlpha', dx='0', dy='7')
+        fegaussianblur(result='blurOut', stddeviation='5.477')
+        feflood(flood-color='rgb(185, 175, 165)', result='floodOut')
+        fecomposite(in='floodOut', in2='blurOut', operator='atop')
+        fecomponenttransfer
+          fefunca(slope='0.2', type='linear')
+        femerge
+          femergenode
+          femergenode(in='SourceGraphic')
+
     .page_preloader#page_preloader
       .page_preloader__circle
         span.circle-child#circle-child-1
@@ -235,5 +251,6 @@ html(lang='ru')
 
     +footer("div")
 
+    +modal__callback
     +scripts
     //- +script-map

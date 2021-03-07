@@ -1,0 +1,81 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__top
+        .footer__col
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
+            span.logo__text Пассажирские перевозки
+              br
+              |  и экскурсии на заказ в Крыму
+
+        .footer__col
+          ul.menu
+            li.menu-item
+              a(href="#") Цены и услуги
+            li.menu-item
+              a(href="#") Аренда
+            li.menu-item
+              a(href="#") Автопарк
+            li.menu-item
+              a(href="#") Условия и оплата
+            li.menu-item
+              a(href="#") Команда
+
+        .footer__col
+          ul.menu
+            li.menu-item
+              a(href="#") Клиенты
+            li.menu-item
+              a(href="#") Сертификаты
+            li.menu-item
+              a(href="#") Преимущества
+            li.menu-item
+              a(href="#") Блог
+
+        .footer__col
+          .footer__links
+            .footer__phones
+              a.footer__phone(href="tel:+79787690479" rel="nofollow") +7 (978) 769-04-79
+              a.footer__phone(href="tel:+73652538230" rel="nofollow") +7 (3652) 53-82-30
+
+            +socials--footer
+
+          .footer__item
+            p Адрес:
+              br
+              |  Республика Крым, Симферополь
+              br
+              |  пер. Лавандовый, 2
+
+          .footer__item
+            p Почта:
+              a(href="mailto:info@fundament-trans.com" rel="nofollow") info@fundament-trans.com
+
+      // /.footer__top
+    // /.container
+
+    .footer__bottom
+      .container
+        .footer__bottom-df
+          .footer__politics
+            a.text(href="#") Политика конфиденциальности
+
+          .footer__copyright
+            p.text г. Симферополь © Copyright  2021&nbsp;г.
+
+          a.made(href="https://sheer82.ru/")
+            span.text Сделано в
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#iconSheer')
+
+        // /.row
+      // /.container
+    // /.footer__bottom
+  // /.footer
+

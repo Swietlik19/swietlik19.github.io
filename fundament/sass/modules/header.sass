@@ -1,0 +1,243 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 250
+  background: #fff
+  &.fixed
+    box-shadow: 0 5px 15px rgba($accent, 0.2)
+    .logo
+      width: 67px
+      margin-right: 10px
+      &__text
+        font-size: 11px
+    .menu
+      & > li
+        margin-right: 20px
+        & > a
+          font-size: 13px
+    .header__phone
+      font-size: 12px
+    .xbtn--circle
+      width: 35px
+      height: 35px
+      box-shadow: 0px 5px 8px 0px #efefef
+      .icon
+        width: 16px
+        height: 16px
+    .header__btns
+      .xbtn
+        height: 37px
+        padding-left: 20px
+        padding-right: 20px
+        font-size: 13px
+  &__wrap
+    display: flex
+    justify-content: space-between
+    padding-top: 11px
+    padding-bottom: 11px
+  .burger
+    display: none
+  .logo
+    display: block
+    width: 117px
+    margin-right: 20px
+    text-decoration: none
+    transition: 0.4s ease-in-out
+    img
+      display: block
+    &__wrap
+      display: flex
+      align-items: center
+    &__text
+      font-size: 13px
+      line-height: 1.2
+
+  &__menu
+    margin-left: 20px
+    margin-right: 20px
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      margin-right: 30px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 15px
+        font-weight: 700
+        transition: 0.1s ease-in-out
+        &::after
+          content: ''
+          position: absolute
+          bottom: -1px
+          left: 3px
+          display: block
+          width: 100%
+          max-width: 0
+          height: 1px
+          border-radius: 1.5px
+          background-color: #333333
+          transform: translateX(-50%)
+          opacity: 0
+          transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out
+        &:hover
+          transform: skewX(-30deg)
+          &::after
+            max-width: 100%
+            transform: translateX(0)
+            opacity: 1
+
+      &.current-menu-item
+        color: #003265
+
+  &__links
+    display: flex
+    align-items: center
+  &__phones
+    margin-right: 19px
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 15px
+    font-weight: 500
+    transition: 0.4s
+    &.mobile
+      display: none
+    &:hover
+      color: $accent
+    &:last-of-type
+      margin-bottom: 0
+
+
+  @media screen and (max-width: 1670px)
+    .logo
+      width: 67px
+      margin-right: 10px
+      &__text
+        font-size: 11px
+    .menu
+      & > li
+        margin-right: 20px
+        & > a
+          font-size: 13px
+    &__phone
+      font-size: 12px
+    .xbtn--circle
+      width: 35px
+      height: 35px
+      box-shadow: 0px 5px 8px 0px #efefef
+      .icon
+        width: 16px
+        height: 16px
+    &__btns
+      .xbtn
+        height: 37px
+        padding-left: 20px
+        padding-right: 20px
+        font-size: 13px
+
+  // max-width 1670px
+
+  @media screen and (max-width: 1400px)
+    &__phones
+      margin-right: 9px
+    &__phone
+      &.desktop
+        display: none
+      &.mobile
+        display: flex
+        .icon
+          fill: #5BCFF1
+    &__btns
+      .xbtn
+        padding-left: 15px
+        padding-right: 15px
+        font-size: 12px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1300px)
+    &__btns
+      display: none
+    .socials
+      &__link
+        &:last-of-type
+          margin-right: 0
+
+  // max-width 1300px
+
+  @media screen and (max-width: 1170px)
+    &__wrap
+      align-items: center
+    .burger
+      display: flex
+      margin-right: 15px
+      z-index: 500
+    .logo
+      &__wrap
+        margin-right: auto
+    &__menu
+      position: fixed
+      top: 0
+      left: 0
+      width: 350px
+      max-width: 95%
+      height: 100vh
+      margin: 0
+      padding: 50px 15px 20px
+      z-index: 300
+      background: #f4f4f4
+      box-shadow: 0 5px 15px rgba($accent, 0.2)
+      transform: translateX(-101%)
+      transition: 0.3s ease-in-out
+      &.active
+        transition: 0.7s ease-in-out
+        transform: translateX(0)
+    .menu
+      display: block
+      max-height: calc(100vh - 50px)
+      overflow: auto
+      & > li
+        width: 100%
+        & > a
+          padding-top: 8px
+          padding-bottom: 8px
+          border-bottom: 1px solid rgba($accent, 0.2)
+          &::after
+            content: none
+          &:hover
+            transform: none
+
+  // max-width 1170px
+
+  @media screen and (max-width: 500px)
+    .burger
+      margin-right: 10px
+    .socials
+      display: none
+    &__phones
+      margin-right: 0
+    .logo
+      width: 57px
+      margin-right: 8px
+    &.fixed
+      .logo
+        width: 57px
+        margin-right: 8px
+
+  // max-width 500px
+
+/* .header */

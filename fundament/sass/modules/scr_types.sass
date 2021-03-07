@@ -1,0 +1,236 @@
+.types
+  position: relative
+  padding-top: 64px
+  padding-bottom: 146px
+  &__wrap
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      display: block
+      width: 1915px
+      height: 324px
+      background: transparent url('../img/svg/types-decor.svg') no-repeat center center
+      background-size: contain
+      opacity: 0.5
+      z-index: -1
+  &__list
+    margin: 0
+    padding: 0
+    list-style-type: none
+    counter-reset: num
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    padding-left: 270px
+    margin-right: -25px
+    & > li
+      position: relative
+      width: 260px
+      &:nth-of-type(1)
+        margin-top: 61px
+      &:nth-of-type(2)
+        margin-top: 94px
+      &:nth-of-type(2),
+      &:nth-of-type(3)
+        &::before
+          top: 145px
+      &:nth-of-type(4)
+        margin-top: 95px
+      &::before
+        content: '0' counter(num)
+        counter-increment: num
+        position: absolute
+        top: -7px
+        left: -75px
+        font-size: 48px
+        line-height: 1.2
+        color: #8dafd4
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 25px
+        right: 25px
+        height: 40px
+        box-shadow: 0px 0px 40px 0px rgba(17,85,156,0.44)
+        border-radius: 3px
+        z-index: -1
+  &__item
+    display: flex
+    flex-direction: column
+    height: 329px
+    background-color: #ffffff
+    border-radius: 8px
+    overflow: hidden
+  &__content
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    padding: 20px 15px 21px 24px
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    height: 182px
+    overflow: hidden
+  &__title
+    margin-top: 0
+    margin-bottom: 14px
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 700
+    text-transform: uppercase
+    color: #000000
+  &__price
+    margin-bottom: 10px
+    font-size: 14px
+    color: #000000
+  &__link
+    display: block
+  &__text
+    font-size: 14px
+
+
+  @media screen and (max-width: 1700px)
+    &__list
+      margin-right: 0
+
+  // max-width 1700px
+
+  @media screen and (max-width: 1600px)
+    padding-top: 54px
+    padding-bottom: 66px
+    &__list
+      padding-left: 100px
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1450px)
+    &__wrap
+      &::before
+        top: -50px
+    &__item
+      height: 288px
+    &__img
+      height: 162px
+    &__title
+      margin-bottom: 8px
+      font-size: 14px
+    &__price
+      font-size: 13px
+    &__list
+      padding-left: 70px
+      & > li
+        width: 230px
+        &::before
+          left: -50px
+          font-size: 31px
+        &:nth-of-type(1)
+          margin-top: 31px
+        &:nth-of-type(2)
+          margin-top: 64px
+        &:nth-of-type(2)::before,
+        &:nth-of-type(3)::before
+          top: 75px
+        &:nth-of-type(4)
+          margin-top: 35px
+
+  // max-width 1450px
+
+  @media screen and (max-width: 1250px)
+    padding-top: 44px
+    padding-bottom: 46px
+    &__item
+      height: 248px
+    &__img
+      height: 142px
+    &__title
+      font-size: 13px
+    &__list
+      padding-left: 50px
+      & > li
+        &::before
+          left: -40px
+          font-size: 25px
+        &:nth-of-type(2)::before,
+        &:nth-of-type(3)::before
+          top: 45px
+
+  // max-width 1250px
+
+  @media screen and (max-width: 1140px)
+    &__list
+      flex-wrap: wrap
+      justify-content: space-around
+      & > li
+        max-width: 350px
+        width: calc((100% - 30px) / 2)
+        &:nth-of-type(2n)
+          margin-right: 0
+
+  // max-width 1140px
+
+  @media screen and (max-width: 900px)
+    .page-title
+      margin-bottom: 8px
+    &__list
+      justify-content: flex-start
+      & > li
+        width: calc((100% - 50px) / 2)
+        max-width: 350px
+        margin-right: 50px
+        &:nth-of-type(2n)
+          margin-right: 0
+    &__text
+      padding-right: 0
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    padding-top: 30px
+    padding-bottom: 30px
+    &__list
+      justify-content: flex-start
+      padding-left: 0
+      padding-top: 40px
+      margin-bottom: -50px
+      & > li
+        width: calc((100% - 20px) / 2)
+        margin-right: 20px
+        margin-bottom: 50px
+        &:nth-of-type(1)
+          margin-top: 0
+        &:nth-of-type(2n)
+          margin-right: 0
+        &::before
+          top: -30px !important
+          left: -10px
+        &::after
+          box-shadow: 0px 0px 10px 0px rgba(17,85,156,0.1)
+        &:nth-of-type(2)
+          margin-top: 0
+        &:nth-of-type(4)
+          margin-top: 0
+    &__text
+      font-size: 13px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__list
+      & > li
+        width: calc((100% - 15px) / 2)
+        margin-right: 15px
+    &__text
+      font-size: 12px
+
+  // max-width 500px
+
+/* types */

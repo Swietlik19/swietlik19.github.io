@@ -1,0 +1,57 @@
+mixin script-map()
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
+  script.
+    (function($){
+      if (window.matchMedia('(max-width: 991px)').matches && window.matchMedia('(min-width: 631px)').matches) {
+        createMap('scr_map__map',[44.990185, 34.088406],[44.990466, 34.086106]);
+      } else {
+        createMap('scr_map__map',[44.990185, 34.088406],[44.990185, 34.088406]);
+      }
+
+      function createMap(xID,coords,xCenter) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: xCenter,
+                  zoom: 17
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemark = new ymaps.Placemark(coords, {
+                    hintContent: 'пер. Лавандовый, 2',
+                    balloonContent: 'Симферополь, пер. Лавандовый, 2'
+                }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [21, 28],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -30]
+                });
+
+            myMap.geoObjects
+                .add(myPlacemark);
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+    })(jQuery);

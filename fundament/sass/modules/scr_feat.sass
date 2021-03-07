@@ -1,0 +1,165 @@
+.feat
+  position: relative
+  padding-top: 53px
+  padding-bottom: 39px
+  overflow: hidden
+  z-index: 1
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    display: block
+    width: 2159px
+    height: 344px
+    background: transparent url('../img/svg/feat-decor-1.svg') no-repeat center center
+    background-size: contain
+    opacity: 0.3
+    z-index: -1
+  &::before
+    top: 18px
+    right: -427px
+  &::after
+    left: 50%
+    bottom: 154px
+    transform: translateX(-50%)
+    width: 1928px
+    height: 326px
+    background-image: url('../img/svg/feat-decor-2.svg')
+  &__top
+    display: flex
+    margin-bottom: 47px
+    .feat__list
+      & > li
+        margin-right: 84px
+        &:last-of-type
+          margin-right: 0
+  .page-title
+    width: 643px
+    margin-right: 30px
+    padding-top: 98px
+  &__list
+    padding-left: 0
+    margin-right: 0
+    & > li
+      width: 337px
+      margin-top: 0 !important
+      &::before
+        content: none
+    .types__item
+      display: block
+      height: 100%
+      min-height: 356px
+      transition: 0.3s
+      &:hover
+        box-shadow: 0 5px 15px rgba($accent, 0.2)
+    .types__text
+      padding-right: 15px
+  &__bottom
+    margin-bottom: 40px
+    .feat__list
+      justify-content: space-between
+      & > li
+        margin-right: 10px
+        &:last-of-type
+          margin-right: 0
+  &__btns
+    text-align: center
+
+
+  @media screen and (max-width: 1400px)
+    &__list
+      & > li
+        width: 280px
+        .types__item
+          min-height: 276px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1140px)
+    &__list
+      flex-wrap: nowrap
+      & > li
+        width: calc((100% - 15px) / 4)
+        margin-right: 15px
+        &:nth-of-type(4n)
+          margin-right: 0
+    &__top
+      display: flex
+      margin-bottom: 47px
+      .feat__list
+        & > li
+          width: calc((100% - 15px) / 2)
+          margin-right: 15px
+          &:nth-of-type(2n)
+            margin-right: 0
+
+  // max-width 1140px
+
+  @media screen and (max-width: 991px)
+    &::before
+      top: 158px
+    &__list
+      flex-wrap: wrap
+      padding-top: 0
+      & > li
+        width: calc((100% - 15px) / 2)
+        margin-right: 15px
+        &:nth-of-type(2n)
+          margin-right: 0
+        &::after
+          box-shadow: 0px 0px 10px 0px rgba(17,85,156,0.1)
+    &__top
+      display: block
+      margin-bottom: 0
+      padding-bottom: 20px
+      .feat__list
+        margin-bottom: 0
+        justify-content: space-around
+        & > li
+          margin-bottom: 0
+    &__bottom
+      .feat__list
+        justify-content: space-around
+        margin-bottom: -20px
+        & > li
+          margin-bottom: 20px
+    .page-title
+      width: 100%
+      margin-right: 0
+      padding-top: 0
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    padding-top: 30px
+    padding-bottom: 30px
+
+  // max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__list
+      align-items: stretch
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+    &__top
+      .feat__list
+        & > li
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+    .types__title
+      font-size: 11px
+
+  // max-width 450px
+
+  @media screen and (max-width: 400px)
+    .types__title
+      font-size: 10px
+
+  // max-width 400px
+
+/* feat */

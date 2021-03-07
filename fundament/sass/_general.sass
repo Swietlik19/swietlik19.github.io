@@ -1,0 +1,647 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 92px
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  display: block
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  display: block
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.blue-bg
+  background-color: #003265
+  .page-title,
+  .page-desc
+    color: #ffffff
+.grey-bg
+  background: #f4f4f4 url('../img/pattern.jpg') repeat center center
+  background-size: 64px 64px
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 28px
+  font-size: 36px
+  line-height: 1.333333333333333 /* 48 / 36 */
+  font-weight: 400
+  color: #000000
+.page-desc
+  max-width: 500px
+  font-size: 18px
+  line-height: 1.444444444444444 /* 26 / 18 */
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+  &--grad
+    position: relative
+    background-color: #003265
+    box-shadow: 0px 13px 25px 0px rgba(17,85,156,0.4)
+    border-radius: 27.5px
+    transition: 0.7s ease-in-out
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 5px
+      display: block
+      width: 100%
+      height: 100%
+      background-image: linear-gradient(180.0deg, #11559c 0%, #003265 33.3%, #f30a3c 66.6%, #be072f 100%)
+      background-size: 100% 300%
+      box-shadow: inset 0 0 14px rgba(#bcddff, 0.34)
+      border-radius: 27.5px
+      transition: 0.4s ease-in-out
+    &:hover
+      background-color: #ae0429
+      transition: 0.2s ease-in-out
+      &::before
+        background-position: 0 100%
+  &--red
+    background-color: #ae0429
+    box-shadow: 0px 13px 25px 0px rgba(243,10,60,0.4)
+    &::before
+      background-image: linear-gradient(180.0deg, #f30a3c 0%, #be072f 33.3%, #11559c 66.6%, #003265 100%)
+    &:hover
+      background-color: #003265
+      box-shadow: 0px 13px 25px 0px rgba(17,85,156,0.4)
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--grad
+    height: 55px
+    padding: 0 22px 8px
+    font-size: 14px
+    color: #ffffff
+  &--circle
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 41px
+    height: 41px
+    background-color: #ffffff
+    box-shadow: 0px 10px 15px 0px #efefef
+    border-radius: 50%
+    overflow: hidden
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      left: auto
+      display: block
+      width: 0
+      height: 100%
+      background-color: $accent
+      border-radius: 50%
+      transition: 0.2s ease-in-out
+      z-index: -1
+    .icon
+      width: 18px
+      height: 18px
+      transition: 0.5s
+    &:hover
+      &::before
+        left: 0
+        right: auto
+        width: 100%
+        opacity: 1
+      .icon
+        fill: #ffffff !important
+        path
+          fill: #ffffff !important
+  &--red
+    height: 41px
+    background-color: $accent2
+    border-radius: 19px
+    padding-left: 23px
+    padding-right: 23px
+    font-size: 14px
+    color: #ffffff
+    text-align: center
+    transition: 0.4s ease-in-out
+    &:hover
+      background-color: $accent
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 25px
+  height: 25px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 20px
+      height: 2px
+      background-color: $accent
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-7px)
+    &::after
+      transform: translateY(7px)
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .icon
+    width: 12px
+    height: 12px
+    fill: #fff
+    transform: rotate(-90deg)
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+.img-link
+  position: relative
+  z-index: 1
+  img
+    transition: 0.4s ease-in-out
+    transform: scale(1.2)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+    background: rgba($accent, 0.5) url('../img/svg/link.svg') no-repeat center center
+    background-size: 50px 50px
+    opacity: 0
+    transition: 0.5s ease-in-out
+    z-index: 2
+  &:hover
+    &::before
+      opacity: 1
+    img
+      transform: scale(1)
+  &--big
+    &::before
+      background-image: url('../img/svg/search.svg')
+
+.xtitle
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 5px
+    left: -13px
+    display: block
+    width: 6px
+    height: 6px
+    background-color: $accent2
+.xlink
+  position: relative
+  text-decoration: none
+  outline: none
+  margin-top: auto
+  font-size: 14px
+  color: #003265
+  transition: 0.3s
+  &::before
+    content: ''
+    position: absolute
+    bottom: 2px
+    left: 0
+    display: block
+    width: 100%
+    height: 1px
+    background-color: #003265
+    transition: 0.3s
+  &:hover
+    color: $accent2
+    &::before
+      bottom: -4px
+      background-color: $accent2
+      transform: scale(0.4)
+
+.tabs__nav
+  margin: 0
+  padding: 0
+  list-style: none
+  & > li
+    & > a
+      position: relative
+      display: block
+      text-decoration: none
+      outline: none
+      padding: 25px 15px 25px 33px
+      line-height: 1.2
+      font-weight: 700
+      color: $accent
+      border-bottom: 1px solid rgba(0,50,101,0.3)
+      transition: 0.2s ease-in-out
+      overflow: hidden
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: auto
+      &:hover
+        background-color: #003265
+        border-radius: 6px
+        border-color: transparent
+        color: #ffffff
+    &.current
+      & > a
+        background-color: #003265
+        border-radius: 6px
+        border-color: transparent
+        color: #ffffff
+
+.decor-wrap
+  position: relative
+  background-color: #ffffff
+  border-radius: 8px
+  padding: 17px
+  &::before
+    content: ''
+    position: absolute
+    left: 19px
+    right: 19px
+    bottom: 10px
+    height: 46px
+    background-color: #11559c
+    box-shadow: 0px 0px 40px 0px rgba(17,85,156,0.44)
+    border-radius: 3px
+    z-index: -1
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей кастомного скролла */
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+  background-color: rgba(#003265, 0.8)
+.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar
+  background-color: #003265
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-slider-nav
+  display: flex
+  justify-content: center
+  align-items: center
+  .swiper-button-prev
+    margin-right: 40px
+  .swiper-button-next
+    margin-left: 40px
+  .swiper-button-prev,
+  .swiper-button-next
+    position: static
+  .swiper-dots
+    position: static
+  .swiper-button-lock,
+  .swiper-button-disabled
+    display: flex
+    opacity: 0
+.swiper-dots
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  width: 100%
+  bottom: -60px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent
+  width: 11px
+  height: 11px
+  margin: 2px 13px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: #4e8dce
+.swiper-button-prev,
+.swiper-button-next
+  flex-shrink: 0
+  background: none
+  border: none
+  outline: none
+  margin: 0
+  width: 34px
+  height: 34px
+  background-color: #ffffff
+  box-shadow: 0px 8px 8px 0px rgba(25,91,160,0.14)
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: ''
+    width: 6px
+    height: 11px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+
+.swiper-button-prev
+  left: -56px
+  &::after
+    transform: rotate(180deg)
+.swiper-button-next
+  right: -56px
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1680px
+
+/* media */
+@media screen and (max-width: 1670px)
+  .page_wr
+    padding-top: 62px
+
+// max-width 1670px
+
+@media screen and (max-width: 1400px)
+  .page-title
+    font-size: 31px
+
+// max-width 1400px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+  .tabs__nav > li > a
+    padding: 17px 15px 17px 23px
+    font-size: 14px
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+@media screen and (max-width: 991px)
+  .page-title
+    font-size: 25px
+    br
+      display: none
+  .btn__wrap
+    &--grad
+      box-shadow: 0px 7px 12px 0px rgba(17,85,156,0.3)
+    &--red
+      box-shadow: 0px 7px 12px 0px rgba(243,10,60,0.3)
+      &:hover
+        box-shadow: 0px 7px 12px 0px rgba(17,85,156,0.4)
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    margin: 0 5px
+  .swiper-dots
+    bottom: -40px
+  .page-desc
+    font-size: 14px
+
+// max-width 991px
+
+@media screen and (max-width: 900px)
+  .tabs__nav
+    & > li
+      & > a
+        padding: 11px 15px 11px 20px
+
+// max-width 900px
+
+@media screen and (max-width: 767px)
+  .page-title
+    font-size: 22px
+  .xlink
+    font-size: 13px
+    &::before
+      bottom: 1px
+  .to-top
+    right: 10px
+    bottom: 10px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .page-title
+    font-size: 19px
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .page-title
+    font-size: 18px
+  .page_wr
+    padding-top: 57px
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

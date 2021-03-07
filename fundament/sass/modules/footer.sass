@@ -1,0 +1,211 @@
+.footer
+  position: relative
+  background-color: #003265
+  .container
+    max-width: 1170px
+  &__top
+    display: flex
+    justify-content: space-between
+    padding-top: 33px
+    padding-bottom: 40px
+  &__col
+    flex-grow: 1
+    padding-right: 20px
+    &:last-of-type
+      flex-grow: 0
+      flex-shrink: 0
+      width: 250px
+      padding-right: 0
+  .logo
+    display: block
+    text-decoration: none
+    width: 117px
+    height: 70px
+    margin-bottom: 29px
+    &__text
+      display: block
+      font-size: 13px
+      line-height: 1.2
+      color: #ffffff
+  &__links
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+  &__phones
+    margin-right: 19px
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 15px
+    font-weight: 500
+    color: #ffffff
+    transition: 0.3s
+    &:hover
+      color: $accent2
+  &__item
+    margin-bottom: 40px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 500
+    color: #ffffff
+    &:last-of-type
+      margin-bottom: 0
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      color: #ffffff
+      transition: 0.3s
+      &:hover
+        color: $accent2
+  .menu
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    & > li
+      margin-bottom: 26px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: inline-block
+        text-decoration: none
+        outline: none
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 500
+        color: #ffffff
+        transition: 0.1s ease-in-out
+        &::after
+          content: ''
+          position: absolute
+          bottom: -1px
+          left: 3px
+          display: block
+          width: 100%
+          max-width: 0
+          height: 1px
+          border-radius: 1.5px
+          background-color: #ffffff
+          transform: translateX(-50%)
+          opacity: 0
+          transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out
+        &:hover
+          transform: skewX(-30deg)
+          &::after
+            max-width: 100%
+            transform: translateX(0)
+            opacity: 1
+
+  &__bottom
+    border-top: 1px solid rgba(255,255,255,0.2)
+    &-df
+      height: 71px
+      display: flex
+      align-items: center
+    .text
+      font-size: 14px
+      line-height: 16px
+      color: #ffffff
+    a.text
+      text-decoration: none
+      outline: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+
+  &__politics
+    margin-right: 30px
+
+  &__copyright
+    margin-right: 79px
+
+  .made
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    cursor: pointer
+    text-decoration: none
+    .icon
+      width: 60px
+      height: 22px
+      margin-left: 13px
+      fill: #fff
+      transition: 0.3s
+
+    &:hover
+      .icon
+        fill: rgba(#fff,.7)
+
+
+  @media screen and (max-width: 991px)
+    .menu
+      & > li
+        margin-bottom: 16px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__bottom
+      &-df
+        justify-content: space-between
+      .footer__politics
+        margin-right: 30px
+      .footer__copyright
+        margin-right: 30px
+    &__top
+      display: block
+    &__col
+      width: 100%
+      margin-bottom: 30px
+      padding-right: 0
+      &:nth-of-type(2),
+      &:last-of-type
+        width: 100%
+        margin-bottom: 0
+    .menu
+      & > li
+        width: 100%
+        margin-bottom: 0
+        & > a
+          display: block
+          padding-top: 12px
+          padding-bottom: 10px
+          border-bottom: 1px solid rgba(#fff, 0.2)
+          &::after
+            content: none
+          &:hover
+            transform: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__bottom
+      &-df
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        text-align: center
+        height: auto
+        padding: 10px 0
+      .footer__politics
+        margin-right: 0
+        margin-bottom: 15px
+      .footer__copyright
+        margin-right: 0
+        margin-bottom: 15px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__bottom
+      height: auto
+
+  // max-width 575px
+
+/* footer */

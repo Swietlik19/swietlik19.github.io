@@ -1,0 +1,54 @@
+mixin header(logotype)
+  header.header.wow.slideInDown(data-wow-duration="0.8s" data-wow-delay="0.2s" id="header" style="visibility: hidden;")
+    .container
+      .header__wrap
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo.png" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo.png" alt="лого")
+
+          p.logo__text Пассажирские перевозки
+            br
+            |  и экскурсии на заказ в Крыму
+
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") Цены и услуги
+            li.menu-item
+              a(href="#") Экскурсии
+            li.menu-item
+              a(href="#") Автопарк
+            li.menu-item
+              a(href="#") Условия и оплата
+            li.menu-item
+              a(href="#") Расчёт стоимости
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+        .header__links
+          .header__phones
+            a.header__phone.desktop(href="tel:+79787690479" rel="nofollow") +7 (978) 769-04-79
+            a.header__phone.mobile.xbtn.xbtn--circle(href="tel:+79787690479" rel="nofollow")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#phone")
+
+            a.header__phone.desktop(href="tel:+73652538230" rel="nofollow") +7 (3652) 53-82-30
+
+          +socials
+
+          .header__btns
+            .btn__wrap
+              a.xbtn.xbtn--red.open-modal(href="#modal_callback") Заказать звонок
+
+      // /.header__wrap
+    // /.container

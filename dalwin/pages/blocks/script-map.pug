@@ -2,7 +2,7 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+      createMap('contacts__map',[44.955037, 34.093284]);
 
       function createMap(xID,coords) {
 
@@ -16,10 +16,17 @@ mixin script-map()
           function init () {
               myMap = new ymaps.Map(xID, {
                   center: coords,
-                  zoom: 17
+                  zoom: 16
               }, {
                   searchControlProvider: 'yandex#search'
               });
+
+              BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div class="map-balloon">' +
+                '<div class="map-logo"><img src="img/svg/logo.svg" alt=""></div>' +
+                '<p class="map-text">ул. Набережная, 50 <br> ЖК Парковый (заезд с ул. Толстого)</p>' +
+                '</div>', {
+               });
 
               // Создаём макет содержимого.
                 MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
@@ -27,16 +34,20 @@ mixin script-map()
                 ),
 
                 myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: '',
-                    balloonContent: ''
+                    hintContent: 'улица Толстого, 10',
+                    balloonContent: 'улица Толстого, 10'
                 }, {
                   // Опции.
+                  balloonContentLayout: BalloonContentLayout,
+                  // Запретим замену обычного балуна на балун-панель.
+                  // Если не указывать эту опцию, на картах маленького размера откроется балун-панель.
+                  balloonPanelMaxMapArea: 0,
                   // Необходимо указать данный тип макета.
                   iconLayout: 'default#image',
                   // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
+                  iconImageHref: 'img/pin.png',
                   // Размеры метки.
-                  iconImageSize: [41, 51],
+                  iconImageSize: [29, 39],
                   // Смещение левого верхнего угла иконки относительно
                   // её "ножки" (точки привязки).
                   iconImageOffset: [-15, -60]
@@ -44,7 +55,7 @@ mixin script-map()
 
             myMap.geoObjects
                 .add(myPlacemark);
-
+            //- myPlacemark.balloon.open();
             myMap.behaviors.disable('scrollZoom');
           }
         }

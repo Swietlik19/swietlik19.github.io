@@ -6717,6 +6717,7 @@ input[type="submit"][disabled] {
 }
 
 .header__df {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6783,6 +6784,104 @@ input[type="submit"][disabled] {
   margin-left: 44px;
 }
 
+.header__menu {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  background-color: #fcfbf9;
+  -webkit-box-shadow: 0px 7px 30px 0px rgba(185, 175, 165, 0.2);
+          box-shadow: 0px 7px 30px 0px rgba(185, 175, 165, 0.2);
+  border-radius: 8px;
+  padding: 44px 62px 47px 62px;
+  z-index: 1;
+  display: none;
+}
+
+.header__menu::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  display: block;
+  background-color: rgba(252, 251, 249, 0);
+  border: 1px solid #e1d9c9;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.header__menu-df {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+}
+
+.header__col {
+  width: 26.47867950481431%;
+  padding-right: 20px;
+}
+
+.header__col:nth-of-type(3) {
+  width: 29.02338376891334%;
+}
+
+.header__col:last-of-type {
+  width: 17.95048143053645%;
+  padding-right: 0;
+}
+
+.header__col .menu {
+  display: block;
+}
+
+.header__col .menu > li {
+  margin-bottom: 22px;
+}
+
+.header__col .menu > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.header__col .menu > li > a {
+  display: block;
+  height: auto;
+  text-align: left;
+}
+
+.header__col .menu > li > a:hover {
+  background: none;
+  color: #daa976;
+}
+
+.header__title {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header__title span {
+  position: relative;
+  display: inline-block;
+}
+
+.header__title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e1d9c9;
+}
+
 @media screen and (max-width: 1650px) {
   .header.fixed .header__address {
     display: block;
@@ -6820,6 +6919,22 @@ input[type="submit"][disabled] {
     width: 82px;
     height: 58px;
   }
+  .header__col .menu > li {
+    margin-bottom: 15px;
+  }
+  .header__col .menu > li:last-of-type {
+    margin-bottom: 0;
+  }
+  .header__col .menu > li > a {
+    height: auto;
+  }
+  .header__menu {
+    padding: 34px 52px 37px 52px;
+  }
+  .header__title {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -6839,6 +6954,9 @@ input[type="submit"][disabled] {
     width: 320px;
     max-width: calc(100% - 63px);
     height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    padding-top: 30px;
     -webkit-transform: translateX(-110%);
         -ms-transform: translateX(-110%);
             transform: translateX(-110%);
@@ -6863,6 +6981,7 @@ input[type="submit"][disabled] {
   }
   .header .menu {
     display: block;
+    width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 0;
@@ -6905,6 +7024,64 @@ input[type="submit"][disabled] {
     height: 44px;
     padding: 0 22px;
     font-size: 14px;
+  }
+  .header__df {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__df > .menu {
+    display: none;
+  }
+  .header__menu {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    position: static;
+    padding: 0;
+    background: none;
+    display: block !important;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+  }
+  .header__menu-df {
+    display: block;
+    max-height: none;
+    overflow: visible;
+  }
+  .header__menu::before {
+    content: none;
+  }
+  .header__col {
+    width: 100% !important;
+    padding-right: 0;
+  }
+  .header__col .menu > li {
+    margin-bottom: 0;
+  }
+  .header__col .menu > li > a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 40px;
+    text-align: left;
+  }
+  .header__title {
+    margin-bottom: -10px;
+  }
+  .header__title::after {
+    content: none;
   }
 }
 

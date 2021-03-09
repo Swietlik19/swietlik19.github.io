@@ -41,11 +41,6 @@
     return false;
   });
 
-  $('.burger').click(function() {
-    $(this).toggleClass('active');
-    $('.header__bottom').toggleClass('active');
-  });
-
   /* Открытие / закрытие модалок (кроме карты) */
   $('a.open-modal').click(function(event){
     event.preventDefault();
@@ -76,6 +71,7 @@
     }
     if (menuContainer.has(e.target).length === 0 && !($(e.target).hasClass('header__bottom')) && !($(e.target).hasClass('burger')) && burgerContainer.has(e.target).length === 0){
       $('.header__bottom').removeClass('active');
+      $('.header__menu').fadeOut();
       $('.header .burger').removeClass('active');
     }
   });
@@ -140,6 +136,10 @@
   });
 
   if ( !(window.matchMedia('(max-width: 1300px)').matches) )  {
+    $('.burger').click(function() {
+      $(this).toggleClass('active');
+      $('.header__menu').fadeToggle();
+    });
     $(".header").hover(function() {
       if ($(this).hasClass('fixed')) {
         $(this).find(".header__bottom").fadeIn();
@@ -151,6 +151,11 @@
         _this.removeClass('hovered');
         _this.find(".header__bottom").hide();
       }
+    });
+  } else {
+    $('.burger').click(function() {
+      $(this).toggleClass('active');
+      $('.header__bottom').toggleClass('active');
     });
   }
 

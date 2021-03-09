@@ -456,6 +456,26 @@
     });
   });
 
+  var aboutGallery = new Swiper('#about__gallery', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.about__gallery-nav .swiper-button-next',
+      prevEl: '.about__gallery-nav .swiper-button-prev',
+    },
+    pagination: {
+      el: '.about__gallery-wrap .swiper-slider-nav .swiper-dots',
+    },
+    // breakpoints: {
+    //   430: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 8,
+    //   },
+    // },
+  });
+
   function moveBurger() {
     if (window.matchMedia('(max-width: 1300px)').matches) {
       $('.header .burger').appendTo('.header__top');

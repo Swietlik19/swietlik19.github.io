@@ -20,15 +20,16 @@ html(lang='ru')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
-    //- include blocks/script-map.pug
+    include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
-    include blocks/breadcrumbs.pug
+    include blocks/socials.pug
 
-    include blocks/scr_single-serv.pug
-    include blocks/scr_before-after.pug
-    include blocks/scr_lead.pug
-    include blocks/scr_reviews.pug
+    include blocks/scr_about.pug
+    include blocks/scr_feat.pug
+    include blocks/scr_lic.pug
+    include blocks/scr_faq.pug
+    include blocks/scr_about.pug
     include blocks/scr_insta.pug
 
     include blocks/footer.pug
@@ -51,6 +52,16 @@ html(lang='ru')
         femerge
           femergenode
           femergenode(in='SourceGraphic')
+      filter#Filter_1(filterunits='userSpaceOnUse', x='0px', y='0px', width='980px', height='506px')
+        feoffset(in='SourceAlpha', dx='0', dy='7')
+        fegaussianblur(result='blurOut', stddeviation='5.477')
+        feflood(flood-color='rgb(185, 175, 165)', result='floodOut')
+        fecomposite(operator='atop', in='floodOut', in2='blurOut')
+        fecomponenttransfer
+          fefunca(type='linear', slope='0.2')
+        femerge
+          femergenode
+          femergenode(in='SourceGraphic')
 
     //. На внутренних прелоадер не нужен
 
@@ -58,10 +69,16 @@ html(lang='ru')
 
     #page_wr.page_wr
 
-      +scr_single-serv
-      +scr_before-after
-      +scr_lead
-      +scr_reviews
+      +scr_about
+      +scr_feat
+      .page-sections
+        .container
+          h2.page-title Документы и лицензии клиники
+          .page-desc
+            p Полный пакет документов компании, а также сертификаты и лицензии, подтверждающие профессиональные компетенции наших специалистов
+          .page-df
+            +scr_certs
+            +scr_faq
       +scr_insta
 
 
@@ -72,4 +89,4 @@ html(lang='ru')
     +footer("a")
 
     +scripts
-    //- +script-map
+    +script-map

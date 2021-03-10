@@ -32,11 +32,6 @@
     background: transparent url('../img/advantages-bg2.png') no-repeat center center
     background-size: contain
     z-index: -1
-  // &__list
-  //   margin: 0
-  //   padding: 0
-  //   list-style: none
-  //   padding-top: 52px
   &__list
     &-btns
       display: none
@@ -160,6 +155,98 @@
       img
         transform: scale(1.1)
         transition: 1.5s
+  &--about
+    padding-top: 135px
+    padding-bottom: 0
+    overflow: hidden
+    z-index: 10
+    .advts__cont
+      position: relative
+      z-index: 15
+    .advts__list
+      margin: 0
+      padding: 0
+      list-style: none
+    .advts__item
+      margin-bottom: 57px
+      .page-title
+        margin-bottom: 37px
+        font-size: 36px
+      &:last-of-type
+        margin-bottom: 0
+      &:nth-of-type(2n)
+        .advts__content
+          padding-top: 154px
+        .advts__img
+          order: -1
+          height: 500px
+          margin-left: 0
+          margin-right: 100px
+    .container
+      & > .page-title
+        text-align: center
+    .advts__content
+      padding-top: 17px
+    .advts__img
+      width: 50.789015%
+      height: 555px
+      margin-left: 30px
+    .advts__text
+      p
+        margin-bottom: 20px
+        &:last-of-type
+          margin-bottom: 0
+  &__info
+    width: 745px
+    max-width: 100%
+    padding-top: 104px
+    &-wrap
+      position: relative
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        bottom: -450px
+        left: 0
+        display: block
+        width: 1165px
+        height: 1326px
+        background: transparent url('../img/second-bg.png') no-repeat center center
+        background-size: contain
+        z-index: -2
+    &-text
+      max-width: 640px
+      p
+        margin-bottom: 15px
+    &-nums
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      padding-top: 40px
+      padding-bottom: 75px
+      & > li
+        width: calc((100% - 30px) / 2)
+        margin-right: 30px
+        &:nth-of-type(2n)
+          margin-right: 0
+        p
+          font-size: 18px
+          line-height: 1.555555555555556 /* 28 / 18 */
+    &-num
+      margin-bottom: 27px
+      font-size: 30px
+      font-weight: 900
+      color: #094b53
+      strong
+        font-size: 60px
+    &-img
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 1920px
+      height: 590px
+      z-index: -1
 
 
   @media screen and (max-width: 1400px)
@@ -204,6 +291,22 @@
           //   bottom: -117px
           //   width: 363px
           //   height: 287px
+    &--about
+      padding-top: 105px
+      .advts__item
+        margin-bottom: 30px
+        .page-title
+          margin-bottom: 22px
+          font-size: 28px
+        &:nth-of-type(2n)
+          .advts__content
+            padding-top: 124px
+          .advts__img
+            height: 400px
+            margin-right: 50px
+      .advts__img
+        width: 48.789015%
+        height: 455px
 
   // max-width 1400px
 
@@ -251,6 +354,46 @@
       margin-left: 30px
     &__content
       padding-left: 40px
+    &--about
+      padding-bottom: 0
+      .advts__item
+        margin-bottom: 20px
+        .page-title
+          margin-bottom: 18px
+          font-size: 24px
+        &:nth-of-type(2n)
+          .advts__content
+            padding-top: 84px
+          .advts__img
+            height: 300px
+            margin-right: 30px
+      .advts__img
+        width: 45%
+        height: 355px
+      .advts__content
+        padding-left: 0
+    &__info
+      width: 685px
+      padding-top: 74px
+      &-text
+        font-size: 14px
+      &-img
+        left: -80px
+        width: 1530px
+        height: 460px
+      &-nums
+        padding-top: 30px
+        padding-bottom: 45px
+        & > li
+          width: calc((100% - 20px) / 2)
+          margin-right: 20px
+          p
+            font-size: 15px
+      &-num
+        margin-bottom: 20px
+        font-size: 24px
+        strong
+          font-size: 45px
 
   // max-width 1070px
 
@@ -265,8 +408,9 @@
   @media screen and (max-width: 767px)
     &__btns
       display: none
-    &__text
-      display: none
+    &:not(.advts--about)
+      .advts__text
+        display: none
     &__img
       width: 100%
       height: 432px
@@ -289,17 +433,42 @@
         .swiper-dots
           bottom: -40px
           // bottom: 10px
-
     &__content
       padding-left: 0
     .page-title
       margin-bottom: 15px
+    &--about
+      .advts__img
+        width: 100% !important
+        margin: 0 !important
+        height: 300px !important
+      .advts__item:nth-of-type(2n)
+        .advts__content
+          padding-top: 34px
+    &__info
+      padding-top: 44px
 
   // max-width 767px
 
   @media screen and (max-width: 575px)
-    padding-top: 22px
-    padding-bottom: 60px
+    &:not(.advts--about)
+      padding-top: 22px
+      padding-bottom: 60px
+    &__info
+      &-text
+        font-size: 13px
+      &-nums
+        padding-top: 10px
+        & > li
+          p
+            font-size: 12px
+      &-num
+        margin-bottom: 15px
+        font-size: 18px
+        strong
+          font-size: 28px
+    &__text
+      font-size: 14px
 
   // max-width 575px
 

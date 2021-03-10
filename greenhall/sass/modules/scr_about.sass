@@ -115,6 +115,16 @@
           line-height: 1.5
           font-weight: 700
           color: #094b53
+  &--tech
+    padding-top: 140px
+    overflow: hidden
+    background: transparent url('../img/about-tech.jpg') no-repeat right top
+    background-size: cover
+    &::before,
+    &::after
+      content: none
+    .about__tab
+      display: block !important
 
 
   @media screen and (max-width: 1600px)
@@ -147,12 +157,45 @@
 
   @media screen and (max-width: 1070px)
     padding-top: 40px
+    &--tech
+      padding-top: 70px
 
   // max-width 1070px
 
   @media screen and (max-width: 991px)
-    display: none
+    &:not(.about--tech)
+      display: none
 
   // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &--tech
+      padding-top: 90px
+
+  // max-width 850px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 34px
+    &__tab
+      padding: 25px 20px 35px
+    &__inner
+      ul > li
+        margin-bottom: 14px
+        font-size: 13px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__inner
+      columns: 1
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__tab
+      width: calc(100% + 40px)
+      margin-left: -20px
+
+  // max-width 500px
 
 /* about */

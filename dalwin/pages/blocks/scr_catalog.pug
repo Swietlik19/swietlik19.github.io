@@ -3,22 +3,125 @@ mixin scr_catalog()
     .container
       +breadcrumbs
 
+      button.catalog__filter-open Фильтр
+
       .catalog__df
         aside.catalog__filter
-          //. Место для фильтра
+          .catalog__filter-cont
+            .catalog__filter-item
+              .catalog__filter-top
+                h3.catalog__filter-title Проблемная зона
+                span.catalog__filter-btn
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .catalog__filter-wrap
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-zone-1" type="radio" name="filter-zone" value="Лицо" checked)
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Лицо
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-zone-2" type="radio" name="filter-zone" value="Волосы")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Волосы
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-zone-3" type="radio" name="filter-zone" value="Тело")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Тело
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-zone-4" type="radio" name="filter-zone" value="Снять")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Снять фильтр
+
+            .catalog__filter-item
+              .catalog__filter-top
+                h3.catalog__filter-title Продолжительность процедуры
+                span.catalog__filter-btn
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .catalog__filter-wrap
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-duration-1" type="radio" name="filter-duration" value="Разовая" checked)
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Разовая
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-duration-2" type="radio" name="filter-duration" value="Курс")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Курс
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-duration-3" type="radio" name="filter-duration" value="Снять")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Снять фильтр
+
+            .catalog__filter-item
+              .catalog__filter-top
+                h3.catalog__filter-title Реабилитация
+                span.catalog__filter-btn
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .catalog__filter-wrap
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-rehabilitation-1" type="radio" name="filter-rehabilitation" value="Да" checked)
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Да
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-rehabilitation-2" type="radio" name="filter-rehabilitation" value="Нет")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Нет
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-rehabilitation-3" type="radio" name="filter-rehabilitation" value="Снять")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Снять фильтр
+
+            .catalog__filter-item
+              .catalog__filter-top
+                h3.catalog__filter-title Акционные предложения
+                span.catalog__filter-btn
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#arrow")
+
+              .catalog__filter-wrap
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-order-1" type="radio" name="filter-order" value="Нет")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Нет
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-order-2" type="radio" name="filter-order" value="Да" checked)
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Да
+                .catalog__filter-input.catalog__filter-input--radio
+                  label
+                    input(id="filter-order-3" type="radio" name="filter-order" value="Снять")
+                    span.catalog__filter-circle
+                    span.catalog__filter-text Снять фильтр
 
         .catalog__wrap
           h1.page-title Косметология
 
-          ul.tabs__nav.js-tabs__nav
-            li.current
-              a(href="#catalog__tab-0") Все услуги
-            li
-              a(href="#catalog__tab-1") Инъекционная
-            li
-              a(href="#catalog__tab-2") Аппаратная
-            li
-              a(href="#catalog__tab-3") Эстетическая
+          .catalog__nav
+            ul.tabs__nav.js-tabs__nav
+              li.current
+                a(href="#catalog__tab-0") Все услуги
+              li
+                a(href="#catalog__tab-1") Инъекционная
+              li
+                a(href="#catalog__tab-2") Аппаратная
+              li
+                a(href="#catalog__tab-3") Эстетическая
 
           ul.catalog__tabs
             li.catalog__tab#catalog__tab-0

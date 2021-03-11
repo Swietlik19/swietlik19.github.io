@@ -10,50 +10,21 @@
     <!-- Template Basic Images Start-->
     <!-- Template Basic Images End-->
     <!-- Custom Browsers Color Start-->
-    <meta name="theme-color" content="#432928">
+    <meta name="theme-color" content="#daa976">
     <!-- Custom Browsers Color End-->
-    <style>
-      .mmenu__list
-      {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-
-      .mmenu__item
-      {
-        padding: 10px 0;
-      }
-
-      .mmenu__link
-      {
-        text-decoration: none;
-        color: #432928;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 24px;
-      }
-
-      .mmenu__link:hover
-      {
-        color: #8b0a0e;
-      }
-    </style>
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="libs/swiper/swiper.min.css">
     <link rel="stylesheet" href="libs/mcsb/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body class="main-page">
+  <body>
+    <!--. На внутренних прелоадер не нужен-->
     <header class="header" id="header">
       <div class="container">
         <div class="header__top">
           <div class="logo__wrap">
-            <div class="logo"><img src="img/svg/logo.svg" alt="лого"></div>
+            <a class="logo" href="index.html"><img src="img/svg/logo.svg" alt="лого"></a>
             <p class="logo__text">Лицензированная клиника<br> косметологии и омоложения</p>
           </div>
           <div class="header__address">
@@ -135,23 +106,98 @@
       <!-- /.header__top-->
     </header>
     <div class="page_wr" id="page_wr">
-      <section class="mmenu">
-        <div class="container">
-          <ul class="mmenu__list">
-            <li class="mmenu__item"><a class="mmenu__link" href="main.html">Главная</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="catalog.html">Каталог</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="single-serv.html">Одна услуга</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="doctors.html">Врачи</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="actions.html">Акции</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="contacts.html">Контакты</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="problems.html">Эстетические проблемы</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="single-problem.html">Проблема</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="about.html">О клинике</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="single-doc.html">Один врач</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="price.html">Прайс</a></li>
-          </ul>
+      <section class="scr_single-doc single-doc" id="scr_single-doc">
+        <div class="single-doc__top">
+          <div class="container">
+            <div class="breadcrumbs" id="breadcrumbs">
+              <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="#"><span itemprop="name">Главная</span></a>
+                  <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="#"><span itemprop="name">Врачи</span></a>
+                  <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="item"><span itemprop="name">Даль Анна</span></span>
+                  <meta itemprop="position" content="3">
+                </li>
+              </ol>
+            </div>
+            <!-- /.breadcrumbs-->
+            <div class="single-doc__df">
+              <div class="single-doc__img"><img src="img-temp/single-doc-img.jpg" alt=""></div>
+              <div class="single-doc__info">
+                <div class="single-doc__info-top">
+                  <h3 class="single-doc__name">Даль Анна Владимировна</h3>
+                  <p class="single-doc__exp"><b>Стаж:</b> 15 лет</p>
+                </div>
+                <p class="single-doc__desc">Основатель клиники, врач-косметолог, трихолог</p>
+                <h4 class="single-doc__title">Образование:</h4>
+                <ul class="single-doc__list">
+                  <li>В 2005 году окончила Крымский государственный медицинский университет им С.И. Георгиевского, лечебный факультет</li>
+                  <li>Проходила Интернатуру по специализации «Врач дерматовенеролог» на кафедре кожных и венерических болезней КГМУ им С.И. Георгиевского с 2005 по 2006 год.</li>
+                  <li>В 2015 году – профессиональная переподготовка по специальности «Косметология» (576 часов) на базе ФГБУ «Государственный научный центр дерматовенерологии и косметологии» Министерства здравоохранения Российской Федерации.</li>
+                </ul>
+                <div class="single-doc__btns">
+                  <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad open-modal" href="#">Записаться на прием к этому специалисту</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-doc__bottom">
+          <div class="container">
+            <ul class="single-serv__nav js-single-doc__nav">
+              <li class="current"><a href="#single-doc__tab-0">Специализация и процедуры</a></li>
+              <li><a href="#single-doc__tab-1">Время приема</a></li>
+              <li><a href="#single-doc__tab-2">Сертификаты и лицензии</a></li>
+              <li><a href="#single-doc__tab-3">Медиа</a></li>
+              <li><a href="#single-doc__tab-4">Повышение квалификации</a></li>
+            </ul>
+            <ul class="single-doc__tabs">
+              <li class="single-doc__tab" id="single-doc__tab-0">
+                <div class="article">
+                  <p>Другое название - эксфолиация. Суть процедуры заключается в удалении ороговевшего слоя кожи. Именно он портит внешний вид кожи: серый цвет лица, уменьшается процент проникновения полезных веществ в глубокие слои кожи, снижен тонус кожи. Пилинг отлично справляется с решением этих проблем, и бывает нескольких видов:</p>
+                  <p>Химический - на кожу воздействуют всевозможные кислоты, например, фруктовые;</p>
+                  <p>Ферментный - используются ферменты протеазы для очищения кожи;</p>
+                  <p>Механический - скраб, содержащий твердые абразивные частички. Этот вариант подходит для самостоятельного ухода на дому;</p>
+                  <p>Лазерный - процедура выполняется с помощью специального аппарата;</p>
+                  <p>Ультразвуковой - тут тоже необходим специальный прибор для выполнения процедуры;</p>
+                  <p>По глубине воздействия: поверхностный, срединный и глубокий.</p>
+                </div>
+              </li>
+              <li class="single-doc__tab" id="single-doc__tab-1">
+                <div class="article">
+                  <p>Другое название - эксфолиация. Суть процедуры заключается в удалении ороговевшего слоя кожи. Именно он портит внешний вид кожи: серый цвет лица, уменьшается процент проникновения полезных веществ в глубокие слои кожи, снижен тонус кожи. Пилинг отлично справляется с решением этих проблем, и бывает нескольких видов:</p>
+                  <p>Химический - на кожу воздействуют всевозможные кислоты, например, фруктовые;</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
+      <!-- /.scr_single-doc-->
+      <section class="scr_insta insta" id="scr_insta">
+        <div class="container">
+          <h2 class="page-title">Клиника Dalwin в&nbsp;<a href="#">Instagram</a></h2>
+          <div class="insta__wrap">
+            <div class="insta__slider" id="insta__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-1.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-1.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-2.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-2.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-3.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-3.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-4.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-4.jpg" alt="" data-object-fit-cover></a></div>
+              </div>
+            </div>
+            <div class="insta__slider-btns">
+              <div class="swiper-dots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_insta--><a class="to-top" href="#page_wr">
+        <svg class="icon">
+          <use xlink:href="img/svg/sprite.svg#arrow"></use>
+        </svg></a>
     </div>
     <footer class="footer brown-bg" id="footer">
       <div class="container">

@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title> |</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Template Basic Images Start-->
+    <!-- Template Basic Images End-->
+    <!-- Custom Browsers Color Start-->
+    <meta name="theme-color" content="#9575cd">
+    <!-- Custom Browsers Color End-->
+    <style>
+      @keyframes sk-circle-bounce-delay
+      {
+
+        0%,
+        80%,
+        100%
+        {
+          transform: scale(0);
+        }
+
+        40%
+        {
+          transform: scale(1.0);
+        }
+      }
+
+      .page_preloader
+      {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -ms-align-items: center;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background-color: #f9f7f4;
+      }
+
+      .page_preloader::before
+      {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        display: block;
+        width: 640px;
+        height: 384px;
+        max-width: 70%;
+        background: transparent url('img/logo.png') no-repeat center center;
+        background-size: contain;
+        opacity: 0.1;
+        z-index: -1;
+      }
+
+      .page_preloader__circle
+      {
+        position: relative;
+        width: 6em;
+        height: 6em;
+      }
+
+      .page_preloader__circle .circle-child
+      {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-2
+      {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-2::before
+      {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-3
+      {
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-3::before
+      {
+        -webkit-animation-delay: -1s;
+        animation-delay: -1s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-4
+      {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-4::before
+      {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-5
+      {
+        -webkit-transform: rotate(120deg);
+        transform: rotate(120deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-5::before
+      {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-6
+      {
+        -webkit-transform: rotate(150deg);
+        transform: rotate(150deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-6::before
+      {
+        -webkit-animation-delay: -0.7s;
+        animation-delay: -0.7s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-7
+      {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-7::before
+      {
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-8
+      {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-8::before
+      {
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-9
+      {
+        -webkit-transform: rotate(240deg);
+        transform: rotate(240deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-9::before
+      {
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-10
+      {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-10::before
+      {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-11
+      {
+        -webkit-transform: rotate(300deg);
+        transform: rotate(300deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-11::before
+      {
+        -webkit-animation-delay: -0.2s;
+        animation-delay: -0.2s;
+      }
+
+      .page_preloader__circle .circle-child#circle-child-12
+      {
+        -webkit-transform: rotate(330deg);
+        transform: rotate(330deg);
+      }
+
+      .page_preloader__circle .circle-child#circle-child-12::before
+      {
+        -webkit-animation-delay: -0.1s;
+        animation-delay: -0.1s;
+      }
+
+      .page_preloader__circle .circle-child::before
+      {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 15%;
+        height: 15%;
+        background-color: #ec407a;
+        border-radius: 100%;
+        -webkit-animation: sk-circle-bounce-delay 1.2s infinite ease-in-out both;
+        animation: sk-circle-bounce-delay 1.2s infinite ease-in-out both;
+      }
+
+      @media screen and (max-width: 767px)
+      {
+        .page_preloader::before
+        {
+          top: 30px;
+          left: 30px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="libs/normalize.min.css">
+    <link rel="stylesheet" href="libs/animate.css">
+    <link rel="stylesheet" href="libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="libs/timer/countdown/jquery.countdown.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="page_preloader" id="page_preloader">
+      <div class="page_preloader__circle"><span class="circle-child" id="circle-child-1"></span><span class="circle-child" id="circle-child-2"></span><span class="circle-child" id="circle-child-3"></span><span class="circle-child" id="circle-child-4"></span><span class="circle-child" id="circle-child-5"></span><span class="circle-child" id="circle-child-6"></span><span class="circle-child" id="circle-child-7"></span><span class="circle-child" id="circle-child-8"></span><span class="circle-child" id="circle-child-9"></span><span class="circle-child" id="circle-child-10"></span><span class="circle-child" id="circle-child-11"></span><span class="circle-child" id="circle-child-12"></span></div>
+    </div>
+    <header class="header" id="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__df">
+            <div class="header__info"><img src="img/svg/header-map.svg" alt="">
+              <p class="header__title"><strong>бесплатная доставка</strong> при заказе<span> от 4 000 руб.</span> по всей России</p>
+            </div>
+            <div class="header__btns">
+              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">Перейти к покупкам</a></div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-->
+      </div>
+      <!-- /.header__top-->
+      <div class="container">
+        <div class="header__bottom">
+          <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
+          <div class="header__menu">
+            <div class="header__menu-top">
+              <div class="header__logo"><img src="img/logo.png" alt="лого"></div>
+              <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
+            </div>
+            <ul class="menu">
+              <li class="menu-item"><a href="#">О нас</a></li>
+              <li class="menu-item"><a href="#">Доставка</a></li>
+              <li class="menu-item"><a href="#">Магазины</a></li>
+              <li class="menu-item"><a href="#">Партнерам</a></li>
+              <li class="menu-item"><a href="#">Сотрудничество</a></li>
+              <li class="menu-item"><a href="#">Вакансии</a></li>
+              <li class="menu-item"><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="header__login"><a class="open-modal" href="#">Вход</a><span> /</span><a class="open-modal" href="#">Регистрация</a></div>
+        </div>
+        <!-- /.header__bottom-->
+      </div>
+      <!-- /.container-->
+    </header>
+    <div class="page_wr" id="page_wr">
+      <section class="scr1" id="scr1">
+        <div class="container">
+          <div class="scr1__top">
+            <div class="scr1__logo1"><img src="img/logo.png" alt="лого"></div>
+            <div class="scr1__logo2"><img src="img/logo2.png" alt="лого">
+              <p class="scr1__logo2-text">Профессиональная косметика<br> от производителя оптом<br> и в розницу</p>
+            </div>
+            <div class="scr1__item scr1__item--address">
+              <p>Симферополь, ул. Кубанская, 15</p><span class="scr1__item-btn">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                </svg></span>
+            </div>
+            <div class="scr1__item scr1__item--links"><a class="scr1__phone xlink" href="tel:+79789883424" rel="nofollow">+7 978 988-34-24</a><span class="scr1__item-btn">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                </svg></span>
+              <div class="scr1__hidden">
+                <svg class="scr1__hidden-cont" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 175 163.5" style="enable-background:new 0 0 175 163.5;" xml:space="preserve" preserveAspectRatio="none" fill="#FFFFFF" stroke="#E4E4E4">
+                  <path d="M166.5,163H8.5c-4.4,0-8-3.6-8-8V15c0-4.4,3.6-8,8-8h35.2L50,0.7L56.3,7h110.2c4.4,0,8,3.6,8,8v140              C174.5,159.4,170.9,163,166.5,163z"></path>
+                </svg>
+                <div class="footer__msgs"><a class="footer__msg footer__msg--wa" href="https://api.whatsapp.com/send?phone=79788990639" rel="nofollow">
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#wa"></use>
+                    </svg></a><a class="footer__msg footer__msg--viber" href="viber://chat?number=79788990639" rel="nofollow">
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#viber"></use>
+                    </svg></a>
+                  <!--. Тут поменять ссылку на актуальную--><a class="footer__msg footer__msg--tg" href="https://t.me/79788990639" rel="nofollow">
+                    <svg class="icon">
+                      <use xlink:href="img/svg/sprite.svg#telegram"></use>
+                    </svg></a>
+                </div>
+                <div class="scr1__hidden-wrap"><a class="scr1__hidden-phone xlink" href="tel:+79789883424" rel="nofollow">+7 978 988-34-24</a></div>
+                <div class="scr1__hidden-wrap"><a class="scr1__hidden-phone xlink" href="tel:+79788990639" rel="nofollow">+7 978 899-06-39</a></div>
+                <div class="scr1__hidden-wrap"><a class="scr1__hidden-phone xlink" href="tel:+79788882445" rel="nofollow">+7 978 888-24-45</a></div>
+              </div>
+            </div>
+            <div class="scr1__search">
+              <div class="form wpcf7">
+                <form class="wpcf7-form">
+                  <div class="form__item"><span class="wpcf7-form-control-wrap your-search text-input">
+                      <input class="wpcf7-form-control wpcf7-text wpcf7-search" type="tel" name="your-search" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Поиск по каталогу"></span>
+                    <button class="open-search" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#icon-search"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="scr1__btns">
+              <button class="scr1__btn scr1__btn--search">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#icon-search"></use>
+                </svg>
+              </button>
+              <button class="scr1__btn">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                </svg>
+              </button>
+              <button class="scr1__btn">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                </svg>
+              </button>
+              <button class="scr1__btn scr1__btn--cart">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#cart"></use>
+                </svg><span class="scr1__btn-num">2</span>
+              </button>
+              <div class="scr1__hidden">
+                <svg class="scr1__hidden-cont" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 175 163.5" style="enable-background:new 0 0 175 163.5;" xml:space="preserve" preserveAspectRatio="none" fill="#FFFFFF" stroke="#E4E4E4">
+                  <path d="M166.5,163H8.5c-4.4,0-8-3.6-8-8V15c0-4.4,3.6-8,8-8h35.2L50,0.7L56.3,7h110.2c4.4,0,8,3.6,8,8v140              C174.5,159.4,170.9,163,166.5,163z"></path>
+                </svg>
+                <p class="scr1__cart-total">На сумму:<b>1500 Р</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="scr1__df">
+            <aside class="scr1__menu">
+              <ul class="menu">
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/nail-polish.svg" alt=""></span><span class="menu-item__text">Ногтевой сервис</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/depil.svg" alt=""></span><span class="menu-item__text">Депиляция</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/makeup.svg" alt=""></span><span class="menu-item__text">Макияж</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/eyelashes.svg" alt=""></span><span class="menu-item__text">Наращивание ресниц</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/hair-dye.svg" alt=""></span><span class="menu-item__text">Парикмахерское искусство</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/add.svg" alt=""></span><span class="menu-item__text">Сопутствующие товары</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/equip.svg" alt=""></span><span class="menu-item__text">Оборудование для салонов</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/electroequip.svg" alt=""></span><span class="menu-item__text">Электрооборудование</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/shampoo.svg" alt=""></span><span class="menu-item__text">Шампуни и уходовые средства</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/new.svg" alt=""></span><span class="menu-item__text">Новинки</span><span class="menu-item__btn"></span></a></li>
+                <li class="menu-item"><a href="#"><span class="menu-item__icon"><img src="img/svg/icons/coupon.svg" alt=""></span><span class="menu-item__text">Распродажа</span><span class="menu-item__btn"></span></a></li>
+              </ul>
+            </aside>
+            <div class="scr1__right">
+              <div class="scr1__slider-wrap">
+                <div class="scr1__slider" id="scr1__slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a class="scr1__slider-item" href="#"><img src="img/scr1-slider.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a class="scr1__slider-item" href="#"><img src="img/scr1-slider.jpg" alt=""></a></div>
+                  </div>
+                </div>
+                <div class="scr1__slider-btns">
+                  <div class="swiper-dots"></div>
+                </div>
+              </div>
+              <div class="scr1__register">
+                <p class="scr1__register-title">хочешь узнать оптовые цены?<span> зарегистрируйся<br><strong> бесплатно</strong></span></p>
+                <div class="scr1__register-btns">
+                  <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">Зарегистрироваться</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr1-->
+      <section class="scr_prod prod prod--top" id="scr_prod">
+        <div class="container">
+          <div class="prod__cont">
+            <ul class="tabs-nav js-tabs-nav">
+              <li class="current"><a href="#prod__tab-top-0">Новинки</a></li>
+              <li><a href="#prod__tab-top-1">Хит продаж</a></li>
+              <li><a href="#prod__tab-top-2">Рекомендуем</a></li>
+            </ul>
+            <ul class="prod__tabs">
+              <!--. Табы в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__tab-top и номера таба-->
+              <li class="prod__tab" id="prod__tab-top-0">
+                <div class="prod__wrap">
+                  <!--. Слайдеры в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__slider-top и номера таба, в котором находится слайдер-->
+                  <div class="prod__slider" id="prod__slider-top-0">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--new">Новинка</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prod__slider-btns swiper-btns">
+                    <button class="swiper-button-prev" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                    <div class="swiper-dots"></div>
+                    <button class="swiper-button-next" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <!--. Табы в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__tab-top и номера таба-->
+              <li class="prod__tab" id="prod__tab-top-1">
+                <div class="prod__wrap">
+                  <!--. Слайдеры в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__slider-top и номера таба, в котором находится слайдер-->
+                  <div class="prod__slider" id="prod__slider-top-1">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--new">Новинка</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                            <div class="prod__bottom-buy">
+                              <div class="btn__wrap btn__wrap--violet"><a class="xbtn xbtn--violet" href="#">Купить в один клик</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prod__slider-btns swiper-btns">
+                    <button class="swiper-button-prev" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                    <div class="swiper-dots"></div>
+                    <button class="swiper-button-next" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-->
+      <section class="scr_dayprod dayprod" id="scr_prod-day">
+        <div class="container">
+          <h2 class="page-title">Товар дня</h2>
+          <div class="dayprod__df"><a class="dayprod__img" href="#">
+              <div class="prod__top"><span class="prod__label prod__label--action">Акция</span></div><img src="img-temp/dayprod-img.jpg" alt="" data-object-fit-contain>
+            </a>
+            <div class="dayprod__content"><span class="dayprod__article"><b>артикул:</b> ym-360b</span>
+              <h3 class="dayprod__title">Масляные капсулы для лица Oriflame NovAge Nutri6</h3>
+              <div class="dayprod__text">
+                <p>Коктейль из шести натуральных масел: кунжута, авокадо, персиковой косточки, лимнантеса, черной смородины и бобов сои — богат жирными кислотами, липидами, антиоксидантами, витаминами и минералами. Глубоко питают, восстанавливают и защищают усталую и тусклую кожу, возвращая здоровое сияние.</p>
+              </div>
+              <div class="dayprod__content-df">
+                <div class="dayprod__clock">
+                  <p>До конца акции:</p>
+                  <div id="countdown"></div>
+                </div>
+                <div class="dayprod__prices"><span class="dayprod__price--old">2 700 Р</span><span class="dayprod__price--new"><span>1920 Р</span><span class="dayprod__price--sale">-10%</span></span><span class="dayprod__price--economy">Экономия 340 Р</span>
+                  <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-day-->
+      <section class="scr_prod prod prod--prof" id="scr_prod-prof">
+        <div class="container">
+          <h2 class="page-title">Самые покупаемые товары для бьюти профессионалов</h2>
+          <div class="prod__cont">
+            <ul class="tabs-nav js-tabs-nav">
+              <li class="current"><a href="#prod__tab-prof-0">Косметолог</a></li>
+              <li><a href="#prod__tab-prof-1">Nail мастер</a></li>
+              <li><a href="#prod__tab-prof-2">Рекомендуем</a></li>
+              <li><a href="#prod__tab-prof-3">Барбер</a></li>
+              <li><a href="#prod__tab-prof-4">Стилист</a></li>
+              <li><a href="#prod__tab-prof-5">Парфюмер</a></li>
+            </ul>
+            <ul class="prod__tabs">
+              <!--. Табы в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__tab-prof и номера таба-->
+              <li class="prod__tab" id="prod__tab-prof-0">
+                <div class="prod__wrap">
+                  <!--. Слайдеры в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__slider-prof и номера таба, в котором находится слайдер-->
+                  <div class="prod__slider" id="prod__slider-prof-0">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--new">Новинка</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prod__slider-btns swiper-btns">
+                    <button class="swiper-button-prev" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                    <div class="swiper-dots"></div>
+                    <button class="swiper-button-next" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <!--. Табы в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__tab-prof и номера таба-->
+              <li class="prod__tab" id="prod__tab-prof-1">
+                <div class="prod__wrap">
+                  <!--. Слайдеры в разных секцкиях с товарами (scr_prod) имеют разные ID, в данной ID состоит из prod__slider-prof и номера таба, в котором находится слайдер-->
+                  <div class="prod__slider" id="prod__slider-prof-1">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--new">Новинка</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="prod__item">
+                          <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                            <div class="prod__btns">
+                              <button class="prod__btn prod__btn--like" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#heart"></use>
+                                </svg>
+                              </button>
+                              <button class="prod__btn" type="button">
+                                <svg class="icon">
+                                  <use xlink:href="img/svg/sprite.svg#compare"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                          <div class="prod__content">
+                            <p class="prod__brand">FarmStay</p><a href="#">
+                              <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                            </a>
+                            <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                          </div>
+                          <div class="prod__bottom">
+                            <div class="prod__bottom-df">
+                              <div class="prod__quant">
+                                <div class="quantity">
+                                  <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                                  <input class="quantity-num" type="number" value="1">
+                                  <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                                </div>
+                              </div>
+                              <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prod__slider-btns swiper-btns">
+                    <button class="swiper-button-prev" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                    <div class="swiper-dots"></div>
+                    <button class="swiper-button-next" type="button">
+                      <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-->
+      <section class="scr_lead lead" id="scr_lead">
+        <div class="container">
+          <div class="lead__df">
+            <div class="lead__content">
+              <p class="lead__title">Заполните форму</p>
+              <p class="lead__desc">и получите гарантированный подарок при покупке</p>
+              <div class="lead__img"><img src="img/lead-img.png" alt="" data-object-fit-contain></div>
+            </div>
+            <div class="lead__form">
+              <div class="form wpcf7">
+                <form class="wpcf7-form">
+                  <div class="form__wrap">
+                    <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                        <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span></div>
+                    <div class="btn__wrap btn__wrap--grad">
+                      <input class="wpcf7-form-control wpcf7-submit xbtn xbtn--grad" type="submit" value="отправить">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_lead-->
+      <section class="scr_prod prod prod--hit" id="scr_prod-hit-1">
+        <div class="container">
+          <h2 class="page-title">Хит продаж</h2>
+          <div class="prod__cont">
+            <div class="prod__wrap">
+              <div class="prod__slider" id="prod__slider-hit">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="prod__slider-btns swiper-btns">
+                <button class="swiper-button-prev" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="swiper-dots"></div>
+                <button class="swiper-button-next" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-->
+      <section class="scr_action action" id="scr_action">
+        <div class="container">
+          <div class="action__wrap">
+            <p class="action__title">получите бонус %</p>
+            <p class="action__desc">при покупке 1 ящика продукции</p>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_action-->
+      <section class="scr_prod prod prod--hit" id="scr_prod-hit-2">
+        <div class="container">
+          <div class="prod__cont">
+            <div class="prod__wrap">
+              <div class="prod__slider" id="prod__slider-hit-2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--hit">Хит</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="prod__slider-btns swiper-btns">
+                <button class="swiper-button-prev" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="swiper-dots"></div>
+                <button class="swiper-button-next" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-->
+      <section class="scr_prod prod prod--sale" id="scr_prod-sale">
+        <div class="container">
+          <h2 class="page-title">Распродажа</h2>
+          <div class="prod__cont">
+            <div class="prod__wrap">
+              <div class="prod__slider" id="prod__slider-sale">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-1.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-2.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-3.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="prod__item">
+                      <div class="prod__top"><span class="prod__label prod__label--action">Акция</span>
+                        <div class="prod__btns">
+                          <button class="prod__btn prod__btn--like" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#heart"></use>
+                            </svg>
+                          </button>
+                          <button class="prod__btn" type="button">
+                            <svg class="icon">
+                              <use xlink:href="img/svg/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div><a class="prod__img" href="#"><img src="img-temp/prod/img-4.jpg" alt="" data-object-fit-contain></a>
+                      <div class="prod__content">
+                        <p class="prod__brand">FarmStay</p><a href="#">
+                          <h3 class="prod__title">Маска для лица с коллагеном,<br> 23 мл</h3>
+                        </a>
+                        <div class="prod__prices"><span class="prod__price--old">60 Р</span><span class="prod__price--new">55 Р</span></div>
+                      </div>
+                      <div class="prod__bottom">
+                        <div class="prod__bottom-df">
+                          <div class="prod__quant">
+                            <div class="quantity">
+                              <button class="quantity-arrow quantity-arrow-minus" type="button">–</button>
+                              <input class="quantity-num" type="number" value="1">
+                              <button class="quantity-arrow quantity-arrow-plus" type="button">+</button>
+                            </div>
+                          </div>
+                          <div class="btn__wrap btn__wrap--grad"><a class="xbtn xbtn--grad" href="#">в корзину</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="prod__slider-btns swiper-btns">
+                <button class="swiper-button-prev" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+                <div class="swiper-dots"></div>
+                <button class="swiper-button-next" type="button">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_prod-->
+      <section class="scr_secrets secrets" id="scr_secrets">
+        <div class="container">
+          <h2 class="page-title">Секреты мастера</h2>
+          <div class="secrets__wrap">
+            <div class="secrets__slider" id="secrets__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="secrets__item"><a class="secrets__video fancybox" href="https://www.youtube.com/embed/atpnSRhv_f0?controls=1&amp;amp;showinfo=0&amp;amp;autoplay=1&amp;amp;loop=1&amp;amp;playlist=atpnSRhv_f0" data-fancybox-type="iframe"><span class="secrets__video-img"><img src="img-temp/secrets/img-1.jpg" alt="" data-object-fit-cover></span><span class="secrets__video-circle"></span></a>
+                    <div class="secrets__content">
+                      <h3>Рейтинг ТОП 10 лучших румян</h3>
+                      <div class="secrets__text">
+                        <p>Несмотря на то, что в моду давно и прочно вошла аристократическая бледность, румяна остаются важной в ...</p>
+                      </div>
+                    </div>
+                    <div class="secrets__links"><a class="link-underlined" href="#">Подробнее</a></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="secrets__item"><a class="secrets__video fancybox" href="https://www.youtube.com/embed/atpnSRhv_f0?controls=1&amp;amp;showinfo=0&amp;amp;autoplay=1&amp;amp;loop=1&amp;amp;playlist=atpnSRhv_f0" data-fancybox-type="iframe"><span class="secrets__video-img"><img src="img-temp/secrets/img-2.jpg" alt="" data-object-fit-cover></span><span class="secrets__video-circle"></span></a>
+                    <div class="secrets__content">
+                      <h3>Рейтинг ТОП 10 лучших гель-лаков<br> в 2021 году</h3>
+                      <div class="secrets__text">
+                        <p>Гель-лак – это стойкость геля и яркость цветного лака в одном флаконе. С тех пор как американская компания ...</p>
+                      </div>
+                    </div>
+                    <div class="secrets__links"><a class="link-underlined" href="#">Подробнее</a></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="secrets__item"><a class="secrets__video fancybox" href="https://www.youtube.com/embed/atpnSRhv_f0?controls=1&amp;amp;showinfo=0&amp;amp;autoplay=1&amp;amp;loop=1&amp;amp;playlist=atpnSRhv_f0" data-fancybox-type="iframe"><span class="secrets__video-img"><img src="img-temp/secrets/img-3.jpg" alt="" data-object-fit-cover></span><span class="secrets__video-circle"></span></a>
+                    <div class="secrets__content">
+                      <h3>Levrana: честно, натурально,<br> эффективно</h3>
+                      <div class="secrets__text">
+                        <p>Бренд Levrana создан в 2014 году семейной парой из Санкт-Петербурга. Компания отказалась от синтетических ...</p>
+                      </div>
+                    </div>
+                    <div class="secrets__links"><a class="link-underlined" href="#">Подробнее</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="secrets__slider-btns">
+              <div class="swiper-dots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_secrets-->
+      <section class="scr_brands brands" id="scr_brands">
+        <div class="container">
+          <h2 class="page-title">Бренды</h2>
+          <div class="brands__wrap">
+            <div class="brands__slider" id="brands__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-1.png" alt=""></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-2.png" alt=""></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-3.png" alt=""></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-4.png" alt=""></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-5.png" alt=""></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="brands__img"><img src="img/brands/img-6.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+            <div class="brands__slider-btns">
+              <button class="swiper-button-prev" type="button">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+              <div class="swiper-dots"></div>
+              <button class="swiper-button-next" type="button">
+                <svg class="icon">
+                  <use xlink:href="img/svg/sprite.svg#arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_brands-->
+      <section class="scr_blog blog violet-bg" id="scr_blog">
+        <div class="container">
+          <div class="blog__top">
+            <h2 class="page-title">Последние новости</h2><a class="link-underlined" href="#">Все новости</a>
+          </div>
+          <div class="blog__list">
+            <div class="blog__col">
+              <div class="blog__item"><a class="blog__img link-watch link-watch--link" href="#"><img src="img-temp/blog-img.jpg" alt="" data-object-fit-cover></a>
+                <div class="blog__content">
+                  <time datetime="2021-03-01">01 марта 2021</time><a href="#">
+                    <h3>Супер акция к 8 Марта - скидка 24%!</h3>
+                  </a>
+                  <div class="blog__text">
+                    <p>В календаре отмечен красным цветом, первый праздник весны и гармонии - 8 МАРТА! ...</p>
+                  </div>
+                </div>
+                <div class="blog__links"><a class="link-underlined" href="#">Подробнее</a></div>
+              </div>
+            </div>
+            <div class="blog__col">
+              <div class="blog__item">
+                <div class="blog__content">
+                  <time datetime="2021-03-01">01 марта 2021</time><a href="#">
+                    <h3>Следите за красивым цветом<br> ногтевой пластины</h3>
+                  </a>
+                  <div class="blog__text">
+                    <p>Цвет ногтевой пластины должен быть равномерным...</p>
+                  </div>
+                </div>
+                <div class="blog__links"><a class="link-underlined" href="#">Подробнее</a></div>
+              </div>
+              <div class="blog__item">
+                <div class="blog__content">
+                  <time datetime="2021-03-01">01 марта 2021</time><a href="#">
+                    <h3>Следите за красивым цветом<br> ногтевой пластины</h3>
+                  </a>
+                  <div class="blog__text">
+                    <p>Цвет ногтевой пластины должен быть равномерным...</p>
+                  </div>
+                </div>
+                <div class="blog__links"><a class="link-underlined" href="#">Подробнее</a></div>
+              </div>
+            </div>
+            <div class="blog__col">
+              <div class="blog__item"><a class="blog__img link-watch link-watch--link" href="#"><img src="img-temp/blog-img.jpg" alt="" data-object-fit-cover></a>
+                <div class="blog__content">
+                  <time datetime="2021-03-01">01 марта 2021</time><a href="#">
+                    <h3>Супер акция к 8 Марта - скидка 24%!</h3>
+                  </a>
+                  <div class="blog__text">
+                    <p>В календаре отмечен красным цветом, первый праздник весны и гармонии - 8 МАРТА! ...</p>
+                  </div>
+                </div>
+                <div class="blog__links"><a class="link-underlined" href="#">Подробнее</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_blog-->
+      <section class="scr_insta insta" id="scr_insta">
+        <div class="container">
+          <h2 class="page-title">Мы в instagram</h2><a class="insta__link link-underlined" href="#">#yreproff</a>
+          <div class="insta__wrap">
+            <div class="insta__slider" id="insta__slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-1.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-1.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-2.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-2.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-3.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-3.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-4.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-4.jpg" alt="" data-object-fit-cover></a></div>
+                <div class="swiper-slide"><a class="insta__item link-watch fancybox" href="img-temp/insta/img-4.jpg" data-fancybox-group="insta"><img src="img-temp/insta/img-5.jpg" alt="" data-object-fit-cover></a></div>
+              </div>
+            </div>
+            <div class="insta__slider-btns">
+              <div class="swiper-dots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.scr_insta--><a class="to-top" href="#page_wr">
+        <svg class="icon">
+          <use xlink:href="img/svg/sprite.svg#arrow"></use>
+        </svg></a>
+    </div>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__col">
+            <h3 class="footer__title js-footer__title">о компании</h3>
+            <div class="footer__to-hide">
+              <ul class="menu">
+                <li class="menu-item"><a href="#">О нас</a></li>
+                <li class="menu-item"><a href="#">Партнерам</a></li>
+                <li class="menu-item"><a href="#">Сотрудничество</a></li>
+                <li class="menu-item"><a href="#">Вакансии</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title js-footer__title">покупателям</h3>
+            <div class="footer__to-hide">
+              <ul class="menu">
+                <li class="menu-item"><a href="#">Подарочные карты</a></li>
+                <li class="menu-item"><a href="#">Доставка и оплата</a></li>
+                <li class="menu-item"><a href="#">Оптовые предложения</a></li>
+                <li class="menu-item"><a href="#">Акции</a></li>
+                <li class="menu-item"><a href="#">Распродажа</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title">контакты</h3>
+            <div class="footer__address">
+              <p>Симферополь, ул. Кубанская,15</p>
+              <p>Симферополь, пр. Кирова, 27</p>
+            </div>
+            <div class="footer__links">
+              <div class="footer__item"><a class="footer__phone xlink" href="tel:+79788990639" rel="nofollow">+7 978 899-06-39</a></div>
+              <div class="footer__item"><a class="footer__phone xlink" href="tel:+79788882445" rel="nofollow">+7 978 888-24-45</a></div>
+              <div class="footer__item"><a class="footer__phone xlink" href="tel:+79789883424" rel="nofollow">+7 978 988-34-24</a></div>
+              <div class="footer__msgs"><a class="footer__msg footer__msg--wa" href="https://api.whatsapp.com/send?phone=79788990639" rel="nofollow">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#wa"></use>
+                  </svg></a><a class="footer__msg footer__msg--viber" href="viber://chat?number=79788990639" rel="nofollow">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#viber"></use>
+                  </svg></a>
+                <!--. Тут поменять ссылку на актуальную--><a class="footer__msg footer__msg--tg" href="https://t.me/79788990639" rel="nofollow">
+                  <svg class="icon">
+                    <use xlink:href="img/svg/sprite.svg#telegram"></use>
+                  </svg></a>
+              </div>
+              <div class="footer__item"><a class="footer__phone xlink" href="mailto:yre-prof@mail.ru" rel="nofollow">yre-prof@mail.ru</a></div>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__title">службы доставки:</h3>
+            <div class="footer__deliver"><img src="img/deliver-1.png" alt=""></div>
+            <div class="footer__deliver"><img src="img/deliver-2.png" alt=""></div>
+            <h3 class="footer__title footer__title--payment">способы оплаты:</h3>
+            <div class="footer__payment"><img src="img/payment-1.png" alt=""></div>
+          </div>
+        </div>
+        <!-- /.footer__top-->
+      </div>
+      <!-- /.container-->
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__bottom-df">
+            <div class="footer__politics"><a class="text" href="#">Политика конфиденциальности</a></div>
+            <div class="footer__copyright">
+              <p class="text">г. Симферополь © Copyright 2021&nbsp;г.</p>
+            </div><a class="made" href="https://sheer82.ru/"><span class="text">Сделано в</span>
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#iconSheer"></use>
+              </svg></a>
+          </div>
+          <!-- /.row-->
+        </div>
+        <!-- /.container-->
+      </div>
+      <!-- /.footer__bottom-->
+    </footer>
+    <!-- /.footer-->
+    <script src="js//libs/jquery.min.js"></script>
+    <script src="js/libs/jquery.lazyload.min.js"></script>
+    <script src="js/libs/wow.min.js"></script>
+    <script src="js/libs/jquery.maskedinput.min.js"></script>
+    <script src="js/libs/svg4everybody.min.js"></script>
+    <script src="js/libs/ofi.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="libs/fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    <script src="libs/swiper/swiper.js"></script>
+    <script src="libs/timer/countdown/jquery.countdown.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      (function($)
+      {
+        /* инициализация таймера */
+        var ts = new Date(2021, 4, 1);
+        $('#countdown').countdown(
+        {
+          timestamp: ts,
+          callback: function(days, hours, minutes, seconds)
+          {
+            var message = "";
+            message += days + " day" + (days == 1 ? '' : 's') + ", ";
+            message += hours + " hour" + (hours == 1 ? '' : 's') + ", ";
+            message += minutes + " minute" + (minutes == 1 ? '' : 's') + " and ";
+            message += seconds + " second" + (seconds == 1 ? '' : 's') + " <br />";
+          }
+        });
+        $('.dayprod__clock .countDays').append('<span class="countText">Дней</span>');
+        $('.dayprod__clock .countHours').append('<span class="countText">Часов</span>');
+        $('.dayprod__clock .countMinutes').append('<span class="countText">Минут</span>');
+      })(jQuery);
+    </script>
+  </body>
+</html>

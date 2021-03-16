@@ -1,0 +1,129 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+      height: 47px
+      padding-left: 14px
+      background-color: #ffffff
+      border-radius: 6px
+      font-size: 16px
+      line-height: 1.2
+      color: #433f4f
+
+      @include placeholder(#433f4f, 15px)
+
+      &:focus
+        @include placeholder(transparent, 16px)
+      &:hover
+        background-color: lighten($accent, 5%)
+
+    textarea
+      // height: 136px
+
+  &__wrap
+    position: relative
+    padding-right: 153px
+    .text-input
+      input
+        width: 269px
+        padding-right: 60px
+    .btn__wrap
+      position: absolute
+      top: 0
+      right: 0
+      .xbtn
+        width: 206px
+        height: 47px
+
+  .accept
+    display: block
+    margin-top: 40px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(0,0,0,0.7)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__wrap
+      .btn__wrap
+        .xbtn
+          width: 166px
+
+  //   max-width 991px
+
+  @media screen and (max-width: 430px)
+    &__wrap
+      padding-right: 0
+      .btn__wrap
+        position: static
+        margin-top: 20px
+        margin-left: 0
+        .xbtn
+          width: 166px
+
+  //   max-width 430px
+
+ /* form */

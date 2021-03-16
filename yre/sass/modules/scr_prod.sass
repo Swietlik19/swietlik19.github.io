@@ -1,0 +1,271 @@
+.prod
+  position: relative
+  padding-top: 40px
+  padding-bottom: 36px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__wrap
+    position: relative
+    margin-top: 29px
+  &__slider
+    overflow: hidden
+    margin: -20px -10px
+    padding: 20px 10px
+    &-btns
+      .swiper-dots
+        display: none
+      .swiper-button-prev
+        left: -30px
+      .swiper-button-next
+        right: -30px
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    position: relative
+    border-radius: 8px
+    transition: 0.4s ease-in-out
+    z-index: 1
+    &:hover
+      &::before
+        box-shadow: 0px 5px 15px 0px rgba(149,117,205,0.34)
+      .prod__bottom-buy
+        opacity: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #ffffff
+      border: 1px solid #e4e4e4
+      box-shadow: 0px 7px 10px 0px rgba(149,117,205,0.14)
+      transition: box-shadow 0.3s
+      z-index: -1
+  &--top
+    .prod__item
+      &::before
+        height: calc(100% - 68px)
+      &:hover
+        &::before
+          height: 100%
+  &--sale
+    padding-top: 28px
+    padding-bottom: 42px
+    background: #faf7ff url('../img/svg/decor.svg') repeat center center
+    background-size: 256px 249px
+  &__top
+    position: absolute
+    top: 14px
+    left: 0
+    width: 100%
+    display: flex
+    align-items: flex-start
+  &__label
+    padding: 9px 12px
+    font-size: 12px
+    line-height: 1.2
+    font-weight: 500
+    text-transform: uppercase
+    color: #ffffff
+    &--action
+      background-color: #ff7e15
+    &--new
+      background-color: #7ccd48
+    &--hit
+      background-color: $accent2
+  &__btns
+    margin-left: auto
+    padding-right: 13px
+  &__btn
+    background: none
+    border: none
+    outline: none
+    display: block
+    width: 30px
+    height: 30px
+    margin-bottom: 5px
+    padding: 5px
+    background-color: rgba(#fff, 0.8)
+    border-radius: 6px
+    cursor: pointer
+    &:hover
+      .icon
+        fill: $accent2
+    .icon
+      fill: #433f4f
+      transition: 0.3s
+    &:last-of-type
+      margin-bottom: 0
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    padding: 15px 30px 10px
+    height: 250px
+  &__content
+    flex-grow: 1
+    padding: 0 10px 17px 29px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        .prod__title
+          color: $accent2
+  &__title
+    min-height: 46px
+    margin-top: 0
+    margin-bottom: 15px
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 500
+    color: #433f4f
+    transition: 0.4s ease-in-out
+  &__bottom
+    &-df
+      display: flex
+      justify-content: space-between
+      padding: 0 31px 22px 29px
+      .btn__wrap
+        margin-left: 7px
+    &-buy
+      opacity: 0
+      padding-top: 2px
+      padding-bottom: 22px
+      text-align: center
+  &__brand
+    margin-bottom: 12px
+    font-size: 14px
+    line-height: 1.2
+    text-transform: uppercase
+    color: #b8b4c5
+  &__prices
+    display: flex
+    align-items: flex-end
+  &__price
+    &--old
+      display: block
+      margin-right: 21px
+      color: #b8b4c5
+      text-decoration: line-through
+    &--new
+      display: block
+      font-size: 24px
+      line-height: 1
+      font-weight: 500
+      color: #433f4f
+
+
+  @media screen and (max-width: 1450px)
+    &__slider
+      &-btns
+        .swiper-dots
+          display: flex
+          .swiper-pagination-bullet-active
+            background-color: rgba(#9575cd, 0.2)
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+
+  // max-width 1450px
+
+  @media screen and (max-width: 1400px)
+    &__img
+      height: 220px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    &__title
+      min-height: 42px
+      margin-bottom: 13px
+      font-size: 18px
+      br
+        display: none
+    &__price
+      &--old
+        font-size: 14px
+        margin-right: 18px
+      &--new
+        font-size: 21px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 767px)
+    &--top
+      .prod__item
+        &::before
+          height: 100%
+    &__bottom
+      &-df
+        padding: 0 15px 17px 19px
+      &-buy
+        display: none
+    &__content
+      padding: 0 10px 10px
+    &__brand
+      margin-bottom: 5px
+      font-size: 12px
+    &__img
+      height: 170px
+      padding: 7px 20px
+    &__title
+      min-height: 32px
+      margin-bottom: 9px
+      font-size: 16px
+    &__price
+      &--old
+        font-size: 13px
+        margin-right: 14px
+      &--new
+        font-size: 18px
+    &__bottom
+      &-df
+        .btn__wrap
+          background: none
+          box-shadow: none
+        .xbtn--grad
+          font-size: 0
+          display: block
+          width: 40px
+          height: 40px
+          padding: 0
+          border-radius: 50%
+          background: transparent url('../img/svg/cart-white.svg') no-repeat center center
+          background-size: 15px 15px
+          background-color: $accent2
+          box-shadow: 0 5px 15px rgba($accent2, 0.4)
+    &__label
+      padding: 6px 5px
+      font-size: 10px
+    &__top
+      top: 3px
+    &__btns
+      padding-right: 3px
+    &__btn
+      width: 27px
+      height: 27px
+      margin-bottom: 0px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    padding-top: 30px
+    padding-bottom: 30px
+    &__img
+      height: 140px
+    &__bottom
+      &-df
+        padding: 0 10px 12px
+    &__item
+      &::before
+        border: none
+
+  // max-width 575px
+
+/* prod */

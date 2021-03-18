@@ -1,0 +1,155 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  &__title
+    width: calc(100% + 20px)
+    margin-bottom: 25px
+    font-weight: 500
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      width: 100%
+      height: 50px
+      background-color: #ffffff
+      border: 1px solid #e4e4e4
+      border-radius: 6px
+      padding-left: 16px
+      font-size: 16px
+      color: #263238
+
+      @include placeholder(#263238, 14px)
+
+      &:focus
+        @include placeholder(transparent, 14px)
+      &:hover
+        border-color: $accent
+
+    textarea
+      // height: 136px
+
+  &__wrap
+    display: flex
+    .form__item
+      &--submit
+        position: relative
+        margin-left: -72px
+        z-index: 1
+
+  .accept
+    display: block
+    width: calc(100% + 20px)
+    margin-left: -10px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 12px
+      line-height: 1.2
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(38,50,56,0.69)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+  &--general
+    padding: 30px 36px 18px
+    background-color: #f7f7f7
+    border-radius: 8px
+    .form__item
+      margin-bottom: 14px
+      &--submit
+        margin-top: 30px
+        margin-bottom: 25px
+        .btn__wrap,
+        .xbtn
+          width: 100%
+
+
+  @media screen and (max-width: 1170px)
+    &--general
+      .form__item
+        margin-bottom: 10px
+        &--submit
+          margin-top: 20px
+
+  //   max-width 1170px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      display: block
+      max-width: 280px
+      margin-left: auto
+      margin-right: auto
+      .form__item
+        &--submit
+          margin-left: 0
+          margin-top: 15px
+          .btn__wrap,
+          .xbtn
+            width: 100%
+
+  //   max-width 500px
+
+  @media screen and (max-width: 400px)
+    &--general
+      padding: 20px 19px 18px
+    &__title
+      width: 100%
+      margin-bottom: 20px
+      font-size: 14px
+
+  //   max-width 400px
+
+ /* form */

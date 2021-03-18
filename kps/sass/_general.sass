@@ -1,0 +1,653 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 156px
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  display: block
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-left]
+  display: block
+  object-fit: cover
+  object-position: left center
+  font-family: 'object-fit: cover; object-position: left center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  display: block
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+.grey-bg
+  background-color: #f7f7f7
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 25px
+  font-size: 28px
+  font-weight: 500
+
+.page-socials
+  position: fixed
+  top: 158px
+  right: 0
+  z-index: 300
+  &-item
+    display: flex
+    align-items: center
+    width: 65px
+    height: 50px
+    margin-bottom: 1px
+    transform: translateX(15px)
+    background-color: $accent
+    border-radius: 8px 0px 0px 8px
+    padding-left: 14px
+    text-decoration: none
+    outline: none
+    transition: 0.4s ease-in-out
+    &:hover
+      transform: translateX(0)
+    .icon
+      display: block
+      width: 24px
+      height: 23px
+      fill: #fff
+    &--viber
+      background-color: #7360f2
+    &--wa
+      background-color: #33ce62
+    &--calc
+      background-color: #263238
+      .icon
+        width: 27px
+        height: 27px
+
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.xlink
+  position: relative
+  display: block
+  text-decoration: none
+  outline: none
+  padding-right: 28px
+  line-height: 1
+  font-weight: 600
+  transition: 0.3s
+  &::after
+    content: ''
+    position: absolute
+    top: 3px
+    right: 0
+    display: block
+    width: 7px
+    height: 12px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+  &:hover
+    color: $accent
+
+
+.btn__wrap
+  display: inline-block
+  &--grad
+    position: relative
+    box-shadow: 0px 10px 20px 0px rgba(202,6,6,0.3)
+    border-radius: 6px
+    overflow: hidden
+    background-color: $accent
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      transition: opacity 0.4s ease-in-out
+      display: block
+      width: 50%
+      height: 100%
+      background-color: #f5161f
+      background-image: linear-gradient(180.0deg, #f5161f 0%, #ca0606 100%)
+      z-index: -1
+    &::before
+      left: 0
+    &::after
+      right: 0
+    &:hover
+      &::before,
+      &::after
+        opacity: 0
+        transition: 0.4s ease-in-out
+      &::before
+        transform: translateX(-100%)
+      &::after
+        transform: translateX(100%)
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.4s ease-in-out
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--grad
+    height: 50px
+    padding-left: 26px
+    padding-right: 26px
+    font-size: 15px
+    line-height: 1.2
+    font-weight: 500
+    color: #ffffff
+  &--trsp
+    position: relative
+    height: 40px
+    padding-left: 16px
+    padding-right: 16px
+    border: 1px solid #263238
+    border-radius: 6px
+    font-size: 13px
+    line-height: 1.2
+    font-weight: 500
+    transition: 0.4s ease-in-out 0.2s
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: -1px
+      display: block
+      width: 0
+      height: calc(100% + 2px)
+      background-color: $accent
+      opacity: 0
+      transition: 0.3s ease-in-out
+      z-index: -1
+    &::before
+      left: -1px
+      border-right: none
+      border-top-left-radius: 6px
+      border-bottom-left-radius: 6px
+    &::after
+      right: -1px
+      border-left: none
+      border-top-right-radius: 6px
+      border-bottom-right-radius: 6px
+    &:hover
+      background-color: $accent
+      color: #fff
+      &::before,
+      &::after
+        width: calc(50% + 1px)
+        opacity: 1
+  &--circle
+    width: 33px
+    height: 33px
+    background-color: $accent
+    box-shadow: 0px 5px 15px 0px rgba(245,22,31,0.3)
+    border-radius: 50%
+    transition: 0.4s ease-in-out
+    .icon
+      display: block
+      width: 7px
+      height: 12px
+      fill: #fff
+    &:hover
+      transform: translateX(10px)
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 15px
+  height: 20px
+  &__wrap
+    position: relative
+    transition: 0.3s
+
+    z-index: 100
+    display: block
+
+  &.active
+    .burger__wrap
+      .line
+        transform: translate(-50%,-50%) rotate(45deg)
+        &:before,
+        &:after
+          transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 15px
+      height: 2px
+      background-color: #fff
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-5px)
+    &::after
+      transform: translateY(5px)
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .icon
+    width: 12px
+    height: 12px
+    fill: #fff
+    transform: rotate(-90deg)
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+.tabs__nav
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  & > li
+    margin-right: 74px
+    &:last-of-type
+      margin-right: 0
+    & > a
+      position: relative
+      display: block
+      text-decoration: none
+      outline: none
+      font-size: 18px
+      font-weight: 500
+      transition: 0.4s ease-in-out
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -8px
+        display: block
+        width: 100%
+        height: 1px
+        background: $accent
+        transition: 0.4s ease-in-out
+        opacity: 0
+      &:hover
+        color: $accent
+        &::after
+          opacity: 1
+    &.current
+      & > a
+        color: $accent
+        &::after
+          opacity: 1
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-slide
+  height: auto
+.swiper-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 30px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: #b3b3b3
+  width: 9px
+  height: 9px
+  margin: 3px 11px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: #dcdcdc
+.swiper-button-prev,
+.swiper-button-next
+  top: calc(50% - 16px)
+  background: none
+  border: none
+  outline: none
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 33px
+  height: 33px
+  background-color: #ffffff
+  box-shadow: 0px 5px 15px 0px rgba(38,50,56,0.3)
+  margin: 0
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: none
+  .icon
+    display: block
+    width: 7px
+    height: 12px
+    transition: 0.3s
+  &:hover
+    background-color: $accent
+    box-shadow: none
+    .icon
+      fill: #fff
+
+.swiper-button-prev
+  left: -48px
+  .icon
+    transform: rotate(180deg)
+.swiper-button-next
+  right: -48px
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+/* Переопределение mCustomScrollbar */
+.mCSB_horizontal.mCSB_inside>.mCSB_container
+  margin-bottom: 5px
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+  background-color: rgba($accent2, 0.6)
+  height: 2px
+  margin: 7px auto
+.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar
+  background-color: rgba($accent2, 0.85)
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1471px
+
+/* media */
+@media screen and (max-width: 1580px)
+  .page-socials
+    top: 128px
+    &-item
+      width: 45px
+      height: 38px
+      padding-left: 6px
+      .icon
+        width: 19px
+        height: 18px
+      &--calc
+        .icon
+          width: 20px
+          height: 20px
+  .container
+    padding-right: 40px
+    padding-left: 40px
+  .swiper-button-prev
+    left: -18px
+  .swiper-button-next
+    right: -18px
+
+// max-width 1580px
+
+@media screen and (max-width: 1400px)
+  .tabs__nav > li
+    margin-right: 58px
+    & > a
+      font-size: 16px
+  .page_wr
+    padding-top: 120px
+
+// max-width 1400px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+
+// max-width 1200px
+
+@media screen and (max-width: 1170px)
+  .xbtn--trsp, input[type="submit"].xbtn--trsp
+    height: 35px
+    padding-left: 9px
+    padding-right: 9px
+    font-size: 12px
+  .page_wr
+    padding-top: 114px
+
+// max-width 1170px
+
+@media screen and (max-width: 991px)
+  .container
+    padding-right: 15px
+    padding-left: 15px
+  .page-socials
+    top: 100px
+    &-item
+      width: 38px
+      height: 28px
+      .icon
+        width: 13px
+        height: 13px
+      &--calc
+        .icon
+          width: 15px
+          height: 15px
+  .tabs__nav > li
+    margin-right: 30px
+    & > a
+      font-size: 14px
+  .page_wr
+    padding-top: 59px
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .tabs__nav
+    margin-top: -20px
+    padding-top: 20px
+    padding-bottom: 20px
+    & > li
+      flex-shrink: 0
+      margin-right: 15px
+      & > a
+        &::after
+          content: none
+        &:hover
+          color: $accent2
+  .page-title
+    font-size: 24px
+  .xlink
+    padding-right: 22px
+    font-size: 14px
+  .to-top
+    right: 10px
+    bottom: 10px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .page_wr
+    padding-top: 114px
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

@@ -1,0 +1,81 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+        .header__cities
+          span.current Симферополь
+
+        .header__search
+          .form
+            form
+              .form__item
+                span.your-search.text-input
+                  input(type='tel', name='your-search', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Поиск по каталогу')
+
+                button.open-search(type='submit')
+                  svg.icon
+                    use(xlink:href='img/svg/sprite.svg#icon-search')
+
+        a.header__callback.open-modal(href="#modal__callback") Заказать обратный звонок
+
+        .header__item.header__item--customers
+          span Покупателям
+
+        a.header__item(href="#")
+          span Контакты
+
+      // /.header__top
+    // /.container
+
+    .header__bottom
+      .container
+        .header__df
+          button.header__catalog-btn
+            .burger
+              span.burger__wrap
+                span.line
+
+            span каталог товаров
+
+          .header__menu
+            ul.menu
+              li.menu-item
+                a(href="#")
+                  span.menu-item-icon
+                    img(src="img/svg/icons/roof.svg" alt="")
+                  span.menu-item-text Кровля
+              li.menu-item
+                a(href="#")
+                  span.menu-item-icon
+                    img(src="img/svg/icons/solar-panel.svg" alt="")
+                  span.menu-item-text фасады
+              li.menu-item
+                a(href="#")
+                  span.menu-item-icon
+                    img(src="img/svg/icons/fence.svg" alt="")
+                  span.menu-item-text заборы
+
+          .header__phones
+            span Бесплатно по России
+            a.header__phone(href="tel:88005058356" rel="nofollow") 8 (800) 505 83 56
+
+          .header__links
+            a.header__login(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#user")
+            a.header__cart(href="#")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#cart")
+              span.header__cart-num 3
+
+
+      // /.container
+    // /.header__bottom

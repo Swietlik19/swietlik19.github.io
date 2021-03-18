@@ -1,0 +1,212 @@
+.prod
+  position: relative
+  padding-bottom: 52px
+  .tabs__nav-wrap
+    margin-bottom: 42px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__wrap
+    position: relative
+  &__slider
+    overflow: hidden
+    margin: -20px -10px
+    padding: 20px 10px
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding: 10px 10px 20px
+    position: relative
+    background-color: #f7f7f7
+    border-radius: 8px
+    transition: 0.4s ease-in-out
+    z-index: 1
+    &:hover
+      box-shadow: 0 5px 15px rgba(#000, 0.2)
+
+  &__top
+    position: absolute
+    top: 20px
+    left: 10px
+    right: 10px
+    display: flex
+    align-items: flex-start
+  &__label
+    padding: 9px 15px
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 500
+    text-transform: uppercase
+    color: #ffffff
+    &--action
+      background-color: $accent
+  &__btns
+    margin-top: -5px
+    margin-left: auto
+    padding-right: 3px
+  &__btn
+    background: none
+    border: none
+    outline: none
+    display: block
+    width: 30px
+    height: 30px
+    padding: 5px
+    background-color: rgba(#fff, 0.8)
+    border-radius: 6px
+    cursor: pointer
+    &:hover
+      .icon
+        fill: $accent
+    .icon
+      transition: 0.3s
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+  &__content
+    position: relative
+    flex-grow: 1
+    padding: 5px 9px 15px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        .prod__title
+          color: $accent2
+    &::after
+      content: ''
+      position: absolute
+      left: -10px
+      right: -10px
+      bottom: 0
+      display: block
+      height: 1px
+      background: rgba(201,202,204,0.5)
+  &__title
+    min-height: 46px
+    margin-top: 0
+    margin-bottom: 14px
+    font-size: 16px
+    font-weight: 600
+    transition: 0.4s ease-in-out
+  &__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 15px 10px 0
+    .btn__wrap
+      margin-left: 7px
+  &__price
+    &--old
+      display: block
+      font-size: 14px
+      font-weight: 500
+      color: #686c6e
+      text-decoration: line-through
+    &--new
+      display: block
+      font-size: 20px
+      font-weight: 600
+  &__feat
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      margin-bottom: 4px
+      font-size: 14px
+      color: #686c6e
+      &:last-of-type
+        margin-bottom: 0
+
+
+  @media screen and (max-width: 1400px)
+    .tabs__nav-wrap
+      margin-bottom: 32px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__title
+      min-height: 38px
+      margin-bottom: 12px
+      font-size: 14px
+      line-height: 1.4
+    &__feat
+      & > li
+        margin-bottom: 2px
+        font-size: 13px
+    &__price
+      &--old
+        font-size: 13px
+      &--new
+        font-size: 18px
+    &__bottom
+      padding: 10px 5px 0
+
+  // max-width 1170px
+
+  @media screen and (max-width: 767px)
+    padding-bottom: 30px
+    &__label
+      padding: 5px
+      font-size: 11px
+    &__btn
+      width: 27px
+      height: 27px
+    &__item
+      padding: 5px 5px 10px
+    &__top
+      top: 10px
+      left: 5px
+      right: 5px
+    &__content
+      &::after
+        left: -5px
+        right: -5px
+    &__title
+      br
+        display: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 460px)
+    &__bottom
+      padding: 7px 0 0
+      .xbtn--trsp,
+      input[type="submit"].xbtn--trsp
+        height: auto
+        padding-left: 0
+        padding-right: 0
+        font-size: 12px
+        border: none
+        &:hover
+          color: $accent2
+          &::before,
+          &::after
+            content: none
+    &__content
+      padding: 5px 5px 10px
+    &__price
+      &--old
+        font-size: 12px
+      &--new
+        font-size: 15px
+    &__slider
+      &-btns
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+    &__title
+      font-size: 13px
+    &__feat
+      & > li
+        margin-bottom: 0px
+        font-size: 12px
+
+  // max-width 460px
+
+/* prod */

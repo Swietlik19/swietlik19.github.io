@@ -1,0 +1,244 @@
+.footer
+  position: relative
+  background-color: #263238
+  &__top
+    display: flex
+    padding-top: 44px
+    padding-bottom: 41px
+  &__col
+    width: 19.42697414395528%
+    padding-right: 20px
+    &:nth-of-type(2)
+      width: 23.68972746331237%
+    &:nth-of-type(3)
+      width: auto
+    &:last-of-type
+      flex-shrink: 0
+      width: 214px
+      margin-left: auto
+      padding-right: 0
+    &--catalog
+      .menu
+        columns: 2
+        column-gap: 70px
+  &__title
+    margin-top: 0
+    margin-bottom: 20px
+    font-size: 20px
+    font-weight: 600
+    color: #ffffff
+
+  &__bottom
+    border-top: 1px solid rgba(255,255,255,0.2)
+    &-df
+      height: 55px
+      display: flex
+      align-items: center
+    .text
+      font-size: 14px
+      line-height: 16px
+      color: #c9cacc
+    a.text
+      text-decoration: none
+      outline: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+
+  &__politics
+    margin-right: 70px
+
+  &__copyright
+    margin-right: 99px
+
+  .made
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    cursor: pointer
+    text-decoration: none
+    .icon
+      width: 60px
+      height: 22px
+      margin-left: 13px
+      fill: #c9cacc
+      transition: 0.3s
+
+    &:hover
+      .icon
+        fill: #fff
+
+  .menu
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      margin-bottom: 18px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 14px
+        color: #c9cacc
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+  &__item
+    margin-bottom: 20px
+    &:last-of-type
+      margin-bottom: 0
+  &__msgs
+    display: flex
+  &__msg
+    display: block
+    text-decoration: none
+    outline: none
+    width: 22px
+    height: 22px
+    margin-right: 16px
+    transition: 0.5s ease-in-out
+    .icon
+      fill: #c9cacc
+    &:last-of-type
+      margin-right: 0
+    &:hover
+      transform: scale(1.1)
+  &__phones
+    &-text
+      font-size: 12px
+      line-height: 1.2
+      color: #ffffff
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    margin-top: 7px
+    margin-bottom: 10px
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 600
+    color: #ffffff
+    transition: 0.4s ease-in-out
+    &:hover
+      color: $accent
+  &__text
+    font-size: 14px
+    line-height: 1.714285714285714 /* 24 / 14 */
+    color: #c9cacc
+  &__pay
+    display: flex
+    & > li
+      margin-right: 22px
+      &:last-of-type
+        margin-right: 0
+      img
+        width: auto
+        max-width: 47px
+
+
+  @media screen and (max-width: 1400px)
+    &__col
+      &:nth-of-type(2)
+        width: 20.689727%
+      &--catalog
+        .menu
+          column-gap: 20px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__top
+      padding-top: 34px
+      padding-bottom: 31px
+    &__title
+      margin-bottom: 15px
+      font-size: 18px
+    .menu
+      & > li
+        margin-bottom: 14px
+        & > a
+          font-size: 13px
+    &__phone
+      font-size: 18px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__hidden
+      display: none
+      padding-bottom: 15px
+    &__top
+      flex-direction: column
+    &__col
+      width: 100% !important
+      padding-right: 0
+      &:not(:last-of-type)
+        .footer__title
+          display: flex
+          align-items: center
+          justify-content: space-between
+          cursor: pointer
+          &::after
+            content: ''
+            display: block
+            width: 18px
+            height: 18px
+            margin-left: 15px
+            background: transparent url('../img/svg/add.svg') no-repeat center center
+            background-size: contain
+            transition: 0.4s
+          &.active
+            &::after
+              transform: rotate(45deg)
+      &:last-of-type
+        padding-top: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__bottom
+      &-df
+        justify-content: space-between
+      .footer__politics
+        margin-right: 30px
+      .footer__copyright
+        margin-right: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__bottom
+      &-df
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        text-align: center
+        height: auto
+        padding: 10px 0
+      .footer__politics
+        margin-right: 0
+        margin-bottom: 15px
+      .footer__copyright
+        margin-right: 0
+        margin-bottom: 15px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__bottom
+      height: auto
+
+  // max-width 575px
+
+  @media screen and (max-width: 410px)
+    &__col
+      &--catalog
+        .menu
+          columns: 1
+
+  // max-width 430px
+
+/* footer */

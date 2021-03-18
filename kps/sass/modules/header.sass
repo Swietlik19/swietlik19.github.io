@@ -1,0 +1,436 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  z-index: 250
+  &.fixed
+    box-shadow: 0 5px 15px rgba(#000,0.1)
+    .header__top
+      display: none
+  &__top
+    display: flex
+    align-items: flex-start
+    padding-top: 7px
+    padding-bottom: 13px
+  .logo
+    display: block
+    text-decoration: none
+    width: 109px
+    height: 55px
+    &__wrap
+      margin-right: 33px
+    img
+      display: block
+  &__cities
+    margin-top: 19px
+    margin-right: 35px
+    .current
+      position: relative
+      display: block
+      font-size: 15px
+      line-height: 1.2
+      color: #000000
+      &::before
+        content: ''
+        position: absolute
+        top: 5px
+        right: -20px
+        display: block
+        width: 5px
+        height: 9px
+        background: transparent url('../img/svg/arrow.svg') no-repeat center center
+        background-size: contain
+        transform: rotate(90deg)
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: -3px
+        left: 0
+        display: block
+        width: 100%
+        height: 1px
+        border-top: 2px dotted #000
+  &__search
+    flex-grow: 1
+    max-width: 542px
+    margin-top: 9px
+    margin-left: auto
+    margin-right: 104px
+    .form
+      &__item
+        position: relative
+      .text-input
+        input
+          width: 100%
+          height: 45px
+          background-color: #f7f7f7
+          border: none
+
+    .open-search
+      position: absolute
+      top: calc(50% - 10px)
+      right: 18px
+      background: none
+      border: none
+      outline: none
+      display: block
+      width: 19px
+      height: 18px
+      cursor: pointer
+      .icon
+        fill: #263238
+        transition: 0.4s ease-in-out
+      &:hover
+        .icon
+          fill: $accent
+  &__callback
+    position: relative
+    display: block
+    text-decoration: none
+    outline: none
+    margin-right: 78px
+    padding-top: 20px
+    font-size: 13px
+    line-height: 1.2
+    color: $accent
+    &::after
+      content: ''
+      position: absolute
+      bottom: -3px
+      left: 0
+      display: block
+      width: 100%
+      height: 1px
+      border-top: 2px dotted $accent
+      transition: 0.4s ease-in-out
+    &:hover
+      &::after
+        border-color: transparent
+  &__item
+    margin-top: 20px
+    font-size: 14px
+    line-height: 1.2
+    color: #000000
+    &--customers
+      position: relative
+      margin-left: auto
+      margin-right: 78px
+      &::before
+        content: ''
+        position: absolute
+        top: 5px
+        right: -20px
+        display: block
+        width: 5px
+        height: 9px
+        background: transparent url('../img/svg/arrow.svg') no-repeat center center
+        background-size: contain
+        transform: rotate(90deg)
+  a.header__item
+    display: block
+    text-decoration: none
+    outline: none
+    transition: 0.4s ease-in-out
+    &:hover
+      color: $accent
+
+  &__bottom
+    border-top: 1px solid #f7f7f7
+  &__df
+    display: flex
+    align-items: center
+    padding-top: 17px
+    padding-bottom: 17px
+  &__catalog
+    &-btn
+      background: none
+      border: none
+      outline: none
+      display: flex
+      align-items: center
+      margin-right: 20px
+      padding: 13px 20px 13px 13px
+      background-color: $accent
+      border-radius: 6px
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 500
+      text-transform: uppercase
+      color: #ffffff
+      cursor: pointer
+      transition: 0.4s ease-in-out
+      .burger
+        margin-right: 19px
+      &:hover
+        background-color: $accent2
+  &__menu
+    margin-left: auto
+    margin-right: auto
+    align-self: stretch
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      height: 100%
+      & > a
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        height: 100%
+        padding-left: 32px
+        padding-right: 40px
+        font-size: 15px
+        line-height: 1.2
+        font-weight: 500
+        text-transform: uppercase
+        border-left: 1px solid #f2f1f1
+        border-right: 1px solid #f2f1f1
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+          border-color: $accent
+        .menu-item-icon
+          width: 25px
+          margin-right: 11px
+  &__phones
+    margin-left: 20px
+    margin-right: 143px
+    span
+      display: block
+      margin-bottom: 2px
+      font-size: 12px
+      line-height: 1.2
+      opacity: 0.7
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 600
+    color: #000000
+    transition: 0.4s ease-in-out
+    &:hover
+      color: $accent
+  &__links
+    flex-shrink: 0
+    display: flex
+    align-self: stretch
+  &__login
+    position: relative
+    text-decoration: none
+    outline: none
+    display: flex
+    align-items: center
+    padding-right: 62px
+    border-right: 1px solid #f2f1f1
+    .icon
+      display: block
+      width: 22px
+      height: 21px
+      fill: #263238
+      transition: 0.4s ease-in-out
+    &:hover
+      .icon
+        fill: $accent
+    &::after
+      content: ''
+      position: absolute
+      top: calc(50% - 5px)
+      right: 35px
+      display: block
+      width: 5px
+      height: 9px
+      background: transparent url('../img/svg/arrow.svg') no-repeat center center
+      background-size: contain
+      transform: rotate(90deg)
+  &__cart
+    position: relative
+    text-decoration: none
+    outline: none
+    display: flex
+    align-items: center
+    padding-left: 36px
+    padding-right: 15px
+    .icon
+      display: block
+      width: 25px
+      height: 23px
+      fill: #263238
+      transition: 0.4s ease-in-out
+    &-num
+      position: absolute
+      top: 4px
+      right: 3px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 18px
+      height: 18px
+      background-color: $accent
+      border-radius: 5px
+      text-align: center
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 600
+      color: #ffffff
+    &:hover
+      .icon
+        fill: $accent
+
+
+  @media screen and (max-width: 1400px)
+    &__top
+      padding-bottom: 7px
+    &__df
+      padding-top: 7px
+      padding-bottom: 7px
+    .logo
+      width: 89px
+      height: 45px
+    &__wrap
+      margin-right: 23px
+    &__cities
+      margin-top: 9px
+      .current
+        font-size: 14px
+    &__search
+      max-width: 372px
+      margin-top: 0
+      margin-right: 54px
+    &__callback
+      margin-right: 28px
+      padding-top: 10px
+    &__item
+      margin-top: 12px
+      font-size: 13px
+      &--customers
+        margin-right: 48px
+    .menu > li > a
+      padding-left: 22px
+      padding-right: 23px
+      font-size: 14px
+    &__catalog
+      &-btn
+        font-size: 14px
+    &__phones
+      margin-right: 33px
+    &__phone
+      font-size: 18px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__item,
+    a.header__item
+      display: none
+    &__callback
+      display: none
+    &__phones
+      margin-right: 0
+      padding-top: 3px
+    &__catalog
+      &-btn
+        padding: 10px 10px 10px 11px
+    .menu > li > a
+      padding-left: 12px
+      padding-right: 13px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 900px)
+    &__phones
+      display: none
+    &__cities
+      display: none
+    &__menu
+      position: fixed
+      top: 0
+      left: 0
+      width: 300px
+      height: 100vh
+      padding-top: 50px
+      padding-bottom: 50px
+      transform: translateX(-101%)
+      overflow: auto
+      background: #fff
+      box-shadow: 0 5px 15px rgba(#000,0.2)
+      z-index: 10
+      transition: 0.4s ease-in-out
+      &.active
+        transition: 0.8s ease-in-out
+        transform: translateX(0)
+    .menu
+      display: block
+      height: auto
+      & > li
+        width: 100%
+        height: auto
+        & > a
+          height: auto
+          padding-top: 10px
+          padding-bottom: 10px
+          border: none
+          border-bottom: 1px solid #f2f1f1
+    &__top
+      align-items: center
+    &__bottom
+      display: none
+    &__catalog
+      &-btn
+        order: -3
+        font-size: 0
+        padding: 0
+        background: none
+        &:hover
+          background: none
+        .burger
+          margin-right: 0
+          .line
+            &,
+            &::before,
+            &::after
+              background-color: $accent
+    &__login
+      padding-right: 27px
+      &::after
+        right: 10px
+    &__cart
+      padding-left: 16px
+    &__search
+      margin-right: 34px
+    &.fixed
+      .header__top
+        display: flex
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    &__bottom
+      display: block
+    &__search
+      display: block
+      max-width: 100%
+      margin: 0
+      .form .text-input input
+        height: 40px
+    &.fixed
+      .header__bottom
+        display: none
+    &__links
+      margin-left: auto
+
+  // max-width 575px
+
+/* .header */

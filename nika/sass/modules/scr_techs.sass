@@ -1,0 +1,146 @@
+.techs
+  position: relative
+  padding-top: 31px
+  padding-bottom: 40px
+  .tabs__nav
+    margin-bottom: 24px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    display: flex
+    &:not(#techs__tab-0)
+      display: none
+  &__left
+    flex-shrink: 0
+    max-width: 490px
+    margin-right: 43px
+  &__content
+    flex-grow: 1
+    padding-top: 31px
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+      columns: 2
+      column-gap: 70px
+      & > li
+        position: relative
+        margin-bottom: 8px
+        padding-left: 22px
+        font-size: 14px
+        font-weight: 500
+        &::before
+          content: ''
+          position: absolute
+          top: 4px
+          left: 0
+          display: block
+          width: 14px
+          height: 10px
+          background: transparent url('../img/svg/tick2.svg') no-repeat center center
+          background-size: contain
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 15px
+    & > li
+      flex-shrink: 0
+      margin-right: 36px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__item
+    position: relative
+    width: 99px
+    padding-top: 57px
+    &-title
+      position: absolute
+      left: 50%
+      top: 0
+      transform: translateX(-50%)
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      height: 39px
+      margin-top: 0
+      margin-bottom: 0
+      padding: 0 18px
+      background-color: #ffffff
+      border: 1px solid $accent
+      border-radius: 8px
+      font-size: 18px
+      font-weight: 600
+      transition: 0.3s
+  &__title
+    margin-top: 0
+    margin-bottom: 45px
+    text-transform: uppercase
+    font-size: 30px
+    line-height: 1.333333333333333 /* 40 / 30 */
+    font-weight: 600
+    color: $accent
+
+
+  @media screen and (max-width: 1400px)
+    &__content-list
+      column-gap: 20px
+    &__left
+      max-width: 420px
+      margin-right: 23px
+    &__title
+      margin-bottom: 25px
+    &__list
+      & > li
+        margin-right: 16px
+    &__item
+      &-title
+        height: 34px
+        padding: 0 12px
+        font-size: 16px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__tab
+      flex-direction: column
+      align-items: center
+    &__content
+      width: 100%
+      margin-bottom: 20px
+      padding-top: 0
+      order: -1
+    &__title
+      font-size: 26px
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    padding-bottom: 30px
+    &__content-list
+      columns: 1
+      & > li
+        font-size: 12px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__list
+      & > li
+        margin-right: 10px
+    &__item
+      width: 69px
+      padding-top: 47px
+      &-title
+        height: 30px
+        padding: 0 8px
+        font-size: 13px
+
+  // max-width 500px
+
+/* techs */

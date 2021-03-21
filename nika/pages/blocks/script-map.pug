@@ -1,0 +1,97 @@
+mixin script-map()
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
+  script.
+    (function($){
+      var xZoom = 9;
+      if (window.matchMedia('(max-width: 575px)').matches) {
+        xZoom = 8;
+      }
+
+      if (window.matchMedia('(max-width: 1400px)').matches) {
+        createMap('map__wrap',[45.005323, 34.448178],xZoom);
+      } else {
+        createMap('map__wrap',[45.258918, 34.515456],xZoom);
+      }
+
+      xObjectArr = [
+        {
+          coords: [44.948237, 34.100318],
+          address: 'Республика Крым, г. Симферополь, выставочный дом, 11 км Московского шоссе',
+        },
+        {
+          coords: [45.026648, 35.383902],
+          address: 'г. Феодосия, ул. Чкалова 86, литера Д (напротив супермаркета Клевер)',
+        },
+        {
+          coords: [44.754887, 33.852140],
+          address: 'Бахчисарай',
+        },
+        {
+          coords: [45.058052, 34.599907],
+          address: 'Белогорск',
+        },
+        {
+          coords: [44.828424, 34.803734],
+          address: 'Морское',
+        },
+      ]
+
+      function createMap(xID,xCenter,xZoom) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: xCenter,
+                  zoom: xZoom
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+              ),
+
+              xObjectArr.forEach(function(xel,xi) {
+                window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                    hintContent: '' + xel.address +'',
+                    // Зададим содержимое балуна.
+                    balloonContent: '' + xel.address +'' ,
+                }, {
+                  // Опции.
+
+                  balloonPanelMaxMapArea: 0,
+                  openTimeout: 0,
+
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [29, 38],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -40]
+
+                });
+              });
+
+            xObjectArr.forEach(function(xel,xi) {
+
+              myMap.geoObjects
+                .add(window["myPlacemark"+xi]);
+
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+    })(jQuery);

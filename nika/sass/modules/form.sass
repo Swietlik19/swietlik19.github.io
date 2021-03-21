@@ -1,0 +1,166 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      height: 50px
+      padding-left: 24px
+      background-color: #ffffff
+      border: 1px solid #cccccc
+      border-radius: 8px
+      font-size: 16px
+      font-weight: 500
+      @include placeholder(#333333, 14px)
+
+      &:focus
+        @include placeholder(#fff, 14px)
+      &:hover
+        border-color: $accent2
+
+    textarea
+      // height: 136px
+
+  &__title
+    margin-bottom: 24px
+    font-size: 18px
+    font-weight: 600
+
+  &__wrap
+    position: relative
+    .btn__wrap
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+    .xbtn
+      min-width: 254px
+    .text-input
+      input
+        width: calc(100% - 230px)
+        padding-right: 40px
+
+  &--general
+    padding: 55px 43px 45px
+    background-color: #a5abaf
+    .form__item
+      margin-bottom: 18px
+      &--submit
+        margin-top: 25px
+
+        .btn__wrap,
+        input
+          width: 100%
+    .text-input
+      input,textarea
+        width: 100%
+
+  .accept
+    display: block
+    margin-top: 34px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 12px
+      line-height: 1.2
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 21px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(60,62,92,0.69)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  @media screen and (max-width: 1400px)
+    &--general
+      padding: 35px 33px 35px
+
+  // max-width 1400px
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      .xbtn
+        min-width: 154px
+        padding-left: 15px
+        padding-right: 15px
+      .text-input
+        input
+          width: calc(100% - 170px)
+          padding-right: 30px
+
+  //   max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__wrap
+      .btn__wrap
+        position: static
+        transform: none
+        width: 100%
+        margin-top: 10px
+        .xbtn
+          width: 100%
+      .text-input
+        input
+          width: 100%
+          padding-right: 0
+
+  //   max-width 500px
+
+ /* form */

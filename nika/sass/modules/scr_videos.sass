@@ -1,0 +1,91 @@
+.videos
+  position: relative
+  padding-top: 40px
+  padding-bottom: 50px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    & > li
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__item
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__icon
+    display: block
+    text-decoration: none
+    outline: none
+    width: 41px
+    height: 30px
+    margin-bottom: 32px
+    img
+      display: block
+  &__post
+    display: block
+    text-decoration: none
+    outline: none
+    &:hover
+      .videos__img
+        img
+          transition: 0.7s
+          transform: scale(1.1)
+  &__img
+    display: block
+    height: 208px
+    margin-bottom: 22px
+    border-radius: 8px
+    border: solid 1px #cccccc
+    background-color: #f6f7f7
+    overflow: hidden
+    img
+      transition: 0.3s
+  &__text
+    display: block
+    font-weight: 600
+    color: #000000
+
+
+  @media screen and (max-width: 991px)
+    &__list
+      & > li
+        width: calc((100% - 20px) / 3)
+        margin-right: 10px
+    &__icon
+      width: 36px
+      height: 25px
+      margin-bottom: 25px
+    &__img
+      height: 158px
+      margin-bottom: 15px
+    &__text
+      font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    padding-top: 30px
+    padding-bottom: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__list
+      display: block
+      max-width: 350px
+      margin-left: auto
+      margin-right: auto
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
+        &:last-of-type
+          margin-bottom: 0
+
+  // max-width 575px
+
+/* videos */

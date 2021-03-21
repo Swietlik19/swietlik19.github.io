@@ -1,0 +1,175 @@
+.calculator
+  position: relative
+  padding-top: 80px
+  padding-bottom: 60px
+  &__df
+    display: flex
+    align-items: center
+    margin-top: 30px
+    padding: 25px 17px 25px 29px
+    border-radius: 8px
+    background-color: #f6f7f7
+  &__main
+    width: calc(100% - 412px - 23px)
+  &__img
+    flex-shrink: 0
+    width: 412px
+    margin-left: 23px
+  &__col
+    display: flex
+    margin-bottom: 60px
+  &__item
+    width: calc((100% - 20px) / 2)
+    margin-right: 20px
+    &:nth-of-type(2n)
+      margin-right: 0
+    .irs--flat
+      margin-top: 25px
+  &__title
+    margin-top: 0
+    margin-bottom: 17px
+    font-size: 18px
+    line-height: 1.33
+    font-weight: 600
+  &__bottom
+    position: relative
+    display: flex
+    justify-content: space-between
+    padding-top: 30px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: calc(100% + 30px)
+      height: 1px
+      background-color: #cddbe5
+    &-left
+      flex-grow: 1
+      padding-right: 20px
+    &-right
+      width: 251px
+    &-desc
+      margin-bottom: 13px
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.5
+      color: #333333
+    &-phone
+      display: block
+      text-decoration: none
+      outline: none
+      font-weight: 600
+      font-size: 18px
+      line-height: 1.33
+      text-align: left
+      color: $accent
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent2
+    &-title
+      margin-bottom: 21px
+      font-size: 18px
+      line-height: 1.33
+      font-weight: 600
+      color: #333333
+    &-price
+      font-size: 30px
+      line-height: 0.8
+      font-weight: 600
+      color: $accent
+
+
+  @media screen and (max-width: 1400px)
+    &__col
+      margin-bottom: 30px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    &__main
+      width: calc(100% - 292px - 23px)
+    &__img
+      width: 292px
+    &__title
+      margin-bottom: 12px
+      font-size: 16px
+    &__bottom
+      padding-top: 25px
+      &::before
+        width: calc(100% + 20px)
+      &-right
+        width: 221px
+      &-phone
+        font-size: 16px
+        line-height: 1.33
+      &-title
+        margin-bottom: 15px
+        font-size: 16px
+      &-price
+        font-size: 25px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__bottom
+      display: block
+      &-left
+        padding-right: 0
+      &-right
+        width: 100%
+        margin-top: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 900px)
+    &__df
+      display: block
+      padding-left: 20px
+      padding-right: 20px
+    &__main
+      width: 100%
+    &__img
+      margin-left: auto
+      margin-right: auto
+      margin-top: 30px
+    &__bottom
+      &::before
+        width: 100%
+
+  // max-width 900px
+
+  @media screen and (max-width: 767px)
+    padding-top: 40px
+    padding-bottom: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 670px)
+    &__col
+      display: block
+      margin-bottom: 0
+    &__item
+      width: 100%
+      margin-right: 0
+      padding-bottom: 20px
+      &:last-of-type
+        margin-bottom: 0
+
+  // max-width 670px
+
+  @media screen and (max-width: 575px)
+    padding-top: 30px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__bottom
+      &-desc
+        br
+          display: none
+
+  // max-width 500px
+
+/* calculator */

@@ -1,0 +1,423 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  transition: 0.4s ease-in-out
+  z-index: 300
+  &.fixed
+    box-shadow: 0 0 15px rgba($accent, 0.05)
+    .header__top
+      padding-top: 6px
+      padding-bottom: 6px
+    .logo
+      width: 153px
+      height: 52px
+      &__text
+        font-size: 13px
+    .header__phones
+      &-text
+        font-size: 13px
+      .xbtn
+        height: 47px
+        padding-left: 24px
+        padding-right: 24px
+        font-size: 14px
+    .header__phone
+      font-size: 16px
+    .header__msg
+      width: 16px
+      height: 16px
+    .header__info
+      &-text
+        font-size: 14px
+    .menu
+      height: 45px
+      & > li
+        & > a
+          span
+            &::before
+              height: 37px
+    .burger
+      width: 45px
+      height: 45px
+  .container
+    max-width: 1636px
+  &__top
+    display: flex
+    align-items: center
+    padding-top: 12px
+    padding-bottom: 18px
+
+  .logo
+    display: block
+    text-decoration: none
+    width: 233px
+    height: 72px
+    margin-right: 25px
+    &__wrap
+      display: flex
+      align-items: center
+      margin-right: 140px
+    &__text
+      font-size: 14px
+      font-weight: 500
+
+  &__info
+    margin-right: 30px
+    &-item
+      display: flex
+      align-items: center
+      margin-bottom: 2px
+      &:last-of-type
+        margin-bottom: 0
+    &-icon
+      display: block
+      width: 18px
+      height: 18px
+      margin-right: 13px
+    &-text
+      font-size: 15px
+      font-weight: 500
+      b
+        font-weight: 600
+      a
+        text-decoration: none
+        outline: none
+        transition: 0.3s
+        &:hover
+          color: $accent2
+
+  &__phones
+    display: flex
+    align-items: center
+    margin-left: auto
+    &-btns
+      margin-left: 33px
+    &-wrap
+      display: flex
+      align-items: flex-end
+    &-text
+      font-size: 14px
+      font-weight: 500
+
+  &__msg
+    display: block
+    text-decoration: none
+    outline: none
+    width: 18px
+    height: 19px
+    margin-bottom: 5px
+    margin-left: 9px
+    transition: 0.5s
+    .icon
+      display: block
+    &--wa
+      .icon
+        fill: #36ce64
+    &--viber
+      .icon
+        fill: #8a7af4
+    &:hover
+      transform: scale(1.1)
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-size: 18px
+    font-weight: 600
+    transition: 0.3s
+    &:hover
+      color: $accent2
+
+  &__bottom
+    background-color: #264d2d
+  &__menu
+    display: flex
+  .menu
+    flex-grow: 1
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 53px
+    & > li
+      margin-right: 10px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 16px
+        font-weight: 600
+        color: #ffffff
+        &::after
+          content: ''
+          position: absolute
+          bottom: -2px
+          left: 0
+          display: block
+          width: 100%
+          height: 2px
+          border-radius: 1.5px
+          background: #ffffff
+          transition: 0.3s
+          transform: scale(0.4)
+          opacity: 0
+          transform-origin: center center
+        &:hover
+          &::after
+            opacity: 1
+            transform: scale(1)
+        span
+          position: relative
+          display: block
+          text-transform: uppercase
+          z-index: 1
+          &::before
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            content: ''
+            width: calc(100% + 40px)
+            height: 41px
+            background-image: $grad2
+            border-radius: 8px
+            z-index: -1
+  .burger
+    flex-shrink: 0
+    margin-left: 67px
+
+
+  @media screen and (max-width: 1600px)
+    &__top
+      padding-top: 6px
+      padding-bottom: 6px
+    .logo
+      width: 153px
+      height: 52px
+      &__text
+        font-size: 13px
+    &__phones
+      &-text
+        font-size: 13px
+      .xbtn
+        height: 47px
+        padding-left: 24px
+        padding-right: 24px
+        font-size: 14px
+    &__phone
+      font-size: 16px
+    &__msg
+      width: 16px
+      height: 16px
+    &__info
+      &-text
+        font-size: 14px
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1450px)
+    .logo
+      &__wrap
+        margin-right: 50px
+    .menu
+      height: 45px
+      & > li
+        & > a
+          font-size: 14px
+          span
+            &::before
+              width: calc(100% + 20px)
+              height: 37px
+    .burger
+      width: 45px
+      height: 45px
+      margin-left: 30px
+
+  // max-width 1450px
+
+  @media screen and (max-width: 1350px)
+    &__info
+      display: none
+
+  // max-width 1350px
+
+  @media screen and (max-width: 1230px)
+    .logo
+      &__wrap
+        margin-right: 30px
+    .menu
+      height: 45px
+      & > li
+        & > a
+          font-size: 13px
+          span
+            &::before
+              height: 32px
+    .burger
+      margin-left: 10px
+    .logo
+      width: 133px
+      height: 42px
+      &__text
+        font-size: 12px
+    &__phones
+      .xbtn
+        height: 42px
+        padding-left: 14px
+        padding-right: 14px
+        font-size: 13px
+    &__phone
+      font-size: 14px
+    &__msg
+      width: 14px
+      height: 14px
+    &.fixed
+      .logo
+        width: 133px
+        height: 42px
+        &__text
+          font-size: 12px
+      .header__phones
+        .xbtn
+          height: 42px
+          padding-left: 14px
+          padding-right: 14px
+          font-size: 13px
+      .header__phone
+        font-size: 14px
+      .header__msg
+        width: 14px
+        height: 14px
+
+  // max-width 1230px
+
+  @media screen and (max-width: 1070px)
+    .menu
+      & > li
+        & > a
+          font-size: 12px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 1020px)
+    &__menu
+      position: fixed
+      top: 0
+      left: 0
+      width: 320px
+      max-width: 98%
+      height: 100vh
+      overflow: auto
+      padding-top: 70px
+      padding-bottom: 40px
+      background: #fff
+      padding-left: 15px
+      padding-right: 15px
+      box-shadow: 0 5px 15px rgba($accent, 0.2)
+      transform: translateX(-101%)
+      transition: 0.2s ease-in-out
+      &.active
+        transform: translateX(0)
+        transition: 0.6s ease-in-out
+    .menu
+      display: block
+      height: auto
+      & > li
+        width: 100%
+        margin-right: 0
+        & > a
+          padding-top: 8px
+          padding-bottom: 8px
+          border-bottom: 1px solid rgba($accent, 0.2)
+          font-size: 13px
+          text-transform: uppercase
+          color: $body-color
+          &::after
+            content: none
+          span
+            color: #fff
+            &::before
+              height: 35px
+    .burger
+      order: -1
+      margin-left: 0
+      margin-right: 10px
+      z-index: 30
+      .ham
+        width: 100%
+        margin-top: 4px
+
+  // max-width 1020px
+
+  @media screen and (max-width: 991px)
+    &__phones
+      &-btns
+        display: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    .logo
+      width: 103px
+      height: 32px
+      margin-right: 10px
+      &__text
+        font-size: 11px
+      &__wrap
+        margin-right: 10px
+    &__phones
+      &-text
+        font-size: 13px
+    &__phone
+      font-size: 13px
+    &__msg
+      margin-bottom: 2px
+      margin-left: 5px
+    .burger
+      width: 35px
+      height: 35px
+    &.fixed
+      .logo
+        width: 103px
+        height: 32px
+        &__text
+          font-size: 11px
+      .header__phone
+        font-size: 13px
+      .burger
+        width: 35px
+        height: 35px
+    &__menu
+      padding-top: 60px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    .logo
+      margin-right: 0
+      &__text
+        display: none
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    .logo
+      width: 93px
+      height: 28px
+    &.fixed
+      .logo
+        width: 93px
+        height: 28px
+
+  // max-width 400px
+
+/* .header */

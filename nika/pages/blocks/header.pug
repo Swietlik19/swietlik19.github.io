@@ -1,0 +1,85 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+          p.logo__text Крымская производственно-
+            br
+            |  строительная компания
+
+        .header__info
+          .header__info-item
+            span.header__info-icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#pin2")
+
+            span.header__info-text
+              b Представительства:
+              |  Симферополь, Феодосия, Севастополь
+
+          .header__info-item
+            span.header__info-icon
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#mail")
+
+            span.header__info-text
+              b E-mail:
+              a(href="mailto:psk.nika@gmail.com" rel="nofollow")  psk.nika@gmail.com
+
+        .header__phones
+          .header__phones-left
+            .header__phones-wrap
+              a.header__phone(href="tel:+79782077070" rel="nofollow") +7 (978) 207-70-70
+              a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79782077070" rel="nofollow")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#wa")
+              a.header__msg.header__msg--viber(href="viber://chat?number=79782077070" rel="nofollow")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#viber")
+
+            p.header__phones-text 9:00-20:00 без выходных
+
+          .header__phones-btns
+            .btn__wrap.btn__wrap--green
+              a.xbtn.xbtn--grad.open-modal(href="#modal__callback") Обратный звонок
+
+      // /.header__top
+    // /.container
+
+    .header__bottom
+      .container
+        nav.header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") О нас
+            li.menu-item
+              a(href="#")
+                span Каталог проектов
+            li.menu-item
+              a(href="#") Цены и оплата
+            li.menu-item
+              a(href="#") Производство
+            li.menu-item
+              a(href="#") Проектирование
+            li.menu-item
+              a(href="#") Строительные услуги
+            li.menu-item
+              a(href="#") Дизайн интерьеров
+            li.menu-item
+              a(href="#") Отзывы
+            li.menu-item
+              a(href="#") Дома с участками
+
+          button.burger
+            span.burger__wrap
+              svg.ham.hamRotate.ham1(viewbox='0 0 100 100', width='60', onclick="this.classList.toggle('active')")
+                path.line.top(d='m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40')
+                path.line.middle(d='m 30,50 h 40')
+                path.line.bottom(d='m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40')

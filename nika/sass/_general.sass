@@ -1,0 +1,579 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+*
+  margin: 0
+  padding: 0
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+  padding-top: 155px
+
+.page-df
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  padding-left: 64px
+.page-sections
+  padding-top: 27px
+  padding-bottom: 78px
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-cover-top]
+  object-fit: cover
+  object-position: top center
+  font-family: 'object-fit: cover; object-position: top center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.accent
+  color: $accent
+
+.grey-bg
+  background-color: #f6f7f7
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    list-style: none
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+    font-size: 14px
+    font-weight: 600
+  ul li
+    &::before
+      content: '•'
+      display: inline-block
+      margin-right: 6px
+      color: $accent
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-top: 0
+  margin-bottom: 18px
+  font-size: 30px
+  font-weight: 600
+  text-align: center
+
+.page-desc
+  max-width: 840px
+  margin: 0 auto 38px
+  font-weight: 500
+  text-align: center
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  display: inline-block
+  transition: 0.3s
+  &--orange
+    background-image: $grad2
+    box-shadow: 0px 9px 21px 0px rgba(255,102,0,0.46)
+    border-radius: 8px
+    overflow: hidden
+    &:hover
+      box-shadow: 0px 9px 31px 0px rgba(255,102,0,0.66)
+  &--green
+    background-image: $grad
+    box-shadow: 0px 9px 21px 0px rgba(15,117,57,0.46)
+    border-radius: 8px
+    overflow: hidden
+    &:hover
+      box-shadow: 0px 9px 31px 0px rgba(15,117,57,0.66)
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--grad
+    height: 60px
+    padding-left: 34px
+    padding-right: 34px
+    font-size: 16px
+    font-weight: 600
+    color: #ffffff
+  &--orange
+    height: 34px
+    padding-left: 18px
+    padding-right: 18px
+    background-color: $accent2
+    border-radius: 3px
+    font-size: 14px
+    font-weight: 600
+    color: #ffffff
+    &:hover
+      background-color: $accent
+  &--trsp
+    min-width: 182px
+    height: 51px
+    padding-left: 10px
+    padding-right: 10px
+    background-color: #ffffff
+    border: 1px solid $accent
+    border-radius: 8px
+    font-size: 18px
+    font-weight: 600
+    color: $accent
+    &:hover
+      background-color: $accent
+      color: #fff
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 53px
+  height: 53px
+  background-color: #117739
+  &__wrap
+    position: relative
+    transition: 0.3s
+    z-index: 100
+    display: block
+  .ham
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    transition: transform 400ms
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+  .hamRotate.active
+    transform: rotate(45deg)
+
+  .hamRotate180.active
+    transform: rotate(180deg)
+
+  .line
+    fill: none
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms
+    stroke: #fff
+    stroke-width: 5.5
+    stroke-linecap: round
+
+  .ham1
+    .top
+      stroke-dasharray: 40 139
+
+    .bottom
+      stroke-dasharray: 40 180
+
+    &.active
+      .top
+        stroke-dashoffset: -98px
+
+      .bottom
+        stroke-dashoffset: -138px
+
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .icon
+    width: 12px
+    height: 12px
+    fill: #fff
+    transform: rotate(-90deg)
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+.tabs__nav
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  justify-content: center
+  & > li
+    margin-right: 33px
+    & > a
+      text-decoration: none
+      outline: none
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      height: 60px
+      background-color: $accent
+      border-radius: 8px
+      padding-left: 25px
+      padding-right: 25px
+      font-size: 16px
+      font-weight: 600
+      color: #ffffff
+      transition: 0.3s
+      &:hover
+        background-color: $accent2
+    &.current
+      & > a
+        background-color: $accent2
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+/* Переопределение стилей ionRangeSlider */
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single
+  background: none
+  font-family: $font
+  font-size: 14px
+  font-weight: 500
+  margin-top: -10px
+  line-height: 2.14
+  color: #333333
+  &::before
+    content: none
+.irs--flat .irs-line
+  height: 8px
+  border-radius: 4px
+  border: solid 1px #cccccc
+  background-color: #cccccc
+.irs--flat .irs-bar
+  height: 8px
+  border-radius: 4px
+  border: solid 1px #cccccc
+  background-color: #166d3a
+.irs--flat .irs-handle
+  width: 14px
+  height: 14px
+  border-radius: 50%
+  background-color: #ff9832
+.irs--flat .irs-handle > i
+  display: none !important
+
+
+/* Переопределение стилей nice-select */
+.nice-select
+  width: 100%
+  border-radius: 8px
+  border: solid 1px #cccccc
+  background-color: #ffffff
+  font-size: 14px
+  font-weight: 500
+  color: #333333
+  .current
+    display: block
+    overflow: hidden
+  .list
+    width: 100%
+    & > li
+      white-space: normal
+      line-height: 1.4
+      display: flex
+      align-items: center
+      &.selected,
+      &.focus
+        font-weight: 600
+  &:hover
+    border-color: $accent2
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-dots
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 34px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent
+  width: 9px
+  height: 9px
+  margin: 0 6px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: $accent2
+.swiper-button-prev,
+.swiper-button-next
+  top: calc(50% - 22px)
+  background: none
+  border: none
+  outline: none
+  width: 44px
+  height: 44px
+  background: #f6f7f7 url('../img/svg/arrow.svg') no-repeat center center
+  background-size: 8px 13px
+  margin: 0
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: none
+  &:hover
+    background-color: $accent2
+.swiper-button-prev
+  left: -56px
+  transform: rotate(180deg)
+.swiper-button-next
+  right: -56px
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+
+/* Переопределение bootstrap */
+@media (min-width: 1200px)
+  .container
+    max-width: 1170px
+
+/* media */
+@media screen and (max-width: 1600px)
+  .page_wr
+    padding-top: 118px
+
+@media screen and (max-width: 1450px)
+  .page_wr
+    padding-top: 110px
+
+@media screen and (max-width: 1230px)
+  .page_wr
+    padding-top: 105px
+
+@media screen and (max-width: 1200px)
+  .container
+    max-width: 100%
+  .page-title
+    font-size: 26px
+  .page-desc
+    font-size: 14px
+  .page-df
+    padding-left: 0
+
+// max-width 1200px
+
+@media screen and (max-width: 1020px)
+  .page_wr
+    padding-top: 60px
+
+// max-width 1020px
+
+@media screen and (max-width: 991px)
+  .page-title
+    font-size: 24px
+  .tabs__nav
+    & > li
+      margin-right: 20px
+      & > a
+        height: 50px
+        padding-left: 15px
+        padding-right: 15px
+        font-size: 14px
+  .swiper-button-prev,
+  .swiper-button-next
+    top: calc(50% - 17px)
+    width: 34px
+    height: 34px
+    background-size: 7px 11px
+  .page-sections
+    padding-bottom: 30px
+  .xbtn,
+  input[type="submit"].xbtn
+    &--grad
+      height: 50px
+      padding-left: 14px
+      padding-right: 14px
+      font-size: 14px
+
+// max-width 991px
+
+@media screen and (max-width: 767px)
+  .page-title
+    font-size: 21px
+  .page-desc
+    margin-bottom: 25px
+    font-size: 13px
+  .page-df
+    flex-direction: column
+  .to-top
+    right: 10px
+    bottom: 10px
+  .page_wr
+    padding-top: 50px
+
+// max-width 767px
+
+@media screen and (max-width: 575px)
+  .page-desc
+    font-size: 12px
+  .tabs__nav
+    display: block
+    & > li
+      width: 100%
+      margin-right: 0
+      margin-bottom: 4px
+      & > a
+        height: 40px
+
+// max-width 575px
+
+@media screen and (max-width: 500px)
+  .page-title
+    font-size: 19px
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

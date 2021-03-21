@@ -1,0 +1,122 @@
+.faq
+  position: relative
+  flex-grow: 1
+  max-width: 653px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    max-height: 500px
+    padding-right: 18px
+  &__item
+    position: relative
+    margin-bottom: 17px
+    border-radius: 8px
+    background-color: #ffffff
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+      cursor: pointer
+
+      padding: 24px 19px 24px 44px
+      &:hover
+        h2,h3
+          color: $accent2
+
+    .hidden
+      display: none
+      padding: 5px 21px 15px 44px
+
+    h2,h3
+      margin-top: 0
+      margin-bottom: 0
+      margin-right: 15px
+      font-size: 18px
+      line-height: 1.33
+      font-weight: 600
+      color: #000000
+      transition: 0.3s
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      transform: rotate(135deg)
+      transform-origin: center center
+      transition: 0.3s ease-in-out
+      .icon
+        display: block
+        transition: 0.3s ease-in-out
+      &.active
+        transform: rotate(0)
+        .icon
+          fill: $accent2
+
+    .article
+      font-size: 14px
+      line-height: 1.43
+      color: #000000
+
+
+  @media screen and (max-width: 1400px)
+    max-width: 693px
+    &__list
+      max-height: 440px
+    &__item
+      .top
+        padding: 18px 15px 18px 34px
+      .hidden
+        padding: 5px 21px 15px 34px
+      h2,h3
+        font-size: 16px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 991px)
+    &__list
+      max-height: 360px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    order: 2
+    width: 100%
+    &__list
+      max-height: 300px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__list
+      max-height: 220px
+    &__item
+      margin-bottom: 8px
+      .top
+        padding: 15px
+      .hidden
+        padding: 5px 17px 15px 15px
+      h2,h3
+        font-size: 14px
+
+  // max-width 575px
+
+/* faq */

@@ -1,0 +1,78 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#166d3a')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+
+    include blocks/scr1.pug
+    include blocks/scr_catalog.pug
+    include blocks/scr_techs.pug
+    include blocks/scr_lead.pug
+    include blocks/scr_calculator.pug
+    include blocks/scr_reviews.pug
+    include blocks/scr_lic.pug
+    include blocks/scr_faq.pug
+    include blocks/scr_videos.pug
+    include blocks/scr_map.pug
+    include blocks/scr_about.pug
+    include blocks/scr_company.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    +styles
+
+  body
+
+    +header("div")
+
+    #page_wr.page_wr
+      +scr1
+      +scr_catalog
+      +scr_techs
+      +scr_lead
+      +scr_calculator
+      +scr_lead--2
+      +scr_reviews
+      .page-sections.grey-bg
+        .container
+          h2.page-title Документы и лицензии компании
+          .page-desc
+            p Полный пакет пакет документов строительной компании «Ника», а так же сертификаты и лицензии, подтверждающие профессиональные компетенции наших специалистов
+
+          .page-df
+            +scr_certs
+            +scr_faq
+      +scr_videos
+      +scr_about
+      +scr_map
+      +scr_company
+
+      a.to-top(href="#page_wr")
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#arrow")
+
+    +footer("div")
+
+    +scripts
+    +script-map

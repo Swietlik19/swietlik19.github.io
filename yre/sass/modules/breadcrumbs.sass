@@ -1,5 +1,7 @@
 .breadcrumbs
   position: relative
+  margin-top: -2px
+  padding-bottom: 16px
   ol
     margin: 0
     padding: 0
@@ -7,25 +9,32 @@
     li
       position: relative
       display: inline-block
-
       a,
       span span
         text-decoration: none
+        line-height: 1.2
         transition: 0.3s
+        color: #787484
+        &[href]
+          color: #433f4f
         &[href]:hover
-          // color: $b2
+          color: $accent2
 
       &:not(:last-of-type)
         &::after
           content: '/'
-          margin: 0 4px
+          margin: 2px 4px
 
-  // @media screen and (max-width: 500px)
+
+  @media screen and (max-width: 500px)
+    ol
+      li
+        a,
+        span span
+          font-size: 14px
+      &:not(:last-of-type)
+          margin: 2px 2px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* breadcrumbs */

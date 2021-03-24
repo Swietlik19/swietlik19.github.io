@@ -149,6 +149,18 @@
     }
   });
 
+  $('.prod-item .js-tabs-nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
   if (window.matchMedia('(max-width: 991px)').matches) {
     $('.js-footer__title').click(function() {
       $(this).toggleClass('active');
@@ -335,12 +347,53 @@
     });
   });
 
+  var galleryThumbs = new Swiper('#prod-item__thumbs', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    centerInsufficientSlides: true,
+    navigation: {
+      nextEl: '.prod-item__thumbs-btns .swiper-button-next',
+      prevEl: '.prod-item__thumbs-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      400: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  var prodItemGallery = new Swiper('#prod-item__imgs', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    pagination: {
+      el: '.prod-item__imgs-btns .swiper-dots',
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
+
+  function moveBreadcrumbs() {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('.prod-item .breadcrumbs').prependTo('.prod-item > .container');
+    } else {
+      $('.prod-item .breadcrumbs').prependTo('.prod-item__content');
+    }
+  }
+
+  moveBreadcrumbs();
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
-
+      moveBreadcrumbs();
     }
 
     screenWidth = $(window).width();

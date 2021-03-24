@@ -75,11 +75,10 @@ h1,h2,h3,h4,h5,h6
   p
     margin-bottom: 10px
   a
-    text-decoration: none
+    color: #9575cd
     transition: 0.3s
     &:hover
-      text-decoration: underline
-
+      color: $accent2
   img
     width: auto
     max-width: 100%
@@ -107,18 +106,19 @@ h1,h2,h3,h4,h5,h6
   h2,h3,h4
     line-height: 1.2
     font-weight: 500
+    color: #433f4f
   h2
     margin-top: 35px
     margin-bottom: 20px
-    font-size: 18px
+    font-size: 28px
   h3
     margin-top: 25px
     margin-bottom: 15px
-    font-size: 16px
+    font-size: 26px
   h4
     margin-top: 20px
     margin-bottom: 10px
-    font-size: 14px
+    font-size: 24px
 
 .clearfix
   &::after
@@ -133,6 +133,45 @@ h1,h2,h3,h4,h5,h6
   line-height: 1.2
   font-weight: 500
   color: #433f4f
+
+.page-socials
+  position: fixed
+  top: 158px
+  right: 0
+  z-index: 300
+  &-item
+    display: flex
+    align-items: center
+    width: 180px
+    height: 50px
+    padding-right: 15px
+    margin-bottom: 5px
+    transform: translateX(130px)
+    background-color: $accent
+    border-radius: 8px 0px 0px 8px
+    padding-left: 14px
+    text-decoration: none
+    outline: none
+    font-weight: 600
+    font-size: 14px
+    line-height: 1.2
+    color: #433f4f
+    box-shadow: 0 0 10px rgba(#433f4f, 0.1)
+    transition: 0.4s ease-in-out
+    span
+      display: block
+    &:hover
+      transform: translateX(0)
+      background-color: #9575cd
+      color: #fff
+      .icon
+        fill: #fff
+    .icon
+      flex-shrink: 0
+      display: block
+      width: 24px
+      height: 23px
+      margin-right: 15px
 
 .icon
   max-width: 100%
@@ -566,6 +605,25 @@ input[type="submit"]
     max-width: 1411px
 
 /* media */
+
+@media screen and (max-width: 1580px)
+  .container
+    max-width: 1451px
+    padding-right: 35px
+    padding-left: 35px
+  .page-socials
+    &-item
+      width: 150px
+      height: 40px
+      transform: translate(110px)
+      padding-right: 5px
+      padding-left: 12px
+      font-size: 13px
+      .icon
+        width: 20px
+        height: 20px
+        margin-right: 10px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
@@ -596,12 +654,35 @@ input[type="submit"]
   .to-top
     right: 10px
     bottom: 68px
+  .article
+    font-size: 14px
+    h2
+      font-size: 22px
+    h3
+      font-size: 20px
+    h4
+      font-size: 18px
+  .container
+    padding-right: 15px
+    padding-left: 15px
+  .page-socials
+    &-item
+      width: 140px
+      height: 30px
+      transform: translate(110px)
+      padding-left: 8px
+      font-size: 12px
+      .icon
+        width: 15px
+        height: 15px
 
 // max-width 991px
 
 @media screen and (max-width: 767px)
   .page-title
     font-size: 24px
+  .page-socials
+    top: 100px
 
 // max-width 767px
 
@@ -635,6 +716,10 @@ input[type="submit"]
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 400px)
+  .tabs-nav
+    & > li
+      & > a
+        font-size: 14px
 
 // max-width 400px

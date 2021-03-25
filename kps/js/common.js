@@ -13,6 +13,9 @@
   /* полифил для object-fit */
   objectFitImages($('[data-object-fit-cover],[data-object-fit-contain]'), {watchMQ: true});
 
+  /* Инициализация красивых select'ов */
+  $('select').niceSelect();
+
   /* инициализация fancybox */
   $(".fancybox").fancybox({
     padding: 0,
@@ -23,11 +26,18 @@
 
     /* инициализация кастомного скроллбара */
     $(window).on("load",function(){
+
       $(".prod .tabs__nav-wrap").mCustomScrollbar({
         theme: "dark",
         scrollInertia: 10000,
         axis:"x",
       });
+      $(".prod-item__nav-wrap").mCustomScrollbar({
+        theme: "dark",
+        scrollInertia: 10000,
+        axis:"x",
+      });
+
     });
   }
 
@@ -128,6 +138,18 @@
     }
   });
 
+  $('.prod-item .js-tabs__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.prod-item__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
@@ -161,6 +183,35 @@
     }
     $(this).toggleClass('active');
     $(this).siblings('.catalog__to-show').toggleClass('active');
+  });
+
+  $('.prod-item__color').click(function() {
+    $(this).parent().siblings().find('.prod-item__color').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $('.prod-item__text-btn').click(function() {
+    $(this).parent().siblings().find('.prod-item__text-btn').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $('.prod-item__main-delete').click(function() {
+    $(this).parents('.prod-item__main-fields').remove();
+  });
+
+  var xIdCount = 1;
+
+  $('.prod-item__main-add').click(function(){
+    $('.prod-item__main-fields:last-of-type').clone().appendTo('.prod-item__main-rows');
+    $('.prod-item__main-fields:last-of-type').find('.prod-item__main-input input').each(function(xi,xel) {
+      $(xel).attr('id',$(xel).attr('name') + '-' + xIdCount).val('');
+    });
+
+    xIdCount++;
+
+    $('.prod-item__main-fields:last-of-type').find('.prod-item__main-delete').click(function() {
+      $(this).parents('.prod-item__main-fields').remove();
+    });
   });
 
   /* СЛАЙДЕРЫ */
@@ -259,6 +310,37 @@
       },
     });
   }
+
+  var galleryThumbs = new Swiper('#prod-item__thumbs', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.prod-item__thumbs-btns .swiper-button-next',
+      prevEl: '.prod-item__thumbs-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      400: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+    },
+  });
+
+  var prodItemGallery = new Swiper('#prod-item__imgs', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.prod-item__imgs-btns .swiper-button-next',
+      prevEl: '.prod-item__imgs-btns .swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
 
   $(window).resize(function() {
 

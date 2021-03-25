@@ -80,6 +80,8 @@ h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
 .article
+  font-size: 15px
+  line-height: 1.4
   p
     margin-bottom: 10px
   a
@@ -111,22 +113,38 @@ h1,h2,h3,h4,h5,h6
   ul li,
   ol li
     transform: translateX(1.5em)
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      margin-bottom: 17px
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: '•'
+        display: inline-block
+        margin-right: 5px
 
   h2,h3,h4
     line-height: 1.2
     font-weight: 500
+    &:first-child
+      margin-top: 0
   h2
-    margin-top: 35px
-    margin-bottom: 20px
-    font-size: 18px
-  h3
     margin-top: 25px
-    margin-bottom: 15px
-    font-size: 16px
-  h4
+    margin-bottom: 20px
+    font-size: 26px
+  h3
     margin-top: 20px
     margin-bottom: 10px
-    font-size: 14px
+    font-size: 24px
+  h4
+    margin-top: 15px
+    margin-bottom: 10px
+    font-size: 20px
+  b
+    font-weight: 500
 
 .clearfix
   &::after
@@ -139,6 +157,12 @@ h1,h2,h3,h4,h5,h6
   margin-bottom: 25px
   font-size: 28px
   font-weight: 500
+  &--second
+    margin-top: 0
+    margin-bottom: 19px
+    font-size: 24px
+    line-height: 1.25 /* 30 / 24 */
+    font-weight: 900
 
 .page-socials
   position: fixed
@@ -452,6 +476,25 @@ input[type="submit"]
   display: none
 
 
+/* Переопределение стилей nice-select */
+.nice-select
+  min-width: 166px
+  height: 40px
+  background-color: rgba(9,75,83,0.0)
+  border: 1px solid #cccccc
+  border-radius: 3px
+  .current
+    font-size: 15px
+    color: #263238
+.nice-select.open .list
+  width: 230px
+.nice-select .option
+  white-space: normal
+  display: flex
+  align-items: center
+  padding-right: 18px
+  line-height: 1.2
+
 /* Переопределение стилей swiper */
 .swiper-wrapper
   & *
@@ -475,6 +518,8 @@ input[type="submit"]
 .swiper-pagination-bullet-active
   position: relative
   background: #dcdcdc
+.pager .prev .page-numbers-icon,
+.pager .next .page-numbers-icon,
 .swiper-button-prev,
 .swiper-button-next
   top: calc(50% - 16px)
@@ -506,6 +551,8 @@ input[type="submit"]
 
 .swiper-button-prev
   left: -48px
+.pager .prev .page-numbers-icon,
+.swiper-button-prev
   .icon
     transform: rotate(180deg)
 .swiper-button-next
@@ -580,6 +627,9 @@ input[type="submit"]
     font-size: 12px
   .page_wr
     padding-top: 114px
+  .page-title--second
+    margin-bottom: 14px
+    font-size: 22px
 
 // max-width 1170px
 
@@ -605,6 +655,18 @@ input[type="submit"]
       font-size: 14px
   .page_wr
     padding-top: 59px
+  .article
+    font-size: 14px
+    h2
+      margin-top: 25px
+      margin-bottom: 20px
+      font-size: 26px
+    h3
+      margin-top: 15px
+      font-size: 20px
+    h4
+      margin-top: 10px
+      font-size: 18px
 
 // max-width 991px
 
@@ -629,6 +691,9 @@ input[type="submit"]
   .to-top
     right: 10px
     bottom: 10px
+  .page-title--second
+    margin-bottom: 10px
+    font-size: 20px
 
 // max-width 767px
 
@@ -638,7 +703,9 @@ input[type="submit"]
 
 // max-width 575px
 
-// @media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+  .page-title--second
+    font-size: 18px
 
 // max-width 500px
 

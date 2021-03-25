@@ -3,6 +3,11 @@ mixin paginator()
     ul.page-numbers
       li
         a.prev.page-numbers(href='#')
+          .page-numbers-icon
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#arrow")
+
+          span.page-numbers-text Предыдущая страница
 
       li.current
         a.page-numbers(href='#') 1
@@ -13,6 +18,10 @@ mixin paginator()
 
       li
         a.next.page-numbers(href='#')
+          span.page-numbers-text Следующая страница
 
+          .page-numbers-icon
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#arrow")
 
   // /.paginator

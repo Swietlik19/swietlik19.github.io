@@ -1,0 +1,636 @@
+.prod-item
+  position: relative
+  padding-bottom: 50px
+  &__top
+    display: flex
+    align-items: center
+    padding-bottom: 10px
+    border-bottom: 1px solid #f7f7f7
+  &__article
+    flex-shrink: 0
+    display: block
+    width: 556px
+    margin-right: 50px
+    font-weight: 600
+  .page-title--second
+    flex-grow: 1
+    margin-bottom: 0
+    padding-left: 29px
+  &__df
+    display: flex
+    justify-content: space-between
+    margin-bottom: 37px
+  &__gallery
+    flex-shrink: 0
+    width: 556px
+    margin-right: 50px
+  &__wrap
+    position: relative
+    margin-bottom: 14px
+  &__imgs
+    overflow: hidden
+    margin: 0 0 -15px
+    padding: 0 0 15px
+    &-btns
+      .swiper-button-prev
+        left: -15px
+      .swiper-button-next
+        right: -15px
+
+  &__img
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 402px
+    padding: 40px 30px
+    background-color: #ffffff
+    img
+      display: block
+    &:hover
+      .prod-item__icon
+        opacity: 1
+  &__icon
+    position: absolute
+    top: 10px
+    right: 10px
+    opacity: 0
+    display: block
+    width: 30px
+    height: 30px
+    background: transparent url('../img/svg/expand.svg') no-repeat center center
+    background-size: contain
+    transition: 0.4s ease-in-out
+  &__thumbs
+    overflow: hidden
+    .swiper-slide-thumb-active
+      .prod-item__thumb
+        border-color: $accent
+    &-wrap
+      position: relative
+    &-btns
+      .swiper-button-prev
+        left: -15px
+      .swiper-button-next
+        right: -15px
+  &__thumb
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 134px
+    padding: 20px 10px
+    background-color: #ffffff
+    border: 1px solid #cccccc
+    border-radius: 6px
+    overflow: hidden
+    transition: 0.4s ease-in-out
+    cursor: pointer
+    img
+      display: block
+    &:hover
+      border-color: $accent
+  &__content
+    flex-grow: 1
+    padding-top: 30px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    padding: 29px 0 0 30px
+    &:not(#prod-item__tab-0)
+      display: none
+    &-df
+      display: flex
+      justify-content: space-between
+    &-col
+      width: 58.26771653543307%
+      margin-right: 20px
+      &:last-of-type
+        width: 35.57623478883321%
+        margin-right: 0
+    .article
+      ul
+        margin: 0
+        padding: 0
+        & > li
+          transform: none
+  &__add
+    padding-top: 18px
+    font-size: 12px
+    color: #686c6e
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    background-color: #f7f7f7
+    border-radius: 8px
+    padding-left: 30px
+    padding-right: 30px
+    & > li
+      margin-right: 128px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        height: 46px
+        font-size: 18px
+        font-weight: 500
+        transition: 0.4s ease-in-out
+        &::before
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          display: block
+          width: 100%
+          height: 1px
+          background: $accent
+          opacity: 0
+          transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+      &.current
+        & > a
+          color: $accent
+          &::before
+            opacity: 1
+  &__table
+    display: table
+    margin-bottom: 10px
+    padding-left: 29px
+  &__item
+    display: table-row
+    &-title
+      font-size: 15px
+      font-weight: 600
+    &-add
+      margin-top: 4px
+      font-size: 13px
+  &__td
+    display: table-cell
+    padding-right: 16px
+    padding-bottom: 14px
+    vertical-align: middle
+  &__colors
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      margin: 2px 8px 2px 0
+      &:last-of-type
+        margin-right: 0
+  &__color
+    position: relative
+    background: none
+    border: none
+    outline: none
+    display: block
+    width: 40px
+    height: 40px
+    border: 1px solid #cccccc
+    border-radius: 50%
+    overflow: hidden
+    transition: 0.4s ease-in-out
+    cursor: pointer
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      display: block
+      width: 15px
+      height: 11px
+      background: transparent url('../img/svg/tick2.svg') no-repeat center center
+      background-size: contain
+      opacity: 0
+    &:hover
+      border-color: $accent
+    &.active
+      &::before
+        opacity: 1
+  &__text-btns
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      margin: 2px 11px 2px 0
+      &:last-of-type
+        margin-right: 0
+  &__text-btn
+    position: relative
+    background: none
+    border: none
+    outline: none
+    display: flex
+    align-items: center
+    justify-content: center
+    min-width: 40px
+    height: 40px
+    padding-left: 5px
+    padding-right: 5px
+    background-color: rgba(255,255,255,0.0)
+    border: 1px solid #cccccc
+    border-radius: 50%
+    font-size: 13px
+    text-align: center
+    transition: 0.4s ease-in-out
+    &:hover
+      background-color: #f7f7f7
+      border: 1px solid $accent
+    &.active
+      background-color: #f7f7f7
+      border: 1px solid #263238
+  &__main
+    background-color: #f7f7f7
+    border-radius: 8px
+    &-item
+      padding-left: 29px
+      padding-right: 53px
+      border-bottom: 1px solid rgba(201,202,204,0.5)
+      &:last-child
+        border-bottom: none
+      &--top
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 17px
+        padding-bottom: 14px
+      &--count
+        display: flex
+        padding-top: 13px
+        padding-bottom: 14px
+      &--all
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 20px
+        padding-bottom: 25px
+    &-title
+      display: block
+      font-size: 13px
+      color: #686c6e
+    &-desc
+      margin-right: 33px
+      padding-top: 25px
+      font-size: 15px
+      line-height: 1.4
+    &-center
+      flex-grow: 1
+    &-rows
+      flex-grow: 1
+    &-fields
+      display: flex
+    &-field
+      margin-right: 39px
+      &-df
+        display: flex
+        align-items: center
+      &:last-of-type
+        flex-grow: 1
+        margin-right: 0
+    &-add
+      display: inline-block
+      background: none
+      border: none
+      outline: none
+      margin-top: 2px
+      font-size: 13px
+      text-decoration: underline
+      color: #0075a9
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent
+    &-text
+      display: block
+      font-size: 15px
+      line-height: 1.4
+    &-input
+      display: flex
+      flex-direction: column
+      justify-content: center
+      height: 40px
+      margin-top: 6px
+      &--width
+        position: relative
+        text-align: center
+        &::before,
+        &::after
+          content: 'х'
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          display: block
+        &::before
+          left: -15px
+        &::after
+          right: -15px
+      input
+        outline: none
+        width: 84px
+        height: 100%
+        padding-left: 10px
+        background-color: #ffffff
+        border: 1px solid #cccccc
+        border-radius: 3px
+        transition: 0.4s ease-in-out
+        &:focus,
+        &:hover
+          border-color: $accent
+    &-total
+      margin-left: 23px
+      margin-right: 10px
+    &-delete
+      background: none
+      border: none
+      outline: none
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      width: 15px
+      height: 15px
+      margin-left: auto
+      cursor: pointer
+      .icon
+        display: block
+        width: 9px
+        height: 9px
+        fill: #263238
+        transition: 0.4s ease-in-out
+      &:hover
+        .icon
+          fill: $accent
+
+  &__guarantee
+    margin-right: 15px
+    padding: 8px 0 8px 55px
+    font-size: 18px
+    font-weight: 600
+    background: transparent url('../img/svg/icons/shield.svg') no-repeat left center
+    background-size: contain
+  &__price
+    display: block
+    margin-top: -2px
+    font-size: 30px
+    font-weight: 600
+  &__meters
+    position: relative
+    margin-right: 15px
+    font-size: 15px
+    line-height: 1.4
+    p
+      position: relative
+      display: flex
+      justify-content: space-between
+      min-width: 330px
+      margin-bottom: 17px
+      overflow: hidden
+      z-index: 1
+      &:last-of-type
+        margin-bottom: 0
+    b
+      position: relative
+      display: block
+      font-weight: 400
+      &::after
+        content: '________________________________________________________________________________'
+        position: absolute
+        bottom: 2px
+        left: 100%
+        display: block
+        width: 100%
+        z-index: -1
+
+    strong
+      display: block
+      font-size: 18px
+      font-weight: 600
+      background: #f7f7f7
+    span
+      display: block
+      background: #f7f7f7
+  &__btns
+    display: flex
+    .btn__wrap
+      &--grad
+        margin-right: 18px
+    .xbtn--trsp
+      height: 50px
+
+
+  @media screen and (max-width: 1500px)
+    &__article,
+    &__gallery
+      width: 496px
+      margin-right: 40px
+    &__main
+      &-item
+        padding-right: 16px
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1400px)
+    &__main
+      &-item
+        padding-left: 20px
+        padding-right: 20px
+      &-desc
+        margin-right: 23px
+        font-size: 13px
+      &-field
+        margin-right: 29px
+      &-input
+        input
+          width: 64px
+      &-total
+        margin-left: 13px
+      &-text
+        font-size: 14px
+    &__meters
+      font-size: 14px
+      p
+        min-width: 270px
+    &__price
+      font-size: 25px
+    &__guarantee
+      font-size: 16px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1300px)
+    &__article,
+    &__gallery
+      width: 406px
+      margin-right: 30px
+    &__img
+      height: 302px
+      padding: 20px 30px
+    &__thumb
+      height: 104px
+      padding: 10px 10px
+    &__content
+      padding-top: 0
+    &__nav
+      & > li
+        margin-right: 58px
+    &__tab
+      padding: 29px 0 0 0
+      &-col
+        &:last-of-type
+          width: 38.576235%
+
+  // max-width 1300px
+
+  @media screen and (max-width: 1170px)
+    &__main
+      &-item
+        &--count,
+        &--all
+          display: block
+      &-desc
+        margin-bottom: 15px
+        padding-top: 0
+    &__meters
+      margin-right: 0
+      margin-bottom: 15px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1023px)
+    &__df
+      flex-direction: column
+      align-items: center
+    &__gallery
+      max-width: 100%
+      margin-right: 0
+      margin-bottom: 20px
+    &__content
+      width: 100%
+    &__top
+      display: block
+    &__article
+      margin-right: 0
+      margin-bottom: 10px
+    .page-title--second
+      padding-left: 0
+    &__table
+      padding-left: 19px
+
+  // max-width 1023px
+
+  @media screen and (max-width: 991px)
+    padding-bottom: 30px
+    &__nav
+      padding-left: 20px
+      padding-right: 20px
+      & > li
+        margin-right: 38px
+        & > a
+          height: 42px
+          font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__tab
+      padding-top: 19px
+      &-df
+        display: block
+      &-col
+        width: 100%
+        margin-right: 0
+        &:last-of-type
+          width: 100%
+    &__nav
+      margin-bottom: 10px
+      & > li
+        & > a
+          white-space: nowrap
+      &-wrap
+        .mCSB_scrollTools.mCSB_scrollTools_horizontal
+          bottom: 8px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__main
+      width: calc(100% + 30px)
+      margin-left: -15px
+      &-item
+        padding-left: 15px
+        padding-right: 15px
+      &-field
+        margin-right: 19px
+      &-title,
+      &-text
+        font-size: 12px
+      &-input
+        height: 35px
+        input
+          width: 43px
+          font-size: 14px
+        &--width
+          &::before
+            left: -5px
+          &::after
+            right: -5px
+    &__guarantee
+      padding: 4px 0 8px 45px
+    &__price
+      font-size: 17px
+    &__table
+      padding-left: 0
+    &__item
+      &-title
+        font-size: 13px
+    &__colors
+      & > li
+        margin-right: 4px
+    &__color
+      width: 34px
+      height: 34px
+    &__text-btns
+      & > li
+        margin-right: 6px
+    &__text-btn
+      min-width: 34px
+      height: 34px
+      padding-left: 1px
+      padding-right: 1px
+      font-size: 12px
+    &__article
+      font-size: 14px
+    &__img
+      height: 232px
+      padding: 20px 20px
+    &__thumb
+      height: 84px
+    &__df
+      margin-bottom: 30px
+
+  // max-width 575px
+
+  @media screen and (max-width: 410px)
+    &__main
+      &-fields
+        position: relative
+        margin-bottom: 30px
+      &-total
+        position: absolute
+        right: -10px
+        bottom: -25px
+        font-weight: 600
+
+  // max-width 410px
+
+/* prod-item */

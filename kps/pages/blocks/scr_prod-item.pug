@@ -1,0 +1,214 @@
+mixin scr_prod-item()
+  section.scr_prod-item.prod-item(id="scr_prod-item")
+    .container
+      +breadcrumbs--prod-item
+
+      .prod-item__top
+        span.prod-item__article Код товара: 312200
+        h1.page-title--second Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4)
+
+      .prod-item__df
+        .prod-item__gallery
+          .prod-item__wrap
+            .prod-item__imgs#prod-item__imgs
+              .swiper-wrapper
+                .swiper-slide
+                  a.prod-item__img.fancybox(href="img-temp/prod-item-img.jpg" data-fancybox-group="gallery")
+                    span.prod-item__icon
+
+                    img(src="img-temp/prod-item-img.jpg" alt="" data-object-fit-contain)
+                .swiper-slide
+                  a.prod-item__img.fancybox(href="img-temp/prod-item-img.jpg" data-fancybox-group="gallery")
+                    span.prod-item__icon
+
+                    img(src="img-temp/prod-item-img.jpg" alt="" data-object-fit-contain)
+
+            .prod-item__imgs-btns
+              button.swiper-button-prev
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+              button.swiper-button-next
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+
+          .prod-item__thumbs-wrap
+            .prod-item__thumbs#prod-item__thumbs
+              .swiper-wrapper
+                .swiper-slide
+                  .prod-item__thumb
+                    img(src="img-temp/prod-item-img.jpg" alt="" data-object-fit-contain)
+                .swiper-slide
+                  .prod-item__thumb
+                    img(src="img-temp/prod-item-img.jpg" alt="" data-object-fit-contain)
+
+            .prod-item__thumbs-btns
+              button.swiper-button-prev
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+              button.swiper-button-next
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#arrow")
+
+          p.prod-item__add Цвета на экране монитора, а также детали внешнего вида товара могут отличаться от реальных.
+
+        .prod-item__content
+          .prod-item__table
+            .prod-item__item
+              .prod-item__td
+                p.prod-item__item-title Вид металлочерепицы:
+              .prod-item__td
+                .prod-item__item-content
+                  select#prod-type
+                    option(value="ламонтерра") ЛАМОНТЕРРА
+                    option(value="ламонтерра ламонтерра") ламонтерра ламонтерра
+
+            .prod-item__item
+              .prod-item__td
+                p.prod-item__item-title Покрытие:
+              .prod-item__td
+                .prod-item__item-content
+                  select#prod-surface
+                    option(value="Полиэстер") Полиэстер
+                    option(value="Полиэстер") Полиэстер
+
+            .prod-item__item
+              .prod-item__td
+                p.prod-item__item-title Цвет:
+                p.prod-item__item-add RAL 1014
+
+              .prod-item__td
+                .prod-item__item-content
+                  ul.prod-item__colors
+                    li
+                      button.prod-item__color.active(type="button" id="color-0")
+                        img(src="img-temp/colors/img-1.png" alt="" data-object-fit-cover)
+                    li
+                      button.prod-item__color(type="button" id="color-1")
+                        img(src="img-temp/colors/img-2.png" alt="" data-object-fit-cover)
+                    li
+                      button.prod-item__color(type="button" id="color-2")
+                        img(src="img-temp/colors/img-3.png" alt="" data-object-fit-cover)
+                    li
+                      button.prod-item__color(type="button" id="color-3")
+                        img(src="img-temp/colors/img-4.png" alt="" data-object-fit-cover)
+                    li
+                      button.prod-item__color(type="button" id="color-4")
+                        img(src="img-temp/colors/img-5.png" alt="" data-object-fit-cover)
+
+            .prod-item__item
+              .prod-item__td
+                p.prod-item__item-title Толщина листа:
+
+              .prod-item__td
+                .prod-item__item-content
+                  ul.prod-item__text-btns
+                    li
+                      button.prod-item__text-btn.active(type="button" id="thickness-0") 0,4
+                    li
+                      button.prod-item__text-btn(type="button" id="thickness-1") 0,45
+
+          .prod-item__main
+            .prod-item__main-item.prod-item__main-item--top
+              p.prod-item__guarantee Гарантия до 5 лет
+              .prod-item__prices
+                span.prod-item__main-title Цена:
+                b.prod-item__price 486 Р/м
+                  sup ²
+
+            .prod-item__main-item.prod-item__main-item--count
+              p.prod-item__main-desc Выберите длину листа
+                br
+                |  и количество листов:
+
+              .prod-item__main-center
+                .prod-item__main-rows
+                  .prod-item__main-fields
+                    .prod-item__main-field
+                      span.prod-item__main-title Длина, м:
+                      .prod-item__main-input
+                        input(type="text" id="#prod-length-0" name="prod-length")
+                    .prod-item__main-field
+                      span.prod-item__main-title Ширина, м:
+                      .prod-item__main-input.prod-item__main-input--width
+                        span.prod-item__main-text 1,19
+                    .prod-item__main-field
+                      span.prod-item__main-title Листов, шт:
+                      .prod-item__main-field-df
+                        .prod-item__main-input
+                          input(type="text" id="#prod-count-0" name="prod-count")
+
+                        span.prod-item__main-text.prod-item__main-total =  0 м
+                          sup 2
+                          |  х 452 Р = 0 Р
+
+                        button.prod-item__main-delete(type="button")
+                          svg.icon
+                            use(xlink:href="img/svg/sprite.svg#delete")
+
+                button.prod-item__main-add Добавить лист другой длины
+
+            .prod-item__main-item.prod-item__main-item--all
+              .prod-item__meters
+                p
+                  b Общий метраж заказа:
+                  span  0 м
+                    sup 2
+                p
+                  b Общая сумма заказа:
+                  strong
+                    span  0 Р
+
+              .prod-item__btns
+                .btn__wrap.btn__wrap--grad
+                  a.xbtn.xbtn--grad(href="#") Купить
+                .btn__wrap
+                  a.xbtn.xbtn--trsp(href="#") Заказать консультацию
+
+      .prod-item__nav-wrap
+        ul.prod-item__nav.js-tabs__nav
+          li.current
+            a(href="#prod-item__tab-0") Описание
+          li
+            a(href="#prod-item__tab-1") Документы
+          li
+            a(href="#prod-item__tab-2") Характеристики
+          li
+            a(href="#prod-item__tab-3") Отзывы
+          li
+            a(href="#prod-item__tab-4") Доставка и оплата
+
+      ul.prod-item__tabs
+        li.prod-item__tab#prod-item__tab-0
+          .article
+            .prod-item__tab-df
+              .prod-item__tab-col
+                p
+                  b Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4) — маловесный, надёжный, прочный материал для кровли. Он выполнен из оцинкованной стали толщиной 0.4 мм. В качестве защитного барьера применено покрытие Полиэстер. Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4) прекрасно подходит как для коттеджного строительства, так и для крупных объектов.
+
+                h3 Профиль ЛАМОНТЕРРА:
+                p Классический профиль ЛАМОНТЕРРА пользуется устойчивым спросом среди жителей Москвы. Этот стройматериал обладает прочностью, надёжен и сравнительно недорого стоит. Однако его высокая распространённость сопряжена с риском приобрести фальсификат. В качестве защиты от мошенников Компания «Металл Профиль» снабжает свои товары особой маркировкой. Она находится в боковом замке металлочерепицы. Эта отметка обеспечивает качественные характеристики товара и надёжность производителя.
+
+                h3 Покрытие Полиэстер:
+                p Универсальное и доступное покрытие для строительства в средней полосе. Высокая эластичность декоративного слоя расширяет его область использования от кровли до ограждений. Обладает хорошей цветостойкостью, гладкой поверхностью и разнообразной гаммой тонов. Стоит учесть, что Полиэстер имеет небольшую толщину (25 мкм), а значит, склонен к механическим повреждениям и требует аккуратности при транспортировке. Покрытие на основе полиэстера — это базовая защита металла, проверенная временем. Мы гарантируем сохранение первоначальных характеристик металлопроката с покрытием Полиэстер до 10 лет*.
+
+              .prod-item__tab-col
+                h3 Преимущества:
+
+                ul
+                  li Оптимальное сочетание цены и качества — ещё одно преимущество этого материала.
+                  li Вы найдёте оттенок покрытия, который будет оптимальным для вашего объекта строительства.
+                  li Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4) — не воспламеняющийся кровельный материал.
+                  li Благодаря специальному покрытию Полиэстер металлочерепица отличается впечатляющими декоративными качествами.
+                  li Вас порадует долгий срок службы металлочерепицы.
+                  li Долговечная стальная основа защищает кровлю от механических повреждений.
+                  li Линии профиля ЛАМОНТЕРРА акцентируют эстетичность вашей кровли.
+
+        li.prod-item__tab#prod-item__tab-1
+          .article
+            p
+              b Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4) — маловесный, надёжный, прочный материал для кровли. Он выполнен из оцинкованной стали толщиной 0.4 мм. В качестве защитного барьера применено покрытие Полиэстер. Металлочерепица МП Ламонтерра (ПЭ-01-1014-0.4) прекрасно подходит как для коттеджного строительства, так и для крупных объектов.
+
+            h3 Профиль ЛАМОНТЕРРА:
+            p Классический профиль ЛАМОНТЕРРА пользуется устойчивым спросом среди жителей Москвы. Этот стройматериал обладает прочностью, надёжен и сравнительно недорого стоит. Однако его высокая распространённость сопряжена с риском приобрести фальсификат. В качестве защиты от мошенников Компания «Металл Профиль» снабжает свои товары особой маркировкой. Она находится в боковом замке металлочерепицы. Эта отметка обеспечивает качественные характеристики товара и надёжность производителя.
+
+  // /.scr_prod-item

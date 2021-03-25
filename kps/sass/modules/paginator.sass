@@ -6,9 +6,9 @@
 
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: flex-end
   flex-wrap: wrap
-  padding-top: 30px
+  padding-top: 20px
   ul
     margin: 0
     padding: 0
@@ -21,76 +21,77 @@
       transition: 0.3s
 
       .page-numbers, .prev, .next
-        display: block
         text-decoration: none
-        outline: none
       .page-numbers:not(.prev):not(.next)
+        display: block
+        outline: none
         position: relative
-        padding-left: 16px
-        padding-right: 16px
-        font-size: 14px
-        font-weight: 400
-        color: #2c2d2d
-        transition: 0.3s
+        padding-left: 20px
+        padding-right: 20px
+        transition: 0.4s ease-in-out
         &::before
           content: ''
           position: absolute
-          top: -3px
-          left: 0
-          border-radius: 3px
-          width: 100%
-          height: calc(100% + 6px)
+          top: calc(50% - 18px)
+          left: calc(50% - 17px)
+          border-radius: 50%
+          width: 35px
+          height: 35px
           background: $accent
           transform: scale(0)
-          transition: 0.5s
+          transition: 0.4s ease-in-out
           z-index: -1
         &:not(.current):hover
-          color: #020000
+          color: #fff
           &::before
             transform: scale(1)
-
         &.current
-          text-decoration: underline
+          color: #fff
+          &::before
+            transform: scale(1)
+      .page-numbers-text
+        transition: 0.4s ease-in-out
       .prev,
       .next
         display: flex
         align-items: center
-        justify-content: center
-        width: 30px
-        height: 19px
-        background-color: #f5f5f4
-        transition: 0.3s
-        &::after
-          content: ''
-          width: 16px
-          height: 11px
-          background: transparent url('../img/svg/orig/arrow.svg')
         &:hover
-          background-color: $accent
+          .page-numbers-text
+            color: $accent
       .prev
-        margin-right: 80px
-        &::after
-          transform: rotate(180deg)
+        margin-right: 10px
+        .page-numbers-text
+          margin-left: 24px
       .next
-        margin-left: 80px
+        margin-left: 10px
+        .page-numbers-text
+          margin-right: 24px
 
-  @media screen and (max-width: 575px)
+
+  @media screen and (max-width: 991px)
+    justify-content: center
     ul
-      flex-wrap: wrap
+      & > li
+        .page-numbers-text
+          display: none
+
+  // max-width 991px
+
+  @media screen and (max-width: 500px)
+    ul
       & > li
         .page-numbers:not(.prev):not(.next)
-          padding-left: 11px
-          padding-right: 11px
-        .prev
-          margin-right: 30px
-        .next
-          margin-left: 30px
+          padding-left: 10px
+          padding-right: 10px
+          font-size: 14px
+          &::before
+            content: ''
+            position: absolute
+            top: calc(50% - 13px)
+            left: calc(50% - 13px)
+            width: 26px
+            height: 26px
 
-  // max-width 575px
-
-  @media screen and (max-width: 430px)
-    padding-top: 10px
-
-  // max-width 430px
+  // max-width 500px
 
  /* paginator */

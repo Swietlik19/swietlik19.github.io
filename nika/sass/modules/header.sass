@@ -7,10 +7,12 @@
   transition: 0.4s ease-in-out
   z-index: 300
   &.fixed
-    box-shadow: 0 0 15px rgba($accent, 0.05)
+    box-shadow: 0 0 15px rgba($accent, 0.1)
     .header__top
       padding-top: 6px
       padding-bottom: 6px
+    .header__info
+      display: none
     .logo
       width: 153px
       height: 52px
@@ -29,21 +31,14 @@
     .header__msg
       width: 16px
       height: 16px
-    .header__info
-      &-text
-        font-size: 14px
-    .menu
-      height: 45px
-      & > li
-        & > a
-          span
-            &::before
-              height: 37px
     .burger
       width: 45px
       height: 45px
   .container
-    max-width: 1636px
+    // max-width: 1636px
+    max-width: 1911px
+    padding-left: 70px
+    padding-right: 70px
   &__top
     display: flex
     align-items: center
@@ -175,6 +170,10 @@
           &::after
             opacity: 1
             transform: scale(1)
+          span
+            color: $accent2
+            &::before
+              background: #fff
         span
           position: relative
           display: block
@@ -196,7 +195,7 @@
     margin-left: 67px
 
 
-  @media screen and (max-width: 1600px)
+  @media screen and (max-width: 1700px)
     &__top
       padding-top: 6px
       padding-bottom: 6px
@@ -222,9 +221,9 @@
       &-text
         font-size: 14px
 
-  // max-width 1600px
+  // max-width 1700px
 
-  @media screen and (max-width: 1450px)
+  @media screen and (max-width: 1550px)
     .logo
       &__wrap
         margin-right: 50px
@@ -244,13 +243,13 @@
 
   // max-width 1450px
 
-  @media screen and (max-width: 1350px)
+  @media screen and (max-width: 1450px)
     &__info
       display: none
 
   // max-width 1350px
 
-  @media screen and (max-width: 1230px)
+  @media screen and (max-width: 1330px)
     .logo
       &__wrap
         margin-right: 30px
@@ -299,6 +298,11 @@
         height: 14px
 
   // max-width 1230px
+
+  @media screen and (max-width: 1200px)
+    .container
+      padding-left: 15px
+      padding-right: 15px
 
   @media screen and (max-width: 1070px)
     .menu
@@ -376,15 +380,14 @@
         margin-right: 10px
     &__phones
       &-text
-        font-size: 13px
+        display: none
     &__phone
       font-size: 13px
     &__msg
-      margin-bottom: 2px
-      margin-left: 5px
+      display: none
     .burger
-      width: 35px
-      height: 35px
+      width: 29px
+      height: 29px
     &.fixed
       .logo
         width: 103px

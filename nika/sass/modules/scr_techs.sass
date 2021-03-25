@@ -10,8 +10,6 @@
     list-style: none
   &__tab
     display: flex
-    &:not(#techs__tab-0)
-      display: none
   &__left
     flex-shrink: 0
     max-width: 490px
@@ -19,6 +17,13 @@
   &__content
     flex-grow: 1
     padding-top: 31px
+    &-tabs
+      margin: 0
+      padding: 0
+      list-style: none
+    &-tab
+      &:not(:first-of-type)
+        display: none
     &-list
       margin: 0
       padding: 0
@@ -56,6 +61,9 @@
         margin-right: 0
   &__item
     position: relative
+    display: block
+    text-decoration: none
+    outline: none
     width: 99px
     padding-top: 57px
     &-title
@@ -77,6 +85,10 @@
       font-size: 18px
       font-weight: 600
       transition: 0.3s
+    &:hover
+      .techs__item-title
+        background-color: $accent
+        color: #fff
   &__title
     margin-top: 0
     margin-bottom: 45px
@@ -85,6 +97,9 @@
     line-height: 1.333333333333333 /* 40 / 30 */
     font-weight: 600
     color: $accent
+  &__img
+    &:not(:first-of-type)
+      display: none
 
 
   @media screen and (max-width: 1400px)
@@ -114,7 +129,7 @@
       width: 100%
       margin-bottom: 20px
       padding-top: 0
-      order: -1
+      // order: -1
     &__title
       font-size: 26px
 

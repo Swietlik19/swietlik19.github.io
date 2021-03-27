@@ -1,0 +1,48 @@
+mixin scr_card()
+  section.scr_card(id="scr_card")
+    .container
+      +breadcrumbs--card
+
+      .scr_card__wrap.decor-wrap
+        .scr_card__df
+          .scr_card__left
+            .scr_card__img
+              img(src="img/card-img.jpg" alt="")
+
+            .scr_card__links
+              a.scr_card__link(href="#") План этажа
+              a.scr_card__link(href="#") План помещения
+
+          .scr_card__info
+            h1.scr_card__title Апартаменты с видом на море
+
+            ul.scr_card__info-list
+              li
+                b Этаж:
+                |  3
+              li
+                b Площадь:
+                |  55 м
+                sup 2
+              li
+                b Окна выходят:
+                |  на море
+
+            .scr_card__statuses
+              .scr_card__status Забронировано
+              .scr_card__status Куплено
+              .scr_card__status.active В продаже
+
+            b.scr_card__price.scr_card__price--dollar 300 000 $
+            b.scr_card__price.scr_card__price--rub 5 256 000 руб.
+
+            .scr_card__btns
+              .btn__wrap.btn__wrap--blue
+                a.xbtn.xbtn--blue.open-modal(href="#") забронировать
+
+              button.xbtn.xbtn--circle.prod__like(type="button")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#like")
+
+
+  // /.scr_card

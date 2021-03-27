@@ -1,0 +1,91 @@
+.modal
+  position: relative
+  display: block
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  min-height: 0
+  background-color: rgba(0,0,0,0.6)
+  z-index: 1000
+  opacity: 0
+  overflow: hidden
+  &.active
+    display: block
+    opacity: 1
+    min-height: 100vh
+  &__content
+    display: flex
+    justify-content: center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+
+    width: 504px
+    max-width: 100%
+    opacity: 0
+    transition: 0.7s
+
+    &.visible
+      opacity: 1
+    &-wrap
+      padding: 40px
+      max-height: 100vh
+      overflow: auto
+
+  .form
+    width: 100%
+    z-index: 0
+    &__title
+      font-size: 30px
+
+  .close
+    background: none
+    border: none
+    outline: none
+
+    cursor: pointer
+    z-index: 300
+
+    position: absolute
+    top: 89px
+    right: 69px
+
+    display: block
+    width: 22px
+    height: 22px
+    .icon
+      display: block
+      fill: $accent
+      transition: 0.4s ease-in-out
+    &:hover
+      .icon
+        fill: $accent2
+
+
+  @media screen and (max-width: 500px)
+    .form
+      padding: 50px 30px 80px
+      &__title
+        font-size: 24px
+    &__content
+      &-wrap
+        padding: 40px 35px
+    .close
+      right: 49px
+
+  // max-width 500px
+
+  @media screen and (max-width: 450px)
+    .close
+      top: 73px
+      right: 39px
+    .form
+      &__item
+        .btn__wrap
+          width: 100%
+
+  // max-width 450px
+
+ /* modal */

@@ -107,6 +107,9 @@
 
   toggleHidden('.faq',true);
 
+  $('.faq--jobs .faq__list > li:first-of-type .open').addClass('active');
+  $('.faq--jobs .faq__list > li:first-of-type .hidden').show();
+
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -151,6 +154,17 @@
     $(_imgId).fadeIn();
   });
   $('.techs__tab:not(#techs__tab-0)').hide();
+  $('.window .window__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parents('li').siblings().find('.btn__wrap').removeClass('btn__wrap--orange');
+    $(this).parent().addClass('btn__wrap--orange');
+    $('.window__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();
@@ -167,6 +181,17 @@
       step: 1,
       hide_min_max: true,
     });
+  });
+
+  $('.your-file input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).parents('label').find('span').text(fileName);
+  });
+
+  $('.window__show').click(function() {
+    $('.window__left').toggleClass('active');
+    $('.window__catalog').toggleClass('active');
   });
 
   /* СЛАЙДЕРЫ */

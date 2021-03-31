@@ -2,9 +2,50 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
 
-      function createMap(xID,coords) {
+      // Меняется номер в зависимости от таба
+      xObjectArr0 = [
+        {
+          coords: [44.974654, 34.146779],
+          title: 'Симферополь, <br> ул. Кубанская,15',
+          pay: 'Оплата наличными: да',
+          payCard: 'Оплата картой: нет',
+        },
+        {
+          coords: [44.951338, 34.102528],
+          title: 'Симферополь, <br> пр. Кирова, 27',
+          pay: 'Оплата наличными: да',
+          payCard: 'Оплата картой: нет',
+        },
+      ];
+
+      xObjectArr1 = [
+        {
+          coords: [44.974654, 34.146779],
+          title: 'Симферополь, <br> ул. Кубанская,',
+          pay: 'Оплата наличными: да',
+          payCard: 'Оплата картой: нет',
+        },
+        {
+          coords: [44.951338, 34.102528],
+          title: 'Симферополь, <br> пр. Кирова, 27',
+          pay: 'Оплата наличными: да',
+          payCard: 'Оплата картой: нет',
+        },
+      ];
+
+      $('.delivery__map').each(function(xi,xel) {
+        var xId = $(this).attr('id');
+        var xArr = 'xObjectArr' + xId.replace('delivery__map-','');
+        createMap(xId,[44.958101, 34.110043],eval(xArr));
+      });
+
+      var xZoom = 14;
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        xZoom = 12;
+      }
+
+      function createMap(xID,xCenter,xObjectArr) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -15,35 +56,55 @@ mixin script-map()
 
           function init () {
               myMap = new ymaps.Map(xID, {
-                  center: coords,
-                  zoom: 17
+                  center: xCenter,
+                  zoom: xZoom
               }, {
                   searchControlProvider: 'yandex#search'
               });
 
-              // Создаём макет содержимого.
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
+                // Создаём макет содержимого.
+                  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                      '<div>$[properties.iconContent]</div>'
+                  ),
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
-                }, {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
-                  // Размеры метки.
-                  iconImageSize: [41, 51],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
+                  xObjectArr.forEach(function(xel,xi) {
+                    window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                      hintContent: ' ',
+                      // Зададим содержимое балуна.
+                      balloonContent: '<span class="map__pin"><span>' + xel.title + '</span><span>' + xel.pay + '</span><span>' + xel.payCard + '</span></span>'
+                    }, {
+
+                      // Опции.
+                      balloonPanelMaxMapArea: 0,
+                      openTimeout: 0,
+
+                      // Необходимо указать данный тип макета.
+                      iconLayout: 'default#imageWithContent',
+                      // Своё изображение иконки метки.
+                      iconImageHref: 'img/svg/pin.svg',
+                      // Размеры метки.
+                      iconImageSize: [19, 27],
+                      // Смещение левого верхнего угла иконки относительно
+                      // её "ножки" (точки привязки).
+                      iconImageOffset: [-20, -40],
+
+                      // Смещение слоя с содержимым относительно слоя с картинкой.
+                      iconContentOffset: [15, 15],
+                      // Макет содержимого.
+                      iconContentLayout: MyIconContentLayout
+
+                    });
+                  });
+
+              xObjectArr.forEach(function(xel,xi) {
+
+                myMap.geoObjects
+                    .add(window["myPlacemark"+xi]);
+
+                window["myPlacemark"+xi].events.add("click",function(e) {
+                  $(e).find(".pin").addClass('hey');
                 });
-
-            myMap.geoObjects
-                .add(myPlacemark);
+              });
 
             myMap.behaviors.disable('scrollZoom');
           }

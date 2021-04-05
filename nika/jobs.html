@@ -539,6 +539,52 @@
             }
           }
         }
+        var xZoom2 = 14;
+        createMap2('contacts__map-0', [44.995049, 34.070944], xZoom2, 'Выставочный дом, 11 км Московского шоссе');
+        createMap2('contacts__map-1', [45.046215, 35.378944], xZoom2, 'ул. Чкалова, 86, литера Д');
+
+        function createMap2(xID, xCenter, xZoom, xTitle)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: xCenter,
+                zoom: xZoom
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+                {
+                  hintContent: '',
+                  balloonContent: xTitle,
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [29, 38],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -10]
+                });
+              myMap.geoObjects.add(myPlacemark);
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
       })(jQuery);
     </script>
   </body>

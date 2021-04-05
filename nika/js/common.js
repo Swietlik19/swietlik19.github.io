@@ -194,6 +194,21 @@
     $('.window__catalog').toggleClass('active');
   });
 
+  // "Читать всё" в politics
+  $('.politics__show').click(function() {
+    $(this).parent().siblings('.politics__content').toggleClass('opened');
+    $(this).toggleClass('active');
+  });
+
+  function hideMore() {
+    $('.politics__content').each(function(xi,xel) {
+      if ($(xel).innerHeight() + 5 <= $(xel).css('max-height').replace('px','')) {
+        $(xel).parents('.politics__wrap').find('.politics__show').hide();
+      }
+    })
+  }
+  hideMore();
+
   /* СЛАЙДЕРЫ */
 
   var reviewsVideos = new Swiper('#reviews__videos', {
@@ -259,6 +274,55 @@
       380: {
         slidesPerView: 3,
         spaceBetween: 8,
+      },
+    },
+  });
+
+  var certsSlider2 = new Swiper('#certs__slider-about', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.certs__slider-btns .swiper-button-next',
+      prevEl: '.certs__slider-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.certs__slider-btns .swiper-dots',
+    },
+    breakpoints: {
+      1070: {
+        slidesPerView: 4,
+        spaceBetween: 36,
+      },
+      767: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  var productionSlider = new Swiper('#production__gallery-slider', {
+    slidesPerView: 2,
+    spaceBetween: 7,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.production__gallery-btns .swiper-button-next',
+      prevEl: '.production__gallery-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.production__gallery-btns .swiper-dots',
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        direction: 'vertical',
       },
     },
   });

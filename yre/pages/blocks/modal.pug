@@ -1,31 +1,70 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
-    .modal__content
+mixin modal__cart()
+  section.modal.modal__cart.active(id="modal__cart")
+    .modal__content.visible
       button.close
 
-      .form.wpcf7
-        form.wpcf7-form
+      .modal__df
+        .modal__left
+          a.prod-item__img
+            img(src="img-temp/prod-item-img.jpg" alt="" data-object-fit-contain)
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-name.text-input
-              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+          .modal__total
+            .prod-item__quant
+              .quantity
+                button.quantity-arrow.quantity-arrow-minus(type='button') –
+                input.quantity-num(type='number', value='1')
+                button.quantity-arrow.quantity-arrow-plus(type='button') +
+              b.prod-item__price
+                span 1920
+                |  Р
 
-          .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+        .modal__right
+          h2.prod-item__title Giordani Gold Essenza Blossom
+          .form.form--general
+            form
+              .form__item
+                span.your-name.text-input
+                  label Имя
+                    input(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
 
-          .form__item
-            span.wpcf7-form-control-wrap.accept
-              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
-                span.wpcf7-list-item
-                  label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
-                      i.accept__icon
+              .form__item
+                span.your-tel.text-input
+                  label Номер телефона
+                    input(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
 
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
+              .form__item
+                span.your-email.text-input
+                  label Ваш e-mail
+                    input(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='example@mail.ru')
 
-      // /. form
+              .form__item
+                span.textarea-input.text-input
+                  label Комментарий к заказу
+                    textarea#msg(name='your-msg', cols='40', rows='10', aria-invalid='false', placeholder='Введите текст...')
+
+              .form__item
+                .form__sort
+                  span Отправить со склада:
+                  select
+                    option(value="Харьков")  Харьков
+                    option(value="Харьков")  Харьков
+              .form__item
+                .form__sort
+                  span Выбранный магазин:
+                  select
+                    option(value="Спутник")  Магазин "Спутник"
+                    option(value="Спутник")  Магазин "Спутник"
+              .form__item
+                .form__sort
+                  span Служба доставки:
+                  select
+                    option(value="СДЭК")  СДЭК
+                    option(value="СДЭК")  СДЭК
+
+              .form__item.form__item--submit
+                .btn__wrap.btn__wrap--grad
+                  input.xbtn.xbtn--grad(type='submit', value='Оформить заказ')
+
+          // /. form
     // /. modal__content
   // /. modal

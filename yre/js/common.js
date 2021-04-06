@@ -107,27 +107,37 @@
     });
   }
 
-  toggleHidden('.faq',true);
+  toggleHidden('.faq__list',true);
+  $('.jobs__col:first-of-type .faq__item:first-of-type .open').addClass('active');
+  $('.jobs__col:first-of-type .faq__item:first-of-type .hidden').show();
 
   /* Замена input(type="number") */
   (function quantityProducts() {
     $(".quantity").each(function(xi,xel) {
       var $quantityArrowMinus = $(xel).find(".quantity-arrow-minus");
       var $quantityArrowPlus = $(xel).find(".quantity-arrow-plus");
+      var $price = $(xel).siblings('.prod-item__price').find('span');
+      var $priceText = + $price.text();
+      var $quantityNum = $(xel).find(".quantity-num");
 
       $quantityArrowMinus.click(quantityMinus);
       $quantityArrowPlus.click(quantityPlus);
+      $quantityNum.change(countPrice);
 
       function quantityMinus() {
-        var $quantityNum = $(xel).find(".quantity-num");
         if ($quantityNum.val() >= 2) {
           $quantityNum.val(+$quantityNum.val() - 1);
+          countPrice();
         }
       }
 
       function quantityPlus() {
-        var $quantityNum = $(xel).find(".quantity-num");
         $quantityNum.val(+$quantityNum.val() + 1);
+        countPrice();
+      }
+
+      function countPrice() {
+        $price.text($priceText * $quantityNum.val());
       }
     });
   })();

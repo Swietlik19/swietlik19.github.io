@@ -6,26 +6,34 @@
     list-style: none
   &__item
     position: relative
-    margin-bottom: 12px
-    background-color: #f5f5f5
+    margin-bottom: 35px
+    background: #FFFFFF
+    border: 1px solid #D2C4E8
+    box-shadow: 0px 7px 10px rgba(149, 117, 205, 0.14)
+    border-radius: 8px
+    transition: 0.4s ease-in-out
+    &:hover
+      box-shadow: 0px 7px 10px rgba(149, 117, 205, 0.3)
     .top
       display: flex
       justify-content: space-between
       align-items: center
 
-      padding: 34px 16px 31px 62px
+      padding: 31px 35px
+      cursor: pointer
+
+      h2
+        margin-right: 15px
+        font-size: 24px
+        line-height: 1.2
+        font-weight: 500
+        color: #433F4F
+        transition: 0.3s
 
     .hidden
       display: none
-      padding: 0 80px 49px 73px
-
-    h2
-      margin-right: 15px
-      font-size: 18px
-      line-height: 1.2
-      font-weight: 500
-      color: #333333
-      transition: 0.3s
+      margin-top: -10px
+      padding: 0 75px 35px 35px
     p
       &:last-of-type
         margin-bottom: 0
@@ -46,42 +54,72 @@
       outline: none
 
       display: block
-      width: 41px
-      height: 41px
-      &::before,
-      &::after
-        content: ''
-        position: absolute
-        top: calc(50% - 1px)
-        left: 0
-
+      width: 24px
+      height: 24px
+      transition: 0.4s ease-in-out
+      svg
         display: block
-        width: 22px
-        height: 3px
-        background-color: $accent
-        border-radius: 1.5px
-        transform-origin: center
-        transition: 0.3s
-      &::before
-        transform: rotate(270deg)
+        rect
+          fill: $accent2
+        circle
+          stroke: $accent2
       &.active
-        &::before
-          transform: rotate(0)
+        transform: rotate(45deg)
+  &__bottom
+    padding-top: 26px
+    form
+      display: flex
+      align-items: center
+    .btn__wrap
+      margin-right: 67px
+      .xbtn
+        height: 46px
+        padding-left: 25px
+        padding-right: 25px
+        text-transform: none
 
-  // @media screen and (max-width: 991px)
 
-  // max-width 991px
+  @media screen and (max-width: 1240px)
+    &__item
+      .top
+        padding: 25px
+        h2
+          font-size: 20px
+      .hidden
+        padding: 0 35px 25px 25px
+    &__bottom
+      .btn__wrap
+        margin-right: 30px
+    &__item
+      margin-bottom: 25px
 
-  // @media screen and (max-width: 767px)
+  // max-width 1240px
 
-  // max-width 767px
+  @media screen and (max-width: 1070px)
+    &__bottom
+      form
+        flex-direction: column
+      .btn__wrap
+        margin-right: 0
+        margin-bottom: 15px
 
-  // @media screen and (max-width: 500px)
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    &__item
+      margin-bottom: 15px
+
+  // max-width 900px
+
+  @media screen and (max-width: 500px)
+    &__item
+      .top
+        padding: 20px 15px
+        h2
+          font-size: 18px
+      .hidden
+        padding: 0 25px 20px 15px
 
   // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* faq */

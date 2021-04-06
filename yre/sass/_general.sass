@@ -34,6 +34,10 @@ body
 .page_wr
   flex-grow: 1
   padding-top: 91px
+.page-df
+  display: flex
+  padding-top: 40px
+  padding-bottom: 35px
 
 img
   width: 100%
@@ -96,35 +100,97 @@ h1,h2,h3,h4,h5,h6
       margin: 0 auto
   ul,
   ol
+    margin: 0
+    padding: 0
+    list-style: none
     padding-bottom: 1.5em
     padding-left: 0
     padding-right: 1.5em
+    columns: 2
+    column-gap: 50px
   ul li,
   ol li
+    margin-bottom: 13px
+    padding-left: 10px
     transform: translateX(1.5em)
+    position: relative
+    &:last-of-type
+      margin-bottom: 0
+  ul li
+    &::before
+      content: ''
+      position: absolute
+      top: 2px
+      left: -25px
+      display: block
+      width: 20px
+      height: 20px
+      background: transparent url('../img/svg/check.svg') no-repeat center center
+      background-size: contain
+  ol
+    counter-reset: myCounter
+    li
+      &::before
+        counter-increment: myCounter
+        content: counter(myCounter) '.'
+        position: absolute
+        top: 2px
+        left: -25px
+        display: block
+        font-weight: 500
+        font-size: 22px
+        background-image: linear-gradient(0deg,#EC407A,#C40135)
+        -webkit-background-clip: text
+        background-clip: text
+        -webkit-text-fill-color: transparent
+
 
   h2,h3,h4
     line-height: 1.2
     font-weight: 500
     color: #433f4f
   h2
-    margin-top: 35px
+    margin-top: 15px
     margin-bottom: 20px
-    font-size: 28px
-  h3
-    margin-top: 25px
-    margin-bottom: 15px
-    font-size: 26px
-  h4
-    margin-top: 20px
-    margin-bottom: 10px
     font-size: 24px
+  h3
+    margin-top: 18px
+    margin-bottom: 15px
+    font-size: 20px
+    color: #787484
+  h4
+    margin-top: 15px
+    margin-bottom: 10px
+    font-size: 18px
+    color: #787484
 
 .clearfix
   &::after
     display: table
     clear: both
     content: ""
+
+.your-file
+  display: block
+  text-align: center
+  input
+    display: none
+  label
+    display: inline-block
+    padding: 4px 0 0 27px
+    font-size: 14px
+    font-weight: 500
+    background: transparent url('../img/svg/clip.svg') no-repeat left 4px
+    background-size: 16px 17px
+    outline: none
+    cursor: pointer
+  span
+    font-size: 16px
+    color: #DE2A62
+    text-transform: none
+    &::before,
+    &::after
+      background-color: #DE2A62
 
 .page-title
   margin-top: 0
@@ -744,6 +810,9 @@ input[type="submit"]
     font-size: 24px
   .page-socials
     top: 100px
+  .page-df
+    display: block
+    padding-top: 10px
 
 // max-width 767px
 
@@ -776,6 +845,43 @@ input[type="submit"]
     font-size: 21px
   .decor-wrap
     padding: 15px
+  .article
+    img
+      &.alignleft
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
+      &.alignright
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
+    ul,
+    ol
+      padding-bottom: 0
+      padding-right: 0
+      padding-left: 15px
+      columns: 1
+      li
+        transform: none
+    ul
+      li
+        &::before
+          top: 5px
+          left: -13px
+          width: 15px
+          height: 14px
+    ol
+      li
+        &::before
+          top: 5px
+          left: -13px
+          font-size: 18px
+    h2
+      font-size: 20px
+    h3
+      font-size: 18px
+    h4
+      font-size: 16px
 
 // max-width 500px
 

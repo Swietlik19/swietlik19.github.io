@@ -20,15 +20,15 @@ html(lang='ru')
     // Custom Browsers Color End
 
     include blocks/scripts.pug
-    //- include blocks/script-map.pug
+    include blocks/script-map.pug
     include blocks/styles.pug
     include blocks/header.pug
     include blocks/breadcrumbs.pug
-    include blocks/modal.pug
+    include blocks/paginator.pug
 
     include blocks/scr1.pug
-    include blocks/scr_prod.pug
-    include blocks/scr_prod-item.pug
+    include blocks/scr_post.pug
+    include blocks/scr_blog.pug
 
     include blocks/footer.pug
     include blocks/socials.pug
@@ -72,8 +72,11 @@ html(lang='ru')
       //. На внутренних страницах добавить ещё этот код
       +scr1--inner
 
-      +scr_prod-item
-      +scr_prod--prod-item
+      +breadcrumbs--post
+      .container
+        .page-df
+          +scr_post
+          +scr_blog--post
 
 
       a.to-top(href="#page_wr")
@@ -81,7 +84,6 @@ html(lang='ru')
           use(xlink:href="img/svg/sprite.svg#arrow")
 
     +footer("a")
-    +modal__cart
 
     +scripts
-    //- +script-map
+    +script-map

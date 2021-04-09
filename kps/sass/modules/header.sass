@@ -141,6 +141,7 @@
   &__bottom
     border-top: 1px solid #f7f7f7
   &__df
+    position: relative
     display: flex
     align-items: center
     padding-top: 17px
@@ -172,38 +173,38 @@
     margin-right: auto
     align-self: stretch
 
-  .menu
-    padding: 0
-    margin: 0
-    list-style: none
+    .menu
+      padding: 0
+      margin: 0
+      list-style: none
 
-    display: flex
-    justify-content: space-between
-    align-items: center
-    height: 100%
-    & > li
+      display: flex
+      justify-content: space-between
+      align-items: center
       height: 100%
-      & > a
-        text-decoration: none
-        outline: none
-        display: flex
-        align-items: center
+      & > li
         height: 100%
-        padding-left: 32px
-        padding-right: 40px
-        font-size: 15px
-        line-height: 1.2
-        font-weight: 500
-        text-transform: uppercase
-        border-left: 1px solid #f2f1f1
-        border-right: 1px solid #f2f1f1
-        transition: 0.4s ease-in-out
-        &:hover
-          color: $accent
-          border-color: $accent
-        .menu-item-icon
-          width: 25px
-          margin-right: 11px
+        & > a
+          text-decoration: none
+          outline: none
+          display: flex
+          align-items: center
+          height: 100%
+          padding-left: 32px
+          padding-right: 40px
+          font-size: 15px
+          line-height: 1.2
+          font-weight: 500
+          text-transform: uppercase
+          border-left: 1px solid #f2f1f1
+          border-right: 1px solid #f2f1f1
+          transition: 0.4s ease-in-out
+          &:hover
+            color: $accent
+            border-color: $accent
+          .menu-item-icon
+            width: 25px
+            margin-right: 11px
   &__phones
     margin-left: 20px
     margin-right: 143px
@@ -291,6 +292,73 @@
         fill: $accent
   &--inner
     border-bottom: 1px solid #f7f7f7
+  &__catalog
+    position: absolute
+    top: calc(100% - 17px)
+    left: 0
+    display: none
+    width: 100%
+    padding: 0 20px 0 47px
+    border-top: 3px solid #f61620
+    background-color: #ffffff
+    box-shadow: 0px 7px 15px 0px rgba(0,0,0,0.14)
+    border-left-bottom-radius: 8px
+    border-right-bottom-radius: 8px
+    &-wrap
+      display: flex
+    &-col
+      flex-shrink: 0
+      width: 38.19648093841642%
+      padding: 17px 20px 30px 0
+      border-right: 1px solid #f7f7f7
+      &:nth-of-type(2)
+        width: 35.85043988269795%
+        padding-left: 78px
+      &:last-of-type
+        flex-grow: 1
+        padding-left: 78px
+        padding-right: 0
+        border-right: none
+    &-title
+      text-decoration: none
+      outline: none
+      display: flex
+      margin-bottom: 25px
+      font-size: 18px
+      font-weight: 600
+      text-transform: uppercase
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent
+    &-icon
+      flex-shrink: 0
+      display: block
+      width: 25px
+      height: 17px
+      margin-right: 14px
+    .menu
+      margin: 0
+      padding: 0
+      list-style: none
+      & > li
+        margin-bottom: 15px
+        &:last-of-type
+          margin-bottom: 0
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          font-size: 14px
+          transition: 0.4s ease-in-out
+          &:hover
+            color: $accent
+    &-df
+      display: flex
+      .menu
+        width: 50%
+        padding-right: 10px
+        &:last-of-type
+          padding-right: 0
 
 
   @media screen and (max-width: 1400px)
@@ -320,10 +388,11 @@
       font-size: 13px
       &--customers
         margin-right: 48px
-    .menu > li > a
-      padding-left: 22px
-      padding-right: 23px
-      font-size: 14px
+    &__menu
+      .menu > li > a
+        padding-left: 22px
+        padding-right: 23px
+        font-size: 14px
     &__catalog
       &-btn
         font-size: 14px
@@ -331,6 +400,20 @@
       margin-right: 33px
     &__phone
       font-size: 18px
+    &__catalog
+      top: calc(100% - 7px)
+      padding: 0 20px
+      &-col
+        padding: 17px 10px 20px 0
+        &:nth-of-type(2)
+          padding-left: 30px
+        &:last-of-type
+          padding-left: 30px
+      .menu
+        & > li
+          margin-bottom: 10px
+          & > a
+            font-size: 14px
 
   // max-width 1400px
 
@@ -346,21 +429,23 @@
     &__catalog
       &-btn
         padding: 10px 10px 10px 11px
-    .menu > li > a
-      padding-left: 12px
-      padding-right: 13px
+    &__menu
+      .menu > li > a
+        padding-left: 12px
+        padding-right: 13px
 
   // max-width 1170px
 
   @media screen and (max-width: 900px)
-    &__phones
-      display: none
-    &__cities
-      display: none
+    &__phones,
+    &__cities,
     &__menu
+      display: none
+    &__catalog
       position: fixed
       top: 0
       left: 0
+      display: block !important
       width: 300px
       height: 100vh
       padding-top: 50px
@@ -369,27 +454,46 @@
       overflow: auto
       background: #fff
       box-shadow: 0 5px 15px rgba(#000,0.2)
-      z-index: 10
+      z-index: 60
       transition: 0.4s ease-in-out
+      border-top: none
       &.active
         transition: 0.8s ease-in-out
         transform: translateX(0)
-    .menu
-      display: block
-      height: auto
-      & > li
-        width: 100%
+      &-df,
+      &-wrap
+        display: block
+      &-title
+        margin-bottom: 15px
+        font-size: 16px
+      &-col
+        width: 100% !important
+        padding-right: 0
+        padding-left: 0 !important
+        padding-bottom: 10px
+        border-right: none
+      .menu
+        display: block
         height: auto
-        & > a
-          height: auto
-          padding-top: 10px
-          padding-bottom: 10px
-          border: none
-          border-bottom: 1px solid #f2f1f1
+        & > li
+          width: 100%
+          margin-bottom: 0
+          & > a
+            padding-top: 5px
+            padding-bottom: 5px
+            padding-left: 10px
+            border: none
+            border-bottom: 1px solid #f2f1f1
+            font-size: 14px
+      &-df
+        display: block
+        .menu
+          width: 100%
+          padding-right: 0
     &__top
       align-items: center
-    &__bottom
-      display: none
+    // &__bottom
+    //   display: none
     &__catalog
       &-btn
         order: -3

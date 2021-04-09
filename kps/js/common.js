@@ -58,9 +58,9 @@
     return false;
   });
 
-  $('.burger').click(function() {
-    $(this).toggleClass('active');
-    $('.header__menu').toggleClass('active');
+  $('.header__catalog-btn').click(function() {
+    $(this).find('.burger').toggleClass('active');
+    $('.header__catalog').toggleClass('active');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -169,6 +169,13 @@
   if (window.matchMedia('(max-width: 900px)').matches) {
     $('.header__catalog-btn').appendTo('.header__top');
     $('.header__links').appendTo('.header__top');
+  } else {
+    $('.header__catalog-btn').hover(function() {
+      $('.header__catalog').show();
+    });
+    $('.header__top,.page_wr').hover(function(){
+      $('.header__catalog').hide();
+    });
   }
 
   if (window.matchMedia('(max-width: 575px)').matches) {

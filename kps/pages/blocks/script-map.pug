@@ -2,9 +2,13 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        createMap('contacts__map',[44.975968, 34.156022],[44.975968, 34.156022]);
+      } else {
+        createMap('contacts__map',[44.975968, 34.156022],[44.975846, 34.152618]);
+      }
 
-      function createMap(xID,coords) {
+      function createMap(xID,coords,xCenter) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -15,7 +19,7 @@ mixin script-map()
 
           function init () {
               myMap = new ymaps.Map(xID, {
-                  center: coords,
+                  center: xCenter,
                   zoom: 17
               }, {
                   searchControlProvider: 'yandex#search'
@@ -26,20 +30,20 @@ mixin script-map()
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
+                myPlacemark = new ymaps.Placemark(coords, {
+                    hintContent: 'г. Симферополь, ул. Глинки, 67В',
+                    balloonContent: 'г. Симферополь, ул. Глинки, 67В'
                 }, {
                   // Опции.
                   // Необходимо указать данный тип макета.
                   iconLayout: 'default#image',
                   // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
+                  iconImageHref: 'img/pin.png',
                   // Размеры метки.
-                  iconImageSize: [41, 51],
+                  iconImageSize: [56, 61],
                   // Смещение левого верхнего угла иконки относительно
                   // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
+                  iconImageOffset: [-15, -50]
                 });
 
             myMap.geoObjects

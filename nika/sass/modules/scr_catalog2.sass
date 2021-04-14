@@ -1,33 +1,239 @@
 .catalog2
   position: relative
+  padding-bottom: 64px
+  .container
+    max-width: 1776px
+    padding-left: 70px
+    padding-right: 70px
+  .window__catalog
+    padding-top: 0
+  &__top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 20px
+    .window__nav
+      margin-right: 10px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    &:not(#catalog2__tab-0)
+      display: none
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      padding-bottom: 36px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__item
+    position: relative
+    background-color: #f6f7f7
+    border-radius: 8px
+    overflow: hidden
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 14px
+      right: 14px
+      bottom: 14px
+      left: 14px
+      display: block
+      border: 1px solid #ffffff
+      border-radius: 8px
+      z-index: -1
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    height: 272px
+    background-color: #f6f7f7
+    overflow: hidden
+    img
+      display: block
+      transition: 0.4s ease-in-out
+    &:hover
+      img
+        transition: 0.8s ease-in-out
+        transform: scale(1.1)
+  &__content
+    padding: 14px 10px 21px
+    text-align: center
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        .catalog2__title
+          color: $accent
+  &__title
+    margin-top: 0
+    margin-bottom: 6px
+    font-size: 18px
+    font-weight: 600
+    text-transform: uppercase
+    transition: 0.4s ease-in-out
+  &__text
+    margin-bottom: 2px
+    font-size: 16px
+    font-weight: 500
+    color: #666666
+  &__price
+    display: block
+    font-size: 24px
+    font-weight: 600
+    color: $accent
+  &__menu
+    margin: 0
+    padding: 0
+    list-style: none
+    width: calc(100% + 20px)
+    margin-left: -15px
+    & > li
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        padding: 8px 10px 8px 16px
+        font-size: 16px
+        font-weight: 700
+        color: #333333
+        border-bottom: 1px solid rgba(38,77,45,0.14)
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+      &:last-of-type
+        & > a
+          font-weight: 600
+          text-transform: uppercase
+          color: $accent
+          border-bottom: none
+          &:hover
+            color: $accent2
+  .window__left
+    padding-top: 10px
+  .window__cont
+    margin-bottom: 26px
+    &:last-of-type
+      margin-bottom: 0
+    &-title
+      margin-bottom: 10px
+      font-weight: 700
+    &--menu
+      padding-bottom: 0
+    .nice-select
+      float: none
+  &--prod-item
+    padding-bottom: 19px
+    .container
+      max-width: 1277px
 
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1400px)
+    &__list
+      & > li
+        width: calc((100% - 30px) / 3)
+        margin-right: 15px
+        padding-bottom: 20px
+    &__img
+      height: 202px
+    &__title
+      font-size: 16px
+    &__text
+      font-size: 14px
+    &__price
+      font-size: 20px
 
-  // max-width 1170px
+  // max-width 1400px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1200px)
+    .container
+      padding-left: 15px
+      padding-right: 15px
 
-  // max-width 1070px
+  // max-width 1200px
 
-  // @media screen and (max-width: 991px)
-
-  // max-width 991px
-
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)
+    padding-bottom: 24px
+    &__top
+      display: block
+      .window__nav
+        margin-right: 0
+        margin-bottom: 10px
+      .nice-select
+        float: none
+    &__img
+      height: 182px
+    &__title
+      font-size: 14px
+    &__text
+      font-size: 13px
+    &__price
+      font-size: 18px
+    &__menu > li > a
+      font-size: 13px
+    &__item
+      &::before
+        top: 6px
+        right: 6px
+        bottom: 6px
+        left: 6px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        padding-bottom: 10px
+        &:nth-of-type(3n)
+          margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
 
   // max-width 575px
 
-  // @media screen and (max-width: 500px)
+  @media screen and (max-width: 450px)
+    &--prod-item
+      .catalog2__list
+        & > li
+          width: 100%
+          margin-right: 0
+          padding-bottom: 7px
+          &:nth-of-type(3n)
+            margin-right: 0
 
-  // max-width 500px
+  // max-width 450px
 
-  // @media screen and (max-width: 400px)
+  @media screen and (max-width: 400px)
+    &__list
+      & > li
+        width: calc((100% - 5px) / 2)
+        margin-right: 5px
+        padding-bottom: 7px
+        &:nth-of-type(3n)
+          margin-right: 5px
+        &:nth-of-type(2n)
+          margin-right: 0
+    &__img
+      height: 142px
+    &__content
+      padding: 14px 5px 11px
+    &__title
+      font-size: 12px
+    &__text
+      font-size: 12px
+    &__price
+      font-size: 15px
 
   // max-width 400px
 
-/* catalog2 */
+/* prod-item */

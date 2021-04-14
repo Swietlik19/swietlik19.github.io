@@ -10,38 +10,8 @@
     <!-- Template Basic Images Start-->
     <!-- Template Basic Images End-->
     <!-- Custom Browsers Color Start-->
-    <meta name="theme-color" content="#432928">
+    <meta name="theme-color" content="#166d3a">
     <!-- Custom Browsers Color End-->
-    <style>
-      .mmenu__list
-      {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-
-      .mmenu__item
-      {
-        padding: 10px 0;
-      }
-
-      .mmenu__link
-      {
-        text-decoration: none;
-        color: #432928;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
-        font-size: 24px;
-      }
-
-      .mmenu__link:hover
-      {
-        color: #8b0a0e;
-      }
-    </style>
     <link rel="stylesheet" href="libs/normalize.min.css">
     <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="libs/swiper/swiper.min.css">
@@ -50,12 +20,12 @@
     <link rel="stylesheet" href="libs/nice-select/nice-select.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body class="main-page">
-    <header class="header" id="header">
+  <body>
+    <header class="header header--second" id="header">
       <div class="container">
         <div class="header__top">
           <div class="logo__wrap">
-            <div class="logo"><img src="img/svg/logo.svg" alt="лого"></div>
+            <a class="logo" href="index.html"><img src="img/svg/logo.svg" alt="лого"></a>
             <p class="logo__text">Крымская производственно-<br> строительная компания</p>
           </div>
           <div class="header__info">
@@ -112,22 +82,13 @@
       </div>
     </header>
     <div class="page_wr" id="page_wr">
-      <section class="mmenu">
-        <div class="container">
-          <ul class="mmenu__list">
-            <li class="mmenu__item"><a class="mmenu__link" href="main.html">Главная</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="calc.html">Калькулятор</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="jobs.html">Вакансии</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="reviews.html">Отзывы</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="window.html">Витрина</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="production.html">Производство</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="about.html">О нас</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="contacts.html">Контакты</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="catalog.html">Каталог</a></li>
-            <li class="mmenu__item"><a class="mmenu__link" href="prod-item.html">Карточка</a></li>
-          </ul>
-        </div>
+      <section class="scr_price price" id="scr_price">
+        <div class="container"></div>
       </section>
+      <!-- /.scr_price--><a class="to-top" href="#page_wr">
+        <svg class="icon">
+          <use xlink:href="img/svg/sprite.svg#arrow"></use>
+        </svg></a>
     </div>
     <footer class="footer" id="footer">
       <div class="container">
@@ -208,5 +169,143 @@
     <script src="libs/nice-select/jquery.nice-select.min.js"></script>
     <script src="libs/rangeSlider/js/ion.rangeSlider.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false"></script>
+    <script>
+      (function($)
+      {
+        var xZoom = 8;
+        if (window.matchMedia('(max-width: 575px)').matches)
+        {
+          xZoom = 7;
+        }
+        if (window.matchMedia('(max-width: 1400px)').matches)
+        {
+          createMap('map__wrap', [45.005323, 34.448178], xZoom);
+        }
+        else
+        {
+          createMap('map__wrap', [45.258918, 34.515456], xZoom);
+        }
+        xObjectArr = [
+        {
+          coords: [44.948237, 34.100318],
+          address: 'Республика Крым, г. Симферополь, выставочный дом, 11 км Московского шоссе',
+        },
+        {
+          coords: [45.026648, 35.383902],
+          address: 'г. Феодосия, ул. Чкалова 86, литера Д (напротив супермаркета Клевер)',
+        },
+        {
+          coords: [44.754887, 33.852140],
+          address: 'Бахчисарай',
+        },
+        {
+          coords: [45.058052, 34.599907],
+          address: 'Белогорск',
+        },
+        {
+          coords: [44.828424, 34.803734],
+          address: 'Морское',
+        }, ]
+
+        function createMap(xID, xCenter, xZoom)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: xCenter,
+                zoom: xZoom
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                xObjectArr.forEach(function(xel, xi)
+                {
+                  window["myPlacemark" + xi] = new ymaps.Placemark(xel.coords,
+                  {
+                    hintContent: '' + xel.address + '',
+                    // Зададим содержимое балуна.
+                    balloonContent: '' + xel.address + '',
+                  },
+                  {
+                    // Опции.
+                    balloonPanelMaxMapArea: 0,
+                    openTimeout: 0,
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    iconImageHref: 'img/svg/pin.svg',
+                    // Размеры метки.
+                    iconImageSize: [29, 38],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-15, -40]
+                  });
+                });
+              xObjectArr.forEach(function(xel, xi)
+              {
+                myMap.geoObjects.add(window["myPlacemark" + xi]);
+              });
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+        var xZoom2 = 14;
+        createMap2('contacts__map-0', [44.995049, 34.070944], xZoom2, 'Выставочный дом, 11 км Московского шоссе');
+        createMap2('contacts__map-1', [45.046215, 35.378944], xZoom2, 'ул. Чкалова, 86, литера Д');
+
+        function createMap2(xID, xCenter, xZoom, xTitle)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: xCenter,
+                zoom: xZoom
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+                {
+                  hintContent: '',
+                  balloonContent: xTitle,
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [29, 38],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -10]
+                });
+              myMap.geoObjects.add(myPlacemark);
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+      })(jQuery);
+    </script>
   </body>
 </html>

@@ -1,0 +1,36 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__df
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/icons/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/icons/logo.svg" alt="лого")
+
+          p.logo__text Торгово-развлекательный комплекс
+
+        .header__text
+          p Симферополь,
+            br
+            b  ул. Механизаторов, 51
+
+        .header__text
+          p График работы:
+            br
+            b  08:00 - 20:00 без выходных
+
+        .header__links
+          a.header__phone(href="tel:+73652690590" rel="nofollow") +7 (3652) 690-590
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#call")
+          a.header__link(href="mailto:trcfm.arenda@gmail.com" rel="nofollow") trcfm.arenda@gmail.com
+
+      // /.header__df
+    // /.container

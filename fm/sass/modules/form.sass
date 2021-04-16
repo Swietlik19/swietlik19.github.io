@@ -1,0 +1,94 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+
+      // @include placeholder(#999999, 18px)
+
+      &:focus
+        // @include placeholder(#fff, 18px)
+
+    textarea
+      // height: 136px
+
+  .accept
+    display: block
+    margin-top: 40px
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+
+      font-size: 13px
+      line-height: 1.2
+      font-weight: 300
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(0,0,0,0.7)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  // @media screen and (max-width: 575px)
+
+  //   max-width 575px
+
+ /* form */

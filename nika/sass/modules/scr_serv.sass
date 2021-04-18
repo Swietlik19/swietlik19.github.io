@@ -1,0 +1,286 @@
+.serv
+  position: relative
+  padding-top: 41px
+  padding-bottom: 54px
+  .container
+    max-width: 1776px
+    padding-left: 70px
+    padding-right: 70px
+  &__wrap
+    padding: 26px 35px 35px
+    background-color: #f6f7f7
+    border-radius: 6px
+  .window__cont
+    padding: 0 15px
+    .menu
+      margin: 0
+      padding: 0
+      list-style: none
+      padding-top: 5px
+      padding-bottom: 5px
+      & > li
+        & > a
+          display: block
+          text-decoration: none
+          outline: none
+          padding: 14px 0 13px 18px
+          border-bottom: 1px solid rgba(38,77,45,0.14)
+          font-size: 18px
+          line-height: 1.444444444444444 /* 26 / 18 */
+          font-weight: 700
+          text-transform: uppercase
+          color: #264d2d
+          transition: 0.4s ease-in-out
+          &:hover
+            color: $accent2
+        &:last-of-type
+          & > a
+            border-bottom: none
+  .window__left
+    padding-top: 0
+  .window__catalog
+    padding-top: 0
+  &__text
+    padding-top: 45px
+    padding-right: 22px
+    font-weight: 500
+    p
+      margin-bottom: 22px
+      &:last-of-type
+        margin-bottom: 0
+  &__table
+    padding: 0 30px 31px
+    background-color: #ffffff
+    border-radius: 8px
+    table
+      width: 100%
+      border-collapse: collapse
+      td
+        padding: 15px 15px 12px
+        font-size: 18px
+        line-height: 1.333333333333333 /* 24 / 18 */
+        font-weight: 500
+        border-bottom: 1px solid rgba(38,77,45,0.14)
+        &:first-of-type
+          padding-left: 20px
+        span
+          font-size: 18px
+          font-weight: 600
+          color: $accent
+          text-transform: uppercase
+      thead
+        td
+          font-weight: 600
+      tbody
+        tr
+          &:nth-of-type(2n)
+            background-color: #f6f7f7
+        td
+          &:first-of-type
+            font-size: 14px
+            line-height: 1.5
+          &:nth-of-type(n + 2)
+            text-align: center
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+  &__item
+    width: calc((100% - 68px) / 3)
+    margin-right: 34px
+    padding: 18px 48px 26px
+    background-color: #ffffff
+    border-radius: 8px
+    &:nth-of-type(3n)
+      margin-right: 0
+  &__img
+    display: flex
+    justify-content: center
+    height: 232px
+    img
+      width: auto
+      height: auto
+      max-width: 100%
+      max-height: 100%
+  &__title
+    margin-top: 0
+    margin-bottom: 10px
+    font-size: 24px
+    font-weight: 600
+    text-transform: uppercase
+    color: $accent
+    text-align: center
+  &__content
+    width: calc(100% + 30px)
+    padding: 14px 0 0 14px
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      & > li
+        position: relative
+        margin-bottom: 20px
+        &:last-of-type
+          margin-bottom: 0
+        span
+          display: block
+          font-size: 16px
+          font-weight: 500
+  &__icon
+    position: absolute
+    top: 8px
+    left: -34px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 14px
+    height: 10px
+    background: transparent url('../img/svg/tick2.svg') no-repeat center center
+    background-size: contain
+    &--danger
+      top: 4px
+      width: 18px
+      height: 18px
+      background: #f32e37
+      border-radius: 50%
+      &::before
+        content: '!'
+        display: block
+        font-size: 10px
+        font-weight: 900
+        color: #fff
+    &--plus
+      top: 12px
+      width: 10px
+      height: 10px
+      background: none
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        width: 100%
+        height: 2px
+        background-color: $accent
+      &::after
+        transform: rotate(90deg)
+  &__price
+    display: block
+    margin-bottom: 18px
+    font-size: 24px
+    font-weight: 600
+    color: $accent
+    text-align: center
+
+
+  @media screen and (max-width: 1400px)
+    &__item
+      width: calc((100% - 30px) / 3)
+      margin-right: 15px
+      padding: 18px 20px 18px
+      &:nth-of-type(3n)
+        margin-right: 0
+    &__content
+      width: 100%
+      ul
+        & > li
+          margin-bottom: 14px
+          span
+            font-size: 14px
+    &__icon
+      left: -26px
+    &__title
+      margin-bottom: 7px
+      font-size: 21px
+    &__price
+      margin-bottom: 14px
+      font-size: 20px
+    &__img
+      height: 152px
+    &__wrap
+      padding: 20px 20px 25px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    .container
+      padding-left: 15px
+      padding-right: 15px
+    .window__cont
+      .menu
+        & > li
+          & > a
+            padding: 14px 0 13px 8px
+            font-size: 14px
+    &__table
+      padding: 0 20px 21px
+      table
+        td
+          padding: 13px 12px 10px
+          font-size: 16px
+          &:first-of-type
+            padding-left: 15px
+          span
+            font-size: 16px
+        tbody
+          td
+            &:first-of-type
+              font-size: 13px
+    &__wrap
+      padding: 20px 25px 25px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 1070px)
+    padding-top: 0
+    .window__show
+      margin-bottom: 20px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+      padding: 20px
+    &__table
+      table
+        td
+          padding: 9px 7px 6px
+          font-size: 14px
+
+  // max-width 991px
+
+  @media screen and (max-width: 700px)
+    &__list
+      display: block
+    &__item
+      width: 100%
+      margin-right: 0
+      margin-bottom: 15px
+      padding: 18px 20px 18px
+      &:nth-of-type(3n)
+        margin-bottom: 0
+    &__content
+      padding: 14px 0 0 24px
+
+  @media screen and (max-width: 575px)
+    padding-bottom: 30px
+    &__table
+      overflow: auto
+      table
+        width: 495px
+    &__text
+      padding-top: 30px
+      padding-right: 0
+      font-size: 14px
+      p
+        margin-bottom: 15px
+
+  // max-width 575px
+
+/* serv */

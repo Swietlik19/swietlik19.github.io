@@ -315,6 +315,23 @@
     },
   });
 
+  var scr_vk__slider = new Swiper('#scr_vk__slider', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.scr_vk__slider-btns .swiper-button-next',
+      prevEl: '.scr_vk__slider-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      1170: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+
   if (window.matchMedia('(max-width: 650px)').matches) {
     var scr1Feat = new Swiper('#scr1__feat', {
       slidesPerView: 1,

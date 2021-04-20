@@ -1,0 +1,454 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  transition: 0.4s ease-in-out
+  z-index: 300
+  &.fixed
+    box-shadow: 0 0 15px rgba($accent, 0.3)
+    .logo
+      width: 88px
+      height: 63px
+      &__text
+        display: none
+    .header__item
+      font-size: 14px
+  &__top
+    background-image: linear-gradient(to top, #bf3ba6, #e464ae)
+  &__df
+    display: flex
+    align-items: center
+  .burger
+    display: none
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 41px
+    margin-right: 15px
+    & > li
+      margin-right: 37px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 14px
+        color: #ffffff
+        &::after
+          content: ''
+          position: absolute
+          bottom: -1px
+          left: 0
+          display: block
+          width: 100%
+          height: 1px
+          background-color: #fff
+          opacity: 0
+          transition: 0.4s ease-in-out
+        &:hover
+          &::after
+            opacity: 1
+  &__phones
+    display: flex
+    align-items: center
+    margin-left: auto
+  &__phone
+    position: relative
+    display: block
+    text-decoration: none
+    outline: none
+    margin-right: 29px
+    font-size: 16px
+    font-weight: bold
+    color: #ffffff
+    &::after
+      content: ''
+      position: absolute
+      bottom: -1px
+      left: 0
+      display: block
+      width: 100%
+      height: 2px
+      background-color: #fff
+      opacity: 0
+      transition: 0.4s ease-in-out
+    &:hover
+      &::after
+        opacity: 1
+    &--mobile
+      display: none
+  &__msg
+    display: block
+    text-decoration: none
+    outline: none
+    width: 16px
+    height: 17px
+    margin-right: 17px
+    transition: 0.2s ease-in-out
+    .icon
+      display: block
+      height: 100%
+      fill: #fff
+    &:hover
+      transform: scale(1.2)
+    &:last-of-type
+      margin-right: 0
+
+  &__bottom
+    display: flex
+    align-items: center
+    padding-top: 6px
+    padding-bottom: 6px
+  &__search
+    flex-grow: 1
+    width: 244px
+    margin-right: 76px
+    .form
+      &__item
+        position: relative
+      .text-input
+        input
+          width: 100%
+          height: 45px
+          padding-left: 23px
+          border-radius: 6px
+          border: solid 2px #435aa3
+          background-color: #f8f9fb
+          box-shadow: none
+          &:hover
+            border-color: #fd1e20
+    .open-search
+      position: absolute
+      top: calc(50% - 10px)
+      right: 14px
+      background: none
+      border: none
+      outline: none
+      display: block
+      width: 20px
+      height: 20px
+      cursor: pointer
+      .icon
+        fill: $accent
+        transition: 0.4s ease-in-out
+      &:hover
+        .icon
+          fill: #fd1e20
+  .logo
+    display: block
+    width: 148px
+    height: 103px
+    outline: none
+    text-decoration: none
+    &__wrap
+      position: relative
+      margin-right: 128px
+    &__text
+      position: absolute
+      white-space: nowrap
+      top: 5px
+      left: 125px
+      font-size: 14px
+      line-height: 1.2
+      color: #435aa3
+    img
+      display: block
+  &__item
+    position: relative
+    display: flex
+    margin-right: 84px
+    cursor: pointer
+    transition: 0.4s ease-in-out
+    &-btn
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 24px
+      margin-left: 4px
+      cursor: pointer
+      .icon
+        display: block
+        width: 6px
+        height: 10px
+        fill: #666666
+        transform: rotate(90deg)
+        transition: 0.4s
+    &:hover
+      color: $accent
+      .header__item-btn
+        .icon
+          fill: $accent
+  &__hidden
+    display: none
+    position: absolute
+    left: 0
+    top: calc(100% + 7px)
+    width: 174px
+    padding: 17px 10px 21px
+    box-shadow: 0px 2px 10px 0px rgba($accent,0.3)
+    background-color: #fff
+    border-radius: 8px
+    z-index: 2
+  &__btns
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 226px
+  &__btn
+    position: relative
+    background: none
+    border: none
+    outline: none
+    display: block
+    cursor: pointer
+    display: flex
+    flex-direction: column
+    align-items: center
+    .icon
+      display: block
+      width: 27px
+      height: 25px
+      margin-bottom: 8px
+      transition: 0.4s ease-in-out
+    &:hover
+      .icon
+        fill: #fd1e20
+    &-num
+      position: absolute
+      top: -9px
+      right: -6px
+      display: flex
+      align-items: center
+      justify-content: center
+      min-width: 24px
+      height: 24px
+      border: solid 2px #ffffff
+      background-color: #fd1e20
+      padding-left: 3px
+      padding-right: 3px
+      padding-top: 1px
+      text-align: center
+      border-radius: 50%
+      font-size: 14px
+      line-height: 1
+      font-weight: 500
+      color: #ffffff
+    &-text
+      font-size: 12px
+    &--home
+      display: none
+  &--second
+    border-bottom: 1px solid #f3f5f9
+
+
+  @media screen and (max-width: 1400px)
+    .logo
+      width: 108px
+      height: 83px
+      &__text
+        top: 3px
+        left: 85px
+        font-size: 13px
+    &__search
+      margin-right: 56px
+    &__item
+      margin-right: 54px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1200px)
+    &__search
+      margin-right: 30px
+    &__item
+      margin-right: 30px
+      font-size: 14px
+    &__btns
+      width: 187px
+    &__btn
+      &-text
+        font-size: 11px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 991px)
+    &__item
+      display: none
+    &__btns
+      position: fixed
+      left: 0
+      bottom: 0
+      align-items: center
+      width: 100%
+      height: 63px
+      padding: 17px 30px
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+      background-image: linear-gradient(to bottom, #4bd2fe, #2389fc)
+    &__btn
+      .icon
+        width: 28px
+        height: 25px
+        margin-bottom: 0
+        fill: #fff
+      &-num
+        top: -11px
+        right: -9px
+        min-width: 20px
+        height: 20px
+        font-size: 12px
+        border: none
+      &-text
+        display: none
+      &--login
+        order: 2
+      &--home
+        display: block
+    &__phone
+      margin-right: 19px
+      font-size: 14px
+      &--mobile
+        display: flex
+    .menu
+      height: 36px
+      & > li
+        margin-right: 22px
+        & > a
+          font-size: 13px
+    &__top
+      position: fixed
+      top: 0
+      left: 0
+      width: 300px
+      height: 100vh
+      padding-top: 90px
+      padding-bottom: 30px
+      box-shadow: 0 0 15px rgba($accent, 0.3)
+      z-index: 70
+      transform: translateX(-101%)
+      transition: 0.3s ease-in-out
+      .container
+        height: 100%
+    &.active
+      .header__top
+        transition: 0.8s ease-in-out
+        transform: translateX(0)
+    &__df
+      display: block
+      max-height: calc(100vh - 100px)
+      height: 100%
+      overflow: auto
+    .burger
+      display: flex
+      margin-right: 10px
+    .menu
+      display: block
+      height: auto
+      margin-right: 0
+      margin-bottom: 30px
+      & > li
+        margin-right: 0
+        & > a
+          padding-top: 8px
+          padding-bottom: 8px
+          text-transform: uppercase
+          border-bottom: 1px solid rgba(#fff, 0.2)
+          &::after
+            content: none
+    &__search
+      .form
+        .text-input
+          input
+            height: 43px
+            border-width: 1px
+    .logo
+      width: 78px
+      height: 59px
+      &__wrap
+        margin-right: 108px
+      &__text
+        font-size: 12px
+    &.fixed
+      .logo
+        width: 78px
+        height: 59px
+
+  // max-width 991px
+
+  @media screen and (max-width: 650px)
+    .logo
+      width: 96px
+      height: 67px
+      margin-left: auto
+      margin-right: auto
+      &__wrap
+        display: block
+        margin-right: 0
+      &__text
+        position: static
+        margin-top: 1px
+        br
+          display: none
+    &__bottom
+      align-items: flex-start
+      justify-content: space-between
+      padding-top: 11px
+      padding-bottom: 4px
+    &__search
+      position: absolute
+      left: 0
+      top: 100%
+      width: 100%
+      padding: 10px 15px
+      background-image: linear-gradient(to top, #bf3ba6, #e464ae)
+      .form
+        .text-input
+          input
+            height: 40px
+            padding-left: 16px
+    &.fixed
+      .header__phone--mobile
+        margin-top: 0
+      .header__bottom
+        align-items: center
+      .header__search
+        display: none
+      .burger
+        margin-top: 0
+      .logo
+        &__text
+          display: block
+    &__btns
+      margin-left: auto
+    &__phone
+      &--mobile
+        margin-left: 0
+        margin-top: 12px
+    .burger
+      margin-top: 12px
+
+  // max-width 650px
+
+  @media screen and (orientation: landscape) and (max-width: 991px)
+    &.fixed
+      background: none
+      box-shadow: none
+      .logo
+        display: none
+      .header__bottom
+        justify-content: space-between
+      .header__search
+        display: none
+
+
+/* .header */

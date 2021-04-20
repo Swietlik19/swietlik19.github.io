@@ -1,0 +1,201 @@
+.blog
+  position: relative
+  padding-top: 40px
+  padding-bottom: 61px
+  &__top
+    display: flex
+    justify-content: space-between
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    &:not(#blog__tab-0)
+      display: none
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    padding-top: 37px
+    & > li
+      width: 21.75249807840123%
+      margin-right: 25px
+      &:nth-of-type(8n + 1),
+      &:nth-of-type(8n)
+        width: 28.74711760184473%
+        .blog__item
+          background-color: #4e64a8
+        .blog__content
+          padding: 13px 0 10px 17px
+          time
+            color: #ffffff
+        .blog__text
+          font-size: 24px
+          line-height: 1.25
+          color: #ffffff
+        .blog__img
+          margin-top: auto
+          margin-bottom: 0
+      &:nth-of-type(8n + 3)
+        .blog__item
+          background-color: #f1d7f4
+      &:nth-of-type(4n)
+        margin-right: 0
+      &:nth-of-type(8n + 4)
+        .blog__item
+          background-color: #fff1ba
+
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding: 10px 11px 20px 12px
+    border-radius: 6px
+    background-color: #dbf5f3
+    transition: 0.4s ease-in-out
+    &:hover
+      box-shadow: 0 0 15px rgba($accent, 0.4)
+  &__img
+    height: 129px
+    margin-bottom: 19px
+    border-radius: 6px
+    overflow: hidden
+  &__content
+    time
+      display: block
+      margin-bottom: 15px
+      font-size: 14px
+      font-weight: 500
+      color: #090101
+      text-transform: uppercase
+  &__text
+    padding-right: 10px
+    font-size: 20px
+    font-weight: bold
+    line-height: 1.5
+    color: #090101
+  &__bottom
+    font-size: 14px
+    color: #ffffff
+  &--page
+    padding-bottom: 34px
+    .page-title
+      margin-bottom: 15px
+    .blog__img
+      height: 196px
+    .blog__list
+      flex-wrap: wrap
+      padding-bottom: 9px
+      & > li
+        padding-bottom: 24px
+        &:nth-of-type(8n),
+        &:nth-of-type(8n + 1)
+          .blog__img
+            height: auto
+            margin-bottom: 10px
+        &:nth-of-type(8n)
+          .blog__item
+            background-color: #a5927c
+        &:nth-of-type(8n + 2),
+        &:nth-of-type(8n + 3),
+        &:nth-of-type(8n + 4),
+        &:nth-of-type(8n + 5),
+        &:nth-of-type(8n + 6),
+        &:nth-of-type(8n + 7)
+          .blog__item
+            background-color: #f3f5f9
+        &:nth-of-type(9)
+          .blog__item
+            background-color: #74a84e
+
+
+  @media screen and (max-width: 1300px)
+    &--page
+      .blog__list
+        & > li
+          width: 21.452498%
+          &:nth-of-type(8n + 1),
+          &:nth-of-type(8n)
+            width: 28.74711760184473%
+
+  @media screen and (max-width: 1170px)
+    &--page
+      .blog__list
+        & > li
+          width: calc((100% - 30px) / 3) !important
+          margin-right: 15px !important
+          &:nth-of-type(3n)
+            margin-right: 0 !important
+
+  @media screen and (max-width: 1070px)
+    &__list
+      & > li
+        &:nth-of-type(8n),
+        &:nth-of-type(8n + 1)
+          .blog__content
+            padding: 13px 0 10px
+          .blog__text
+            font-size: 18px
+    &__text
+      font-size: 17px
+    &--page
+      .blog__list
+        padding-top: 27px
+        & > li
+          & > a
+            padding-bottom: 14px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &:not(.blog--page)
+      display: none
+    &--page
+      .blog__img
+        height: 136px
+    &__content
+      time
+        margin-bottom: 9px
+        font-size: 12px
+    &__text
+      padding-right: 0
+      font-size: 15px
+    &__list
+      & > li
+        &:nth-of-type(8n),
+        &:nth-of-type(8n + 1)
+          .blog__content
+            padding: 8px 0 5px
+          .blog__text
+            font-size: 15px
+    &__bottom
+      font-size: 12px
+    &__item
+      padding: 5px 7px 10px
+
+  // max-width 991px
+
+  @media screen and (max-width: 650px)
+    &--page
+      .blog__list
+        padding-bottom: 25px
+        & > li
+          width: calc((100% - 8px) / 2) !important
+          margin-right: 8px !important
+          padding-bottom: 8px
+          &:nth-of-type(3n)
+            margin-right: 8px !important
+          &:nth-of-type(2n)
+            margin-right: 0 !important
+
+  @media screen and (max-width: 410px)
+    &--page
+      .blog__list
+        & > li
+          width: 100% !important
+          margin-right: 0 !important
+          &:nth-of-type(3n)
+            margin-right: 0 !important
+
+/* blog */

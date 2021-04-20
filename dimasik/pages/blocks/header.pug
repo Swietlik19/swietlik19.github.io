@@ -1,0 +1,97 @@
+mixin header(logotype,anotherClass)
+  header(id="header" class="header" + anotherClass + "")
+    .header__top
+      .container
+        .header__df
+          ul.menu
+            li.menu-item
+              a(href="#") О компании
+            li.menu-item
+              a(href="#") Покупателям
+            li.menu-item
+              a(href="#") Оптовым покупателям
+            li.menu-item
+              a(href="#") Блог
+            li.menu-item
+              a(href="#") Контакты
+
+          .header__phones
+            a.header__phone(href="tel:+79785106268" rel="nofollow") +7 (978) 510-62-68
+
+            a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79785106268" rel="nofollow")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#wa")
+
+            a.header__msg.header__msg--viber(href="viber://chat?number=79785106268" rel="nofollow")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#viber")
+
+        // /.header__df
+      // /.container
+    // /.header__top
+
+    .container
+      .header__bottom
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/logo--small.jpg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/logo--small.jpg" alt="лого")
+
+          p.logo__text Сеть магазинов
+            br
+            |  для детей
+
+        .header__search
+          .form
+            form
+              .form__item
+                span.your-search.text-input
+                  input(type='tel', name='your-search', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Поиск по сайту')
+
+                button.open-search(type='submit')
+                  svg.icon
+                    use(xlink:href='img/svg/sprite.svg#icon-search')
+
+        .header__item
+          p г. Симферополь,пр. Победы, 56,
+            br
+            |  ТЦ «Таир»
+          span.header__item-btn
+            svg.icon
+              use(xlink:href="img/svg/sprite.svg#arrow")
+
+          .header__hidden
+
+
+        .header__btns
+          button.header__btn.header__btn--home
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#home')
+          button.header__btn.header__btn--login
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#user')
+            span.header__btn-text Вход
+          button.header__btn
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#heart')
+            span.header__btn-text Избранное
+          button.header__btn.header__btn--cart
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#cart')
+            span.header__btn-num 3
+            span.header__btn-text Корзина
+
+        a.header__phone--mobile.xbtn.xbtn--circle(href="tel:+79785106268" rel="nofollow")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#phone")
+
+
+      // /.header__bottom
+    // /.container

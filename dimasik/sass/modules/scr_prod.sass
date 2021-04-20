@@ -1,0 +1,285 @@
+.prod
+  position: relative
+  padding-top: 48px
+  padding-bottom: 28px
+  &__nav
+    display: flex
+    justify-content: space-between
+    .btn__wrap
+      flex-shrink: 0
+      margin-left: 15px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+  &__wrap
+    position: relative
+    margin-top: 29px
+  &__slider
+    overflow: hidden
+    margin: -20px -10px
+    padding: 20px 10px
+    &-btns
+      .swiper-dots
+        display: none
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    position: relative
+    border-radius: 8px
+    border: solid 1px #f3f5f9
+    background-color: #ffffff
+    transition: 0.4s ease-in-out
+    z-index: 1
+    &:hover
+      box-shadow: 0 5px 15px rgba($accent, 0.2)
+  &__top
+    position: absolute
+    top: 4px
+    left: 16px
+    right: 5px
+    display: flex
+    align-items: flex-start
+  &__label
+    margin-top: 8px
+    padding: 5px 16px
+    border-radius: 14px
+    background-color: #fca400
+    font-size: 14px
+    font-weight: bold
+    color: #ffffff
+    &--action
+      background-color: #ff7e15
+    &--new
+      background-color: #7ccd48
+  &__btns
+    margin-left: auto
+  &__btn
+    position: relative
+    background: none
+    border: none
+    outline: none
+    display: block
+    width: 30px
+    height: 30px
+    padding: 7px 6px
+    background-color: rgba(#fff, 0.8)
+    border-radius: 6px
+    cursor: pointer
+    &:hover
+      .icon
+        &.hidden
+          opacity: 1
+    .icon
+      display: block
+      width: 18px
+      height: 15px
+      fill: $accent
+      transition: 0.3s
+      &.hidden
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+  &__img
+    display: block
+    text-decoration: none
+    outline: none
+    padding: 10px 30px
+    height: 230px
+  &__content
+    flex-grow: 1
+    padding: 0 10px 0 18px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        .prod__title
+          color: $accent2
+  &__title
+    margin-top: 0
+    margin-bottom: 10px
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 500
+    transition: 0.4s ease-in-out
+  &__bottom
+    margin-top: auto
+    padding: 0 17px 0 18px
+    &-df
+      display: flex
+      justify-content: space-between
+      padding: 0 0 20px 0
+      .btn__wrap
+        margin-left: 7px
+    &-buy
+      opacity: 0
+      padding-top: 2px
+      padding-bottom: 22px
+      text-align: center
+  &__prices
+    display: flex
+    align-items: flex-end
+    margin-bottom: 25px
+  &__price
+    &--old
+      display: block
+      color: #999999
+      text-decoration: line-through
+      line-height: 1
+    &--new
+      display: block
+      margin-right: 25px
+      font-size: 22px
+      line-height: 1
+      font-weight: bold
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      width: calc((100% - 60px) / 3)
+      margin-right: 30px
+      padding-bottom: 30px
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__rate
+    display: flex
+    margin-bottom: 13px
+    span
+      display: block
+      width: 15px
+      height: 14px
+      margin-right: 6px
+      background: transparent url('../img/svg/star.svg') no-repeat center center
+      background-size: contain
+  &--most
+    padding-top: 0
+    padding-bottom: 49px
+    .page-title
+      margin-bottom: 21px
+    .prod__nav
+      align-items: flex-end
+  &--most2
+    padding-top: 43px
+    padding-bottom: 51px
+
+
+  @media screen and (max-width: 1400px)
+    &__img
+      height: 190px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    &__title
+      br
+        display: none
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__img
+      height: 160px
+    &__title
+      padding-right: 5px
+      padding-left: 5px
+      font-size: 15px
+
+  // max-width 991px
+
+  @media screen and (max-width: 800px)
+    &__content
+      padding: 0 11px
+    &__bottom
+      padding: 0 14px
+      &-df
+        padding: 0 0 10px 0
+        .btn__wrap
+          margin-right: 10px
+    &__price
+      &--new
+        margin-right: 15px
+        font-size: 18px
+      &--old
+        margin-bottom: 3px
+        font-size: 14px
+
+  // max-width 800px
+
+  @media screen and (max-width: 760px)
+    .tabs-nav2
+      & > li
+        & > a
+          min-width: 145px
+          padding-left: 5px
+          padding-right: 5px
+    &__bottom
+      .xbtn--red
+        padding-left: 7px
+        padding-right: 7px
+        font-size: 0
+        .icon
+          margin-left: 0
+    &__top
+      left: 8px
+    &__label
+      padding: 3px 15px
+      font-size: 11px
+
+  // max-width 760px
+
+  @media screen and (max-width: 650px)
+    padding-bottom: 24px
+    &__prices
+      justify-content: space-between
+      margin-bottom: 15px
+      padding-top: 10px
+    &__cont
+      &-btns
+        padding-top: 18px
+        text-align: center
+    &__slider
+      overflow: visible
+      &-btns
+        display: none
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    padding-top: 35px
+    &__slider
+      overflow: visible
+    &__img
+      height: 140px
+      padding: 10px 20px
+    &__title
+      font-size: 13px
+    &__price
+      &--new
+        margin-right: 10px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    &__title
+      font-size: 12px
+    &__bottom
+      &-df
+        .btn__wrap
+          margin-right: 0
+    &__price
+      &--new
+        font-size: 16px
+      &--old
+        font-size: 13px
+
+  // max-width 400px
+
+/* prod */

@@ -1,0 +1,229 @@
+.dayprod
+  position: relative
+  padding-bottom: 35px
+  .page-title
+    margin-bottom: 14px
+  &__df
+    display: flex
+    padding: 21px
+    padding-right: 0
+    border-radius: 20px
+    background-color: #f3f5f9
+  &__img
+    position: relative
+    flex-shrink: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    outline: none
+    width: 375px
+    height: 358px
+    margin-right: 21px
+    padding: 13px 21px
+    border: 1px solid #e4e4e4
+    border-radius: 15px
+    background-color: #ffffff
+    transition: 0.4s ease-in-out
+    img
+      width: auto
+      height: auto
+      max-width: 100%
+      max-height: 100%
+    &:hover
+      box-shadow: 0px 5px 15px 0px rgba($accent,0.34)
+  &__content
+    flex-grow: 1
+    position: relative
+    padding: 15px 27px 33px
+    border-radius: 15px
+    background-color: #ffffff
+    z-index: 2
+    &-df
+      display: flex
+    &-top
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+    &-btns
+      .btn__wrap
+        &::before
+          border-radius: 28px
+      .xbtn
+        height: 50px
+        border-radius: 25px
+        padding-left: 2px
+        font-size: 16px
+  &__article
+    margin-right: 10px
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.5
+    color: #666666
+  &__title
+    margin-top: 0
+    margin-bottom: 14px
+    font-size: 20px
+    font-weight: bold
+    line-height: 1.2
+    color: #000000
+  &__text
+    margin-bottom: 28px
+    font-size: 14px
+  &__clock
+    flex-shrink: 0
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 300px
+    max-width: 100%
+    padding: 20px 51px 20px 27px
+    border-radius: 8px
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: -28px
+      right: -33px
+      display: block
+      width: 546px
+      height: 420px
+      background: transparent url('../img/svg/decor.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+    p
+      margin-bottom: 17px
+      padding-left: 30px
+      font-size: 20px
+      font-weight: 700
+      line-height: 1.2
+      color: #ffffff
+    .countSeconds
+      display: none
+    .countdownHolder
+      display: flex
+      justify-content: space-between
+      width: 100%
+    .countDays,
+    .countHours,
+    .countMinutes
+      position: relative
+      display: flex
+      justify-content: center
+      width: 30%
+      border-radius: 6px
+      box-shadow: inset 1.5px 2.6px 7px 0 rgba(205, 65, 148, 0.4)
+      background-color: #ffffff
+    .countDiv
+      display: block
+      padding-left: 11px
+      padding-right: 11px
+      height: 74px
+      font-size: 24px
+      font-weight: bold
+      line-height: 1
+      color: #000000
+      &::before,
+      &::after
+        background-color: #000000
+      &::before
+        top: 42%
+      &::after
+        top: 58%
+    .countDiv2
+      display: none
+    .position
+      width: auto
+      display: block
+      height: 74px
+    .digit
+      position: static
+      display: flex
+      align-items: center
+      justify-content: center
+      width: auto
+      height: 74px
+      font-size: 30px
+      line-height: 1
+      font-size: 30px
+      font-weight: bold
+      line-height: 1
+      color: #000000
+      box-shadow: none
+      background: none
+      font-family: $font
+    .countText
+      position: absolute
+      bottom: -25px
+      left: 50%
+      transform: translateX(-50%)
+      font-size: 12px
+      line-height: 1.75
+      letter-spacing: 0.03em
+      color: #ffffff
+      text-align: center
+      font-family: $font
+
+
+  @media screen and (max-width: 1170px)
+    &__df
+      align-items: flex-start
+    &__clock
+      height: 350px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__img
+      width: 230px
+      height: 280px
+      padding: 20px
+    &__title
+      margin-bottom: 12px
+      font-size: 18px
+    &__text
+      font-size: 14px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 900px)
+    padding-bottom: 25px
+    &__df
+      position: relative
+      display: block
+      padding: 11px
+      z-index: 2
+    &__img
+      width: 100%
+      height: 318px
+      margin-bottom: 10px
+    &__content
+      margin-left: 0
+      padding-left: 15px
+    &__prices
+      margin-bottom: 17px
+    &__price
+      &--old
+        margin-bottom: 3px
+    &__text
+      margin-bottom: 18px
+    &__clock
+      margin-left: auto
+      margin-right: auto
+      margin-top: -105px
+      &::before
+        width: 406px
+
+  // max-width 900px
+
+  @media screen and (max-width: 575px)
+    padding-bottom: 0
+    &__content
+      padding-right: 10px
+      &-top
+        margin-bottom: 8px
+
+  // max-width 575px
+
+/* dayprod */

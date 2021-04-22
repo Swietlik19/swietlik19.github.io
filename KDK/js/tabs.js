@@ -1,8 +1,11 @@
 $(document).ready(function($) {
+  $('.tabs li > a').click(function(e) {
+    e.preventDefault();
+  });
     $('.tab_content').hide();
     $('.tab_content:first').show();
     $('.content2 .tabs li:first').addClass('active');
-    $('.content2 .tabs li').click(function(event) {
+    $('.content2 .tabs li').click(function(event) {      
       $('.content2 .tabs li').removeClass('active');
       $(this).addClass('active');
       $('.tab_content').hide();

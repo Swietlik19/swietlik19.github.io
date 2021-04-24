@@ -431,6 +431,45 @@
     }
   });
 
+  var examplesThumbs = new Swiper('#examples__thumbs', {
+    slidesPerView: 2,
+    spaceBetween: 4,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    centerInsufficientSlides: true,
+    breakpoints: {
+      850: {
+        slidesPerView: 4,
+        spaceBetween: 12,
+      },
+      650: {
+        slidesPerView: 4,
+        spaceBetween: 8,
+      },
+      575: {
+        slidesPerView: 3,
+        spaceBetween: 8,
+      },
+    },
+  });
+
+  var examplesSlider = new Swiper('#examples__slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.examples__slider-btns .swiper-button-next',
+      prevEl: '.examples__slider-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.examples__slider-btns .swiper-dots',
+    },
+    thumbs: {
+      swiper: examplesThumbs
+    }
+  });
+
   function moveBurger() {
     if (window.matchMedia('(max-width: 1020px)').matches) {
       $('.header .burger').appendTo('.header__top');

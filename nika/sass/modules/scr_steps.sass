@@ -1,0 +1,99 @@
+.steps
+  position: relative
+  padding-top: 48px
+  padding-bottom: 26px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    & > li
+      width: 31.75438596491228%
+      padding-bottom: 28px
+      &:nth-of-type(2n)
+        width: 64.91228070175439%
+      &:last-of-type
+        .steps__item
+          display: flex
+          align-items: center
+          justify-content: center
+          padding: 20px 15px 15px
+  &__item
+    position: relative
+    height: 100%
+    padding: 21px 25px 20px 38px
+    min-height: 198px
+    background-color: #ffffff
+    box-shadow: 0px 10px 30px 0px #eaebeb
+    border-radius: 8px
+    overflow: hidden
+    transition: 0.4s ease-in-out
+    z-index: 1
+    &:hover
+      box-shadow: 0px 10px 30px 0px darken(#eaebeb, 10%)
+  &__num
+    display: block
+    margin-bottom: 10px
+    font-size: 30px
+    font-weight: 900
+    color: #166d3a
+  &__text
+    font-size: 14px
+    font-weight: 500
+    p
+      &::before
+        content: '•'
+        display: inline-block
+        margin-right: 5px
+        color: #1e8e33
+  &__img
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: -1
+
+
+  @media screen and (max-width: 1070px)
+    padding-top: 38px
+    padding-bottom: 14px
+    &__list
+      & > li
+        width: 32.754386%
+        padding-bottom: 18px
+    &__item
+      padding: 20px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 767px)
+    &__num
+      margin-bottom: 4px
+      font-size: 25px
+    &__text
+      font-size: 13px
+
+  // max-width 767px
+
+  @media screen and (max-width: 575px)
+    &__list
+      & > li
+        width: 49% !important
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    padding-top: 30px
+    &__list
+      & > li
+        width: 100% !important
+        &:not(:last-of-type)
+          .steps__item
+            min-height: 0
+
+  // max-width 500px
+
+/* steps */

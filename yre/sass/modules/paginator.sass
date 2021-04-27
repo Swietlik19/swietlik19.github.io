@@ -1,0 +1,88 @@
+.pager
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  padding-top: 45px
+  padding-bottom: 50px
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    & > li
+      position: relative
+      margin-right: 10px
+      line-height: 1.2
+      transition: 0.3s
+      &:last-of-type
+        margin-right: 0
+
+      .page-numbers, .prev, .next
+        text-decoration: none
+        outline: none
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 45px
+        height: 40px
+        border: 1px solid #EDE7F6
+        box-sizing: border-box
+        border-radius: 8px
+        transition: 0.4s ease-in-out
+        font-weight: 600
+        font-size: 14px
+        text-align: center
+        color: #433F4F
+        &:hover
+          background: #EDE7F6
+
+      .page-numbers:not(.prev):not(.next)
+        &.current
+          background: #EDE7F6
+      .prev,
+      .next
+        .icon
+          display: block
+          width: 12px
+          height: 9px
+      .prev
+        .icon
+          transform: rotate(180deg)
+
+
+  @media screen and (max-width: 1200px)
+    padding-top: 25px
+    padding-bottom: 30px
+
+  // max-width 1200px
+
+  @media screen and (max-width: 575px)
+    ul
+      flex-wrap: wrap
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    ul
+      & > li
+        margin-right: 5px
+        .page-numbers, .prev, .next
+          width: 37px
+          height: 35px
+          font-size: 13px
+
+  // max-width 500px
+
+  @media screen and (max-width: 430px)
+    padding-top: 10px
+
+  // max-width 430px
+
+ /* paginator */

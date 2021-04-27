@@ -1,0 +1,222 @@
+.delivery
+  position: relative
+  padding-bottom: 36px
+  .page-title
+    margin-bottom: 30px
+    padding-top: 35px
+  &__df
+    display: flex
+  &__nav
+    flex-shrink: 0
+    width: 312px
+    margin-right: 32px
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      background: #FFFFFF
+      border: 1px solid #D2C4E8
+      border-radius: 8px
+      overflow: hidden
+      & > li
+        & > a
+          text-decoration: none
+          outline: none
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          padding: 12px
+          font-weight: 500
+          font-size: 20px
+          line-height: 1.35 /* 27 / 20 */
+          color: #433F4F
+          border: 1px solid #D2C4E8
+          transition: 0.4s ease-in-out
+          span
+            display: block
+            color: #9E98AA
+          b
+            display: block
+            font-weight: 500
+          &:hover
+            background: #EEE7F7
+        &.current
+          & > a
+            background: #EEE7F7
+        &:last-of-type
+          border-bottom: none
+  &__tabs
+    flex-grow: 1
+    margin: 0
+    padding: 0
+    list-style: none
+  &__tab
+    &:not(:first-of-type)
+      display: none
+  &__text
+    color: #787484
+    line-height: 1.875
+    span
+      color: #9E98AA
+      line-height: 1.5
+    a
+      outline: none
+      line-height: 1.875
+      color: #9575CD
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent2
+  &__icon
+    max-width: 200px
+    margin-bottom: 15px
+    img
+      display: block
+      width: auto
+  &__wrap
+    margin-bottom: 36px
+    h3
+      padding-top: 5px
+      padding-bottom: 15px
+      font-size: 18px
+      color: #787484
+      font-weight: 500
+  &__map
+    height: 330px
+    border-radius: 8px
+    overflow: hidden
+  &__bottom
+    padding-left: 34px
+    padding-right: 34px
+    b
+      font-weight: 500
+  &__show
+    display: none
+  &--2
+    .delivery__df
+      padding-bottom: 50px
+    .delivery__bottom
+      border-top: 1px solid #EDE7F6
+      .delivery__text
+        width: calc(100% - 312px - 32px)
+        margin-left: auto
+        padding-right: 48px
+        padding-left: 35px
+        padding-top: 36px
+    .delivery__nav
+      ul
+        & > li
+          & > a
+            flex-direction: row
+            padding: 17px 10px 17px 20px
+      &-img
+        width: 97px
+        margin-right: 22px
+        img
+          display: block
+          width: auto
+          max-width: 100%
+      &-right
+        flex-grow: 1
+        color: #433F4F
+        span
+          color: #9E98AA
+          font-weight: 400
+          font-size: 18px
+          padding-top: 6px
+          padding-bottom: 6px
+
+
+  @media screen and (max-width: 1170px)
+    &__nav
+      width: 232px
+      margin-right: 22px
+      ul
+        & > li
+          & > a
+            padding: 6px
+            font-size: 15px
+    &__bottom
+      padding-left: 0
+      padding-right: 0
+    &__text
+      line-height: 1.775
+      font-size: 14px
+    &__wrap
+      margin-bottom: 26px
+    &__map
+      height: 260px
+    &--2
+      .delivery__nav
+        ul > li > a
+          padding: 17px 10px 17px 10px
+        &-img
+          width: 67px
+          margin-right: 12px
+        &-right
+          span
+            font-size: 16px
+      .delivery__bottom
+        .delivery__text
+          width: 100%
+          padding-top: 26px
+          padding-right: 0
+          padding-left: 0
+
+  // max-width 1170px
+
+  @media screen and (max-width: 767px)
+    &__nav
+      width: 172px
+      margin-right: 12px
+      margin-left: -187px
+      transition: 0.4s ease-in-out
+      &.active
+        margin-left: 0
+    &__tabs
+      transition: 0.4s ease-in-out
+      &.active
+        margin-right: -187px
+    &__show
+      display: inline-block
+      padding-top: 15px
+      text-decoration: underline
+      transition: 0.4s ease-in-out
+      cursor: pointer
+      &:hover
+        color: $accent2
+    .page-title
+      padding-top: 15px
+    &--2
+      .delivery__nav
+        ul > li > a
+          flex-direction: column
+          text-align: center
+          padding: 10px
+          font-size: 14px
+        &-img
+          display: none
+        &-right
+          span
+            padding-top: 2px
+            padding-bottom: 2px
+            font-size: 15px
+      .delivery__df
+        padding-bottom: 20px
+
+  // max-width 767px
+
+  @media screen and (max-width: 450px)
+    &__wrap
+      width: calc(100% + 30px)
+      margin-left: -15px
+      &.active
+        margin-right: -197px
+    &__nav
+      width: 172px
+      margin-right: 22px
+      margin-left: -197px
+
+  // max-width 450px
+
+/* delivery */

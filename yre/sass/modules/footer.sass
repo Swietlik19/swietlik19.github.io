@@ -1,0 +1,282 @@
+.footer
+  position: relative
+  background-color: #433f4f
+  .container
+    max-width: 1170px
+  &__top
+    display: flex
+    width: calc(100% + 50px)
+    padding-top: 29px
+    padding-bottom: 15px
+  &__col
+    &:nth-of-type(1)
+      width: 20.58823529411765%
+    &:nth-of-type(2)
+      width: 23.86554621848739%
+    &:nth-of-type(3)
+      flex-grow: 1
+    &:last-of-type
+      flex-shrink: 0
+      width: 400px
+    &-item
+      margin-bottom: 20px
+      &:last-of-type
+        margin-bottom: 0
+  &__title
+    text-decoration: none
+    outline: none
+    margin-top: 0
+    margin-bottom: 20px
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 500
+    color: #ede7f6
+    text-transform: uppercase
+    &--payment
+      margin-top: 24px
+  a.footer__title
+    transition: 0.4s ease-in-out
+  .menu
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      margin-bottom: 11px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        display: inline-block
+        text-decoration: none
+        outline: none
+        font-size: 14px
+        line-height: 1.2
+        color: #ffffff
+  &__address
+    font-size: 14px
+    color: #ffffff
+  &__phone
+    display: inline-block
+    text-decoration: none
+    outline: none
+    font-size: 14px
+    color: #ffffff
+  &__msgs
+    display: flex
+    align-items: center
+    padding: 14px 0
+  &__msg
+    display: block
+    text-decoration: none
+    outline: none
+    transition: 0.4s ease-in-out
+    width: 16px
+    height: 18px
+    margin-right: 16px
+    &:hover
+      transform: scale(1.1)
+    &:last-of-type
+      margin-right: 0
+    .icon
+      fill: #ffffff
+  &__deliver
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    width: 300px
+    max-width: 100%
+    border: 1px solid #ffffff
+    border-radius: 6px
+    overflow: hidden
+    & > li
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 33.3%
+      height: 56px
+      padding: 5px
+      border-right: 1px solid #ffffff
+      border-top: 1px solid #ffffff
+      &:nth-of-type(-n + 3)
+        border-top: none
+      &:nth-of-type(3n)
+        border-right: none
+      img
+        display: block
+        width: auto
+        height: auto
+        max-width: 100%
+        max-height: 100%
+        opacity: 0.5
+        transition: 0.4s ease-in-out
+      &:hover
+        img
+          opacity: 1
+
+  &__bottom
+    border-top: 1px solid rgba(255,255,255,0.2)
+    &-df
+      height: 52px
+      display: flex
+      align-items: center
+      justify-content: space-between
+    .text
+      font-size: 14px
+      color: #ffffff
+    a.text
+      text-decoration: none
+      outline: none
+      transition: 0.3s
+      &:hover
+        color: $accent2
+  &__politics
+    margin-right: 20px
+  &__copyright
+    margin-right: 20px
+  .made
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    cursor: pointer
+    text-decoration: none
+    .icon
+      width: 60px
+      height: 22px
+      margin-left: 13px
+      fill: #fff
+      transition: 0.3s
+
+    &:hover
+      .icon
+        fill: rgba(#fff,.7)
+  &__pay
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+      width: calc((100% - 10px) / 2)
+      margin-right: 10px
+      padding-bottom: 10px
+      &:nth-of-type(2n)
+        margin-right: 0
+      img
+        max-width: 100%
+        width: auto
+        opacity: 0.5
+        transition: 0.4s ease-in-out
+      &:hover
+        img
+          opacity: 1
+  &__contacts
+    display: flex
+    &-left
+      width: 50%
+      padding-right: 10px
+    &-right
+      width: 50%
+      .footer__item
+        margin-bottom: 30px
+        &:last-of-type
+          margin-bottom: 0
+
+
+  @media screen and (max-width: 1200px)
+    &__top
+      width: 100%
+
+  // max-width 1200px
+
+  @media screen and (max-width: 991px)
+    padding-bottom: 50px
+    &__top
+      display: block
+    &__col
+      width: 100% !important
+      &:nth-of-type(3)
+        margin-bottom: 30px
+      &-item
+        &:last-of-type
+          margin-bottom: 20px
+    .js-footer__title
+      position: relative
+      padding-right: 30px
+      padding-bottom: 12px
+      border-bottom: 1px solid rgba(#fff, 0.2)
+      cursor: pointer
+      transition: 0.4s ease-in-out
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: 8px
+        right: 5px
+        display: block
+        width: 14px
+        height: 2px
+        border-radius: 1.5px
+        background: rgba(#fff, 0.8)
+        transition: 0.4s ease-in-out
+      &::before
+        transform: rotate(90deg)
+      &:hover
+        color: $accent2
+      &.active
+        &::before
+          transform: rotate(0)
+    &__to-hide
+      display: none
+      padding-bottom: 20px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__bottom
+      &-df
+        justify-content: space-between
+      .footer__politics
+        margin-right: 30px
+      .footer__copyright
+        margin-right: 30px
+
+  // max-width 767px
+
+  @media screen and (max-width: 650px)
+    &__bottom
+      &-df
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        text-align: center
+        height: auto
+        padding: 10px 0
+      .footer__politics
+        margin-right: 0
+        margin-bottom: 15px
+      .footer__copyright
+        margin-right: 0
+        margin-bottom: 15px
+
+  // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__bottom
+      height: auto
+
+  // max-width 575px
+
+  @media screen and (max-width: 420px)
+    &__contacts
+      display: block
+      &-left
+        width: 100%
+        padding-right: 0
+      &-right
+        width: 100%
+
+  // max-width 420px
+
+/* footer */

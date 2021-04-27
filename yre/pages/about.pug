@@ -1,0 +1,84 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#9575cd')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/breadcrumbs.pug
+    include blocks/paginator.pug
+
+    include blocks/scr1.pug
+    include blocks/scr_about.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    +styles
+
+  body
+
+    //. На внутренних страницах прелоадер не нужен
+
+    +header("a")
+
+    #page_wr.page_wr
+      aside.page-socials
+        a.page-socials-item.page-socials-item--cart(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#cart-socials")
+          span Перейти
+            br
+            |  в корзину
+        a.page-socials-item.page-socials-item--pay(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#credit-card")
+          span Оплатить
+            br
+            |  заказ онлайн
+        a.page-socials-item.page-socials-item--faq(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#help")
+          span Задать вопрос
+        a.page-socials-item.page-socials-item--calc(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#calculator")
+          span 15 000 р.
+        a.page-socials-item.page-socials-item--calc(href="tel:+79789883424" rel="nofollow")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#phone")
+          span +7 978 988-34-24
+
+
+      //. На внутренних страницах добавить ещё этот код
+      +scr1--inner
+
+      +scr_about
+
+
+      a.to-top(href="#page_wr")
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#arrow")
+
+    +footer("a")
+
+    +scripts
+    +script-map

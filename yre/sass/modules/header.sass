@@ -1,0 +1,213 @@
+.header
+  position: fixed
+  width: 100%
+  background: #fff
+  border-bottom: 1px solid $accent
+  z-index: 300
+  &.fixed
+    border-color: transparent
+    box-shadow: 0 5px 15px rgba(#601497, 0.1)
+    .header__top
+      display: none
+  &__logo
+    display: none
+  &__top
+    background-color: #601497
+    background-image: url('../img/svg/decor.svg')
+    background-size: 256px 249px
+  &__df
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 50px
+  &__info
+    display: flex
+    align-items: center
+    margin-right: 15px
+    img
+      display: block
+      width: 76px
+      height: 44px
+      margin-right: 9px
+  &__title
+    position: relative
+    font-size: 18px
+    font-weight: 500
+    color: #ffffff
+    line-height: 1.2
+    z-index: 1
+    strong
+      font-weight: 700
+      text-transform: uppercase
+    span
+      position: relative
+      display: inline-block
+      margin-left: 11px
+      margin-right: 9px
+      &::before
+        content: ''
+        position: absolute
+        top: -3px
+        right: -7px
+        bottom: -3px
+        left: -4px
+        display: block
+        transform: skewX(-15deg)
+        background-color: $accent2
+        border-radius: 3px
+        z-index: -1
+  &__btns
+    .xbtn
+      height: 31px
+      text-transform: none
+
+  &__bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 41px
+  .burger
+    display: none
+  &__menu
+    margin-right: 15px
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    & > li
+      margin-right: 48px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        display: block
+        text-decoration: none
+        outline: none
+        font-size: 16px
+        line-height: 1.2
+        color: #433f4f
+  .sub-menu
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &__login
+    display: flex
+    align-items: center
+    padding: 5px 0 5px 34px
+    background: transparent url('../img/svg/user.svg') no-repeat left center
+    background-size: 22px 22px
+    span
+      display: block
+      margin-left: 5px
+      margin-right: 2px
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      font-size: 14px
+      line-height: 1.2
+      color: #433f4f
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent2
+
+
+  @media screen and (max-width: 991px)
+    .burger
+      order: -2
+      display: flex
+      margin-right: 20px
+    &__menu
+      position: fixed
+      top: 0
+      left: 0
+      height: 100vh
+      max-height: 100vh
+      width: 350px
+      margin-right: 0
+      padding: 20px 20px 100px
+      overflow: auto
+      background: lighten($accent, 5%)
+      box-shadow: 0 5px 15px rgba(#433f4f, 0.2)
+      transform: translateX(-101%)
+      transition: 0.4s ease-in-out
+      z-index: 30
+      &-top
+        display: flex
+        justify-content: space-between
+      .burger
+        margin-top: 5px
+        margin-right: 0
+      &.active
+        transform: translateX(0)
+        transition: 0.8s ease-in-out
+    .menu
+      display: block
+      height: auto
+      & > li
+        width: 100%
+        margin-right: 0
+        & > a
+          padding-top: 10px
+          padding-bottom: 10px
+          font-size: 16px
+          // border-bottom: 1px solid rgba(#433f4f,0.2)
+          border-bottom: 1px solid #e4e4e4
+          &::after
+            content: none
+          &:hover
+            color: #433f4f
+    &__bottom
+      justify-content: flex-start
+    &__login
+      order: 2
+    &__logo
+      order: -3
+      display: block
+      width: 60px
+    &__title
+      font-size: 14px
+      width: 270px
+      max-width: 100%
+      &::before
+        top: -2px
+        bottom: -2px
+    .scr1__menu
+      width: 100%
+      margin-right: 0
+      background: none
+      border: none
+      border-radius: 0
+      z-index: 50
+
+      .menu > li > a
+        padding-left: 0
+        padding-right: 8px
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    &__btns
+      display: none
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__login
+      margin-left: auto
+
+  // max-width 500px
+
+  @media screen and (max-width: 400px)
+    &__info
+      img
+        width: 56px
+
+  // max-width 400px
+
+/* .header */

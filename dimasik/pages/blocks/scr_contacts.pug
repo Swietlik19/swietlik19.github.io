@@ -1,0 +1,107 @@
+mixin scr_contacts()
+  section.scr_contacts.contacts(id="scr_contacts")
+    .container
+      h2.page-title Контакты
+
+      .contacts__df
+        .contacts__left
+          .contacts__main
+            .contacts__item
+              h3.contacts__title Телефон:
+
+              .header__phones
+                a.header__phone(href="tel:+79785106268" rel="nofollow") +7 (978) 510-62-68
+
+                a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79785106268" rel="nofollow")
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#wa")
+
+                a.header__msg.header__msg--viber(href="viber://chat?number=79785106268" rel="nofollow")
+                  svg.icon
+                    use(xlink:href="img/svg/sprite.svg#viber")
+
+            .contacts__item
+              h3.contacts__title Социальные сети:
+
+              .contacts__socials
+                a.contacts__socials-item(href="#" rel="nofollow")
+                  img(src="img/svg/vk.svg" alt="")
+
+                  span magazine_dimasik
+
+                a.contacts__socials-item(href="#" rel="nofollow")
+                  img(src="img/svg/insta.svg" alt="")
+
+                  span #dimasiktoys
+
+          ul.contacts__addresses
+            li.current
+              a(href="#contacts__map-0") г. Симферополь
+                b  пр. Победы, 56 ТЦ "Таир"
+            li
+              a(href="#contacts__map-1") г. Симферополь
+                b  ул. Беспалова, 110д
+            li
+              a(href="#contacts__map-2") г. Симферополь
+                b  ул. Гагарина, 20а ТЦ "Гудзон"
+
+          ul.contacts__tabs
+            li.contacts__map#contacts__map-0
+            li.contacts__map#contacts__map-1
+            li.contacts__map#contacts__map-2
+
+          .contacts__slider-wrap
+            .contacts__slider#contacts__slider
+              .swiper-wrapper
+                .swiper-slide
+                  a.contacts__img.fancybox(href="img-temp/contacts-img.jpg" data-fancybox-group="contacts")
+                    img(src="img-temp/contacts-img.jpg" alt="" data-object-fit-cover)
+                .swiper-slide
+                  a.contacts__img.fancybox(href="img-temp/contacts-img.jpg" data-fancybox-group="contacts")
+                    img(src="img-temp/contacts-img.jpg" alt="" data-object-fit-cover)
+                .swiper-slide
+                  a.contacts__img.fancybox(href="img-temp/contacts-img.jpg" data-fancybox-group="contacts")
+                    img(src="img-temp/contacts-img.jpg" alt="" data-object-fit-cover)
+                .swiper-slide
+                  a.contacts__img.fancybox(href="img-temp/contacts-img.jpg" data-fancybox-group="contacts")
+                    img(src="img-temp/contacts-img.jpg" alt="" data-object-fit-cover)
+
+            .contacts__slider-btns.swiper-btns
+              button.swiper-button-prev(type="button")
+              button.swiper-button-next(type="button")
+
+        aside.contacts__form
+          .form.form--general
+            form
+              p.form__title Обратная связь
+              .form__desc
+                p Заполните форму и наш специалист свяжется с Вами в течение 60 секунд
+
+              .form__item
+                span.your-name.text-input
+                  input(type='text', name='your-name', value='',  placeholder='Имя')
+
+              .form__item
+                span.your-tel.text-input
+                  input(type='tel', name='your-tel', value='',  placeholder='+7 (___) ___-__-__')
+
+              .form__item
+                span.your-email.text-input
+                  input(type='email', name='your-email', value='', placeholder='E-mail')
+
+              .form__item
+                span.your-msg.text-input
+                  textarea(name='your-msg', placeholder='Сообщение')
+
+              .form__item.form__item--submit
+                .btn__wrap.btn__wrap--red
+                  input.xbtn.xbtn--red(type='submit', value='Отправить')
+
+              .form__item
+                span.accept
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span Я согласен с политикой конфиденциальности
+                      i.accept__icon
+
+  // /.scr_contacts

@@ -3,56 +3,57 @@ mixin scr1()
     .container
       span.scr1__menu-btn Каталог
       .scr1__df
-        aside.scr1__menu
-          ul.menu
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Игрушки
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Автокресла
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Коляски
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Детская мебель
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Детская одежда
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Детская обувь
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Аксессуары
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Активный отдых
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Школа
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Кормление
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Уход и гигиена
-                span.menu-item__btn
-            li.menu-item
-              a(href="#")
-                span.menu-item__text Мамам
-                span.menu-item__btn
+        aside.scr1__menu-wrap
+          .scr1__menu-item.scr1__menu
+            ul.menu
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Игрушки
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Автокресла
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Коляски
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская мебель
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская одежда
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская обувь
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Аксессуары
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Активный отдых
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Школа
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Кормление
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Уход и гигиена
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Мамам
+                  span.menu-item__btn
 
         .scr1__right
           .scr1__right-df
@@ -205,3 +206,355 @@ mixin scr1--inner()
             p.scr1__cart-total На сумму:
               b 1500 Р
 
+mixin scr1--card()
+  section.scr1.scr1--card(id="scr1")
+    .container
+      span.scr1__menu-btn Каталог
+      .scr1__df
+        aside.scr1__menu-wrap
+          .scr1__menu-item.scr1__menu
+            ul.menu
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Игрушки
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Автокресла
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Коляски
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская мебель
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская одежда
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская обувь
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Аксессуары
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Активный отдых
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Школа
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Кормление
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Уход и гигиена
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Мамам
+                  span.menu-item__btn
+
+        .scr1__right
+          .scr1__card
+            +breadcrumbs
+
+            .scr1__card-df
+              .scr1__card-left
+                .scr1__card-wrap
+                  .scr1__card-gallery#scr1__card-gallery
+                    .swiper-wrapper
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img-2.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img-2.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img-3.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img-3.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img-2.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img-2.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+                      .swiper-slide
+                        .scr1__card-item
+                          a.scr1__card-img.fancybox(href="img-temp/card-img-3.jpg" data-fancybox-group="gallery")
+                            img(src="img-temp/card-img-3.jpg" alt="" data-object-fit-contain)
+
+                          .prod__top
+                            span.prod__label.prod__label--action Хит
+
+                            .prod__btns
+                              button.prod__btn.prod__btn--like(type="button")
+                                svg.icon
+                                  use(xlink:href="img/svg/sprite.svg#heart")
+                                svg.icon.hidden
+                                  use(xlink:href="img/svg/sprite.svg#heart--filled")
+
+                .scr1__card-wrap.scr1__card-wrap--thumbs
+                  .scr1__card-thumbs#scr1__card-thumbs
+                    .swiper-wrapper
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img.jpg" alt="" data-object-fit-contain)
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img-2.jpg" alt="" data-object-fit-contain)
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img-3.jpg" alt="" data-object-fit-contain)
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img.jpg" alt="" data-object-fit-contain)
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img-2.jpg" alt="" data-object-fit-contain)
+                      .swiper-slide
+                        .scr1__card-thumb
+                          img(src="img-temp/card-img-3.jpg" alt="" data-object-fit-contain)
+
+                  .scr1__card-thumbs-btns
+                    button.swiper-button-prev(type="button")
+                    .swiper-dots
+                    button.swiper-button-next(type="button")
+
+
+              .scr1__card-right
+                .scr1__card-content
+                  .prod__rate
+                    span
+                    span
+                    span
+                    span
+                    span
+
+                  h1.scr1__card-title Игрушка мягкая Disney Холодное сердце 2
+
+                  .scr1__card-desc
+                    p В этом малютке кроется огненный дух! Почувствуйте себя героем любимой сказки, играя с мягкой саламандрой Бруни Disney
+
+                  p.scr1__card-active В наличие
+
+                  .prod__prices
+                    span.prod__price--new 3 799 Р
+                    span.prod__price--old 3900 Р
+
+                  .prod__quant
+                    .quantity
+                      button.quantity-arrow.quantity-arrow-minus(type='button') –
+                      input.quantity-num(type='number', value='1')
+                      button.quantity-arrow.quantity-arrow-plus(type='button') +
+
+                  .scr1__card-btns
+                    .btn__wrap.btn__wrap--red
+                      a.xbtn.xbtn--red(href="#") В корзину
+                        svg.icon
+                          use(xlink:href="img/svg/sprite.svg#cart")
+
+                    .btn__wrap.btn__wrap--red.btn__wrap--blue
+                      a.xbtn.xbtn--red.xbtn--blue(href="#") Купить в 1 клик
+
+                .scr1__card-content.scr1__card-content--bottom
+                  .scr1__card-content-df
+                    .scr1__card-content-col
+                      b.scr1__card-content-title Условия доставки товара:
+
+                      ul
+                        li
+                          b Доставка по Симферополю
+                          |  - 200 р. в течение 2 часов, заказ до 16:00
+
+                        li
+                          b Доставка по Крыму
+                          |  - по тарифам транспортных компаний в течение 3 дней
+
+                    .scr1__card-content-col
+                      b.scr1__card-content-title Способы оплаты:
+
+                      ul
+                        li Оплата наличными при самовывозе из наших магазинов либо курьеру при доставке товара.
+
+                        li Оплата банковской картой онлайн.
+
+                      .scr1__card-content-pays
+                        img(src="img/pay-1.png" alt="")
+                        img(src="img/pay-2.png" alt="")
+                        img(src="img/pay-3.png" alt="")
+                        img(src="img/pay-4.png" alt="")
+
+      ul.scr1__tabs-nav
+        li.current
+          a(href="#scr1__tab-0") О товаре
+        li
+          a(href="#scr1__tab-1") Отзывы
+
+      ul.scr1__tabs
+        li.scr1__tab#scr1__tab-0
+          .scr1__tab-df
+            .scr1__tab-content
+              .article
+                p В этом малютке кроется огненный дух! Почувствуйте себя героем любимой сказки, играя с мягкой саламандрой Бруни Disney из «Холодное сердце 2»!
+
+                ul
+                  li Игрушка сделана в виде персонажа мультфильма «Холодное сердце 2» - ящерицы-огненного духа.
+
+                  li На спине саламандры – гребешок в виде пламени. Запустите подсветку, и он засияет, как настоящий!
+
+                  li Звуковые эффекты, как в мультфильме.
+
+                  li Длина игрушки – около 30 см.
+
+                p
+                  b ВНИМАНИЕ! Для работы требуются 3 батарейки ААА
+
+            .scr1__tab-table
+              table
+                tbody
+                  tr
+                    td Код товара
+                    td 1000104619
+                  tr
+                    td Страна-производитель
+                    td Китай
+                  tr
+                    td Габариты упаковки
+                    td 15см x 30см x 13см
+                  tr
+                    td Вес упаковки
+                    td 0,58 кг
+
+  // /.scr1
+
+mixin scr1--catalog()
+  section.scr1.scr1--card(id="scr1")
+    .container
+      span.scr1__menu-btn Каталог
+      .scr1__df
+        aside.scr1__menu-wrap
+          .scr1__menu.scr1__menu-item
+            ul.menu
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Игрушки
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Автокресла
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Коляски
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская мебель
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская одежда
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Детская обувь
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Аксессуары
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Активный отдых
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Школа
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Кормление
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Уход и гигиена
+                  span.menu-item__btn
+              li.menu-item
+                a(href="#")
+                  span.menu-item__text Мамам
+                  span.menu-item__btn
+
+          .scr1__filter-wrap
+            button.scr1__filter-btn(type="button") Фильтр
+
+            .scr1__filter.scr1__menu-item
+              //. Место для фильтра
+
+        .scr1__right
+          +scr_prod--page
+
+  // /.scr1

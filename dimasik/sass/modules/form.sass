@@ -31,7 +31,8 @@
         @include placeholder(#fff, 14px)
 
     textarea
-      // height: 136px
+      height: 120px
+      padding-top: 16px
 
   &__wrap
     position: relative
@@ -55,7 +56,8 @@
 
   .accept
     display: block
-    margin-top: 40px
+    width: calc(100% + 60px)
+    margin-left: -30px
     label
       display: block
       width: 100%
@@ -65,21 +67,22 @@
 
       font-size: 13px
       line-height: 1.2
-      font-weight: 300
-
+      color: #ffffff
       & > span
         position: relative
         display: inline-block
-        padding-left: 24px
+        padding-left: 30px
       .accept__icon
         position: absolute
         top: 0
         left: 0
 
         display: block
-        width: 15px
-        height: 15px
-        border: 1.0px solid rgba(0,0,0,0.7)
+        width: 17px
+        height: 17px
+        background-color: rgba(253,241,228,0.0)
+        border: 1px solid #ffffff
+        border-radius: 50%
         &::before
           content: ''
           position: absolute
@@ -95,7 +98,9 @@
           opacity: 0
 
       &:hover
-        color: $accent2
+        label
+          & > span
+            opacity: 0.7
 
     input
       display: none
@@ -105,6 +110,57 @@
         &::before
           opacity: 1
 
+  &--general
+    padding: 17px 55px 14px
+    background: #fd8e34 url('../img/form-bg.jpg') no-repeat center center
+    background-size: cover
+    border-radius: 15px
+    text-align: center
+    .text-input
+      input,
+      textarea
+        width: 100%
+    .form__item
+      margin-bottom: 11px
+      &--submit
+        margin-top: 24px
+        margin-bottom: 16px
+        .btn__wrap
+          &::before
+            border-radius: 27px
+        .xbtn
+          min-width: 223px
+          height: 56px
+          border-radius: 25px
+          font-size: 16px
+  &__title
+    width: calc(100% + 20px)
+    margin-left: -10px
+    margin-bottom: 6px
+    font-size: 30px
+    font-weight: 800
+    color: #fefffe
+  &__desc
+    width: calc(100% + 20px)
+    margin-left: -10px
+    margin-bottom: 12px
+    font-size: 15px
+    line-height: 1.4 /* 21 / 15 */
+    font-weight: 500
+    color: #ffffff
+
+
+  @media screen and (max-width: 1200px)
+    &--general
+      padding: 17px 35px 14px
+    &__title
+      margin-bottom: 3px
+      font-size: 26px
+    &__desc
+      font-size: 13px
+    .text-input
+      textarea
+        height: 80px
 
   @media screen and (max-width: 1070px)
     &__wrap

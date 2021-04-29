@@ -108,6 +108,31 @@
         &:nth-of-type(9)
           .blog__item
             background-color: #74a84e
+  &--post
+    padding-top: 0
+    padding-bottom: 0
+    .blog__list
+      display: block
+      margin-top: -15px
+      padding-top: 0
+      & > li
+        width: 100%
+        margin-right: 0
+        padding-bottom: 21px
+        .blog__item
+          background-color: #f3f5f9
+        .blog__img
+          height: 196px
+          margin-bottom: 0
+        .blog__content
+          padding: 15px 0 0 0px
+          time
+            margin-bottom: 8px
+            color: #090101
+        .blog__text
+          font-size: 20px
+          line-height: 1.5
+          color: #090101
 
 
   @media screen and (max-width: 1300px)
@@ -149,7 +174,7 @@
   // max-width 1070px
 
   @media screen and (max-width: 991px)
-    &:not(.blog--page)
+    &:not(.blog--page):not(.blog--post)
       display: none
     &--page
       .blog__img
@@ -173,6 +198,21 @@
       font-size: 12px
     &__item
       padding: 5px 7px 10px
+    &--post
+      .blog__list
+        display: flex
+        flex-wrap: wrap
+        & > li
+          width: calc((100% - 30px) / 2)
+          margin-right: 30px
+          &:nth-of-type(2n)
+            margin-right: 0
+          .blog__img
+            margin-top: 0
+          .blog__content
+            padding-top: 20px
+          .blog__text
+            font-size: 15px
 
   // max-width 991px
 
@@ -189,7 +229,20 @@
           &:nth-of-type(2n)
             margin-right: 0 !important
 
+  @media screen and (max-width: 575px)
+    &--post
+      .blog__list
+        & > li
+          width: calc((100% - 8px) / 2)
+          margin-right: 8px
+          padding-bottom: 8px
+          &:nth-of-type(2n)
+            margin-right: 0
+          .blog__img
+            height: 156px
+
   @media screen and (max-width: 410px)
+    &--post,
     &--page
       .blog__list
         & > li

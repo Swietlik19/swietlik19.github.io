@@ -84,24 +84,46 @@ h1,h2,h3,h4,h5,h6
     transition: 0.3s
     &:hover
       text-decoration: underline
-
+  blockquote
+    position: relative
+    padding: 40px 44px 49px 39px
+    background-color: #f3f5f9
+    border-radius: 6px
+    font-size: 14px
+    font-weight: 500
+    &::before,
+    &::after
+      content: '“'
+      position: absolute
+      display: block
+      font-size: 104.7px
+      line-height: 69px
+      font-weight: 500
+      color: #2389fc
+    &::before
+      top: 4px
+    &::after
+      right: 27px
+      bottom: -64px
   img
     width: auto
     max-width: 100%
     height: auto
     display: block
-    &.alignleft
-      max-width: 50%
-      float: left
-      margin: 0 20px 20px 0
-    &.alignright
-      max-width: 50%
-      float: right
-      margin: 0 0 20px 20px
-    &.aligncenter
-      margin: 0 auto
+  .alignleft
+    max-width: 42.5%
+    float: left
+    margin: 0 32px 20px 0
+  .alignright
+    max-width: 53.85416666666667%
+    float: right
+    margin: 0 0 20px 32px
+  .aligncenter
+    margin: 0 auto
   ul,
   ol
+    margin: 0
+    margin-bottom: 10px
     padding-bottom: 1.5em
     padding-left: 0
     padding-right: 1.5em
@@ -109,21 +131,37 @@ h1,h2,h3,h4,h5,h6
   ol li
     transform: translateX(1.5em)
 
+  ul
+    list-style: none
+    & > li
+      margin-bottom: 15px
+      &:last-of-type
+        margin-bottom: 0
+      &::before
+        content: '•'
+        display: inline-block
+        margin-right: 4px
+
   h2,h3,h4
     line-height: 1.2
     font-weight: 500
   h2
-    margin-top: 35px
+    margin-top: 25px
     margin-bottom: 20px
     font-size: 18px
+    line-height: 1.333333333333333 /* 24 / 18 */
+    font-weight: 500
   h3
-    margin-top: 25px
+    margin-top: 20px
     margin-bottom: 15px
     font-size: 16px
   h4
-    margin-top: 20px
+    margin-top: 15px
     margin-bottom: 10px
     font-size: 14px
+  b
+    font-weight: 500
+
 
 .clearfix
   &::after
@@ -184,6 +222,11 @@ h1,h2,h3,h4,h5,h6
       bottom: -3px
       display: block
       border: solid 3px rgba(253, 30, 32, 0.35)
+      border-radius: 19.5px
+      z-index: -1
+  &--blue
+    &::before
+      border: solid 3px rgba(35,137,252,0.34)
       border-radius: 19.5px
       z-index: -1
 
@@ -267,6 +310,13 @@ input[type="submit"].xbtn
     font-size: 16px
     font-weight: bold
     color: #fd1e20
+  &--blue
+    background-color: #2389fc
+    &:hover
+      background-color: #fff
+      color: #2389fc
+      .icon
+        fill: #2389fc
 
 
 input[type="submit"]
@@ -646,6 +696,18 @@ input[type="submit"]
 
 // max-width 1400px
 
+@media screen and (max-width: 1300px)
+  .article
+    blockquote
+      position: relative
+      padding: 30px 24px
+    .alignleft
+      max-width: 54.5%
+      margin: 0 15px 20px 0
+    .alignright
+      max-width: 43.854167%
+      margin: 0 0 20px 15px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
@@ -709,7 +771,9 @@ input[type="submit"]
 
 // max-width 900px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .article
+    font-size: 13px
 
 // max-width 767px
 
@@ -731,11 +795,21 @@ input[type="submit"]
         padding-left: 5px
         padding-right: 5px
         font-size: 11px
+  .article
+    .alignleft
+      max-width: 100%
+      float: none
+      margin: 0 0 20px 0
+    .alignright
+      max-width: 100%
+      float: none
+      margin: 0 0 20px 0
 
 // max-width 575px
 
 @media screen and (max-width: 500px)
   .page-title
+    margin-bottom: 20px
     font-size: 24px
 
 // max-width 500px

@@ -47,13 +47,15 @@
         &:last-of-type
           border-bottom: none
   &__tabs
-    flex-grow: 1
+    // flex-grow: 1
     margin: 0
     padding: 0
     list-style: none
-  &__tab
-    &:not(:first-of-type)
-      display: none
+    width: calc(100% - 344px)
+  &:not(.delivery--shops)
+    .delivery__tab
+      &:not(:first-of-type)
+        display: none
   &__text
     color: #787484
     line-height: 1.875
@@ -62,6 +64,7 @@
       line-height: 1.5
     a
       outline: none
+      text-decoration: none
       line-height: 1.875
       color: #9575CD
       transition: 0.4s ease-in-out
@@ -125,6 +128,69 @@
           font-size: 18px
           padding-top: 6px
           padding-bottom: 6px
+  &--shops
+    .delivery__nav
+      ul
+        & > li
+          & > a
+            position: relative
+            align-items: flex-start
+            padding-left: 25px
+            &::after
+              content: ''
+              position: absolute
+              top: calc(50% - 4px)
+              right: 21px
+              display: block
+              width: 5px
+              height: 9px
+              background: transparent url('../img/svg/arrow.svg') no-repeat center center
+              background-size: contain
+              transition: 0.4s ease-in-out
+          &.current
+            & > a
+              &::after
+                transform: rotate(90deg)
+
+  &__address
+    display: flex
+    font-weight: 500
+    font-size: 16px
+    color: #787484
+    &::before
+      content: ''
+      display: inline-block
+      width: 11px
+      height: 16px
+      margin-right: 5px
+      background: transparent url('../img/svg/pin-2.svg') no-repeat center center
+      background-size: contain
+
+  .shops
+    &__map
+      height: 260px
+      margin-top: 20px
+      margin-bottom: 20px
+      border-radius: 8px
+      overflow: hidden
+    &__slider
+      overflow: hidden
+      margin: -15px
+      padding: 15px
+      &-wrap
+        position: relative
+      &-title
+        margin-bottom: 16px
+        font-weight: 500
+        color: #787484
+    &__img
+      display: block
+      text-decoration: none
+      outline: none
+      transition: 0.4s ease-in-out
+      height: 176px
+      border-radius: 8px
+      overflow: hidden
 
 
   @media screen and (max-width: 1170px)
@@ -136,6 +202,8 @@
           & > a
             padding: 6px
             font-size: 15px
+    &__tabs
+      width: calc(100% - 254px)
     &__bottom
       padding-left: 0
       padding-right: 0
@@ -174,6 +242,7 @@
       &.active
         margin-left: 0
     &__tabs
+      width: 100%
       transition: 0.4s ease-in-out
       &.active
         margin-right: -187px
@@ -203,8 +272,18 @@
             font-size: 15px
       .delivery__df
         padding-bottom: 20px
+    &--shops
+      .decor-wrap
+        padding: 17px
 
   // max-width 767px
+
+  @media screen and (max-width: 575px)
+    .shops
+      &__img
+        height: 126px
+      &__map
+        height: 200px
 
   @media screen and (max-width: 450px)
     &__wrap

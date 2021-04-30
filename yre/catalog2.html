@@ -882,7 +882,7 @@
           var xArr = 'xObjectArr' + xId.replace('delivery__map-', '');
           createMap(xId, [44.958101, 34.110043], eval(xArr));
         });
-        var xZoom = 14;
+        var xZoom = 13;
         if (window.matchMedia('(max-width: 991px)').matches)
         {
           xZoom = 12;
@@ -943,6 +943,59 @@
                   $(e).find(".pin").addClass('hey');
                 });
               });
+              myMap.behaviors.disable('scrollZoom');
+            }
+          }
+        }
+        // Карта на странице "магазины", координаты идут в том же порядке, что и табы
+        xShopsArr = [
+          [44.951338, 34.102528],
+          [44.974654, 34.146779]
+        ];
+        $('.shops__map').each(function(xi, xel)
+        {
+          var xId = $(this).attr('id');
+          createMap2(xId, xShopsArr[xi]);
+        });
+
+        function createMap2(xID, coords)
+        {
+          if ($("#" + xID + "").length > 0)
+          {
+            var myMap;
+            // Дождёмся загрузки API и готовности DOM.
+            ymaps.ready(init);
+
+            function init()
+            {
+              myMap = new ymaps.Map(xID,
+              {
+                center: coords,
+                zoom: 17
+              },
+              {
+                searchControlProvider: 'yandex#search'
+              });
+              // Создаём макет содержимого.
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(),
+                {
+                  hintContent: '',
+                  balloonContent: ''
+                },
+                {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin.svg',
+                  // Размеры метки.
+                  iconImageSize: [35, 40],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -60]
+                });
+              myMap.geoObjects.add(myPlacemark);
               myMap.behaviors.disable('scrollZoom');
             }
           }

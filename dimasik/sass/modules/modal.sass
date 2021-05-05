@@ -6,7 +6,7 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(0,0,0,0.6)
   z-index: 1000
   opacity: 0
   overflow: hidden
@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 371px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -34,7 +34,11 @@
     max-height: 100vh
     overflow: auto
     width: 100%
+    padding-top: 30px
+    padding-bottom: 25px
     z-index: 0
+    &__desc
+      margin-bottom: 22px
 
   .close
     background: none
@@ -47,40 +51,18 @@
 
     position: absolute
     top: 9px
-    right: 9px
+    right: 11px
 
     display: block
-    width: 30px
-    height: 30px
-    &::before,&::after
-      content: ''
-      position: absolute
-      top: 50%
-      left: 50%
-
+    width: 22px
+    height: 22px
+    .icon
       display: block
-      width: 20px
-      height: 3px
-      background-color: $accent
-      border-radius: 1.5px
-      transition: 0.3s
-
-    &::before
-      transform: translate(-50%,-50%) rotate(45deg)
-
-    &::after
-      transform: translate(-50%,-50%) rotate(-45deg)
-
+      height: 100%
+      fill: #fff
+      transition: 0.4s ease-in-out
     &:hover
-      &::before,&::after
-        background-color: #e99c02
+      .icon
+        fill: $accent
 
-  // @media screen and (max-width: 767px)
-
-  // max-width 767px
-
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
-
- /* modal */
+/* modal */

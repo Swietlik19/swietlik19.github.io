@@ -1,0 +1,122 @@
+.categories
+  position: relative
+  padding-bottom: 31px
+  .page-title
+    margin-top: 7px
+    margin-bottom: 15px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    background-color: #f3f5f9
+    border-radius: 20px
+    display: flex
+    flex-wrap: wrap
+    padding: 16px 16px 2px
+    & > li
+      width: calc((100% - 16px) / 2)
+      margin-right: 16px
+      padding-bottom: 19px
+      &:nth-of-type(2n)
+        margin-right: 0
+  &__item
+    display: flex
+    height: 100%
+    min-height: 220px
+    padding: 16px 20px 18px
+    background-color: #ffffff
+    border-radius: 10px
+  &__content
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      margin-bottom: 5px
+      & > li
+        position: relative
+        margin-bottom: 4px
+        padding-left: 10px
+        &:nth-of-type(n + 5)
+          display: none
+          &.active
+            display: block
+        &:last-of-type
+          margin-bottom: 0
+        &::before
+          content: '•'
+          position: absolute
+          top: 2px
+          left: 0
+          display: block
+          color: $accent
+        & > a
+          text-decoration: none
+          outline: none
+          font-size: 14px
+          color: #000
+          &:hover
+            color: $accent
+
+  &__title
+    margin-top: 0
+    margin-bottom: 15px
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 500
+  &__img
+    flex-shrink: 0
+    width: 140px
+    height: 156px
+    margin-left: 20px
+    img
+      width: auto
+      height: auto
+      max-width: 100%
+      max-height: 100%
+  &__all
+    margin-top: auto
+    background: none
+    border: none
+    outline: none
+    margin-left: 10px
+    font-size: 14px
+    cursor: pointer
+
+
+  @media screen and (max-width: 1170px)
+    &__list
+      padding: 10px 10px 2px
+      & > li
+        width: calc((100% - 8px) / 2)
+        margin-right: 8px
+        padding-bottom: 8px
+        &:nth-of-type(2n)
+          margin-right: 0
+    &__item
+      min-height: 200px
+      padding: 16px 10px 15px
+    &__title
+      margin-bottom: 8px
+      font-size: 18px
+    &__img
+      width: 100px
+      height: 116px
+      margin-left: 10px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 650px)
+    width: calc(100% + 20px)
+    margin-left: -10px
+    &__list
+      & > li
+        width: 100%
+        margin-right: 0
+
+  // max-width 650px
+
+/* categories */

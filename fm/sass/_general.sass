@@ -79,19 +79,23 @@ h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
 .article
+  font-weight: 500
+  font-size: 14px
+  line-height: 1.928571428571429 /* 27 / 14 */
   p
-    margin-bottom: 10px
+    margin-bottom: 12px
   a
     text-decoration: none
     transition: 0.3s
     &:hover
-      text-decoration: underline
+      color: $accent
 
   img
     width: auto
     max-width: 100%
     height: auto
     display: block
+    margin: 20px auto
     &.alignleft
       max-width: 50%
       float: left
@@ -104,27 +108,55 @@ h1,h2,h3,h4,h5,h6
       margin: 0 auto
   ul,
   ol
+    display: inline-block
+    list-style: none
+    margin-top: 10px
     padding-bottom: 1.5em
     padding-left: 0
     padding-right: 1.5em
+    columns: 2
+    column-gap: 38px
   ul li,
   ol li
     transform: translateX(1.5em)
+  ul
+    li
+      margin-bottom: 15px
+      padding-left: 35px
+      background: transparent url('../img/svg/check.svg') no-repeat left top
+      background-size: 22px 22px
+      break-inside: avoid
+  ol
+    counter-reset: li /* Инициализируем счетчик */
+    li
+      position: relative
+      margin-bottom: 15px
+      break-inside: avoid
+      &::before
+        content: counter(li) '.' /* В качестве данных используем счетчик */
+        counter-increment: li /* Увеличиваем значение счетчика на 1 */
+        display: inline-block
+        width: 15px
+        margin-right: 15px
+        font-weight: 500
+        font-size: 23px
+        line-height: 1
+        color: $accent
 
   h2,h3,h4
-    line-height: 1.2
-    font-weight: 500
+    line-height: 1.666666666666667
+    font-weight: 700
   h2
-    margin-top: 35px
+    margin-top: 10px
     margin-bottom: 20px
     font-size: 18px
   h3
-    margin-top: 25px
-    margin-bottom: 15px
+    margin-top: 10px
+    margin-bottom: 5px
     font-size: 16px
   h4
-    margin-top: 20px
-    margin-bottom: 10px
+    margin-top: 5px
+    margin-bottom: 5px
     font-size: 14px
 
 .clearfix
@@ -201,6 +233,8 @@ h1,h2,h3,h4,h5,h6
     display: block
     text-decoration: none
     outline: none
+    img
+      display: block
     &::before
       content: 'Подробнее'
       position: absolute
@@ -259,7 +293,18 @@ input[type="submit"]
 
 .xbtn,
 input[type="submit"].xbtn
-
+  &--red
+    height: 60px
+    padding-left: 10px
+    padding-right: 10px
+    background: #931B1B
+    border: 1px solid #931B1B
+    text-align: center
+    font-weight: 500
+    color: #FFFFFF
+    &:hover
+      color: #931B1B
+      background-color: #fff
 
 input[type="submit"]
   &[disabled]
@@ -314,6 +359,29 @@ input[type="submit"]
       transform: translateY(-7px)
     &::after
       transform: translateY(7px)
+
+.your-file
+  display: block
+  text-align: center
+  padding-bottom: 5px
+  input
+    display: none
+  label
+    display: inline-block
+    padding: 0 0 0 27px
+    font-size: 14px
+    font-weight: 500
+    background: transparent url('../img/svg/clip.svg') no-repeat left 4px
+    background-size: 16px 17px
+    outline: none
+    cursor: pointer
+  span
+    font-size: 16px
+    color: $accent
+    text-transform: none
+    &::before,
+    &::after
+      background-color: $accent
 
 .to-top
   position: fixed
@@ -440,6 +508,13 @@ input[type="submit"]
     font-size: 31px
   .xlink
     font-size: 14px
+  .your-file
+    label
+      padding: 0 0 0 20px
+      font-size: 13px
+      background-size: 13px 13px
+    span
+      font-size: 14px
 
 // max-width 1400px
 
@@ -517,6 +592,33 @@ input[type="submit"]
     margin-left: -21px
   .swiper-button-next
     margin-right: -21px
+  .article
+    font-size: 13px
+    line-height: 1.7
+    img
+      &.alignleft,
+      &.alignright
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
+    ul
+      column-gap: 15px
+      li
+        margin-bottom: 10px
+        padding-left: 25px
+        background: transparent url('../img/svg/check.svg') no-repeat left top
+        background-size: 17px 17px
+    ol
+      column-gap: 15px
+      li
+        margin-bottom: 10px
+    h2
+      margin-top: 10px
+      font-size: 16px
+    h3
+      font-size: 14px
+    h4
+      font-size: 13px
 
 // max-width 575px
 
@@ -529,6 +631,19 @@ input[type="submit"]
       width: 20px
 
 // max-width 500px
+
+@media screen and (max-width: 430px)
+  .article
+    ul,
+    ol
+      padding-bottom: 0
+      padding-right: 0
+    ul li,
+    ol li
+      transform: none
+    ul,
+    ol
+      columns: 1
 
 @media screen and (max-width: 400px)
   .page-title

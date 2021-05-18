@@ -41,6 +41,31 @@
   &__text
     font-size: 14px
     font-weight: 500
+  &--history
+    flex-shrink: 0
+    width: 31.50984682713348%
+    margin-left: 32px
+    padding-top: 0
+    .blog__list
+      display: block
+      & > li
+        width: 100%
+        margin-right: 0
+        padding-bottom: 31px
+    .blog__img
+      height: 270px
+  &__top
+    &-title
+      margin-bottom: 31px
+  &--page
+    padding-bottom: 63px
+    .blog__list
+      padding-top: 28px
+    .pager
+      margin-top: -20px
+  &--post
+    .blog__text
+      line-height: 1.928571428571429
 
 
   @media screen and (max-width: 1400px)
@@ -65,6 +90,20 @@
         display: none
     &__text
       font-size: 13px
+    &--history
+      .blog__list
+        & > li
+          width: 100%
+          margin-right: 0
+      .blog__img
+        height: 220px
+    &__top
+      &-title
+        margin-bottom: 20px
+    &--page
+      padding-bottom: 33px
+      .pager
+        margin-top: -5px
 
   // max-width 1400px
 
@@ -75,6 +114,12 @@
       font-size: 14px
     &__text
       font-size: 12px
+    &--history
+      .blog__img
+        height: 170px
+    &__top
+      &-title
+        font-size: 16px
 
   // max-width 1170px
 
@@ -93,8 +138,32 @@
           width: calc( (((100% - 10px) / 2) - 10px) / 2)
         &:nth-of-type(3n)
           margin-right: 0
+    &--history
+      margin-left: 12px
+      .blog__list
+        & > li
+          width: 100%
+          margin-right: 0
 
   // max-width 1070px
+
+  @media screen and (max-width: 767px)
+    &--history
+      width: 100%
+      margin-left: 0
+      .blog__list
+        display: flex
+        flex-wrap: wrap
+        & > li
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+    &--page
+      .pager
+        margin-top: 0
+
+  // max-width 767px
 
   @media screen and (max-width: 700px)
     &__list
@@ -118,6 +187,13 @@
       order: -1
 
   // max-width 700px
+
+  @media screen and (max-width: 430px)
+    &--history
+      .blog__list
+        & > li
+          width: 100%
+          margin-right: 0
 
   @media screen and (max-width: 400px)
     &__list

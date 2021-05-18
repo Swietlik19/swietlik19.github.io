@@ -1,30 +1,36 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
+mixin modal__tracks()
+  section.modal.modal__tracks(id="modal__tracks")
     .modal__content
       button.close
 
       .form.wpcf7
         form.wpcf7-form
+          p.form__title Бронирование дорожки
+            span  (№ 4)
+
+          .form__time
+            span.form__time-item на 26.04
+            span.form__time-item с 18:00 по 19:00
 
           .form__item
             span.wpcf7-form-control-wrap.your-name.text-input
               input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
 
           .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+            span.wpcf7-form-control-wrap.your-tel.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваш телефон')
+
+          .form__item.form__item--submit
+            input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--red(type='submit', value='Забронировать')
 
           .form__item
             span.wpcf7-form-control-wrap.accept
               span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
                 span.wpcf7-list-item
                   label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
                       i.accept__icon
-
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
 
       // /. form
     // /. modal__content

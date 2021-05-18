@@ -49,6 +49,15 @@
       $(_href).addClass('active');
       $(_href + ' .modal__content').addClass('visible');
     }
+    if ( _href == '#modal__tracks' ) {
+      var _track = $(this).data('track');
+      var _begin = $(this).parents('.card__sub-tab').data('time-begin');
+      var _end = $(this).parents('.card__sub-tab').data('time-end');
+      var _date = $(this).parents('.card__tab').data('day');
+      $(_href).find('.form__time-item:first-of-type').text('на ' + _date);
+      $(_href).find('.form__time-item:nth-of-type(2)').text('с ' + _begin + ' по ' + _end);
+      $(_href).find('.form__title span').text('(№ ' + _track + ')');
+    }
   });
 
   function closeModal() {
@@ -94,7 +103,9 @@
     });
   }
 
-  toggleHidden('.faq',true);
+  toggleHidden('.jobs',true);
+  $('.jobs__col:first-of-type .jobs__item:first-of-type .open').addClass('active');
+  $('.jobs__col:first-of-type .jobs__item:first-of-type .hidden').show();
 
   // Кнопка "вверх"
   $(window).on("scroll", function() {
@@ -106,6 +117,11 @@
     event.preventDefault();
   });
 
+  $('.your-file input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).parents('label').find('.sl').text(fileName);
+  });
 
   /* СЛАЙДЕРЫ */
 
@@ -136,6 +152,42 @@
       },
     },
   });
+
+  $('.card__tracks').each(function(xi,xel) {
+    var xId = '#' + $(xel).attr('id');
+    var xBtns = $(xel).parents('.card__sub-tab').find('.card__tracks-btns');
+    var xTabs = false;
+    if ($(this).parents('.card__sub-tabs').find('.card__sub-tab').length > 0 && xi > 0) {
+      var xTab = $(xel).parents('.card__sub-tab');
+      xTabs = true;
+    }
+    var prodSlider = new Swiper(xId, {
+      slidesPerView: 2,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      spaceBetween: 8,
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+      on: {
+        init: function () {
+          $(window).on("load", function () {
+            if (xTabs) {
+              xTab.hide();
+            }
+          });
+        },
+      },
+      breakpoints: {
+        400: {
+          slidesPerView: 6,
+          spaceBetween: 32,
+        },
+      },
+    });
+  });
+
+  $('.card__tab:not(:first-of-type)').hide();
 
   $(window).resize(function() {
 

@@ -150,6 +150,18 @@
     }
   });
 
+  $('.js-portfolio-nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.portfolio__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
@@ -178,7 +190,7 @@
     });
   }
 
-  if (window.matchMedia('(max-width: 575px)').matches) {
+  if (window.matchMedia('(max-width: 670px)').matches) {
     $('.header__search').appendTo('.header__df');
   }
 
@@ -221,20 +233,36 @@
     });
   });
 
+  $('.show-more').click(function() {
+    $('.page-df').toggleClass('active');
+    if ( $('.page-df').hasClass('active') ) {
+      $('.show-more').text('Скрыть');
+    } else {
+      $('.show-more').text('Показать меню');
+    }
+  });
+
   /* СЛАЙДЕРЫ */
 
   var scr1Slider = new Swiper('#scr1__slider', {
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 5,
     watchSlidesProgress: true,
     loop: true,
     watchOverflow: true,
+    autoHeight: true,
     navigation: {
       nextEl: '.scr1__slider-btns .swiper-button-next',
       prevEl: '.scr1__slider-btns .swiper-button-prev',
     },
     pagination: {
       el: '.scr1__slider-btns .swiper-dots',
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
     },
   });
 
@@ -285,7 +313,7 @@
 
   var blogSlider = new Swiper('#blog__slider', {
     slidesPerView: 2,
-    spaceBetween: 7,
+    spaceBetween: 5,
     watchSlidesProgress: true,
     watchOverflow: true,
     breakpoints: {
@@ -301,15 +329,48 @@
     },
   });
 
+  var dealersBrandsSslider = new Swiper('#dealers__brands-slider', {
+    slidesPerView: 2,
+    spaceBetween: 5,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.dealers__brands-btns .swiper-button-next',
+      prevEl: '.dealers__brands-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.dealers__brands-btns .swiper-dots',
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 22,
+      },
+      767: {
+        slidesPerView: 5,
+        spaceBetween: 15,
+      },
+      575: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      450: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
   if (window.matchMedia('(max-width: 1170px)').matches) {
     var catalogSlider = new Swiper('#catalog__slider', {
       slidesPerView: 1,
-      spaceBetween: 8,
+      spaceBetween: 5,
       watchSlidesProgress: true,
       watchOverflow: true,
       breakpoints: {
         820: {
           slidesPerView: 3,
+          spaceBetween: 8,
         },
         420: {
           slidesPerView: 2,

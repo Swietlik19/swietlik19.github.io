@@ -229,13 +229,30 @@
     flex-shrink: 0
     display: flex
     align-self: stretch
+  &__heart
+    text-decoration: none
+    outline: none
+    display: flex
+    align-items: center
+    padding-right: 20px
+    border-right: 1px solid #f2f1f1
+    .icon
+      display: block
+      width: 22px
+      height: 21px
+      fill: #263238
+      transition: 0.4s ease-in-out
+    &:hover
+      .icon
+        fill: $accent
   &__login
     position: relative
     text-decoration: none
     outline: none
     display: flex
     align-items: center
-    padding-right: 62px
+    padding-right: 45px
+    padding-left: 20px
     border-right: 1px solid #f2f1f1
     .icon
       display: block
@@ -250,7 +267,7 @@
       content: ''
       position: absolute
       top: calc(50% - 5px)
-      right: 35px
+      right: 20px
       display: block
       width: 5px
       height: 9px
@@ -263,7 +280,7 @@
     outline: none
     display: flex
     align-items: center
-    padding-left: 36px
+    padding-left: 20px
     padding-right: 15px
     .icon
       display: block
@@ -520,10 +537,19 @@
     &.fixed
       .header__top
         display: flex
+    &__search
+      margin-right: 24px
 
   // max-width 991px
 
-  @media screen and (max-width: 575px)
+  @media screen and (max-width: 900px)
+    &__df
+      padding-top: 0
+      padding-bottom: 0
+
+  // max-width 900px
+
+  @media screen and (max-width: 670px)
     &__bottom
       display: block
     &__search
@@ -541,6 +567,38 @@
       width: 139px
       height: 33px
 
-  // max-width 575px
+  // max-width 670px
+
+  @media screen and (max-width: 430px)
+    .logo
+      &__wrap
+        margin-right: 13px
+    &__cart
+      padding-left: 8px
+      padding-right: 8px
+      &-num
+        top: 0px
+        right: -2px
+        width: 15px
+        height: 15px
+        font-size: 11px
+      .icon
+        width: 16px
+        height: 17px
+    &__heart
+      padding-right: 10px
+      .icon
+        width: 18px
+        height: 18px
+    &__login
+      padding-right: 21px
+      padding-left: 10px
+      .icon
+        width: 18px
+        height: 17px
+      &::after
+        right: 7px
+
+  // max-width 430px
 
 /* .header */

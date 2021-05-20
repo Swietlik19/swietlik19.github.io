@@ -22,8 +22,9 @@
       .swiper-button-next
         right: -15px
     &-item
-      min-height: 398px
-      padding: 32px 30px 53px 35px
+      position: relative
+      // min-height: 398px
+      // padding: 32px 30px 53px 35px
       border-radius: 8px
       overflow: hidden
       transition: 0.4s ease-in-out
@@ -32,6 +33,7 @@
         box-shadow: 0 5px 15px rgba(#000, 0.2)
   &__df
     display: flex
+    align-items: flex-start
     margin-bottom: 37px
   &__add
     width: 32.98392732354997%
@@ -61,6 +63,9 @@
       font-weight: 500
       text-transform: uppercase
   &__form
+    position: absolute
+    bottom: 40px
+    left: 40px
     max-width: 420px
   &__add
     width: 32.98392732354997%
@@ -139,8 +144,8 @@
       font-size: 16px
     &__slider
       &-item
-        min-height: 338px
-        padding: 32px 30px 33px 35px
+        // min-height: 338px
+        // padding: 32px 30px 33px 35px
     &__add
       & > li
         min-height: 157px
@@ -179,8 +184,8 @@
         width: 62.640112%
         margin-right: 15px
       &-item
-        min-height: 300px
-        padding: 25px 20px 30px
+        // min-height: 300px
+        // padding: 25px 20px 30px
       &-btns
         .swiper-button-prev,
         .swiper-button-next
@@ -215,8 +220,8 @@
         width: 100%
         margin-right: 0
         margin-bottom: 20px
-      &-item
-        min-height: 0
+      // &-item
+      //   min-height: 0
     &__title
       max-width: 380px
       font-size: 18px
@@ -249,6 +254,8 @@
           max-height: 27px
       &-text
         font-size: 13px
+    &__form
+      left: 20px
 
   // max-width 767px
 
@@ -269,6 +276,20 @@
   // max-width 650px
 
   @media screen and (max-width: 500px)
+    &__slider
+      overflow: visible
+      &-btns
+        display: none
+    &__form
+      bottom: 10px
+      .form__item
+        &:first-of-type
+          display: none
+        &--submit
+          .xbtn
+            height: 45px
+            padding-left: 16px
+            padding-right: 16px
     &__add
       display: block
       & > li

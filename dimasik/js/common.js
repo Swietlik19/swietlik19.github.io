@@ -102,6 +102,26 @@
 
   toggleHidden('.faq',true);
 
+  $('.scr1__card-active').click(function() {
+    $('.scr1__card-hidden').toggle();
+  })
+
+  $(document).mouseup(function (e) {
+    var container = $(".scr1__card-hidden");
+    if (container.has(e.target).length === 0){
+      $('.scr1__card-hidden').hide();
+    }
+  });
+
+
+  $('.scr1__card-hidden-top').click(function() {
+    $(this).siblings('.scr1__card-hidden-bottom').toggle();
+    $(this).toggleClass('active');
+  });
+
+  $('.scr1__card-hidden-item:first-of-type .scr1__card-hidden-top').addClass('active');
+  $('.scr1__card-hidden-item:first-of-type .scr1__card-hidden-bottom').show();
+
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -168,7 +188,7 @@
     $(".quantity").each(function(xi,xel) {
       var $quantityArrowMinus = $(xel).find(".quantity-arrow-minus");
       var $quantityArrowPlus = $(xel).find(".quantity-arrow-plus");
-      var $price = $(xel).siblings('.prod-item__price').find('span');
+      var $price = $(xel).siblings('.prod__price--sum').find('span');
       var $priceText = + $price.text();
       var $quantityNum = $(xel).find(".quantity-num");
 
@@ -189,7 +209,7 @@
       }
 
       function countPrice() {
-        $price.text($priceText * $quantityNum.val());
+        $price.text(' ' + ($priceText * $quantityNum.val()).toLocaleString('ru'));
       }
     });
   })();
@@ -441,10 +461,9 @@
 
   var galleryThumbs = new Swiper('#scr1__card-thumbs', {
     slidesPerView: 2,
-    spaceBetween: 8,
+    spaceBetween: 12,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
-    centerInsufficientSlides: true,
     navigation: {
       nextEl: '.scr1__card-thumbs-btns .swiper-button-next',
       prevEl: '.scr1__card-thumbs-btns .swiper-button-prev',
@@ -454,8 +473,14 @@
     },
     breakpoints: {
       991: {
+        slidesPerView: 4,
+        spaceBetween: 12,
+        direction: "vertical",
+      },
+      767: {
         slidesPerView: 3,
-        spaceBetween: 18,
+        spaceBetween: 12,
+        direction: "vertical",
       },
     },
   });

@@ -49,15 +49,6 @@
       $(_href).addClass('active');
       $(_href + ' .modal__content').addClass('visible');
     }
-    if ( _href == '#modal__tracks' ) {
-      var _track = $(this).data('track');
-      var _begin = $(this).parents('.card__sub-tab').data('time-begin');
-      var _end = $(this).parents('.card__sub-tab').data('time-end');
-      var _date = $(this).parents('.card__tab').data('day');
-      $(_href).find('.form__time-item:first-of-type').text('на ' + _date);
-      $(_href).find('.form__time-item:nth-of-type(2)').text('с ' + _begin + ' по ' + _end);
-      $(_href).find('.form__title span').text('(№ ' + _track + ')');
-    }
   });
 
   function closeModal() {
@@ -107,6 +98,48 @@
   $('.jobs__col:first-of-type .jobs__item:first-of-type .open').addClass('active');
   $('.jobs__col:first-of-type .jobs__item:first-of-type .hidden').show();
 
+  $('.card__cell--free').click(function() {
+    var _line = $(this).data('book-line');
+    var _date = $(this).data('book-date');
+    var _time = $(this).data('book-time');
+
+    $('#modal__tracks .form__text--line b').text(_line);
+    $('#modal__tracks .form__text--date').text(_date);
+    $('#modal__tracks .form__text--time').text(_time);
+
+    $('#modal__tracks').addClass('active');
+    $('#modal__tracks .modal__content').addClass('visible');
+  });
+
+
+  if (window.matchMedia('(max-width: 1170px)').matches) {
+    $('.card__cell--free').each(function(xi,xel) {
+      var _cost = $(xel).data('book-price');
+      $(xel).text(_cost);
+    });
+  } else {
+    $('.card__cell--free').hover(function() {
+      var _cost = $(this).data('book-price');
+      $('.card__tooltip b').text(_cost);
+      $('.card__tooltip').appendTo($(this)).addClass('active');
+    }, function() {
+      $('.card__tooltip').removeClass('active');
+    });
+  }
+
+  // Табы
+  $('.card__timeline-item').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().find('.card__timeline-item').removeClass('current');
+    $(this).addClass('current');
+    $('.card__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
   // Кнопка "вверх"
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
@@ -121,6 +154,32 @@
     var fileName = $(this).val();
     fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
     $(this).parents('label').find('.sl').text(fileName);
+  });
+
+  $('.side-menu .menu > li').hover(function() {
+    $(this).siblings().find('.sub-menu').hide();
+    $(this).siblings().find('.arrow').removeClass('active');
+    $(this).find('.sub-menu').show();
+    $(this).find('.arrow').addClass('active');
+    $('.side-menu').addClass('wide');
+  });
+  $('.page_wr').hover(function() {
+    $('.side-menu .menu .sub-menu').hide();
+    $('.side-menu .menu > li .arrow').removeClass('active');
+    $('.side-menu').removeClass('wide');
+  });
+  $('.side-menu .menu > li .arrow').click(function(e) {
+    e.preventDefault();
+  });
+
+  $('.scr_map__slider .swiper-slide a').click(function(e) {
+    e.preventDefault();
+    var _href = $(this).attr('href');
+    $('.scr_map__tab').not(_href).hide();
+    $(_href).fadeIn();
+
+    $(this).parents('.swiper-slide').siblings().removeClass('swiper-slide-active');
+    $(this).parents('.swiper-slide').addClass('swiper-slide-active');
   });
 
   /* СЛАЙДЕРЫ */
@@ -149,6 +208,84 @@
       500: {
         slidesPerView: 3,
         spaceBetween: 15,
+      },
+    },
+  });
+
+  var photosSlider = new Swiper('#photos__slider', {
+    slidesPerView: 1,
+    spaceBetween: 8,
+    watchSlidesProgress: true,
+    loop: true,
+
+    navigation: {
+      nextEl: '.photos__slider-btns .swiper-button-next',
+      prevEl: '.photos__slider-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.photos__slider-btns .swiper-dots',
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 1,
+        spaceBetween: 32,
+      },
+      500: {
+        slidesPerView: 1,
+        spaceBetween: 12,
+      },
+    },
+  });
+
+  var scrMapSlider = new Swiper('#scr_map__slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 23,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    // loop: true,
+    // loopedSlides: 1,
+    // centeredSlides: true,
+    navigation: {
+      nextEl: '.scr_map__wrap .swiper-button-next',
+      prevEl: '.scr_map__wrap .swiper-button-prev',
+    },
+    breakpoints: {
+      // 1400: {
+      //   slidesPerView: 1,
+      //   spaceBetween: 32,
+      // },
+      // 500: {
+      //   slidesPerView: 1,
+      //   spaceBetween: 12,
+      // },
+    },
+  });
+
+  var cardTimeline = new Swiper('#card__timeline', {
+    slidesPerView: 1,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.card__timeline-wrap .swiper-button-next',
+      prevEl: '.card__timeline-wrap .swiper-button-prev',
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 7,
+      },
+      1170: {
+        slidesPerView: 6,
+      },
+      575: {
+        slidesPerView: 5,
+      },
+      500: {
+        slidesPerView: 4,
+      },
+      410: {
+        slidesPerView: 3,
+      },
+      300: {
+        slidesPerView: 2,
       },
     },
   });

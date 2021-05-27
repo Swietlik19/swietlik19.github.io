@@ -1,0 +1,68 @@
+.photos
+  position: relative
+  padding-top: 25px
+  padding-bottom: 20px
+  background: #F7F6F6
+  &__wrap
+    position: relative
+    padding-top: 39px
+  &__cont
+    overflow: hidden
+  &__slider
+    max-width: 664px
+    margin-left: auto
+    margin-right: auto
+    &-btns
+      display: flex
+      justify-content: space-between
+      padding-top: 25px
+  &__item
+    position: relative
+    display: block
+    text-decoration: none
+    outline: none
+    height: 350px
+    img
+      display: block
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: block
+      background: rgba(#000,0.4) url('../img/svg/show.svg') no-repeat center center
+      background-size: 44px 44px
+      opacity: 0
+      transition: 0.4s ease-in-out
+    &:hover
+      &::before
+        opacity: 1
+
+
+  @media screen and (max-width: 1400px)
+    &__slider
+      max-width: 480px
+    &__item
+      height: 250px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 767px)
+    &__slider
+      max-width: 300px
+    &__item
+      height: 220px
+
+  // max-width 767px
+
+  @media screen and (max-width: 400px)
+    &__slider
+      max-width: 230px
+    &__item
+      height: 160px
+
+  // max-width 400px
+
+/* photos */

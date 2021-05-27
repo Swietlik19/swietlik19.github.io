@@ -1,0 +1,92 @@
+.modal
+  position: relative
+  display: block
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  min-height: 0
+  background-color: rgba(0,0,0,0.4)
+  z-index: 1000
+  opacity: 0
+  overflow: hidden
+  &.active
+    display: block
+    opacity: 1
+    min-height: 100vh
+  &__content
+    display: flex
+    justify-content: center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+
+    width: 432px
+    max-width: 100%
+    opacity: 0
+    transition: 0.7s
+
+    &.visible
+      opacity: 1
+
+  .form
+    max-height: 100vh
+    overflow: auto
+    width: 100%
+    z-index: 0
+    &__title
+      margin-bottom: 25px
+      font-size: 23px
+      text-align: center
+      width: calc(100% + 30px)
+      margin-left: -15px
+
+  .close
+    background: none
+    border: none
+    outline: none
+
+    cursor: pointer
+    z-index: 300
+    transition: 0.3s
+
+    position: absolute
+    top: 9px
+    right: 9px
+
+    display: block
+    width: 30px
+    height: 30px
+    &::before,&::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+
+      display: block
+      width: 20px
+      height: 3px
+      background-color: $accent
+      border-radius: 1.5px
+      transition: 0.3s
+
+    &::before
+      transform: translate(-50%,-50%) rotate(45deg)
+
+    &::after
+      transform: translate(-50%,-50%) rotate(-45deg)
+
+    &:hover
+      &::before,&::after
+        background-color: #000
+
+  // @media screen and (max-width: 767px)
+
+  // max-width 767px
+
+  // @media screen and (max-width: 575px)
+
+  // max-width 575px
+
+ /* modal */

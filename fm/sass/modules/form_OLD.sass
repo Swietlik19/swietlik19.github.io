@@ -1,0 +1,172 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+  padding: 35px 35px 40px
+  background: #FFFFFF
+  box-shadow: 0px 10px 20px rgba(200, 200, 200, 0.64)
+  text-align: center
+  &__title
+    font-weight: bold
+    font-size: 28px
+    span
+      display: block
+      font-weight: 500
+  &__desc
+    margin-bottom: 28px
+    font-size: 16px
+    line-height: 1.6875 /* 27 / 16 */
+  &__item
+    margin-bottom: 25px
+    &--submit
+      width: 100%
+      max-width: 280px
+      margin: 35px auto 32px
+      .xbtn
+        width: 100%
+    &:last-of-type
+      margin-bottom: 0
+  input,textarea
+    font-family: $form-font
+  .text-input
+    display: block
+    width: 100%
+    max-width: 280px
+    margin: 0 auto
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+      width: 100%
+      height: 50px
+      padding-left: 20px
+      background: #F7F6F6
+      border: 1px solid transparent
+      box-shadow: inset 0px 4px 8px rgba(200, 200, 200, 0.5)
+      color: #5F5F5F
+
+      @include placeholder(#5F5F5F, 14px)
+      &:focus
+        @include placeholder(transparent, 14px)
+
+      &:hover
+        border-color: $accent
+
+    textarea
+      // height: 136px
+
+  &__time
+    display: flex
+    justify-content: space-between
+    width: calc(100% - 40px)
+    margin-left: 20px
+    margin-bottom: 26px
+    &-item
+      position: relative
+      display: flex
+      align-items: center
+      font-weight: 500
+      font-size: 16px
+      color: #000000
+      &::before
+        content: ''
+        display: block
+        width: 20px
+        height: 20px
+        margin-right: 11px
+        background: transparent url('../img/svg/calendar.svg') no-repeat center center
+        background-size: contain
+      &:nth-of-type(2)
+        &::before
+          background-image: url('../img/svg/time.svg')
+
+
+  .accept
+    display: block
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+      font-size: 14px
+      line-height: 1.2
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 13px
+        height: 13px
+        border: 1px solid #931B1B
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent2
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  @media screen and (max-width: 1170px)
+    padding: 25px 25px 30px
+    &__title
+      font-size: 23px
+    &__desc
+      margin-bottom: 16px
+      font-size: 14px
+      line-height: 1.5
+    .accept
+      label
+        font-size: 13px
+    &__item
+      margin-bottom: 18px
+      &--submit
+        margin: 25px auto 22px
+
+  //   max-width 1170px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  @media screen and (max-width: 500px)
+    &__title
+      font-size: 20px
+      br
+        display: none
+    &__desc
+      font-size: 13px
+      br
+        display: none
+    .accept
+      label
+        font-size: 12px
+
+  //   max-width 500px
+
+ /* form */

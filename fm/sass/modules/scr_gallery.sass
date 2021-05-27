@@ -1,0 +1,128 @@
+.gallery
+  position: relative
+  .breadcrumbs
+    margin-bottom: 30px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    padding-top: 34px
+    & > li
+      width: calc((100% - 32px) / 2)
+      margin-right: 32px
+      padding-bottom: 63px
+      &:nth-of-type(6n + 2),
+      &:nth-of-type(6n + 3),
+      &:nth-of-type(6n + 4),
+      &:nth-of-type(6n + 5)
+        width: calc( (((100% - 32px) / 2) - 32px) / 2)
+      &:nth-of-type(3n)
+        margin-right: 0
+  &__top
+    position: relative
+    display: block
+    text-decoration: none
+    outline: none
+    height: 356px
+    margin-bottom: 24px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: block
+      background: rgba(#000,0.4) url('../img/svg/show.svg') no-repeat center center
+      background-size: 44px 44px
+      transition: 0.4s ease-in-out
+    &--video
+      &::before
+        background-image: url('../img/svg/play.svg')
+    &:hover
+      &::before
+        background-color: rgba(#000,0.7)
+  &__title
+    margin-top: 0
+    margin-bottom: 0
+    font-weight: bold
+    font-size: 18px
+    color: #000000
+
+
+  @media screen and (max-width: 1400px)
+    &__list
+      & > li
+        width: calc((100% - 20px) / 2)
+        margin-right: 20px
+        padding-bottom: 30px
+        &:nth-of-type(6n + 2),
+        &:nth-of-type(6n + 3),
+        &:nth-of-type(6n + 4),
+        &:nth-of-type(6n + 5)
+          width: calc( (((100% - 20px) / 2) - 20px) / 2)
+        &:nth-of-type(3n)
+          margin-right: 0
+    &__top
+      height: 300px
+    &__title
+      font-size: 16px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        padding-bottom: 20px
+        &:nth-of-type(6n + 2),
+        &:nth-of-type(6n + 3),
+        &:nth-of-type(6n + 4),
+        &:nth-of-type(6n + 5)
+          width: calc( (((100% - 10px) / 2) - 10px) / 2)
+        &:nth-of-type(3n)
+          margin-right: 0
+    &__top
+      height: 240px
+    &__title
+      font-size: 14px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 700px)
+    &__list
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+        padding-bottom: 20px
+        &:nth-of-type(6n + 2),
+        &:nth-of-type(6n + 3),
+        &:nth-of-type(6n + 4),
+        &:nth-of-type(6n + 5)
+          width: calc((100% - 10px) / 2)
+        &:nth-of-type(3n)
+          margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+
+  // max-width 700px
+
+  @media screen and (max-width: 400px)
+    .breadcrumbs
+      margin-bottom: 20px
+    &__list
+      padding-top: 24px
+    &__top
+      height: 160px
+      margin-bottom: 10px
+      &::before
+        background-size: 30px 30px
+    &__title
+      font-size: 13px
+
+  // max-width 400px
+
+/* gallery */

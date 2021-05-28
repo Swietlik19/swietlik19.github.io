@@ -224,7 +224,12 @@
 
 
   $('.page_wr').hover(function() {
-    if ( !($('.scr_map__map').is(':hover')) ) {
+    var _check = true;
+    $('.scr_map__map').each(function(xi,xel) {
+      if ($(xel).is(':hover')) _check = false;
+    });
+
+    if ( _check ) {
       $('.scr_map__tooltip').removeClass('active');
       $('.fil6').removeClass('active');
     }

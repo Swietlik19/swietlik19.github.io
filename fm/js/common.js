@@ -176,10 +176,58 @@
     e.preventDefault();
     var _href = $(this).attr('href');
     $('.scr_map__tab').not(_href).hide();
+    $('.scr_map__tooltip').removeClass('active');
+    $('.fil6').removeClass('active');
     $(_href).fadeIn();
 
     $(this).parents('.swiper-slide').siblings().removeClass('swiper-slide-active');
     $(this).parents('.swiper-slide').addClass('swiper-slide-active');
+  });
+
+
+  /* Всплывающие подсказки для интерактивной карты */
+  function tooltipCoords(link) {
+      var myPath = $(link);
+      var popup = $('.scr_map__tooltip');
+      $(popup).addClass('active');
+      if ( !(window.matchMedia('(max-width: 991px)').matches) ) {
+        var w = myPath[0].getBoundingClientRect().width;
+        var h = myPath[0].getBoundingClientRect().height;
+
+        var top = $(link).offset().top - $(popup).outerHeight() + h / 6;
+        var left = $(link).offset().left + w / 2 - $(popup).outerWidth() / 2;
+        $(popup).offset({top:top, left:left});
+      }
+  }
+
+  $('.scr_map__part').hover(function() {
+    $('.fil6').removeClass('active');
+    $(this).find('.fil6').addClass('active');
+    if ( $(this).hasClass('scr_map__part--rent') ) {
+      $('.scr_map__img').hide();
+      $('.scr_map__content a').hide();
+      $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
+      $('.scr_map__tooltip span').text('Аренда');
+    } else {
+      var _title = $(this).data('map-title');
+      var _imgUrl = $(this).data('map-img');
+      var _linkUrl = $(this).data('map-link');
+      $('.scr_map__img').show();
+      $('.scr_map__tooltip').removeClass('scr_map__tooltip--rent');
+      $('.scr_map__tooltip span').text(_title);
+      $('.scr_map__tooltip img').attr('src',_imgUrl);
+      $('.scr_map__tooltip a').attr('href',_linkUrl);
+      $('.scr_map__content a').show();
+    }
+    tooltipCoords(this);
+  });
+
+
+  $('.page_wr').hover(function() {
+    if ( !($('.scr_map__map').is(':hover')) ) {
+      $('.scr_map__tooltip').removeClass('active');
+      $('.fil6').removeClass('active');
+    }
   });
 
   /* СЛАЙДЕРЫ */
@@ -239,25 +287,17 @@
 
   var scrMapSlider = new Swiper('#scr_map__slider', {
     slidesPerView: 'auto',
-    spaceBetween: 23,
+    spaceBetween: 10,
     watchSlidesProgress: true,
     slideToClickedSlide: true,
-    // loop: true,
-    // loopedSlides: 1,
-    // centeredSlides: true,
     navigation: {
       nextEl: '.scr_map__wrap .swiper-button-next',
       prevEl: '.scr_map__wrap .swiper-button-prev',
     },
     breakpoints: {
-      // 1400: {
-      //   slidesPerView: 1,
-      //   spaceBetween: 32,
-      // },
-      // 500: {
-      //   slidesPerView: 1,
-      //   spaceBetween: 12,
-      // },
+      500: {
+        spaceBetween: 23,
+      },
     },
   });
 

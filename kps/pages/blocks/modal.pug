@@ -1,31 +1,199 @@
-mixin modal__reviews()
-  section.modal.modal__reviews(id="modal__reviews")
+mixin modal__callback()
+  section.modal.modal__callback(id="modal__callback")
     .modal__content
       button.close
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#close")
 
-      .form.wpcf7
+      .form.form--general.wpcf7
         form.wpcf7-form
+          p.form__title Заказать звонок
+          p.form__desc Заполните форму и наш менеджер свяжется с вами в течение 30 минут
 
           .form__item
             span.wpcf7-form-control-wrap.your-name.text-input
-              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Ваше имя')
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
 
           .form__item
-            span.wpcf7-form-control-wrap.your-review.textarea-input.text-input
-              textarea#review.wpcf7-form-control.wpcf7-textarea(name='your-review', cols='40', rows='10', aria-invalid='false', placeholder='Ваш вопрос')
+            span.wpcf7-form-control-wrap.your-tel.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Отправить')
 
           .form__item
             span.wpcf7-form-control-wrap.accept
               span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
                 span.wpcf7-list-item
                   label
-                    input(type='checkbox', name='accept', value='Я согласен с политикой конфиденциальности', checked='checked')
-                    span.wpcf7-list-item-label Я согласен с политикой конфиденциальности
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
                       i.accept__icon
 
-          .form__item.form__item--submit
-            input.wpcf7-form-control.wpcf7-submit.btn--grad(type='submit', value='Отправить')
+    // /. modal__content
+  // /. modal
 
-      // /. form
+//- mixin modal__pay()
+//-   section.modal.modal__pay(id="modal__pay")
+//-     .modal__content
+//-       button.close
+//-         svg.icon
+//-           use(xlink:href="img/svg/sprite.svg#close")
+
+//-       .form.form--general.wpcf7
+//-         form.wpcf7-form
+//-           p.form__title Рассчитать стоимость доставки по Крыму
+
+//-           .form__item
+//-             span.wpcf7-form-control-wrap.your-name.text-input
+//-               label Выберите район
+//-               input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+
+//-           .form__item
+//-             span.wpcf7-form-control-wrap.your-tel.text-input
+//-               input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+//-           .form__item.form__item--submit
+//-             .btn__wrap.btn__wrap--grad
+//-               input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Отправить')
+
+//-           .form__item
+//-             span.wpcf7-form-control-wrap.accept
+//-               span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+//-                 span.wpcf7-list-item
+//-                   label
+//-                     input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+//-                     span.wpcf7-list-item-label Согласие на обработку персональных данных
+//-                       i.accept__icon
+
+//-     // /. modal__content
+//-   // /. modal
+
+mixin modal__pay()
+  section.modal.modal__pay.active(id="modal__pay")
+    .modal__content.visible
+      button.close
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#close")
+
+      .form.form--general.wpcf7
+        form.wpcf7-form
+          p.form__title Рассчитать стоимость доставки по Крыму
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-district.text-input
+              label Выберите район
+
+              select
+                option(value="Симферопольский район" selected) Симферопольский район
+                option(value="Симферопольский район") Симферопольский район
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-place.text-input
+              label Населенный пункт
+
+              //. В value указывать стоимость
+              select
+                option(value="100" selected) Гвардейское
+                option(value="150.55") Второе
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-weight.text-input
+              label Выберите вес груза
+
+              //. В value указывать стоимость
+              select
+                option(value="150" selected) от 5 м до 7 м
+                option(value="250") от 7 м до 9 м
+
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Рассчитать')
+
+          p.form__text Ориентировочная стоимсть доставки
+          b.form__sum
+            span 0
+            |  руб.
+
+    // /. modal__content
+  // /. modal
+
+mixin modal__price()
+  section.modal.modal__price(id="modal__price")
+    .modal__content
+      button.close
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#close")
+
+      .form.form--general.wpcf7
+        form.wpcf7-form
+          p.form__title Получить прайс
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-name.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-company.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-company(type='text', name='your-company', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Компания')
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-tel.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Отправить')
+
+          .form__item
+            span.wpcf7-form-control-wrap.accept
+              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                span.wpcf7-list-item
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
+                      i.accept__icon
+
+    // /. modal__content
+  // /. modal
+
+mixin modal__order()
+  section.modal.modal__order.active(id="modal__order")
+    .modal__content.visible
+      button.close
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#close")
+
+      .form.form--general.wpcf7
+        form.wpcf7-form
+          p.form__title Вызвать замерщика
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-name.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-tel.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+          .form__item
+            span.wpcf7-form-control-wrap.your-address.text-input
+              input.wpcf7-form-control.wpcf7-text.wpcf7-address(type='text', name='your-address', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Адрес')
+
+          .form__item.form__item--submit
+            .btn__wrap.btn__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Отправить')
+
+          .form__item
+            span.wpcf7-form-control-wrap.accept
+              span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                span.wpcf7-list-item
+                  label
+                    input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                    span.wpcf7-list-item-label Согласие на обработку персональных данных
+                      i.accept__icon
+
     // /. modal__content
   // /. modal

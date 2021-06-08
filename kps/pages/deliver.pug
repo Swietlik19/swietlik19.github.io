@@ -1,0 +1,64 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Template Basic Images Start
+    //- link(rel='icon', sizes='32x32', href='img/favicon/favicon-32x32.png')
+    //- link(rel='icon', sizes='16x16', href='img/favicon/favicon-16x16.png')
+    // Template Basic Images End
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#263238')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    //- include blocks/script-map.pug
+    include blocks/styles.pug
+    include blocks/header.pug
+    include blocks/breadcrumbs.pug
+    include blocks/socials.pug
+
+    include blocks/scr_deliver.pug
+
+    include blocks/footer.pug
+    include blocks/socials.pug
+
+    +styles
+
+  body
+
+    +header("a"," header--inner")
+
+    #page_wr.page_wr
+      aside.page-socials
+        a.page-socials-item.page-socials-item--cart(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#cart")
+        a.page-socials-item.page-socials-item--viber(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#viber")
+        a.page-socials-item.page-socials-item--wa(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#wa")
+        a.page-socials-item.page-socials-item--calc(href="#")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#calculator")
+
+      +scr_deliver
+
+      a.to-top(href="#page_wr")
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#arrow")
+
+    +footer("a")
+
+    +scripts
+    //- +script-map

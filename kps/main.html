@@ -41,7 +41,22 @@
               </form>
             </div>
           </div><a class="header__callback open-modal" href="#modal__callback">Заказать обратный звонок</a>
-          <div class="header__item header__item--customers"><span>Покупателям</span><span class="hidden"></span></div>
+          <div class="header__item header__item--customers"><span>Покупателям</span>
+            <div class="hidden">
+              <ul class="menu">
+                <li class="menu-item"><a href="#">О нас</a></li>
+                <li class="menu-item"><a href="#">Оплата</a></li>
+                <li class="menu-item active"><a href="#">Наши объекты</a></li>
+                <li class="menu-item"><a href="#">Доставка</a></li>
+                <li class="menu-item"><a href="#">Обмен и возврат товара</a></li>
+                <li class="menu-item"><a href="#">Сертификаты</a></li>
+                <li class="menu-item"><a href="#">Персональные данные</a></li>
+                <li class="menu-item"><a href="#">Оптовикам</a></li>
+                <li class="menu-item"><a href="#">Наши партнеры</a></li>
+                <li class="menu-item"><a href="#">Вопрос ответ</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="header__item header__item--customers"><span>Дилерам</span></div><a class="header__item" href="#"><span>Контакты</span></a>
         </div>
         <!-- /.header__top-->
@@ -200,7 +215,7 @@
               <li style="background: transparent url('img/scr1-add-1.jpg') no-repeat left center; background-size: cover;">
                 <p class="scr1__add-text"><strong>Рассчитай</strong><br> онлайн стоимость<br> кровли</p>
                 <div class="scr1__add-btns">
-                  <div class="btn__wrap"><a class="xbtn xbtn--trsp" href="#">Рассчитать крышу</a></div>
+                  <div class="btn__wrap"><a class="xbtn xbtn--trsp open-modal" href="#modal__pay">Рассчитать крышу</a></div>
                 </div>
               </li>
               <li style="background: transparent url('img/scr1-add-2.jpg') no-repeat left center; background-size: cover;">
@@ -382,6 +397,9 @@
                             <button class="prod__btn prod__btn--like" type="button">
                               <svg class="icon">
                                 <use xlink:href="img/svg/sprite.svg#heart"></use>
+                              </svg>
+                              <svg class="icon">
+                                <use xlink:href="img/svg/sprite.svg#heart--filled"></use>
                               </svg>
                             </button>
                           </div>
@@ -902,6 +920,98 @@
       <!-- /.footer__bottom-->
     </footer>
     <!-- /.footer-->
+    <section class="modal modal__callback" id="modal__callback">
+      <div class="modal__content">
+        <button class="close">
+          <svg class="icon">
+            <use xlink:href="img/svg/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="form form--general wpcf7">
+          <form class="wpcf7-form">
+            <p class="form__title">Заказать звонок</p>
+            <p class="form__desc">Заполните форму и наш менеджер свяжется с вами в течение 30 минут</p>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Имя"></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span></div>
+            <div class="form__item form__item--submit">
+              <div class="btn__wrap btn__wrap--grad">
+                <input class="wpcf7-form-control wpcf7-submit xbtn xbtn--grad" type="submit" value="Отправить">
+              </div>
+            </div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                    <label>
+                      <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Согласие на обработку персональных данных<i class="accept__icon"></i></span>
+                    </label></span></span></span></div>
+          </form>
+        </div>
+      </div>
+      <!-- /. modal__content-->
+    </section>
+    <!-- /. modal-->
+    <section class="modal modal__price" id="modal__price">
+      <div class="modal__content">
+        <button class="close">
+          <svg class="icon">
+            <use xlink:href="img/svg/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="form form--general wpcf7">
+          <form class="wpcf7-form">
+            <p class="form__title">Получить прайс</p>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Имя"></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-company text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-company" type="text" name="your-company" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Компания"></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span></div>
+            <div class="form__item form__item--submit">
+              <div class="btn__wrap btn__wrap--grad">
+                <input class="wpcf7-form-control wpcf7-submit xbtn xbtn--grad" type="submit" value="Отправить">
+              </div>
+            </div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                    <label>
+                      <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Согласие на обработку персональных данных<i class="accept__icon"></i></span>
+                    </label></span></span></span></div>
+          </form>
+        </div>
+      </div>
+      <!-- /. modal__content-->
+    </section>
+    <!-- /. modal-->
+    <section class="modal modal__order active" id="modal__order">
+      <div class="modal__content visible">
+        <button class="close">
+          <svg class="icon">
+            <use xlink:href="img/svg/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="form form--general wpcf7">
+          <form class="wpcf7-form">
+            <p class="form__title">Вызвать замерщика</p>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-name text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-name" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Имя"></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-tel text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-tel" type="tel" name="your-tel" value="" size="40" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span></div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap your-address text-input">
+                <input class="wpcf7-form-control wpcf7-text wpcf7-address" type="text" name="your-address" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Адрес"></span></div>
+            <div class="form__item form__item--submit">
+              <div class="btn__wrap btn__wrap--grad">
+                <input class="wpcf7-form-control wpcf7-submit xbtn xbtn--grad" type="submit" value="Отправить">
+              </div>
+            </div>
+            <div class="form__item"><span class="wpcf7-form-control-wrap accept"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item">
+                    <label>
+                      <input type="checkbox" name="accept" value="Согласие на обработку персональных данных" checked="checked"><span class="wpcf7-list-item-label">Согласие на обработку персональных данных<i class="accept__icon"></i></span>
+                    </label></span></span></span></div>
+          </form>
+        </div>
+      </div>
+      <!-- /. modal__content-->
+    </section>
+    <!-- /. modal-->
     <script src="js//libs/jquery.min.js"></script>
     <script src="js/libs/jquery.lazyload.min.js"></script>
     <script src="js/libs/wow.min.js"></script>

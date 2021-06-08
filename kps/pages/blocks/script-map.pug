@@ -54,4 +54,76 @@ mixin script-map()
         }
       }
 
+
+      xObjectArr = [
+        {
+          coords: [44.975968, 34.156031],
+          title: 'г. Симферополь, ул. Глинки, 67В',
+        },
+        {
+          coords: [44.915496, 34.139439],
+          title: 'г. Симферополь, ул. Беспалова, 158',
+        }
+      ];
+
+      createMap2('contacts__map--offices',[44.975968, 34.156031])
+
+      function createMap2(xID,xCenter) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: xCenter,
+                  zoom: 12
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+                // Создаём макет содержимого.
+                  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                      '<div>$[properties.iconContent]</div>'
+                  ),
+
+                  xObjectArr.forEach(function(xel,xi) {
+                    window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                      iconContent: '',
+                      balloonContent: xel.title,
+                    }, {
+                      // Опции.
+                      balloonPanelMaxMapArea: 0,
+                      openTimeout: 0,
+
+                      // Необходимо указать данный тип макета.
+                      iconLayout: 'default#imageWithContent',
+                      // Своё изображение иконки метки.
+                      iconImageHref: 'img/pin.png',
+                      // Размеры метки.
+                      iconImageSize: [56, 61],
+                      // Смещение левого верхнего угла иконки относительно
+                      // её "ножки" (точки привязки).
+                      iconImageOffset: [-15, -50],
+                      // Макет содержимого.
+                      iconContentLayout: MyIconContentLayout
+                    });
+                  });
+
+              xObjectArr.forEach(function(xel,xi) {
+
+                myMap.geoObjects
+                  .add(window["myPlacemark"+xi]);
+
+              });
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+
     })(jQuery);

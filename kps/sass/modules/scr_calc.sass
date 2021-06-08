@@ -1,0 +1,225 @@
+.scr_calc
+  position: relative
+  padding-bottom: 89px
+  &__title
+    margin-top: 0
+    margin-bottom: 21px
+    font-size: 20px
+    font-weight: 600
+    span
+      display: inline-block
+      margin-right: 15px
+      font-size: 20px
+      font-weight: 900
+      color: #f5161f
+  &__nav
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    padding-bottom: 20px
+    & > li
+      flex-grow: 1
+      margin-right: 30px
+      &:last-of-type
+        margin-right: 0
+      & > label
+        input
+          display: none
+        & > a
+          text-decoration: none
+          outline: none
+          transition: 0.4s ease-in-out
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          height: 185px
+          padding: 10px
+          background-color: #ffffff
+          border: 1px solid #b7b7b7
+          border-radius: 6px
+          text-align: center
+          font-size: 16px
+          font-weight: 500
+          img
+            display: block
+            width: 86px
+            margin-bottom: 21px
+          &:hover
+            background-color: #f7f7f7
+            border-color: #263238
+      &.current
+        & > label
+          & > a
+            background-color: #f7f7f7
+            border-color: #263238
+    &2
+      padding-bottom: 49px
+      & > li
+        flex-grow: 0
+        & > label
+          & > a
+            min-width: 260px
+            height: 70px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-bottom: 44px
+  &__tab
+    &:not(:first-of-type)
+      display: none
+  &__desc
+    display: block
+    margin-bottom: 21px
+    font-size: 14px
+    font-weight: 600
+    text-decoration: underline
+  &__rows
+    margin-bottom: 16px
+  &__row
+    position: relative
+    width: 292px
+    margin-bottom: 28px
+    label
+      position: absolute
+      left: 17px
+      top: 15px
+      font-size: 14px
+      transition: 0.4s ease-in-out
+    input
+      width: 100%
+      height: 50px
+      padding-left: 17px
+      background-color: #ffffff
+      border: 1px solid #e4e4e4
+      border-radius: 6px
+      transition: 0.4s ease-in-out
+      &:hover,
+      &:focus
+        outline: none
+        border-color: $accent
+    &-icon
+      position: absolute
+      top: 7px
+      right: 7px
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      width: 36px
+      height: 36px
+      background-color: #ebe9e9
+      border-radius: 50%
+      font-size: 20px
+      font-weight: 600
+      transition: 0.2s ease-in-out
+    &--active
+      .scr_calc__row-icon
+        background-color: #f5161f
+        color: #ffffff
+    &--filled
+      label
+        top: 2px
+        font-size: 11px
+    &--focused
+      label
+        top: 2px
+        font-size: 11px
+  &__df
+    display: flex
+  &__info
+    flex-shrink: 0
+    width: 476px
+  &__text
+    font-size: 16px
+    line-height: 1.625
+    font-weight: 500
+    p
+      margin-bottom: 24px
+      &:last-of-type
+        margin-bottom: 0
+    b
+      font-weight: 600
+  &__img
+    img
+      display: block
+      width: auto
+      max-width: 100%
+  &__bottom
+    margin-top: 46px
+    padding-top: 32px
+    border-top: 1px solid #263238
+    text-align: center
+    input[type="submit"].xbtn--grad
+      min-width: 240px
+      height: 54px
+      text-transform: uppercase
+
+
+  @media screen and (max-width: 1170px)
+    &__nav
+      & > li
+        margin-right: 5px
+        & > label
+          & > a
+            height: 155px
+            font-size: 14px
+            img
+              width: 76px
+      &2
+        & > li
+          & > label
+            & > a
+              height: 70px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &__nav2
+      & > li
+        & > label
+          & > a
+            min-width: 190px
+            height: 50px
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__nav
+      overflow: auto
+      padding-bottom: 10px
+      & > li
+        & > label
+          & > a
+            min-width: 200px
+      &2
+        padding-bottom: 30px
+    &__text
+      font-size: 14px
+      p
+        margin-bottom: 14px
+
+  // max-width 767px
+
+  @media screen and (max-width: 700px)
+    padding-bottom: 30px
+    &__df
+      display: block
+    &__info
+      width: 100%
+    &__img
+      width: 100%
+      margin-top: 20px
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    &__text
+      br
+        display: none
+
+  // max-width 575px
+
+/* scr_calc */

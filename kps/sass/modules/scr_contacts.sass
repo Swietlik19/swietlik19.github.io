@@ -4,6 +4,7 @@
   padding-bottom: 26px
   &__map
     height: 495px
+    margin-bottom: 35px
     background-color: #eae9e9
     border-radius: 8px
     overflow: hidden
@@ -58,11 +59,96 @@
         background-image: url('../img/svg/arrow-blue.svg')
       &:hover
         color: $accent
+  &__addresses
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li
+      display: flex
+      margin-bottom: 33px
+      padding: 13px
+      background-color: #f7f7f7
+      border-radius: 8px
+      img
+        flex-shrink: 0
+        display: block
+        width: 395px
+        margin-right: 44px
+        border-radius: 6px
+    &-col
+      max-width: 50%
+      padding-top: 15px
+      padding-right: 111px
+      &:last-of-type
+        padding-right: 0
+      h3
+        font-size: 18px
+        font-weight: 600
+        text-transform: uppercase
+      p
+        font-size: 16px
+        line-height: 1.875
+        b
+          font-weight: 500
+        a
+          display: block
+          text-decoration: none
+          outline: none
+          transition: 0.4s ease-in-out
+          &:hover
+            color: $accent
+  &__places
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    margin-top: -4px
+    & > li
+      display: flex
+      flex-direction: column
+      width: calc((100% - 30px) / 2)
+      margin-right: 30px
+      &:nth-of-type(2n)
+        margin-right: 0
+    .page-title--second
+      font-size: 20px
+    .page-title--second
+      margin-bottom: 14px
+    .contacts__text
+      min-height: 47px
+      margin-bottom: 0
+      line-height: 1.5
+      font-weight: 500
+  &__place
+    position: relative
+    margin-top: auto
+    margin-bottom: 24px
+    padding-left: 30px
+    font-size: 16px
+    line-height: 1.875
+    font-weight: 600
+    &::before
+      content: ''
+      position: absolute
+      top: 2px
+      left: -8px
+      display: block
+      width: 40px
+      height: 40px
+      background: transparent url('../img/pin.png') no-repeat center center
+      background-size: contain
+  &__img
+    height: 370px
+    background-color: #f7f7f7
+    border-radius: 8px
+    overflow: hidden
 
 
   @media screen and (max-width: 1400px)
     &__map
       height: 405px
+    &__img
+      height: 270px
 
   // max-width 1400px
 
@@ -75,6 +161,22 @@
       margin-bottom: 24px
       font-size: 14px
       line-height: 1.675
+    &__places
+      .contacts__text
+        br
+          display: none
+    &__addresses
+      & > li
+        img
+          width: 265px
+          margin-right: 34px
+      &-col
+        padding-top: 0
+        padding-right: 41px
+        h3
+          font-size: 16px
+        p
+          font-size: 14px
 
   // max-width 1170px
 
@@ -94,14 +196,52 @@
         width: 50%
       &:nth-of-type(3)
         width: 50%
+    &__places
+      & > li
+        width: calc((100% - 10px) / 2)
+        margin-right: 10px
+      .page-title--second
+        font-size: 16px
+    &__place
+      font-size: 14px
+    &__img
+      height: 200px
 
   // max-width 900px
 
   @media screen and (max-width: 767px)
     &__map
       height: 265px
+    &__addresses
+      & > li
+        img
+          width: 200px
+          margin-right: 20px
+      &-col
+        padding-right: 20px
+        h3
+          font-size: 14px
+        p
+          font-size: 13px
 
   // max-width 767px
+
+  @media screen and (max-width: 630px)
+    &__addresses
+      & > li
+        display: block
+        margin-bottom: 15px
+        img
+          width: 100%
+          margin-bottom: 20px
+      &-col
+        max-width: 100%
+        margin-bottom: 15px
+        padding-right: 0
+        &:last-of-type
+          margin-bottom: 0
+
+  // max-width 630px
 
   @media screen and (max-width: 500px)
     &__col
@@ -112,6 +252,14 @@
         width: 100%
       &:nth-of-type(3)
         width: 100%
+    &__places
+      display: block
+      & > li
+        width: 100%
+        margin-right: 0
+        margin-bottom: 40px
+        &:last-of-type
+          margin-bottom: 0
 
   // max-width 500px
 

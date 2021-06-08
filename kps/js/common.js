@@ -162,6 +162,37 @@
     }
   });
 
+  $('.js-exchange-nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.exchange__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.js_calc__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().parent().siblings().removeClass('current');
+    $(this).parent().parent().addClass('current');
+    $('.scr_calc__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.js_calc__nav2 a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().parent().siblings().removeClass('current');
+    $(this).parent().parent().addClass('current')
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
@@ -240,6 +271,45 @@
     } else {
       $('.show-more').text('Показать меню');
     }
+  });
+
+  $('.header__item--customers').hover(function(){
+    $(this).find('.hidden').show();
+  });
+  $('.page_wr').hover(function(){
+    $('.header__item--customers .hidden').hide();
+  });
+
+  function calcDeliverSum() {
+    var _place = $('.your-place select option:selected').val();
+    var _weight = $('.your-weight select option:selected').val();
+    var _sum = $('.form__sum span').text((_place * _weight).toLocaleString('ru'));
+  }
+
+  calcDeliverSum();
+
+  $('.modal__pay select').change(function() {
+    calcDeliverSum();
+  });
+
+  $('.scr_calc__row input').focus(function() {
+    var _img = $(this).parents('.scr_calc__info').siblings().find('img');
+    var _src = $(this).data('img-url');
+
+    $(this).parent().addClass('scr_calc__row--active');
+    $(this).parent().addClass('scr_calc__row--focused');
+    $(this).parent().siblings().removeClass('scr_calc__row--active');
+    $(this).parent().siblings().removeClass('scr_calc__row--focused');
+
+    _img.attr('src',_src);
+  });
+  $('.scr_calc__row input').blur(function() {
+    if ($(this).val()) {
+      $(this).parent().addClass('scr_calc__row--filled');
+    } else {
+      $(this).parent().removeClass('scr_calc__row--filled');
+    }
+    $(this).parent().removeClass('scr_calc__row--focused');
   });
 
   /* СЛАЙДЕРЫ */
@@ -388,10 +458,34 @@
       nextEl: '.prod-item__thumbs-btns .swiper-button-next',
       prevEl: '.prod-item__thumbs-btns .swiper-button-prev',
     },
+    pagination: {
+      el: '.prod-item__thumbs-btns .swiper-dots',
+    },
     breakpoints: {
       400: {
         slidesPerView: 3,
         spaceBetween: 15,
+      },
+    },
+  });
+
+  var aboutGallery = new Swiper('#about__gallery', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.about__gallery-btns .swiper-button-next',
+      prevEl: '.about__gallery-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      1070: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      400: {
+        slidesPerView: 3,
+        spaceBetween: 10,
       },
     },
   });

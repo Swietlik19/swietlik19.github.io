@@ -1,0 +1,291 @@
+mixin scr_calc()
+  section.scr_calc(id="scr_calc")
+    .container
+      +breadcrumbs--calc
+
+      h1.page-title--second Калькулятор расчета кровли
+
+      .scr_calc__form
+        form(action="#")
+          .scr_calc__title
+            span 01.
+            |  Выберите тип кровли
+
+          ul.scr_calc__nav.js_calc__nav
+            li.current
+              label
+                input(type='radio', name='roof-type', id='roof-type-0', data-ramp-count='1', data-name='odnoskat', tabindex='0')
+                a(href="#scr_calc__tab-0")
+                  img(src="img/calc/roof-type-1.png" alt="")
+
+                  span Односкатная
+            li
+              label
+                input(type='radio', id='roof-type-1', name='roof-type', data-ramp-count='2', data-name='odnoskat', tabindex='0')
+                a(href="#scr_calc__tab-1")
+                  img(src="img/calc/roof-type-2.png" alt="")
+
+                  span Двускатная
+            li
+              label
+                input(type='radio', id='roof-type-2', name='roof-type', data-ramp-count='3', data-name='odnoskat', tabindex='0')
+                a(href="#scr_calc__tab-2")
+                  img(src="img/calc/roof-type-3.png" alt="")
+
+                  span Вальмовая
+            li
+              label
+                input(type='radio', id='roof-type-3', name='roof-type', data-ramp-count='4', data-name='odnoskat', tabindex='0')
+                a(href="#scr_calc__tab-3")
+                  img(src="img/calc/roof-type-4.png" alt="")
+
+                  span Шатровая
+            li
+              label
+                input(type='radio', id='roof-type-4', name='roof-type', data-ramp-count='5', data-name='odnoskat', tabindex='0')
+                a(href="#scr_calc__tab-4")
+                  img(src="img/calc/roof-type-5.png" alt="")
+
+                  span Мансардная
+
+          .scr_calc__title
+            span 02.
+            |  Выберите тип кровли
+
+          ul.scr_calc__nav.scr_calc__nav2.js_calc__nav2
+            li.current
+              label
+                input(type='radio', id='roof-material-0', name='roof-material', tabindex='0')
+                a(href="#scr_calc__tab2-0") Металлочерепица
+            li
+              label
+                input(type='radio', id='roof-material-1', name='roof-material', tabindex='0')
+                a(href="#scr_calc__tab2-1") Профнастил
+            li
+              label
+                input(type='radio', id='roof-material-2', name='roof-material', tabindex='0')
+                a(href="#scr_calc__tab2-2") Фальцевая
+
+          ul.scr_calc__tabs
+            li.scr_calc__tab#scr_calc__tab-0
+              .scr_calc__df
+                .scr_calc__info
+                  .scr_calc__title
+                    span 03.
+                    |  Укажите размеры вашей кровли
+
+                  span.scr_calc__desc Как правильно делать замеры
+
+                  .scr_calc__rows
+                    .scr_calc__row.scr_calc__row--active
+                      label Ширина ската, м
+                      input(type='text', data-img-url='img/calc/odnoskiw.png', data-name='1_width')
+                      span.scr_calc__row-icon W
+
+                    .scr_calc__row
+                      label Длина ската, м
+                      input(type='text', data-img-url='img/calc/odnoskih.png', data-name='1_height')
+                      span.scr_calc__row-icon H
+
+                  .scr_calc__text
+                    p Средняя цена утеплителя 50 мм кровля =
+                      b  153 руб / м
+                        sup  2
+
+                    p Средняя цены комплектующих =
+                      b  705 руб / мм
+                        sup  2
+
+                    p Средняя цена водосточной системы (на 1, 2, 4 скатку)
+                      br
+                      |  6х6 высота 3 м =
+                      b  8 512 руб / 17 024 руб / 27 880 руб
+
+                .scr_calc__img
+                  img(src="img/calc/odnoskiw.png" alt="")
+
+            li.scr_calc__tab#scr_calc__tab-1
+              .scr_calc__df
+                .scr_calc__info
+                  .scr_calc__title
+                    span 03.
+                    |  Укажите размеры вашей кровли
+
+                  span.scr_calc__desc Как правильно делать замеры
+
+                  .scr_calc__rows
+                    .scr_calc__row.scr_calc__row--active
+                      label Ширина ската, м
+                      input(type='text', data-img-url='img/calc/dvuskiw.png', data-name='2_width')
+                      span.scr_calc__row-icon W
+
+                    .scr_calc__row
+                      label Длина ската 1, м
+                      input(type='text', data-img-url='img/calc/dvuskih1.png', data-name='2_height_one')
+                      span.scr_calc__row-icon H1
+
+                    .scr_calc__row
+                      label Длина ската 2, м
+                      input(type='text', data-img-url='img/calc/dvuskih2.png', data-name='2_height_two')
+                      span.scr_calc__row-icon H2
+
+                  .scr_calc__text
+                    p Средняя цена утеплителя 50 мм кровля =
+                      b  153 руб / м
+                        sup  2
+
+                    p Средняя цены комплектующих =
+                      b  705 руб / мм
+                        sup  2
+
+                    p Средняя цена водосточной системы (на 1, 2, 4 скатку)
+                      br
+                      |  6х6 высота 3 м =
+                      b  8 512 руб / 17 024 руб / 27 880 руб
+
+                .scr_calc__img
+                  img(src="img/calc/dvuskiw.png" alt="")
+
+            li.scr_calc__tab#scr_calc__tab-2
+              .scr_calc__df
+                .scr_calc__info
+                  .scr_calc__title
+                    span 03.
+                    |  Укажите размеры вашей кровли
+
+                  span.scr_calc__desc Как правильно делать замеры
+
+                  .scr_calc__rows
+                    .scr_calc__row.scr_calc__row--active
+                      label Ширина ската 1, м
+                      input(type='text', data-img-url='img/calc/valmiw.png', data-name='3_width_one')
+                      span.scr_calc__row-icon W1
+                    .scr_calc__row
+                      label Ширина ската 2, м
+                      input(type='text', data-img-url='img/calc/trap_tr_a.png', data-name='3_width_two')
+                      span.scr_calc__row-icon W2
+                    .scr_calc__row
+                      label Ширина конька, м
+                      input(type='text', data-img-url='img/calc/trap_c.png', data-name='3_width_kon')
+                      span.scr_calc__row-icon W3
+                    .scr_calc__row
+                      label Длина ската 1, м
+                      input(type='text', data-img-url='img/calc/trap_h.png', data-name='2_height_one')
+                      span.scr_calc__row-icon H1
+
+                    .scr_calc__row
+                      label Длина ската 2, м
+                      input(type='text', data-img-url='img/calc/trap_tr_h.png', data-name='2_height_two')
+                      span.scr_calc__row-icon H2
+
+                  .scr_calc__text
+                    p Средняя цена утеплителя 50 мм кровля =
+                      b  153 руб / м
+                        sup  2
+
+                    p Средняя цены комплектующих =
+                      b  705 руб / мм
+                        sup  2
+
+                    p Средняя цена водосточной системы (на 1, 2, 4 скатку)
+                      br
+                      |  6х6 высота 3 м =
+                      b  8 512 руб / 17 024 руб / 27 880 руб
+
+                .scr_calc__img
+                  img(src="img/calc/valmiw.png" alt="")
+
+            li.scr_calc__tab#scr_calc__tab-3
+              .scr_calc__df
+                .scr_calc__info
+                  .scr_calc__title
+                    span 03.
+                    |  Укажите размеры вашей кровли
+
+                  span.scr_calc__desc Как правильно делать замеры
+
+                  .scr_calc__rows
+                    .scr_calc__row.scr_calc__row--active
+                      label Ширина ската 1, м
+                      input(type='text', data-img-url='img/calc/shatriw.png', data-name='4_width_one')
+                      span.scr_calc__row-icon W1
+                    .scr_calc__row
+                      label Ширина ската 2, м
+                      input(type='text', data-img-url='img/calc/shatriw2.png', data-name='4_width_two')
+                      span.scr_calc__row-icon W2
+                    .scr_calc__row
+                      label Длина ската 1, м
+                      input(type='text', data-img-url='img/calc/shatrih1.png', data-name='4_height_one')
+                      span.scr_calc__row-icon H1
+                    .scr_calc__row
+                      label Длина ската 2, м
+                      input(type='text', data-img-url='img/calc/shatrih2.png', data-name='4_height_two')
+                      span.scr_calc__row-icon H2
+
+                  .scr_calc__text
+                    p Средняя цена утеплителя 50 мм кровля =
+                      b  153 руб / м
+                        sup  2
+
+                    p Средняя цены комплектующих =
+                      b  705 руб / мм
+                        sup  2
+
+                    p Средняя цена водосточной системы (на 1, 2, 4 скатку)
+                      br
+                      |  6х6 высота 3 м =
+                      b  8 512 руб / 17 024 руб / 27 880 руб
+
+                .scr_calc__img
+                  img(src="img/calc/shatriw.png" alt="")
+
+            li.scr_calc__tab#scr_calc__tab-4
+              .scr_calc__df
+                .scr_calc__info
+                  .scr_calc__title
+                    span 03.
+                    |  Укажите размеры вашей кровли
+
+                  span.scr_calc__desc Как правильно делать замеры
+
+                  .scr_calc__rows
+                    .scr_calc__row.scr_calc__row--active
+                      label Ширина ската, м
+                      input(type='text', data-img-url='img/calc/mansardiw.png', data-name='5_width')
+                      span.scr_calc__row-icon W
+                    .scr_calc__row
+                      label Длина ската 1, м
+                      input(type='text', data-img-url='img/calc/mansardih1.png', data-name='5_height_one')
+                      span.scr_calc__row-icon H1
+                    .scr_calc__row
+                      label Длина ската 2, м
+                      input(type='text', data-img-url='img/calc/mansardih2.png', data-name='5_height_two')
+                      span.scr_calc__row-icon H2
+
+                  .scr_calc__text
+                    p Средняя цена утеплителя 50 мм кровля =
+                      b  153 руб / м
+                        sup  2
+
+                    p Средняя цены комплектующих =
+                      b  705 руб / мм
+                        sup  2
+
+                    p Средняя цена водосточной системы (на 1, 2, 4 скатку)
+                      br
+                      |  6х6 высота 3 м =
+                      b  8 512 руб / 17 024 руб / 27 880 руб
+
+                .scr_calc__img
+                  img(src="img/calc/mansardiw.png" alt="")
+
+          .scr_calc__title
+            span 04.
+            |  Узнайте приблизительную стоимость
+
+          .scr_calc__bottom
+            .btn__wrap.btn__wrap--grad
+              input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Сделать расчет')
+
+
+  // /.scr_calc

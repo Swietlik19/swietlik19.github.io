@@ -22,7 +22,7 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
+    width: 365px
     max-width: 100%
     opacity: 0
     transition: 0.7s
@@ -32,9 +32,22 @@
 
   .form
     max-height: 100vh
+    padding-top: 51px
+    padding-bottom: 25px
     overflow: auto
     width: 100%
+    background-color: #f7f7f7
     z-index: 0
+    &__title
+      width: 100%
+      margin-bottom: 10px
+      font-size: 20px
+      font-weight: 900
+      text-align: center
+    &__desc
+      margin-bottom: 21px
+      font-weight: 500
+      text-align: center
 
   .close
     background: none
@@ -46,41 +59,26 @@
     transition: 0.3s
 
     position: absolute
-    top: 9px
-    right: 9px
+    top: 11px
+    right: 12px
 
     display: block
-    width: 30px
-    height: 30px
-    &::before,&::after
-      content: ''
-      position: absolute
-      top: 50%
-      left: 50%
-
+    width: 23px
+    height: 23px
+    .icon
       display: block
-      width: 20px
-      height: 3px
-      background-color: $accent
-      border-radius: 1.5px
-      transition: 0.3s
-
-    &::before
-      transform: translate(-50%,-50%) rotate(45deg)
-
-    &::after
-      transform: translate(-50%,-50%) rotate(-45deg)
-
+      transform: rotate(45deg)
+      transition: 0.4s ease-in-out
     &:hover
-      &::before,&::after
-        background-color: #e99c02
+      .icon
+        fill: $accent
+  &__pay
+    .form__item
+      margin-bottom: 56px
+      &--submit
+        margin-top: 75px
+        margin-bottom: 16px
+    .form
+      padding-top: 31px
 
-  // @media screen and (max-width: 767px)
-
-  // max-width 767px
-
-  // @media screen and (max-width: 575px)
-
-  // max-width 575px
-
- /* modal */
+/* modal */

@@ -149,6 +149,18 @@
     font-weight: 500
     color: #ffffff
 
+  &__df
+    display: flex
+  &__col
+    width: calc((100% - 30px) / 2)
+    margin-right: 30px
+    &:nth-of-type(2n)
+      margin-right: 0
+    .form__item
+      margin-bottom: 18px
+      &:last-of-type
+        margin-bottom: 0
+
 
   @media screen and (max-width: 1200px)
     &--general
@@ -161,6 +173,8 @@
     .text-input
       textarea
         height: 80px
+    &__col .text-input textarea
+      height: 120px
 
   @media screen and (max-width: 1070px)
     &__wrap
@@ -176,9 +190,20 @@
 
   //   max-width 991px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 500px)
+    &__df
+      display: block
+    &__col
+      width: 100%
+      margin-right: 0
+      .form__item
+        margin-bottom: 8px
+        &:last-of-type
+          margin-bottom: 8px
+      .text-input textarea
+        height: 80px
 
-  //   max-width 575px
+  //   max-width 500px
 
   @media screen and (max-width: 420px)
     &__wrap
@@ -186,4 +211,4 @@
 
   //   max-width 420px
 
- /* form */
+/* form */

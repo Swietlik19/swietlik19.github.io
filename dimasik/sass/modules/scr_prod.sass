@@ -17,8 +17,8 @@
     margin-top: 29px
   &__slider
     overflow: hidden
-    margin: -20px -10px
-    padding: 20px 10px
+    margin: -20px -10px -61px
+    padding: 20px 10px 61px
     &-btns
       .swiper-dots
         display: none
@@ -28,12 +28,25 @@
     height: 100%
     position: relative
     border-radius: 8px
-    border: solid 1px #f3f5f9
-    background-color: #ffffff
     transition: 0.4s ease-in-out
     z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      display: block
+      border: solid 1px #f3f5f9
+      background-color: #ffffff
+      z-index: -1
     &:hover
       box-shadow: 0 5px 15px rgba($accent, 0.2)
+      &::before
+        bottom: -61px
+      .prod__click
+        display: block
   &__top
     position: absolute
     top: 4px
@@ -208,6 +221,19 @@
         color: #435aa3
       &.active
         color: #435aa3
+  &__click
+    position: absolute
+    top: 100%
+    left: 0
+    display: none
+    width: 100%
+    padding: 0 14px 18px
+    text-align: center
+    .btn__wrap
+      width: 100%
+    .xbtn
+      height: 43px
+      font-size: 16px
 
 
   @media screen and (max-width: 1400px)
@@ -252,6 +278,17 @@
       padding-right: 5px
       padding-left: 5px
       font-size: 15px
+    &__item
+      &:hover
+        &::before
+          bottom: 0
+    &__click
+      position: static
+      display: block
+      padding-top: 10px
+      .xbtn
+        height: 38px
+        font-size: 14px
 
   // max-width 991px
 
@@ -338,6 +375,10 @@
     &__price
       &--new
         margin-right: 10px
+    &__click
+      .xbtn
+        height: 34px
+        font-size: 13px
 
   // max-width 575px
 

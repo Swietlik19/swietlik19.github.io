@@ -48,7 +48,11 @@
         <div class="header__bottom">
           <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
           <div class="logo__wrap">
-            <a class="logo" href="index.html"><img src="img/logo--small.jpg" alt="лого"></a>
+            <a class="logo" href="index.html">
+              <picture>
+                <source media="(min-width: 651px)" srcset="img/logo--small.jpg"><img src="img/header-logo.png" alt="">
+              </picture>
+            </a>
             <p class="logo__text">Сеть магазинов<br> для детей</p>
           </div>
           <div class="header__search">
@@ -76,14 +80,20 @@
             <button class="header__btn header__btn--home">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#home"></use>
-              </svg>
+              </svg><span class="header__btn-text">Главная</span>
+            </button>
+            <button class="header__btn header__btn--catalog">
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#list"></use>
+              </svg><span class="header__btn-text">Каталог</span>
             </button>
             <button class="header__btn header__btn--login">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#user"></use>
               </svg><span class="header__btn-text">Вход</span>
             </button>
-            <button class="header__btn">
+            <!--. Добавила класс header__btn--like-->
+            <button class="header__btn header__btn--like">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#heart"></use>
               </svg><span class="header__btn-text">Избранное</span>
@@ -135,13 +145,17 @@
               <div class="about__text">
                 <p><b>Главные наши ключи к успеху –</b> это честность, порядочность и доброжелательность.</p>
               </div>
-              <div class="about__block about__block--bottom">
-                <p><b>Наш девиз: «Всё лучшее детям»</b></p>
+              <h2 class="certs__title">Свидетельства и сертификаты</h2>
+              <div class="about__text">
+                <p><b>Имея большой опыт работы мы наработали авторитет и положительные отзывы от производителей по предоставлению качественной продукции</b></p>
               </div>
             </div>
             <div class="about__imgs">
               <div class="about__img"><img src="img-temp/about-img.jpg" alt="" data-object-fit-cover></div>
               <div class="about__img"><img src="img-temp/contacts-img.jpg" alt="" data-object-fit-cover></div>
+              <div class="about__block about__block--bottom">
+                <p><b>Наша репутация - дополнительный плюс вам</b></p>
+              </div>
             </div>
           </div>
         </div>
@@ -149,7 +163,6 @@
       <!-- /.scr_about-->
       <section class="scr_certs certs" id="scr_certs">
         <div class="container">
-          <h2 class="certs__title">Свидетельства и сертификаты</h2>
           <div class="certs__wrap">
             <div class="certs__slider" id="certs__slider">
               <div class="swiper-wrapper">

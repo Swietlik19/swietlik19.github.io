@@ -48,7 +48,11 @@
         <div class="header__bottom">
           <button class="burger"><span class="burger__wrap"><span class="line"></span></span></button>
           <div class="logo__wrap">
-            <div class="logo"><img src="img/logo--small.jpg" alt="лого"></div>
+            <div class="logo">
+              <picture>
+                <source media="(min-width: 651px)" srcset="img/logo--small.jpg"><img src="img/header-logo.png" alt="">
+              </picture>
+            </div>
             <p class="logo__text">Сеть магазинов<br> для детей</p>
           </div>
           <div class="header__search">
@@ -76,14 +80,20 @@
             <button class="header__btn header__btn--home">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#home"></use>
-              </svg>
+              </svg><span class="header__btn-text">Главная</span>
+            </button>
+            <button class="header__btn header__btn--catalog">
+              <svg class="icon">
+                <use xlink:href="img/svg/sprite.svg#list"></use>
+              </svg><span class="header__btn-text">Каталог</span>
             </button>
             <button class="header__btn header__btn--login">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#user"></use>
               </svg><span class="header__btn-text">Вход</span>
             </button>
-            <button class="header__btn">
+            <!--. Добавила класс header__btn--like-->
+            <button class="header__btn header__btn--like">
               <svg class="icon">
                 <use xlink:href="img/svg/sprite.svg#heart"></use>
               </svg><span class="header__btn-text">Избранное</span>
@@ -107,12 +117,12 @@
         <div class="container"><span class="scr1__menu-btn">Каталог</span>
           <div class="scr1__df">
             <aside class="scr1__menu-wrap">
-              <div class="scr1__menu-item scr1__menu">
+              <div class="scr1__menu-item scr1__menu"><span class="scr1__menu-close"></span>
                 <ul class="menu">
                   <li class="menu-item"><a href="#"><span class="menu-item__text">Игрушки</span><span class="menu-item__btn"></span></a>
                     <div class="sub-menu__wrap"><span class="sub-menu__close"></span>
-                      <div class="sub-menu__cols">
-                        <div class="sub-menu__item"><a href="#">Игрушки для мальчиков</a>
+                      <ul class="sub-menu">
+                        <li class="menu-item"><a href="#"><span class="menu-item__text">Игрушки для мальчиков</span><span class="menu-item__btn"></span></a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Скритчеры, Гуджутсу</a></li>
                             <li class="menu-item"><a href="#">Инфинити Надо</a></li>
@@ -123,8 +133,8 @@
                             <li class="menu-item"><a href="#">Военные наборы</a></li>
                             <li class="menu-item"><a href="#">Оружие и аксессуары</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Игрушки для девочек</a>
+                        </li>
+                        <li class="menu-item"><a href="#"><span class="menu-item__text">Игрушки для девочек</span><span class="menu-item__btn"></span></a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Куклы</a></li>
                             <li class="menu-item"><a href="#">Пупсы</a></li>
@@ -135,8 +145,8 @@
                             <li class="menu-item"><a href="#">Лошадки и единороги</a></li>
                             <li class="menu-item"><a href="#">Сумочки, кометички</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Игрушки для малышей</a>
+                        </li>
+                        <li class="menu-item"><a href="#"><span class="menu-item__text">Игрушки для малышей</span><span class="menu-item__btn"></span></a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Погремушки</a></li>
                             <li class="menu-item"><a href="#">Ночники, проекторы</a></li>
@@ -150,16 +160,16 @@
                             <li class="menu-item"><a href="#">Кукольные театры</a></li>
                             <li class="menu-item"><a href="#">Толокары, качалки, прыгуны</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Конструкторы</a>
+                        </li>
+                        <li class="menu-item"><a href="#"><span class="menu-item__text">Конструкторы</span><span class="menu-item__btn"></span></a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Лего</a></li>
                             <li class="menu-item"><a href="#">Конструкторы для малышей</a></li>
                             <li class="menu-item"><a href="#">Конструкторы 6+</a></li>
                             <li class="menu-item"><a href="#">Электронные, магнитные, металлические конструкторы</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Настольные игры</a>
+                        </li>
+                        <li class="menu-item"><a href="#"><span class="menu-item__text">Настольные игры</span><span class="menu-item__btn"></span></a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Игры-ходилки</a></li>
                             <li class="menu-item"><a href="#">Экономические игры</a></li>
@@ -167,8 +177,8 @@
                             <li class="menu-item"><a href="#">Логические игры и головоломки</a></li>
                             <li class="menu-item"><a href="#">Пазлы, 3Д пазлы</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Сюжетно-ролевые игры</a>
+                        </li>
+                        <li class="menu-item"><a href="#">Сюжетно-ролевые игры</a>
                           <ul class="sub-menu">
                             <li class="menu-item"><a href="#">Кухни, посуда, бытовая техника</a></li>
                             <li class="menu-item"><a href="#">Кассы, магазины, овощи, фрукты</a></li>
@@ -178,74 +188,16 @@
                             <li class="menu-item"><a href="#">Наборы инструментов</a></li>
                             <li class="menu-item"><a href="#">Наборы полицейского, пожарного, военного</a></li>
                           </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Радиоуправляемые игрушки</a></div>
-                        <div class="sub-menu__item"><a href="#">Мягкие игрушки</a></div>
-                        <div class="sub-menu__item"><a href="#">Животные и динозавры</a></div>
-                        <div class="sub-menu__item"><a href="#">Интерактивные игрушки</a></div>
-                        <div class="sub-menu__item"><a href="#">Мультгерои</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Бен 10</a></li>
-                            <li class="menu-item"><a href="#">Мончичи</a></li>
-                            <li class="menu-item"><a href="#">Полирабокар</a></li>
-                            <li class="menu-item"><a href="#">Свинка Пеппа</a></li>
-                            <li class="menu-item"><a href="#">Герои в масках</a></li>
-                            <li class="menu-item"><a href="#">Черепашки Ниндзя</a></li>
-                            <li class="menu-item"><a href="#">Герои Марвел</a></li>
-                            <li class="menu-item"><a href="#">Щенячий патруль</a></li>
-                          </ul>
-                        </div>
-                      </div>
+                        </li>
+                        <li class="menu-item"><a href="#">Радиоуправляемые игрушки</a></li>
+                        <li class="menu-item"><a href="#">Мягкие игрушки</a></li>
+                        <li class="menu-item"><a href="#">Животные и динозавры</a></li>
+                        <li class="menu-item"><a href="#">Интерактивные игрушки</a></li>
+                      </ul>
                     </div>
                   </li>
-                  <li class="menu-item"><a href="#"><span class="menu-item__text">Автокресла</span><span class="menu-item__btn"></span></a>
-                    <div class="sub-menu__wrap"><span class="sub-menu__close"></span>
-                      <div class="sub-menu__cols">
-                        <div class="sub-menu__item"><a href="#">Игрушки для мальчиков</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Скритчеры, Гуджутсу</a></li>
-                            <li class="menu-item"><a href="#">Инфинити Надо</a></li>
-                            <li class="menu-item"><a href="#">Ж/Д, треки, парковки, гаражи</a></li>
-                            <li class="menu-item"><a href="#">Машины</a></li>
-                            <li class="menu-item"><a href="#">Разный транспорт</a></li>
-                            <li class="menu-item"><a href="#">Роботы, трансформеры</a></li>
-                            <li class="menu-item"><a href="#">Военные наборы</a></li>
-                            <li class="menu-item"><a href="#">Оружие и аксессуары</a></li>
-                          </ul>
-                        </div>
-                        <div class="sub-menu__item"><a href="#">Игрушки для девочек</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Куклы</a></li>
-                            <li class="menu-item"><a href="#">Пупсы</a></li>
-                            <li class="menu-item"><a href="#">Коляски, манежи для кукол</a></li>
-                            <li class="menu-item"><a href="#">Дома, мебель, машинки для кукол</a></li>
-                            <li class="menu-item"><a href="#">Бижутерия и косметика</a></li>
-                            <li class="menu-item"><a href="#">Аксессуары и одежда для кукол</a></li>
-                            <li class="menu-item"><a href="#">Лошадки и единороги</a></li>
-                            <li class="menu-item"><a href="#">Сумочки, кометички</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="menu-item"><a href="#"><span class="menu-item__text">Коляски</span><span class="menu-item__btn"></span></a>
-                    <div class="sub-menu__wrap"><span class="sub-menu__close"></span>
-                      <div class="sub-menu__cols">
-                        <div class="sub-menu__item"><a href="#">Игрушки для мальчиков</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item"><a href="#">Скритчеры, Гуджутсу</a></li>
-                            <li class="menu-item"><a href="#">Инфинити Надо</a></li>
-                            <li class="menu-item"><a href="#">Ж/Д, треки, парковки, гаражи</a></li>
-                            <li class="menu-item"><a href="#">Машины</a></li>
-                            <li class="menu-item"><a href="#">Разный транспорт</a></li>
-                            <li class="menu-item"><a href="#">Роботы, трансформеры</a></li>
-                            <li class="menu-item"><a href="#">Военные наборы</a></li>
-                            <li class="menu-item"><a href="#">Оружие и аксессуары</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+                  <li class="menu-item"><a href="#"><span class="menu-item__text">Автокресла</span><span class="menu-item__btn"></span></a></li>
+                  <li class="menu-item"><a href="#"><span class="menu-item__text">Коляски</span><span class="menu-item__btn"></span></a></li>
                   <li class="menu-item"><a href="#"><span class="menu-item__text">Детская мебель</span><span class="menu-item__btn"></span></a></li>
                   <li class="menu-item"><a href="#"><span class="menu-item__text">Детская одежда</span><span class="menu-item__btn"></span></a></li>
                   <li class="menu-item"><a href="#"><span class="menu-item__text">Детская обувь</span><span class="menu-item__btn"></span></a></li>
@@ -292,23 +244,28 @@
                   </li>
                 </ul>
               </div>
-              <div class="scr1__feat" id="scr1__feat">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="scr1__feat-item">
-                      <div class="scr1__feat-icon"><img src="img/svg/icons/feat-1.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Цены ниже рыночных<br> на 20%</b> Цены меньше, чем у конкурентов на 20%, за счет прямых поставок от производителя</span>
+              <div class="scr1__feat-wrap">
+                <div class="scr1__feat" id="scr1__feat">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="scr1__feat-item">
+                        <div class="scr1__feat-icon"><img src="img/svg/icons/feat-1.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Цены ниже рыночных<br> на 20%</b> Цены меньше, чем у конкурентов на 20%, за счет прямых поставок от производителя</span>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="scr1__feat-item">
+                        <div class="scr1__feat-icon"><img src="img/svg/icons/feat-2.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Доставка в течение<br> 2 часов</b> Заказ от 2 000 рублей по Симферополю осуществляется бесплатно в течение 2 часов</span>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="scr1__feat-item">
+                        <div class="scr1__feat-icon"><img src="img/svg/icons/feat-3.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Весь товар на сайте<br> есть в наличии</b> Более 10 000 наименований товаров для детей доступно в 3-х магазинах</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="scr1__feat-item">
-                      <div class="scr1__feat-icon"><img src="img/svg/icons/feat-2.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Доставка в течение<br> 2 часов</b> Заказ от 2 000 рублей по Симферополю осуществляется бесплатно в течение 2 часов</span>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="scr1__feat-item">
-                      <div class="scr1__feat-icon"><img src="img/svg/icons/feat-3.svg" alt="" data-object-fit-contain-top></div><span class="scr1__feat-text"><b>Весь товар на сайте<br> есть в наличии</b> Более 10 000 наименований товаров для детей доступно в 3-х магазинах</span>
-                    </div>
-                  </div>
+                </div>
+                <div class="scr1__feat-btns">
+                  <div class="swiper-dots"></div>
                 </div>
               </div>
             </div>
@@ -354,7 +311,7 @@
                           <div class="prod__bottom">
                             <!--. количество span = рейтингу-->
                             <div class="prod__rate"><span></span><span></span><span></span><span></span><span></span></div>
-                            <div class="prod__prices"><span class="prod__price--new">3 799 Р</span><span class="prod__price--old">3900 Р</span></div>
+                            <div class="prod__prices"><span class="prod__price--new">3 799 ₽</span><span class="prod__price--old">3900 ₽</span></div>
                             <div class="prod__bottom-df">
                               <div class="prod__quant">
                                 <div class="quantity">
@@ -367,6 +324,9 @@
                                     <use xlink:href="img/svg/sprite.svg#cart"></use>
                                   </svg></a></div>
                             </div>
+                          </div>
+                          <div class="prod__click">
+                            <div class="btn__wrap btn__wrap--red btn__wrap--blue"><a class="xbtn xbtn--red xbtn--blue open-modal" href="#">Купить в 1 клик</a></div>
                           </div>
                         </div>
                       </div>
@@ -403,6 +363,9 @@
                                     <use xlink:href="img/svg/sprite.svg#cart"></use>
                                   </svg></a></div>
                             </div>
+                          </div>
+                          <div class="prod__click">
+                            <div class="btn__wrap btn__wrap--red btn__wrap--blue"><a class="xbtn xbtn--red xbtn--blue open-modal" href="#">Купить в 1 клик</a></div>
                           </div>
                         </div>
                       </div>
@@ -1194,7 +1157,7 @@
         <div class="container">
           <div class="lead__df">
             <p class="lead__title"><strong>Заполните форму</strong> и получите фирменную кружку в подарок при покупке от 3000 Р</p>
-            <div class="lead__img"><img src="img/lead-img.png" alt="" data-object-fit-contain><span class="lead__img-arrow"></span></div>
+            <div class="lead__img"><img src="img/lead-img2.png" alt="" data-object-fit-contain><span class="lead__img-arrow"></span></div>
             <div class="lead__form">
               <div class="form">
                 <form>

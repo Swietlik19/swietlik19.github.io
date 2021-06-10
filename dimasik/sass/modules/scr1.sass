@@ -20,6 +20,8 @@
       margin-right: 30px
     &-btn
       display: none
+    &-close
+      display: none
     .menu
       margin: 0
       padding: 0
@@ -35,6 +37,8 @@
           font-size: 15px
           transition: 0.4s ease-in-out
           &:hover
+            background-color: #ffffff
+            color: #2389fc
             .menu-item__btn
               transform: translateX(5px)
         &:last-of-type
@@ -45,63 +49,81 @@
         .sub-menu__wrap
           position: absolute
           top: 0
-          left: calc(100% - 10px)
-          display: none
-          width: 1065px
-          max-width: calc(100vw - 40px - 236px)
+          left: 100%
+          // width: 502px
+          width: 257px
           height: 100%
-          max-height: 100%
-          overflow: auto
-          padding: 9px 9px 9px 22px
-          background-color: #f3f5f9
-          border-radius: 6px
-          z-index: -1
+          display: none
           .mCSB_container
-            background-color: #ffffff
+            // background-color: #ffffff
             min-height: 100%
-        .sub-menu__cols
-          column-count: 4
-          column-gap: 20px
-          // background-color: #ffffff
-          padding: 13px 5px 3px 20px
-        .sub-menu__item
-          break-inside: avoid
-          & > a
-            display: block
-            text-decoration: none
-            outline: none
-            margin-bottom: 10px
-            line-height: 1.2
-            font-weight: 500
-            transition: 0.4s ease-in-out
-            &:hover
-              color: $accent
         .sub-menu
-          margin: 0
-          padding: 0
-          list-style: none
-          margin-bottom: 14px
-          & > li
-            margin-bottom: 8px
-            &:last-of-type
-              margin-bottom: 0
-            & > a
-              position: relative
-              display: block
-              text-decoration: none
-              outline: none
-              padding-left: 12px
-              font-size: 13px
-              transition: 0.4s ease-in-out
-              &::before
-                content: '•'
+          // width: 257px
+          max-height: 100%
+          height: 100%
+          overflow-y: auto
+          // z-index: -1
+
+        & > .sub-menu__wrap
+
+          padding-left: 2px
+          & > .sub-menu
+            background-color: #f3f5f9
+            border-radius: 8px
+            & > li
+              & > a
+                text-decoration: none
+                outline: none
+                display: flex
+                align-items: center
+                padding: 13px 17px 13px 25px
+                border-bottom: 1px solid #ffffff
+                font-size: 15px
+                transition: 0.4s ease-in-out
+                &:hover
+                  background-color: #fafafd
+                  color: #2389fc
+                  .menu-item__btn
+                    transform: translateX(5px)
+              & > .sub-menu
+                display: none
                 position: absolute
-                top: -1px
-                left: 0
-                display: block
-                color: $accent
-              &:hover
-                color: $accent
+                top: 0
+                left: 100%
+                margin: 0
+                padding: 0
+                list-style: none
+                width: 245px
+                background-color: #f3f5f9
+                border: 2px solid #ffffff
+                border-radius: 6px
+                max-height: 100%
+                padding: 10px 17px 10px 21px
+                height: 100%
+                overflow: auto
+                & > li
+                  & > a
+                    position: relative
+                    display: block
+                    text-decoration: none
+                    outline: none
+                    padding: 7px 0
+                    font-size: 14px
+                    line-height: 1.3
+                    font-weight: 400
+                    color: #000000
+                    transition: 0.4s ease-in-out
+                    &::before
+                      content: '•'
+                      position: absolute
+                      top: 5px
+                      left: -8px
+                      display: block
+                      font-size: 17px
+                      color: #435aa3
+                    &:hover
+                      color: #2389fc
+
       &-item
         &__text
           display: block
@@ -170,6 +192,11 @@
       margin-right: 50px
       &:nth-of-type(3n)
         margin-right: 0
+    &-wrap
+      position: relative
+    &-btns
+      .swiper-dots
+        display: none
     &-item
       display: flex
       &:hover
@@ -544,6 +571,8 @@
   &__filter
     &-btn
       display: none
+  &--hidden
+    display: none
 
 
   @media screen and (max-width: 1900px)
@@ -557,6 +586,11 @@
       &-hidden
         top: 80%
         left: -30px
+    &__feat
+      &-btns
+        .swiper-dots
+          display: flex
+          justify-content: center
 
   @media screen and (max-width: 1400px)
     &__menu
@@ -564,6 +598,12 @@
         & > li
           & > a
             padding: 10px 15px
+          & > .sub-menu__wrap
+            & > .sub-menu
+              & > li
+                & > a
+                  padding: 10px 15px
+
     &__card
       &-hidden
         width: 435px
@@ -702,7 +742,9 @@
       width: 266px
       height: 100vh
       max-height: 100vh
-      padding-top: 20px
+      // padding-top: 20px
+      // padding-bottom: 30px
+      padding-top: 10px
       padding-bottom: 30px
       overflow: auto
       transition: left 0.3s ease-in-out
@@ -712,53 +754,41 @@
         width: 0
         margin-right: 0
         z-index: 500
-      &-btn
-        position: fixed
-        left: 0
-        top: 45%
+      &-close,
+      .sub-menu__close
+        position: relative
         display: block
-        height: 19px
-        padding: 1px 20px
-        background: $accent
-        border-top-right-radius: 6px
-        border-top-left-radius: 6px
-        transform: rotate(90deg) translateY(-50%)
-        transform-origin: center left
-        color: #fff
-        font-size: 15px
-        font-weight: 500
-        z-index: 300
-        transition: 0.3s ease-in-out
-        &.active
-          left: 266px
-          transition: 0.8s ease-in-out
+        width: 30px
+        height: 30px
+        margin-left: auto
+        margin-bottom: 5px
+        background: none !important
+        &::before,
+        &::after
+          background-color: $accent
       .menu
         & > li
           .sub-menu__close
-            position: relative
             display: block
-            width: 30px
-            height: 30px
-            margin-left: auto
-            margin-bottom: 5px
-            background: none !important
-            &::before,
-            &::after
-              background-color: $accent
-          .sub-menu__cols
-            columns: 1
-          .sub-menu__wrap
+          & > .sub-menu__wrap
             left: 0
             width: 100%
             max-width: 100%
             // padding-top: 20px
+            padding-top: 10px
             padding-bottom: 30px
             padding-left: 0
             background-color: #f3f5f9
             z-index: 50
-          .sub-menu
-            & > li
-              margin-bottom: 0
+            & > .sub-menu
+              & > li
+                margin-bottom: 0
+                & > .sub-menu
+                  position: static
+                  width: 100%
+                  max-height: 10000px
+                  padding-left: 24px
+                  overflow: visible
       &.active
         // .scr1__menu
         left: 0
@@ -779,6 +809,8 @@
         border-radius: 6px
         background: transparent url('../img/svg/filter.svg') no-repeat 98% center
         background-size: 18px 18px
+    &--hidden
+      display: block
 
   // max-width 900px
 

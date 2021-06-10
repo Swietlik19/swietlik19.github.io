@@ -246,7 +246,8 @@
       color: #ffffff
     &-text
       font-size: 12px
-    &--home
+    &--home,
+    &--catalog
       display: none
   &--second
     border-bottom: 1px solid #f3f5f9
@@ -294,26 +295,31 @@
       padding: 17px 30px
       border-top-left-radius: 3px
       border-top-right-radius: 3px
-      background-image: linear-gradient(to bottom, #4bd2fe, #2389fc)
+      background-color: #f3f5f9
     &__btn
       .icon
         width: 28px
         height: 25px
-        margin-bottom: 0
-        fill: #fff
+        margin-bottom: 4px
+        fill: #435aa3
       &-num
-        top: -11px
-        right: -9px
+        top: -8px
+        right: -5px
         min-width: 20px
         height: 20px
         font-size: 12px
         border: none
       &-text
-        display: none
+        font-size: 10px
+        font-weight: 500
+        color: #435aa3
       &--login
+        order: 3
+      &--home,
+      &--catalog
+        display: flex
+      &--like
         order: 2
-      &--home
-        display: block
     &__phone
       margin-right: 19px
       font-size: 14px
@@ -386,24 +392,23 @@
   // max-width 991px
 
   @media screen and (max-width: 650px)
+    background: transparent url('../img/header-bg.jpg') no-repeat center center
+    background-size: cover
     .logo
-      width: 96px
-      height: 67px
+      width: 142px
+      height: 138px
       margin-left: auto
       margin-right: auto
       &__wrap
         display: block
         margin-right: 0
       &__text
-        position: static
-        margin-top: 1px
-        br
-          display: none
+        display: none
     &__bottom
       align-items: flex-start
       justify-content: space-between
-      padding-top: 11px
-      padding-bottom: 4px
+      padding-top: 14px
+      padding-bottom: 14px
     &__search
       position: absolute
       left: 0
@@ -417,17 +422,16 @@
             height: 40px
             padding-left: 16px
     &.fixed
-      .header__phone--mobile
-        margin-top: 0
+      background: #fff
       .header__bottom
-        align-items: center
-      .header__search
+        padding-top: 0
+        padding-bottom: 0
+      .header__phone--mobile
         display: none
       .burger
-        margin-top: 0
+        display: none
       .logo
-        &__text
-          display: block
+        display: none
     &__btns
       margin-left: auto
     &__phone
@@ -438,6 +442,10 @@
       margin-top: 12px
 
   // max-width 650px
+
+  @media screen and (max-width: 400px)
+    &__btns
+      padding: 17px 15px
 
   @media screen and (orientation: landscape) and (max-width: 991px)
     &.fixed

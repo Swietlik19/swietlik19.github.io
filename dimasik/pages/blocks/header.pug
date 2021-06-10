@@ -39,10 +39,16 @@ mixin header(logotype,anotherClass)
         .logo__wrap
           if logotype == "a"
             #{logotype}.logo(href="index.html")
-              img(src="img/logo--small.jpg" alt="лого")
+              //- img(src="img/logo--small.jpg" alt="лого")
+              picture
+                source(media='(min-width: 651px)', srcset='img/logo--small.jpg')
+                img(src='img/header-logo.png' alt="")
           else
             #{logotype}.logo
-              img(src="img/logo--small.jpg" alt="лого")
+              //- img(src="img/logo--small.jpg" alt="лого")
+              picture
+                source(media='(min-width: 651px)', srcset='img/logo--small.jpg')
+                img(src='img/header-logo.png' alt="")
 
           p.logo__text Сеть магазинов
             br
@@ -74,11 +80,18 @@ mixin header(logotype,anotherClass)
           button.header__btn.header__btn--home
             svg.icon
               use(xlink:href='img/svg/sprite.svg#home')
+            span.header__btn-text Главная
+          button.header__btn.header__btn--catalog
+            svg.icon
+              use(xlink:href='img/svg/sprite.svg#list')
+            span.header__btn-text Каталог
           button.header__btn.header__btn--login
             svg.icon
               use(xlink:href='img/svg/sprite.svg#user')
             span.header__btn-text Вход
-          button.header__btn
+
+          //. Добавила класс header__btn--like
+          button.header__btn.header__btn--like
             svg.icon
               use(xlink:href='img/svg/sprite.svg#heart')
             span.header__btn-text Избранное

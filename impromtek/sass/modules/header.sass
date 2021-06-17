@@ -1,0 +1,191 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 250
+  transition: box-shadow 0.3s
+  &.fixed
+    background-color: #f4f8fb
+    box-shadow: 0 5px 15px rgba($accent, 0.1)
+    .header__top
+      background-color: #f4f8fb
+      transition: 0s
+    .header__menu-wrap
+      transform: translateY(-200px)
+      transition: 0.4s ease-in-out
+  &__top
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 76px
+    transition: background-color 0.2s 0.3s
+    z-index: 2
+  .burger
+    margin-left: 26px
+  .logo
+    display: block
+    width: 208px
+    height: 40px
+    text-decoration: none
+  &__item
+    font-size: 14px
+    b
+      font-weight: 500
+    a
+      display: inline-block
+      text-decoration: none
+      outline: none
+      transition: 0.4s ease-in-out
+      &:hover
+        color: #0287d1
+  &__right
+    display: flex
+    align-items: center
+    text-align: right
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    margin-bottom: -7px
+    font-size: 18px
+    font-weight: 500
+    transition: 0.4s ease-in-out
+    .icon
+      display: none
+    &:hover
+      color: #0287d1
+  &__link
+    position: relative
+    display: inline-block
+    text-decoration: none
+    outline: none
+    font-size: 14px
+    color: $accent
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -1px
+      display: block
+      width: 100%
+      height: 1px
+      background: $accent
+      transition: 0.4s ease-in-out
+    &:hover
+      &::after
+        transform: scale(0)
+  &__menu
+    &-wrap
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      transition: 0.1s ease-in-out
+      z-index: 1
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+    display: flex
+    justify-content: space-around
+    background-color: #01569b
+    border-radius: 6px
+    & > li
+      & > a
+        display: flex
+        justify-content: space-between
+        align-items: center
+        text-decoration: none
+        outline: none
+        height: 55px
+        padding-left: 20px
+        padding-right: 20px
+        font-size: 15px
+        line-height: 1.2
+        font-weight: 500
+        color: #f4f8fb
+        transition: 0.4s ease-in-out
+        &:hover
+          background-color: #71a420
+
+
+  @media screen and (max-width: 1070px)
+    .menu
+      & > li
+        & > a
+          font-size: 13px
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    &__item
+      display: none
+    .container
+      background-color: #f4f8fb
+    &__menu
+      &-wrap
+        transform: translateY(-110%)
+        background-color: #f4f8fb
+        box-shadow: 0 0 15px rgba($accent, 0.1)
+        transition: 0.4s ease-in-out
+        z-index: -1
+        &.active
+          transform: translateY(0)
+          transition: 0.8s ease-in-out
+    .menu
+      background: none
+      display: block
+      & > li
+        width: 100%
+        & > a
+          height: 45px
+          color: $accent
+          border-bottom: 1px solid rgba($accent, 0.1)
+          &:hover
+            background: none
+          br
+            display: none
+        &:last-of-type
+          & > a
+            border-bottom: none
+    &.fixed
+      .header__menu-wrap
+        transform: translateY(-110%)
+        &.active
+          transform: translateY(0)
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    &__phone
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 41px
+      height: 41px
+      margin-bottom: 0
+      border: 1px solid #0287d1
+      border-radius: 6px
+      font-size: 0
+      .icon
+        display: block
+        width: 20px
+        height: 20px
+        fill: #0287d1
+    &__link
+      display: none
+    .burger
+      margin-left: 6px
+
+  // max-width 575px
+
+  @media screen and (max-width: 400px)
+    .logo
+      width: 178px
+      height: 32px
+
+  // max-width 400px
+
+/* .header */

@@ -1,0 +1,66 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__item
+          p Симферополь,
+            b  ул. Ген. Васильева, 23а
+        .header__item
+          p E-mail:
+            a(href="mailto:inpromtek@mail.ru" rel="nofollow") &nbsp;
+              b  inpromtek@mail.ru
+
+        .header__right
+          .header__right-left
+            a.header__phone(href="tel:+79780340305" rel="nofollow") +7 978 034-03-05
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#phone")
+
+            a.header__link.open-modal(href="#modal__callback") Заказать звонок
+
+          button.burger
+            span.burger__wrap
+              span.line
+
+      // /.header__top
+    // /.container
+
+    .header__menu-wrap
+      .container
+        .header__menu
+          ul.menu
+            li.menu-item
+              a(href="#") Вентиляция
+                br
+                |  и дымоудаление
+            li.menu-item
+              a(href="#") Проектирование
+                br
+                |  металлоконструкций
+            li.menu-item
+              a(href="#") Водоснабжение
+                br
+                |  и канализация
+            li.menu-item
+              a(href="#") Системы
+                br
+                |  электроснабжения
+            li.menu-item
+              a(href="#") Отопление
+                br
+                |  и теплоснабжение
+            li.menu-item
+              a(href="#") Резиновые
+                br
+                |  покрытия
+
+        // /.header__menu
+      // /.container

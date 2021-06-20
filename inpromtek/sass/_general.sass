@@ -341,6 +341,19 @@ input[type="submit"]
 [class$='-controls-pane'],
 [class$='-copyrights-pane']
   display: none
+[class$='-balloon__content']
+  margin-right: 0 !important
+  padding: 0 !important
+  background: none !important
+[class$='-balloon__content'] > ymaps
+  width: auto !important
+  height: auto !important
+[class$='-balloon__layout']
+  background: none !important
+[class$='-balloon__tail']
+  display: none !important
+[class*='-balloon ']
+  box-shadow: none !important
 
 
 /* Переопределение стилей swiper */
@@ -414,6 +427,55 @@ input[type="submit"]
 .mCSB_inside>.mCSB_container
   margin-right: 20px
 
+.balloon-df
+  display: flex
+  width: 422px
+  padding: 10px 10px 20px
+  background-color: #ffffff
+  box-shadow: 0px 6px 10px 0px rgba(88,152,188,0.1)
+  border-radius: 15px
+  font-family: $font
+.balloon-img
+  position: relative
+  flex-shrink: 0
+  width: 124px
+  height: 197px
+  margin-right: 18px
+  background-color: #ffffff
+  border-radius: 6px
+  overflow: hidden
+  z-index: 2
+  img
+    display: block
+    height: 100%
+.balloon-content
+  flex-grow: 1
+  padding-top: 4px
+.balloon-text
+  position: relative
+  font-size: 14px
+  line-height: 1.5
+  color: #2d3241
+  p
+    margin-bottom: 10px
+  b
+    font-weight: 500
+.balloon-title
+  margin-top: 0
+  margin-bottom: 15px
+  font-size: 16px
+  font-weight: 700
+  color: #2d3241
+.balloon-link
+  display: inline-block
+  outline: none
+  font-size: 14px
+  color: $accent
+  transition: 0.4s ease-in-out
+  &:hover
+    color: $accent2
+
+
 /* Переопределение bootstrap */
 @media (min-width: 1200px)
   .container
@@ -467,6 +529,22 @@ input[type="submit"]
   .page-desc
     margin-bottom: 20px
     font-size: 14px
+  .balloon-df
+    width: 322px
+    padding: 5px
+  .balloon-img
+    width: 104px
+    height: 177px
+    margin-right: 10px
+  .balloon-text
+    font-size: 13px
+    p
+      margin-bottom: 5px
+  .balloon-title
+    margin-bottom: 10px
+    font-size: 14px
+  .balloon-link
+    font-size: 13px
 
 // max-width 575px
 
@@ -476,6 +554,10 @@ input[type="submit"]
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 400px)
+  .balloon-df
+    width: 292px
+  .balloon-img
+    width: 84px
 
 // max-width 400px

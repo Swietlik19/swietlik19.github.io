@@ -2,11 +2,84 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
 
-      function createMap(xID,coords) {
+      // В xObjectArr столько объектов, сколько вкладок в секции с картами. В link ссылка на объект
+      xObjectArr = [
+        [
+          {
+            coords: [44.946528, 34.099994],
+            img: 'img/map-img.jpg',
+            title: 'Жилой комплекс «Panorama»',
+            content: '<p><b>Местоположение:</b>' +
+              '<br>Симферополь, улица Желябова, 50</p>' +
+              '<p><b>Площадь:</b> 120 кв. метров</p>' +
+              '<p><b>Монтируемые системы:</b> '+
+              '<br>вентиляция, дымоудаление</p>',
+            link: 'https://'
+          },
+          {
+            coords: [44.946200, 34.086685],
+            img: 'img/map-img.jpg',
+            title: 'Жилой комплекс «Panorama»',
+            content: '<p><b>Местоположение:</b>' +
+              '<br>Симферополь, улица Желябова, 50</p>' +
+              '<p><b>Площадь:</b> 120 кв. метров</p>' +
+              '<p><b>Монтируемые системы:</b> '+
+              '<br>вентиляция, дымоудаление</p>',
+            link: 'https://'
+          },
+        ],
 
-        if ($("#" + xID + "").length > 0) {
+        [
+          {
+            coords: [44.946528, 34.099994],
+            img: 'img/map-img.jpg',
+            title: 'Жилой комплекс «Panorama»',
+            content: '<p><b>Местоположение:</b>' +
+              '<br>Симферополь, улица Желябова, 50</p>' +
+              '<p><b>Площадь:</b> 120 кв. метров</p>' +
+              '<p><b>Монтируемые системы:</b> '+
+              '<br>вентиляция, дымоудаление</p>',
+            link: 'https://'
+          }
+        ],
+
+        [
+          {
+            coords: [44.946528, 34.099994],
+            img: 'img/map-img.jpg',
+            title: 'Жилой комплекс «Panorama»',
+            content: '<p><b>Местоположение:</b>' +
+              '<br>Симферополь, улица Желябова, 50</p>' +
+              '<p><b>Площадь:</b> 120 кв. метров</p>' +
+              '<p><b>Монтируемые системы:</b> '+
+              '<br>вентиляция, дымоудаление</p>',
+            link: 'https://'
+          },
+          {
+            coords: [44.946200, 34.086685],
+            img: 'img/map-img.jpg',
+            title: 'Жилой комплекс «Panorama»',
+            content: '<p><b>Местоположение:</b>' +
+              '<br>Симферополь, улица Желябова, 50</p>' +
+              '<p><b>Площадь:</b> 120 кв. метров</p>' +
+              '<p><b>Монтируемые системы:</b> '+
+              '<br>вентиляция, дымоудаление</p>',
+            link: 'https://'
+          },
+        ]
+      ];
+
+      var xZoom = 15;
+
+      xObjectArr.forEach(function(xel,xi) {
+        createMap(xel,xi);
+      });
+
+      function createMap(xObjectArr,xind) {
+
+        var xID = "map__map-" + xind + "";
+        if ($("#" + xID).length > 0) {
 
           var myMap;
 
@@ -14,40 +87,63 @@ mixin script-map()
           ymaps.ready(init);
 
           function init () {
-              myMap = new ymaps.Map(xID, {
-                  center: coords,
-                  zoom: 17
+            myMap = new ymaps.Map(xID, {
+                center: xObjectArr[0].coords,
+                zoom: xZoom
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
+
+            xObjectArr.forEach(function(xel,xi) {
+              window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {
+                  hintContent: ' ',
+                  // Зададим содержимое балуна.
+                  balloonContent: '<div class="balloon-df">' +
+                  '<div class="balloon-img"><img src="' + xel.img +'" height="124" width="197" data-object-fit-cover></div>'
+                  +'<div class=""><div class="balloon-title">' + xel.title +'</div>' +
+                  '<div class="balloon-text">' + xel.content + '</div>' +
+                  '<a class="balloon-link" href="' + xel.link + '">Подробнее</a></div></div>' ,
+                  balloonCloseButton: false,
+
               }, {
-                  searchControlProvider: 'yandex#search'
+                // Опции.
+
+                balloonPanelMaxMapArea: 0,
+                openTimeout: 0,
+
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'img/svg/pin.svg',
+                // Размеры метки.
+                iconImageSize: [29, 39],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -40]
+
+              });
+            });
+
+            xObjectArr.forEach(function(xel,xi) {
+
+              window["myPlacemark"+xi].events.add(['hintopen'], function (e) {
+                 window["myPlacemark"+xi].balloon.open();
               });
 
-              // Создаём макет содержимого.
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
+              myMap.geoObjects
+                .add(window["myPlacemark"+xi]);
 
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
-                }, {
-                  // Опции.
-                  // Необходимо указать данный тип макета.
-                  iconLayout: 'default#image',
-                  // Своё изображение иконки метки.
-                  iconImageHref: 'img/svg/pin.svg',
-                  // Размеры метки.
-                  iconImageSize: [41, 51],
-                  // Смещение левого верхнего угла иконки относительно
-                  // её "ножки" (точки привязки).
-                  iconImageOffset: [-15, -60]
-                });
-
-            myMap.geoObjects
-                .add(myPlacemark);
+            });
 
             myMap.behaviors.disable('scrollZoom');
           }
         }
       }
+
 
     })(jQuery);

@@ -166,6 +166,10 @@
     pagination: {
       el: '.categories__slider-btns .swiper-dots',
     },
+    navigation: {
+      nextEl: '.categories__slider-btns .swiper-button-next',
+      prevEl: '.categories__slider-btns .swiper-button-prev',
+    },
     breakpoints: {
       1400: {
         slidesPerView: 3,

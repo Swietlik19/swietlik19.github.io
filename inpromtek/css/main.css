@@ -5261,7 +5261,7 @@ input[type="submit"][disabled] {
 }
 
 .swiper-button-disabled {
-  display: none;
+  opacity: 0;
 }
 
 /* Переопределение стилей mcsb */
@@ -6720,6 +6720,31 @@ input[type="submit"][disabled] {
   .categories__item {
     padding: 10px;
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .categories__slider-btns {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 30px;
+  }
+  .categories__slider-btns .swiper-button-prev,
+  .categories__slider-btns .swiper-button-next {
+    position: static;
+  }
+  .categories__slider-btns .swiper-dots {
+    margin-top: 0;
   }
 }
 

@@ -177,7 +177,9 @@
     var _href = $(this).attr('href');
     $('.scr_map__tab').not(_href).hide();
     $('.scr_map__tooltip').removeClass('active');
-    $('.fil6').removeClass('active');
+    $('.scr_map__part').removeClass('active');
+    $('.scr_map__part').removeClass('checked');
+    $('.scr_map__place').removeClass('active');
     $(_href).fadeIn();
 
     $(this).parents('.swiper-slide').siblings().removeClass('swiper-slide-active');
@@ -200,23 +202,182 @@
       }
   }
 
+  // id должен быть как здесь, остальное можно заменяемым сделать
+  arrMapObjects = [
+    {
+      id: 'dns',
+      title: 'ДНС',
+      imgSrc: 'img/svg/icons/dns.svg',
+      href: 'https://'
+    },
+    {
+      id: 'kari',
+      title: 'kari',
+      imgSrc: 'img/svg/icons/kari.svg',
+      href: 'https://'
+    },
+    {
+      id: 'defile',
+      title: 'Dефи*ле',
+      imgSrc: 'img/svg/icons/defile.svg',
+      href: 'https://'
+    },
+    {
+      id: 'amaia',
+      title: 'AmaiA',
+      imgSrc: 'img/svg/icons/amaia.svg',
+      href: 'https://'
+    },
+    {
+      id: 'midea',
+      title: 'Midea',
+      imgSrc: 'img/svg/icons/midea.svg',
+      href: 'https://'
+    },
+    {
+      id: 'stillagio',
+      title: 'STILLAGIO',
+      imgSrc: 'img/svg/icons/stillagio.svg',
+      href: 'https://'
+    },
+    {
+      id: 'yabloko',
+      title: 'Яблоко',
+      imgSrc: 'img/svg/icons/yabloko.svg',
+      href: 'https://'
+    },
+    {
+      id: 'kinobox',
+      title: 'Кинотеатр Kinobox',
+      imgSrc: 'img/svg/icons/kinobox.svg',
+      href: 'https://'
+    },
+    {
+      id: 'happy_baby',
+      title: 'Happy Baby',
+      imgSrc: 'img/svg/icons/happy_baby.svg',
+      href: 'https://'
+    },
+    {
+      id: 'respect',
+      title: 'Respect',
+      imgSrc: 'img/svg/icons/respect.svg',
+      href: 'https://'
+    },
+    {
+      id: 'puma',
+      title: 'Puma',
+      imgSrc: 'img/svg/icons/puma.svg',
+      href: 'https://'
+    },
+    {
+      id: 'columbia',
+      title: 'Columbia',
+      imgSrc: 'img/svg/icons/columbia.svg',
+      href: 'https://'
+    },
+    {
+      id: 'adidas',
+      title: 'adidas',
+      imgSrc: 'img/svg/icons/adidas.svg',
+      href: 'https://'
+    },
+    {
+      id: 'gloria',
+      title: 'Gloria Jeans',
+      imgSrc: 'img/svg/icons/gloria.svg',
+      href: 'https://'
+    },
+    {
+      id: 'mario',
+      title: 'Mario',
+      imgSrc: 'img/svg/icons/mario.svg',
+      href: 'https://'
+    },
+    {
+      id: 'cleverum',
+      title: 'Cleverum',
+      imgSrc: 'img/svg/icons/cleverum.svg',
+      href: 'https://'
+    },
+    {
+      id: 'evrotop',
+      title: 'Евротоп',
+      imgSrc: 'img/svg/icons/evrotop.svg',
+      href: 'https://'
+    },
+    {
+      id: 'basconi',
+      title: 'Basconi',
+      imgSrc: 'img/svg/icons/basconi.svg',
+      href: 'https://'
+    },
+    {
+      id: 'olymp',
+      title: 'Olymp',
+      imgSrc: 'img/svg/icons/olymp.svg',
+      href: 'https://'
+    },
+    {
+      id: 'yoko',
+      title: 'Yoko',
+      imgSrc: 'img/svg/icons/yoko.svg',
+      href: 'https://'
+    },
+    {
+      id: 'bawling',
+      title: 'Боулинг',
+      imgSrc: 'img/svg/icons/bawling.svg',
+      href: 'https://'
+    },
+    {
+      id: 'megashop',
+      title: 'Мегаshop',
+      imgSrc: 'img/svg/icons/megashop.svg',
+      href: 'https://'
+    },
+    {
+      id: 'rbt',
+      title: 'RBT',
+      imgSrc: 'img/svg/icons/rbt.svg',
+      href: 'https://'
+    },
+  ];
+
   $('.scr_map__part').hover(function() {
-    $('.fil6').removeClass('active');
-    $(this).find('.fil6').addClass('active');
-    if ( $(this).hasClass('scr_map__part--rent') ) {
+    $('.scr_map__part').removeClass('active');
+    $(this).addClass('active');
+    if ($(this).hasClass('scr_map__part--bank')) {
       $('.scr_map__img').hide();
-      $('.scr_map__content a').hide();
       $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
-      $('.scr_map__tooltip span').text('Аренда');
+      $('.scr_map__tooltip span').text('Банкомат');
+      $('.scr_map__tooltip a').hide();
+    } else if ($(this).hasClass('scr_map__part--toilet')) {
+      $('.scr_map__img').hide();
+      $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
+      $('.scr_map__tooltip span').text('Туалет');
+      $('.scr_map__tooltip a').hide();
+    } else if ( $(this).hasClass('scr_map__part--rent') ) {
+      $('.scr_map__img').hide();
+      $('.scr_map__tooltip a').show();
+      $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
+      $('.scr_map__tooltip span').text('Сдается в аренду');
+      $('.scr_map__tooltip a').text('Арендовать помещение ');
     } else {
-      var _title = $(this).data('map-title');
-      var _imgUrl = $(this).data('map-img');
-      var _linkUrl = $(this).data('map-link');
+      var _id = $(this).data('map-id');
+      arrMapObjects.forEach(function(item, i, arr) {
+        if (item.id == _id) {
+          _title = item.title;
+          _imgSrc = item.imgSrc;
+          _linkUrl = item.href;
+        }
+      });
       $('.scr_map__img').show();
       $('.scr_map__tooltip').removeClass('scr_map__tooltip--rent');
       $('.scr_map__tooltip span').text(_title);
-      $('.scr_map__tooltip img').attr('src',_imgUrl);
+      $('.scr_map__tooltip img').attr('src',_imgSrc);
       $('.scr_map__tooltip a').attr('href',_linkUrl);
+      $('.scr_map__tooltip a').text('Перейти на страницу');
       $('.scr_map__content a').show();
     }
     tooltipCoords(this);
@@ -225,14 +386,25 @@
 
   $('.page_wr').hover(function() {
     var _check = true;
-    $('.scr_map__map').each(function(xi,xel) {
-      if ($(xel).is(':hover')) _check = false;
+    $('.scr_map__svg').each(function(xi,xel) {
+      if ($(xel).is(':hover') || $('.scr_map__tooltip').is(':hover')) _check = false;
     });
 
     if ( _check ) {
       $('.scr_map__tooltip').removeClass('active');
-      $('.fil6').removeClass('active');
+      $('.scr_map__part').removeClass('active');
     }
+  });
+
+  $('.scr_map__place').click(function(e) {
+    e.preventDefault();
+    var _type = $(this).data('map-place');
+    $(this).parent().siblings().find('a').removeClass('active');
+    $(this).toggleClass('active');
+    $('.scr_map__tooltip').removeClass('active');
+    $('.scr_map__part').removeClass('active');
+    $('.scr_map__part:not(.scr_map__part--' + _type + ')').removeClass('checked');
+    $('.scr_map__part--' + _type).toggleClass('checked');
   });
 
   /* СЛАЙДЕРЫ */
@@ -291,7 +463,7 @@
   });
 
   var scrMapSlider = new Swiper('#scr_map__slider', {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 10,
     watchSlidesProgress: true,
     slideToClickedSlide: true,
@@ -301,6 +473,7 @@
     },
     breakpoints: {
       500: {
+        slidesPerView: 'auto',
         spaceBetween: 23,
       },
     },

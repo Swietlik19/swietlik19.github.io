@@ -202,148 +202,6 @@
       }
   }
 
-  // id должен быть как здесь, остальное можно заменяемым сделать
-  arrMapObjects = [
-    {
-      id: 'dns',
-      title: 'ДНС',
-      imgSrc: 'img/svg/icons/dns.svg',
-      href: 'https://'
-    },
-    {
-      id: 'kari',
-      title: 'kari',
-      imgSrc: 'img/svg/icons/kari.svg',
-      href: 'https://'
-    },
-    {
-      id: 'defile',
-      title: 'Dефи*ле',
-      imgSrc: 'img/svg/icons/defile.svg',
-      href: 'https://'
-    },
-    {
-      id: 'amaia',
-      title: 'AmaiA',
-      imgSrc: 'img/svg/icons/amaia.svg',
-      href: 'https://'
-    },
-    {
-      id: 'midea',
-      title: 'Midea',
-      imgSrc: 'img/svg/icons/midea.svg',
-      href: 'https://'
-    },
-    {
-      id: 'stillagio',
-      title: 'STILLAGIO',
-      imgSrc: 'img/svg/icons/stillagio.svg',
-      href: 'https://'
-    },
-    {
-      id: 'yabloko',
-      title: 'Яблоко',
-      imgSrc: 'img/svg/icons/yabloko.svg',
-      href: 'https://'
-    },
-    {
-      id: 'kinobox',
-      title: 'Кинотеатр Kinobox',
-      imgSrc: 'img/svg/icons/kinobox.svg',
-      href: 'https://'
-    },
-    {
-      id: 'happy_baby',
-      title: 'Happy Baby',
-      imgSrc: 'img/svg/icons/happy_baby.svg',
-      href: 'https://'
-    },
-    {
-      id: 'respect',
-      title: 'Respect',
-      imgSrc: 'img/svg/icons/respect.svg',
-      href: 'https://'
-    },
-    {
-      id: 'puma',
-      title: 'Puma',
-      imgSrc: 'img/svg/icons/puma.svg',
-      href: 'https://'
-    },
-    {
-      id: 'columbia',
-      title: 'Columbia',
-      imgSrc: 'img/svg/icons/columbia.svg',
-      href: 'https://'
-    },
-    {
-      id: 'adidas',
-      title: 'adidas',
-      imgSrc: 'img/svg/icons/adidas.svg',
-      href: 'https://'
-    },
-    {
-      id: 'gloria',
-      title: 'Gloria Jeans',
-      imgSrc: 'img/svg/icons/gloria.svg',
-      href: 'https://'
-    },
-    {
-      id: 'mario',
-      title: 'Mario',
-      imgSrc: 'img/svg/icons/mario.svg',
-      href: 'https://'
-    },
-    {
-      id: 'cleverum',
-      title: 'Cleverum',
-      imgSrc: 'img/svg/icons/cleverum.svg',
-      href: 'https://'
-    },
-    {
-      id: 'evrotop',
-      title: 'Евротоп',
-      imgSrc: 'img/svg/icons/evrotop.svg',
-      href: 'https://'
-    },
-    {
-      id: 'basconi',
-      title: 'Basconi',
-      imgSrc: 'img/svg/icons/basconi.svg',
-      href: 'https://'
-    },
-    {
-      id: 'olymp',
-      title: 'Olymp',
-      imgSrc: 'img/svg/icons/olymp.svg',
-      href: 'https://'
-    },
-    {
-      id: 'yoko',
-      title: 'Yoko',
-      imgSrc: 'img/svg/icons/yoko.svg',
-      href: 'https://'
-    },
-    {
-      id: 'bawling',
-      title: 'Боулинг',
-      imgSrc: 'img/svg/icons/bawling.svg',
-      href: 'https://'
-    },
-    {
-      id: 'megashop',
-      title: 'Мегаshop',
-      imgSrc: 'img/svg/icons/megashop.svg',
-      href: 'https://'
-    },
-    {
-      id: 'rbt',
-      title: 'RBT',
-      imgSrc: 'img/svg/icons/rbt.svg',
-      href: 'https://'
-    },
-  ];
-
   $('.scr_map__part').hover(function() {
     $('.scr_map__part').removeClass('active');
     $(this).addClass('active');
@@ -361,10 +219,16 @@
       $('.scr_map__img').hide();
       $('.scr_map__tooltip a').show();
       $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
+      $('.scr_map__tooltip span').text('Арендуется');
+      $('.scr_map__tooltip a').hide();
+    } else if ( $(this).hasClass('scr_map__part--rent-free') ) {
+      $('.scr_map__img').hide();
+      $('.scr_map__tooltip a').show();
+      $('.scr_map__tooltip').addClass('scr_map__tooltip--rent');
       $('.scr_map__tooltip span').text('Сдается в аренду');
       $('.scr_map__tooltip a').text('Арендовать помещение ');
     } else {
-      var _id = $(this).data('map-id');
+      var _id = $(this).attr('id').replace("scr_map__part-","") ;
       arrMapObjects.forEach(function(item, i, arr) {
         if (item.id == _id) {
           _title = item.title;
@@ -383,6 +247,12 @@
     tooltipCoords(this);
   });
 
+  arrMapObjects.forEach(function(item, i, arr) {
+    if ($('#scr_map__logo-' + item.id).length > 0) {
+      $('#scr_map__logo-' + item.id).attr('xlink:href',item.imgSrcMap);
+      $('#scr_map__part-' + item.id).addClass('scr_map__part--' + item.type);
+    }
+  });
 
   $('.page_wr').hover(function() {
     var _check = true;

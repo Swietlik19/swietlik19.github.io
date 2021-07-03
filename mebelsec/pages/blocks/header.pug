@@ -1,0 +1,95 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+          else
+            #{logotype}.logo
+              svg.icon
+                use(xlink:href="img/svg/sprite.svg#logo")
+
+        .header__left
+          .header__search
+            .form
+              form
+                .form__item
+                  span.your-search.text-input
+                    input(type='tel', name='your-search', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Поиск')
+
+                  button.open-search(type='submit')
+                    svg.icon
+                      use(xlink:href='img/svg/sprite.svg#icon-search')
+
+          .header__address
+            p
+              b Наш адрес:
+              br
+              |  Севастополь, ул. Руднева, 31
+
+        .header__phones
+          .header__phones-col
+            a.header__phone(href="tel:+79780482160" rel="nofollow") +7 (978) 048 21 60
+
+            .header__msgs
+              a.header__msg.header__msg--viber(href="viber://chat?number=79780482160" rel="nofollow")
+              a.header__msg.header__msg--tg(href="tel:+79780482160" rel="nofollow")
+              a.header__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79780482160" rel="nofollow")
+
+          .header__phones-col
+            a.header__phone(href="tel:+79780306840" rel="nofollow") +7 (978) 030 68 40
+            a.header__order.open-modal(href="#modal__callback") Заказать звонок
+
+        .header__btns
+          button.header__btn.header__btn--catalog
+            span.header__btn-icon
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#list')
+            span.header__btn-text Каталог
+          button.header__btn.header__btn--like
+            span.header__btn-icon
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#heart')
+            span.header__btn-text Избранное
+          button.header__btn.header__btn--cart
+            span.header__btn-icon
+              svg.icon
+                use(xlink:href='img/svg/sprite.svg#cart')
+              span.header__btn-num 3
+            span.header__btn-text Корзина
+              b 36 200 Р
+
+      // /.header__top
+    // /.container
+
+    .header__menu
+      .container
+        ul.menu
+          li.menu-item
+            a(href="#") Акции
+          li.menu-item
+            a(href="#") Как заказать
+          li.menu-item
+            a(href="#") Оплата и доставка
+          li.menu-item
+            a(href="#") Кредит
+          li.menu-item
+            a(href="#") Сборка мебели
+          li.menu-item
+            a(href="#") Гарантия и возврат
+          li.menu-item
+            a(href="#") Отзывы
+          li.menu-item
+            a(href="#") Вопрос-ответ
+          li.menu-item
+            a(href="#") Контакты
+
+      // /.container
+    // /.header__menu

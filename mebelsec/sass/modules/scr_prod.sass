@@ -1,0 +1,230 @@
+.prod
+  position: relative
+  padding-top: 48px
+  padding-bottom: 52px
+  overflow-x: hidden
+  &__wrap
+    position: relative
+    margin-top: 29px
+  &__slider
+    overflow: hidden
+    margin: -20px
+    padding: 20px
+    &-btns
+      .swiper-dots
+        display: none
+  &__item
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding: 14px
+    padding-bottom: 23px
+    position: relative
+    background-color: #ffffff
+    border: 1px solid rgba(189,222,240,0.32)
+    border-radius: 10px
+    transition: 0.4s ease-in-out
+    z-index: 1
+    &:hover
+      box-shadow: 0 5px 10px rgba($accent, 0.2)
+  &__top
+    position: absolute
+    top: 15px
+    left: 15px
+    right: 22px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 5
+  &__label
+    padding: 5px 17px
+    background-color: #fa9b06
+    border-radius: 6px
+    font-size: 16px
+    font-weight: 700
+    text-transform: uppercase
+    color: #ffffff
+    &--sale
+      background-color: #21b8fe
+  &__btn
+    position: relative
+    background: none
+    border: none
+    outline: none
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    background-color: #ffffff
+    box-shadow: 0px 0px 15px 0px rgba(85,134,164,0.15)
+    cursor: pointer
+    border-radius: 50%
+    transition: 0.4s ease-in-out
+    &:not(.active)
+      &:hover
+        background-color: $accent
+        .icon
+          fill: #fff
+    &.active
+      .icon
+        &.hidden
+          opacity: 1
+    .icon
+      display: block
+      width: 16px
+      height: 13px
+      transition: 0.3s
+      &.hidden
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0
+
+  &__img
+    display: flex
+    align-items: center
+    text-decoration: none
+    outline: none
+    margin-bottom: 17px
+    border-radius: 8px
+    overflow: hidden
+    img
+      display: block
+  &__content
+    flex-grow: 1
+    padding-bottom: 14px
+    border-bottom: 1px solid #e3edf3
+    a
+      display: block
+      text-decoration: none
+      outline: none
+      &:hover
+        .prod__title
+          color: #7bbee2
+  &__title
+    margin-top: 0
+    margin-bottom: 0
+    font-size: 18px
+    line-height: 1.333333333333333
+    font-weight: 700
+    transition: 0.4s ease-in-out
+  &__bottom
+    margin-top: auto
+    display: flex
+    align-items: flex-end
+    flex-wrap: wrap
+    padding-top: 14px
+    .btn__wrap
+      margin-top: 10px
+      margin-bottom: -5px
+      .xbtn
+        display: flex
+        align-items: center
+        padding-right: 16px
+        padding-left: 13px
+        font-size: 13px
+        .icon
+          width: 21px
+          height: 17px
+          margin-right: 9px
+          fill: #fff
+        &:hover
+          .icon
+            fill: $accent2
+  &__price
+    &--old
+      display: block
+      margin-left: 15px
+      margin-right: auto
+      font-size: 16px
+      line-height: 1
+      font-weight: 500
+      color: #5586a4
+      text-decoration: line-through
+      line-height: 1
+    &--new
+      display: block
+      font-size: 24px
+      line-height: 1
+      font-weight: 700
+      color: $accent
+  &--sale
+    padding-top: 35px
+    padding-bottom: 69px
+
+
+  @media screen and (max-width: 1500px)
+    &__slider
+      &-btns
+        padding-top: 25px
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+        .swiper-dots
+          display: flex
+          justify-content: center
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1070px)
+    padding-top: 30px
+    padding-bottom: 30px
+    &__title
+      br
+        display: none
+
+  // max-width 1070px
+
+  @media screen and (max-width: 767px)
+    &__item
+      padding: 8px
+      padding-bottom: 15px
+    &__top
+      top: 8px
+      left: 8px
+      right: 12px
+    &__label
+      padding: 5px 7px
+      font-size: 12px
+    &__title
+      font-size: 15px
+    &__price
+      &--new
+        font-size: 18px
+      &--old
+        margin-left: 10px
+        font-size: 14px
+    &__bottom
+      .btn__wrap
+        .xbtn
+          height: 32px
+          padding-right: 16px
+          padding-left: 9px
+          font-size: 12px
+          .icon
+            width: 17px
+            height: 14px
+            margin-right: 5px
+    &--sale
+      .prod__item
+        border: none
+
+  // max-width 767px
+
+  @media screen and (max-width: 500px)
+    &__wrap
+      margin-top: 19px
+    &__title
+      font-size: 14px
+    &__price
+      &--new
+        font-size: 16px
+      &--old
+        margin-left: 8px
+        font-size: 13px
+
+  // max-width 500px
+
+/* prod */

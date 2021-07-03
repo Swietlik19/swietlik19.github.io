@@ -1,0 +1,356 @@
+.header
+  width: 100%
+  overflow-x: hidden
+  .burger
+    display: none
+  &__top
+    height: 101px
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__left
+    display: flex
+    align-items: center
+  &__search
+    flex-grow: 1
+    width: 330px
+    margin-right: 25px
+    .form
+      &__item
+        position: relative
+      .text-input
+        input
+          width: 100%
+          height: 45px
+          background-color: #ffffff
+          border: 1px solid rgba(123,190,226,0.49)
+          border-radius: 22.5px
+          padding-left: 20px
+          font-size: 14px
+          color: #2d5266
+          &:hover
+            border-color: $accent
+    .open-search
+      position: absolute
+      top: calc(50% - 10px)
+      right: 16px
+      background: none
+      border: none
+      outline: none
+      display: block
+      width: 20px
+      height: 19px
+      cursor: pointer
+      .icon
+        transition: 0.4s ease-in-out
+      &:hover
+        .icon
+          fill: rgba(123,190,226,0.49)
+  &__address
+    font-size: 14px
+    b
+      font-weight: 700
+  &__phones
+    display: flex
+    margin-left: 15px
+    margin-right: 15px
+    &-col
+      text-align: right
+      margin-right: 28px
+      &:last-of-type
+        margin-right: 0
+  &__phone,
+  &__order
+    display: block
+    text-decoration: none
+    outline: none
+    font-weight: 700
+    transition: 0.4s ease-in-out
+    &:hover
+      color: rgba(123,190,226,1)
+  &__order
+    font-size: 14px
+    font-weight: 500
+    text-decoration: underline
+    color: #2d5266
+
+  &__btns
+    flex-shrink: 0
+    position: relative
+    display: flex
+    align-items: center
+  &__btn
+    background: none
+    border: none
+    outline: none
+    display: block
+    cursor: pointer
+    display: flex
+    align-items: center
+    margin-right: 44px
+    text-align: left
+    &:last-of-type
+      margin-right: 0
+    &-icon
+      margin-right: 12px
+    .icon
+      display: block
+      width: 21px
+      height: 18px
+      transition: 0.4s ease-in-out
+    &:hover
+      .icon
+        fill: rgba(123,190,226,1)
+    &-num
+      position: absolute
+      top: -4px
+      right: -8px
+      display: flex
+      align-items: center
+      justify-content: center
+      min-width: 21px
+      height: 21px
+      background-color: #7bbee2
+      padding-left: 3px
+      padding-right: 3px
+      padding-top: 1px
+      text-align: center
+      border-radius: 50%
+      font-size: 14px
+      font-weight: 500
+      color: #ffffff
+    &-text
+      font-size: 14px
+      color: $accent
+      b
+        display: block
+        margin-top: 5px
+        font-size: 16px
+        font-weight: 700
+        color: #0d1014
+    &--catalog
+      display: none
+    &--cart
+      .header__btn-icon
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 45px
+        height: 45px
+        border: 1px solid rgba(123,190,226,0.49)
+        border-radius: 50%
+  &__msg
+    text-decoration: none
+    outline: none
+    display: inline-block
+    width: 16px
+    height: 16px
+    background: transparent url('../img/svg/icons/_viber.svg') no-repeat center center
+    background-size: contain
+    margin-right: 11px
+    transition: 0.2s ease-in-out
+    &:last-of-type
+      margin-right: 0
+    &:hover
+      transform: scale(1.1)
+    &--wa
+      background-image: url('../img/svg/icons/_wa.svg')
+    &--tg
+      background-image: url('../img/svg/icons/_telegram.svg')
+
+  &__menu
+    background-color: #5586a4
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 53px
+    & > li
+      margin-right: 10px
+      &:last-of-type
+        margin-right: 0
+      & > a
+        position: relative
+        display: block
+        text-decoration: none
+        outline: none
+        font-weight: 500
+        color: #ffffff
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: -1px
+          display: block
+          width: 100%
+          height: 1px
+          background: #fff
+          transition: 0.4s ease-in-out
+          opacity: 0
+        &:hover
+          &::after
+            opacity: 1
+  .logo
+    &__wrap
+      display: none
+
+
+  @media screen and (max-width: 1600px)
+    &__search
+      width: 260px
+    &__phones
+      &-col
+        margin-right: 18px
+    &__btn
+      margin-right: 24px
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1500px)
+    &__phones
+      &-col
+        &:nth-of-type(n + 2)
+          display: none
+
+  // max-width 1500px
+
+  @media screen and (max-width: 1400px)
+    &__top
+      height: 75px
+    &__address
+      display: none
+    .menu
+      height: 43px
+      & > li
+        & > a
+          font-size: 14px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    .menu
+      & > li
+        & > a
+          font-size: 12px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    html,
+    body
+      overflow-x: hidden
+    .logo
+      width: 150px
+      height: 54px
+      &__wrap
+        display: block
+    &__btns
+      position: fixed
+      bottom: 0
+      left: 0
+      justify-content: space-between
+      width: 100%
+      padding: 10px 15px
+      z-index: 100
+      background: #fff
+      box-shadow: 0 0 10px rgba($accent, 0.2)
+    &__btn
+      flex-direction: column
+      &-icon
+        margin-right: 0
+        margin-bottom: 5px
+      &-text
+        b
+          display: none
+      &-num
+        top: -7px
+        right: -18px
+        min-width: 19px
+        height: 19px
+        font-size: 12px
+      &--catalog
+        display: flex
+      &--cart
+        .header__btn-icon
+          width: auto
+          height: auto
+          border: none
+    &__phones
+      margin-right: 0
+      &-col
+        margin-right: 0
+    &__left
+      flex-grow: 1
+    &__search
+      margin-right: 0
+      flex-grow: 1
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    border-bottom: 1px solid rgba(123,190,226,0.1)
+    background: #fff
+    z-index: 100
+    &.fixed
+      box-shadow: 0 0 15px rgba($accent, 0.2)
+    &__menu
+      position: fixed
+      left: 0
+      top: 0
+      width: 251px
+      height: 100vh
+      max-height: 100vh
+      padding-top: 70px
+      overflow: auto
+      z-index: 80
+      background: #fff
+      transform: translateX(-101%)
+      transition: 0.3s ease-in-out
+      z-index: 100
+      &.active
+        transform: translateX(0)
+        transition: 0.7s ease-in-out
+    .burger
+      display: flex
+      z-index: 110
+      .line
+        &,
+        &::after,
+        &::before
+          background-color: #7bbee2
+    .menu
+      display: block
+      & > li
+        margin-right: 0
+        & > a
+          padding: 10px 0
+          color: $accent
+          text-transform: uppercase
+          border-bottom: 1px solid rgba($accent, 0.2)
+    &__search
+      width: 100%
+      padding: 20px 15px 0
+
+  // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__top
+      height: 65px
+    &__phone
+      font-size: 14px
+    .logo
+      width: 140px
+      height: 44px
+
+  // max-width 767px
+
+/* .header */

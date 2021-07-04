@@ -321,6 +321,9 @@
   &--familiar
     background-color: #efeeed
     padding-top: 40px
+  &__nav
+    &-btn
+      display: none
 
 
   @media screen and (max-width: 1240px)
@@ -413,7 +416,7 @@
     &__weight
       font-size: 13px
     .title--second
-      margin-bottom: 12px
+      margin-bottom: 0
       &.mobile
         display: block
     &__submenu
@@ -446,6 +449,60 @@
           margin-right: 10px
         &:nth-of-type(2n)
           margin-right: 0
+    &__nav
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-wrap: wrap
+      margin-bottom: 12px
+      h1
+        margin-right: 15px
+      &-btn
+        background: none
+        border: none
+        outline: none
+        display: block
+        width: 20px
+        height: 25px
+        background: transparent url('../img/svg/arrow-black.svg') no-repeat center center
+        background-size: 9px 15px
+        transform-origin: center
+        transform: rotate(90deg)
+        cursor: pointer
+      .menu
+        margin: 0
+        padding: 0
+        list-style: none
+        width: 100%
+        display: none
+        & > li
+          & > a
+            display: block
+            text-decoration: none
+            outline: none
+            padding-left: 10px
+            padding-top: 6px
+            padding-bottom: 6px
+            text-transform: uppercase
+            border-bottom: 1px solid rgba(#000, 0.2)
+            font-weight: 700
+            font-size: 15px
+
+      .sub-menu
+        margin: 0
+        padding: 0
+        list-style: none
+        padding-top: 8px
+        padding-bottom: 3px
+        & > li
+          & > a
+            display: block
+            text-decoration: none
+            outline: none
+            font-size: 15px
+            padding-left: 20px
+            i
+              display: none
 
   // max-width 767px
 

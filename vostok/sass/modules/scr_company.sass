@@ -80,7 +80,73 @@
       background: none
     .scr1__feat
       margin-bottom: 0
+  &__certs
+    margin: 0
+    padding: 0
+    list-style: none
+    overflow: hidden
+    &-cont
+      padding-bottom: 34px
+      .title--second
+        text-align: center
+    &-wrap
+      position: relative
+    &-item
+      display: flex
+      flex-direction: column
+      align-items: center
+      text-align: center
+      background-color: #ffffff
+      border: 1px solid rgba(228,233,218,0.69)
+      padding: 44px 20px 27px
+      transition: 0.4s ease-in-out
+      &:hover
+        border-color: $accent
+    &-title
+      margin-top: 38px
+      font-size: 16px
+      line-height: 1.2
+      font-weight: 700
+      color: #000000
+    &-img
+      position: relative
+      display: block
+      text-decoration: none
+      outline: none
+      height: 193px
+      z-index: 1
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: block
+        width: 202px
+        height: 202px
+        background-color: #efeeec
+        border-radius: 50%
+        z-index: -1
+      img
+        display: block
+    &-btns
+      .swiper-button-prev
+        left: -58px
+      .swiper-button-next
+        right: -58px
+      .swiper-dots
+        display: none
 
+
+  @media screen and (max-width: 1300px)
+    &__certs
+      &-btns
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+        .swiper-dots
+          display: flex
+          justify-content: center
 
   @media screen and (max-width: 991px)
     &__shop
@@ -99,6 +165,12 @@
       & > li
         img
           width: 59px
+    &__certs
+      &-item
+        padding: 14px 10px 17px
+      &-title
+        margin-top: 18px
+        font-size: 14px
 
   // max-width 991px
 
@@ -127,6 +199,11 @@
           font-size: 14px
           &::before
             font-size: 43.9px
+    &__certs
+      &-img
+        &::before
+          width: 152px
+          height: 152px
 
   // max-width 700px
 
@@ -151,6 +228,10 @@
     &__img
       width: 121px
       height: 128px
+    &__certs
+      &-title
+        margin-top: 14px
+        font-size: 12px
 
   // max-width 450px
 

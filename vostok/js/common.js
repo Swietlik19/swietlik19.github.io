@@ -22,7 +22,6 @@
     scrolling: 'auto'
   });
 
-
   /* инициализация таймера */
   var ts = new Date(2020, 6, 1);
 
@@ -72,6 +71,12 @@
 
   $('.header__catalog').click(function() {
     $('.page-top').addClass('active');
+  });
+
+  $('.your-file input').change(function() {
+    var fileName = $(this).val();
+    fileName = fileName.replace (/\\/g, '/').split ('/').pop ();
+    $(this).siblings('.sl').text(fileName);
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -129,11 +134,51 @@
 
   toggleHidden('.faq',true);
 
+  // Секция "Вакансии"
+  function toggleJobs() {
+    $('.jobs__top').click(function() {
+      $(this).parent().toggleClass('active');
+      $(this).siblings().slideToggle();
+      $(this).parent().siblings().removeClass('active');
+      $(this).parent().siblings().find('.jobs__hidden').slideUp();
+    });
+  }
+
+  toggleJobs();
+  $('.jobs__list > li:first-of-type').addClass('active');
+  $('.jobs__list > li:first-of-type .jobs__hidden').show();
+
   // фиксированные шапка
   $(window).on("scroll", function() {
     var fromTop = $(document).scrollTop();
     $(".header").toggleClass("fixed", (fromTop > 10));
+
+    if (!(window.matchMedia('(max-width: 767px)').matches)) {
+      $(".page-top").toggleClass("fixed", (fromTop > 10));
+      if (fromTop > 10) {
+        setTimeout(function() {$(".page-top").addClass("fixedtr")},300);
+      } else {
+        setTimeout(function() {$(".page-top").removeClass("fixedtr")},300);
+      }
+      $(".page-top__show").toggleClass("active", (fromTop > 10));
+    }
+
     $(".to-top").toggleClass("fixed", (fromTop > 600));
+  });
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    $(".page-top").addClass('fixed');
+  }
+
+  if (window.matchMedia('(max-width: 575px)').matches) {
+    $('.jobs__right b').each(function(xi,xel) {
+      var _container = $(xel).parents('.jobs__item').find('.jobs__left-top');
+      $(xel).appendTo(_container);
+    });
+  }
+
+  $('.page-top__show').click(function() {
+    $('.page-top.fixed').toggleClass('active');
   });
 
   // Табы
@@ -249,28 +294,26 @@
   });
 
    $('.page-top .menu > .menu-item-has-children').hover(function() {
-    if (!(window.matchMedia('(max-width: 767px)').matches)) {
+    if (!(window.matchMedia('(max-width: 767px)').matches) && !($('.page-top').hasClass('fixed')) ) {
       $(this).find('.sub-menu').addClass('active');
     }
   }, function() {
-    if (!(window.matchMedia('(max-width: 767px)').matches)) {
+    if (!(window.matchMedia('(max-width: 767px)').matches) && !($('.page-top').hasClass('fixed')) ) {
       $(this).find('.sub-menu').removeClass('active');
     }
   });
 
   $('.page-top .menu > .menu-item > a').hover(function() {
-    if (!(window.matchMedia('(max-width: 767px)').matches)) {
+    if (!(window.matchMedia('(max-width: 767px)').matches) && !($('.page-top').hasClass('fixed')) ) {
       $(this).parents('.menu-item').siblings().find('.sub-menu').removeClass('active');
     }
   });
 
   $('.page-top .menu > .menu-item-has-children .arrow').click(function() {
-    if (window.matchMedia('(max-width: 767px)').matches) {
-      $(this).toggleClass('active');
-      $(this).siblings('.sub-menu').toggleClass('active');
-      $(this).parents('.menu-item').siblings().find('.sub-menu').removeClass('active');
-      $(this).parents('.menu-item').siblings().find('.arrow').removeClass('active');
-    }
+    $(this).toggleClass('active');
+    $(this).siblings('.sub-menu').toggleClass('active');
+    $(this).parents('.menu-item').siblings().find('.sub-menu').removeClass('active');
+    $(this).parents('.menu-item').siblings().find('.arrow').removeClass('active');
   });
 
   /* Перенести кнопку "в избранное" не мобильном в каталоге */
@@ -417,6 +460,13 @@
         spaceBetween: 15,
       },
     },
+    on: {
+      init: function () {
+        $(window).on("load", function () {
+          equalHeightSwiper('#contacts__team-slider');
+        });
+      },
+    },
   });
 
   var prod__slider = new Swiper('#prod__slider', {
@@ -536,6 +586,34 @@
     },
   });
 
+  var company__certs = new Swiper('#company__certs', {
+    slidesPerView: 2,
+    spaceBetween: 5,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    pagination: {
+      el: '.company__certs-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.company__certs-btns .swiper-button-next',
+      prevEl: '.company__certs-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      1170: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      700: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
   var galleryThumbs = new Swiper('#prod-item__gallery-thumbs', {
     spaceBetween: 18,
     slidesPerView: 1,
@@ -564,12 +642,57 @@
     }
   });
 
+  var optReviewsSlider = new Swiper('#opt-reviews__slider', {
+    spaceBetween: 8,
+    slidesPerView: 1,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    pagination: {
+      el: '.opt-reviews__slider-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.opt-reviews__slider-btns .swiper-button-next',
+      prevEl: '.opt-reviews__slider-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      700: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      400: {
+        slidesPerView: 2,
+      },
+    },
+  });
+
+  function cloneMenu() {
+    if (window.matchMedia('(max-width: 767px)').matches && ($('.prod__nav').length > 0) && !($('.prod__nav .menu').length > 0)) {
+      $(".page-top .menu").clone().appendTo($('.prod__nav'));
+    } else {
+      if (($('.prod__nav .menu').length > 0)) {
+        $(".prod__nav .menu").hide();
+      }
+    }
+  }
+
+  cloneMenu();
+
+  $('.prod__nav-btn').click(function() {
+    $(".prod__nav .menu").slideToggle();
+  });
+
+
   $(window).resize(function() {
 
     var currScreeWidth = $(window).width();
 
     if (currScreeWidth != screenWidth) {
-
+      cloneMenu();
     }
 
     screenWidth = $(window).width();

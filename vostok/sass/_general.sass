@@ -559,6 +559,103 @@ input[type="submit"]
 
         &:hover
           color: $accent
+  &__show
+    background: none
+    border: none
+    outline: none
+
+    position: fixed
+    top: 50%
+    left: -60px
+    transform: rotate(90deg) translateY(-50%)
+    display: none
+    align-items: center
+    justify-content: center
+    width: 120px
+    height: 20px
+    padding-top: 4px
+    z-index: 500
+    text-align: center
+    background: $accent
+    color: #fff
+    border-top-left-radius: 8px
+    border-top-right-radius: 8px
+    line-height: 1
+    font-weight: 700
+    text-transform: uppercase
+    cursor: pointer
+    &.active
+      display: flex
+  &.fixed
+    transform: translateX(-110%)
+    position: fixed
+    top: 0
+    left: 0
+    width: 350px
+    max-width: 100%
+    padding-top: 15px
+    padding-left: 15px
+    padding-right: 15px
+    padding-bottom: 15px
+    height: 100vh
+    overflow: auto
+    background: #fff
+    box-shadow: 0 0 15px rgba(#000, 0.1)
+    z-index: 500
+    &.active
+      transform: translateX(0)
+      transition: 1s
+    .burger
+      display: flex
+      margin-left: 10px
+    .menu
+      flex-direction: column
+      & > li
+        position: relative
+        & > a
+          color: $accent
+          font-weight: 700
+          text-align: left
+          padding: 7px 0
+          padding-left: 10px
+          border-bottom: 1px solid rgba(#000, 0.1)
+          justify-content: flex-start
+          font-size: 14px
+          &:hover
+            background: none
+        &:nth-last-of-type(2)
+          & > a
+            background-image: linear-gradient(180.0deg, #ff0000 0%, #cc0000 100%)
+            color: #fff
+            padding-left: 40px
+        &:last-of-type
+          & > a
+            color: #fff
+            padding-left: 40px
+        .arrow
+          position: absolute
+          top: 5px
+          right: 0
+          display: block
+          width: 25px
+          height: 25px
+          background: transparent url('../img/svg/arrow.svg') no-repeat center center
+          background-size: 16px 10px
+          transform: rotate(90deg)
+          cursor: pointer
+          transition: 0.3s
+          transform-origin: center
+          &.active
+            transform: rotate(-90deg)
+
+
+    .sub-menu
+      position: static
+      background: none
+      box-shadow: none
+
+  &.fixedtr
+    transition: 0.3s
 
 .quantity
   display: flex
@@ -961,9 +1058,10 @@ input[type="submit"]
 
 @media screen and (min-width: 768px)
   .page-top
-    .sub-menu
-      columns: 3
-      column-gap: 0
+    &:not(.fixed)
+      .sub-menu
+        columns: 3
+        column-gap: 0
 
 // min-width 768px
 
@@ -977,73 +1075,73 @@ input[type="submit"]
     font-size: 23px
   .swiper-dots
     margin-top: 15px
-  .page-top
-    transform: translateX(-110%)
-    position: fixed
-    top: 0
-    left: 0
-    width: 350px
-    max-width: 100%
-    padding-top: 15px
-    padding-left: 15px
-    padding-right: 15px
-    padding-bottom: 15px
-    height: 100vh
-    overflow: auto
-    background: #fff
-    box-shadow: 0 0 15px rgba(#000, 0.1)
-    z-index: 500
-    transition: 0.3s
-    &.active
-      transform: translateX(0)
-      transition: 1s
-    .burger
-      display: flex
-      margin-left: 10px
-    .menu
-      flex-direction: column
-      & > li
-        position: relative
-        & > a
-          color: $accent
-          font-weight: 700
-          text-align: left
-          padding: 7px 0
-          padding-left: 10px
-          border-bottom: 1px solid rgba(#000, 0.1)
-          justify-content: flex-start
-          font-size: 14px
-          &:hover
-            background: none
-        &:nth-last-of-type(2)
-          & > a
-            background-image: linear-gradient(180.0deg, #ff0000 0%, #cc0000 100%)
-            color: #fff
-            padding-left: 40px
-        &:last-of-type
-          & > a
-            color: #fff
-            padding-left: 40px
-        .arrow
-          position: absolute
-          top: 5px
-          right: 0
-          display: block
-          width: 25px
-          height: 25px
-          background: transparent url('../img/svg/arrow.svg') no-repeat center center
-          background-size: 16px 10px
-          transform: rotate(90deg)
-          cursor: pointer
-          transition: 0.3s
-          transform-origin: center
-          &.active
-            transform: rotate(-90deg)
+  // .page-top
+  //   transform: translateX(-110%)
+  //   position: fixed
+  //   top: 0
+  //   left: 0
+  //   width: 350px
+  //   max-width: 100%
+  //   padding-top: 15px
+  //   padding-left: 15px
+  //   padding-right: 15px
+  //   padding-bottom: 15px
+  //   height: 100vh
+  //   overflow: auto
+  //   background: #fff
+  //   box-shadow: 0 0 15px rgba(#000, 0.1)
+  //   z-index: 500
+  //   transition: 0.3s
+  //   &.active
+  //     transform: translateX(0)
+  //     transition: 1s
+  //   .burger
+  //     display: flex
+  //     margin-left: 10px
+  //   .menu
+  //     flex-direction: column
+  //     & > li
+  //       position: relative
+  //       & > a
+  //         color: $accent
+  //         font-weight: 700
+  //         text-align: left
+  //         padding: 7px 0
+  //         padding-left: 10px
+  //         border-bottom: 1px solid rgba(#000, 0.1)
+  //         justify-content: flex-start
+  //         font-size: 14px
+  //         &:hover
+  //           background: none
+  //       &:nth-last-of-type(2)
+  //         & > a
+  //           background-image: linear-gradient(180.0deg, #ff0000 0%, #cc0000 100%)
+  //           color: #fff
+  //           padding-left: 40px
+  //       &:last-of-type
+  //         & > a
+  //           color: #fff
+  //           padding-left: 40px
+  //       .arrow
+  //         position: absolute
+  //         top: 5px
+  //         right: 0
+  //         display: block
+  //         width: 25px
+  //         height: 25px
+  //         background: transparent url('../img/svg/arrow.svg') no-repeat center center
+  //         background-size: 16px 10px
+  //         transform: rotate(90deg)
+  //         cursor: pointer
+  //         transition: 0.3s
+  //         transform-origin: center
+  //         &.active
+  //           transform: rotate(-90deg)
 
-    .sub-menu
-      position: static
-      background: none
-      box-shadow: none
+  //   .sub-menu
+  //     position: static
+  //     background: none
+  //     box-shadow: none
 
   .article
     ul

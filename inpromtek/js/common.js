@@ -24,6 +24,7 @@
     $(".categories__content").mCustomScrollbar({
       theme: "dark",
       scrollInertia: 1000,
+      // documentTouchScroll: false,
     });
   });
 
@@ -93,16 +94,16 @@
   // Секции по типу "Вопрос - ответ"
   function toggleHidden(xParent,hideOther) {
     $(xParent + ' .top').click(function() {
-      $(this).find('.open').toggleClass('active');
+      $(this).parent().toggleClass('active');
       $(this).siblings().slideToggle();
       if (hideOther) {
-        $(this).parent().siblings().find('.open').removeClass('active');
+        $(this).parent().siblings().removeClass('active');
         $(this).parent().siblings().find('.hidden').slideUp();
       }
     });
   }
 
-  toggleHidden('.faq',true);
+  toggleHidden('.scr_serv',true);
 
   // фиксированные шапка
   $(window).on("scroll", function() {
@@ -130,6 +131,18 @@
     $(this).parent().siblings().removeClass('current');
     $(this).parent().addClass('current');
     $('.map__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.js-scr_serv__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.scr_serv__tab').not(_href).hide();
     $(_href).fadeIn();
     if (window.matchMedia('(max-width: 767px)').matches) {
       $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
@@ -215,28 +228,65 @@
     },
   });
 
-  // if (window.matchMedia('(max-width: 767px)').matches) {
-  //   var partnersSlider = new Swiper('#partners__slider', {
-  //     slidesPerView: 2,
-  //     watchSlidesProgress: true,
-          // watchOverflow: true,
-  //     loop: true,
-  //     autoplay: {
-  //       delay: 8000,
-  //     },
-  //     pagination: {
-  //       el: '#partners__slider .swiper-dots',
-  //     },
-  //     breakpoints: {
-  //       575: {
-  //         slidesPerView: 4,
-  //       },
-  //       400: {
-  //         slidesPerView: 3,
-  //       },
-  //     },
-  //   });
-  // }
+  var objectsSlider = new Swiper('#objects__slider', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesProgress: true,
+    pagination: {
+      el: '.objects__slider-btns .swiper-dots',
+    },
+    navigation: {
+      nextEl: '.objects__slider-btns .swiper-button-next',
+      prevEl: '.objects__slider-btns .swiper-button-prev',
+    },
+    breakpoints: {
+      1170: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      900: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+      700: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+  $('.scr_serv__slider').each(function(xi,xel) {
+    var xId = '#' + $(xel).attr('id');
+    var xBtns = $(xel).parents('.scr_serv__slider-wrap').find('.scr_serv__slider-btns');
+    var xTabs = false;
+    var scrServSlider = new Swiper(xId, {
+      slidesPerView: 2,
+      spaceBetween: 8,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+      breakpoints: {
+        1070: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        575: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+      },
+    });
+  });
+
+  $('.scr_serv__item:not(:first-of-type) .hidden').hide();
+  $('.scr_serv__item:first-of-type').addClass('active');
+  $('.scr_serv__tab:not(:first-of-type)').hide();
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     var profit__slider = new Swiper('#profit__slider', {
@@ -254,16 +304,5 @@
       },
     });
   }
-
-  $(window).resize(function() {
-
-    var currScreeWidth = $(window).width();
-
-    if (currScreeWidth != screenWidth) {
-
-    }
-
-    screenWidth = $(window).width();
-  });
 
 })(jQuery);

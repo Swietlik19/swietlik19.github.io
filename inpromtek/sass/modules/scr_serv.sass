@@ -1,0 +1,202 @@
+.scr_serv
+  position: relative
+  padding-bottom: 63px
+  &__df
+    display: flex
+  &__nav
+    flex-shrink: 0
+    display: block
+    width: 318px
+    margin-right: 30px
+    & > li
+      margin-right: 0
+      margin-bottom: 15px
+      &:last-of-type
+        margin-bottom: 0
+      & > a
+        justify-content: flex-start
+        padding-left: 25px
+        background-color: transparent
+        text-align: left
+  &__wrap
+    width: calc(100% - 348px)
+    background: #FFFFFF
+    box-shadow: 0px 0px 15px rgba(88, 152, 188, 0.2)
+    border-radius: 15px
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    position: relative
+    border-bottom: 1px solid #EBEBEB
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      padding: 25px 30px 25px 29px
+      cursor: pointer
+      &:hover
+        h3
+          color: $accent
+        .open
+          .icon
+            fill: $accent
+
+    .hidden
+      padding: 0 30px 24px
+      .article
+        p
+          margin-bottom: 10px
+        a
+          color: $body-color
+          transition: 0.3s
+          &[href^=mailto]
+            text-decoration: underline
+          &:hover
+            color: $accent
+            text-decoration: none
+
+    h3
+      margin-right: 15px
+      font-weight: 500
+      font-size: 24px
+      transition: 0.3s
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 8px
+      height: 13px
+      background: transparent url('../img/svg/arrow-blue.svg') no-repeat center center
+      background-size: contain
+      transform-origin: center
+      transition: 0.4s ease-in-out
+      .icon
+        display: block
+        fill: #2D3241
+    &.active
+      h3
+        color: $accent
+      .open
+        transform: rotate(90deg)
+      .icon
+        fill: $accent
+  &__link
+    display: inline-block
+    outline: none
+    font-size: 14px
+    color: $accent
+    transition: 0.4s ease-in-out
+    &:hover
+      color: $accent2
+  &__slider
+    margin: -20px
+    padding: 20px
+    overflow: hidden
+    &-wrap
+      position: relative
+      margin-bottom: 16px
+    &-item
+      text-decoration: none
+      outline: none
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 165px
+      padding: 18px 20px
+      background: #F4F8FB
+      border-radius: 10px
+      overflow: hidden
+      transition: 0.4s ease-in-out
+      img
+        display: block
+      &:hover
+        box-shadow: 0 0 15px rgba(#000, 0.2)
+    &-btns
+      .swiper-dots
+        display: none
+      .swiper-button-prev
+        left: -16px
+      .swiper-button-next
+        right: -16px
+      .swiper-button-disabled
+        opacity: 0 !important
+  &__btns
+    padding: 26px 29px 37px
+    .xbtn
+      min-width: 262px
+
+
+  @media screen and (max-width: 991px)
+    &__item
+      .top
+        padding: 15px 20px 15px 19px
+      .hidden
+        padding: 0 18px 14px
+      h3
+        font-size: 21px
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &__df
+      display: block
+    &__nav
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+      margin-right: 0
+      & > li
+        width: calc(50% - 5px)
+        margin-right: 10px
+        &:nth-of-type(2n)
+          margin-right: 0
+        & > a
+          padding-left: 10px
+    &__wrap
+      width: 100%
+      margin-top: 25px
+
+  // max-width 850px
+
+  @media screen and (max-width: 575px)
+    &__nav
+      & > li
+        margin-bottom: 5px
+        & > a
+          height: 55px
+          font-size: 15px
+    &__item
+      h3
+        font-size: 19px
+    &__slider
+      &-item
+        height: 115px
+        padding: 8px 10px
+
+  // max-width 575px
+
+  @media screen and (max-width: 430px)
+    &__nav
+      & > li
+        width: 100%
+        margin-right: 0
+    &__item
+      h3
+        font-size: 17px
+
+  // max-width 430px
+
+/* scr_serv */

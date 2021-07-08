@@ -1,0 +1,271 @@
+.portfolio
+  position: relative
+  padding-top: 131px
+  &__wrap
+    padding-top: 38px
+  &__nav
+    & > li
+      & > a
+        background: transparent
+  &__tabs
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-top: 30px
+  &__tab
+    position: relative
+    padding: 36px 43px 88px
+    background: #FFFFFF
+    box-shadow: 0px 6px 10px rgba(88, 152, 188, 0.1)
+    border-radius: 15px
+    overflow: hidden
+    z-index: 1
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      display: block
+      width: 461px
+      height: 247px
+      background: transparent url('../img/svg/decor.svg') no-repeat center center
+      background-size: contain
+      z-index: -1
+    &::before
+      top: -119px
+      left: -110px
+    &::after
+      bottom: -163px
+      right: -155px
+
+  &__df
+    display: flex
+    align-items: flex-start
+  &__slider
+    overflow: hidden
+    height: 100%
+    &-wrap
+      align-self: stretch
+      width: 27.55905511811024%
+      margin-left: 33px
+    .swiper-slide:not(.swiper-slide-active)
+      opacity: 0 !important
+  &__thumbs
+    overflow: hidden
+    height: 398px
+    margin: -20px
+    padding: 20px
+    &-wrap
+      flex-shrink: 0
+      position: relative
+      width: 150px
+      margin-right: 58px
+      padding-top: 36px
+      padding-bottom: 36px
+    &-btns
+      .swiper-button-prev,
+      .swiper-button-next
+        top: auto
+        left: calc(50% - 15px)
+        right: auto
+      .swiper-button-prev
+        top: -10px
+        transform: rotate(-90deg)
+      .swiper-button-next
+        bottom: -10px
+        transform: rotate(90deg)
+    .swiper-slide
+      border: 2px solid transparent
+      border-radius: 15px
+      transition: 0.4s ease-in-out
+    .swiper-slide-thumb-active
+      border-color: $accent
+
+  &__thumb
+    height: 100%
+    border-radius: 15px
+    overflow: hidden
+    transition: 0.4s ease-in-out
+    cursor: pointer
+    &:hover
+      box-shadow: 0 0 10px rgba($accent, 0.4)
+  &__gallery
+    overflow: hidden
+    margin: -20px
+    padding: 20px
+    &-wrap
+      position: relative
+      width: 53.7007874015748%
+    &-item
+      display: block
+      text-decoration: none
+      outline: none
+      height: 430px
+      border-radius: 15px
+      overflow: hidden
+      transition: 0.4s ease-in-out
+      &:hover
+        box-shadow: 0 0 10px rgba($accent, 0.4)
+    &-btns
+      .swiper-button-prev,
+      .swiper-button-next
+        top: calc(50% - 23px)
+        width: 47px
+        height: 47px
+      .swiper-button-prev
+        left: -23px
+      .swiper-button-next
+        right: -23px
+      .swiper-dots
+        position: absolute
+        bottom: -36px
+  &__cont
+    display: flex
+    flex-direction: column
+    height: 100%
+  &__content
+    flex-grow: 1
+  &__text
+    margin-bottom: 16px
+    font-size: 14px
+    b
+      font-weight: 500
+  &__btns
+    .xbtn
+      min-width: 262px
+      height: 55px
+
+
+  @media screen and (max-width: 1400px)
+    &__wrap
+      padding-top: 30px
+    &__nav
+      flex-wrap: wrap
+      & > li
+        margin: 3px 10px 3px 0
+        & > a
+          min-width: 125px
+          height: 50px
+          font-size: 15px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1250px)
+    &__gallery
+      &-wrap
+        width: 50.700787%
+
+  // max-width 1250px
+
+  @media screen and (max-width: 1170px)
+    &__tab
+      padding: 26px 23px 38px
+    &__thumbs
+      &-wrap
+        margin-right: 18px
+    &__gallery
+      margin: -10px
+      padding: 10px
+      &-wrap
+        width: 53.700787%
+    &__slider
+      &-wrap
+        margin-left: 20px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__gallery
+      &-wrap
+        width: 42.700787%
+      &-item
+        height: 310px
+    &__thumbs
+      height: 278px
+      margin: -10px
+      padding: 10px
+      &-wrap
+        width: 110px
+    &__slider
+      &-wrap
+        width: 40.559055%
+
+  // max-width 1070px
+
+  @media screen and (max-width: 991px)
+    padding-top: 76px
+
+  // max-width 991px
+
+  @media screen and (max-width: 850px)
+    &__df
+      flex-direction: column
+    &__thumbs
+      height: auto
+      &-wrap
+        width: 100%
+        margin-right: 0
+        padding-top: 16px
+        padding-bottom: 16px
+      &-btns
+        .swiper-button-prev,
+        .swiper-button-next
+          top: calc(50% - 15px)
+          left: auto
+          bottom: auto
+        .swiper-button-prev
+          left: -10px
+          transform: rotate(180deg)
+        .swiper-button-next
+          right: -10px
+          transform: rotate(0deg)
+    &__gallery
+      &-wrap
+        order: -1
+        width: 100%
+      &-item
+        height: 260px
+      &-btns
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
+    &__slider
+      &-wrap
+        align-self: flex-start
+        width: 100%
+        margin-left: 0
+    &__thumb
+      height: 120px
+
+  // max-width 850px
+
+  @media screen and (max-width: 575px)
+    &__nav
+      & > li
+        width: calc(50% - 5px)
+        &:nth-of-type(2n)
+          margin-right: 0
+        & > a
+          min-width: 0
+          text-align: center
+          font-size: 13px
+
+  // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__tab
+      padding: 16px 15px 28px
+    &__gallery
+      &-item
+        height: 200px
+    &__nav
+      & > li
+        width: 100%
+        margin-right: 0
+
+  // max-width 500px
+
+  // @media screen and (max-width: 400px)
+
+  // max-width 400px
+
+/* portfolio */

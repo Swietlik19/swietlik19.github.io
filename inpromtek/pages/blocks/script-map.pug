@@ -146,4 +146,53 @@ mixin script-map()
       }
 
 
+      createMap2('contacts__map',[44.944103, 34.076935]);
+
+      function createMap2(xID,coords) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+              myMap = new ymaps.Map(xID, {
+                  center: coords,
+                  zoom: 18
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              // Создаём макет содержимого.
+                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                ),
+
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    hintContent: 'Симферополь, улица Генерала Васильева, 23А',
+                    balloonContent: ''
+                }, {
+                  // Опции.
+                  // Необходимо указать данный тип макета.
+                  iconLayout: 'default#image',
+                  // Своё изображение иконки метки.
+                  iconImageHref: 'img/svg/pin-blue.svg',
+                  // Размеры метки.
+                  iconImageSize: [34, 50],
+                  // Смещение левого верхнего угла иконки относительно
+                  // её "ножки" (точки привязки).
+                  iconImageOffset: [-15, -60]
+                });
+
+            myMap.geoObjects
+                .add(myPlacemark);
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+
     })(jQuery);

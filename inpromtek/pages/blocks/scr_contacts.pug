@@ -1,0 +1,105 @@
+mixin scr_contacts()
+  section.scr_contacts.contacts.blue-bg(id="scr_contacts")
+    .container
+      +breadcrumbs--contacts
+
+      .contacts__wrap
+        h1.page-title--inner Контакты
+
+        .contacts__df
+          .contacts__content
+            .contacts__col
+              .contacts__item
+                h3 Адрес:
+                .contacts__text
+                  p г. Симферополь, ул. Генерала Васильева, 23 а
+              .contacts__item
+                h3 График работы:
+                .contacts__text
+                  p Пн-пт: с 08:30 до 19:00
+              .contacts__item
+                h3 Телефон:
+                .contacts__text
+                  .contacts__phones
+                    a.contacts__link(href="tel:+79780340395" rel="nofollow") +7 978 034-03-95
+                    a.contacts__msg.header__msg--viber(href="viber://chat?number=79780340395" rel="nofollow")
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#viber")
+                    a.contacts__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79780340395" rel="nofollow")
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#wa")
+
+              .contacts__item
+                h3 Cоц. сети:
+
+                .contacts__text
+                  .contacts__phones
+                    a.contacts__msg.header__msg--viber(href="#" rel="nofollow")
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#vk")
+                    a.contacts__msg.header__msg--wa(href="#" rel="nofollow")
+                      svg.icon
+                        use(xlink:href="img/svg/sprite.svg#insta")
+
+            .contacts__col
+              .contacts__item
+                h3 Реквизиты:
+
+                .contacts__text
+                  p ООО "Инпромтек"
+                    br
+                    br
+                    |  ИНН/КПП:
+                    br
+                    |  9102248180/910201001
+                    br
+                    |  ОГРН: 1189112035518
+                    br
+                    |  р/с 40702810504280005321
+                    br
+                    |  к/с 30101810835100000107
+                    br
+                    br
+                    |  Симферопольский филиал
+                    br
+                    |  АБ «РОССИЯ»
+                    br
+                    |  БИК: 043510107
+
+              .contacts__item
+                h3 Почта:
+                .contacts__text
+                  a.contacts__link(href="mailto:inpromtek@mail.ru" rel="nofollow") inpromtek@mail.ru
+
+          .contacts__form
+            .form.wpcf7
+              form.wpcf7-form
+                p.form__title Заполните форму
+                p.form__desc и наш специалист свяжется с вами
+                  br
+                  |  в течение 60 секунд
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-name.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.your-tel.text-input
+                    input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+                .form__item.form__item--submit
+                  .btn__wrap.btn__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Получить консультацию')
+
+                .form__item
+                  span.wpcf7-form-control-wrap.accept
+                    span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                      span.wpcf7-list-item
+                        label
+                          input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                          span.wpcf7-list-item-label Согласие на обработку персональных данных
+                            i.accept__icon
+
+        .contacts__map#contacts__map
+
+  // /.scr_contacts

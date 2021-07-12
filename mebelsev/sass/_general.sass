@@ -160,20 +160,28 @@ a
 h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
+time
+  display: block
+  font-size: 14px
+  color: rgba(#0d1014, 0.7)
+
 .article
+  font-size: 16px
+  line-height: 1.75
   p
     margin-bottom: 10px
   a
-    text-decoration: none
+    color: #2d5266
     transition: 0.3s
     &:hover
-      text-decoration: underline
+      color: $accent
 
   img
     width: auto
     max-width: 100%
     height: auto
     display: block
+    margin-bottom: 15px
     &.alignleft
       max-width: 50%
       float: left
@@ -191,7 +199,10 @@ h1,h2,h3,h4,h5,h6
     padding-right: 1.5em
   ul li,
   ol li
+    margin-bottom: 24px
     transform: translateX(1.5em)
+    &:last-of-type
+      margin-bottom: 0
 
   h2,h3,h4
     line-height: 1.2
@@ -199,15 +210,29 @@ h1,h2,h3,h4,h5,h6
   h2
     margin-top: 35px
     margin-bottom: 20px
-    font-size: 18px
+    font-size: 24px
   h3
     margin-top: 25px
     margin-bottom: 15px
-    font-size: 16px
+    font-size: 18px
   h4
     margin-top: 20px
     margin-bottom: 10px
     font-size: 14px
+  strong
+    font-weight: 700
+  table
+    margin-top: 20px
+    margin-bottom: 30px
+    border-collapse: collapse
+    td
+      padding: 17px 30px
+      border: 1px solid #000
+      &:first-of-type
+        padding-left: 39px
+    thead
+      td
+        font-weight: 500
 
 .clearfix
   &::after
@@ -265,6 +290,19 @@ input[type="submit"].xbtn
     &:hover
       background-color: #fff
       color: $accent2
+  &--blue
+    height: 37px
+    padding-left: 37px
+    padding-right: 37px
+    background-color: #7bbee2
+    border-radius: 18.5px
+    font-size: 13px
+    font-weight: 700
+    text-transform: uppercase
+    color: #ffffff
+    &:hover
+      background-color: #fff
+      color: #7bbee2
 
 input[type="submit"]
   &[disabled]
@@ -527,6 +565,24 @@ input[type="submit"]
   .page-title
     margin-bottom: 20px
     font-size: 22px
+  .article
+    font-size: 14px
+    line-height: 1.5
+    h2
+      margin-top: 20px
+      margin-bottom: 15px
+      font-size: 19px
+    h3
+      margin-top: 15px
+      margin-bottom: 10px
+      font-size: 15px
+    h4
+      margin-top: 10px
+    table
+      td
+        padding: 8px 10px
+        &:first-of-type
+          padding-left: 10px
 
 // max-width 767px
 
@@ -544,10 +600,24 @@ input[type="submit"]
 @media screen and (max-width: 575px)
   .swiper-pagination-bullet
     margin: 0 5px
+  .article
+    img
+      &.alignleft
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
+      &.alignright
+        max-width: 100%
+        float: none
+        margin: 0 auto 20px
 
 // max-width 575px
 
-// @media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+  .article
+    table
+      td
+        font-size: 12px
 
 // max-width 500px
 

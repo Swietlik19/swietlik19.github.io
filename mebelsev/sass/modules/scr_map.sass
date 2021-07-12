@@ -56,6 +56,8 @@
       color: #5586a4
   .header__msgs
     padding-top: 3px
+  &--contacts
+    padding-top: 0
 
 
   @media screen and (max-width: 1400px)
@@ -79,12 +81,20 @@
       margin-right: 7px
     &__map
       height: 306px
+    &--contacts
+      padding-top: 0
 
   // max-width 1400px
 
   @media screen and (max-width: 650px)
-    &__contacts
-      display: none
+    &:not(.scr_map--contacts)
+      .scr_map__contacts
+        display: none
+    &--contacts
+      .scr_map__contacts
+        position: static
+        width: 100%
+        margin-bottom: 20px
 
   // max-width 650px
 

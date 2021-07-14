@@ -1,0 +1,35 @@
+mixin footer(logotype)
+  footer.footer(id="footer")
+    .container
+      .footer__wrap
+        a.to-top(href="#page_wr")
+          svg.icon
+            use(xlink:href="img/svg/sprite.svg#arrow-circle")
+
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/svg/logo-footer.svg" alt="")
+        else
+          #{logotype}.logo
+            img(src="img/svg/logo-footer.svg" alt="")
+
+        .footer__menu
+          ul.menu
+            li.menu-item
+              a(href="#") ЭКО
+            li.menu-item
+              a(href="#") Спермограмма
+            li.menu-item
+              a(href="#") Лечение женского бесплодия
+            li.menu-item
+              a(href="#") Донорские программы
+            li.menu-item
+              a(href="#") Суррогатное материнство
+
+        // /.footer__menu
+
+        .footer__copyright
+          p.text © Copyright  2021&nbsp;г.
+
+  // /.footer
+

@@ -1,0 +1,94 @@
+.pager
+  position: relative
+  margin: 0
+  padding: 0
+  list-style: none
+
+  padding-top: 50px
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    width: 100%
+    & > li
+      position: relative
+      margin: 0 10px
+      line-height: 1.2
+      .page-numbers, .prev, .next
+        display: block
+        text-decoration: none
+        outline: none
+      .page-numbers
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 40px
+        height: 40px
+        border: 1px solid #FCFAFB
+        border-radius: 50%
+      .page-numbers:not(.prev):not(.next)
+        font-family: $font2
+        font-weight: 600
+        color: #9BABB1
+        transition: 0.3s
+        z-index: 1
+        &::before
+          content: ''
+          position: absolute
+          top: 1px
+          right: 1px
+          bottom: 1px
+          left: 1px
+          background-color: #fff
+          border-radius: 50%
+          opacity: 0
+          z-index: -1
+        &:not(.current):hover
+          background-color: $accent2
+          color: #fff
+
+        &.current
+          color: #263238
+          background-image: linear-gradient(to right, #F16493, #FFBAA5)
+          &::before
+            opacity: 1
+      .prev,
+      .next
+        transition: 0.3s
+        .icon
+          display: block
+          width: 14px
+          height: 8px
+          stroke: #9BABB1
+          transform: rotate(-90deg)
+        &:hover
+          background-color: $accent2
+          .icon
+            stroke: #fff
+      .prev
+        .icon
+          transform: rotate(90deg)
+
+
+  @media screen and (max-width: 991px)
+    padding-top: 30px
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    ul
+      & > li
+        margin: 0 5px
+        .page-numbers
+          width: 35px
+          height: 35px
+          font-size: 14px
+
+  // max-width 575px
+
+ /* paginator */

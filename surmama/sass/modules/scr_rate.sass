@@ -1,0 +1,317 @@
+.scr_rate
+  position: relative
+  padding-top: 42px
+  padding-bottom: 100px
+  z-index: 1
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -150px
+    display: block
+    width: 245px
+    height: 546px
+    background: transparent url('../img/decor2.png') no-repeat center center
+    background-size: contain
+    z-index: -1
+
+  &__bg
+    position: absolute
+    top: -390px
+    left: 0
+    width: 100%
+    height: auto
+    z-index: -1
+    img
+      display: block
+  &__df
+    display: flex
+    padding-bottom: 22px
+  &__col
+    width: 37.72241992882562%
+    padding-left: 69px
+    padding-right: 15px
+    &:nth-of-type(2)
+      width: 15.01779359430605%
+      padding-left: 33px
+    &:nth-of-type(3)
+      width: 7.686832740213523%
+      padding-left: 23px
+    &:nth-of-type(4)
+      width: 10.88967971530249%
+      padding-left: 21px
+    &:nth-of-type(5)
+      width: 26.19217081850534%
+      padding-left: 26px
+      padding-right: 30px
+  &__text
+    display: inline-block
+    font-size: 14px
+    color: #9BABB1
+    &--sort
+      position: relative
+      cursor: pointer
+      transition: 0.4s ease-in-out
+      &:hover
+        color: $accent
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        right: -30px
+        display: block
+        width: 9px
+        height: 5px
+        background: transparent url('../img/svg/arrow-blue.svg') no-repeat center center
+        background-size: contain
+      &::before
+        top: 3px
+        transform: rotate(180deg)
+      &::after
+        bottom: 3px
+        background-image: url('../img/svg/arrow-black.svg')
+    &--desc
+      &::before
+        background-image: url('../img/svg/arrow-black.svg')
+      &::after
+        background-image: url('../img/svg/arrow-blue.svg')
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    position: relative
+    margin-bottom: 20px
+    padding-top: 26px
+    padding-bottom: 26px
+    background: #FFFFFF
+    border: 1px solid #FCFAFB
+    box-sizing: border-box
+    box-shadow: 0px 2px 20px rgba(137, 130, 149, 0.1)
+    border-radius: 20px
+    z-index: 1
+    &:last-of-type
+      margin-bottom: 0
+    &::before
+      content: ''
+      position: absolute
+      top: 10px
+      right: 10px
+      bottom: 10px
+      left: 10px
+      display: block
+      border: 1px solid $accent
+      border-radius: 20px
+      z-index: -1
+    .scr_rate__df
+      align-items: center
+      padding-bottom: 0
+    .scr_rate__col
+      &:nth-of-type(1),
+      &:nth-of-type(2)
+        display: flex
+    .announce__img
+      flex-shrink: 0
+      display: block
+      text-decoration: none
+      outline: none
+      width: 100px
+      height: 100px
+    &-text
+      font-family: $font2
+      font-weight: 600
+  &__content
+    padding-top: 4px
+    h3
+      margin-top: 0
+      margin-bottom: 12px
+      font-weight: 600
+      font-size: 16px
+      a
+        display: block
+        text-decoration: none
+        outline: none
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+    &-item
+      position: relative
+      margin-bottom: 3px
+      padding-left: 35px
+      font-size: 14px
+      transition: 0.4s ease-in-out
+      &::before
+        content: ''
+        position: absolute
+        top: 1px
+        left: 0
+        display: block
+        width: 18px
+        height: 18px
+        background: transparent url('../img/svg/icons/pin-blue.svg') no-repeat center center
+        background-size: contain
+      &:last-of-type
+        margin-bottom: 0
+      &--phone
+        &::before
+          background-image: url('../img/svg/icons/phone-blue.svg')
+      a
+        display: block
+        text-decoration: none
+        outline: none
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent
+
+  &__wrap
+    position: relative
+  &__rate
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    & > li
+      margin-right: 7px
+      &:last-of-type
+        margin-right: 0
+      button
+        background: none
+        border: none
+        outline: none
+        display: block
+        width: 20px
+        height: 19px
+        cursor: pointer
+        .icon
+          display: block
+          fill: #9BABB1
+        &.active
+          .icon
+            fill: #FFBB54
+            transition: 0.4s ease-in-out
+    &--overlay
+      position: absolute
+      top: 0
+      left: 0
+      overflow: hidden
+      & > li
+        button
+          .icon
+            fill: #FFBB54
+          &.disabled
+            .icon
+              fill: #9BABB1
+
+  &__total
+    padding-top: 6px
+    display: flex
+    justify-content: center
+    font-size: 14px
+    color: #6D818A
+  &__btns
+    .btn__wrap--iconed
+      &::after
+        background-image: url('../img/svg/calendar-white.svg')
+
+
+  @media screen and (max-width: 1600px)
+    &__item
+      padding-top: 20px
+      padding-bottom: 20px
+    &__col
+      padding-left: 29px
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4)
+        padding-left: 13px
+      &:nth-of-type(5)
+        padding-left: 16px
+        padding-right: 0
+
+  // max-width 1600px
+
+  @media screen and (max-width: 1400px)
+    &__content
+      &-item
+        padding-left: 25px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1300px)
+    &::after
+      width: 185px
+      height: 466px
+    &__col
+      width: 35.72242%
+    &__text
+      font-size: 13px
+      &--sort
+        &::before,
+        &::after
+          right: -20px
+    &__item
+      &-text
+        font-size: 14px
+      .announce__img
+        width: 80px
+        height: 80px
+    &__content
+      h3
+        margin-bottom: 6px
+        font-size: 14px
+      &-item
+        font-size: 12px
+    &__total
+      font-size: 13px
+    &__rate
+      & > li
+        margin-right: 3px
+        button
+          width: 17px
+          height: 17px
+    &__btns
+      .xbtn
+        height: 50px
+        font-size: 14px
+
+  // max-width 1300px
+
+  @media screen and (max-width: 991px)
+    &__wrap
+      overflow: auto
+    &__list,
+    &__df
+      width: 930px
+    &__item
+      margin-bottom: 10px
+      padding-top: 13px
+      padding-bottom: 13px
+      &::before
+        top: 5px
+        right: 5px
+        bottom: 5px
+        left: 5px
+    &__col
+      padding-left: 18px
+      padding-right: 10px
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4),
+      &:nth-of-type(5)
+        padding-left: 5px
+      &:nth-of-type(3)
+        width: 8.686833%
+      &:nth-of-type(4)
+        width: 12.88968%
+      &:nth-of-type(5)
+        width: 25.192171%
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    padding-bottom: 40px
+    &::after
+      width: 115px
+      height: 366px
+
+/* scr_rate */

@@ -1,0 +1,166 @@
+.faq
+  position: relative
+  padding-top: 42px
+  padding-bottom: 140px
+  z-index: 1
+  &::after
+    content: ''
+    position: absolute
+    right: -243px
+    bottom: 145px
+    display: block
+    width: 882px
+    height: 889px
+    background: transparent url('../img/decor1.jpg') no-repeat center center
+    background-size: contain
+    z-index: -2
+
+  &__df
+    display: flex
+  &__list
+    flex-grow: 1
+    margin: 0
+    padding: 0
+    list-style: none
+  &__form
+    flex-shrink: 0
+    width: 570px
+    max-width: 100%
+    margin-left: 31px
+  &__item
+    position: relative
+    margin-bottom: 15px
+    &:last-of-type
+      margin-bottom: 0
+    .top
+      display: flex
+      justify-content: space-between
+      align-items: center
+      background: #FFFFFF
+      border: 1px solid #F2F2F2
+      box-shadow: 0px 2px 20px rgba(137, 130, 149, 0.1)
+      border-radius: 10px
+      padding: 20px 16px 20px 21px
+      cursor: pointer
+      transition: 0.4s ease-in-out
+      &:hover
+        border-color: #C5D0D5
+        h2,h3
+          color: #263238
+        .open
+          border-color: $accent
+          .icon
+            stroke: $accent
+      h2,h3
+        margin-right: 15px
+        font-weight: bold
+        font-size: 18px
+        line-height: 1.2
+        color: #9BABB1
+        transition: 0.3s
+      &.active
+        border-color: #C5D0D5
+        h2,h3
+          color: #263238
+        .open
+          transform: rotate(180deg)
+          .icon
+            stroke: $accent
+
+    .hidden
+      display: none
+      padding-top: 10px
+      .article
+        font-size: 16px
+        line-height: 1.7
+        color: #8F9CAB
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      border: 1px solid #C5D0D5
+      border-radius: 50%
+      transform-origin: center center
+      transition: 0.4s ease-in-out
+      .icon
+        display: block
+        width: 14px
+        height: 7px
+        stroke: #9BABB1
+
+
+  @media screen and (max-width: 1400px)
+    padding-bottom: 70px
+    &__form
+      width: 450px
+      margin-left: 21px
+    &__item
+      .top
+        padding: 10px 16px 10px 21px
+        h2,h3
+          font-size: 16px
+      .hidden
+        .article
+          font-size: 14px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1170px)
+    padding-bottom: 30px
+    &::after
+      right: -323px
+      bottom: 35px
+      width: 802px
+      height: 599px
+
+  // max-width 1170px
+
+  @media screen and (max-width: 1070px)
+    &__df
+      flex-direction: column
+      align-items: center
+    &__form
+      margin-left: 0
+      margin-top: 40px
+    &__list
+      width: 100%
+
+  // max-width 1070px
+
+  @media screen and (max-width: 575px)
+    &__item
+      margin-bottom: 8px
+      .top
+        padding: 8px 8px 8px 11px
+        h2,h3
+          font-size: 15px
+      .open
+        width: 34px
+        height: 34px
+      .hidden
+        .article
+          font-size: 13px
+
+  // max-width 575px
+
+/* faq */

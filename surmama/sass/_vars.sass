@@ -1,0 +1,36 @@
+$b: #5DC5DC
+$p: #FF6D8D
+
+$accent: $b
+$accent2: $p
+
+$icon: $b
+$body-color: #263238
+
+$grad: linear-gradient(94.48deg, #F16493 -0.2%, #FFBAA5 105.3%)
+$grad2: linear-gradient(94.48deg, darken(#5DC5DC, 15%) -0.2%, #C5D0D5 105.3%)
+
+$font: 'Open Sans', 'Arial', 'Helvetica Neue', sans-serif
+$font2: 'ProximaNova', 'Arial', 'Helvetica Neue', sans-serif
+
+$form-font: $font
+$title-font: $font2
+
+// Миксин замены цвета placeholder у input. Нужно добавить в стилях элемента конструкцию вида @include placeholder(#000, 14px)
+@mixin placeholder($color,$size)
+  &::-webkit-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &::-moz-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+  &:-ms-input-placeholder
+    color: $color
+    font-size: $size
+    transition: 0.5s
+    font-family: $form-font
+

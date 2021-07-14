@@ -1,0 +1,274 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  &.fixed
+    .header__top
+      &::before
+        opacity: 1
+  &__top
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 20px 20px 0
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      display: block
+      width: 100vw
+      height: 100%
+      background-image: linear-gradient(108.7deg, #FFEEEE 2.03%, #FCF7EF 74.2%, #D2FFF4 104.25%)
+      box-shadow: 0 0 5px rgba(#000, 0.1)
+      opacity: 0
+      transition: 0.2s ease-in-out
+      z-index: -1
+
+  .burger
+    margin-right: 30px
+  &__item
+    position: relative
+    padding-left: 29px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      display: block
+      width: 24px
+      height: 24px
+      background: transparent url('../img/svg/icons/header-1.svg') no-repeat center center
+      background-size: contain
+    &--choose
+      padding-right: 26px
+      cursor: pointer
+      &::after
+        content: ''
+        position: absolute
+        top: calc(50% - 3px)
+        right: 0
+        display: block
+        width: 12px
+        height: 7px
+        background: transparent url('../img/svg/arrow.svg') no-repeat center center
+        background-size: contain
+        transition: 0.4s ease-in-out
+      &.active
+        &::after
+          transform: rotate(180deg)
+    &--city
+      &::before
+        width: 20px
+        height: 20px
+        background-image: url('../img/svg/icons/pin.svg')
+    &--phone
+      &::before
+        width: 20px
+        height: 20px
+        background-image: url('../img/svg/icons/phone.svg')
+    &--language
+      padding-left: 0
+      &::before
+        content: none
+
+  &__count
+    position: relative
+    margin-right: 20px
+    font-family: $font2
+    font-weight: 600
+    b
+      font-weight: 600
+    &-add
+      position: absolute
+      top: 50%
+      right: -6px
+      transform: translateY(-50%)
+      opacity: 0.4
+      filter: blur(1px)
+      span
+        position: absolute
+        left: 0
+        &:first-of-type
+          top: -15px
+        &:last-of-type
+          bottom: -15px
+
+  &__phone
+    display: block
+    text-decoration: none
+    outline: none
+    font-family: $font2
+    font-weight: 600
+    transition: 0.4s ease-in-out
+    &:hover
+      color: $accent
+
+  .logo
+    display: block
+    width: 270px
+    height: 54px
+    text-decoration: none
+
+  &__bottom
+    position: relative
+    display: none
+    padding-top: 13px
+    padding-bottom: 12px
+    background: #FFFFFF
+    box-shadow: 0px 2px 20px rgba(137, 130, 149, 0.1)
+    border-radius: 10px
+    z-index: 2
+
+  .menu
+    padding: 0
+    margin: 0
+    list-style: none
+
+    display: flex
+    align-items: center
+    height: 100%
+    & > li
+      flex-grow: 1
+      & > a
+        position: relative
+        text-decoration: none
+        display: block
+        padding: 0 10px
+        outline: none
+        font-family: $font2
+        font-weight: 600
+        font-size: 16px
+        color: #6D818A
+        text-align: center
+        transition: 0.4s ease-in-out
+        &::after
+          content: ''
+          position: absolute
+          top: calc(50% - 6px)
+          right: 0
+          display: block
+          width: 1px
+          height: 12px
+          background-color: #6D818A
+        &:hover
+          color: $accent2
+      &:last-of-type
+        & > a
+          &::after
+            content: none
+
+
+  @media screen and (max-width: 1400px)
+    .burger
+      margin-right: 0
+    &__top
+      padding: 10px 0
+    &__text
+      font-size: 14px
+    &__phone
+      font-size: 14px
+    &__item
+      &--count
+        margin-left: -90px
+    .logo
+      width: 240px
+      height: 44px
+    .menu
+      & > li
+        & > a
+          font-size: 14px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 1070px)
+    .burger
+      margin-right: 20px
+    &__top
+      justify-content: flex-start
+    &__item
+      margin-right: 40px
+      &--count
+        display: none
+      &--city
+        margin-left: auto
+      &:last-of-type
+        margin-right: 0
+    &__text
+      &-city
+        display: none
+    &__top
+      z-index: 60
+    &__bottom
+      position: fixed
+      top: 0
+      left: 0
+      width: 300px
+      max-width: 100%
+      height: 100vh
+      padding-top: 70px
+      background-image: linear-gradient(108.7deg, #FFEEEE 2.03%, #FCF7EF 74.2%, #D2FFF4 104.25%)
+      box-shadow: 0 0 5px rgba(#000, 0.1)
+      border-radius: 0
+      z-index: 50
+    .menu
+      display: block
+      & > li
+        & > a
+          padding: 8px 15px
+          text-align: left
+          border-bottom: 1px solid rgba($accent, 0.2)
+          color: $body-color
+          &::after
+            content: none
+
+  // max-width 1070px
+
+  @media screen and (max-width: 800px)
+    &__item
+      margin-right: 20px
+      &--choose
+        padding-right: 20px
+      &--phone
+        padding-left: 0
+        &::before
+          content: none
+    &__phone
+      font-size: 0
+      width: 20px
+      height: 20px
+      background: transparent url('../img/svg/icons/phone.svg') no-repeat center center
+      background-size: contain
+
+  // max-width 800px
+
+  @media screen and (max-width: 575px)
+    .burger
+      margin-right: 10px
+    &__item
+      &--city
+        margin-left: -40px
+    .logo
+      width: 170px
+      height: 34px
+
+  // max-width 575px
+
+  @media screen and (max-width: 450px)
+    &__item
+      &--city,
+      &--language
+        display: none
+      &--phone
+        margin-left: auto
+        margin-right: 0
+
+  // max-width 450px
+
+/* .header */

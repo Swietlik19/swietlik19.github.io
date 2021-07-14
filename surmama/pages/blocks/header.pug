@@ -1,0 +1,57 @@
+mixin header(logotype)
+  header.header(id="header")
+    .container
+      .header__top
+        button.burger
+          span.burger__wrap
+            span.line
+
+        .logo__wrap
+          if logotype == "a"
+            #{logotype}.logo(href="index.html")
+              img(src="img/svg/logo.svg" alt="лого")
+          else
+            #{logotype}.logo
+              img(src="img/svg/logo.svg" alt="лого")
+
+        .header__item.header__item--count
+          p.header__text
+            span.header__count.blue
+              b 15 657
+              span.header__count-add
+
+            |  беременностей за 18 лет работы
+
+        //. Для элементов, у которых есть возможность выбора, добавить класс header__item--choose
+        .header__item.header__item--city.header__item--choose
+          p.header__text
+            span.header__text-city Ваш город:
+            span.blue  Москва
+
+        .header__item.header__item--phone
+          a.header__phone(href="tel:84993704165" rel="nofollow") 8 499 370 41 65
+
+        //. Для элементов, у которых есть возможность выбора, добавить класс header__item--choose
+        .header__item.header__item--language.header__item--choose
+          p.header__text RU
+
+      // /.header__top
+    // /.container
+
+    .container
+      .header__bottom
+
+        ul.menu
+          li.menu-item
+            a(href="#") ЭКО
+          li.menu-item
+            a(href="#") Спермограмма
+          li.menu-item
+            a(href="#") Лечение женского бесплодия
+          li.menu-item
+            a(href="#") Донорские программы
+          li.menu-item
+            a(href="#") Суррогатное материнство
+
+      // /.header__bottom
+    // /.container

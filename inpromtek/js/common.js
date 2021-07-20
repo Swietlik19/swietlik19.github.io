@@ -393,6 +393,16 @@
   $('.scr_serv__item:first-of-type').addClass('active');
   $('.scr_serv__tab:not(:first-of-type)').hide();
 
+  $('.tabs__nav-switch').click(function() {
+    if ($(this).siblings('.tabs__nav').hasClass('visible')) {
+      $(this).siblings('.tabs__nav').removeClass('visible');
+      $(this).text('Показать меню');
+    } else {
+      $(this).siblings('.tabs__nav').addClass('visible');
+      $(this).text('Скрыть меню');
+    }
+  });
+
   if (window.matchMedia('(max-width: 767px)').matches) {
     var profit__slider = new Swiper('#profit__slider', {
       slidesPerView: 1,

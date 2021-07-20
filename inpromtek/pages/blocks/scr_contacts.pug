@@ -4,7 +4,7 @@ mixin scr_contacts()
       +breadcrumbs--contacts
 
       .contacts__wrap
-        h1.page-title--inner Контакты
+        h1.page-title--inner Наши контакты
 
         .contacts__df
           .contacts__content
@@ -12,42 +12,29 @@ mixin scr_contacts()
               .contacts__item
                 h3 Адрес:
                 .contacts__text
-                  p г. Симферополь, ул. Генерала Васильева, 23 а
-              .contacts__item
-                h3 График работы:
-                .contacts__text
-                  p Пн-пт: с 08:30 до 19:00
+                  p Республика Крым, г. Симферополь
+                    br
+                    |  ул. Генерала Васильева, 23 а
               .contacts__item
                 h3 Телефон:
                 .contacts__text
                   .contacts__phones
-                    a.contacts__link(href="tel:+79780340395" rel="nofollow") +7 978 034-03-95
-                    a.contacts__msg.header__msg--viber(href="viber://chat?number=79780340395" rel="nofollow")
-                      svg.icon
-                        use(xlink:href="img/svg/sprite.svg#viber")
-                    a.contacts__msg.header__msg--wa(href="https://api.whatsapp.com/send?phone=79780340395" rel="nofollow")
-                      svg.icon
-                        use(xlink:href="img/svg/sprite.svg#wa")
-
+                    a.contacts__link(href="tel:+79787088158" rel="nofollow") +7 978 708-81-58
               .contacts__item
-                h3 Cоц. сети:
-
+                h3 E-mail:
                 .contacts__text
-                  .contacts__phones
-                    a.contacts__msg.header__msg--viber(href="#" rel="nofollow")
-                      svg.icon
-                        use(xlink:href="img/svg/sprite.svg#vk")
-                    a.contacts__msg.header__msg--wa(href="#" rel="nofollow")
-                      svg.icon
-                        use(xlink:href="img/svg/sprite.svg#insta")
+                  a.contacts__link(href="mailto:ltd.inpromtek@yandex.ru" rel="nofollow") ltd.inpromtek@yandex.ru
+              .contacts__item
+                h3 График работы:
+                .contacts__text
+                  p Пн-пт: с 08:30 до 19:00
 
             .contacts__col
-              .contacts__item
+              .contacts__item.contacts__item--info
                 h3 Реквизиты:
 
                 .contacts__text
                   p ООО "Инпромтек"
-                    br
                     br
                     |  ИНН/КПП:
                     br
@@ -59,17 +46,16 @@ mixin scr_contacts()
                     br
                     |  к/с 30101810835100000107
                     br
-                    br
-                    |  Симферопольский филиал
-                    br
-                    |  АБ «РОССИЯ»
-                    br
                     |  БИК: 043510107
 
               .contacts__item
-                h3 Почта:
+                h3 Мы в соц. сетях:
+
                 .contacts__text
-                  a.contacts__link(href="mailto:inpromtek@mail.ru" rel="nofollow") inpromtek@mail.ru
+                  .contacts__socials
+                    a.contacts__socials-item(href="#" rel="nofollow") Вконтакте
+                    span /
+                    a.contacts__socials-item(href="#" rel="nofollow") Инстаграм
 
           .contacts__form
             .form.wpcf7
@@ -87,18 +73,19 @@ mixin scr_contacts()
                   span.wpcf7-form-control-wrap.your-tel.text-input
                     input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
 
-                .form__item.form__item--submit
-                  .btn__wrap.btn__wrap--grad
-                    input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Получить консультацию')
-
                 .form__item
                   span.wpcf7-form-control-wrap.accept
                     span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
                       span.wpcf7-list-item
                         label
                           input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
-                          span.wpcf7-list-item-label Согласие на обработку персональных данных
+                          span.wpcf7-list-item-label Согласие на&nbsp;
+                            a(href="#") обработку персональных данных
                             i.accept__icon
+
+                .form__item.form__item--submit
+                  .btn__wrap.btn__wrap--grad
+                    input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Заказать звонок')
 
         .contacts__map#contacts__map
 

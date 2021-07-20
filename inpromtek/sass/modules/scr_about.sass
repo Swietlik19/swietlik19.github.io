@@ -9,17 +9,68 @@
     align-items: flex-start
   &__content
     flex-grow: 1
+    padding-top: 45px
+    .article
+      line-height: 1.714285714285714
   &__img
     order: 2
     flex-shrink: 0
     width: 550px
-    margin-left: 30px
+    margin-left: 43px
     box-shadow: 0px 0px 15px rgba(88, 152, 188, 0.2)
     border-radius: 15px
     overflow: hidden
     img
       display: block
+  &__desc
+    margin-bottom: 19px
+    font-weight: 500
+    font-size: 18px
+    line-height: 1.333333333333333
+  &__processes
+    padding-top: 65px
+    &-list
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      & > li
+        width: calc((100% - 60px) / 3)
+        margin-right: 30px
+        padding-bottom: 30px
+        &:nth-of-type(3n)
+          margin-right: 0
+    &-img
+      display: block
+      text-decoration: none
+      outline: none
+      height: 290px
+      border-radius: 6px
+      overflow: hidden
+      img
+        transition: 0.4s ease-in-out
+      &:hover
+        img
+          transform: scale(1.1)
+          transition: 0.8s ease-in-out
+    &-btns
+      padding-top: 10px
+      text-align: center
 
+
+  @media screen and (max-width: 1170px)
+    &__processes
+      padding-top: 35px
+      &-img
+        height: 220px
+      &-list
+        & > li
+          width: calc((100% - 40px) / 3)
+          margin-right: 20px
+          padding-bottom: 20px
+
+  // max-width 1170px
 
   @media screen and (max-width: 1070px)
     padding-bottom: 30px
@@ -38,11 +89,41 @@
 
   // max-width 991px
 
+  @media screen and (max-width: 850px)
+    &__processes
+      &-img
+        height: 160px
+      &-list
+        & > li
+          width: calc((100% - 20px) / 3)
+          margin-right: 10px
+          padding-bottom: 10px
+
+  // max-width 850px
+
   @media screen and (max-width: 650px)
     &__img
       width: 200px
 
   // max-width 650px
+
+  @media screen and (max-width: 575px)
+    &__content
+      padding-top: 0
+    &__processes
+      &-img
+        height: 130px
+      &-list
+        & > li
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          padding-bottom: 10px
+          &:nth-of-type(3n)
+            margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+
+  // max-width 575px
 
   @media screen and (max-width: 450px)
     &__wrap

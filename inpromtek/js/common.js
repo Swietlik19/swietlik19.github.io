@@ -26,6 +26,11 @@
       scrollInertia: 1000,
       // documentTouchScroll: false,
     });
+    $(".scr_card__content").mCustomScrollbar({
+      theme: "dark",
+      scrollInertia: 1000,
+      // documentTouchScroll: false,
+    });
   });
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
@@ -47,7 +52,7 @@
 
   $('.burger').click(function() {
     $(this).toggleClass('active');
-    $('.header__menu-wrap').toggleClass('active');
+    $('.header__menu-left').toggleClass('active');
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -132,10 +137,19 @@
     $(this).parent().addClass('current');
     $('.map__tab').not(_href).hide();
     $(_href).fadeIn();
+    if ( $(this).parents('.js-map__nav').hasClass('js-map__nav--portfolio') ) {
+      var _portHref = $(this).attr('href').replace('#map__tab-','#portfolio__tab-');
+      var _text = $(this).text();
+      $(_portHref).find('.map-portfolio__title').text(_text);
+      $('.map-portfolio__tab').not(_portHref).hide();
+      $(_portHref).fadeIn();
+    }
     if (window.matchMedia('(max-width: 767px)').matches) {
       $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
     }
   });
+
+  $('#portfolio__tab-0 .map-portfolio__title').text($('.js-map__nav--portfolio > li.current > a').text());
 
   $('.js-scr_serv__nav a').click(function(event) {
     event.preventDefault();
@@ -155,6 +169,18 @@
     $(this).parent().siblings().removeClass('current');
     $(this).parent().addClass('current');
     $('.portfolio__tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
+  $('.js-stages__nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.stages__tab').not(_href).hide();
     $(_href).fadeIn();
     if (window.matchMedia('(max-width: 767px)').matches) {
       $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
@@ -319,75 +345,35 @@
     });
   });
 
-
-  $('.portfolio__tab').each(function(xi,xel) {
-
-    var _thumbs = $(xel).find('.portfolio__thumbs');
-    var _thumbsBtns = _thumbs.parent().find('.portfolio__thumbs-btns');
-
-    var _gallery = $(xel).find('.portfolio__gallery');
-    var _galleryBtns = _gallery.parent().find('.portfolio__gallery-btns');
-
-    var _slider = $(xel).find('.portfolio__slider');
-
-    var galleryThumbs = new Swiper(_thumbs, {
-      slidesPerView: 2,
-      spaceBetween: 8,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      navigation: {
-        nextEl: _thumbsBtns.find('.swiper-button-next'),
-        prevEl: _thumbsBtns.find('.swiper-button-prev'),
+  var scrCardThumbs = new Swiper('#scr_card__thumbs', {
+    slidesPerView: 2,
+    spaceBetween: 8,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 24,
       },
-      breakpoints: {
-        1070: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-          direction: "vertical",
-        },
-        850: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-          direction: "vertical",
-        },
-        575: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        500: {
-          slidesPerView: 3,
-          spaceBetween: 10,
-        },
+      400: {
+        slidesPerView: 3,
       },
-    });
-
-    var portfolioGallery = new Swiper(_gallery, {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      watchSlidesProgress: true,
-      watchOverflow: true,
-      navigation: {
-        nextEl: _galleryBtns.find('.swiper-button-next'),
-        prevEl: _galleryBtns.find('.swiper-button-prev'),
-      },
-      thumbs: {
-        swiper: galleryThumbs
-      }
-    });
-
-    var portfolioSlider = new Swiper(_slider, {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      watchSlidesProgress: true,
-      watchOverflow: true,
-      effect: 'fade',
-      allowTouchMove: false,
-    });
-
-    portfolioGallery.controller.control = portfolioSlider;
+    },
   });
 
-  $('.portfolio__tab:not(:first-of-type)').hide();
+  var scrCardGallery = new Swiper('#scr_card__gallery', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.scr_card__gallery-btns .swiper-button-next',
+      prevEl: '.scr_card__gallery-btns .swiper-button-preve',
+    },
+    thumbs: {
+      swiper: scrCardThumbs
+    }
+  });
 
   $('.scr_serv__item:not(:first-of-type) .hidden').hide();
   $('.scr_serv__item:first-of-type').addClass('active');
@@ -402,6 +388,31 @@
       $(this).text('Скрыть меню');
     }
   });
+
+  if (window.matchMedia('(max-width: 1170px)').matches) {
+    var mapPortfolio = new Swiper('#map-portfolio__list', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      watchSlidesProgress: true,
+      pagination: {
+        el: '.map-portfolio__list-btns .swiper-dots',
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        450: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+      },
+    });
+  }
+
+  if (window.matchMedia('(max-width: 991px)').matches) {
+    $('.header__menu').appendTo('.header__menu-left-wrap');
+  }
 
   if (window.matchMedia('(max-width: 767px)').matches) {
     var profit__slider = new Swiper('#profit__slider', {

@@ -113,10 +113,84 @@
         transition: 0.4s ease-in-out
         &:hover
           background-color: #71a420
+  &__menu-left
+    position: fixed
+    top: 0
+    left: 0
+    width: 50%
+    z-index: 350
+    max-height: 100vh
+    overflow: auto
+    transform: translateX(-101%)
+    transition: transform 0.3s ease-in-out
+    &.active
+      transform: translateX(0)
+      transition: transform 0.7s ease-in-out
+    &-wrap
+      display: flex
+      flex-direction: column
+      justify-content: center
+      min-height: 100vh
+      overflow: auto
+      padding: 30px
+      padding-left: 279px
+      background: #0287D1
+    .menu
+      margin: 0
+      padding: 0
+      list-style: none
+      & > li
+        margin-bottom: 38px
+        &:last-of-type
+          margin-bottom: 0
+        & > a
+          position: relative
+          display: inline-block
+          text-decoration: none
+          outline: none
+          font-weight: 500
+          font-size: 32px
+          color: #FFFFFF
+          &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: -3px
+            display: block
+            width: 100%
+            height: 2px
+            background: #FFFFFF
+            transition: 0.4s ease-in-out
+            opacity: 0
+          &:hover
+            &::after
+              opacity: 1
 
+
+  @media screen and (max-width: 1400px)
+    &__menu-left
+      &-wrap
+        padding-left: 150px
+      .menu
+        & > li
+          margin-bottom: 20px
+          &:last-of-type
+            margin-bottom: 0
+          & > a
+            font-size: 28px
+
+  @media screen and (max-width: 1170px)
+    &__menu-left
+      .menu
+        & > li
+          margin-bottom: 16px
+          &:last-of-type
+            margin-bottom: 0
+          & > a
+            font-size: 24px
 
   @media screen and (max-width: 1070px)
-    .menu
+    .menu-left
       & > li
         & > a
           font-size: 13px
@@ -130,37 +204,52 @@
       background-color: #f4f8fb
     &__menu
       &-wrap
-        transform: translateY(-110%)
-        background-color: #f4f8fb
-        box-shadow: 0 0 15px rgba($accent, 0.1)
-        transition: 0.4s ease-in-out
-        z-index: -1
-        &.active
-          transform: translateY(0)
-          transition: 0.8s ease-in-out
-    .menu
-      background: none
-      display: block
-      & > li
-        width: 100%
-        & > a
-          height: 45px
-          color: $accent
-          border-bottom: 1px solid rgba($accent, 0.1)
-          &:hover
-            background: none
-          br
-            display: none
-        &:last-of-type
+        display: none
+      .menu
+        background: none
+        display: block
+        padding-top: 15px
+        & > li
+          width: 100%
           & > a
-            border-bottom: none
+            height: auto
+            font-size: 16px
+            &:hover
+              background: none
+            br
+              display: none
+          &:last-of-type
+            & > a
+              border-bottom: none
     &.fixed
       .header__menu-wrap
         transform: translateY(-110%)
         &.active
           transform: translateY(0)
+    &__menu-left
+      &-wrap
+        padding-left: 60px
 
   // max-width 991px
+
+  @media screen and (max-width: 767px)
+    &__menu-left
+      width: 75%
+      &-wrap
+        padding-left: 40px
+      .menu
+        & > li
+          margin-bottom: 12px
+          &:last-of-type
+            margin-bottom: 0
+          & > a
+            font-size: 20px
+    &__menu
+      .menu
+        padding-top: 12px
+        & > li
+          & > a
+            font-size: 14px
 
   @media screen and (max-width: 575px)
     &__phone
@@ -184,6 +273,21 @@
       margin-left: 6px
 
   // max-width 575px
+
+  @media screen and (max-width: 500px)
+    &__menu-left
+      width: 83%
+      &-wrap
+        padding-left: 20px
+      .menu
+        & > li
+          & > a
+            font-size: 18px
+    &__menu
+      .menu
+        & > li
+          & > a
+            font-size: 14px
 
   @media screen and (max-width: 400px)
     .logo

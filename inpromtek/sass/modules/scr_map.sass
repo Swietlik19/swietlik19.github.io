@@ -26,7 +26,124 @@
     transition: 0.4s ease-in-out
     &:hover
       box-shadow: 0px 0px 15px 0px rgba(88,152,188,0.4)
+  &--portfolio
+    padding-top: 131px
+  &-portfolio
+    &__tabs
+      margin: 0
+      padding: 0
+      list-style: none
+    &__tab
+      padding-top: 67px
+      &:not(:first-of-type)
+        display: none
+    &__list
+      position: relative
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      z-index: 1
+      & > li
+        width: calc((100% - 60px) / 3)
+        margin-right: 30px
+        padding-bottom: 46px
+        &:nth-of-type(3n)
+          margin-right: 0
+      .swiper-wrapper
+        flex-wrap: wrap
+        .swiper-slide
+          width: calc((100% - 60px) / 3)
+          margin-right: 30px
+          padding-bottom: 46px
+          &:nth-of-type(3n)
+            margin-right: 0
+      &-btns
+        display: none
+    &__item
+      position: relative
+      display: flex
+      flex-direction: column
+      height: 100%
+      padding: 20px
+      padding-bottom: 40px
+      background: #FFFFFF
+      box-shadow: 0px 10px 10px rgba(88, 152, 188, 0.1)
+      border-radius: 15px
+      &::after
+        content: ''
+        position: absolute
+        left: 20px
+        right: 20px
+        bottom: -10px
+        display: block
+        height: 100%
+        background: #FFFFFF
+        opacity: 0.5
+        box-shadow: 0px 10px 10px rgba(88, 152, 188, 0.1)
+        border-radius: 10px
+        z-index: -1
+    &__img
+      display: block
+      text-decoration: none
+      outline: none
+      height: 220px
+      border-radius: 10px
+      overflow: hidden
+      img
+        transition: 0.4s ease-in-out
+      &:hover
+        img
+          transform: scale(1.1)
+    &__content
+      flex-grow: 1
+      padding-top: 29px
+      a
+        display: block
+        text-decoration: none
+        outline: none
+        font-weight: bold
+        font-size: 18px
+        transition: 0.4s ease-in-out
+        &:hover
+          color: $accent2
+    &__text
+      padding-top: 12px
+      padding-bottom: 5px
+      font-size: 14px
+      line-height: 1.285714285714286
+      opacity: 0.8
+  &--vent
+    padding-top: 0
+    .page-desc
+      max-width: 100%
+  &--stages
+    padding-top: 67px
+    padding-bottom: 0
+    background-color: #F9FBFD
 
+
+  @media screen and (max-width: 1400px)
+    &-portfolio
+      &__tab
+        padding-top: 40px
+      &__list
+        & > li
+          width: calc((100% - 40px) / 3)
+          margin-right: 20px
+          padding-bottom: 36px
+          &:nth-of-type(3n)
+            margin-right: 0
+      &__item
+        padding: 10px
+        padding-bottom: 20px
+      &__img
+        height: 180px
+      &__content
+        padding-top: 18px
+        a
+          font-size: 16px
 
   @media screen and (max-width: 1170px)
     padding-top: 30px
@@ -43,8 +160,37 @@
           font-size: 16px
     &__map
       height: 433px
+    &-portfolio
+      &__list
+        .swiper-wrapper
+          flex-wrap: nowrap
+          .swiper-slide
+            padding-bottom: 0
+        &-btns
+          display: flex
+          justify-content: center
 
   // max-width 1170px
+
+  @media screen and (max-width: 991px)
+    &-portfolio
+      &__tab
+        padding-top: 30px
+      &__list
+        & > li
+          width: calc((100% - 20px) / 3)
+          margin-right: 10px
+          padding-bottom: 26px
+          &:nth-of-type(3n)
+            margin-right: 0
+      &__img
+        height: 140px
+      &__content
+        padding-top: 14px
+        a
+          font-size: 14px
+      &__text
+        font-size: 13px
 
   @media screen and (max-width: 767px)
     &__map
@@ -76,7 +222,40 @@
           min-width: 0
           height: 40px
           font-size: 13px
+    &-portfolio
+      &__list
+        & > li
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          padding-bottom: 20px
+          &:nth-of-type(3n)
+            margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+      &__content
+        a
+          font-size: 13px
 
   // max-width 650px
+
+  @media screen and (max-width: 450px)
+    &-portfolio
+      &__img
+        height: 120px
+      &__content
+        a
+          font-size: 12px
+    &--vent
+      padding-top: 15px
+    &--stages
+      .map-portfolio
+        &__list
+          & > li
+            width: 100%
+            margin-right: 0
+            &:nth-of-type(3n)
+              margin-right: 0
+        &__img
+          height: 160px
 
 /* map */

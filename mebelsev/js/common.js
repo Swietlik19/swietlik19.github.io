@@ -19,6 +19,13 @@
     scrolling: 'auto'
   });
 
+  /* инициализация увеличения */
+  $('.scr_card__gallery-img').each(function(xi,xel){
+    $('#' + $(xel).attr('id')).imageZoom({
+      zoom: 200,
+    });
+  });
+
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
     $('.inner-link[href^="#"]').click(function(){
@@ -101,20 +108,21 @@
     var fromTop = $(document).scrollTop();
     $(".catalog__wrap").toggleClass("fixed", (fromTop > 154));
     $(".to-top").toggleClass("fixed", (fromTop > 600));
+    $(".header__msgs").toggleClass("fixed", (fromTop > 20));
   });
 
   // Табы
-  // $('.prod-item__nav a').click(function(event) {
-  //   event.preventDefault();
-  //   var _href = $(this).attr('href');
-  //   $(this).parent().siblings().removeClass('current');
-  //   $(this).parent().addClass('current');
-  //   $('.services__tab').not(_href).hide();
-  //   $(_href).fadeIn();
-  //   if (window.matchMedia('(max-width: 767px)').matches) {
-  //     $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
-  //   }
-  // });
+  $('.js-ard__add-nav a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().removeClass('current');
+    $(this).parent().addClass('current');
+    $('.scr_card__add-tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
 
   $('img').on('dragstart', function (event) {
     event.preventDefault();
@@ -129,6 +137,10 @@
     });
   }
 
+  if (window.matchMedia('(max-width: 1170px)').matches) {
+    $('.scr_card__title').prependTo('.scr_card__df');
+  }
+
   if (window.matchMedia('(max-width: 991px)').matches) {
     // фиксированные шапка
     $(window).on("scroll", function() {
@@ -136,6 +148,12 @@
       $(".header").toggleClass("fixed", (fromTop > 10));
     });
   }
+
+  $('.scr_card__colors-circle').each(function(xi,xel) {
+    if ( $(xel).css("background-color") == 'rgb(255, 255, 255)' ) {
+      $(xel).css('border-color','#e3edf3');
+    }
+  });
 
   /* СЛАЙДЕРЫ */
 
@@ -206,28 +224,52 @@
     });
   });
 
-  // if (window.matchMedia('(max-width: 767px)').matches) {
-  //   var partnersSlider = new Swiper('#partners__slider', {
-  //     slidesPerView: 2,
-  //     watchSlidesProgress: true,
-          // watchOverflow: true,
-  //     loop: true,
-  //     autoplay: {
-  //       delay: 8000,
-  //     },
-  //     pagination: {
-  //       el: '#partners__slider .swiper-dots',
-  //     },
-  //     breakpoints: {
-  //       575: {
-  //         slidesPerView: 4,
-  //       },
-  //       400: {
-  //         slidesPerView: 3,
-  //       },
-  //     },
-  //   });
-  // }
+
+  $('.scr_card__thumbs-wrap').each(function(xi,xel) {
+    var _thumbs = $(xel).find('.scr_card__thumbs');
+    var _gallery = $(this).siblings('.scr_card__gallery');
+    var _btns = $(xel).find('.scr_card__thumbs-btns');
+
+    var scrCardThumbs = new Swiper(_thumbs, {
+      slidesPerView: 2,
+      spaceBetween: 8,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      navigation: {
+        nextEl: _btns.find('.swiper-button-next'),
+        prevEl: _btns.find('.swiper-button-prev'),
+      },
+      breakpoints: {
+        1600: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        991: {
+          slidesPerView: 3,
+        },
+      },
+    });
+
+    var scrCardGallery = new Swiper(_gallery, {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      thumbs: {
+        swiper: scrCardThumbs
+      }
+    });
+
+  });
+
+  $('.scr_card__tab:not(:first-of-type)').hide();
+
+  $('.scr_card__colors ul li input').change(function(){
+    var _id = '#' + $(this).attr('id').replace('color-','scr_card__tab-');
+    $('.scr_card__tab').not(_id).hide();
+    $(_id).fadeIn();
+  });
+
 
   function moveSearch() {
     if (window.matchMedia('(max-width: 991px)').matches) {

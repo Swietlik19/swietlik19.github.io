@@ -11,7 +11,7 @@
 
 html, body
   max-width: 100%
-  overflow-x: hidden
+  // overflow-x: hidden
 
 body
   position: relative
@@ -35,6 +35,11 @@ body
 
 .page_wr
   flex-grow: 1
+  &--inner
+    padding-top: 180px
+    background: transparent url('../img/scr1-bg.jpg') no-repeat top center
+    background-size: contain
+
 
 img
   width: 100%
@@ -73,6 +78,8 @@ h1,h2,h3,h4,h5,h6
   font-family: $title-font
 
 .article
+  font-size: 14px
+  color: #6D818A
   p
     margin-bottom: 10px
   a
@@ -201,6 +208,9 @@ h1,h2,h3,h4,h5,h6
     .xbtn,
     input[type="submit"].xbtn
       padding-left: 60px
+  &--reviews
+    &::after
+      background-image: url('../img/svg/chat-white.svg')
 .xbtn,
 input[type="submit"]
   position: relative
@@ -300,6 +310,31 @@ input[type="submit"]
   display: none
 
 
+/* Переопределение стилей nice-select */
+.nice-select, .nice-select.open, .nice-select:active, .nice-select:focus
+  background: none
+  border: none
+  height: auto
+.nice-select
+  font-size: 16px
+  &::after
+    content: none
+  &::before
+    content: ''
+    position: absolute
+    top: calc(50% - 3px)
+    right: 10px
+    display: block
+    width: 12px
+    height: 7px
+    background: transparent url('../img/svg/arrow.svg') no-repeat center center
+    background-size: contain
+    transition: 0.4s ease-in-out
+.nice-select.open
+  &::before
+    transform: rotate(180deg)
+
+
 /* Переопределение стилей swiper */
 .swiper-wrapper
   & *
@@ -362,6 +397,12 @@ input[type="submit"]
     max-width: 1400px
 
 /* media */
+@media screen and (max-width: 1400px)
+  .page_wr--inner
+    padding-top: 150px
+
+// max-width 1400px
+
 @media screen and (max-width: 1200px)
   .container
     max-width: 100%
@@ -381,6 +422,12 @@ input[type="submit"]
     height: 90px
 
 // max-width 1170px
+
+@media screen and (max-width: 1070px)
+  .page_wr--inner
+    padding-top: 100px
+
+// max-width 1070px
 
 @media screen and (max-width: 991px)
   .page-title
@@ -435,6 +482,8 @@ input[type="submit"]
     left: 13px
     width: 19px
     height: 19px
+  .page_wr--inner
+    padding-top: 80px
 
 // max-width 575px
 

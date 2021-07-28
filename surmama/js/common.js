@@ -19,11 +19,14 @@
     scrolling: 'auto'
   });
 
+  /* Инициализация красивых select'ов */
+  $('select').niceSelect();
+
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
-    $('.inner-link[href^="#"]').click(function(){
+    $('.scr_center__menu > li > a[href^="#"]').click(function(){
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 20 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 80 +'px'});
       return false;
     });
   });
@@ -107,6 +110,16 @@
   //   }
   // });
 
+
+
+  if (window.matchMedia('(max-width: 575px)').matches) {
+    $('.announce__hidden').each(function(xi,xel) {
+      $(xel).text($(xel).text().replace(/(\n|\r|\f)/g, ' '));
+      $(xel).html($(xel).text().replace(/(.{250}).{0,}/, '$1...'));
+    });
+  }
+
+
   $('.faq__list > li:first-of-type .top').addClass('active');
   $('.faq__list > li:first-of-type .hidden').show();
 
@@ -136,7 +149,7 @@
   var _rateWidth = $('.scr_rate__rate--overlay').outerWidth();
 
   function paintRate(_wrap,_rate) {
-    var _newWidth = _rateWidth * _rate / 5;
+    var _newWidth = _rateWidth * Math.round(_rate) / 5;
     _wrap.find('.scr_rate__rate--overlay').css('width',_newWidth + 'px');
   }
 
@@ -196,6 +209,13 @@
 
   countPregnacy();
 
+  $('.scr_center__grades-item').each(function(xi,xel) {
+    var _grade = $(xel).find('.scr_center__grades-line').data('grade');
+    var _gradeMax = $(xel).find('.scr_center__grades-line').data('grade-max');
+    var _percent = _grade / _gradeMax * 100;
+    $(xel).find('.scr_center__grades-line span').css('width',_percent + '%');
+  });
+
   $('.header__item--choose').click(function() {
     $(this).toggleClass('active');
   });
@@ -220,6 +240,34 @@
       },
     });
   }
+
+  $('.scr_center__gallery-slider').each(function(xi,xel) {
+    var _dots = $(xel).siblings('.scr_center__gallery-dots');
+    var _btns = $(xel).parents('.scr_center__gallery-wrap');
+    var scrCenterGallery = new Swiper($(xel), {
+      slidesPerView: 1,
+      spaceBetween: 8,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      navigation: {
+        nextEl: $(_btns).find('.swiper-button-next'),
+        prevEl: $(_btns).find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: $(_dots).find('.swiper-dots'),
+      },
+      breakpoints: {
+        1070: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        400: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+      },
+    });
+  });
 
   // if (window.matchMedia('(max-width: 767px)').matches) {
   //   var partnersSlider = new Swiper('#partners__slider', {

@@ -220,6 +220,10 @@
     $(this).toggleClass('active');
   });
 
+  if ($('.scr_center__menu').length == 0) {
+    $('html, body').addClass('overflowed');
+  }
+
   /* СЛАЙДЕРЫ */
 
 

@@ -50,6 +50,10 @@
   $('.burger').click(function() {
     $(this).toggleClass('active');
     $('.header__menu').toggleClass('active');
+    if ( !(window.matchMedia('(max-width: 1020px)').matches) ) {
+      $('.header__add').toggle();
+      $('body').toggleClass('disabled');
+    }
   });
 
   /* Открытие / закрытие модалок (кроме карты) */
@@ -130,6 +134,10 @@
     $(".to-top").toggleClass("fixed", (fromTop > 600));
   });
 
+  if ( window.matchMedia('(max-width: 1020px)').matches ) {
+    $('.header__add-col').appendTo('.header__menu');
+  }
+
   // Табы
   $('.techs .tabs__nav a').click(function(event) {
     event.preventDefault();
@@ -188,6 +196,18 @@
     }
   });
 
+  $('.examples__thumbs a').click(function(event) {
+    event.preventDefault();
+    var _href = $(this).attr('href');
+    $(this).parent().siblings().find('a').removeClass('current');
+    $(this).addClass('current');
+    $('.examples__slider-tab').not(_href).hide();
+    $(_href).fadeIn();
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $('html, body').animate({scrollTop: $(_href).offset().top - 70 +'px'});
+    }
+  });
+
   $('img').on('dragstart', function (event) {
     event.preventDefault();
   });
@@ -220,6 +240,11 @@
   $('.politics__show').click(function() {
     $(this).parent().siblings('.politics__content').toggleClass('opened');
     $(this).toggleClass('active');
+    if ($(this).hasClass('active')) {
+      $(this).find('span').text('Скрыть');
+    } else {
+      $(this).find('span').text('Читать все');
+    }
   });
 
   function hideMore() {
@@ -230,6 +255,11 @@
     })
   }
   hideMore();
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var _cont = $('.foundament__count').parents('.window__catalog');
+    $('.foundament__count').appendTo(_cont);
+  }
 
   /* СЛАЙДЕРЫ */
 
@@ -453,22 +483,39 @@
     },
   });
 
-  var examplesSlider = new Swiper('#examples__slider', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    watchSlidesProgress: true,
-    watchOverflow: true,
-    navigation: {
-      nextEl: '.examples__slider-btns .swiper-button-next',
-      prevEl: '.examples__slider-btns .swiper-button-prev',
-    },
-    pagination: {
-      el: '.examples__slider-btns .swiper-dots',
-    },
-    thumbs: {
-      swiper: examplesThumbs
-    }
+  // var examplesSlider = new Swiper('#examples__slider', {
+  //   slidesPerView: 1,
+  //   spaceBetween: 30,
+  //   watchSlidesProgress: true,
+  //   watchOverflow: true,
+  //   navigation: {
+  //     nextEl: '.examples__slider-btns .swiper-button-next',
+  //     prevEl: '.examples__slider-btns .swiper-button-prev',
+  //   },
+  //   pagination: {
+  //     el: '.examples__slider-btns .swiper-dots',
+  //   },
+  // });
+
+  $('.examples__slider').each(function(xi,xel) {
+    var _this = $(xel);
+    var xBtns = _this.parents('.examples__slider-wrap').find('.examples__slider-btns');
+    var examplesSider = new Swiper(_this, {
+      slidesPerView: 1,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: xBtns.find('.swiper-button-next'),
+        prevEl: xBtns.find('.swiper-button-prev'),
+      },
+      pagination: {
+        el: xBtns.find('.swiper-dots'),
+      },
+    });
   });
+
+  $('.examples__slider-tab:not(:first-of-type)').hide();
 
   function moveBurger() {
     if (window.matchMedia('(max-width: 1020px)').matches) {

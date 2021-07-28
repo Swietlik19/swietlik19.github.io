@@ -1,0 +1,254 @@
+.foundament
+  position: relative
+  padding-bottom: 0
+  .page-title
+    font-size: 30px
+    text-align: left
+  &__wrap
+    display: flex
+    img
+      margin-bottom: 43px
+      border-radius: 8px
+  .article
+    p
+      font-weight: 500
+  &__count
+    flex-shrink: 0
+    width: 344px
+    max-width: 100%
+    margin-left: 66px
+    margin-bottom: 42px
+    padding: 28px 27px 18px
+    background-color: #d8e2ea
+    &-title
+      margin-bottom: 19px
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 600
+      text-align: center
+  &__form
+    .form
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none
+      .text-input
+        input,
+        textarea
+          width: 100%
+          max-width: 100%
+          padding-left: 10px
+      &__item
+        margin-bottom: 14px
+        .btn__wrap,
+        .xbtn
+          width: 100%
+      &__df
+        display: flex
+        justify-content: space-between
+        .form__item
+          width: calc((100% - 20px) / 3)
+  &__table
+    margin-top: 30px
+    padding: 24px 15px 17px
+    &-wrap
+      padding: 15px 26px 31px
+      background-color: #ffffff
+      border-radius: 8px
+      overflow: hidden
+    table
+      width: 100%
+      border-collapse: collapse
+      td
+        padding: 19px 16px
+        font-size: 18px
+        font-weight: 600
+      tbody
+        tr
+          &:nth-of-type(2n + 1)
+            background-color: #f6f7f7
+
+  &__steps
+    margin-top: 48px
+    &-img
+      position: relative
+      display: flex
+      align-items: center
+      margin-right: -87px
+      z-index: 1
+      img
+        display: block
+        width: 100%
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: block
+        width: 273px
+        height: 272px
+        background-color: #cddbe5
+        border-radius: 50%
+        z-index: -1
+  .foundament__steps-wrap
+    padding-top: 72px
+    padding-left: 35px
+    padding-bottom: 32px
+    ol
+      margin: 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      padding-top: 40px
+      counter-reset: myCounter
+      & > li
+        position: relative
+        width: calc((100% - 30px * 3) / 4)
+        margin-right: 30px
+        padding-bottom: 49px
+        font-weight: 600
+        color: #333333
+        z-index: 1
+        &:nth-of-type(4n)
+          margin-right: 0
+        &:last-of-type
+          &::before,
+          &::after
+            content: none
+        &::after
+          content: ''
+          position: absolute
+          top: -3px
+          left: -3px
+          display: block
+          width: 55px
+          height: 55px
+          border-radius: 50%
+          background-image: linear-gradient(180.0deg, #ffcc00 0%, #f9921e 100%)
+          box-shadow: 0px 10px 20px -3px #ff9933
+          transition: 0.4s ease-in-out
+          z-index: -1
+        &:before
+          counter-increment: myCounter
+          content: '0' counter(myCounter)
+          display: flex
+          align-items: center
+          justify-content: center
+          text-align: center
+          width: 49px
+          height: 49px
+          margin-bottom: 24px
+          background-color: #ffffff
+          border-radius: 50%
+          font-size: 18.1px
+          line-height: 37px
+          font-weight: 900
+          color: #ff9933
+          transition: 0.4s ease-in-out
+        &:hover
+          &::before,
+          &::after
+            transform: translateY(-10px)
+
+
+  @media screen and (max-width: 1400px)
+    .foundament__steps-wrap
+      padding-top: 52px
+      padding-left: 0
+      ol
+        padding-top: 20px
+        & > li
+          position: relative
+          width: calc((100% - 20px * 2) / 3)
+          margin-right: 20px
+          padding-bottom: 35px
+          &:nth-of-type(4n)
+            margin-right: 20px
+          &:nth-of-type(3n)
+            margin-right: 0
+    &__count
+      margin-left: 26px
+      margin-bottom: 22px
+      padding: 18px 17px 18px
+    &__wrap
+      img
+        margin-bottom: 23px
+    &__table
+      table
+        td
+          padding: 15px 13px
+          font-size: 15px
+
+  // max-width 1400px
+
+  @media screen and (max-width: 767px)
+    &__count
+      float: none
+      margin-top: 30px
+      margin-left: auto
+      margin-right: auto
+    &__table
+      width: calc(100% + 30px)
+      margin-left: -15px
+      &-wrap
+        padding: 15px
+      table
+        td
+          padding: 12px
+          font-size: 13px
+
+  @media screen and (max-width: 700px)
+    .page-title
+      font-size: 20px
+      br
+        display: none
+    &__steps
+      &-img
+        margin-right: -27px
+        &::before
+          width: 163px
+          height: 163px
+    .foundament__steps-wrap
+      padding-top: 30px
+      ol
+        & > li
+          position: relative
+          width: calc((100% - 10px) / 2)
+          margin-right: 10px
+          padding-bottom: 30px
+          font-size: 14px
+          &:nth-of-type(3n)
+            margin-right: 10px
+          &:nth-of-type(2n)
+            margin-right: 0
+          &:last-of-type
+            padding-top: 40px
+          &::after
+            width: 49px
+            height: 49px
+          &:before
+            width: 43px
+            height: 43px
+            margin-bottom: 18px
+            font-size: 16px
+            line-height: 1.2
+
+  // max-width 700px
+
+  @media screen and (max-width: 575px)
+    .article
+      font-size: 14px
+    &__table
+      &-wrap
+        overflow: auto
+      table
+        width: 500px
+    &__count
+      &-title
+        font-size: 19px
+
+  // max-width 575px
+
+/* foundament */

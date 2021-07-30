@@ -257,8 +257,8 @@
   hideMore();
 
   if (window.matchMedia('(max-width: 767px)').matches) {
-    var _cont = $('.foundament__count').parents('.window__catalog');
-    $('.foundament__count').appendTo(_cont);
+    // var _cont = $('.foundament__count').parents('.window__catalog');
+    $('.foundament__text-bottom').before($('.foundament__count'));
   }
 
   /* СЛАЙДЕРЫ */
@@ -550,25 +550,25 @@
 
   moveBurger();
 
-  if (window.matchMedia('(max-width: 991px)').matches) {
-    var foundProdSlider = new Swiper('#found-prod__slider', {
-      slidesPerView: 1,
-      spaceBetween: 8,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      pagination: {
-        el: '.found-prod__slider-btns .swiper-dots',
-      },
-      breakpoints: {
-        767: {
-          slidesPerView: 3,
-        },
-        500: {
-          slidesPerView: 2,
-        },
-      },
-    });
-  }
+  // if (window.matchMedia('(max-width: 991px)').matches) {
+  //   var foundProdSlider = new Swiper('#found-prod__slider', {
+  //     slidesPerView: 1,
+  //     spaceBetween: 8,
+  //     watchSlidesVisibility: true,
+  //     watchSlidesProgress: true,
+  //     pagination: {
+  //       el: '.found-prod__slider-btns .swiper-dots',
+  //     },
+  //     breakpoints: {
+  //       767: {
+  //         slidesPerView: 3,
+  //       },
+  //       500: {
+  //         slidesPerView: 2,
+  //       },
+  //     },
+  //   });
+  // }
 
   $(window).resize(function() {
 

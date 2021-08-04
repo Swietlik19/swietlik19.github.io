@@ -6,7 +6,7 @@
   left: 0
   width: 100%
   min-height: 0
-  background-color: rgba(0,0,0,0.4)
+  background-color: rgba(#263b48,0.7)
   z-index: 1000
   opacity: 0
   overflow: hidden
@@ -22,19 +22,81 @@
     left: 50%
     transform: translate(-50%,-50%)
 
-    width: 540px
-    max-width: 100%
+    width: 330px
+    max-width: 98%
     opacity: 0
     transition: 0.7s
 
     &.visible
       opacity: 1
 
-  .form
+  .form__wrapper
+    width: 100%
+    .close
+      top: 15px
+      right: 15px
+
+  .form,
+  .form.form__guarantee
     max-height: 100vh
     overflow: auto
     width: 100%
+    padding: 0
     z-index: 0
+    border-radius: 8px
+    .wpcf7-form-control-wrap
+      input
+        padding: 12px 10px 14px 20px
+    .form__title
+      margin-left: 0
+    .form__item--textarea
+      margin-bottom: 0px
+
+  .form__photos
+    display: flex
+    flex-wrap: wrap
+    .form__item
+      width: calc((100% - 7px * 3) / 4)
+      margin-right: 7px
+      margin-bottom: 9px
+      text-align: center
+      &:nth-of-type(4n),
+      &:last-of-type
+        margin-right: 0
+      &:last-of-type
+        width: 100%
+    .your-photo
+      input
+        display: none
+      &__img
+        position: relative
+        display: none
+        width: 58px
+        height: 61px
+        border: 1px solid rgba(189,222,240,0.32)
+        border-radius: 10px
+        overflow: hidden
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          display: block
+          background: rgba(#141615, 0.7) url('../img/svg/close.svg') no-repeat center center
+          background-size: 22px 22px
+      .sl
+        font-size: 14px
+        font-weight: 500
+        text-decoration: underline
+        color: #2d5266
+      &--chosen
+        .your-photo__img
+          display: block
+        .sl
+          display: none
+
 
   .close
     background: none
@@ -50,36 +112,67 @@
     right: 9px
 
     display: block
-    width: 30px
-    height: 30px
-    &::before,&::after
-      content: ''
-      position: absolute
-      top: 50%
-      left: 50%
-
+    width: 22px
+    height: 22px
+    .icon
       display: block
-      width: 20px
-      height: 3px
-      background-color: $accent
-      border-radius: 1.5px
-      transition: 0.3s
-
-    &::before
-      transform: translate(-50%,-50%) rotate(45deg)
-
-    &::after
-      transform: translate(-50%,-50%) rotate(-45deg)
-
+      fill: #5586a4
+      transition: 0.4s ease-in-out
     &:hover
-      &::before,&::after
-        background-color: #e99c02
+      .icon
+        fill: $accent2
 
-  // @media screen and (max-width: 767px)
+  &__reviews
+    .modal__content
+      width: 737px
+  &__wrap
+    max-height: 100vh
+    padding: 37px 45px 38px 53px
+    overflow: auto
+    background-color: #ffffff
+    border: 1px solid rgba(189,222,240,0.32)
+    border-radius: 10px
+    overflow-x: hidden
+  &__top
+    display: flex
+    align-items: center
+    padding-bottom: 21px
+    border-bottom: 1px solid #e3edf3
+    .close
+      position: static
+    p
+      margin-right: 10px
+      font-size: 18px
+      font-weight: 700
+    time
+      display: block
+      margin-left: auto
+      margin-right: 22px
+      font-size: 14px
+  &__review
+    padding-top: 17px
+    padding-bottom: 10px
+    font-size: 14px
+    line-height: 1.5
+  .scr_card__thumbs-btns
+    .swiper-button-prev,
+    .swiper-button-next
+      z-index: 50
+  &__callback
+    .form__title
+      max-width: 100%
 
-  // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 991px)
+    .article
+      font-size: 14px
+      line-height: 1.5
+
+  // max-width 991px
+
+  @media screen and (max-width: 575px)
+    &__wrap
+      padding: 25px
 
   // max-width 575px
 

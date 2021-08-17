@@ -1,0 +1,107 @@
+.form
+  position: relative
+  z-index: 30
+  width: 100%
+
+  input,textarea
+    font-family: $form-font
+
+  .text-input
+    display: block
+    width: 100%
+
+    input,textarea
+      background: none
+      border: none
+      outline: none
+      transition: 0.3s
+      resize: none
+
+      height: 66px
+      background-color: rgba(255,255,255,0.05)
+      border: 1px solid rgba(255,255,255,0.2)
+      border-radius: 6px
+      padding-left: 22px
+      font-size: 16px
+      color: #fff
+
+      @include placeholder(#fff, 13px)
+
+      &:focus
+        @include placeholder(transparent, 13px)
+
+      &:hover
+        background-color: rgba(255,255,255,0.02)
+        border-color: $accent
+
+    textarea
+      // height: 136px
+
+  &__item
+    &--submit
+      margin-top: 41px
+      margin-bottom: 60px
+
+  .accept
+    display: block
+    label
+      display: block
+      width: 100%
+      cursor: pointer
+      transition: 0.3s
+      text-align: center
+      font-size: 13px
+      line-height: 1.2
+
+      & > span
+        position: relative
+        display: inline-block
+        padding-left: 24px
+      .accept__icon
+        position: absolute
+        top: 0
+        left: 0
+
+        display: block
+        width: 15px
+        height: 15px
+        border: 1.0px solid rgba(153,153,153,0.69)
+        &::before
+          content: ''
+          position: absolute
+          top: calc(50% - 3px)
+          left: calc(50% - 4px)
+
+          display: block
+          width: 8px
+          height: 5px
+          background: transparent url('../img/svg/tick.svg') no-repeat center center
+          background-size: contain
+          transition: 0.3s
+          opacity: 0
+
+      &:hover
+        color: $accent
+
+    input
+      display: none
+
+    input:checked + span
+      .accept__icon
+        &::before
+          opacity: 1
+
+
+  // @media screen and (max-width: 1070px)
+
+  //   max-width 1070px
+
+  // @media screen and (max-width: 991px)
+
+  //   max-width 991px
+
+  // @media screen and (max-width: 575px)
+
+  //   max-width 575px
+
+ /* form */

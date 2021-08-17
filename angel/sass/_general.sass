@@ -1,0 +1,470 @@
+::selection
+  background-color: $accent2
+  color: #fff
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+@keyframes pulse_yellow
+  0%
+    box-shadow: 0 0 0 0 rgba(#b9a354, 0.8)
+
+  70%
+    box-shadow: 0 0 0 15px rgba(#b9a354, 0)
+
+  100%
+    box-shadow: 0 0 0 0 rgba(#b9a354, 0)
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  &.disabled
+    overflow: hidden
+    max-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  display: block
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  display: block
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  display: block
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.blur-it
+  filter: blur(4px)
+
+.accent
+  color: $accent
+
+h1,h2,h3,h4,h5,h6
+  margin-top: 0
+  font-family: $title-font
+
+.article
+  p
+    margin-bottom: 10px
+  a
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      text-decoration: underline
+
+  img
+    width: auto
+    max-width: 100%
+    height: auto
+    display: block
+    &.alignleft
+      max-width: 50%
+      float: left
+      margin: 0 20px 20px 0
+    &.alignright
+      max-width: 50%
+      float: right
+      margin: 0 0 20px 20px
+    &.aligncenter
+      margin: 0 auto
+  ul,
+  ol
+    padding-bottom: 1.5em
+    padding-left: 0
+    padding-right: 1.5em
+  ul li,
+  ol li
+    transform: translateX(1.5em)
+
+  h2,h3,h4
+    line-height: 1.2
+    font-weight: 500
+  h2
+    margin-top: 35px
+    margin-bottom: 20px
+    font-size: 18px
+  h3
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 16px
+  h4
+    margin-top: 20px
+    margin-bottom: 10px
+    font-size: 14px
+
+.clearfix
+  &::after
+    display: table
+    clear: both
+    content: ""
+
+.page-title
+  margin-bottom: 64px
+  font-size: 60px
+  line-height: 1.2
+  font-weight: 800
+  &__num
+    display: block
+    background-image: linear-gradient(180.0deg, #ffff90 0%, #b9a354 100%)
+    font-size: 150px
+    line-height: 1
+    font-weight: 800
+    text-shadow: 0px 7px 18px rgba(246,243,136,0.56)
+    -webkit-background-clip: text
+    background-clip: text
+    -webkit-text-fill-color: transparent
+
+
+.page-desc
+  margin-bottom: 64px
+  font-size: 24px
+  line-height: 1.416666666666667
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.link
+  transition: 0.3s
+
+.btn__wrap
+  position: relative
+  display: inline-block
+  z-index: 1
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--grad
+    position: relative
+    min-width: 281px
+    height: 76px
+    padding-left: 20px
+    padding-right: 20px
+    background-image: $grad
+    background-color: #e2af00
+    border-radius: 38.5px
+    font-size: 16px
+    font-weight: 600
+    color: $accent2
+    text-align: center
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -7px
+      display: block
+      width: 100%
+      height: 100%
+      background-color: #a3914d
+      box-shadow: 0px 7px 25px 0px #a4924e
+      border-radius: 38.5px
+      transition: 0.4s ease-in-out
+      z-index: -1
+    &:hover
+      &::after
+        bottom: -2px
+  &--trsp
+    min-width: 281px
+    height: 76px
+    padding-left: 20px
+    padding-right: 20px
+    border-radius: 38.5px
+    border: 1px solid #b9a354
+    text-align: center
+    font-size: 16px
+    font-weight: 600
+    color: $accent
+    &:hover
+      background-color: #b9a354
+      color: $accent2
+  &--circle
+    width: 45px
+    height: 45px
+    background-color: $accent
+    border-radius: 50%
+    .icon
+      display: block
+      width: 16px
+      height: 16px
+    &:hover
+      background-color: #fff
+
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+.burger
+  flex-shrink: 0
+  position: relative
+  background: none
+  outline: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 40px
+  height: 28px
+  background-color: #022e55
+  border-radius: 6px
+  position: relative
+  transition: 0.3s
+  z-index: 100
+  &:hover
+    background-color: $accent
+    .line
+      &,
+      &::after,
+      &::before
+        background-color: $accent2
+  &.active
+    .line
+      transform: translate(-50%,-50%) rotate(45deg)
+      &:before,
+      &:after
+        transform: translateX(0) rotate(-90deg)
+
+  .line
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    &,
+    &::after,
+    &::before
+      position: absolute
+      display: block
+      width: 16px
+      height: 2px
+      background-color: #fff
+      transition: 0.2s ease-in-out
+
+    &::after,
+    &::before
+      content: ''
+      left: 0
+    &::before
+      transform: translateY(-6px)
+    &::after
+      transform: translateY(6px)
+
+.to-top
+  position: fixed
+  right: 20px
+  bottom: 20px
+  z-index: 100
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 37px
+  background: rgba($accent, 0.8)
+  border-radius: 6px
+  box-shadow: 0px 0px 10px 0px rgba($accent,0.3)
+  cursor: pointer
+  transition: 0.5s
+  opacity: 0
+  height: 0
+  overflow: hidden
+  z-index: 250
+  .icon
+    width: 12px
+    height: 12px
+    fill: #fff
+    transform: rotate(-90deg)
+
+  &:hover
+    opacity: 1
+    box-shadow: 0px 0px 10px 0px rgba($accent,0.7)
+
+  &.fixed
+    opacity: 1
+    height: 37px
+
+
+/* Переопределение стилей yandex map */
+[class$='-controls-pane'],
+[class$='-copyrights-pane']
+  display: none
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-slide
+  height: auto
+.swiper-dots
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin-top: 34px
+.swiper-pagination-bullet
+  outline: none
+  display: block
+  background: $accent
+  width: 7px
+  height: 7px
+  margin: 0 4px
+  opacity: 1
+.swiper-pagination-bullet-active
+  position: relative
+  background: #fff
+.swiper-button-prev,
+.swiper-button-next
+  top: 50%
+  background: none
+  border: none
+  outline: none
+  width: 12px
+  height: 20px
+  margin: 0
+  &::after
+    content: none
+  .icon
+    display: block
+    fill: #fff
+    transition: 0.4s ease-in-out
+  &:hover
+    .icon
+      fill: $accent
+.swiper-button-prev
+  left: -26px
+  transform: rotate(180deg)
+.swiper-button-next
+  right: -26px
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+.wr
+  width: 100%
+  max-width: 1760px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 40px
+  padding-right: 40px
+
+.decor-wrap
+  &::before
+    content: ''
+    position: absolute
+    top: -158px
+    left: 0
+    width: 100%
+    height: 158px
+    background: transparent url('../img/decor.png') no-repeat top center
+    background-size: cover
+  &--light
+    &::before
+      background-image: url('../img/decor2.png')
+.with-dot
+  position: relative
+  padding-left: 38px
+  &::before
+    content: ''
+    position: absolute
+    top: 6px
+    left: 0
+    display: block
+    width: 14px
+    height: 14px
+    background-image: linear-gradient(180.0deg, #ffff90 0%, #b9a354 100%)
+    box-shadow: 0px 0px 18px 0px #f6f388
+    border-radius: 50%
+
+
+/* media */
+@media screen and (max-width: 1200px)
+  .wr
+    max-width: 100%
+    padding-left: 15px
+    padding-right: 15px
+
+// max-width 1200px
+
+// @media screen and (max-width: 1023px)
+
+// max-width 1023px
+
+// @media screen and (max-width: 991px)
+
+// max-width 991px
+
+// @media screen and (max-width: 767px)
+
+// max-width 767px
+
+// @media screen and (max-width: 575px)
+
+// max-width 575px
+
+// @media screen and (max-width: 500px)
+
+// max-width 500px
+
+// @media screen and (max-width: 400px)
+
+// max-width 400px

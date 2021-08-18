@@ -80,3 +80,87 @@ mixin scr1--foundament()
             |  рублей
 
   // /.scr1
+
+mixin scr1--choose()
+  section.scr1.scr1--choose(id="scr1" style="background: transparent url('img/choose/bg.jpg') no-repeat left top; background-size: cover;")
+    .container 
+      .scr1__df
+        .scr1__content
+          h1.scr1__title Подбор 
+            strong.accent  земельных участков 
+            br
+            |  для строительства в Крыму
+
+          .foundament
+            .foundament__steps
+              .foundament__steps-wrap
+                ol
+                  li                 
+                    .foundament__steps-content
+                      h3 Просмотрите примеры участков из нашей открытой базы
+                      p Часть предложений мы публикуем на сайте в открытом доступе.              
+                  li                 
+                    .foundament__steps-content
+                      h3 Оставьте запрос
+                      p Вас наберет консультант и уточнит все детали по срокам и бюджету. После этого он сформирует для  Вас районную выборку из полной базы
+
+        .scr1__form.foundament__count
+          p.foundament__count-title Запрос на подбор участка в Крыму
+
+          a.scr1__districts(href="#scr1_map") Смотреть все районы Крыма
+
+          .form
+            form.wpcf7-form
+              .form__item
+                span.wpcf7-form-control-wrap.your-name.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-name(type='text', name='your-name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Имя')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-tel.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel(type='tel', name='your-tel', value='', size='40', aria-required='true', aria-invalid='false', placeholder='+7 (___) ___-__-__')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-email.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email(type='email', name='your-email', value='', size='40', aria-required='true', aria-invalid='false', placeholder='E-mail')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-square.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-square(type='text', name='your-square', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Площадь участка:  от 4 до ... соток')
+
+              .form__item
+                span.wpcf7-form-control-wrap.your-district.text-input
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-district(type='text', name='your-district', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Район: например, "Симферопольский"')
+              
+              .form__item.form__item--category
+                span Категория участка
+                .form__radios 
+                  span.wpcf7-form-control-wrap.your-category.your-radio
+                    label 
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-category(type='radio', id="category-1", name='your-category',aria-required='true', aria-invalid='false', checked)
+                      span 
+                      p  ИЖС                              
+
+                  span.wpcf7-form-control-wrap.your-category.your-radio
+                    label 
+                      input.wpcf7-form-control.wpcf7-text.wpcf7-category(type='radio', id="category-2", name='your-category',aria-required='true', aria-invalid='false')
+                      span 
+                      p  СНТ / ДНТ
+
+              .form__item.form__item--submit
+                .btn__wrap.btn__wrap--orange
+                  input.wpcf7-form-control.wpcf7-submit.xbtn.xbtn--grad(type='submit', value='Отправить')
+
+              .form__item
+                span.wpcf7-form-control-wrap.accept
+                  span.wpcf7-form-control.wpcf7-checkbox.wpcf7-validates-as-required
+                    span.wpcf7-list-item
+                      label
+                        input(type='checkbox', name='accept', value='Согласие на обработку персональных данных', checked='checked')
+                        span.wpcf7-list-item-label Согласие на обработку персональных данных
+                          i.accept__icon
+              
+        .scr1__modal 
+          span.scr1__modal-close
+          img(src="img/choose/map.jpg", alt="")
+          
+  // /.scr1

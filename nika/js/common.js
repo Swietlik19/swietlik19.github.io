@@ -261,6 +261,13 @@
     $('.foundament__text-bottom').before($('.foundament__count'));
   }
 
+  $('.scr1__districts').click(function() {
+    $('.scr1__modal').toggle();
+  });
+  $('.scr1__modal-close').click(function () {
+    $('.scr1__modal').hide();
+  });
+
   /* СЛАЙДЕРЫ */
 
   var reviewsVideos = new Swiper('#reviews__videos', {
@@ -501,6 +508,34 @@
       },
       575: {
         slidesPerView: 3,
+        spaceBetween: 8,
+      },
+    },
+  });
+
+  var chooseSlider = new Swiper('.choose__slider', {
+    slidesPerView: 1,
+    spaceBetween: 8,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: '.choose__slider-btns .swiper-button-next',
+      prevEl: '.choose__slider-btns .swiper-button-prev',
+    },
+    pagination: {
+      el: '.choose__slider-btns .swiper-dots',
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      400: {
+        slidesPerView: 2,
         spaceBetween: 8,
       },
     },

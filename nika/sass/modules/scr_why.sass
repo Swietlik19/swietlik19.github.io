@@ -1,0 +1,80 @@
+.why 
+  position: relative
+  padding-top: 53px
+  padding-bottom: 104px
+  .foundament__steps
+    ol
+      li 
+        width: calc((100% - 30px * 2) / 3)
+        margin-right: 30px
+        padding-bottom: 0
+        text-align: center
+        h3 
+          margin-bottom: 20px
+          font-weight: 600
+          font-size: 22px
+          line-height: 1.2
+          color: #333333
+        &::before,
+        &::after 
+          position: absolute
+          top: -85px
+          left: calc(50% - 25px)
+        &::before
+          content: '0' counter(myCounter) !important
+        &::after 
+          content: '' !important
+          top: -88px
+          left: calc(50% - 28px)
+        &:nth-of-type(3n)
+          margin-right: 0
+      
+
+  @media screen and (max-width: 1070px) 
+    padding-top: 30px
+    padding-bottom: 30px
+    .foundament__steps
+      &-wrap
+        padding-bottom: 0
+      ol
+        li 
+          width: calc((100% - 10px * 2) / 3)
+          margin-right: 10px
+          &::before,
+          &::after 
+            top: -75px
+          &::after 
+            top: -78px
+          h3
+            font-size: 18px
+          p 
+            font-size: 14px
+    
+  // max-width 1070px 
+
+  @media screen and (max-width: 767px) 
+    .foundament__steps
+      margin-top: 0
+      ol
+        li 
+          width: 100%
+          margin-right: 0
+          padding-bottom: 75px
+          text-align: left
+          &::before,
+          &::after 
+            top: -64px
+            left: 3px
+          &::after 
+            top: -67px
+            left: 0
+          &:last-of-type            
+            padding-bottom: 0
+            padding-top: 0
+          h3 
+            br 
+              display: none
+
+  // max-width 767px 
+    
+/* why */

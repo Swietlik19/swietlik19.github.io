@@ -109,7 +109,7 @@
       line-height: 1.388888888888889
       font-weight: 900
       color: #fefefe
-  
+
   &--choose
     min-height: 0
     padding-top: 0
@@ -121,23 +121,23 @@
     max-width: 430px
   .foundament .foundament__steps-wrap ol > li::after
     content: '' !important
-  .foundament .foundament__steps-wrap ol > li::before 
+  .foundament .foundament__steps-wrap ol > li::before
     content: '0' counter(myCounter) !important
     position: absolute
     top: 0
     left: 0
-  .foundament .foundament__steps-wrap ol > li    
+  .foundament .foundament__steps-wrap ol > li
     width: 100%
     padding-left: 91px
     margin-right: 0
     &:last-of-type
       margin-bottom: 0
     h3
-      margin-bottom: 22px 
+      margin-bottom: 22px
       font-weight: 600
-    p  
+    p
       font-weight: 500
-  .foundament .foundament__steps-wrap 
+  .foundament .foundament__steps-wrap
     padding-top: 0
     padding-left: 0
     padding-bottom: 0
@@ -153,7 +153,7 @@
   &__form
     flex-shrink: 0
     width: 376px
-    .form 
+    .form
       &__item
         margin-bottom: 14px
         .btn__wrap,
@@ -163,7 +163,7 @@
         max-width: 100%
   &__districts
     margin-bottom: 14px
-    display: flex 
+    display: flex
     justify-content: center
     outline: none
     text-align: center
@@ -187,24 +187,32 @@
     border-radius: 8px
     overflow: hidden
     z-index: 50
-    img 
+    img
       display: block
     &-close
       position: absolute
       top: 11px
       right: 11px
-      display: block      
+      display: block
       width: 14px
       height: 14px
       background: transparent url('../img/choose/circle-x.svg') no-repeat center center
       background-size: contain
       transform: rotate(45deg)
       cursor: pointer
+  &__land
+    display: none    
+  .foundament__steps
+    margin-top: 0
+  .foundament .foundament__steps-wrap ol 
+    padding-top: 10px
 
 
   @media screen and (max-width: 1650px)
     padding-top: 66px
     min-height: 584px
+    &--choose
+      padding-top: 0
     &__btns
       .btn__wrap
         margin-right: 12px
@@ -214,6 +222,8 @@
   @media screen and (max-width: 1600px)
     padding-top: 46px
     min-height: 504px
+    &--choose
+      padding-top: 0
     &__content
       max-width: 680px
     &__title
@@ -233,6 +243,15 @@
     &__modal
       right: 133px
       width: 712px
+    &--choose
+      .scr1__content 
+        padding-top: 41px
+    .foundament .foundament__steps-wrap ol > li 
+      width: 100%
+      padding-left: 71px
+    &__modal
+      bottom: auto
+      top: 0
 
   // max-width 1400px
 
@@ -256,6 +275,8 @@
     min-height: 0
     padding-top: 46px
     padding-bottom: 100px
+    &--choose
+      padding-top: 0
     &__content
       max-width: 550px
     &__title
@@ -267,7 +288,7 @@
     &__btns
       .btn__wrap
         margin-right: 12px
-    .foundament .foundament__steps-wrap ol > li 
+    .foundament .foundament__steps-wrap ol > li
       padding-left: 71px
     &__modal
       right: 83px
@@ -276,19 +297,20 @@
 
   @media screen and (max-width: 767px)
     &__df
-      flex-direction: column 
+      flex-direction: column
       align-items: center
       justify-content: flex-start
     &__form
       margin-top: 30px
     &--choose
+      padding-top: 34px
       padding-bottom: 30px
       .scr1__content
         width: 100%
         max-width: 100%
         padding-top: 0
         padding-bottom: 0
-    .foundament      
+    .foundament
       max-width: 100%
     .foundament__steps
       margin-top: 20px
@@ -300,6 +322,13 @@
       padding-top: 0 !important
     &__districts
       display: none
+    &__land
+      // display: block
+      margin-bottom: 15px
+      width: calc(100% + 40px)
+      margin-left: -15px 
+    &--choose
+      background-position: center top !important
 
   // max-width 767px
 
@@ -328,6 +357,8 @@
   @media screen and (max-width: 575px)
     padding-top: 34px
     padding-bottom: 80px
+    &--choose
+      padding-bottom: 30px
     &__title
       font-size: 21px
       br

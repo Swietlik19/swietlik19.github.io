@@ -1,0 +1,144 @@
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  font-family: $font;
+  font-size: 18px;
+  line-height: 1.444444444444444; /* 26 / 18 */
+  font-weight: 500;
+  color: $body-color;
+  background-color: #fff;
+  display: flex;;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  user-select: none;
+}
+
+[data-object-fit-cover] {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  font-family: 'object-fit: cover; object-position: center;';
+  width: 100%;
+  height: 100%;
+}
+
+[data-object-fit-contain] {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  font-family: 'object-fit: contain; object-position: center;';
+  width: 100%;
+  height: 100%;
+}
+  
+a {
+  color: $body-color;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  font-family: $title-font;
+}
+
+.page_wr {
+  flex-grow: 1;
+}
+
+.accent {
+  color: $accent;
+}
+
+.page-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 1.333333333333333; /* 36 / 27 */
+  text-align: center;
+}
+
+.page-desc {
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  background: rgba($accent, 0.8);
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px rgba(#000,0.3);
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 250;
+  .icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+    transform: rotate(-90deg);
+  }
+  &:hover {
+    opacity: 1;    
+  }
+  &.fixed {
+    opacity: 1;
+    height: 37px;
+  }
+}
+
+
+/* media */
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+/* max-width 1200px */
+
+@media screen and (max-width: 1070px) {
+	body {
+		font-size: 16px;
+		line-height: 1.5; /* 24 / 16 */
+  }
+  .page-title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+} 
+/* max-width 1070px */

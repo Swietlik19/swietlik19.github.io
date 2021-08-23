@@ -1,10 +1,21 @@
 .steps
   position: relative
-  background: #0b1f32 url('../img/steps-bg.jpg') no-repeat bottom center
-  background-size: contain
+  background: #0b1f32 
   min-height: 1342px
   padding-top: 93px
   z-index: 7
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    display: block
+    width: 100%    
+    height: 100%
+    background: #0b1f32 url('../img/steps-bg.jpg') no-repeat bottom center
+    background-size: contain
+    z-index: -1
   .prod__top
     align-items: center
     margin-bottom: 109px
@@ -27,40 +38,60 @@
         display: none
 
 
-  // @media screen and (max-width: 1600px)
+  @media screen and (max-width: 1600px)        
+    min-height: 1222px
+    .prod__top
+      display: block
+      margin-bottom: 59px
+      .page-desc
+        width: 100%
+        margin-top: 20px
 
   // max-width 1600px
 
-  // @media screen and (max-width: 1400px)
+  @media screen and (max-width: 1200px)    
+    min-height: 1012px
+    &__slider
+      &-btns
+        .swiper-dots
+          display: flex
+          justify-content: center 
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
 
-  // max-width 1400px
+  // max-width 1200px
 
-  // @media screen and (max-width: 1170px)
+  @media screen and (max-width: 1170px)
+    min-height: 832px
+    &::before
+      width: 450px  
 
   // max-width 1170px
 
-  // @media screen and (max-width: 1070px)
+  @media screen and (max-width: 1070px)
+    padding-top: 30px
+    &::before      
+      bottom: -100px      
+      width: 750px  
 
   // max-width 1070px
 
-  // @media screen and (max-width: 991px)
-
-  // max-width 991px
-
-  // @media screen and (max-width: 767px)
+  @media screen and (max-width: 767px)        
+    min-height: 632px
+    padding-bottom: 50px
+    &::before      
+      width: 620px
+    .prod__top 
+      margin-bottom: 30px
 
   // max-width 767px
 
-  // @media screen and (max-width: 575px)
+  @media screen and (max-width: 575px)
+    min-height: 572px
+    &::before
+      bottom: -140px     
 
   // max-width 575px
-
-  // @media screen and (max-width: 500px)
-
-  // max-width 500px
-
-  // @media screen and (max-width: 400px)
-
-  // max-width 400px
 
 /* steps */

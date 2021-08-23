@@ -330,7 +330,7 @@ input[type="submit"]
   .icon
     width: 12px
     height: 12px
-    fill: #fff
+    fill: $accent2
     transform: rotate(-90deg)
 
   &:hover
@@ -346,6 +346,99 @@ input[type="submit"]
 [class$='-controls-pane'],
 [class$='-copyrights-pane']
   display: none
+[class$='-balloon__content']
+  margin-right: 0 !important
+  padding: 0 !important
+  background: none !important
+[class$='-balloon__content'] > ymaps
+  width: auto !important
+  height: auto !important
+[class$='-balloon__layout']
+  background: none !important
+[class$='-balloon__tail']
+  display: none !important
+[class*='-balloon ']
+  box-shadow: none !important
+
+.balloon-df
+  display: flex
+  width: 574px
+  padding: 12px
+  background-color: #ffffff
+  border: 1px solid rgba(255,255,255,0.2)
+  box-shadow: 0px 11px 16px 0px rgba(11,31,50,0.28)
+  border-radius: 8px
+  font-family: $font
+.balloon-img
+  position: relative
+  flex-shrink: 0
+  width: 243px
+  height: 197px
+  margin-right: 20px
+  background-color: #ffffff
+  border: 1px solid #f5f4f4
+  border-radius: 6px
+  overflow: hidden
+  z-index: 2
+  img
+    display: block
+    height: 100%
+.balloon-content
+  flex-grow: 1
+  padding-top: 4px
+.balloon-text
+  position: relative
+  font-size: 14px
+  font-weight: 500
+  color: #0b1f32
+  p
+    position: relative
+    display: flex
+    justify-content: space-between
+    margin-bottom: 10px
+    overflow: hidden
+    z-index: 1
+  span
+    display: block
+    background-color: #fff
+    &:first-of-type 
+      position: relative
+      font-weight: 500
+      &::after
+        content: '..........................................................................................'
+        position: absolute
+        left: 100%
+        bottom: 0
+        display: block
+        z-index: -1
+.balloon-title
+  margin-top: 0
+  margin-bottom: 18px
+  padding-right: 20px
+  font-size: 16px
+  line-height: 1.5
+  font-weight: 600
+  color: #0b1f32
+.balloon-link
+  text-decoration: none
+  outline: none
+  display: flex 
+  align-items: center
+  justify-content: center
+  outline: none
+  width: 118px
+  height: 33px
+  margin-left: auto
+  margin-right: auto
+  background-color: $accent
+  border-radius: 6px
+  font-size: 14px
+  font-weight: 600
+  color: $accent2
+  transition: 0.4s ease-in-out
+  &:hover
+    background-color: $accent2
+    color: $accent
 
 
 /* Переопределение стилей swiper */
@@ -393,11 +486,32 @@ input[type="submit"]
   transform: rotate(180deg)
 .swiper-button-next
   right: -26px
+.swiper-pagination
+  position: static
+  width: auto
+  margin-left: 70px
+  margin-right: 70px
+.swiper-pagination-current,
+.swiper-pagination-del      
+  font-family: 'Acrom'
+  font-size: 48px
+  font-weight: 500
+  color: $accent
+.swiper-pagination-current
+  display: inline-block
+  width: 75px
+.swiper-pagination-total
+  display: inline-block
+  width: 60px
+  font-family: 'Acrom'
+  font-size: 30px
+  color: #fefefe
 
 .swiper-pagination-lock
   display: none
 .swiper-button-disabled
-  display: none
+  opacity: 0
+  
 
 .wr
   width: 100%
@@ -411,7 +525,7 @@ input[type="submit"]
   &::before
     content: ''
     position: absolute
-    top: -158px
+    top: -157px
     left: 0
     width: 100%
     height: 158px
@@ -437,34 +551,160 @@ input[type="submit"]
 
 
 /* media */
+@media screen and (max-width: 1600px)
+  .page-desc 
+    margin-bottom: 44px
+    font-size: 20px
+  .page-title
+    &__num
+      font-size: 130px  
+
+// max-width 1600px
+
+@media screen and (max-width: 1400px)
+  .decor-wrap::before 
+    top: -87px
+    height: 88px
+  .page-title    
+    margin-bottom: 34px
+    font-size: 50px
+
+// max-width 1400px
+
 @media screen and (max-width: 1200px)
   .wr
     max-width: 100%
     padding-left: 15px
     padding-right: 15px
+  .balloon-df
+    width: 424px
+    padding: 6px
+  .balloon-img
+    width: 183px
+    height: 157px
+    margin-right: 10px
+  .balloon-text
+    font-size: 12px
+    p
+      margin-bottom: 5px
+  .balloon-title
+    margin-bottom: 8px
+    font-size: 12px
+    br 
+      display: none
+  .balloon-link
+    width: 88px
+    height: 25px
+    font-size: 13px
 
 // max-width 1200px
 
-// @media screen and (max-width: 1023px)
+@media screen and (max-width: 1070px)
+  .page-desc
+    margin-bottom: 34px
+    font-size: 18px
+    br 
+      display: none
+  .page-title    
+    font-size: 45px
+    &__num      
+      font-size: 100px
 
-// max-width 1023px
+// max-width 1070px
 
-// @media screen and (max-width: 991px)
+@media screen and (max-width: 991px)
+  .article
+    font-size: 14px
+  .page-title    
+    font-size: 40px
+  .swiper-pagination 
+    margin-left: 30px
+    margin-right: 30px
+  .swiper-pagination-current, .swiper-pagination-del
+    font-size: 38px
+  .swiper-pagination-total 
+    font-size: 26px
+  .xbtn,
+  input[type="submit"].xbtn
+    &--circle
+      width: 40px
+      height: 40px
+    &--grad
+      min-width: 0
+      height: 56px
+      font-size: 14px
+    &--trsp      
+      min-width: 0
+      height: 56px
+      font-size: 14px
+  .balloon-df    
+    width: 364px   
+  .balloon-img   
+    width: 143px
+    height: 117px
+  .balloon-text
+    font-size: 11px
+    p
+      margin-bottom: 0
+  .balloon-title
+    margin-bottom: 4px
+    font-size: 11px
 
 // max-width 991px
 
-// @media screen and (max-width: 767px)
+@media screen and (max-width: 767px)
+  .xbtn--grad, 
+  input[type="submit"].xbtn--grad 
+    min-width: 241px
+    height: 59px
+  .page-title    
+    font-size: 42px
+  .decor-wrap::before 
+    top: -47px
+    height: 48px
+  .page-title    
+    font-size: 36px  
 
 // max-width 767px
 
-// @media screen and (max-width: 575px)
+@media screen and (max-width: 575px)
+  .page-title    
+    font-size: 32px
+    &__num
+      font-size: 80px
 
 // max-width 575px
 
-// @media screen and (max-width: 500px)
+@media screen and (max-width: 500px)
+  .page-title 
+    font-size: 28px
+    &__num      
+      font-size: 80px
+  .page-desc 
+    margin-bottom: 30px
+    font-size: 15px
 
 // max-width 500px
 
-// @media screen and (max-width: 400px)
+@media screen and (max-width: 430px)  
+  .balloon-df    
+    display: block
+    width: 300px   
+  .balloon-img   
+    width: 100% 
+    height: 87px
+  .balloon-text
+    font-size: 11px
+  .balloon-title
+    margin-bottom: 4px
+    font-size: 11px
+
+// max-width 430px
+
+@media screen and (max-width: 400px)
+  .page-title    
+    font-size: 24px
+  .balloon-df    
+    width: 260px   
 
 // max-width 400px

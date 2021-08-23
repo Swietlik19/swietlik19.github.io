@@ -1,41 +1,42 @@
 mixin header(logotype)
   header.header(id="header")
-    .wr
-      .header__top
-        .logo__wrap
-          if logotype == "a"
-            #{logotype}.logo(href="index.html")
-              img(src="img/logo.png" alt="лого")
-          else
-            #{logotype}.logo
-              img(src="img/logo.png" alt="лого")
+    .header__wrap
+      .wr
+        .header__top
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
 
-          .logo__content
-            p
-              strong Ангел Строитель
-              br
-              | Строительство и проектирование
-              br
-              |  домов под ключ в Крыму
+            .logo__content
+              p
+                strong Ангел Строитель
+                br
+                span Строительство и проектирование
+                  br
+                  |  домов под ключ в Крыму
 
-        .header__address
-          p Севастополь, ул. Дм. Ульянова, 1а
-            a(href="mailto:krmstroypost@gmail.com" rel="nofollow") krmstroypost@gmail.com
+          .header__address
+            p Севастополь, ул. Дм. Ульянова, 1а
+              a(href="mailto:krmstroypost@gmail.com" rel="nofollow") krmstroypost@gmail.com
 
-        .header__phones
-          .header__phones-left
-            a.header__phone.desktop(href="tel:+73652694040" rel="nofollow") +7 (3652) 694-040
-            a.xbtn.xbtn--circle.mobile(href="tel:+73652694040" rel="nofollow")
+          .header__phones
+            .header__phones-left
+              a.header__phone.desktop(href="tel:+73652694040" rel="nofollow") +7 (3652) 694-040
+              a.xbtn.xbtn--circle.mobile(href="tel:+73652694040" rel="nofollow")
+                svg.icon
+                  use(xlink:href="img/svg/sprite.svg#phone-call")
+              a.header__phone.desktop(href="tel:+79788005468" rel="nofollow") +7 (978) 800-54-68
+            a.xbtn.xbtn--circle.open-modal(href="#modal_callback")
               svg.icon
                 use(xlink:href="img/svg/sprite.svg#phone-call")
-            a.header__phone.desktop(href="tel:+79788005468" rel="nofollow") +7 (978) 800-54-68
-          a.xbtn.xbtn--circle.open-modal(href="#modal_callback")
-            svg.icon
-              use(xlink:href="img/svg/sprite.svg#phone-call")
 
-      // /.header__top
-    // /.wr
-
+        // /.header__top
+      // /.wr
+    
     .header__bottom
       .wr
         nav

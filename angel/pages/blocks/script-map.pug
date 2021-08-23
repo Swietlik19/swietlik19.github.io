@@ -2,9 +2,153 @@ mixin script-map()
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript" unselectable="on" scroll="false")
   script.
     (function($){
-      createMap('inner-map',[55.154162, 61.388872]);
+            
+      
+      xObjectArr0 = [
+        {
+          coords: [44.553114, 33.465445],
+          title: 'Двухэтажный дом с эркером <br> и большой площадью остекления',
+          img: 'img-temp/prod/img-1.jpg',
+          content: `<p>
+                      <span>Расположение:</span>
+                      <span>Севастополь</span>
+                    </p>
+                    <p>
+                      <span>Срок:</span>
+                      <span>8 мес</span>
+                    </p>
+                    <p>
+                      <span>Площадь:</span>
+                      <span>215 м<sup>2</sup></span>
+                    </p>`,
+          link: 'https://'
+        },
+        {
+          coords: [44.585835, 33.498474],
+          title: 'Двухэтажный дом с эркером <br> и большой площадью остекления',
+          img: 'img-temp/prod/img-1.jpg',
+          content: `<p>
+                      <span>Расположение:</span>
+                      <span>Севастополь</span>
+                    </p>
+                    <p>
+                      <span>Срок:</span>
+                      <span>8 мес</span>
+                    </p>
+                    <p>
+                      <span>Площадь:</span>
+                      <span>215 м<sup>2</sup></span>
+                    </p>`,
+          link: 'https://'
+        },
+      ];
+      
+      xObjectArr1 = [
+        {
+          coords: [44.553114, 33.465445],
+          title: 'Двухэтажный дом с эркером <br> и большой площадью остекления',
+          img: 'img-temp/prod/img-1.jpg',
+          content: `<p>
+                      <span>Расположение:</span>
+                      <span>Севастополь</span>
+                    </p>
+                    <p>
+                      <span>Срок:</span>
+                      <span>8 мес</span>
+                    </p>`,
+          link: 'https://'
+        },
+        {
+          coords: [44.585835, 33.498474],
+          title: 'Двухэтажный дом с эркером <br> и большой площадью остекления',
+          img: 'img-temp/prod/img-1.jpg',
+          content: `<p>
+                      <span>Расположение:</span>
+                      <span>Севастополь</span>
+                    </p>
+                    <p>
+                      <span>Срок:</span>
+                      <span>8 мес</span>
+                    </p>`,
+          link: 'https://'
+        },
+      ];
 
-      function createMap(xID,coords) {
+
+      $('.build__map').each(function(xi,xel){
+        var _id = $(this).attr('id');
+        createMap(_id,[44.570193, 33.522214],xi);
+      });
+
+      function createMap(xID,xCenter,tabInd) {
+
+        if ($("#" + xID + "").length > 0) {
+
+          var myMap;
+
+          // Дождёмся загрузки API и готовности DOM.
+          ymaps.ready(init);
+
+          function init () {
+            myMap = new ymaps.Map(xID, {
+              center: xCenter,
+              zoom: 14
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+              '<div>$[properties.iconContent]</div>'
+            ),
+
+            window["xObjectArr"+tabInd].forEach(function(xel,xi) {
+              window["myPlacemark"+xi] = new ymaps.Placemark(xel.coords, {       
+                hintContent: ' ',
+                // Зададим содержимое балуна.
+                balloonContent: '<div class="balloon-df">' +
+                  '<div class="balloon-img"><img src="' + xel.img +'" height="124" width="197" data-object-fit-cover></div>'
+                  +'<div class=""><div class="balloon-title">' + xel.title +'</div>' +
+                  '<div class="balloon-text">' + xel.content + '</div>' +
+                  '<a class="balloon-link" href="' + xel.link + '">Подробнее</a></div></div>' ,
+                  balloonCloseButton: false,
+              }, {
+                // Опции.
+                balloonPanelMaxMapArea: 0,
+                openTimeout: 0,
+
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                iconImageHref: 'img/svg/pin.svg',
+                // Размеры метки.
+                iconImageSize: [41, 51],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-20, -40],
+
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
+
+              });
+            });
+
+            window["xObjectArr"+tabInd].forEach(function(xel,xi) {
+              myMap.geoObjects
+                .add(window["myPlacemark"+xi]);
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+          }
+        }
+      }
+
+      createMap2('map__map',[44.602011, 33.494665]);
+
+      function createMap2(xID,coords) {
 
         if ($("#" + xID + "").length > 0) {
 
@@ -27,8 +171,8 @@ mixin script-map()
                 ),
 
                 myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'адрес',
-                    balloonContent: 'Бизнес - аналитик'
+                    hintContent: 'г. Севастополь, ул. Дмитрия Ульянова, 1а',
+                    balloonContent: 'г. Севастополь, ул. Дмитрия Ульянова, 1а'
                 }, {
                   // Опции.
                   // Необходимо указать данный тип макета.

@@ -1,22 +1,83 @@
 mixin footer(logotype)
   footer.footer(id="footer")
-    .container
+    .wr
       .footer__top
-        .logo__wrap
-          if logotype == "a"
-            #{logotype}.logo(href="index.html")
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
-          else
-            #{logotype}.logo
-              svg
-                use(xlink:href="img/svg/sprite.svg#logo1")
+        .footer__col 
+          .logo__wrap
+            if logotype == "a"
+              #{logotype}.logo(href="index.html")
+                img(src="img/logo.png" alt="лого")
+            else
+              #{logotype}.logo
+                img(src="img/logo.png" alt="лого")
+
+          .footer__content 
+            .logo__text 
+              p 
+                strong Ангел Строитель
+                |  Строительство и проектирование домов под ключ в Крыму
+            
+            +socials--footer
+
+        // /.footer__col
+
+        .footer__col 
+          h3.footer__title Наши услуги
+
+          .footer__hidden
+            ul.menu 
+              li.menu-item
+                a(href="#") Строительство
+              li 
+                a(href="#") Индивид. проектирование
+              li 
+                a(href="#") Готовые проекты домов
+              li 
+                a(href="#") Поиск и проверка участков
+
+        // /.footer__col
+
+        .footer__col 
+          .footer__main
+            ul.menu 
+              li.menu-item
+                a(href="#") Портфолио
+              li.menu-item
+                a(href="#") Купить дом
+              li.menu-item
+                a(href="#") О компании
+              li.menu-item
+                a(href="#") Вопрос-Ответ
+              li.menu-item
+                a(href="#") Блог
+
+        // /.footer__col
+
+        .footer__col 
+          h3.footer__title Контакты
+
+          .footer__item 
+            h4 Адрес:
+            p АР Крым, Севастополь
+              br
+              |  ул. Дмитрия Ульянова 1а
+
+          .footer__item 
+            h4 Телефон:
+            a(href="tel:+79788005468" rel="nofollow") +7 978 800-54-68
+
+          .footer__item 
+            h4 E-mail:
+            a(href="mailto:krmstroypost@gmail.com" rel="nofollow") krmstroypost@gmail.com
+
+        // /.footer__col
+
 
       // /.footer__top
     // /.container
 
     .footer__bottom
-      .container
+      .wr
         .footer__bottom-df
           .footer__politics
             a.text(href="#") Политика конфиденциальности

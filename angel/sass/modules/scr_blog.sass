@@ -1,7 +1,7 @@
 .blog 
   position: relative
   padding-bottom: 143px
-  background-color: $accent2  
+  background-color: $accent2    
   .page-title
     margin-bottom: 45px
   &__wrap
@@ -26,6 +26,16 @@
     border: 1px solid rgba(255,255,255,0.2)
     border-radius: 6px
     transition: 0.4s ease-in-out
+    &-df 
+      display: flex
+    &-left      
+      flex-shrink: 0
+      width: 46.31956912028725%
+      margin-right: 41px
+    &-bottom
+      display: flex
+      align-items: center
+      flex-wrap: wrap
     &:hover
       background-color: rgba(255,255,255,0.15)
   &__img
@@ -73,6 +83,120 @@
     &:hover 
       color: #fff
   
+  &__df
+    display: flex
+  &__main
+    flex-grow: 1
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    & > li 
+      margin-bottom: 26px
+      &:last-of-type
+        margin-bottom: 0
+    .blog__item
+      padding-bottom: 4px
+    .blog__img
+      height: 315px      
+      min-height: 0
+      margin-bottom: 17px
+      border-radius: 6px
+      overflow: hidden
+    .blog__content 
+      flex-grow: 1
+      padding-right: 27px
+  &__add
+    flex-shrink: 0
+    width: 465px
+    margin-left: 67px
+  &__block
+    margin-bottom: 38px
+    padding: 20px 
+    padding-bottom: 11px
+    background-color: rgba(255,255,255,0.05)
+    border-radius: 6px
+    &--insta
+      padding: 17px
+  &__tags
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+  &__tag
+    text-decoration: none
+    outline: none
+    display: flex 
+    align-items: center 
+    justify-content: center
+    height: 38px
+    background-color: rgba(255,255,255,0.05)
+    border-radius: 6px
+    margin-right: 15px
+    margin-bottom: 12px
+    padding-left: 12px
+    padding-right: 12px
+    font-size: 14px    
+    color: rgba(#fff, 0.6)
+    transition: 0.4s ease-in-out
+    &:hover
+      background-color: rgba(255,255,255,0.15)      
+
+  &__insta
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li 
+      width: calc((100% - 38px) / 3)
+      margin-right: 19px
+      padding-top: 19px
+      & > a 
+        display: block
+        text-decoration: none
+        outline: none
+        height: 129px
+        border-radius: 6px
+        overflow: hidden
+        img 
+          transition: 0.3s
+        &:hover
+          img 
+            transform: scale(1.1)
+            transition: 0.8s
+
+      &:nth-of-type(-n + 3)
+        padding-top: 0
+      &:nth-of-type(3n)
+        margin-right: 0
+
+  &__form
+    padding: 19px
+    padding-bottom: 50px
+    text-align: center
+    &-img
+      height: 266px
+      margin-bottom: 34px
+      border-radius: 6px
+      overflow: hidden    
+    p 
+      margin-bottom: 36px
+      font-size: 18px
+      line-height: 1.444444444444444
+  
+  &__comments
+    display: block
+    text-decoration: none
+    outline: none
+    margin-left: auto
+    margin-bottom: 10px
+    font-size: 14px
+    transition: 0.3s
+    &:hover
+      color: $accent
+    
 
   @media screen and (max-width: 1600px)
     &__wrap
@@ -98,6 +222,9 @@
     &__item
       padding: 8px
       padding-bottom: 12px
+      &-left        
+        width: 40.319569%
+        margin-right: 21px
     &__img
       height: 210px
     &__content
@@ -107,6 +234,21 @@
       h2,h3 
         a           
           font-size: 18px
+    &__add      
+      width: 385px
+      margin-left: 37px
+    &__tag
+      margin-right: 7px
+      margin-bottom: 10px
+      padding-left: 9px
+      padding-right: 9px
+    &__form
+      &-img
+        height: 226px
+        margin-bottom: 24px
+      p 
+        margin-bottom: 26px
+        font-size: 16px
 
   // max-width 1400px
 
@@ -125,6 +267,16 @@
     
   // max-width 1170px 
 
+  @media screen and (max-width: 1070px)
+    &__df
+      display: block
+    &__add
+      width: 100%
+      margin-top: 30px
+      margin-left: 0
+
+  // max-width 1070px 
+ 
   @media screen and (max-width: 991px) 
     &__img
       height: 170px
@@ -141,5 +293,30 @@
       margin-bottom: 25px
 
   // max-width 767px 
+
+  @media screen and (max-width: 575px)
+    &__item
+      &-df
+        display: block
+      &-left
+        width: 100%
+    &__list
+      .blog__img 
+        height: 225px
+
+  // max-width 575px 
+
+  @media screen and (max-width: 500px)
+    &__block
+      margin-bottom: 28px
+      padding: 8px !important
+    &__form
+      padding-bottom: 30px !important
+      p 
+        font-size: 13px
+    &--page
+      padding-bottom: 33px
+
+  // max-width 500px 
 
 /* blog */

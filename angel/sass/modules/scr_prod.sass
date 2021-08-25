@@ -111,17 +111,34 @@
       &:last-of-type
         padding-left: 4px
         text-align: right
-
   &__price
     display: block
     text-align: center
     font-family: $font2
     font-size: 30px
     font-weight: 700
-
   &__btns
     text-align: center
-
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li 
+      width: calc((100% - 90px) / 4)
+      margin-right: 30px
+      padding-bottom: 33px
+      &:nth-of-type(4n)
+        margin-right: 0
+  &--page
+    background: $accent2 
+    padding-top: 0
+    padding-bottom: 128px
+    &::after
+      content: none
+    .pager
+      margin-top: 10px
 
   @media screen and (max-width: 1700px)
     .page-title
@@ -176,6 +193,15 @@
     &__top
       .page-title p  
         margin-right: 25px
+    &__list
+      & > li 
+        width: calc((100% - 30px) / 3)
+        margin-right: 15px
+        padding-bottom: 20px
+        &:nth-of-type(4n)
+          margin-right: 15px
+        &:nth-of-type(3n)
+          margin-right: 0
 
   // max-width 1070px
 
@@ -185,6 +211,15 @@
     &__top
       .page-title
         display: block
+    &__list
+      & > li 
+        width: calc((100% - 15px) / 2)
+        margin-right: 15px
+        padding-bottom: 20px
+        &:nth-of-type(3n)
+          margin-right: 15px
+        &:nth-of-type(2n)
+          margin-right: 0
 
   // max-width 767px
 
@@ -202,12 +237,21 @@
           font-size: 15px
     &__price      
       font-size: 22px
+    &--page
+      padding-bottom: 74px
 
   // max-width 575px
 
   @media screen and (max-width: 500px)
     &__img
       height: 51vw
+    &__list
+      & > li 
+        width: 100%
+        margin-right: 0
+        padding-bottom: 15px
+        &:nth-of-type(3n)
+          margin-right: 0
 
   // max-width 500px
 

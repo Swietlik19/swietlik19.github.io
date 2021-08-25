@@ -34,7 +34,7 @@ body
   font-weight: 400
   color: $body-color
 
-  background-color: #fff
+  background-color: $accent2
   display: flex
   flex-direction: column
   min-height: 100vh
@@ -45,6 +45,8 @@ body
 
 .page_wr
   flex-grow: 1
+  &--inner
+    padding-top: 151px
 
 img
   display: block
@@ -152,7 +154,11 @@ h1,h2,h3,h4,h5,h6
     -webkit-background-clip: text
     background-clip: text
     -webkit-text-fill-color: transparent
-
+  &--inner
+    margin-bottom: 28px
+    font-size: 40px
+    line-height: 1.2
+    font-weight: 800
 
 .page-desc
   margin-bottom: 64px
@@ -534,6 +540,10 @@ input[type="submit"]
   &--light
     &::before
       background-image: url('../img/decor2.png')
+  &--bottom
+    &::before
+      top: auto 
+      bottom: 0
 .with-dot
   position: relative
   padding-left: 38px
@@ -562,12 +572,22 @@ input[type="submit"]
 // max-width 1600px
 
 @media screen and (max-width: 1400px)
-  .decor-wrap::before 
-    top: -87px
-    height: 88px
+  .decor-wrap
+    &::before 
+      top: -87px
+      height: 88px
+    &--bottom
+      &::before
+        top: auto 
+        bottom: -20px
   .page-title    
     margin-bottom: 34px
     font-size: 50px
+    &--inner
+      font-size: 33px
+  .page_wr
+    &--inner      
+      padding-top: 129px
 
 // max-width 1400px
 
@@ -617,6 +637,8 @@ input[type="submit"]
     font-size: 14px
   .page-title    
     font-size: 40px
+    &--inner 
+      font-size: 25px
   .swiper-pagination 
     margin-left: 30px
     margin-right: 30px
@@ -649,6 +671,8 @@ input[type="submit"]
   .balloon-title
     margin-bottom: 4px
     font-size: 11px
+  .page_wr--inner 
+    padding-top: 115px
 
 // max-width 991px
 
@@ -657,13 +681,18 @@ input[type="submit"]
   input[type="submit"].xbtn--grad 
     min-width: 241px
     height: 59px
-  .page-title    
-    font-size: 42px
-  .decor-wrap::before 
-    top: -47px
-    height: 48px
+  .decor-wrap
+    &::before 
+      top: -47px
+      height: 48px    
+    &--bottom
+      &::before
+        top: auto 
+        bottom: 0
   .page-title    
     font-size: 36px  
+  .page_wr--inner 
+    padding-top: 63px
 
 // max-width 767px
 
@@ -672,6 +701,8 @@ input[type="submit"]
     font-size: 32px
     &__num
       font-size: 80px
+    &--inner 
+      font-size: 19px
 
 // max-width 575px
 
@@ -683,6 +714,8 @@ input[type="submit"]
   .page-desc 
     margin-bottom: 30px
     font-size: 15px
+  .page_wr--inner 
+    padding-top: 52px
 
 // max-width 500px
 

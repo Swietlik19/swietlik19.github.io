@@ -1,0 +1,229 @@
+::selection
+  background-color: $accent
+  color: #fff
+
+@keyframes pulse
+  0%
+    width: calc(100% + 38px)
+    height: calc(100% + 38px)
+    box-shadow: 0 0 0 0 #F0F1F2
+  70%
+    width: calc(100% + 63px)
+    height: calc(100% + 63px)
+    box-shadow: 0 0 0 30px rgba(#F0F1F2, 0)
+  100%
+    opacity: 0.5
+    box-shadow: 0 0 0 0 rgba(#F0F1F2, 0)
+
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html, body
+  max-width: 100%
+  overflow-x: hidden
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+
+  font-family: $font
+  font-size: 16px
+  line-height: 1.5 /* 24px / 16px */
+  font-weight: 400
+  color: $body-color
+
+  background-color: #fff
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+.page_wr
+  flex-grow: 1
+
+img
+  width: 100%
+  height: auto
+  border: none
+  user-select: none
+
+[data-object-fit-cover]
+  display: block
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center;'
+  width: 100%
+  height: 100%
+
+[data-object-fit-contain]
+  display: block
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center;'
+  width: 100%
+  height: 100%
+
+a
+  color: $body-color
+
+.green
+  color: $accent
+
+.orange
+  color: $accent2
+
+h1,h2,h3,h4,h5,h6
+  font-family: $title-font
+
+.icon
+  max-width: 100%
+  max-height: 100%
+  fill: $icon
+  transition: 0.5s
+
+.btn__wrap
+  display: inline-block
+
+.xbtn,
+input[type="submit"]
+  position: relative
+
+  border: none
+  outline: none
+  background: none
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  cursor: pointer
+  text-decoration: none
+  transition: 0.5s
+  -webkit-appearance: none
+
+.xbtn,
+input[type="submit"].xbtn
+  &--orange
+    background: $accent2
+    box-shadow: 0px 26px 25px -17px rgba(0, 0, 0, 0.15)
+    border-radius: 10px
+    min-width: 393px
+    height: 72px
+    padding-left: 10px
+    padding-right: 10px
+    font-weight: bold
+    font-size: 18px
+    text-transform: uppercase
+    color: #FFFFFF
+    overflow: hidden
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: calc(50% - 40px)
+      left: -60px
+      width: 20px
+      height: 80px
+      background: #F9FB9E
+      filter: blur(10px)
+      transform: rotate(34.35deg)
+      transition: all 560ms cubic-bezier(0.19, 1, 0.22, 1)
+      z-index: -10
+    &:hover
+      &::before
+        left: 120%
+        transition: all 760ms cubic-bezier(0.19, 1, 0.22, 1)
+
+input[type="submit"]
+  &[disabled]
+    cursor: no-drop
+    background: #5e5e5e
+
+
+/* Переопределение стилей swiper */
+.swiper-wrapper
+  & *
+    box-sizing: border-box
+.swiper-slide
+  height: auto
+.swiper-button-prev,
+.swiper-button-next
+  top: calc(50% - 22px)
+  background: none
+  border: none
+  outline: none
+  width: 45px
+  height: 45px
+  margin: 0
+  background: rgba(255, 255, 255, 0.95)
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1)
+  border-radius: 50%
+  transition: 0.3s
+  &::after
+    content: none
+  .icon
+    display: block
+    width: 9px
+    height: 14px
+    fill: rgba(119, 116, 116, 0.5)
+    transition: 0.3s
+  &:hover
+    background: #FFFFFF
+    .icon
+      fill: #363636
+
+.swiper-button-prev
+  left: 30px
+  .icon
+    transform: rotate(180deg)
+.swiper-button-next
+  right: 0
+
+.swiper-pagination-lock
+  display: none
+.swiper-button-disabled
+  display: none
+
+
+/* media */
+@media screen and (max-width: 1600px)
+  .swiper-button-prev
+    left: 10px
+  .xbtn--orange,
+  input[type="submit"].xbtn--orange
+    min-width: 323px
+    height: 62px
+    font-size: 16px
+
+// max-width 1600px
+
+@media screen and (max-width: 1100px)
+  .swiper-button-prev,
+  .swiper-button-next
+    top: calc(50% - 19px)
+    width: 38px
+    height: 38px
+
+// max-width 1100px
+
+@media screen and (max-width: 500px)
+  .xbtn--orange,
+  input[type="submit"].xbtn--orange
+    min-width: 0
+    padding-left: 25px
+    padding-right: 25px
+    font-size: 14px
+
+// max-width 500px
+
+@media screen and (max-width: 400px)
+  .xbtn--orange,
+  input[type="submit"].xbtn--orange,
+  .btn__wrap
+    width: 100%
+
+// max-width 400px

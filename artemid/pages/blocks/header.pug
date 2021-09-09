@@ -1,0 +1,35 @@
+mixin header(logotype)
+  header.header(id="header")
+    .header__df
+      .logo__wrap
+        if logotype == "a"
+          #{logotype}.logo(href="index.html")
+            img(src="img/logo.png" alt="лого")
+        else
+          #{logotype}.logo
+            img(src="img/logo.png" alt="лого")
+
+        p.logo__text Стоматологическая
+          br
+          |  клиника
+
+      .header__text.header__text--curr
+        b Режим работы:
+        p пн-пт 09:00–19:00, сб 10:00–15:00
+          |  клиника
+
+      .header__text.header__text--address
+        b г. Симферополь, бул. Ленина, 10
+        a(href="#") Посмотреть адрес на карте
+
+      .header__text.header__text--phones
+        b
+          a(href="tel:+79880561243" rel="nofollow") +7 988 056-12-43
+            img(src="img/svg/phone-green.svg" alt="")
+        p.underlined Перезвоним вам за 30 секунд
+
+      .header__msgs
+        p Пишете,  мы онлайн
+        +socials
+
+    // /.header__top

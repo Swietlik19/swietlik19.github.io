@@ -24,9 +24,9 @@
 
   /* Плавный скролл к якорю для всех ссылок с классом "inner-link" */
   $(function(){
-    $('.scr_center__menu > li > a[href^="#"]').click(function(){
+    $('.scr_center__menu > li > a[href^="#"], .post__links > li > a[href^="#"]').click(function () {
       var _href = $(this).attr('href');
-      $('html, body').animate({scrollTop: $(_href).offset().top - 80 +'px'});
+      $('html, body').animate({scrollTop: $(_href).offset().top - 100 +'px'});
       return false;
     });
   });

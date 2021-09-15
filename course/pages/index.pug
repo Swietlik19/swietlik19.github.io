@@ -1,0 +1,50 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset="UTF-8")
+
+    title  |
+
+    meta(name='description', content='')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#07060C')
+    // Custom Browsers Color End
+
+    include blocks/scripts.pug
+    include blocks/styles.pug
+
+    include blocks/scr1.pug
+    include blocks/scr_for.pug
+    include blocks/scr_program.pug
+    include blocks/scr_result.pug
+    include blocks/scr_add.pug
+    include blocks/scr_teachers.pug
+    include blocks/scr_faq.pug
+    include blocks/scr_tariffs.pug
+    include blocks/scr_cases.pug
+
+    +styles
+
+  body
+
+    #page_wr.page_wr
+      +scr1
+      +scr_for
+      +scr_program
+      +scr_result
+      +scr_add
+      +scr_cases
+      +scr_teachers
+      +scr_tariffs
+      +scr_faq
+      +scr_result--2
+
+      a.to-top(href="#page_wr")
+        svg.icon
+          use(xlink:href="img/svg/sprite.svg#arrow")
+
+    +scripts

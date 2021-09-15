@@ -1,0 +1,93 @@
+.faq
+  position: relative
+  padding-bottom: 47px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    padding-top: 12px
+    padding-bottom: 12px
+    margin-left: 156px
+    border-left: 1px solid rgba(255, 255, 255, 0.5)
+  &__item
+    position: relative
+    margin-bottom: 55px
+    margin-left: -22px
+    &:last-of-type
+      margin-bottom: 0
+    .top
+      display: flex
+      align-items: center
+    .hidden
+      display: none
+      max-width: 815px
+      padding: 50px 0 5px 110px
+    h2
+      font-size: 25px
+      line-height: 1.2
+      font-weight: 400
+      transition: 0.3s
+    p
+      &:last-of-type
+        margin-bottom: 0
+    a
+      color: $body-color
+      transition: 0.3s
+      &[href^=mailto]
+        text-decoration: underline
+      &:hover
+        color: $accent
+        text-decoration: none
+
+    .open
+      flex-shrink: 0
+      position: relative
+      background: none
+      border: none
+      outline: none
+
+      display: block
+      width: 42px
+      height: 42px
+      margin-right: 40px
+      border-radius: 50%
+      background: $accent
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: calc(50% - 2px)
+        left: calc(50% - 9px)
+        display: block
+        width: 19px
+        height: 4px
+        background-color: #07060C
+        transform-origin: center
+        transition: 0.3s
+      &::before
+        transform: rotate(270deg)
+      &.active
+        &::before,
+        &::after
+          width: 8px
+          left: calc(50% - 4px)
+        &::before
+          transform: rotate(0)
+
+  // @media screen and (max-width: 991px)
+
+  // max-width 991px
+
+  // @media screen and (max-width: 767px)
+
+  // max-width 767px
+
+  // @media screen and (max-width: 500px)
+
+  // max-width 500px
+
+  // @media screen and (max-width: 400px)
+
+  // max-width 400px
+
+/* faq */

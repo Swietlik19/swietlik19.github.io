@@ -23,26 +23,8 @@
   <script defer src="js/main.js"></script>
 </head>
 
-<style>
-  .pages-menu {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding-top: 150px;
-    padding: 170px 15px 30px;
-  }
-
-  .pages-menu li {
-    margin-bottom: 10px;
-  }
-
-  .pages-menu li a {
-    font-size: 16px;
-    font-weight: 500;
-  }
-</style>
-
 <body>
-  <div class="site-container" id="page_wr">
+  <div class="site-container site-container_second" id="page_wr">
     <header class="header">
   <div class="container">
     <div class="header__top">
@@ -173,11 +155,43 @@
 <!-- END header -->
 
     <main class="main">
-      <ul class="list-reset pages-menu">
-        <li><a href="main.html">Главная</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
+      <div class="container">
+        <div class="breadcrumbs" id="breadcrumbs">
+          <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="#"><span itemprop="name">Главная</span></a>
+              <meta itemprop="position" content="1">
+            </li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="item"><span itemprop="name">Контакты</span></span>
+              <meta itemprop="position" content="2">
+            </li>
+          </ol>
+        </div>
+        <!-- /.breadcrumbs-->
+      </div>
+
+      <section class="contacts">
+  <div class="container">
+
+    <div class="contacts__cols">
+      <div class="contacts__col">
+        <h3 class="section-title section-title_second">Реквизиты</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- END contacts -->
+
     </main>
+
+    <div class="graph-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="trainer-1">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content"></div>
+  </div>
+</div>
 
     <footer class="footer">
   <div class="container">
@@ -274,6 +288,8 @@
   </div>
 </footer>
 <!-- END footer -->
+
+    <a class="to-top js--linkToAncor" href="#page_wr"></a>
 
   </div>
 </body>

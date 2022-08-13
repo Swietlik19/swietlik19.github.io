@@ -221,10 +221,17 @@ var __webpack_exports__ = {};
     if (window.matchMedia('(max-width: 768px)').matches) {
       $('.schemes__plansItem').click(function () {
         var xParent = $(this).parents('.schemes__partsTab');
+        var isCurrent = $(this).hasClass('schemes__plansItem_visible') ? true : false;
         xParent.find('.schemes__plansInner').removeClass('schemes__plansInner_visible');
         xParent.find('.schemes__plansItem').removeClass('schemes__plansItem_visible');
-        $(this).find('.schemes__plansInner').addClass('schemes__plansInner_visible');
-        $(this).addClass('schemes__plansItem_visible');
+
+        if (isCurrent) {
+          $(this).removeClass('schemes__plansItem_visible');
+          $(this).find('.schemes__plansInner').removeClass('schemes__plansInner_visible');
+        } else {
+          $(this).addClass('schemes__plansItem_visible');
+          $(this).find('.schemes__plansInner').addClass('schemes__plansInner_visible');
+        }
       });
     } else {
       $('.schemes__partsBtn').hover(function () {

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css">
   <link rel="stylesheet" href="libs/swiper/swiper.min.css">
+  <link rel="stylesheet" href="libs/nice-select/nice-select.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -166,26 +167,31 @@
       <section class="production">
   <div class="container">
     <div class="production__cols">
-      <ul class="list-reset production__menu">
-        <li class="current">
-          <a href="#production__tab-0" class="production__link">Цех по деревообработке</a>
-        </li>
-        <li>
-          <a href="#production__tab-1" class="production__link">Изготовление винтовых свай</a>
-        </li>
-        <li>
-          <a href="#production__tab-2" class="production__link">Складские помещения</a>
-        </li>
-        <li>
-          <a href="#production__tab-3" class="production__link">Архитектурное бюро</a>
-        </li>
-        <li>
-          <a href="#production__tab-4" class="production__link">Изготовление домокомплектов</a>
-        </li>
-      </ul>
-      <!-- END production__menu -->
+      <div class="production__nav">
+        <button class="xbtn-reset menuOpen production__menuOpen js--menuOpen" type="button" data-is-active="false">Меню</button>
+        <ul class="list-reset production__menu js--pageMenu">
+          <li class="current">
+            <a href="#production__tab-0" class="production__link">Цех по деревообработке</a>
+          </li>
+          <li>
+            <a href="#production__tab-1" class="production__link">Изготовление винтовых свай</a>
+          </li>
+          <li>
+            <a href="#production__tab-2" class="production__link">Складские помещения</a>
+          </li>
+          <li>
+            <a href="#production__tab-3" class="production__link">Архитектурное бюро</a>
+          </li>
+          <li>
+            <a href="#production__tab-4" class="production__link">Изготовление домокомплектов</a>
+          </li>
+        </ul>
+        <!-- END production__menu -->
+      </div>
+      <!-- END production__nav -->
 
       <ul class="list-reset production__tabs">
+        <!-- ID меняется в 3 местах (для production__tab, production__slider и data-fancybox-group) -->
         <li class="production__tab" id="production__tab-0">
           <h2 class="section-title">Производство ПСК «НИКА»</h2>
 
@@ -197,12 +203,12 @@
             <div class="production__slider" id="production__slider-0">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <a href="img/prod-1.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-0">
+                  <a href="img/prod-1.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-1">
                     <picture>
                       <source srcset="img/prod-1.avif" type="image/avif">
                       <source srcset="img/prod-1.webp" type="image/webp">
                       <source srcset="img/prod-1.jpg">
-                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке">
+                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке" data-object-fit-cover>
                     </picture>
                   </a>
 
@@ -211,12 +217,97 @@
                 <!-- END swiper-slide -->
 
                 <div class="swiper-slide">
+                  <a href="img/prod-2.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-1">
+                    <picture>
+                      <source srcset="img/prod-2.avif" type="image/avif">
+                      <source srcset="img/prod-2.webp" type="image/webp">
+                      <source srcset="img/prod-2.jpg">
+                      <img loading="lazy" src="img/prod-2.jpg" class="production__img" width="333" height="262" alt="Производственная линия" data-object-fit-cover>
+                    </picture>
+                  </a>
+
+                  <p class="production__desc">Производственная линия</p>
+                </div>
+                <!-- END swiper-slide -->
+
+                <div class="swiper-slide">
+                  <a href="img/prod-3.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-1">
+                    <picture>
+                      <source srcset="img/prod-3.avif" type="image/avif">
+                      <source srcset="img/prod-3.webp" type="image/webp">
+                      <source srcset="img/prod-3.jpg">
+                      <img loading="lazy" src="img/prod-3.jpg" class="production__img" width="333" height="262" alt="Гидравлический пресс" data-object-fit-cover>
+                    </picture>
+                  </a>
+
+                  <p class="production__desc">Гидравлический пресс</p>
+                </div>
+                <!-- END swiper-slide -->
+
+                <div class="swiper-slide">
+                  <a href="img/prod-1.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-1">
+                    <picture>
+                      <source srcset="img/prod-1.avif" type="image/avif">
+                      <source srcset="img/prod-1.webp" type="image/webp">
+                      <source srcset="img/prod-1.jpg">
+                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке" data-object-fit-cover>
+                    </picture>
+                  </a>
+
+                  <p class="production__desc">Цех по деревообработке</p>
+                </div>
+                <!-- END swiper-slide -->
+              </div>
+              <!-- END swiper-wrapper -->
+            </div>
+            <!-- END production__slider -->
+
+            <div class="production__btns js--productionBtns">
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
+            </div>
+          </div>
+          <!-- END production__wrap -->
+
+          <div class="production__address">
+            <p>Адрес производства: Феодосия, Керченское шоссе, 2В</p>
+          </div>
+          <!-- END production__address -->
+
+          <div class="production__content">
+            <div class="article">
+              <h3>Заголовок текста</h3>
+              <p>Равным образом, повышение уровня гражданского сознания в значительной степени обусловливает важность прогресса профессионального сообщества. Современные технологии достигли такого уровня,
+                что семантический разбор внешних противодействий является качественно новой ступенью переосмысления внешнеэкономических политик! Приятно, граждане, наблюдать, как представители современных социальных резервов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объективно рассмотрены.</p>
+
+              <p>А ещё акционеры крупнейших компаний неоднозначны и будут указаны как претенденты на роль ключевых
+                факторов. Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний
+                призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными
+                данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+                Как принято считать, явные признаки победы институционализации лишь добавляют фракционных
+                разногласий и ограничены исключительно образом мышления.</p>
+            </div>
+          </div>
+          <!-- END production__content -->
+        </li>
+
+        <li class="production__tab" id="production__tab-1">
+          <h2 class="section-title">Производство ПСК «НИКА»</h2>
+
+          <h3 class="production__title">
+            <span>Изготовление винтовых свай</span>
+          </h3>
+
+          <div class="production__wrap">
+            <div class="production__slider" id="production__slider-1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
                   <a href="img/prod-2.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-0">
                     <picture>
                       <source srcset="img/prod-2.avif" type="image/avif">
                       <source srcset="img/prod-2.webp" type="image/webp">
                       <source srcset="img/prod-2.jpg">
-                      <img loading="lazy" src="img/prod-2.jpg" class="production__img" width="333" height="262" alt="Производственная линия">
+                      <img loading="lazy" src="img/prod-2.jpg" class="production__img" width="333" height="262" alt="Производственная линия" data-object-fit-cover>
                     </picture>
                   </a>
 
@@ -230,7 +321,7 @@
                       <source srcset="img/prod-3.avif" type="image/avif">
                       <source srcset="img/prod-3.webp" type="image/webp">
                       <source srcset="img/prod-3.jpg">
-                      <img loading="lazy" src="img/prod-3.jpg" class="production__img" width="333" height="262" alt="Гидравлический пресс">
+                      <img loading="lazy" src="img/prod-3.jpg" class="production__img" width="333" height="262" alt="Гидравлический пресс" data-object-fit-cover>
                     </picture>
                   </a>
 
@@ -244,7 +335,7 @@
                       <source srcset="img/prod-1.avif" type="image/avif">
                       <source srcset="img/prod-1.webp" type="image/webp">
                       <source srcset="img/prod-1.jpg">
-                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке">
+                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке" data-object-fit-cover>
                     </picture>
                   </a>
 
@@ -252,6 +343,19 @@
                 </div>
                 <!-- END swiper-slide -->
 
+                <div class="swiper-slide">
+                  <a href="img/prod-1.jpg" class="production__imgLink fancybox" data-fancybox-group="prod-img-0">
+                    <picture>
+                      <source srcset="img/prod-1.avif" type="image/avif">
+                      <source srcset="img/prod-1.webp" type="image/webp">
+                      <source srcset="img/prod-1.jpg">
+                      <img loading="lazy" src="img/prod-1.jpg" class="production__img" width="333" height="262" alt="Цех по деревообработке" data-object-fit-cover>
+                    </picture>
+                  </a>
+
+                  <p class="production__desc">Цех по деревообработке</p>
+                </div>
+                <!-- END swiper-slide -->
               </div>
               <!-- END swiper-wrapper -->
 
@@ -264,12 +368,32 @@
             </div>
           </div>
           <!-- END production__wrap -->
+
+          <div class="production__address">
+            <p>Адрес производства: Феодосия, Керченское шоссе, 2В</p>
+          </div>
+          <!-- END production__address -->
+
+          <div class="production__content">
+            <div class="article">
+              <h3>Заголовок текста</h3>
+              <p>Равным образом, повышение уровня гражданского сознания в значительной степени обусловливает важность прогресса профессионального сообщества. Современные технологии достигли такого уровня,
+                что семантический разбор внешних противодействий является качественно новой ступенью переосмысления внешнеэкономических политик! Приятно, граждане, наблюдать, как представители современных социальных резервов, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объективно рассмотрены.</p>
+
+              <p>А ещё акционеры крупнейших компаний неоднозначны и будут указаны как претенденты на роль ключевых
+                факторов. Имеется спорная точка зрения, гласящая примерно следующее: акционеры крупнейших компаний
+                призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными
+                данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+                Как принято считать, явные признаки победы институционализации лишь добавляют фракционных
+                разногласий и ограничены исключительно образом мышления.</p>
+            </div>
+          </div>
+          <!-- END production__content -->
         </li>
       </ul>
       <!-- END production__tabs -->
     </div>
     <!-- END production__cols -->
-
   </div>
 </section>
 <!-- END production -->
@@ -381,14 +505,16 @@
 </footer>
 <!-- END footer -->
 
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/jquery.maskedinput.min.js"></script>
+<script src="js/libs/ofi.min.js"></script>
+<script src="libs/swiper/swiper.js"></script>
+<script src="libs/nice-select/jquery.nice-select.min.js"></script>
+<script src="libs/fancybox/jquery.fancybox.js"></script>
+<script src="js/main.js"></script>
+
   <a class="to-top js--linkToAncor" href="#page_wr"></a>
 
-  <script src="js/libs/jquery.min.js"></script>
-  <script src="js/libs/jquery.maskedinput.min.js"></script>
-  <script src="js/libs/ofi.min.js"></script>
-  <script src="libs/swiper/swiper.js"></script>
-  <script src="libs/fancybox/jquery.fancybox.js"></script>
-  <script src="js/main.js"></script>
 </body>
 
 </html>

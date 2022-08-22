@@ -145,6 +145,7 @@ var __webpack_exports__ = {};
 
   generalTabs('.schemes__tabsNav', '.schemes__tab');
   generalTabs('.production__menu', '.production__tab');
+  generalTabs('.card__nav', '.card__tab');
   $('.schemes__partsNav a').click(function (event) {
     event.preventDefault();
 
@@ -216,6 +217,33 @@ var __webpack_exports__ = {};
       }
     }
   });
+  var catalogSlider = new Swiper('.js--catalogSlider', {
+    slidesPerView: 1,
+    spaceBetween: 6,
+    watchSlidesProgress: true,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.js--catalogSliderBtns .swiper-button-next',
+      prevEl: '.js--catalogSliderBtns .swiper-button-prev'
+    },
+    breakpoints: {
+      360: {
+        slidesPerView: 2
+      },
+      576: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 10
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 36
+      }
+    }
+  });
   $('.production__slider').each(function (xi, xel) {
     var productionSlider = new Swiper($(xel), {
       slidesPerView: 1,
@@ -250,6 +278,31 @@ var __webpack_exports__ = {};
         }
       }
     });
+  });
+  var cardThumbs = new Swiper(".js--cardThumbs", {
+    spaceBetween: 10,
+    slidesPerView: 2,
+    navigation: {
+      nextEl: ".js--cardThumbsBtns .swiper-button-next",
+      prevEl: ".js--cardThumbsBtns .swiper-button-prev"
+    },
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      450: {
+        slidesPerView: 3
+      },
+      768: {
+        spaceBetween: 25,
+        slidesPerView: 3
+      }
+    }
+  });
+  var cardSlider = new Swiper(".js--cardSlider", {
+    spaceBetween: 10,
+    thumbs: {
+      swiper: cardThumbs
+    }
   });
 
   function replaceBurger() {

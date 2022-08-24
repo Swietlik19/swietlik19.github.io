@@ -304,6 +304,32 @@ var __webpack_exports__ = {};
       swiper: cardThumbs
     }
   });
+  var certsSlider = new Swiper(".js--cerstSlider", {
+    spaceBetween: 8,
+    slidesPerView: 2,
+    navigation: {
+      nextEl: ".js--certsBtns .swiper-button-next",
+      prevEl: ".js--certsBtns .swiper-button-prev"
+    },
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      500: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 4
+      },
+      992: {
+        spaceBetween: 15,
+        slidesPerView: 4
+      },
+      1200: {
+        spaceBetween: 36,
+        slidesPerView: 4
+      }
+    }
+  });
 
   function replaceBurger() {
     if (window.matchMedia('(max-width: 992px)').matches) {

@@ -1364,75 +1364,21 @@ input[type=submit][disabled] {
   }
 }
 
-.features {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 36px;
-}
-.features__item {
-  position: relative;
-  padding: 36px 40px 35px 34px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  -o-transition: transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
-}
-.features__item:hover {
-  -webkit-transform: translateY(-7px);
-  -ms-transform: translateY(-7px);
-  transform: translateY(-7px);
-}
-.features__item::before {
-  content: "";
-  position: absolute;
-  top: -11px;
-  left: 30px;
-  width: 30px;
-  height: 30px;
-  background-image: url("../img/tick.svg"), -webkit-gradient(linear, left bottom, left top, from(#FF634D), color-stop(61.54%, #FE864A), to(#FE864A));
-  background-image: url("../img/tick.svg"), -o-linear-gradient(bottom, #FF634D 0%, #FE864A 61.54%, #FE864A 100%);
-  background-image: url("../img/tick.svg"), linear-gradient(0deg, #FF634D 0%, #FE864A 61.54%, #FE864A 100%);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 10px 7px, cover;
-  -webkit-box-shadow: 0 5px 10px rgba(203, 65, 62, 0.3);
-  box-shadow: 0 5px 10px rgba(203, 65, 62, 0.3);
-  border-radius: 50%;
-}
-.features__text {
-  font-size: 14px;
-}
-.features__text b {
-  font-weight: 500;
-}
-@media (max-width: 1650px) {
-  .features__item {
-    padding: 25px;
-  }
-  .features__text {
-    font-size: 13px;
-  }
-}
-
 .scr1 {
   position: relative;
   padding-top: 226px;
   padding-bottom: 55px;
+  overflow: hidden;
   z-index: 1;
 }
 .scr1__inscr {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 .scr1__content {
   max-width: 745px;
 }
 .scr1__info {
-  margin-bottom: 47px;
+  margin-bottom: 114px;
 }
 .scr1__title {
   margin: 0;
@@ -1443,7 +1389,6 @@ input[type=submit][disabled] {
 .scr1__title strong {
   font-weight: 700;
   font-size: 48px;
-  text-transform: uppercase;
 }
 .scr1__title b {
   font-weight: 500;
@@ -1452,11 +1397,11 @@ input[type=submit][disabled] {
 .scr1__title p {
   margin-top: 10px;
 }
+.scr1__bigTxt {
+  text-transform: uppercase;
+}
 .scr1__btns {
   margin-bottom: 79px;
-}
-.scr1__features {
-  max-width: 1071px;
 }
 .scr1__img {
   position: absolute;
@@ -1469,19 +1414,15 @@ input[type=submit][disabled] {
 }
 .scr1__house {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 930px;
+  right: -300px;
+  bottom: -30px;
+  width: 1660px;
   z-index: -1;
 }
 @media (max-width: 1650px) {
   .scr1 {
-    padding-top: 226px;
+    padding-top: 196px;
     padding-bottom: 55px;
-    min-height: 100vh;
-  }
-  .scr1__features {
-    display: none;
   }
   .scr1__title {
     font-size: 26px;
@@ -1498,11 +1439,9 @@ input[type=submit][disabled] {
   .scr1__btns {
     margin-bottom: 0;
   }
-  .scr1__img {
-    width: 110%;
-  }
   .scr1__house {
-    width: 690px;
+    right: -220px;
+    width: 1270px;
   }
 }
 @media (max-width: 1300px) {
@@ -1519,8 +1458,7 @@ input[type=submit][disabled] {
     font-size: 26px;
   }
   .scr1__house {
-    right: -80px;
-    width: 640px;
+    width: 1070px;
   }
 }
 @media (max-width: 1200px) {
@@ -1563,8 +1501,12 @@ input[type=submit][disabled] {
   .scr1__btns {
     margin-bottom: 0;
   }
+  .scr1__img {
+    width: calc(100% + 60px);
+  }
   .scr1__house {
-    width: 430px;
+    right: -180px;
+    width: 700px;
   }
 }
 @media (max-width: 768px) {
@@ -1572,17 +1514,21 @@ input[type=submit][disabled] {
     max-width: 305px;
   }
   .scr1__house {
-    width: 340px;
+    bottom: 0;
+    width: 600px;
   }
 }
 @media (max-width: 490px) {
   .scr1 {
-    padding-top: 75px;
+    min-height: 700px;
+    padding-top: 115px;
     padding-bottom: 51px;
+  }
+  .scr1__info {
+    margin-bottom: 258px;
   }
   .scr1__title {
     width: calc(100% + 5px);
-    margin-bottom: 300px;
     font-size: 20px;
   }
   .scr1__title strong {
@@ -1601,7 +1547,26 @@ input[type=submit][disabled] {
     max-width: 100%;
   }
   .scr1__house {
-    display: none;
+    right: auto;
+    left: 50%;
+    bottom: 95px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 446px;
+  }
+  .scr1__img {
+    width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  .scr1 {
+    min-height: 600px;
+    padding-top: 75px;
+  }
+  .scr1__info {
+    margin-bottom: 208px;
   }
 }
 

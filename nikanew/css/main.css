@@ -1366,6 +1366,7 @@ input[type=submit][disabled] {
 
 .scr1 {
   position: relative;
+  min-height: 100vh;
   padding-top: 226px;
   padding-bottom: 55px;
   overflow: hidden;
@@ -1524,6 +1525,21 @@ input[type=submit][disabled] {
     padding-top: 115px;
     padding-bottom: 51px;
   }
+  .scr1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 950px;
+    height: 120%;
+    background-image: url("../img/clouds.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+  }
   .scr1__info {
     margin-bottom: 258px;
   }
@@ -1544,17 +1560,19 @@ input[type=submit][disabled] {
     text-align: center;
   }
   .scr1__content {
+    position: relative;
     max-width: 100%;
+    z-index: 1;
   }
   .scr1__house {
     right: auto;
     left: 50%;
-    bottom: 95px;
+    bottom: 55px;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
-    min-width: 446px;
+    min-width: 476px;
   }
   .scr1__img {
     width: 100%;

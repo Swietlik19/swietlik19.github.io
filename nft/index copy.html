@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#2b2b2b">
+  <title>NFT Marketplace</title>
+  <link rel="preload" href="fonts/WorkSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/WorkSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/SpaceMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/SpaceMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
+  <div class="container">
+    <div class="header__wrap">
+      <a class="logo header__logo">
+        <img src="img/logo.svg" alt="logo" />
+      </a>
+
+      <nav class="nav hero__nav" title="Main navigation" data-menu>
+        <div class="nav__wrap">
+          <ul class="list-reset nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Marketplace</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Rankings</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Connect a wallet</a></li>
+          </ul>
+
+          <button class="btn-reset btn btn--accent header__btn">
+            <svg class="btn__icon">
+              <use xlink:href="img/sprite.svg#user"></use>
+            </svg>
+            Sign Up
+          </button>
+        </div>
+      </nav>
+
+      <button class="burger header__burger" aria-label="Open a menu" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <main class="main">
+      <section class="section hero">
+  <div class="container">
+    <div class="hero__wrap grid">
+      <div class="hero__heading">
+        <h1 class="page-title page-title--capitalized hero__title">Discover digital art &amp; Collect NFTs</h1>
+        <p class="page-desc">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
+      </div>
+
+      <div class="hero__collection">
+        <article class="example hero__example">
+          <a href="#" class="example__link">
+            <picture>
+              <source srcset="img/hero@2x.webp 2x, img/hero.webp 1x" type="image/webp" media="(min-width: 768px)">
+              <source srcset="img/hero@2x.jpg 2x, img/hero.jpg 1x" type="image/jpeg" media="(min-width: 768px)">
+              <source srcset="img/hero-mobile@2x.webp 2x, img/hero-mobile.webp 1x" type="image/webp">
+              <source srcset="img/hero-mobile@2x.jpg 2x, img/hero-mobile.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="hero.jpg" class="example__img" width="315" height="206" alt="Strange people in the space">
+            </picture>
+
+            <div class="example__content">
+              <h2 class="example__title">Space Walking</h2>
+              <div class="author example__author">
+                <picture>
+                  <source srcset="img/creator-10.webp" type="image/webp">
+                  <source srcset="img/creator-10.jpg" type="image/jpeg">
+                  <img loading="lazy" src="img/creator-10.jpg" class="author__img" width="24" height="24" alt="A man in a helmet">
+                </picture>
+
+                <span class="author__name">Animakid</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="hero__btns">
+        <a href="#" class="btn-reset btn btn--big btn--accent">
+          <svg class="btn__icon">
+            <use xlink:href="img/sprite.svg#rocket"></use>
+          </svg>
+          Get Started
+        </a>
+      </div>
+
+      <ul class="list-reset counter hero__counter grid">
+        <li class="counter__item">
+          <span
+            class="counter__num js--counterNum"
+            data-counter-end="240"
+            data-counter-step="10"
+            data-counter-add="k+"
+          >
+            0
+          </span>
+          <span class="counter__desc">Total Sale</span>
+        </li>
+
+        <li class="counter__item">
+          <span
+            class="counter__num js--counterNum"
+            data-counter-end="100"
+            data-counter-step="10"
+            data-counter-add="k+"
+          >
+            0
+          </span>
+          <span class="counter__desc">Auctions</span>
+        </li>
+
+        <li class="counter__item">
+          <span
+            class="counter__num js--counterNum"
+            data-counter-end="240"
+            data-counter-step="10"
+            data-counter-add="k+"
+          >
+            0
+          </span>
+          <span class="counter__desc">Artists</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section class="section collections">
+  <div class="container">
+    <div class="page-heading">
+      <h2 class="page-title">Trending Collection</h2>
+      <p class="page-desc">Checkout our weekly updated trending collection.</p>
+    </div>
+
+    <ul class="list-reset collections__list grid">
+      <li class="collections__item">
+        <div class="collections__wrap">
+          <a href="#" class="collections__imgs grid">
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-animals-1@2x.webp 2x, img/collection-animals-1.webp 1x" type="image/webp">
+                <source srcset="img/collection-animals-1@2x.jpg 2x, img/collection-animals-1.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-animals-1.jpg" class="collections__img" width="315" height="315" alt="A painted dog with glasses">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-animals-2@2x.webp 2x, img/collection-animals-2.webp 1x" type="image/webp">
+                <source srcset="img/collection-animals-2@2x.jpg 2x, img/collection-animals-2.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-animals-2.jpg" class="collections__img" width="95" height="95" alt="A painted cat with glasses">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-animals-3@2x.webp 2x, img/collection-animals-3.webp 1x" type="image/webp">
+                <source srcset="img/collection-animals-3@2x.jpg 2x, img/collection-animals-3.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-animals-3.jpg" class="collections__img" width="95" height="95" alt="A painted bear with glasses">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement collections__itemElement--text">
+              1025+
+            </div>
+          </a>
+
+          <div class="collections__info">
+            <h3 class="collections__title">DSGN Animals</h3>
+            <div class="author collections__author">
+              <picture>
+                <source srcset="img/creator-6.webp 1x" type="image/webp">
+                <source srcset="img/creator-6.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="creator-6.jpg" class="author__img" width="24" height="24" alt="A painted fox with sunglasses">
+              </picture>
+              <span class="author__name">MrFox</span>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="collections__item">
+        <div class="collections__wrap">
+          <a href="#" class="collections__imgs grid">
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-mushroom-1@2x.webp 2x, img/collection-mushroom-1.webp 1x" type="image/webp">
+                <source srcset="img/collection-mushroom-1@2x.jpg 2x, img/collection-mushroom-1.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-mushroom-1.jpg" class="collections__img" width="315" height="315" alt="A fantastic painted mushroom">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-mushroom-2@2x.webp 2x, img/collection-mushroom-2.webp 1x" type="image/webp">
+                <source srcset="img/collection-mushroom-2@2x.jpg 2x, img/collection-mushroom-2.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-mushroom-2.jpg" class="collections__img" width="95" height="95" alt="A fantastic painted mushroom">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-mushroom-3@2x.webp 2x, img/collection-mushroom-3.webp 1x" type="image/webp">
+                <source srcset="img/collection-mushroom-3@2x.jpg 2x, img/collection-mushroom-3.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-mushroom-3.jpg" class="collections__img" width="95" height="95" alt="A fantastic painted mushroom">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement collections__itemElement--text">
+              1025+
+            </div>
+          </a>
+
+          <div class="collections__info">
+            <h3 class="collections__title">Magic Mushrooms</h3>
+            <div class="author collections__author">
+              <picture>
+                <source srcset="img/creator-7.webp 1x" type="image/webp">
+                <source srcset="img/creator-7.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="creator-7.jpg" class="author__img" width="24" height="24" alt="An avatar man">
+              </picture>
+              <span class="author__name">Shroomie</span>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="collections__item">
+        <div class="collections__wrap">
+          <a href="#" class="collections__imgs grid">
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-robot-1@2x.webp 2x, img/collection-robot-1.webp 1x" type="image/webp">
+                <source srcset="img/collection-robot-1@2x.jpg 2x, img/collection-robot-1.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-robot-1.jpg" class="collections__img" width="315" height="315" alt="A futuristic robot">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-robot-2@2x.webp 2x, img/collection-robot-2.webp 1x" type="image/webp">
+                <source srcset="img/collection-robot-2@2x.jpg 2x, img/collection-robot-2.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-robot-2.jpg" class="collections__img" width="95" height="95" alt="A futuristic robot">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement">
+              <picture>
+                <source srcset="img/collection-robot-3@2x.webp 2x, img/collection-robot-3.webp 1x" type="image/webp">
+                <source srcset="img/collection-robot-3@2x.jpg 2x, img/collection-robot-3.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-robot-3.jpg" class="collections__img" width="95" height="95" alt="A futuristic robot">
+              </picture>
+            </div>
+
+            <div class="collections__itemElement collections__itemElement--text">
+              1025+
+            </div>
+          </a>
+
+          <div class="collections__info">
+            <h3 class="collections__title">Disco Machines</h3>
+            <div class="author collections__author">
+              <picture>
+                <source srcset="img/collection-creator-3.webp 1x" type="image/webp">
+                <source srcset="img/collection-creator-3.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="collection-creator-3.jpg" class="author__img" width="24" height="24" alt="A smiling robot">
+              </picture>
+              <span class="author__name">BeKind2Robots</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section class="section creators">
+  <div class="container">
+
+    <div class="creators__wrap grid">
+      <div class="creators__heading">
+        <h2 class="page-title">Top creators</h2>
+        <p class="page-desc">Checkout Top Rated Creators on the NFT Marketplace</p>
+      </div>
+
+      <div class="creators__btns">
+        <a href="#" class="btn-reset btn btn--transparent btn--big">
+          <svg class="btn__icon">
+            <use xlink:href="img/sprite.svg#rocket"></use>
+          </svg>
+          View Rankings
+        </a>
+      </div>
+
+      <ol class="list-reset creators__list grid">
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-1@2x.webp 2x, img/creator-1.webp 1x" type="image/webp">
+              <source srcset="img/creator-1@2x.jpg 2x, img/creator-1.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-1.jpg" class="creators__img" width="60" height="60" alt="A girl with red hair">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Keepitreal</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">34.53 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-2@2x.webp 2x, img/creator-2.webp 1x" type="image/webp">
+              <source srcset="img/creator-2@2x.jpg 2x, img/creator-2.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-2.jpg" class="creators__img" width="60" height="60" alt="An old man with glasses and green hair">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">DigiLab</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">32.13 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-3@2x.webp 2x, img/creator-3.webp 1x" type="image/webp">
+              <source srcset="img/creator-3@2x.jpg 2x, img/creator-3.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-3.jpg" class="creators__img" width="60" height="60" alt="A young girl with green hair">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">GravityOne</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">28.93 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-4@2x.webp 2x, img/creator-4.webp 1x" type="image/webp">
+              <source srcset="img/creator-4@2x.jpg 2x, img/creator-4.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-4.jpg" class="creators__img" width="60" height="60" alt="A serious girl with blue eyes and hair">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Juanie</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">25.30 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-5@2x.webp 2x, img/creator-5.webp 1x" type="image/webp">
+              <source srcset="img/creator-5@2x.jpg 2x, img/creator-5.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-5.jpg" class="creators__img" width="60" height="60" alt="A robot-like man">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">BlueWhale</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">22.22 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-6@2x.webp 2x, img/creator-6.webp 1x" type="image/webp">
+              <source srcset="img/creator-6@2x.jpg 2x, img/creator-6.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-6.jpg" class="creators__img" width="60" height="60" alt="A painted fox with glasses">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Mr Fox</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">19.28 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-7@2x.webp 2x, img/creator-7.webp 1x" type="image/webp">
+              <source srcset="img/creator-7@2x.jpg 2x, img/creator-7.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-7.jpg" class="creators__img" width="60" height="60" alt="An avatar man">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Shroomie</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">34.53 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-8@2x.webp 2x, img/creator-8.webp 1x" type="image/webp">
+              <source srcset="img/creator-8@2x.jpg 2x, img/creator-8.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-8.jpg" class="creators__img" width="60" height="60" alt="A creepy robot">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Robotica</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">32.13 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-9@2x.webp 2x, img/creator-9.webp 1x" type="image/webp">
+              <source srcset="img/creator-9@2x.jpg 2x, img/creator-9.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-9.jpg" class="creators__img" width="60" height="60" alt="A smiling robot">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">RustyRobot</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">28.93 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-10@2x.webp 2x, img/creator-10.webp 1x" type="image/webp">
+              <source srcset="img/creator-10@2x.jpg 2x, img/creator-10.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-10.jpg" class="creators__img" width="60" height="60" alt="A man in a helmet">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Animakid</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">25.30 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-11@2x.webp 2x, img/creator-11.webp 1x" type="image/webp">
+              <source srcset="img/creator-11@2x.jpg 2x, img/creator-11.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-11.jpg" class="creators__img" width="60" height="60" alt="A smiling girl with black-and-blue hair">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Dotgu</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">22.22 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+
+        <li class="creators__item">
+          <a href="#" class="creators__link">
+            <picture>
+              <source srcset="img/creator-12@2x.webp 2x, img/creator-12.webp 1x" type="image/webp">
+              <source srcset="img/creator-12@2x.jpg 2x, img/creator-12.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="img/creator-12.jpg" class="creators__img" width="60" height="60" alt="An asian man with dark hair and sakura in the background">
+            </picture>
+
+            <div class="creators__info">
+              <h3 class="creators__name">Ghiblier</h3>
+              <p class="creators__sale">
+                Total Sales:
+                <b class="creators__sum">19.28 ETH</b>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+      <section class="section categories">
+  <div class="container">
+    <div class="page-heading">
+      <h2 class="page-title">Browse Categories</h2>
+    </div>
+
+    <ul class="list-reset categories__list grid">
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-1@2x.webp 2x, img/categories-1.webp 1x" type="image/webp">
+              <source srcset="img/categories-1@2x.jpg 2x, img/categories-1.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-1.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/paint-brush.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Art</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-2@2x.webp 2x, img/categories-2.webp 1x" type="image/webp">
+              <source srcset="img/categories-2@2x.jpg 2x, img/categories-2.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-2.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/swatches.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Collectibles</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-3@2x.webp 2x, img/categories-3.webp 1x" type="image/webp">
+              <source srcset="img/categories-3@2x.jpg 2x, img/categories-3.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-3.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/music-notes.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Music</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-4@2x.webp 2x, img/categories-4.webp 1x" type="image/webp">
+              <source srcset="img/categories-4@2x.jpg 2x, img/categories-4.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-4.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/camera.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Photography</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-5@2x.webp 2x, img/categories-5.webp 1x" type="image/webp">
+              <source srcset="img/categories-5@2x.jpg 2x, img/categories-5.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-5.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/video-camera.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Video</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-6@2x.webp 2x, img/categories-6.webp 1x" type="image/webp">
+              <source srcset="img/categories-6@2x.jpg 2x, img/categories-6.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-6.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/magic-wand.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Utility</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-7@2x.webp 2x, img/categories-7.webp 1x" type="image/webp">
+              <source srcset="img/categories-7@2x.jpg 2x, img/categories-7.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-7.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/basketball.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Sport</h3>
+        </a>
+      </li>
+
+      <li class="categories__item">
+        <a href="#" class="categories__link">
+          <div class="categories__wrap">
+            <picture>
+              <source srcset="img/categories-8@2x.webp 2x, img/categories-8.webp 1x" type="image/webp">
+              <source srcset="img/categories-8@2x.jpg 2x, img/categories-8.jpg 1x" type="image/jpeg">
+              <img loading="lazy" src="categories-8.jpg" class="categories__img" width="148" height="142" alt="" aria-hidden="true">
+            </picture>
+            <img src="img/icons/planet.svg" class="categories__icon" alt="" aria-hidden="true">
+          </div>
+
+          <h3 class="categories__title">Virtual Worlds</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <section class="section discover">
+  <div class="container">
+    <div class="discover__wrap grid">
+      <div class="discover__heading">
+        <h2 class="page-title">Discover More NFTs</h2>
+        <p class="page-desc">Explore new trending NFTs</p>
+      </div>
+
+      <div class="discover__btns">
+        <a href="#" class="btn-reset btn btn--transparent btn--big">
+          <svg class="btn__icon">
+            <use xlink:href="img/sprite.svg#eye"></use>
+          </svg>
+          See All
+        </a>
+      </div>
+
+      <ul class="list-reset discover__list grid">
+        <li class="discover__item">
+          <article class="example discover__example">
+            <a href="#" class="example__link">
+              <picture>
+                <source srcset="img/discover-1@2x.webp 2x, img/discover-1.webp 1x" type="image/webp">
+                <source srcset="img/discover-1@2x.jpg 2x, img/discover-1.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="discover-1.jpg" class="example__img" width="315" height="206" alt="A spaceship">
+              </picture>
+
+              <div class="example__content discover__content">
+                <h2 class="example__title">Distant Galaxy</h2>
+                <div class="author example__author discover__author">
+                  <picture>
+                    <source srcset="img/discover-creator-1.webp" type="image/webp">
+                    <source srcset="img/discover-creator-1.jpg" type="image/jpeg">
+                    <img loading="lazy" src="discover-creator-1.jpg" class="author__img" width="24" height="24" alt="A girl with black long hair">
+                  </picture>
+
+                  <span class="author__name">MoonDancer</span>
+                </div>
+
+                <ul class="list-reset prices example__prices flex">
+                  <li class="prices__item">
+                    <p class="prices__title">Price</p>
+                    <b class="prices__sum">1.63 ETH</b>
+                  </li>
+                  <li class="prices__item">
+                    <p class="prices__title">Highest Bid</p>
+                    <b class="prices__sum">0.33 wETH</b>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="discover__item">
+          <article class="example discover__example">
+            <a href="#" class="example__link">
+              <picture>
+                <source srcset="img/discover-2@2x.webp 2x, img/discover-2.webp 1x" type="image/webp">
+                <source srcset="img/discover-2@2x.jpg 2x, img/discover-2.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="discover-2.jpg" class="example__img" width="315" height="206" alt="A man watching the sky">
+              </picture>
+
+              <div class="example__content discover__content">
+                <h2 class="example__title">Life on Edena</h2>
+                <div class="author example__author discover__author">
+                  <picture>
+                    <source srcset="img/discover-creator-2.webp" type="image/webp">
+                    <source srcset="img/discover-creator-2.jpg" type="image/jpeg">
+                    <img loading="lazy" src="discover-creator-2.jpg" class="author__img" width="24" height="24" alt="A man with blue eyes and a beard">
+                  </picture>
+
+                  <span class="author__name">NebulaKid</span>
+                </div>
+
+                <ul class="list-reset prices example__prices flex">
+                  <li class="prices__item">
+                    <p class="prices__title">Price</p>
+                    <b class="prices__sum">1.63 ETH</b>
+                  </li>
+                  <li class="prices__item">
+                    <p class="prices__title">Highest Bid</p>
+                    <b class="prices__sum">0.33 wETH</b>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+
+        <li class="discover__item">
+          <article class="example discover__example">
+            <a href="#" class="example__link">
+              <picture>
+                <source srcset="img/discover-3@2x.webp 2x, img/discover-3.webp 1x" type="image/webp">
+                <source srcset="img/discover-3@2x.jpg 2x, img/discover-3.jpg 1x" type="image/jpeg">
+                <img loading="lazy" src="discover-3.jpg" class="example__img" width="315" height="206" alt="A girl in a spacesuit">
+              </picture>
+
+              <div class="example__content discover__content">
+                <h2 class="example__title">AstroFiction</h2>
+                <div class="author example__author discover__author">
+                  <picture>
+                    <source srcset="img/creator-11.webp" type="image/webp">
+                    <source srcset="img/creator-11.jpg" type="image/jpeg">
+                    <img loading="lazy" src="creator-11.jpg" class="author__img" width="24" height="24" alt="A smiling girl with black-and-blue hair">
+                  </picture>
+
+                  <span class="author__name">Spaceone</span>
+                </div>
+
+                <ul class="list-reset prices example__prices flex">
+                  <li class="prices__item">
+                    <p class="prices__title">Price</p>
+                    <b class="prices__sum">1.63 ETH</b>
+                  </li>
+                  <li class="prices__item">
+                    <p class="prices__title">Highest Bid</p>
+                    <b class="prices__sum">0.33 wETH</b>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <section class="section cta">
+  <div class="container">
+    <div class="cta__wrap flex">
+      <div class="cta__top">
+        <div class="author cta__author">
+          <picture>
+            <source srcset="img/creator-7.webp" type="image/webp">
+            <source srcset="img/creator-7.jpg" type="image/jpeg">
+            <img loading="lazy" src="img/creator-7.jpg" class="author__img" width="24" height="24" alt="An avatar man">
+          </picture>
+
+          <span class="author__name">Shroomie</span>
+        </div>
+      </div>
+
+      <div class="cta__content">
+        <div class="cta__info">
+          <h2 class="cta__title">
+            Magic Mashrooms
+          </h2>
+
+          <div class="cta__btns cta__btns--desktop">
+            <a href="#" class="btn-reset btn btn--white btn--big">
+              <svg class="btn__icon">
+                <use xlink:href="img/sprite.svg#eye"></use>
+              </svg>
+              See NFT
+            </a>
+          </div>
+        </div>
+        <div class="countdown cta__countdown js--countdown" data-deadline="2023-04-13 00:00">
+          <span class="countdown__text">Auction ends in:</span>
+          <ul class="list-reset countdown__list">
+            <li class="countdown__item">
+              <span class="countdown__num js--countdown-hours">59</span>
+              <span class="countdown__text">Hours</span>
+            </li>
+            <li class="countdown__item">
+              <span class="countdown__num js--countdown-minutes">59</span>
+              <span class="countdown__text">Minutes</span>
+            </li>
+            <li class="countdown__item">
+              <span class="countdown__num js--countdown-seconds">59</span>
+              <span class="countdown__text">Seconds</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta__btns cta__btns--mobile">
+          <a href="#" class="btn-reset btn btn--white btn--big">
+            <svg class="btn__icon">
+              <use xlink:href="img/sprite.svg#eye"></use>
+            </svg>
+            See NFT
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__top grid">
+      <div class="footer__col">
+        <a class="logo footer__logo">
+          <img loading="lazy" src="img/logo.svg" alt="logo" />
+        </a>
+
+        <div class="footer__contacts">
+          <p class="footer__text footer__text--margined">Join our community</p>
+          <ul class="list-reset socials footer__socials">
+            <li class="socials__item">
+              <a class="socials__link" href="#" target="_blank" rel="nofollow">
+                <svg class="socials__icon">
+                  <use xlink:href="img/sprite.svg#discord"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="socials__item">
+              <a class="socials__link" href="#" target="_blank" rel="nofollow">
+                <svg class="socials__icon">
+                  <use xlink:href="img/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="socials__item">
+              <a class="socials__link" href="#" target="_blank" rel="nofollow">
+                <svg class="socials__icon">
+                  <use xlink:href="img/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="socials__item">
+              <a class="socials__link" href="#" target="_blank" rel="nofollow">
+                <svg class="socials__icon">
+                  <use xlink:href="img/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title">Explore</h3>
+
+        <ul class="list-reset footer__menu">
+          <li class="footer__menuItem">
+            <a class="footer__menuLink" href="#">Marketplace</a>
+          </li>
+          <li class="footer__menuItem">
+            <a class="footer__menuLink" href="#">Rankings</a>
+          </li>
+          <li class="footer__menuItem">
+            <a class="footer__menuLink" href="#">Connect a wallet</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__title footer__title--capitalized">Join our weekly digest</h3>
+
+        <p class="footer__text">Get exclusive promotions &amp; updates straight to your inbox.</p>
+
+        <form action="#" class="form footer__form">
+          <div class="form__wrap form__wrap--tablet">
+            <label class="form__label">
+              <input class="input-reset form__input" type="email" id="email" name="email" placeholder="Enter your email here" required>
+            </label>
+
+            <button class="btn-reset btn btn--accent footer__btn" type="submit">
+              <svg class="btn__icon">
+                <use xlink:href="img/sprite.svg#envelope"></use>
+              </svg>
+              Subscribe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copywright">Ⓒ NFT Market. Use this template freely.</p>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
